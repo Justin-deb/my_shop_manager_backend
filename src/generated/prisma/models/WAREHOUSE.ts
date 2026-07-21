@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `WAREHOUSE` model and its related types.
+ * This file exports the `Warehouse` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,751 +13,751 @@ import type * as $Enums from "../enums"
 import type * as Prisma from "../internal/prismaNamespace"
 
 /**
- * Model WAREHOUSE
+ * Model Warehouse
  * 
  */
-export type WAREHOUSEModel = runtime.Types.Result.DefaultSelection<Prisma.$WAREHOUSEPayload>
+export type WarehouseModel = runtime.Types.Result.DefaultSelection<Prisma.$WarehousePayload>
 
-export type AggregateWAREHOUSE = {
-  _count: WAREHOUSECountAggregateOutputType | null
-  _avg: WAREHOUSEAvgAggregateOutputType | null
-  _sum: WAREHOUSESumAggregateOutputType | null
-  _min: WAREHOUSEMinAggregateOutputType | null
-  _max: WAREHOUSEMaxAggregateOutputType | null
+export type AggregateWarehouse = {
+  _count: WarehouseCountAggregateOutputType | null
+  _avg: WarehouseAvgAggregateOutputType | null
+  _sum: WarehouseSumAggregateOutputType | null
+  _min: WarehouseMinAggregateOutputType | null
+  _max: WarehouseMaxAggregateOutputType | null
 }
 
-export type WAREHOUSEAvgAggregateOutputType = {
-  shop_id: number | null
-  piece_id: number | null
+export type WarehouseAvgAggregateOutputType = {
+  shopId: number | null
+  pieceId: number | null
   quantity: number | null
 }
 
-export type WAREHOUSESumAggregateOutputType = {
-  shop_id: number | null
-  piece_id: number | null
+export type WarehouseSumAggregateOutputType = {
+  shopId: number | null
+  pieceId: number | null
   quantity: number | null
 }
 
-export type WAREHOUSEMinAggregateOutputType = {
-  shop_id: number | null
-  piece_id: number | null
-  quantity: number | null
-  notes: string | null
-}
-
-export type WAREHOUSEMaxAggregateOutputType = {
-  shop_id: number | null
-  piece_id: number | null
+export type WarehouseMinAggregateOutputType = {
+  shopId: number | null
+  pieceId: number | null
   quantity: number | null
   notes: string | null
 }
 
-export type WAREHOUSECountAggregateOutputType = {
-  shop_id: number
-  piece_id: number
+export type WarehouseMaxAggregateOutputType = {
+  shopId: number | null
+  pieceId: number | null
+  quantity: number | null
+  notes: string | null
+}
+
+export type WarehouseCountAggregateOutputType = {
+  shopId: number
+  pieceId: number
   quantity: number
   notes: number
   _all: number
 }
 
 
-export type WAREHOUSEAvgAggregateInputType = {
-  shop_id?: true
-  piece_id?: true
+export type WarehouseAvgAggregateInputType = {
+  shopId?: true
+  pieceId?: true
   quantity?: true
 }
 
-export type WAREHOUSESumAggregateInputType = {
-  shop_id?: true
-  piece_id?: true
+export type WarehouseSumAggregateInputType = {
+  shopId?: true
+  pieceId?: true
   quantity?: true
 }
 
-export type WAREHOUSEMinAggregateInputType = {
-  shop_id?: true
-  piece_id?: true
-  quantity?: true
-  notes?: true
-}
-
-export type WAREHOUSEMaxAggregateInputType = {
-  shop_id?: true
-  piece_id?: true
+export type WarehouseMinAggregateInputType = {
+  shopId?: true
+  pieceId?: true
   quantity?: true
   notes?: true
 }
 
-export type WAREHOUSECountAggregateInputType = {
-  shop_id?: true
-  piece_id?: true
+export type WarehouseMaxAggregateInputType = {
+  shopId?: true
+  pieceId?: true
+  quantity?: true
+  notes?: true
+}
+
+export type WarehouseCountAggregateInputType = {
+  shopId?: true
+  pieceId?: true
   quantity?: true
   notes?: true
   _all?: true
 }
 
-export type WAREHOUSEAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which WAREHOUSE to aggregate.
+   * Filter which Warehouse to aggregate.
    */
-  where?: Prisma.WAREHOUSEWhereInput
+  where?: Prisma.WarehouseWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of WAREHOUSES to fetch.
+   * Determine the order of Warehouses to fetch.
    */
-  orderBy?: Prisma.WAREHOUSEOrderByWithRelationInput | Prisma.WAREHOUSEOrderByWithRelationInput[]
+  orderBy?: Prisma.WarehouseOrderByWithRelationInput | Prisma.WarehouseOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.WAREHOUSEWhereUniqueInput
+  cursor?: Prisma.WarehouseWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` WAREHOUSES from the position of the cursor.
+   * Take `±n` Warehouses from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` WAREHOUSES.
+   * Skip the first `n` Warehouses.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned WAREHOUSES
+   * Count returned Warehouses
   **/
-  _count?: true | WAREHOUSECountAggregateInputType
+  _count?: true | WarehouseCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to average
   **/
-  _avg?: WAREHOUSEAvgAggregateInputType
+  _avg?: WarehouseAvgAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to sum
   **/
-  _sum?: WAREHOUSESumAggregateInputType
+  _sum?: WarehouseSumAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: WAREHOUSEMinAggregateInputType
+  _min?: WarehouseMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: WAREHOUSEMaxAggregateInputType
+  _max?: WarehouseMaxAggregateInputType
 }
 
-export type GetWAREHOUSEAggregateType<T extends WAREHOUSEAggregateArgs> = {
-      [P in keyof T & keyof AggregateWAREHOUSE]: P extends '_count' | 'count'
+export type GetWarehouseAggregateType<T extends WarehouseAggregateArgs> = {
+      [P in keyof T & keyof AggregateWarehouse]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateWAREHOUSE[P]>
-    : Prisma.GetScalarType<T[P], AggregateWAREHOUSE[P]>
+      : Prisma.GetScalarType<T[P], AggregateWarehouse[P]>
+    : Prisma.GetScalarType<T[P], AggregateWarehouse[P]>
 }
 
 
 
 
-export type WAREHOUSEGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.WAREHOUSEWhereInput
-  orderBy?: Prisma.WAREHOUSEOrderByWithAggregationInput | Prisma.WAREHOUSEOrderByWithAggregationInput[]
-  by: Prisma.WAREHOUSEScalarFieldEnum[] | Prisma.WAREHOUSEScalarFieldEnum
-  having?: Prisma.WAREHOUSEScalarWhereWithAggregatesInput
+export type WarehouseGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.WarehouseWhereInput
+  orderBy?: Prisma.WarehouseOrderByWithAggregationInput | Prisma.WarehouseOrderByWithAggregationInput[]
+  by: Prisma.WarehouseScalarFieldEnum[] | Prisma.WarehouseScalarFieldEnum
+  having?: Prisma.WarehouseScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: WAREHOUSECountAggregateInputType | true
-  _avg?: WAREHOUSEAvgAggregateInputType
-  _sum?: WAREHOUSESumAggregateInputType
-  _min?: WAREHOUSEMinAggregateInputType
-  _max?: WAREHOUSEMaxAggregateInputType
+  _count?: WarehouseCountAggregateInputType | true
+  _avg?: WarehouseAvgAggregateInputType
+  _sum?: WarehouseSumAggregateInputType
+  _min?: WarehouseMinAggregateInputType
+  _max?: WarehouseMaxAggregateInputType
 }
 
-export type WAREHOUSEGroupByOutputType = {
-  shop_id: number
-  piece_id: number
+export type WarehouseGroupByOutputType = {
+  shopId: number
+  pieceId: number
   quantity: number
   notes: string | null
-  _count: WAREHOUSECountAggregateOutputType | null
-  _avg: WAREHOUSEAvgAggregateOutputType | null
-  _sum: WAREHOUSESumAggregateOutputType | null
-  _min: WAREHOUSEMinAggregateOutputType | null
-  _max: WAREHOUSEMaxAggregateOutputType | null
+  _count: WarehouseCountAggregateOutputType | null
+  _avg: WarehouseAvgAggregateOutputType | null
+  _sum: WarehouseSumAggregateOutputType | null
+  _min: WarehouseMinAggregateOutputType | null
+  _max: WarehouseMaxAggregateOutputType | null
 }
 
-export type GetWAREHOUSEGroupByPayload<T extends WAREHOUSEGroupByArgs> = Prisma.PrismaPromise<
+export type GetWarehouseGroupByPayload<T extends WarehouseGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<WAREHOUSEGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<WarehouseGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof WAREHOUSEGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof WarehouseGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], WAREHOUSEGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], WAREHOUSEGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], WarehouseGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], WarehouseGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type WAREHOUSEWhereInput = {
-  AND?: Prisma.WAREHOUSEWhereInput | Prisma.WAREHOUSEWhereInput[]
-  OR?: Prisma.WAREHOUSEWhereInput[]
-  NOT?: Prisma.WAREHOUSEWhereInput | Prisma.WAREHOUSEWhereInput[]
-  shop_id?: Prisma.IntFilter<"WAREHOUSE"> | number
-  piece_id?: Prisma.IntFilter<"WAREHOUSE"> | number
-  quantity?: Prisma.IntFilter<"WAREHOUSE"> | number
-  notes?: Prisma.StringNullableFilter<"WAREHOUSE"> | string | null
-  SHOP?: Prisma.XOR<Prisma.SHOPScalarRelationFilter, Prisma.SHOPWhereInput>
-  PIECE?: Prisma.XOR<Prisma.PIECEScalarRelationFilter, Prisma.PIECEWhereInput>
+export type WarehouseWhereInput = {
+  AND?: Prisma.WarehouseWhereInput | Prisma.WarehouseWhereInput[]
+  OR?: Prisma.WarehouseWhereInput[]
+  NOT?: Prisma.WarehouseWhereInput | Prisma.WarehouseWhereInput[]
+  shopId?: Prisma.IntFilter<"Warehouse"> | number
+  pieceId?: Prisma.IntFilter<"Warehouse"> | number
+  quantity?: Prisma.IntFilter<"Warehouse"> | number
+  notes?: Prisma.StringNullableFilter<"Warehouse"> | string | null
+  shop?: Prisma.XOR<Prisma.ShopScalarRelationFilter, Prisma.ShopWhereInput>
+  piece?: Prisma.XOR<Prisma.PieceScalarRelationFilter, Prisma.PieceWhereInput>
 }
 
-export type WAREHOUSEOrderByWithRelationInput = {
-  shop_id?: Prisma.SortOrder
-  piece_id?: Prisma.SortOrder
+export type WarehouseOrderByWithRelationInput = {
+  shopId?: Prisma.SortOrder
+  pieceId?: Prisma.SortOrder
   quantity?: Prisma.SortOrder
   notes?: Prisma.SortOrderInput | Prisma.SortOrder
-  SHOP?: Prisma.SHOPOrderByWithRelationInput
-  PIECE?: Prisma.PIECEOrderByWithRelationInput
-  _relevance?: Prisma.WAREHOUSEOrderByRelevanceInput
+  shop?: Prisma.ShopOrderByWithRelationInput
+  piece?: Prisma.PieceOrderByWithRelationInput
+  _relevance?: Prisma.WarehouseOrderByRelevanceInput
 }
 
-export type WAREHOUSEWhereUniqueInput = Prisma.AtLeast<{
-  shop_id_piece_id?: Prisma.WAREHOUSEShop_idPiece_idCompoundUniqueInput
-  AND?: Prisma.WAREHOUSEWhereInput | Prisma.WAREHOUSEWhereInput[]
-  OR?: Prisma.WAREHOUSEWhereInput[]
-  NOT?: Prisma.WAREHOUSEWhereInput | Prisma.WAREHOUSEWhereInput[]
-  shop_id?: Prisma.IntFilter<"WAREHOUSE"> | number
-  piece_id?: Prisma.IntFilter<"WAREHOUSE"> | number
-  quantity?: Prisma.IntFilter<"WAREHOUSE"> | number
-  notes?: Prisma.StringNullableFilter<"WAREHOUSE"> | string | null
-  SHOP?: Prisma.XOR<Prisma.SHOPScalarRelationFilter, Prisma.SHOPWhereInput>
-  PIECE?: Prisma.XOR<Prisma.PIECEScalarRelationFilter, Prisma.PIECEWhereInput>
-}, "shop_id_piece_id">
+export type WarehouseWhereUniqueInput = Prisma.AtLeast<{
+  shopId_pieceId?: Prisma.WarehouseShopIdPieceIdCompoundUniqueInput
+  AND?: Prisma.WarehouseWhereInput | Prisma.WarehouseWhereInput[]
+  OR?: Prisma.WarehouseWhereInput[]
+  NOT?: Prisma.WarehouseWhereInput | Prisma.WarehouseWhereInput[]
+  shopId?: Prisma.IntFilter<"Warehouse"> | number
+  pieceId?: Prisma.IntFilter<"Warehouse"> | number
+  quantity?: Prisma.IntFilter<"Warehouse"> | number
+  notes?: Prisma.StringNullableFilter<"Warehouse"> | string | null
+  shop?: Prisma.XOR<Prisma.ShopScalarRelationFilter, Prisma.ShopWhereInput>
+  piece?: Prisma.XOR<Prisma.PieceScalarRelationFilter, Prisma.PieceWhereInput>
+}, "shopId_pieceId">
 
-export type WAREHOUSEOrderByWithAggregationInput = {
-  shop_id?: Prisma.SortOrder
-  piece_id?: Prisma.SortOrder
+export type WarehouseOrderByWithAggregationInput = {
+  shopId?: Prisma.SortOrder
+  pieceId?: Prisma.SortOrder
   quantity?: Prisma.SortOrder
   notes?: Prisma.SortOrderInput | Prisma.SortOrder
-  _count?: Prisma.WAREHOUSECountOrderByAggregateInput
-  _avg?: Prisma.WAREHOUSEAvgOrderByAggregateInput
-  _max?: Prisma.WAREHOUSEMaxOrderByAggregateInput
-  _min?: Prisma.WAREHOUSEMinOrderByAggregateInput
-  _sum?: Prisma.WAREHOUSESumOrderByAggregateInput
+  _count?: Prisma.WarehouseCountOrderByAggregateInput
+  _avg?: Prisma.WarehouseAvgOrderByAggregateInput
+  _max?: Prisma.WarehouseMaxOrderByAggregateInput
+  _min?: Prisma.WarehouseMinOrderByAggregateInput
+  _sum?: Prisma.WarehouseSumOrderByAggregateInput
 }
 
-export type WAREHOUSEScalarWhereWithAggregatesInput = {
-  AND?: Prisma.WAREHOUSEScalarWhereWithAggregatesInput | Prisma.WAREHOUSEScalarWhereWithAggregatesInput[]
-  OR?: Prisma.WAREHOUSEScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.WAREHOUSEScalarWhereWithAggregatesInput | Prisma.WAREHOUSEScalarWhereWithAggregatesInput[]
-  shop_id?: Prisma.IntWithAggregatesFilter<"WAREHOUSE"> | number
-  piece_id?: Prisma.IntWithAggregatesFilter<"WAREHOUSE"> | number
-  quantity?: Prisma.IntWithAggregatesFilter<"WAREHOUSE"> | number
-  notes?: Prisma.StringNullableWithAggregatesFilter<"WAREHOUSE"> | string | null
+export type WarehouseScalarWhereWithAggregatesInput = {
+  AND?: Prisma.WarehouseScalarWhereWithAggregatesInput | Prisma.WarehouseScalarWhereWithAggregatesInput[]
+  OR?: Prisma.WarehouseScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.WarehouseScalarWhereWithAggregatesInput | Prisma.WarehouseScalarWhereWithAggregatesInput[]
+  shopId?: Prisma.IntWithAggregatesFilter<"Warehouse"> | number
+  pieceId?: Prisma.IntWithAggregatesFilter<"Warehouse"> | number
+  quantity?: Prisma.IntWithAggregatesFilter<"Warehouse"> | number
+  notes?: Prisma.StringNullableWithAggregatesFilter<"Warehouse"> | string | null
 }
 
-export type WAREHOUSECreateInput = {
+export type WarehouseCreateInput = {
   quantity: number
   notes?: string | null
-  SHOP: Prisma.SHOPCreateNestedOneWithoutWAREHOUSEInput
-  PIECE: Prisma.PIECECreateNestedOneWithoutWAREHOUSEInput
+  shop: Prisma.ShopCreateNestedOneWithoutWarehouseInput
+  piece: Prisma.PieceCreateNestedOneWithoutWarehouseInput
 }
 
-export type WAREHOUSEUncheckedCreateInput = {
-  shop_id: number
-  piece_id: number
-  quantity: number
-  notes?: string | null
-}
-
-export type WAREHOUSEUpdateInput = {
-  quantity?: Prisma.IntFieldUpdateOperationsInput | number
-  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  SHOP?: Prisma.SHOPUpdateOneRequiredWithoutWAREHOUSENestedInput
-  PIECE?: Prisma.PIECEUpdateOneRequiredWithoutWAREHOUSENestedInput
-}
-
-export type WAREHOUSEUncheckedUpdateInput = {
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
-  piece_id?: Prisma.IntFieldUpdateOperationsInput | number
-  quantity?: Prisma.IntFieldUpdateOperationsInput | number
-  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-}
-
-export type WAREHOUSECreateManyInput = {
-  shop_id: number
-  piece_id: number
+export type WarehouseUncheckedCreateInput = {
+  shopId: number
+  pieceId: number
   quantity: number
   notes?: string | null
 }
 
-export type WAREHOUSEUpdateManyMutationInput = {
+export type WarehouseUpdateInput = {
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shop?: Prisma.ShopUpdateOneRequiredWithoutWarehouseNestedInput
+  piece?: Prisma.PieceUpdateOneRequiredWithoutWarehouseNestedInput
+}
+
+export type WarehouseUncheckedUpdateInput = {
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
+  pieceId?: Prisma.IntFieldUpdateOperationsInput | number
   quantity?: Prisma.IntFieldUpdateOperationsInput | number
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
-export type WAREHOUSEUncheckedUpdateManyInput = {
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
-  piece_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type WarehouseCreateManyInput = {
+  shopId: number
+  pieceId: number
+  quantity: number
+  notes?: string | null
+}
+
+export type WarehouseUpdateManyMutationInput = {
   quantity?: Prisma.IntFieldUpdateOperationsInput | number
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
-export type WAREHOUSEListRelationFilter = {
-  every?: Prisma.WAREHOUSEWhereInput
-  some?: Prisma.WAREHOUSEWhereInput
-  none?: Prisma.WAREHOUSEWhereInput
+export type WarehouseUncheckedUpdateManyInput = {
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
+  pieceId?: Prisma.IntFieldUpdateOperationsInput | number
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
-export type WAREHOUSEOrderByRelationAggregateInput = {
+export type WarehouseListRelationFilter = {
+  every?: Prisma.WarehouseWhereInput
+  some?: Prisma.WarehouseWhereInput
+  none?: Prisma.WarehouseWhereInput
+}
+
+export type WarehouseOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type WAREHOUSEOrderByRelevanceInput = {
-  fields: Prisma.WAREHOUSEOrderByRelevanceFieldEnum | Prisma.WAREHOUSEOrderByRelevanceFieldEnum[]
+export type WarehouseOrderByRelevanceInput = {
+  fields: Prisma.WarehouseOrderByRelevanceFieldEnum | Prisma.WarehouseOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type WAREHOUSEShop_idPiece_idCompoundUniqueInput = {
-  shop_id: number
-  piece_id: number
+export type WarehouseShopIdPieceIdCompoundUniqueInput = {
+  shopId: number
+  pieceId: number
 }
 
-export type WAREHOUSECountOrderByAggregateInput = {
-  shop_id?: Prisma.SortOrder
-  piece_id?: Prisma.SortOrder
+export type WarehouseCountOrderByAggregateInput = {
+  shopId?: Prisma.SortOrder
+  pieceId?: Prisma.SortOrder
   quantity?: Prisma.SortOrder
   notes?: Prisma.SortOrder
 }
 
-export type WAREHOUSEAvgOrderByAggregateInput = {
-  shop_id?: Prisma.SortOrder
-  piece_id?: Prisma.SortOrder
+export type WarehouseAvgOrderByAggregateInput = {
+  shopId?: Prisma.SortOrder
+  pieceId?: Prisma.SortOrder
   quantity?: Prisma.SortOrder
 }
 
-export type WAREHOUSEMaxOrderByAggregateInput = {
-  shop_id?: Prisma.SortOrder
-  piece_id?: Prisma.SortOrder
-  quantity?: Prisma.SortOrder
-  notes?: Prisma.SortOrder
-}
-
-export type WAREHOUSEMinOrderByAggregateInput = {
-  shop_id?: Prisma.SortOrder
-  piece_id?: Prisma.SortOrder
+export type WarehouseMaxOrderByAggregateInput = {
+  shopId?: Prisma.SortOrder
+  pieceId?: Prisma.SortOrder
   quantity?: Prisma.SortOrder
   notes?: Prisma.SortOrder
 }
 
-export type WAREHOUSESumOrderByAggregateInput = {
-  shop_id?: Prisma.SortOrder
-  piece_id?: Prisma.SortOrder
+export type WarehouseMinOrderByAggregateInput = {
+  shopId?: Prisma.SortOrder
+  pieceId?: Prisma.SortOrder
+  quantity?: Prisma.SortOrder
+  notes?: Prisma.SortOrder
+}
+
+export type WarehouseSumOrderByAggregateInput = {
+  shopId?: Prisma.SortOrder
+  pieceId?: Prisma.SortOrder
   quantity?: Prisma.SortOrder
 }
 
-export type WAREHOUSECreateNestedManyWithoutPIECEInput = {
-  create?: Prisma.XOR<Prisma.WAREHOUSECreateWithoutPIECEInput, Prisma.WAREHOUSEUncheckedCreateWithoutPIECEInput> | Prisma.WAREHOUSECreateWithoutPIECEInput[] | Prisma.WAREHOUSEUncheckedCreateWithoutPIECEInput[]
-  connectOrCreate?: Prisma.WAREHOUSECreateOrConnectWithoutPIECEInput | Prisma.WAREHOUSECreateOrConnectWithoutPIECEInput[]
-  createMany?: Prisma.WAREHOUSECreateManyPIECEInputEnvelope
-  connect?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
+export type WarehouseCreateNestedManyWithoutPieceInput = {
+  create?: Prisma.XOR<Prisma.WarehouseCreateWithoutPieceInput, Prisma.WarehouseUncheckedCreateWithoutPieceInput> | Prisma.WarehouseCreateWithoutPieceInput[] | Prisma.WarehouseUncheckedCreateWithoutPieceInput[]
+  connectOrCreate?: Prisma.WarehouseCreateOrConnectWithoutPieceInput | Prisma.WarehouseCreateOrConnectWithoutPieceInput[]
+  createMany?: Prisma.WarehouseCreateManyPieceInputEnvelope
+  connect?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
 }
 
-export type WAREHOUSEUncheckedCreateNestedManyWithoutPIECEInput = {
-  create?: Prisma.XOR<Prisma.WAREHOUSECreateWithoutPIECEInput, Prisma.WAREHOUSEUncheckedCreateWithoutPIECEInput> | Prisma.WAREHOUSECreateWithoutPIECEInput[] | Prisma.WAREHOUSEUncheckedCreateWithoutPIECEInput[]
-  connectOrCreate?: Prisma.WAREHOUSECreateOrConnectWithoutPIECEInput | Prisma.WAREHOUSECreateOrConnectWithoutPIECEInput[]
-  createMany?: Prisma.WAREHOUSECreateManyPIECEInputEnvelope
-  connect?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
+export type WarehouseUncheckedCreateNestedManyWithoutPieceInput = {
+  create?: Prisma.XOR<Prisma.WarehouseCreateWithoutPieceInput, Prisma.WarehouseUncheckedCreateWithoutPieceInput> | Prisma.WarehouseCreateWithoutPieceInput[] | Prisma.WarehouseUncheckedCreateWithoutPieceInput[]
+  connectOrCreate?: Prisma.WarehouseCreateOrConnectWithoutPieceInput | Prisma.WarehouseCreateOrConnectWithoutPieceInput[]
+  createMany?: Prisma.WarehouseCreateManyPieceInputEnvelope
+  connect?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
 }
 
-export type WAREHOUSEUpdateManyWithoutPIECENestedInput = {
-  create?: Prisma.XOR<Prisma.WAREHOUSECreateWithoutPIECEInput, Prisma.WAREHOUSEUncheckedCreateWithoutPIECEInput> | Prisma.WAREHOUSECreateWithoutPIECEInput[] | Prisma.WAREHOUSEUncheckedCreateWithoutPIECEInput[]
-  connectOrCreate?: Prisma.WAREHOUSECreateOrConnectWithoutPIECEInput | Prisma.WAREHOUSECreateOrConnectWithoutPIECEInput[]
-  upsert?: Prisma.WAREHOUSEUpsertWithWhereUniqueWithoutPIECEInput | Prisma.WAREHOUSEUpsertWithWhereUniqueWithoutPIECEInput[]
-  createMany?: Prisma.WAREHOUSECreateManyPIECEInputEnvelope
-  set?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
-  disconnect?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
-  delete?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
-  connect?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
-  update?: Prisma.WAREHOUSEUpdateWithWhereUniqueWithoutPIECEInput | Prisma.WAREHOUSEUpdateWithWhereUniqueWithoutPIECEInput[]
-  updateMany?: Prisma.WAREHOUSEUpdateManyWithWhereWithoutPIECEInput | Prisma.WAREHOUSEUpdateManyWithWhereWithoutPIECEInput[]
-  deleteMany?: Prisma.WAREHOUSEScalarWhereInput | Prisma.WAREHOUSEScalarWhereInput[]
+export type WarehouseUpdateManyWithoutPieceNestedInput = {
+  create?: Prisma.XOR<Prisma.WarehouseCreateWithoutPieceInput, Prisma.WarehouseUncheckedCreateWithoutPieceInput> | Prisma.WarehouseCreateWithoutPieceInput[] | Prisma.WarehouseUncheckedCreateWithoutPieceInput[]
+  connectOrCreate?: Prisma.WarehouseCreateOrConnectWithoutPieceInput | Prisma.WarehouseCreateOrConnectWithoutPieceInput[]
+  upsert?: Prisma.WarehouseUpsertWithWhereUniqueWithoutPieceInput | Prisma.WarehouseUpsertWithWhereUniqueWithoutPieceInput[]
+  createMany?: Prisma.WarehouseCreateManyPieceInputEnvelope
+  set?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
+  disconnect?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
+  delete?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
+  connect?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
+  update?: Prisma.WarehouseUpdateWithWhereUniqueWithoutPieceInput | Prisma.WarehouseUpdateWithWhereUniqueWithoutPieceInput[]
+  updateMany?: Prisma.WarehouseUpdateManyWithWhereWithoutPieceInput | Prisma.WarehouseUpdateManyWithWhereWithoutPieceInput[]
+  deleteMany?: Prisma.WarehouseScalarWhereInput | Prisma.WarehouseScalarWhereInput[]
 }
 
-export type WAREHOUSEUncheckedUpdateManyWithoutPIECENestedInput = {
-  create?: Prisma.XOR<Prisma.WAREHOUSECreateWithoutPIECEInput, Prisma.WAREHOUSEUncheckedCreateWithoutPIECEInput> | Prisma.WAREHOUSECreateWithoutPIECEInput[] | Prisma.WAREHOUSEUncheckedCreateWithoutPIECEInput[]
-  connectOrCreate?: Prisma.WAREHOUSECreateOrConnectWithoutPIECEInput | Prisma.WAREHOUSECreateOrConnectWithoutPIECEInput[]
-  upsert?: Prisma.WAREHOUSEUpsertWithWhereUniqueWithoutPIECEInput | Prisma.WAREHOUSEUpsertWithWhereUniqueWithoutPIECEInput[]
-  createMany?: Prisma.WAREHOUSECreateManyPIECEInputEnvelope
-  set?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
-  disconnect?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
-  delete?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
-  connect?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
-  update?: Prisma.WAREHOUSEUpdateWithWhereUniqueWithoutPIECEInput | Prisma.WAREHOUSEUpdateWithWhereUniqueWithoutPIECEInput[]
-  updateMany?: Prisma.WAREHOUSEUpdateManyWithWhereWithoutPIECEInput | Prisma.WAREHOUSEUpdateManyWithWhereWithoutPIECEInput[]
-  deleteMany?: Prisma.WAREHOUSEScalarWhereInput | Prisma.WAREHOUSEScalarWhereInput[]
+export type WarehouseUncheckedUpdateManyWithoutPieceNestedInput = {
+  create?: Prisma.XOR<Prisma.WarehouseCreateWithoutPieceInput, Prisma.WarehouseUncheckedCreateWithoutPieceInput> | Prisma.WarehouseCreateWithoutPieceInput[] | Prisma.WarehouseUncheckedCreateWithoutPieceInput[]
+  connectOrCreate?: Prisma.WarehouseCreateOrConnectWithoutPieceInput | Prisma.WarehouseCreateOrConnectWithoutPieceInput[]
+  upsert?: Prisma.WarehouseUpsertWithWhereUniqueWithoutPieceInput | Prisma.WarehouseUpsertWithWhereUniqueWithoutPieceInput[]
+  createMany?: Prisma.WarehouseCreateManyPieceInputEnvelope
+  set?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
+  disconnect?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
+  delete?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
+  connect?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
+  update?: Prisma.WarehouseUpdateWithWhereUniqueWithoutPieceInput | Prisma.WarehouseUpdateWithWhereUniqueWithoutPieceInput[]
+  updateMany?: Prisma.WarehouseUpdateManyWithWhereWithoutPieceInput | Prisma.WarehouseUpdateManyWithWhereWithoutPieceInput[]
+  deleteMany?: Prisma.WarehouseScalarWhereInput | Prisma.WarehouseScalarWhereInput[]
 }
 
-export type WAREHOUSECreateNestedManyWithoutSHOPInput = {
-  create?: Prisma.XOR<Prisma.WAREHOUSECreateWithoutSHOPInput, Prisma.WAREHOUSEUncheckedCreateWithoutSHOPInput> | Prisma.WAREHOUSECreateWithoutSHOPInput[] | Prisma.WAREHOUSEUncheckedCreateWithoutSHOPInput[]
-  connectOrCreate?: Prisma.WAREHOUSECreateOrConnectWithoutSHOPInput | Prisma.WAREHOUSECreateOrConnectWithoutSHOPInput[]
-  createMany?: Prisma.WAREHOUSECreateManySHOPInputEnvelope
-  connect?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
+export type WarehouseCreateNestedManyWithoutShopInput = {
+  create?: Prisma.XOR<Prisma.WarehouseCreateWithoutShopInput, Prisma.WarehouseUncheckedCreateWithoutShopInput> | Prisma.WarehouseCreateWithoutShopInput[] | Prisma.WarehouseUncheckedCreateWithoutShopInput[]
+  connectOrCreate?: Prisma.WarehouseCreateOrConnectWithoutShopInput | Prisma.WarehouseCreateOrConnectWithoutShopInput[]
+  createMany?: Prisma.WarehouseCreateManyShopInputEnvelope
+  connect?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
 }
 
-export type WAREHOUSEUncheckedCreateNestedManyWithoutSHOPInput = {
-  create?: Prisma.XOR<Prisma.WAREHOUSECreateWithoutSHOPInput, Prisma.WAREHOUSEUncheckedCreateWithoutSHOPInput> | Prisma.WAREHOUSECreateWithoutSHOPInput[] | Prisma.WAREHOUSEUncheckedCreateWithoutSHOPInput[]
-  connectOrCreate?: Prisma.WAREHOUSECreateOrConnectWithoutSHOPInput | Prisma.WAREHOUSECreateOrConnectWithoutSHOPInput[]
-  createMany?: Prisma.WAREHOUSECreateManySHOPInputEnvelope
-  connect?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
+export type WarehouseUncheckedCreateNestedManyWithoutShopInput = {
+  create?: Prisma.XOR<Prisma.WarehouseCreateWithoutShopInput, Prisma.WarehouseUncheckedCreateWithoutShopInput> | Prisma.WarehouseCreateWithoutShopInput[] | Prisma.WarehouseUncheckedCreateWithoutShopInput[]
+  connectOrCreate?: Prisma.WarehouseCreateOrConnectWithoutShopInput | Prisma.WarehouseCreateOrConnectWithoutShopInput[]
+  createMany?: Prisma.WarehouseCreateManyShopInputEnvelope
+  connect?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
 }
 
-export type WAREHOUSEUpdateManyWithoutSHOPNestedInput = {
-  create?: Prisma.XOR<Prisma.WAREHOUSECreateWithoutSHOPInput, Prisma.WAREHOUSEUncheckedCreateWithoutSHOPInput> | Prisma.WAREHOUSECreateWithoutSHOPInput[] | Prisma.WAREHOUSEUncheckedCreateWithoutSHOPInput[]
-  connectOrCreate?: Prisma.WAREHOUSECreateOrConnectWithoutSHOPInput | Prisma.WAREHOUSECreateOrConnectWithoutSHOPInput[]
-  upsert?: Prisma.WAREHOUSEUpsertWithWhereUniqueWithoutSHOPInput | Prisma.WAREHOUSEUpsertWithWhereUniqueWithoutSHOPInput[]
-  createMany?: Prisma.WAREHOUSECreateManySHOPInputEnvelope
-  set?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
-  disconnect?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
-  delete?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
-  connect?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
-  update?: Prisma.WAREHOUSEUpdateWithWhereUniqueWithoutSHOPInput | Prisma.WAREHOUSEUpdateWithWhereUniqueWithoutSHOPInput[]
-  updateMany?: Prisma.WAREHOUSEUpdateManyWithWhereWithoutSHOPInput | Prisma.WAREHOUSEUpdateManyWithWhereWithoutSHOPInput[]
-  deleteMany?: Prisma.WAREHOUSEScalarWhereInput | Prisma.WAREHOUSEScalarWhereInput[]
+export type WarehouseUpdateManyWithoutShopNestedInput = {
+  create?: Prisma.XOR<Prisma.WarehouseCreateWithoutShopInput, Prisma.WarehouseUncheckedCreateWithoutShopInput> | Prisma.WarehouseCreateWithoutShopInput[] | Prisma.WarehouseUncheckedCreateWithoutShopInput[]
+  connectOrCreate?: Prisma.WarehouseCreateOrConnectWithoutShopInput | Prisma.WarehouseCreateOrConnectWithoutShopInput[]
+  upsert?: Prisma.WarehouseUpsertWithWhereUniqueWithoutShopInput | Prisma.WarehouseUpsertWithWhereUniqueWithoutShopInput[]
+  createMany?: Prisma.WarehouseCreateManyShopInputEnvelope
+  set?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
+  disconnect?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
+  delete?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
+  connect?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
+  update?: Prisma.WarehouseUpdateWithWhereUniqueWithoutShopInput | Prisma.WarehouseUpdateWithWhereUniqueWithoutShopInput[]
+  updateMany?: Prisma.WarehouseUpdateManyWithWhereWithoutShopInput | Prisma.WarehouseUpdateManyWithWhereWithoutShopInput[]
+  deleteMany?: Prisma.WarehouseScalarWhereInput | Prisma.WarehouseScalarWhereInput[]
 }
 
-export type WAREHOUSEUncheckedUpdateManyWithoutSHOPNestedInput = {
-  create?: Prisma.XOR<Prisma.WAREHOUSECreateWithoutSHOPInput, Prisma.WAREHOUSEUncheckedCreateWithoutSHOPInput> | Prisma.WAREHOUSECreateWithoutSHOPInput[] | Prisma.WAREHOUSEUncheckedCreateWithoutSHOPInput[]
-  connectOrCreate?: Prisma.WAREHOUSECreateOrConnectWithoutSHOPInput | Prisma.WAREHOUSECreateOrConnectWithoutSHOPInput[]
-  upsert?: Prisma.WAREHOUSEUpsertWithWhereUniqueWithoutSHOPInput | Prisma.WAREHOUSEUpsertWithWhereUniqueWithoutSHOPInput[]
-  createMany?: Prisma.WAREHOUSECreateManySHOPInputEnvelope
-  set?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
-  disconnect?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
-  delete?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
-  connect?: Prisma.WAREHOUSEWhereUniqueInput | Prisma.WAREHOUSEWhereUniqueInput[]
-  update?: Prisma.WAREHOUSEUpdateWithWhereUniqueWithoutSHOPInput | Prisma.WAREHOUSEUpdateWithWhereUniqueWithoutSHOPInput[]
-  updateMany?: Prisma.WAREHOUSEUpdateManyWithWhereWithoutSHOPInput | Prisma.WAREHOUSEUpdateManyWithWhereWithoutSHOPInput[]
-  deleteMany?: Prisma.WAREHOUSEScalarWhereInput | Prisma.WAREHOUSEScalarWhereInput[]
+export type WarehouseUncheckedUpdateManyWithoutShopNestedInput = {
+  create?: Prisma.XOR<Prisma.WarehouseCreateWithoutShopInput, Prisma.WarehouseUncheckedCreateWithoutShopInput> | Prisma.WarehouseCreateWithoutShopInput[] | Prisma.WarehouseUncheckedCreateWithoutShopInput[]
+  connectOrCreate?: Prisma.WarehouseCreateOrConnectWithoutShopInput | Prisma.WarehouseCreateOrConnectWithoutShopInput[]
+  upsert?: Prisma.WarehouseUpsertWithWhereUniqueWithoutShopInput | Prisma.WarehouseUpsertWithWhereUniqueWithoutShopInput[]
+  createMany?: Prisma.WarehouseCreateManyShopInputEnvelope
+  set?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
+  disconnect?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
+  delete?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
+  connect?: Prisma.WarehouseWhereUniqueInput | Prisma.WarehouseWhereUniqueInput[]
+  update?: Prisma.WarehouseUpdateWithWhereUniqueWithoutShopInput | Prisma.WarehouseUpdateWithWhereUniqueWithoutShopInput[]
+  updateMany?: Prisma.WarehouseUpdateManyWithWhereWithoutShopInput | Prisma.WarehouseUpdateManyWithWhereWithoutShopInput[]
+  deleteMany?: Prisma.WarehouseScalarWhereInput | Prisma.WarehouseScalarWhereInput[]
 }
 
-export type WAREHOUSECreateWithoutPIECEInput = {
+export type WarehouseCreateWithoutPieceInput = {
   quantity: number
   notes?: string | null
-  SHOP: Prisma.SHOPCreateNestedOneWithoutWAREHOUSEInput
+  shop: Prisma.ShopCreateNestedOneWithoutWarehouseInput
 }
 
-export type WAREHOUSEUncheckedCreateWithoutPIECEInput = {
-  shop_id: number
+export type WarehouseUncheckedCreateWithoutPieceInput = {
+  shopId: number
   quantity: number
   notes?: string | null
 }
 
-export type WAREHOUSECreateOrConnectWithoutPIECEInput = {
-  where: Prisma.WAREHOUSEWhereUniqueInput
-  create: Prisma.XOR<Prisma.WAREHOUSECreateWithoutPIECEInput, Prisma.WAREHOUSEUncheckedCreateWithoutPIECEInput>
+export type WarehouseCreateOrConnectWithoutPieceInput = {
+  where: Prisma.WarehouseWhereUniqueInput
+  create: Prisma.XOR<Prisma.WarehouseCreateWithoutPieceInput, Prisma.WarehouseUncheckedCreateWithoutPieceInput>
 }
 
-export type WAREHOUSECreateManyPIECEInputEnvelope = {
-  data: Prisma.WAREHOUSECreateManyPIECEInput | Prisma.WAREHOUSECreateManyPIECEInput[]
+export type WarehouseCreateManyPieceInputEnvelope = {
+  data: Prisma.WarehouseCreateManyPieceInput | Prisma.WarehouseCreateManyPieceInput[]
   skipDuplicates?: boolean
 }
 
-export type WAREHOUSEUpsertWithWhereUniqueWithoutPIECEInput = {
-  where: Prisma.WAREHOUSEWhereUniqueInput
-  update: Prisma.XOR<Prisma.WAREHOUSEUpdateWithoutPIECEInput, Prisma.WAREHOUSEUncheckedUpdateWithoutPIECEInput>
-  create: Prisma.XOR<Prisma.WAREHOUSECreateWithoutPIECEInput, Prisma.WAREHOUSEUncheckedCreateWithoutPIECEInput>
+export type WarehouseUpsertWithWhereUniqueWithoutPieceInput = {
+  where: Prisma.WarehouseWhereUniqueInput
+  update: Prisma.XOR<Prisma.WarehouseUpdateWithoutPieceInput, Prisma.WarehouseUncheckedUpdateWithoutPieceInput>
+  create: Prisma.XOR<Prisma.WarehouseCreateWithoutPieceInput, Prisma.WarehouseUncheckedCreateWithoutPieceInput>
 }
 
-export type WAREHOUSEUpdateWithWhereUniqueWithoutPIECEInput = {
-  where: Prisma.WAREHOUSEWhereUniqueInput
-  data: Prisma.XOR<Prisma.WAREHOUSEUpdateWithoutPIECEInput, Prisma.WAREHOUSEUncheckedUpdateWithoutPIECEInput>
+export type WarehouseUpdateWithWhereUniqueWithoutPieceInput = {
+  where: Prisma.WarehouseWhereUniqueInput
+  data: Prisma.XOR<Prisma.WarehouseUpdateWithoutPieceInput, Prisma.WarehouseUncheckedUpdateWithoutPieceInput>
 }
 
-export type WAREHOUSEUpdateManyWithWhereWithoutPIECEInput = {
-  where: Prisma.WAREHOUSEScalarWhereInput
-  data: Prisma.XOR<Prisma.WAREHOUSEUpdateManyMutationInput, Prisma.WAREHOUSEUncheckedUpdateManyWithoutPIECEInput>
+export type WarehouseUpdateManyWithWhereWithoutPieceInput = {
+  where: Prisma.WarehouseScalarWhereInput
+  data: Prisma.XOR<Prisma.WarehouseUpdateManyMutationInput, Prisma.WarehouseUncheckedUpdateManyWithoutPieceInput>
 }
 
-export type WAREHOUSEScalarWhereInput = {
-  AND?: Prisma.WAREHOUSEScalarWhereInput | Prisma.WAREHOUSEScalarWhereInput[]
-  OR?: Prisma.WAREHOUSEScalarWhereInput[]
-  NOT?: Prisma.WAREHOUSEScalarWhereInput | Prisma.WAREHOUSEScalarWhereInput[]
-  shop_id?: Prisma.IntFilter<"WAREHOUSE"> | number
-  piece_id?: Prisma.IntFilter<"WAREHOUSE"> | number
-  quantity?: Prisma.IntFilter<"WAREHOUSE"> | number
-  notes?: Prisma.StringNullableFilter<"WAREHOUSE"> | string | null
+export type WarehouseScalarWhereInput = {
+  AND?: Prisma.WarehouseScalarWhereInput | Prisma.WarehouseScalarWhereInput[]
+  OR?: Prisma.WarehouseScalarWhereInput[]
+  NOT?: Prisma.WarehouseScalarWhereInput | Prisma.WarehouseScalarWhereInput[]
+  shopId?: Prisma.IntFilter<"Warehouse"> | number
+  pieceId?: Prisma.IntFilter<"Warehouse"> | number
+  quantity?: Prisma.IntFilter<"Warehouse"> | number
+  notes?: Prisma.StringNullableFilter<"Warehouse"> | string | null
 }
 
-export type WAREHOUSECreateWithoutSHOPInput = {
+export type WarehouseCreateWithoutShopInput = {
   quantity: number
   notes?: string | null
-  PIECE: Prisma.PIECECreateNestedOneWithoutWAREHOUSEInput
+  piece: Prisma.PieceCreateNestedOneWithoutWarehouseInput
 }
 
-export type WAREHOUSEUncheckedCreateWithoutSHOPInput = {
-  piece_id: number
+export type WarehouseUncheckedCreateWithoutShopInput = {
+  pieceId: number
   quantity: number
   notes?: string | null
 }
 
-export type WAREHOUSECreateOrConnectWithoutSHOPInput = {
-  where: Prisma.WAREHOUSEWhereUniqueInput
-  create: Prisma.XOR<Prisma.WAREHOUSECreateWithoutSHOPInput, Prisma.WAREHOUSEUncheckedCreateWithoutSHOPInput>
+export type WarehouseCreateOrConnectWithoutShopInput = {
+  where: Prisma.WarehouseWhereUniqueInput
+  create: Prisma.XOR<Prisma.WarehouseCreateWithoutShopInput, Prisma.WarehouseUncheckedCreateWithoutShopInput>
 }
 
-export type WAREHOUSECreateManySHOPInputEnvelope = {
-  data: Prisma.WAREHOUSECreateManySHOPInput | Prisma.WAREHOUSECreateManySHOPInput[]
+export type WarehouseCreateManyShopInputEnvelope = {
+  data: Prisma.WarehouseCreateManyShopInput | Prisma.WarehouseCreateManyShopInput[]
   skipDuplicates?: boolean
 }
 
-export type WAREHOUSEUpsertWithWhereUniqueWithoutSHOPInput = {
-  where: Prisma.WAREHOUSEWhereUniqueInput
-  update: Prisma.XOR<Prisma.WAREHOUSEUpdateWithoutSHOPInput, Prisma.WAREHOUSEUncheckedUpdateWithoutSHOPInput>
-  create: Prisma.XOR<Prisma.WAREHOUSECreateWithoutSHOPInput, Prisma.WAREHOUSEUncheckedCreateWithoutSHOPInput>
+export type WarehouseUpsertWithWhereUniqueWithoutShopInput = {
+  where: Prisma.WarehouseWhereUniqueInput
+  update: Prisma.XOR<Prisma.WarehouseUpdateWithoutShopInput, Prisma.WarehouseUncheckedUpdateWithoutShopInput>
+  create: Prisma.XOR<Prisma.WarehouseCreateWithoutShopInput, Prisma.WarehouseUncheckedCreateWithoutShopInput>
 }
 
-export type WAREHOUSEUpdateWithWhereUniqueWithoutSHOPInput = {
-  where: Prisma.WAREHOUSEWhereUniqueInput
-  data: Prisma.XOR<Prisma.WAREHOUSEUpdateWithoutSHOPInput, Prisma.WAREHOUSEUncheckedUpdateWithoutSHOPInput>
+export type WarehouseUpdateWithWhereUniqueWithoutShopInput = {
+  where: Prisma.WarehouseWhereUniqueInput
+  data: Prisma.XOR<Prisma.WarehouseUpdateWithoutShopInput, Prisma.WarehouseUncheckedUpdateWithoutShopInput>
 }
 
-export type WAREHOUSEUpdateManyWithWhereWithoutSHOPInput = {
-  where: Prisma.WAREHOUSEScalarWhereInput
-  data: Prisma.XOR<Prisma.WAREHOUSEUpdateManyMutationInput, Prisma.WAREHOUSEUncheckedUpdateManyWithoutSHOPInput>
+export type WarehouseUpdateManyWithWhereWithoutShopInput = {
+  where: Prisma.WarehouseScalarWhereInput
+  data: Prisma.XOR<Prisma.WarehouseUpdateManyMutationInput, Prisma.WarehouseUncheckedUpdateManyWithoutShopInput>
 }
 
-export type WAREHOUSECreateManyPIECEInput = {
-  shop_id: number
+export type WarehouseCreateManyPieceInput = {
+  shopId: number
   quantity: number
   notes?: string | null
 }
 
-export type WAREHOUSEUpdateWithoutPIECEInput = {
+export type WarehouseUpdateWithoutPieceInput = {
   quantity?: Prisma.IntFieldUpdateOperationsInput | number
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  SHOP?: Prisma.SHOPUpdateOneRequiredWithoutWAREHOUSENestedInput
+  shop?: Prisma.ShopUpdateOneRequiredWithoutWarehouseNestedInput
 }
 
-export type WAREHOUSEUncheckedUpdateWithoutPIECEInput = {
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
-  quantity?: Prisma.IntFieldUpdateOperationsInput | number
-  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-}
-
-export type WAREHOUSEUncheckedUpdateManyWithoutPIECEInput = {
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type WarehouseUncheckedUpdateWithoutPieceInput = {
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   quantity?: Prisma.IntFieldUpdateOperationsInput | number
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
-export type WAREHOUSECreateManySHOPInput = {
-  piece_id: number
+export type WarehouseUncheckedUpdateManyWithoutPieceInput = {
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+export type WarehouseCreateManyShopInput = {
+  pieceId: number
   quantity: number
   notes?: string | null
 }
 
-export type WAREHOUSEUpdateWithoutSHOPInput = {
+export type WarehouseUpdateWithoutShopInput = {
   quantity?: Prisma.IntFieldUpdateOperationsInput | number
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  PIECE?: Prisma.PIECEUpdateOneRequiredWithoutWAREHOUSENestedInput
+  piece?: Prisma.PieceUpdateOneRequiredWithoutWarehouseNestedInput
 }
 
-export type WAREHOUSEUncheckedUpdateWithoutSHOPInput = {
-  piece_id?: Prisma.IntFieldUpdateOperationsInput | number
-  quantity?: Prisma.IntFieldUpdateOperationsInput | number
-  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-}
-
-export type WAREHOUSEUncheckedUpdateManyWithoutSHOPInput = {
-  piece_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type WarehouseUncheckedUpdateWithoutShopInput = {
+  pieceId?: Prisma.IntFieldUpdateOperationsInput | number
   quantity?: Prisma.IntFieldUpdateOperationsInput | number
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
+export type WarehouseUncheckedUpdateManyWithoutShopInput = {
+  pieceId?: Prisma.IntFieldUpdateOperationsInput | number
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
 
 
-export type WAREHOUSESelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-  shop_id?: boolean
-  piece_id?: boolean
+
+export type WarehouseSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  shopId?: boolean
+  pieceId?: boolean
   quantity?: boolean
   notes?: boolean
-  SHOP?: boolean | Prisma.SHOPDefaultArgs<ExtArgs>
-  PIECE?: boolean | Prisma.PIECEDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["wAREHOUSE"]>
+  shop?: boolean | Prisma.ShopDefaultArgs<ExtArgs>
+  piece?: boolean | Prisma.PieceDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["warehouse"]>
 
 
 
-export type WAREHOUSESelectScalar = {
-  shop_id?: boolean
-  piece_id?: boolean
+export type WarehouseSelectScalar = {
+  shopId?: boolean
+  pieceId?: boolean
   quantity?: boolean
   notes?: boolean
 }
 
-export type WAREHOUSEOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"shop_id" | "piece_id" | "quantity" | "notes", ExtArgs["result"]["wAREHOUSE"]>
-export type WAREHOUSEInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  SHOP?: boolean | Prisma.SHOPDefaultArgs<ExtArgs>
-  PIECE?: boolean | Prisma.PIECEDefaultArgs<ExtArgs>
+export type WarehouseOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"shopId" | "pieceId" | "quantity" | "notes", ExtArgs["result"]["warehouse"]>
+export type WarehouseInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  shop?: boolean | Prisma.ShopDefaultArgs<ExtArgs>
+  piece?: boolean | Prisma.PieceDefaultArgs<ExtArgs>
 }
 
-export type $WAREHOUSEPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "WAREHOUSE"
+export type $WarehousePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "Warehouse"
   objects: {
-    SHOP: Prisma.$SHOPPayload<ExtArgs>
-    PIECE: Prisma.$PIECEPayload<ExtArgs>
+    shop: Prisma.$ShopPayload<ExtArgs>
+    piece: Prisma.$PiecePayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
-    shop_id: number
-    piece_id: number
+    shopId: number
+    pieceId: number
     quantity: number
     notes: string | null
-  }, ExtArgs["result"]["wAREHOUSE"]>
+  }, ExtArgs["result"]["warehouse"]>
   composites: {}
 }
 
-export type WAREHOUSEGetPayload<S extends boolean | null | undefined | WAREHOUSEDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$WAREHOUSEPayload, S>
+export type WarehouseGetPayload<S extends boolean | null | undefined | WarehouseDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$WarehousePayload, S>
 
-export type WAREHOUSECountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<WAREHOUSEFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: WAREHOUSECountAggregateInputType | true
+export type WarehouseCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<WarehouseFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: WarehouseCountAggregateInputType | true
   }
 
-export interface WAREHOUSEDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['WAREHOUSE'], meta: { name: 'WAREHOUSE' } }
+export interface WarehouseDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Warehouse'], meta: { name: 'Warehouse' } }
   /**
-   * Find zero or one WAREHOUSE that matches the filter.
-   * @param {WAREHOUSEFindUniqueArgs} args - Arguments to find a WAREHOUSE
+   * Find zero or one Warehouse that matches the filter.
+   * @param {WarehouseFindUniqueArgs} args - Arguments to find a Warehouse
    * @example
-   * // Get one WAREHOUSE
-   * const wAREHOUSE = await prisma.wAREHOUSE.findUnique({
+   * // Get one Warehouse
+   * const warehouse = await prisma.warehouse.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends WAREHOUSEFindUniqueArgs>(args: Prisma.SelectSubset<T, WAREHOUSEFindUniqueArgs<ExtArgs>>): Prisma.Prisma__WAREHOUSEClient<runtime.Types.Result.GetResult<Prisma.$WAREHOUSEPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends WarehouseFindUniqueArgs>(args: Prisma.SelectSubset<T, WarehouseFindUniqueArgs<ExtArgs>>): Prisma.Prisma__WarehouseClient<runtime.Types.Result.GetResult<Prisma.$WarehousePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one WAREHOUSE that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Warehouse that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {WAREHOUSEFindUniqueOrThrowArgs} args - Arguments to find a WAREHOUSE
+   * @param {WarehouseFindUniqueOrThrowArgs} args - Arguments to find a Warehouse
    * @example
-   * // Get one WAREHOUSE
-   * const wAREHOUSE = await prisma.wAREHOUSE.findUniqueOrThrow({
+   * // Get one Warehouse
+   * const warehouse = await prisma.warehouse.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends WAREHOUSEFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, WAREHOUSEFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__WAREHOUSEClient<runtime.Types.Result.GetResult<Prisma.$WAREHOUSEPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends WarehouseFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, WarehouseFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__WarehouseClient<runtime.Types.Result.GetResult<Prisma.$WarehousePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first WAREHOUSE that matches the filter.
+   * Find the first Warehouse that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {WAREHOUSEFindFirstArgs} args - Arguments to find a WAREHOUSE
+   * @param {WarehouseFindFirstArgs} args - Arguments to find a Warehouse
    * @example
-   * // Get one WAREHOUSE
-   * const wAREHOUSE = await prisma.wAREHOUSE.findFirst({
+   * // Get one Warehouse
+   * const warehouse = await prisma.warehouse.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends WAREHOUSEFindFirstArgs>(args?: Prisma.SelectSubset<T, WAREHOUSEFindFirstArgs<ExtArgs>>): Prisma.Prisma__WAREHOUSEClient<runtime.Types.Result.GetResult<Prisma.$WAREHOUSEPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends WarehouseFindFirstArgs>(args?: Prisma.SelectSubset<T, WarehouseFindFirstArgs<ExtArgs>>): Prisma.Prisma__WarehouseClient<runtime.Types.Result.GetResult<Prisma.$WarehousePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first WAREHOUSE that matches the filter or
+   * Find the first Warehouse that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {WAREHOUSEFindFirstOrThrowArgs} args - Arguments to find a WAREHOUSE
+   * @param {WarehouseFindFirstOrThrowArgs} args - Arguments to find a Warehouse
    * @example
-   * // Get one WAREHOUSE
-   * const wAREHOUSE = await prisma.wAREHOUSE.findFirstOrThrow({
+   * // Get one Warehouse
+   * const warehouse = await prisma.warehouse.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends WAREHOUSEFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, WAREHOUSEFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__WAREHOUSEClient<runtime.Types.Result.GetResult<Prisma.$WAREHOUSEPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends WarehouseFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, WarehouseFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__WarehouseClient<runtime.Types.Result.GetResult<Prisma.$WarehousePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more WAREHOUSES that matches the filter.
+   * Find zero or more Warehouses that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {WAREHOUSEFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {WarehouseFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all WAREHOUSES
-   * const wAREHOUSES = await prisma.wAREHOUSE.findMany()
+   * // Get all Warehouses
+   * const warehouses = await prisma.warehouse.findMany()
    * 
-   * // Get first 10 WAREHOUSES
-   * const wAREHOUSES = await prisma.wAREHOUSE.findMany({ take: 10 })
+   * // Get first 10 Warehouses
+   * const warehouses = await prisma.warehouse.findMany({ take: 10 })
    * 
-   * // Only select the `shop_id`
-   * const wAREHOUSEWithShop_idOnly = await prisma.wAREHOUSE.findMany({ select: { shop_id: true } })
+   * // Only select the `shopId`
+   * const warehouseWithShopIdOnly = await prisma.warehouse.findMany({ select: { shopId: true } })
    * 
    */
-  findMany<T extends WAREHOUSEFindManyArgs>(args?: Prisma.SelectSubset<T, WAREHOUSEFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WAREHOUSEPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends WarehouseFindManyArgs>(args?: Prisma.SelectSubset<T, WarehouseFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WarehousePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a WAREHOUSE.
-   * @param {WAREHOUSECreateArgs} args - Arguments to create a WAREHOUSE.
+   * Create a Warehouse.
+   * @param {WarehouseCreateArgs} args - Arguments to create a Warehouse.
    * @example
-   * // Create one WAREHOUSE
-   * const WAREHOUSE = await prisma.wAREHOUSE.create({
+   * // Create one Warehouse
+   * const Warehouse = await prisma.warehouse.create({
    *   data: {
-   *     // ... data to create a WAREHOUSE
+   *     // ... data to create a Warehouse
    *   }
    * })
    * 
    */
-  create<T extends WAREHOUSECreateArgs>(args: Prisma.SelectSubset<T, WAREHOUSECreateArgs<ExtArgs>>): Prisma.Prisma__WAREHOUSEClient<runtime.Types.Result.GetResult<Prisma.$WAREHOUSEPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends WarehouseCreateArgs>(args: Prisma.SelectSubset<T, WarehouseCreateArgs<ExtArgs>>): Prisma.Prisma__WarehouseClient<runtime.Types.Result.GetResult<Prisma.$WarehousePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many WAREHOUSES.
-   * @param {WAREHOUSECreateManyArgs} args - Arguments to create many WAREHOUSES.
+   * Create many Warehouses.
+   * @param {WarehouseCreateManyArgs} args - Arguments to create many Warehouses.
    * @example
-   * // Create many WAREHOUSES
-   * const wAREHOUSE = await prisma.wAREHOUSE.createMany({
+   * // Create many Warehouses
+   * const warehouse = await prisma.warehouse.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends WAREHOUSECreateManyArgs>(args?: Prisma.SelectSubset<T, WAREHOUSECreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends WarehouseCreateManyArgs>(args?: Prisma.SelectSubset<T, WarehouseCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a WAREHOUSE.
-   * @param {WAREHOUSEDeleteArgs} args - Arguments to delete one WAREHOUSE.
+   * Delete a Warehouse.
+   * @param {WarehouseDeleteArgs} args - Arguments to delete one Warehouse.
    * @example
-   * // Delete one WAREHOUSE
-   * const WAREHOUSE = await prisma.wAREHOUSE.delete({
+   * // Delete one Warehouse
+   * const Warehouse = await prisma.warehouse.delete({
    *   where: {
-   *     // ... filter to delete one WAREHOUSE
+   *     // ... filter to delete one Warehouse
    *   }
    * })
    * 
    */
-  delete<T extends WAREHOUSEDeleteArgs>(args: Prisma.SelectSubset<T, WAREHOUSEDeleteArgs<ExtArgs>>): Prisma.Prisma__WAREHOUSEClient<runtime.Types.Result.GetResult<Prisma.$WAREHOUSEPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends WarehouseDeleteArgs>(args: Prisma.SelectSubset<T, WarehouseDeleteArgs<ExtArgs>>): Prisma.Prisma__WarehouseClient<runtime.Types.Result.GetResult<Prisma.$WarehousePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one WAREHOUSE.
-   * @param {WAREHOUSEUpdateArgs} args - Arguments to update one WAREHOUSE.
+   * Update one Warehouse.
+   * @param {WarehouseUpdateArgs} args - Arguments to update one Warehouse.
    * @example
-   * // Update one WAREHOUSE
-   * const wAREHOUSE = await prisma.wAREHOUSE.update({
+   * // Update one Warehouse
+   * const warehouse = await prisma.warehouse.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -767,30 +767,30 @@ export interface WAREHOUSEDelegate<ExtArgs extends runtime.Types.Extensions.Inte
    * })
    * 
    */
-  update<T extends WAREHOUSEUpdateArgs>(args: Prisma.SelectSubset<T, WAREHOUSEUpdateArgs<ExtArgs>>): Prisma.Prisma__WAREHOUSEClient<runtime.Types.Result.GetResult<Prisma.$WAREHOUSEPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends WarehouseUpdateArgs>(args: Prisma.SelectSubset<T, WarehouseUpdateArgs<ExtArgs>>): Prisma.Prisma__WarehouseClient<runtime.Types.Result.GetResult<Prisma.$WarehousePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more WAREHOUSES.
-   * @param {WAREHOUSEDeleteManyArgs} args - Arguments to filter WAREHOUSES to delete.
+   * Delete zero or more Warehouses.
+   * @param {WarehouseDeleteManyArgs} args - Arguments to filter Warehouses to delete.
    * @example
-   * // Delete a few WAREHOUSES
-   * const { count } = await prisma.wAREHOUSE.deleteMany({
+   * // Delete a few Warehouses
+   * const { count } = await prisma.warehouse.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends WAREHOUSEDeleteManyArgs>(args?: Prisma.SelectSubset<T, WAREHOUSEDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends WarehouseDeleteManyArgs>(args?: Prisma.SelectSubset<T, WarehouseDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more WAREHOUSES.
+   * Update zero or more Warehouses.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {WAREHOUSEUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {WarehouseUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many WAREHOUSES
-   * const wAREHOUSE = await prisma.wAREHOUSE.updateMany({
+   * // Update many Warehouses
+   * const warehouse = await prisma.warehouse.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -800,56 +800,56 @@ export interface WAREHOUSEDelegate<ExtArgs extends runtime.Types.Extensions.Inte
    * })
    * 
    */
-  updateMany<T extends WAREHOUSEUpdateManyArgs>(args: Prisma.SelectSubset<T, WAREHOUSEUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends WarehouseUpdateManyArgs>(args: Prisma.SelectSubset<T, WarehouseUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one WAREHOUSE.
-   * @param {WAREHOUSEUpsertArgs} args - Arguments to update or create a WAREHOUSE.
+   * Create or update one Warehouse.
+   * @param {WarehouseUpsertArgs} args - Arguments to update or create a Warehouse.
    * @example
-   * // Update or create a WAREHOUSE
-   * const wAREHOUSE = await prisma.wAREHOUSE.upsert({
+   * // Update or create a Warehouse
+   * const warehouse = await prisma.warehouse.upsert({
    *   create: {
-   *     // ... data to create a WAREHOUSE
+   *     // ... data to create a Warehouse
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the WAREHOUSE we want to update
+   *     // ... the filter for the Warehouse we want to update
    *   }
    * })
    */
-  upsert<T extends WAREHOUSEUpsertArgs>(args: Prisma.SelectSubset<T, WAREHOUSEUpsertArgs<ExtArgs>>): Prisma.Prisma__WAREHOUSEClient<runtime.Types.Result.GetResult<Prisma.$WAREHOUSEPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends WarehouseUpsertArgs>(args: Prisma.SelectSubset<T, WarehouseUpsertArgs<ExtArgs>>): Prisma.Prisma__WarehouseClient<runtime.Types.Result.GetResult<Prisma.$WarehousePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of WAREHOUSES.
+   * Count the number of Warehouses.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {WAREHOUSECountArgs} args - Arguments to filter WAREHOUSES to count.
+   * @param {WarehouseCountArgs} args - Arguments to filter Warehouses to count.
    * @example
-   * // Count the number of WAREHOUSES
-   * const count = await prisma.wAREHOUSE.count({
+   * // Count the number of Warehouses
+   * const count = await prisma.warehouse.count({
    *   where: {
-   *     // ... the filter for the WAREHOUSES we want to count
+   *     // ... the filter for the Warehouses we want to count
    *   }
    * })
   **/
-  count<T extends WAREHOUSECountArgs>(
-    args?: Prisma.Subset<T, WAREHOUSECountArgs>,
+  count<T extends WarehouseCountArgs>(
+    args?: Prisma.Subset<T, WarehouseCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], WAREHOUSECountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], WarehouseCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a WAREHOUSE.
+   * Allows you to perform aggregations operations on a Warehouse.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {WAREHOUSEAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {WarehouseAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -869,13 +869,13 @@ export interface WAREHOUSEDelegate<ExtArgs extends runtime.Types.Extensions.Inte
    *   take: 10,
    * })
   **/
-  aggregate<T extends WAREHOUSEAggregateArgs>(args: Prisma.Subset<T, WAREHOUSEAggregateArgs>): Prisma.PrismaPromise<GetWAREHOUSEAggregateType<T>>
+  aggregate<T extends WarehouseAggregateArgs>(args: Prisma.Subset<T, WarehouseAggregateArgs>): Prisma.PrismaPromise<GetWarehouseAggregateType<T>>
 
   /**
-   * Group by WAREHOUSE.
+   * Group by Warehouse.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {WAREHOUSEGroupByArgs} args - Group by arguments.
+   * @param {WarehouseGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -890,14 +890,14 @@ export interface WAREHOUSEDelegate<ExtArgs extends runtime.Types.Extensions.Inte
    * 
   **/
   groupBy<
-    T extends WAREHOUSEGroupByArgs,
+    T extends WarehouseGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: WAREHOUSEGroupByArgs['orderBy'] }
-      : { orderBy?: WAREHOUSEGroupByArgs['orderBy'] },
+      ? { orderBy: WarehouseGroupByArgs['orderBy'] }
+      : { orderBy?: WarehouseGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -946,23 +946,23 @@ export interface WAREHOUSEDelegate<ExtArgs extends runtime.Types.Extensions.Inte
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, WAREHOUSEGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetWAREHOUSEGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, WarehouseGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetWarehouseGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the WAREHOUSE model
+ * Fields of the Warehouse model
  */
-readonly fields: WAREHOUSEFieldRefs;
+readonly fields: WarehouseFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for WAREHOUSE.
+ * The delegate class that acts as a "Promise-like" for Warehouse.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__WAREHOUSEClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__WarehouseClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  SHOP<T extends Prisma.SHOPDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.SHOPDefaultArgs<ExtArgs>>): Prisma.Prisma__SHOPClient<runtime.Types.Result.GetResult<Prisma.$SHOPPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  PIECE<T extends Prisma.PIECEDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PIECEDefaultArgs<ExtArgs>>): Prisma.Prisma__PIECEClient<runtime.Types.Result.GetResult<Prisma.$PIECEPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  shop<T extends Prisma.ShopDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ShopDefaultArgs<ExtArgs>>): Prisma.Prisma__ShopClient<runtime.Types.Result.GetResult<Prisma.$ShopPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  piece<T extends Prisma.PieceDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PieceDefaultArgs<ExtArgs>>): Prisma.Prisma__PieceClient<runtime.Types.Result.GetResult<Prisma.$PiecePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -989,374 +989,374 @@ export interface Prisma__WAREHOUSEClient<T, Null = never, ExtArgs extends runtim
 
 
 /**
- * Fields of the WAREHOUSE model
+ * Fields of the Warehouse model
  */
-export interface WAREHOUSEFieldRefs {
-  readonly shop_id: Prisma.FieldRef<"WAREHOUSE", 'Int'>
-  readonly piece_id: Prisma.FieldRef<"WAREHOUSE", 'Int'>
-  readonly quantity: Prisma.FieldRef<"WAREHOUSE", 'Int'>
-  readonly notes: Prisma.FieldRef<"WAREHOUSE", 'String'>
+export interface WarehouseFieldRefs {
+  readonly shopId: Prisma.FieldRef<"Warehouse", 'Int'>
+  readonly pieceId: Prisma.FieldRef<"Warehouse", 'Int'>
+  readonly quantity: Prisma.FieldRef<"Warehouse", 'Int'>
+  readonly notes: Prisma.FieldRef<"Warehouse", 'String'>
 }
     
 
 // Custom InputTypes
 /**
- * WAREHOUSE findUnique
+ * Warehouse findUnique
  */
-export type WAREHOUSEFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the WAREHOUSE
+   * Select specific fields to fetch from the Warehouse
    */
-  select?: Prisma.WAREHOUSESelect<ExtArgs> | null
+  select?: Prisma.WarehouseSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the WAREHOUSE
+   * Omit specific fields from the Warehouse
    */
-  omit?: Prisma.WAREHOUSEOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.WAREHOUSEInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInclude<ExtArgs> | null
   /**
-   * Filter, which WAREHOUSE to fetch.
+   * Filter, which Warehouse to fetch.
    */
-  where: Prisma.WAREHOUSEWhereUniqueInput
+  where: Prisma.WarehouseWhereUniqueInput
 }
 
 /**
- * WAREHOUSE findUniqueOrThrow
+ * Warehouse findUniqueOrThrow
  */
-export type WAREHOUSEFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the WAREHOUSE
+   * Select specific fields to fetch from the Warehouse
    */
-  select?: Prisma.WAREHOUSESelect<ExtArgs> | null
+  select?: Prisma.WarehouseSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the WAREHOUSE
+   * Omit specific fields from the Warehouse
    */
-  omit?: Prisma.WAREHOUSEOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.WAREHOUSEInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInclude<ExtArgs> | null
   /**
-   * Filter, which WAREHOUSE to fetch.
+   * Filter, which Warehouse to fetch.
    */
-  where: Prisma.WAREHOUSEWhereUniqueInput
+  where: Prisma.WarehouseWhereUniqueInput
 }
 
 /**
- * WAREHOUSE findFirst
+ * Warehouse findFirst
  */
-export type WAREHOUSEFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the WAREHOUSE
+   * Select specific fields to fetch from the Warehouse
    */
-  select?: Prisma.WAREHOUSESelect<ExtArgs> | null
+  select?: Prisma.WarehouseSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the WAREHOUSE
+   * Omit specific fields from the Warehouse
    */
-  omit?: Prisma.WAREHOUSEOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.WAREHOUSEInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInclude<ExtArgs> | null
   /**
-   * Filter, which WAREHOUSE to fetch.
+   * Filter, which Warehouse to fetch.
    */
-  where?: Prisma.WAREHOUSEWhereInput
+  where?: Prisma.WarehouseWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of WAREHOUSES to fetch.
+   * Determine the order of Warehouses to fetch.
    */
-  orderBy?: Prisma.WAREHOUSEOrderByWithRelationInput | Prisma.WAREHOUSEOrderByWithRelationInput[]
+  orderBy?: Prisma.WarehouseOrderByWithRelationInput | Prisma.WarehouseOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for WAREHOUSES.
+   * Sets the position for searching for Warehouses.
    */
-  cursor?: Prisma.WAREHOUSEWhereUniqueInput
+  cursor?: Prisma.WarehouseWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` WAREHOUSES from the position of the cursor.
+   * Take `±n` Warehouses from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` WAREHOUSES.
+   * Skip the first `n` Warehouses.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of WAREHOUSES.
+   * Filter by unique combinations of Warehouses.
    */
-  distinct?: Prisma.WAREHOUSEScalarFieldEnum | Prisma.WAREHOUSEScalarFieldEnum[]
+  distinct?: Prisma.WarehouseScalarFieldEnum | Prisma.WarehouseScalarFieldEnum[]
 }
 
 /**
- * WAREHOUSE findFirstOrThrow
+ * Warehouse findFirstOrThrow
  */
-export type WAREHOUSEFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the WAREHOUSE
+   * Select specific fields to fetch from the Warehouse
    */
-  select?: Prisma.WAREHOUSESelect<ExtArgs> | null
+  select?: Prisma.WarehouseSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the WAREHOUSE
+   * Omit specific fields from the Warehouse
    */
-  omit?: Prisma.WAREHOUSEOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.WAREHOUSEInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInclude<ExtArgs> | null
   /**
-   * Filter, which WAREHOUSE to fetch.
+   * Filter, which Warehouse to fetch.
    */
-  where?: Prisma.WAREHOUSEWhereInput
+  where?: Prisma.WarehouseWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of WAREHOUSES to fetch.
+   * Determine the order of Warehouses to fetch.
    */
-  orderBy?: Prisma.WAREHOUSEOrderByWithRelationInput | Prisma.WAREHOUSEOrderByWithRelationInput[]
+  orderBy?: Prisma.WarehouseOrderByWithRelationInput | Prisma.WarehouseOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for WAREHOUSES.
+   * Sets the position for searching for Warehouses.
    */
-  cursor?: Prisma.WAREHOUSEWhereUniqueInput
+  cursor?: Prisma.WarehouseWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` WAREHOUSES from the position of the cursor.
+   * Take `±n` Warehouses from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` WAREHOUSES.
+   * Skip the first `n` Warehouses.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of WAREHOUSES.
+   * Filter by unique combinations of Warehouses.
    */
-  distinct?: Prisma.WAREHOUSEScalarFieldEnum | Prisma.WAREHOUSEScalarFieldEnum[]
+  distinct?: Prisma.WarehouseScalarFieldEnum | Prisma.WarehouseScalarFieldEnum[]
 }
 
 /**
- * WAREHOUSE findMany
+ * Warehouse findMany
  */
-export type WAREHOUSEFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the WAREHOUSE
+   * Select specific fields to fetch from the Warehouse
    */
-  select?: Prisma.WAREHOUSESelect<ExtArgs> | null
+  select?: Prisma.WarehouseSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the WAREHOUSE
+   * Omit specific fields from the Warehouse
    */
-  omit?: Prisma.WAREHOUSEOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.WAREHOUSEInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInclude<ExtArgs> | null
   /**
-   * Filter, which WAREHOUSES to fetch.
+   * Filter, which Warehouses to fetch.
    */
-  where?: Prisma.WAREHOUSEWhereInput
+  where?: Prisma.WarehouseWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of WAREHOUSES to fetch.
+   * Determine the order of Warehouses to fetch.
    */
-  orderBy?: Prisma.WAREHOUSEOrderByWithRelationInput | Prisma.WAREHOUSEOrderByWithRelationInput[]
+  orderBy?: Prisma.WarehouseOrderByWithRelationInput | Prisma.WarehouseOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing WAREHOUSES.
+   * Sets the position for listing Warehouses.
    */
-  cursor?: Prisma.WAREHOUSEWhereUniqueInput
+  cursor?: Prisma.WarehouseWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` WAREHOUSES from the position of the cursor.
+   * Take `±n` Warehouses from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` WAREHOUSES.
+   * Skip the first `n` Warehouses.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of WAREHOUSES.
+   * Filter by unique combinations of Warehouses.
    */
-  distinct?: Prisma.WAREHOUSEScalarFieldEnum | Prisma.WAREHOUSEScalarFieldEnum[]
+  distinct?: Prisma.WarehouseScalarFieldEnum | Prisma.WarehouseScalarFieldEnum[]
 }
 
 /**
- * WAREHOUSE create
+ * Warehouse create
  */
-export type WAREHOUSECreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the WAREHOUSE
+   * Select specific fields to fetch from the Warehouse
    */
-  select?: Prisma.WAREHOUSESelect<ExtArgs> | null
+  select?: Prisma.WarehouseSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the WAREHOUSE
+   * Omit specific fields from the Warehouse
    */
-  omit?: Prisma.WAREHOUSEOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.WAREHOUSEInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInclude<ExtArgs> | null
   /**
-   * The data needed to create a WAREHOUSE.
+   * The data needed to create a Warehouse.
    */
-  data: Prisma.XOR<Prisma.WAREHOUSECreateInput, Prisma.WAREHOUSEUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.WarehouseCreateInput, Prisma.WarehouseUncheckedCreateInput>
 }
 
 /**
- * WAREHOUSE createMany
+ * Warehouse createMany
  */
-export type WAREHOUSECreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many WAREHOUSES.
+   * The data used to create many Warehouses.
    */
-  data: Prisma.WAREHOUSECreateManyInput | Prisma.WAREHOUSECreateManyInput[]
+  data: Prisma.WarehouseCreateManyInput | Prisma.WarehouseCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * WAREHOUSE update
+ * Warehouse update
  */
-export type WAREHOUSEUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the WAREHOUSE
+   * Select specific fields to fetch from the Warehouse
    */
-  select?: Prisma.WAREHOUSESelect<ExtArgs> | null
+  select?: Prisma.WarehouseSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the WAREHOUSE
+   * Omit specific fields from the Warehouse
    */
-  omit?: Prisma.WAREHOUSEOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.WAREHOUSEInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInclude<ExtArgs> | null
   /**
-   * The data needed to update a WAREHOUSE.
+   * The data needed to update a Warehouse.
    */
-  data: Prisma.XOR<Prisma.WAREHOUSEUpdateInput, Prisma.WAREHOUSEUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.WarehouseUpdateInput, Prisma.WarehouseUncheckedUpdateInput>
   /**
-   * Choose, which WAREHOUSE to update.
+   * Choose, which Warehouse to update.
    */
-  where: Prisma.WAREHOUSEWhereUniqueInput
+  where: Prisma.WarehouseWhereUniqueInput
 }
 
 /**
- * WAREHOUSE updateMany
+ * Warehouse updateMany
  */
-export type WAREHOUSEUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update WAREHOUSES.
+   * The data used to update Warehouses.
    */
-  data: Prisma.XOR<Prisma.WAREHOUSEUpdateManyMutationInput, Prisma.WAREHOUSEUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.WarehouseUpdateManyMutationInput, Prisma.WarehouseUncheckedUpdateManyInput>
   /**
-   * Filter which WAREHOUSES to update
+   * Filter which Warehouses to update
    */
-  where?: Prisma.WAREHOUSEWhereInput
+  where?: Prisma.WarehouseWhereInput
   /**
-   * Limit how many WAREHOUSES to update.
+   * Limit how many Warehouses to update.
    */
   limit?: number
 }
 
 /**
- * WAREHOUSE upsert
+ * Warehouse upsert
  */
-export type WAREHOUSEUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the WAREHOUSE
+   * Select specific fields to fetch from the Warehouse
    */
-  select?: Prisma.WAREHOUSESelect<ExtArgs> | null
+  select?: Prisma.WarehouseSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the WAREHOUSE
+   * Omit specific fields from the Warehouse
    */
-  omit?: Prisma.WAREHOUSEOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.WAREHOUSEInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInclude<ExtArgs> | null
   /**
-   * The filter to search for the WAREHOUSE to update in case it exists.
+   * The filter to search for the Warehouse to update in case it exists.
    */
-  where: Prisma.WAREHOUSEWhereUniqueInput
+  where: Prisma.WarehouseWhereUniqueInput
   /**
-   * In case the WAREHOUSE found by the `where` argument doesn't exist, create a new WAREHOUSE with this data.
+   * In case the Warehouse found by the `where` argument doesn't exist, create a new Warehouse with this data.
    */
-  create: Prisma.XOR<Prisma.WAREHOUSECreateInput, Prisma.WAREHOUSEUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.WarehouseCreateInput, Prisma.WarehouseUncheckedCreateInput>
   /**
-   * In case the WAREHOUSE was found with the provided `where` argument, update it with this data.
+   * In case the Warehouse was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.WAREHOUSEUpdateInput, Prisma.WAREHOUSEUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.WarehouseUpdateInput, Prisma.WarehouseUncheckedUpdateInput>
 }
 
 /**
- * WAREHOUSE delete
+ * Warehouse delete
  */
-export type WAREHOUSEDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the WAREHOUSE
+   * Select specific fields to fetch from the Warehouse
    */
-  select?: Prisma.WAREHOUSESelect<ExtArgs> | null
+  select?: Prisma.WarehouseSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the WAREHOUSE
+   * Omit specific fields from the Warehouse
    */
-  omit?: Prisma.WAREHOUSEOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.WAREHOUSEInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInclude<ExtArgs> | null
   /**
-   * Filter which WAREHOUSE to delete.
+   * Filter which Warehouse to delete.
    */
-  where: Prisma.WAREHOUSEWhereUniqueInput
+  where: Prisma.WarehouseWhereUniqueInput
 }
 
 /**
- * WAREHOUSE deleteMany
+ * Warehouse deleteMany
  */
-export type WAREHOUSEDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which WAREHOUSES to delete
+   * Filter which Warehouses to delete
    */
-  where?: Prisma.WAREHOUSEWhereInput
+  where?: Prisma.WarehouseWhereInput
   /**
-   * Limit how many WAREHOUSES to delete.
+   * Limit how many Warehouses to delete.
    */
   limit?: number
 }
 
 /**
- * WAREHOUSE without action
+ * Warehouse without action
  */
-export type WAREHOUSEDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the WAREHOUSE
+   * Select specific fields to fetch from the Warehouse
    */
-  select?: Prisma.WAREHOUSESelect<ExtArgs> | null
+  select?: Prisma.WarehouseSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the WAREHOUSE
+   * Omit specific fields from the Warehouse
    */
-  omit?: Prisma.WAREHOUSEOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.WAREHOUSEInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInclude<ExtArgs> | null
 }

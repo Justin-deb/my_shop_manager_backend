@@ -51,23 +51,23 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  INVOICE: 'INVOICE',
-  LABOR: 'LABOR',
-  PAYMENT: 'PAYMENT',
-  PAYMENT_METHOD: 'PAYMENT_METHOD',
-  PIECE: 'PIECE',
-  POSITION: 'POSITION',
-  PRODUCT: 'PRODUCT',
-  PRODUCT_TYPE: 'PRODUCT_TYPE',
-  REPAIR: 'REPAIR',
-  REPAIR_ASSIGNMENT: 'REPAIR_ASSIGNMENT',
-  REPAIR_PART: 'REPAIR_PART',
-  ROLE: 'ROLE',
-  SHOP: 'SHOP',
-  SHOP_USER: 'SHOP_USER',
-  STATUS: 'STATUS',
-  USER: 'USER',
-  WAREHOUSE: 'WAREHOUSE'
+  Invoice: 'Invoice',
+  Labor: 'Labor',
+  Payment: 'Payment',
+  PaymentMethod: 'PaymentMethod',
+  Piece: 'Piece',
+  Position: 'Position',
+  Product: 'Product',
+  ProductType: 'ProductType',
+  Repair: 'Repair',
+  RepairAssignment: 'RepairAssignment',
+  RepairPart: 'RepairPart',
+  Role: 'Role',
+  Shop: 'Shop',
+  ShopUser: 'ShopUser',
+  Status: 'Status',
+  User: 'User',
+  Warehouse: 'Warehouse'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -86,188 +86,188 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-export const INVOICEScalarFieldEnum = {
-  invoice_id: 'invoice_id',
-  repair_id: 'repair_id',
-  issue_date: 'issue_date',
+export const InvoiceScalarFieldEnum = {
+  invoiceId: 'invoiceId',
+  repairId: 'repairId',
+  issueDate: 'issueDate',
   subtotal: 'subtotal',
   tax: 'tax',
   discount: 'discount',
   total: 'total'
 } as const
 
-export type INVOICEScalarFieldEnum = (typeof INVOICEScalarFieldEnum)[keyof typeof INVOICEScalarFieldEnum]
+export type InvoiceScalarFieldEnum = (typeof InvoiceScalarFieldEnum)[keyof typeof InvoiceScalarFieldEnum]
 
 
-export const LABORScalarFieldEnum = {
-  labor_id: 'labor_id',
-  repair_id: 'repair_id',
+export const LaborScalarFieldEnum = {
+  laborId: 'laborId',
+  repairId: 'repairId',
   description: 'description',
   hours: 'hours',
-  hourly_rate: 'hourly_rate',
-  performed_at: 'performed_at'
+  hourlyRate: 'hourlyRate',
+  performedAt: 'performedAt'
 } as const
 
-export type LABORScalarFieldEnum = (typeof LABORScalarFieldEnum)[keyof typeof LABORScalarFieldEnum]
+export type LaborScalarFieldEnum = (typeof LaborScalarFieldEnum)[keyof typeof LaborScalarFieldEnum]
 
 
-export const PAYMENTScalarFieldEnum = {
-  payment_id: 'payment_id',
-  invoice_id: 'invoice_id',
-  payment_date: 'payment_date',
+export const PaymentScalarFieldEnum = {
+  paymentId: 'paymentId',
+  invoiceId: 'invoiceId',
+  paymentDate: 'paymentDate',
   amount: 'amount',
-  payment_method_id: 'payment_method_id',
+  paymentMethodId: 'paymentMethodId',
   reference: 'reference'
 } as const
 
-export type PAYMENTScalarFieldEnum = (typeof PAYMENTScalarFieldEnum)[keyof typeof PAYMENTScalarFieldEnum]
+export type PaymentScalarFieldEnum = (typeof PaymentScalarFieldEnum)[keyof typeof PaymentScalarFieldEnum]
 
 
-export const PAYMENT_METHODScalarFieldEnum = {
-  payment_method_id: 'payment_method_id',
+export const PaymentMethodScalarFieldEnum = {
+  paymentMethodId: 'paymentMethodId',
   name: 'name'
 } as const
 
-export type PAYMENT_METHODScalarFieldEnum = (typeof PAYMENT_METHODScalarFieldEnum)[keyof typeof PAYMENT_METHODScalarFieldEnum]
+export type PaymentMethodScalarFieldEnum = (typeof PaymentMethodScalarFieldEnum)[keyof typeof PaymentMethodScalarFieldEnum]
 
 
-export const PIECEScalarFieldEnum = {
-  piece_id: 'piece_id',
+export const PieceScalarFieldEnum = {
+  pieceId: 'pieceId',
   name: 'name',
   details: 'details'
 } as const
 
-export type PIECEScalarFieldEnum = (typeof PIECEScalarFieldEnum)[keyof typeof PIECEScalarFieldEnum]
+export type PieceScalarFieldEnum = (typeof PieceScalarFieldEnum)[keyof typeof PieceScalarFieldEnum]
 
 
-export const POSITIONScalarFieldEnum = {
-  position_id: 'position_id',
+export const PositionScalarFieldEnum = {
+  positionId: 'positionId',
   name: 'name'
 } as const
 
-export type POSITIONScalarFieldEnum = (typeof POSITIONScalarFieldEnum)[keyof typeof POSITIONScalarFieldEnum]
+export type PositionScalarFieldEnum = (typeof PositionScalarFieldEnum)[keyof typeof PositionScalarFieldEnum]
 
 
-export const PRODUCTScalarFieldEnum = {
-  product_id: 'product_id',
-  owner_id: 'owner_id',
-  type_id: 'type_id',
+export const ProductScalarFieldEnum = {
+  productId: 'productId',
+  ownerId: 'ownerId',
+  typeId: 'typeId',
   manufacturer: 'manufacturer',
   model: 'model',
-  production_year: 'production_year',
-  serial_number: 'serial_number',
+  productionYear: 'productionYear',
+  serialNumber: 'serialNumber',
   name: 'name'
 } as const
 
-export type PRODUCTScalarFieldEnum = (typeof PRODUCTScalarFieldEnum)[keyof typeof PRODUCTScalarFieldEnum]
+export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
 
 
-export const PRODUCT_TYPEScalarFieldEnum = {
-  type_id: 'type_id',
+export const ProductTypeScalarFieldEnum = {
+  typeId: 'typeId',
   name: 'name'
 } as const
 
-export type PRODUCT_TYPEScalarFieldEnum = (typeof PRODUCT_TYPEScalarFieldEnum)[keyof typeof PRODUCT_TYPEScalarFieldEnum]
+export type ProductTypeScalarFieldEnum = (typeof ProductTypeScalarFieldEnum)[keyof typeof ProductTypeScalarFieldEnum]
 
 
-export const REPAIRScalarFieldEnum = {
-  repair_id: 'repair_id',
-  product_id: 'product_id',
-  shop_id: 'shop_id',
-  status_id: 'status_id',
-  estimated_hours: 'estimated_hours',
-  worked_hours: 'worked_hours',
-  received_date: 'received_date',
-  finish_date: 'finish_date',
-  return_date: 'return_date',
+export const RepairScalarFieldEnum = {
+  repairId: 'repairId',
+  productId: 'productId',
+  shopId: 'shopId',
+  statusId: 'statusId',
+  estimatedHours: 'estimatedHours',
+  workedHours: 'workedHours',
+  receivedDate: 'receivedDate',
+  finishDate: 'finishDate',
+  returnDate: 'returnDate',
   notes: 'notes',
-  problem_description: 'problem_description'
+  problemDescription: 'problemDescription'
 } as const
 
-export type REPAIRScalarFieldEnum = (typeof REPAIRScalarFieldEnum)[keyof typeof REPAIRScalarFieldEnum]
+export type RepairScalarFieldEnum = (typeof RepairScalarFieldEnum)[keyof typeof RepairScalarFieldEnum]
 
 
-export const REPAIR_ASSIGNMENTScalarFieldEnum = {
-  repair_id: 'repair_id',
-  user_id: 'user_id',
-  assigned_at: 'assigned_at',
-  completed_at: 'completed_at'
+export const RepairAssignmentScalarFieldEnum = {
+  repairId: 'repairId',
+  userId: 'userId',
+  assignedAt: 'assignedAt',
+  completedAt: 'completedAt'
 } as const
 
-export type REPAIR_ASSIGNMENTScalarFieldEnum = (typeof REPAIR_ASSIGNMENTScalarFieldEnum)[keyof typeof REPAIR_ASSIGNMENTScalarFieldEnum]
+export type RepairAssignmentScalarFieldEnum = (typeof RepairAssignmentScalarFieldEnum)[keyof typeof RepairAssignmentScalarFieldEnum]
 
 
-export const REPAIR_PARTScalarFieldEnum = {
-  repair_id: 'repair_id',
-  piece_id: 'piece_id',
+export const RepairPartScalarFieldEnum = {
+  repairId: 'repairId',
+  pieceId: 'pieceId',
   quantity: 'quantity',
-  unit_price: 'unit_price',
-  added_at: 'added_at'
+  unitPrice: 'unitPrice',
+  addedAt: 'addedAt'
 } as const
 
-export type REPAIR_PARTScalarFieldEnum = (typeof REPAIR_PARTScalarFieldEnum)[keyof typeof REPAIR_PARTScalarFieldEnum]
+export type RepairPartScalarFieldEnum = (typeof RepairPartScalarFieldEnum)[keyof typeof RepairPartScalarFieldEnum]
 
 
-export const ROLEScalarFieldEnum = {
-  role_id: 'role_id',
+export const RoleScalarFieldEnum = {
+  roleId: 'roleId',
   name: 'name'
 } as const
 
-export type ROLEScalarFieldEnum = (typeof ROLEScalarFieldEnum)[keyof typeof ROLEScalarFieldEnum]
+export type RoleScalarFieldEnum = (typeof RoleScalarFieldEnum)[keyof typeof RoleScalarFieldEnum]
 
 
-export const SHOPScalarFieldEnum = {
-  shop_id: 'shop_id',
+export const ShopScalarFieldEnum = {
+  shopId: 'shopId',
   name: 'name',
   address: 'address',
-  phone_number: 'phone_number',
+  phoneNumber: 'phoneNumber',
   email: 'email',
-  photo_url: 'photo_url'
+  photoUrl: 'photoUrl'
 } as const
 
-export type SHOPScalarFieldEnum = (typeof SHOPScalarFieldEnum)[keyof typeof SHOPScalarFieldEnum]
+export type ShopScalarFieldEnum = (typeof ShopScalarFieldEnum)[keyof typeof ShopScalarFieldEnum]
 
 
-export const SHOP_USERScalarFieldEnum = {
-  shop_id: 'shop_id',
-  user_id: 'user_id',
-  position_id: 'position_id'
+export const ShopUserScalarFieldEnum = {
+  shopId: 'shopId',
+  userId: 'userId',
+  positionId: 'positionId'
 } as const
 
-export type SHOP_USERScalarFieldEnum = (typeof SHOP_USERScalarFieldEnum)[keyof typeof SHOP_USERScalarFieldEnum]
+export type ShopUserScalarFieldEnum = (typeof ShopUserScalarFieldEnum)[keyof typeof ShopUserScalarFieldEnum]
 
 
-export const STATUSScalarFieldEnum = {
-  status_id: 'status_id',
+export const StatusScalarFieldEnum = {
+  statusId: 'statusId',
   name: 'name'
 } as const
 
-export type STATUSScalarFieldEnum = (typeof STATUSScalarFieldEnum)[keyof typeof STATUSScalarFieldEnum]
+export type StatusScalarFieldEnum = (typeof StatusScalarFieldEnum)[keyof typeof StatusScalarFieldEnum]
 
 
-export const USERScalarFieldEnum = {
-  user_id: 'user_id',
-  role_id: 'role_id',
-  first_name: 'first_name',
-  middle_name: 'middle_name',
-  last_name: 'last_name',
-  second_last_name: 'second_last_name',
+export const UserScalarFieldEnum = {
+  userId: 'userId',
+  roleId: 'roleId',
+  firstName: 'firstName',
+  middleName: 'middleName',
+  lastName: 'lastName',
+  secondLastName: 'secondLastName',
   email: 'email',
-  password_hash: 'password_hash',
-  phone_number: 'phone_number'
+  passwordHash: 'passwordHash',
+  phoneNumber: 'phoneNumber'
 } as const
 
-export type USERScalarFieldEnum = (typeof USERScalarFieldEnum)[keyof typeof USERScalarFieldEnum]
+export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
-export const WAREHOUSEScalarFieldEnum = {
-  shop_id: 'shop_id',
-  piece_id: 'piece_id',
+export const WarehouseScalarFieldEnum = {
+  shopId: 'shopId',
+  pieceId: 'pieceId',
   quantity: 'quantity',
   notes: 'notes'
 } as const
 
-export type WAREHOUSEScalarFieldEnum = (typeof WAREHOUSEScalarFieldEnum)[keyof typeof WAREHOUSEScalarFieldEnum]
+export type WarehouseScalarFieldEnum = (typeof WarehouseScalarFieldEnum)[keyof typeof WarehouseScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -286,108 +286,108 @@ export const NullsOrder = {
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
-export const LABOROrderByRelevanceFieldEnum = {
+export const LaborOrderByRelevanceFieldEnum = {
   description: 'description'
 } as const
 
-export type LABOROrderByRelevanceFieldEnum = (typeof LABOROrderByRelevanceFieldEnum)[keyof typeof LABOROrderByRelevanceFieldEnum]
+export type LaborOrderByRelevanceFieldEnum = (typeof LaborOrderByRelevanceFieldEnum)[keyof typeof LaborOrderByRelevanceFieldEnum]
 
 
-export const PAYMENTOrderByRelevanceFieldEnum = {
+export const PaymentOrderByRelevanceFieldEnum = {
   reference: 'reference'
 } as const
 
-export type PAYMENTOrderByRelevanceFieldEnum = (typeof PAYMENTOrderByRelevanceFieldEnum)[keyof typeof PAYMENTOrderByRelevanceFieldEnum]
+export type PaymentOrderByRelevanceFieldEnum = (typeof PaymentOrderByRelevanceFieldEnum)[keyof typeof PaymentOrderByRelevanceFieldEnum]
 
 
-export const PAYMENT_METHODOrderByRelevanceFieldEnum = {
+export const PaymentMethodOrderByRelevanceFieldEnum = {
   name: 'name'
 } as const
 
-export type PAYMENT_METHODOrderByRelevanceFieldEnum = (typeof PAYMENT_METHODOrderByRelevanceFieldEnum)[keyof typeof PAYMENT_METHODOrderByRelevanceFieldEnum]
+export type PaymentMethodOrderByRelevanceFieldEnum = (typeof PaymentMethodOrderByRelevanceFieldEnum)[keyof typeof PaymentMethodOrderByRelevanceFieldEnum]
 
 
-export const PIECEOrderByRelevanceFieldEnum = {
+export const PieceOrderByRelevanceFieldEnum = {
   name: 'name',
   details: 'details'
 } as const
 
-export type PIECEOrderByRelevanceFieldEnum = (typeof PIECEOrderByRelevanceFieldEnum)[keyof typeof PIECEOrderByRelevanceFieldEnum]
+export type PieceOrderByRelevanceFieldEnum = (typeof PieceOrderByRelevanceFieldEnum)[keyof typeof PieceOrderByRelevanceFieldEnum]
 
 
-export const POSITIONOrderByRelevanceFieldEnum = {
+export const PositionOrderByRelevanceFieldEnum = {
   name: 'name'
 } as const
 
-export type POSITIONOrderByRelevanceFieldEnum = (typeof POSITIONOrderByRelevanceFieldEnum)[keyof typeof POSITIONOrderByRelevanceFieldEnum]
+export type PositionOrderByRelevanceFieldEnum = (typeof PositionOrderByRelevanceFieldEnum)[keyof typeof PositionOrderByRelevanceFieldEnum]
 
 
-export const PRODUCTOrderByRelevanceFieldEnum = {
+export const ProductOrderByRelevanceFieldEnum = {
   manufacturer: 'manufacturer',
   model: 'model',
-  serial_number: 'serial_number',
+  serialNumber: 'serialNumber',
   name: 'name'
 } as const
 
-export type PRODUCTOrderByRelevanceFieldEnum = (typeof PRODUCTOrderByRelevanceFieldEnum)[keyof typeof PRODUCTOrderByRelevanceFieldEnum]
+export type ProductOrderByRelevanceFieldEnum = (typeof ProductOrderByRelevanceFieldEnum)[keyof typeof ProductOrderByRelevanceFieldEnum]
 
 
-export const PRODUCT_TYPEOrderByRelevanceFieldEnum = {
+export const ProductTypeOrderByRelevanceFieldEnum = {
   name: 'name'
 } as const
 
-export type PRODUCT_TYPEOrderByRelevanceFieldEnum = (typeof PRODUCT_TYPEOrderByRelevanceFieldEnum)[keyof typeof PRODUCT_TYPEOrderByRelevanceFieldEnum]
+export type ProductTypeOrderByRelevanceFieldEnum = (typeof ProductTypeOrderByRelevanceFieldEnum)[keyof typeof ProductTypeOrderByRelevanceFieldEnum]
 
 
-export const REPAIROrderByRelevanceFieldEnum = {
+export const RepairOrderByRelevanceFieldEnum = {
   notes: 'notes',
-  problem_description: 'problem_description'
+  problemDescription: 'problemDescription'
 } as const
 
-export type REPAIROrderByRelevanceFieldEnum = (typeof REPAIROrderByRelevanceFieldEnum)[keyof typeof REPAIROrderByRelevanceFieldEnum]
+export type RepairOrderByRelevanceFieldEnum = (typeof RepairOrderByRelevanceFieldEnum)[keyof typeof RepairOrderByRelevanceFieldEnum]
 
 
-export const ROLEOrderByRelevanceFieldEnum = {
+export const RoleOrderByRelevanceFieldEnum = {
   name: 'name'
 } as const
 
-export type ROLEOrderByRelevanceFieldEnum = (typeof ROLEOrderByRelevanceFieldEnum)[keyof typeof ROLEOrderByRelevanceFieldEnum]
+export type RoleOrderByRelevanceFieldEnum = (typeof RoleOrderByRelevanceFieldEnum)[keyof typeof RoleOrderByRelevanceFieldEnum]
 
 
-export const SHOPOrderByRelevanceFieldEnum = {
+export const ShopOrderByRelevanceFieldEnum = {
   name: 'name',
   address: 'address',
-  phone_number: 'phone_number',
+  phoneNumber: 'phoneNumber',
   email: 'email',
-  photo_url: 'photo_url'
+  photoUrl: 'photoUrl'
 } as const
 
-export type SHOPOrderByRelevanceFieldEnum = (typeof SHOPOrderByRelevanceFieldEnum)[keyof typeof SHOPOrderByRelevanceFieldEnum]
+export type ShopOrderByRelevanceFieldEnum = (typeof ShopOrderByRelevanceFieldEnum)[keyof typeof ShopOrderByRelevanceFieldEnum]
 
 
-export const STATUSOrderByRelevanceFieldEnum = {
+export const StatusOrderByRelevanceFieldEnum = {
   name: 'name'
 } as const
 
-export type STATUSOrderByRelevanceFieldEnum = (typeof STATUSOrderByRelevanceFieldEnum)[keyof typeof STATUSOrderByRelevanceFieldEnum]
+export type StatusOrderByRelevanceFieldEnum = (typeof StatusOrderByRelevanceFieldEnum)[keyof typeof StatusOrderByRelevanceFieldEnum]
 
 
-export const USEROrderByRelevanceFieldEnum = {
-  first_name: 'first_name',
-  middle_name: 'middle_name',
-  last_name: 'last_name',
-  second_last_name: 'second_last_name',
+export const UserOrderByRelevanceFieldEnum = {
+  firstName: 'firstName',
+  middleName: 'middleName',
+  lastName: 'lastName',
+  secondLastName: 'secondLastName',
   email: 'email',
-  password_hash: 'password_hash',
-  phone_number: 'phone_number'
+  passwordHash: 'passwordHash',
+  phoneNumber: 'phoneNumber'
 } as const
 
-export type USEROrderByRelevanceFieldEnum = (typeof USEROrderByRelevanceFieldEnum)[keyof typeof USEROrderByRelevanceFieldEnum]
+export type UserOrderByRelevanceFieldEnum = (typeof UserOrderByRelevanceFieldEnum)[keyof typeof UserOrderByRelevanceFieldEnum]
 
 
-export const WAREHOUSEOrderByRelevanceFieldEnum = {
+export const WarehouseOrderByRelevanceFieldEnum = {
   notes: 'notes'
 } as const
 
-export type WAREHOUSEOrderByRelevanceFieldEnum = (typeof WAREHOUSEOrderByRelevanceFieldEnum)[keyof typeof WAREHOUSEOrderByRelevanceFieldEnum]
+export type WarehouseOrderByRelevanceFieldEnum = (typeof WarehouseOrderByRelevanceFieldEnum)[keyof typeof WarehouseOrderByRelevanceFieldEnum]
 

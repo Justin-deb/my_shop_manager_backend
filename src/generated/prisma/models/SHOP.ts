@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `SHOP` model and its related types.
+ * This file exports the `Shop` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,851 +13,851 @@ import type * as $Enums from "../enums"
 import type * as Prisma from "../internal/prismaNamespace"
 
 /**
- * Model SHOP
+ * Model Shop
  * 
  */
-export type SHOPModel = runtime.Types.Result.DefaultSelection<Prisma.$SHOPPayload>
+export type ShopModel = runtime.Types.Result.DefaultSelection<Prisma.$ShopPayload>
 
-export type AggregateSHOP = {
-  _count: SHOPCountAggregateOutputType | null
-  _avg: SHOPAvgAggregateOutputType | null
-  _sum: SHOPSumAggregateOutputType | null
-  _min: SHOPMinAggregateOutputType | null
-  _max: SHOPMaxAggregateOutputType | null
+export type AggregateShop = {
+  _count: ShopCountAggregateOutputType | null
+  _avg: ShopAvgAggregateOutputType | null
+  _sum: ShopSumAggregateOutputType | null
+  _min: ShopMinAggregateOutputType | null
+  _max: ShopMaxAggregateOutputType | null
 }
 
-export type SHOPAvgAggregateOutputType = {
-  shop_id: number | null
+export type ShopAvgAggregateOutputType = {
+  shopId: number | null
 }
 
-export type SHOPSumAggregateOutputType = {
-  shop_id: number | null
+export type ShopSumAggregateOutputType = {
+  shopId: number | null
 }
 
-export type SHOPMinAggregateOutputType = {
-  shop_id: number | null
+export type ShopMinAggregateOutputType = {
+  shopId: number | null
   name: string | null
   address: string | null
-  phone_number: string | null
+  phoneNumber: string | null
   email: string | null
-  photo_url: string | null
+  photoUrl: string | null
 }
 
-export type SHOPMaxAggregateOutputType = {
-  shop_id: number | null
+export type ShopMaxAggregateOutputType = {
+  shopId: number | null
   name: string | null
   address: string | null
-  phone_number: string | null
+  phoneNumber: string | null
   email: string | null
-  photo_url: string | null
+  photoUrl: string | null
 }
 
-export type SHOPCountAggregateOutputType = {
-  shop_id: number
+export type ShopCountAggregateOutputType = {
+  shopId: number
   name: number
   address: number
-  phone_number: number
+  phoneNumber: number
   email: number
-  photo_url: number
+  photoUrl: number
   _all: number
 }
 
 
-export type SHOPAvgAggregateInputType = {
-  shop_id?: true
+export type ShopAvgAggregateInputType = {
+  shopId?: true
 }
 
-export type SHOPSumAggregateInputType = {
-  shop_id?: true
+export type ShopSumAggregateInputType = {
+  shopId?: true
 }
 
-export type SHOPMinAggregateInputType = {
-  shop_id?: true
+export type ShopMinAggregateInputType = {
+  shopId?: true
   name?: true
   address?: true
-  phone_number?: true
+  phoneNumber?: true
   email?: true
-  photo_url?: true
+  photoUrl?: true
 }
 
-export type SHOPMaxAggregateInputType = {
-  shop_id?: true
+export type ShopMaxAggregateInputType = {
+  shopId?: true
   name?: true
   address?: true
-  phone_number?: true
+  phoneNumber?: true
   email?: true
-  photo_url?: true
+  photoUrl?: true
 }
 
-export type SHOPCountAggregateInputType = {
-  shop_id?: true
+export type ShopCountAggregateInputType = {
+  shopId?: true
   name?: true
   address?: true
-  phone_number?: true
+  phoneNumber?: true
   email?: true
-  photo_url?: true
+  photoUrl?: true
   _all?: true
 }
 
-export type SHOPAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ShopAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which SHOP to aggregate.
+   * Filter which Shop to aggregate.
    */
-  where?: Prisma.SHOPWhereInput
+  where?: Prisma.ShopWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of SHOPS to fetch.
+   * Determine the order of Shops to fetch.
    */
-  orderBy?: Prisma.SHOPOrderByWithRelationInput | Prisma.SHOPOrderByWithRelationInput[]
+  orderBy?: Prisma.ShopOrderByWithRelationInput | Prisma.ShopOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.SHOPWhereUniqueInput
+  cursor?: Prisma.ShopWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` SHOPS from the position of the cursor.
+   * Take `±n` Shops from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` SHOPS.
+   * Skip the first `n` Shops.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned SHOPS
+   * Count returned Shops
   **/
-  _count?: true | SHOPCountAggregateInputType
+  _count?: true | ShopCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to average
   **/
-  _avg?: SHOPAvgAggregateInputType
+  _avg?: ShopAvgAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to sum
   **/
-  _sum?: SHOPSumAggregateInputType
+  _sum?: ShopSumAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: SHOPMinAggregateInputType
+  _min?: ShopMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: SHOPMaxAggregateInputType
+  _max?: ShopMaxAggregateInputType
 }
 
-export type GetSHOPAggregateType<T extends SHOPAggregateArgs> = {
-      [P in keyof T & keyof AggregateSHOP]: P extends '_count' | 'count'
+export type GetShopAggregateType<T extends ShopAggregateArgs> = {
+      [P in keyof T & keyof AggregateShop]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateSHOP[P]>
-    : Prisma.GetScalarType<T[P], AggregateSHOP[P]>
+      : Prisma.GetScalarType<T[P], AggregateShop[P]>
+    : Prisma.GetScalarType<T[P], AggregateShop[P]>
 }
 
 
 
 
-export type SHOPGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.SHOPWhereInput
-  orderBy?: Prisma.SHOPOrderByWithAggregationInput | Prisma.SHOPOrderByWithAggregationInput[]
-  by: Prisma.SHOPScalarFieldEnum[] | Prisma.SHOPScalarFieldEnum
-  having?: Prisma.SHOPScalarWhereWithAggregatesInput
+export type ShopGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ShopWhereInput
+  orderBy?: Prisma.ShopOrderByWithAggregationInput | Prisma.ShopOrderByWithAggregationInput[]
+  by: Prisma.ShopScalarFieldEnum[] | Prisma.ShopScalarFieldEnum
+  having?: Prisma.ShopScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: SHOPCountAggregateInputType | true
-  _avg?: SHOPAvgAggregateInputType
-  _sum?: SHOPSumAggregateInputType
-  _min?: SHOPMinAggregateInputType
-  _max?: SHOPMaxAggregateInputType
+  _count?: ShopCountAggregateInputType | true
+  _avg?: ShopAvgAggregateInputType
+  _sum?: ShopSumAggregateInputType
+  _min?: ShopMinAggregateInputType
+  _max?: ShopMaxAggregateInputType
 }
 
-export type SHOPGroupByOutputType = {
-  shop_id: number
+export type ShopGroupByOutputType = {
+  shopId: number
   name: string
   address: string | null
-  phone_number: string | null
+  phoneNumber: string | null
   email: string | null
-  photo_url: string | null
-  _count: SHOPCountAggregateOutputType | null
-  _avg: SHOPAvgAggregateOutputType | null
-  _sum: SHOPSumAggregateOutputType | null
-  _min: SHOPMinAggregateOutputType | null
-  _max: SHOPMaxAggregateOutputType | null
+  photoUrl: string | null
+  _count: ShopCountAggregateOutputType | null
+  _avg: ShopAvgAggregateOutputType | null
+  _sum: ShopSumAggregateOutputType | null
+  _min: ShopMinAggregateOutputType | null
+  _max: ShopMaxAggregateOutputType | null
 }
 
-export type GetSHOPGroupByPayload<T extends SHOPGroupByArgs> = Prisma.PrismaPromise<
+export type GetShopGroupByPayload<T extends ShopGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<SHOPGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<ShopGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof SHOPGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof ShopGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], SHOPGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], SHOPGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], ShopGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], ShopGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type SHOPWhereInput = {
-  AND?: Prisma.SHOPWhereInput | Prisma.SHOPWhereInput[]
-  OR?: Prisma.SHOPWhereInput[]
-  NOT?: Prisma.SHOPWhereInput | Prisma.SHOPWhereInput[]
-  shop_id?: Prisma.IntFilter<"SHOP"> | number
-  name?: Prisma.StringFilter<"SHOP"> | string
-  address?: Prisma.StringNullableFilter<"SHOP"> | string | null
-  phone_number?: Prisma.StringNullableFilter<"SHOP"> | string | null
-  email?: Prisma.StringNullableFilter<"SHOP"> | string | null
-  photo_url?: Prisma.StringNullableFilter<"SHOP"> | string | null
-  REPAIR?: Prisma.REPAIRListRelationFilter
-  SHOP_USER?: Prisma.SHOP_USERListRelationFilter
-  WAREHOUSE?: Prisma.WAREHOUSEListRelationFilter
+export type ShopWhereInput = {
+  AND?: Prisma.ShopWhereInput | Prisma.ShopWhereInput[]
+  OR?: Prisma.ShopWhereInput[]
+  NOT?: Prisma.ShopWhereInput | Prisma.ShopWhereInput[]
+  shopId?: Prisma.IntFilter<"Shop"> | number
+  name?: Prisma.StringFilter<"Shop"> | string
+  address?: Prisma.StringNullableFilter<"Shop"> | string | null
+  phoneNumber?: Prisma.StringNullableFilter<"Shop"> | string | null
+  email?: Prisma.StringNullableFilter<"Shop"> | string | null
+  photoUrl?: Prisma.StringNullableFilter<"Shop"> | string | null
+  repairs?: Prisma.RepairListRelationFilter
+  shopUsers?: Prisma.ShopUserListRelationFilter
+  warehouse?: Prisma.WarehouseListRelationFilter
 }
 
-export type SHOPOrderByWithRelationInput = {
-  shop_id?: Prisma.SortOrder
+export type ShopOrderByWithRelationInput = {
+  shopId?: Prisma.SortOrder
   name?: Prisma.SortOrder
   address?: Prisma.SortOrderInput | Prisma.SortOrder
-  phone_number?: Prisma.SortOrderInput | Prisma.SortOrder
+  phoneNumber?: Prisma.SortOrderInput | Prisma.SortOrder
   email?: Prisma.SortOrderInput | Prisma.SortOrder
-  photo_url?: Prisma.SortOrderInput | Prisma.SortOrder
-  REPAIR?: Prisma.REPAIROrderByRelationAggregateInput
-  SHOP_USER?: Prisma.SHOP_USEROrderByRelationAggregateInput
-  WAREHOUSE?: Prisma.WAREHOUSEOrderByRelationAggregateInput
-  _relevance?: Prisma.SHOPOrderByRelevanceInput
+  photoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  repairs?: Prisma.RepairOrderByRelationAggregateInput
+  shopUsers?: Prisma.ShopUserOrderByRelationAggregateInput
+  warehouse?: Prisma.WarehouseOrderByRelationAggregateInput
+  _relevance?: Prisma.ShopOrderByRelevanceInput
 }
 
-export type SHOPWhereUniqueInput = Prisma.AtLeast<{
-  shop_id?: number
+export type ShopWhereUniqueInput = Prisma.AtLeast<{
+  shopId?: number
   email?: string
-  AND?: Prisma.SHOPWhereInput | Prisma.SHOPWhereInput[]
-  OR?: Prisma.SHOPWhereInput[]
-  NOT?: Prisma.SHOPWhereInput | Prisma.SHOPWhereInput[]
-  name?: Prisma.StringFilter<"SHOP"> | string
-  address?: Prisma.StringNullableFilter<"SHOP"> | string | null
-  phone_number?: Prisma.StringNullableFilter<"SHOP"> | string | null
-  photo_url?: Prisma.StringNullableFilter<"SHOP"> | string | null
-  REPAIR?: Prisma.REPAIRListRelationFilter
-  SHOP_USER?: Prisma.SHOP_USERListRelationFilter
-  WAREHOUSE?: Prisma.WAREHOUSEListRelationFilter
-}, "shop_id" | "email">
+  AND?: Prisma.ShopWhereInput | Prisma.ShopWhereInput[]
+  OR?: Prisma.ShopWhereInput[]
+  NOT?: Prisma.ShopWhereInput | Prisma.ShopWhereInput[]
+  name?: Prisma.StringFilter<"Shop"> | string
+  address?: Prisma.StringNullableFilter<"Shop"> | string | null
+  phoneNumber?: Prisma.StringNullableFilter<"Shop"> | string | null
+  photoUrl?: Prisma.StringNullableFilter<"Shop"> | string | null
+  repairs?: Prisma.RepairListRelationFilter
+  shopUsers?: Prisma.ShopUserListRelationFilter
+  warehouse?: Prisma.WarehouseListRelationFilter
+}, "shopId" | "email">
 
-export type SHOPOrderByWithAggregationInput = {
-  shop_id?: Prisma.SortOrder
+export type ShopOrderByWithAggregationInput = {
+  shopId?: Prisma.SortOrder
   name?: Prisma.SortOrder
   address?: Prisma.SortOrderInput | Prisma.SortOrder
-  phone_number?: Prisma.SortOrderInput | Prisma.SortOrder
+  phoneNumber?: Prisma.SortOrderInput | Prisma.SortOrder
   email?: Prisma.SortOrderInput | Prisma.SortOrder
-  photo_url?: Prisma.SortOrderInput | Prisma.SortOrder
-  _count?: Prisma.SHOPCountOrderByAggregateInput
-  _avg?: Prisma.SHOPAvgOrderByAggregateInput
-  _max?: Prisma.SHOPMaxOrderByAggregateInput
-  _min?: Prisma.SHOPMinOrderByAggregateInput
-  _sum?: Prisma.SHOPSumOrderByAggregateInput
+  photoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  _count?: Prisma.ShopCountOrderByAggregateInput
+  _avg?: Prisma.ShopAvgOrderByAggregateInput
+  _max?: Prisma.ShopMaxOrderByAggregateInput
+  _min?: Prisma.ShopMinOrderByAggregateInput
+  _sum?: Prisma.ShopSumOrderByAggregateInput
 }
 
-export type SHOPScalarWhereWithAggregatesInput = {
-  AND?: Prisma.SHOPScalarWhereWithAggregatesInput | Prisma.SHOPScalarWhereWithAggregatesInput[]
-  OR?: Prisma.SHOPScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.SHOPScalarWhereWithAggregatesInput | Prisma.SHOPScalarWhereWithAggregatesInput[]
-  shop_id?: Prisma.IntWithAggregatesFilter<"SHOP"> | number
-  name?: Prisma.StringWithAggregatesFilter<"SHOP"> | string
-  address?: Prisma.StringNullableWithAggregatesFilter<"SHOP"> | string | null
-  phone_number?: Prisma.StringNullableWithAggregatesFilter<"SHOP"> | string | null
-  email?: Prisma.StringNullableWithAggregatesFilter<"SHOP"> | string | null
-  photo_url?: Prisma.StringNullableWithAggregatesFilter<"SHOP"> | string | null
+export type ShopScalarWhereWithAggregatesInput = {
+  AND?: Prisma.ShopScalarWhereWithAggregatesInput | Prisma.ShopScalarWhereWithAggregatesInput[]
+  OR?: Prisma.ShopScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.ShopScalarWhereWithAggregatesInput | Prisma.ShopScalarWhereWithAggregatesInput[]
+  shopId?: Prisma.IntWithAggregatesFilter<"Shop"> | number
+  name?: Prisma.StringWithAggregatesFilter<"Shop"> | string
+  address?: Prisma.StringNullableWithAggregatesFilter<"Shop"> | string | null
+  phoneNumber?: Prisma.StringNullableWithAggregatesFilter<"Shop"> | string | null
+  email?: Prisma.StringNullableWithAggregatesFilter<"Shop"> | string | null
+  photoUrl?: Prisma.StringNullableWithAggregatesFilter<"Shop"> | string | null
 }
 
-export type SHOPCreateInput = {
-  shop_id: number
+export type ShopCreateInput = {
+  shopId: number
   name: string
   address?: string | null
-  phone_number?: string | null
+  phoneNumber?: string | null
   email?: string | null
-  photo_url?: string | null
-  REPAIR?: Prisma.REPAIRCreateNestedManyWithoutSHOPInput
-  SHOP_USER?: Prisma.SHOP_USERCreateNestedManyWithoutSHOPInput
-  WAREHOUSE?: Prisma.WAREHOUSECreateNestedManyWithoutSHOPInput
+  photoUrl?: string | null
+  repairs?: Prisma.RepairCreateNestedManyWithoutShopInput
+  shopUsers?: Prisma.ShopUserCreateNestedManyWithoutShopInput
+  warehouse?: Prisma.WarehouseCreateNestedManyWithoutShopInput
 }
 
-export type SHOPUncheckedCreateInput = {
-  shop_id: number
+export type ShopUncheckedCreateInput = {
+  shopId: number
   name: string
   address?: string | null
-  phone_number?: string | null
+  phoneNumber?: string | null
   email?: string | null
-  photo_url?: string | null
-  REPAIR?: Prisma.REPAIRUncheckedCreateNestedManyWithoutSHOPInput
-  SHOP_USER?: Prisma.SHOP_USERUncheckedCreateNestedManyWithoutSHOPInput
-  WAREHOUSE?: Prisma.WAREHOUSEUncheckedCreateNestedManyWithoutSHOPInput
+  photoUrl?: string | null
+  repairs?: Prisma.RepairUncheckedCreateNestedManyWithoutShopInput
+  shopUsers?: Prisma.ShopUserUncheckedCreateNestedManyWithoutShopInput
+  warehouse?: Prisma.WarehouseUncheckedCreateNestedManyWithoutShopInput
 }
 
-export type SHOPUpdateInput = {
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type ShopUpdateInput = {
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photo_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  REPAIR?: Prisma.REPAIRUpdateManyWithoutSHOPNestedInput
-  SHOP_USER?: Prisma.SHOP_USERUpdateManyWithoutSHOPNestedInput
-  WAREHOUSE?: Prisma.WAREHOUSEUpdateManyWithoutSHOPNestedInput
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  repairs?: Prisma.RepairUpdateManyWithoutShopNestedInput
+  shopUsers?: Prisma.ShopUserUpdateManyWithoutShopNestedInput
+  warehouse?: Prisma.WarehouseUpdateManyWithoutShopNestedInput
 }
 
-export type SHOPUncheckedUpdateInput = {
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type ShopUncheckedUpdateInput = {
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photo_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  REPAIR?: Prisma.REPAIRUncheckedUpdateManyWithoutSHOPNestedInput
-  SHOP_USER?: Prisma.SHOP_USERUncheckedUpdateManyWithoutSHOPNestedInput
-  WAREHOUSE?: Prisma.WAREHOUSEUncheckedUpdateManyWithoutSHOPNestedInput
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  repairs?: Prisma.RepairUncheckedUpdateManyWithoutShopNestedInput
+  shopUsers?: Prisma.ShopUserUncheckedUpdateManyWithoutShopNestedInput
+  warehouse?: Prisma.WarehouseUncheckedUpdateManyWithoutShopNestedInput
 }
 
-export type SHOPCreateManyInput = {
-  shop_id: number
+export type ShopCreateManyInput = {
+  shopId: number
   name: string
   address?: string | null
-  phone_number?: string | null
+  phoneNumber?: string | null
   email?: string | null
-  photo_url?: string | null
+  photoUrl?: string | null
 }
 
-export type SHOPUpdateManyMutationInput = {
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type ShopUpdateManyMutationInput = {
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photo_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
-export type SHOPUncheckedUpdateManyInput = {
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type ShopUncheckedUpdateManyInput = {
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photo_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
-export type SHOPScalarRelationFilter = {
-  is?: Prisma.SHOPWhereInput
-  isNot?: Prisma.SHOPWhereInput
+export type ShopScalarRelationFilter = {
+  is?: Prisma.ShopWhereInput
+  isNot?: Prisma.ShopWhereInput
 }
 
-export type SHOPOrderByRelevanceInput = {
-  fields: Prisma.SHOPOrderByRelevanceFieldEnum | Prisma.SHOPOrderByRelevanceFieldEnum[]
+export type ShopOrderByRelevanceInput = {
+  fields: Prisma.ShopOrderByRelevanceFieldEnum | Prisma.ShopOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type SHOPCountOrderByAggregateInput = {
-  shop_id?: Prisma.SortOrder
+export type ShopCountOrderByAggregateInput = {
+  shopId?: Prisma.SortOrder
   name?: Prisma.SortOrder
   address?: Prisma.SortOrder
-  phone_number?: Prisma.SortOrder
+  phoneNumber?: Prisma.SortOrder
   email?: Prisma.SortOrder
-  photo_url?: Prisma.SortOrder
+  photoUrl?: Prisma.SortOrder
 }
 
-export type SHOPAvgOrderByAggregateInput = {
-  shop_id?: Prisma.SortOrder
+export type ShopAvgOrderByAggregateInput = {
+  shopId?: Prisma.SortOrder
 }
 
-export type SHOPMaxOrderByAggregateInput = {
-  shop_id?: Prisma.SortOrder
+export type ShopMaxOrderByAggregateInput = {
+  shopId?: Prisma.SortOrder
   name?: Prisma.SortOrder
   address?: Prisma.SortOrder
-  phone_number?: Prisma.SortOrder
+  phoneNumber?: Prisma.SortOrder
   email?: Prisma.SortOrder
-  photo_url?: Prisma.SortOrder
+  photoUrl?: Prisma.SortOrder
 }
 
-export type SHOPMinOrderByAggregateInput = {
-  shop_id?: Prisma.SortOrder
+export type ShopMinOrderByAggregateInput = {
+  shopId?: Prisma.SortOrder
   name?: Prisma.SortOrder
   address?: Prisma.SortOrder
-  phone_number?: Prisma.SortOrder
+  phoneNumber?: Prisma.SortOrder
   email?: Prisma.SortOrder
-  photo_url?: Prisma.SortOrder
+  photoUrl?: Prisma.SortOrder
 }
 
-export type SHOPSumOrderByAggregateInput = {
-  shop_id?: Prisma.SortOrder
+export type ShopSumOrderByAggregateInput = {
+  shopId?: Prisma.SortOrder
 }
 
-export type SHOPCreateNestedOneWithoutREPAIRInput = {
-  create?: Prisma.XOR<Prisma.SHOPCreateWithoutREPAIRInput, Prisma.SHOPUncheckedCreateWithoutREPAIRInput>
-  connectOrCreate?: Prisma.SHOPCreateOrConnectWithoutREPAIRInput
-  connect?: Prisma.SHOPWhereUniqueInput
+export type ShopCreateNestedOneWithoutRepairsInput = {
+  create?: Prisma.XOR<Prisma.ShopCreateWithoutRepairsInput, Prisma.ShopUncheckedCreateWithoutRepairsInput>
+  connectOrCreate?: Prisma.ShopCreateOrConnectWithoutRepairsInput
+  connect?: Prisma.ShopWhereUniqueInput
 }
 
-export type SHOPUpdateOneRequiredWithoutREPAIRNestedInput = {
-  create?: Prisma.XOR<Prisma.SHOPCreateWithoutREPAIRInput, Prisma.SHOPUncheckedCreateWithoutREPAIRInput>
-  connectOrCreate?: Prisma.SHOPCreateOrConnectWithoutREPAIRInput
-  upsert?: Prisma.SHOPUpsertWithoutREPAIRInput
-  connect?: Prisma.SHOPWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.SHOPUpdateToOneWithWhereWithoutREPAIRInput, Prisma.SHOPUpdateWithoutREPAIRInput>, Prisma.SHOPUncheckedUpdateWithoutREPAIRInput>
+export type ShopUpdateOneRequiredWithoutRepairsNestedInput = {
+  create?: Prisma.XOR<Prisma.ShopCreateWithoutRepairsInput, Prisma.ShopUncheckedCreateWithoutRepairsInput>
+  connectOrCreate?: Prisma.ShopCreateOrConnectWithoutRepairsInput
+  upsert?: Prisma.ShopUpsertWithoutRepairsInput
+  connect?: Prisma.ShopWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ShopUpdateToOneWithWhereWithoutRepairsInput, Prisma.ShopUpdateWithoutRepairsInput>, Prisma.ShopUncheckedUpdateWithoutRepairsInput>
 }
 
-export type SHOPCreateNestedOneWithoutSHOP_USERInput = {
-  create?: Prisma.XOR<Prisma.SHOPCreateWithoutSHOP_USERInput, Prisma.SHOPUncheckedCreateWithoutSHOP_USERInput>
-  connectOrCreate?: Prisma.SHOPCreateOrConnectWithoutSHOP_USERInput
-  connect?: Prisma.SHOPWhereUniqueInput
+export type ShopCreateNestedOneWithoutShopUsersInput = {
+  create?: Prisma.XOR<Prisma.ShopCreateWithoutShopUsersInput, Prisma.ShopUncheckedCreateWithoutShopUsersInput>
+  connectOrCreate?: Prisma.ShopCreateOrConnectWithoutShopUsersInput
+  connect?: Prisma.ShopWhereUniqueInput
 }
 
-export type SHOPUpdateOneRequiredWithoutSHOP_USERNestedInput = {
-  create?: Prisma.XOR<Prisma.SHOPCreateWithoutSHOP_USERInput, Prisma.SHOPUncheckedCreateWithoutSHOP_USERInput>
-  connectOrCreate?: Prisma.SHOPCreateOrConnectWithoutSHOP_USERInput
-  upsert?: Prisma.SHOPUpsertWithoutSHOP_USERInput
-  connect?: Prisma.SHOPWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.SHOPUpdateToOneWithWhereWithoutSHOP_USERInput, Prisma.SHOPUpdateWithoutSHOP_USERInput>, Prisma.SHOPUncheckedUpdateWithoutSHOP_USERInput>
+export type ShopUpdateOneRequiredWithoutShopUsersNestedInput = {
+  create?: Prisma.XOR<Prisma.ShopCreateWithoutShopUsersInput, Prisma.ShopUncheckedCreateWithoutShopUsersInput>
+  connectOrCreate?: Prisma.ShopCreateOrConnectWithoutShopUsersInput
+  upsert?: Prisma.ShopUpsertWithoutShopUsersInput
+  connect?: Prisma.ShopWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ShopUpdateToOneWithWhereWithoutShopUsersInput, Prisma.ShopUpdateWithoutShopUsersInput>, Prisma.ShopUncheckedUpdateWithoutShopUsersInput>
 }
 
-export type SHOPCreateNestedOneWithoutWAREHOUSEInput = {
-  create?: Prisma.XOR<Prisma.SHOPCreateWithoutWAREHOUSEInput, Prisma.SHOPUncheckedCreateWithoutWAREHOUSEInput>
-  connectOrCreate?: Prisma.SHOPCreateOrConnectWithoutWAREHOUSEInput
-  connect?: Prisma.SHOPWhereUniqueInput
+export type ShopCreateNestedOneWithoutWarehouseInput = {
+  create?: Prisma.XOR<Prisma.ShopCreateWithoutWarehouseInput, Prisma.ShopUncheckedCreateWithoutWarehouseInput>
+  connectOrCreate?: Prisma.ShopCreateOrConnectWithoutWarehouseInput
+  connect?: Prisma.ShopWhereUniqueInput
 }
 
-export type SHOPUpdateOneRequiredWithoutWAREHOUSENestedInput = {
-  create?: Prisma.XOR<Prisma.SHOPCreateWithoutWAREHOUSEInput, Prisma.SHOPUncheckedCreateWithoutWAREHOUSEInput>
-  connectOrCreate?: Prisma.SHOPCreateOrConnectWithoutWAREHOUSEInput
-  upsert?: Prisma.SHOPUpsertWithoutWAREHOUSEInput
-  connect?: Prisma.SHOPWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.SHOPUpdateToOneWithWhereWithoutWAREHOUSEInput, Prisma.SHOPUpdateWithoutWAREHOUSEInput>, Prisma.SHOPUncheckedUpdateWithoutWAREHOUSEInput>
+export type ShopUpdateOneRequiredWithoutWarehouseNestedInput = {
+  create?: Prisma.XOR<Prisma.ShopCreateWithoutWarehouseInput, Prisma.ShopUncheckedCreateWithoutWarehouseInput>
+  connectOrCreate?: Prisma.ShopCreateOrConnectWithoutWarehouseInput
+  upsert?: Prisma.ShopUpsertWithoutWarehouseInput
+  connect?: Prisma.ShopWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ShopUpdateToOneWithWhereWithoutWarehouseInput, Prisma.ShopUpdateWithoutWarehouseInput>, Prisma.ShopUncheckedUpdateWithoutWarehouseInput>
 }
 
-export type SHOPCreateWithoutREPAIRInput = {
-  shop_id: number
+export type ShopCreateWithoutRepairsInput = {
+  shopId: number
   name: string
   address?: string | null
-  phone_number?: string | null
+  phoneNumber?: string | null
   email?: string | null
-  photo_url?: string | null
-  SHOP_USER?: Prisma.SHOP_USERCreateNestedManyWithoutSHOPInput
-  WAREHOUSE?: Prisma.WAREHOUSECreateNestedManyWithoutSHOPInput
+  photoUrl?: string | null
+  shopUsers?: Prisma.ShopUserCreateNestedManyWithoutShopInput
+  warehouse?: Prisma.WarehouseCreateNestedManyWithoutShopInput
 }
 
-export type SHOPUncheckedCreateWithoutREPAIRInput = {
-  shop_id: number
+export type ShopUncheckedCreateWithoutRepairsInput = {
+  shopId: number
   name: string
   address?: string | null
-  phone_number?: string | null
+  phoneNumber?: string | null
   email?: string | null
-  photo_url?: string | null
-  SHOP_USER?: Prisma.SHOP_USERUncheckedCreateNestedManyWithoutSHOPInput
-  WAREHOUSE?: Prisma.WAREHOUSEUncheckedCreateNestedManyWithoutSHOPInput
+  photoUrl?: string | null
+  shopUsers?: Prisma.ShopUserUncheckedCreateNestedManyWithoutShopInput
+  warehouse?: Prisma.WarehouseUncheckedCreateNestedManyWithoutShopInput
 }
 
-export type SHOPCreateOrConnectWithoutREPAIRInput = {
-  where: Prisma.SHOPWhereUniqueInput
-  create: Prisma.XOR<Prisma.SHOPCreateWithoutREPAIRInput, Prisma.SHOPUncheckedCreateWithoutREPAIRInput>
+export type ShopCreateOrConnectWithoutRepairsInput = {
+  where: Prisma.ShopWhereUniqueInput
+  create: Prisma.XOR<Prisma.ShopCreateWithoutRepairsInput, Prisma.ShopUncheckedCreateWithoutRepairsInput>
 }
 
-export type SHOPUpsertWithoutREPAIRInput = {
-  update: Prisma.XOR<Prisma.SHOPUpdateWithoutREPAIRInput, Prisma.SHOPUncheckedUpdateWithoutREPAIRInput>
-  create: Prisma.XOR<Prisma.SHOPCreateWithoutREPAIRInput, Prisma.SHOPUncheckedCreateWithoutREPAIRInput>
-  where?: Prisma.SHOPWhereInput
+export type ShopUpsertWithoutRepairsInput = {
+  update: Prisma.XOR<Prisma.ShopUpdateWithoutRepairsInput, Prisma.ShopUncheckedUpdateWithoutRepairsInput>
+  create: Prisma.XOR<Prisma.ShopCreateWithoutRepairsInput, Prisma.ShopUncheckedCreateWithoutRepairsInput>
+  where?: Prisma.ShopWhereInput
 }
 
-export type SHOPUpdateToOneWithWhereWithoutREPAIRInput = {
-  where?: Prisma.SHOPWhereInput
-  data: Prisma.XOR<Prisma.SHOPUpdateWithoutREPAIRInput, Prisma.SHOPUncheckedUpdateWithoutREPAIRInput>
+export type ShopUpdateToOneWithWhereWithoutRepairsInput = {
+  where?: Prisma.ShopWhereInput
+  data: Prisma.XOR<Prisma.ShopUpdateWithoutRepairsInput, Prisma.ShopUncheckedUpdateWithoutRepairsInput>
 }
 
-export type SHOPUpdateWithoutREPAIRInput = {
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type ShopUpdateWithoutRepairsInput = {
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photo_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  SHOP_USER?: Prisma.SHOP_USERUpdateManyWithoutSHOPNestedInput
-  WAREHOUSE?: Prisma.WAREHOUSEUpdateManyWithoutSHOPNestedInput
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shopUsers?: Prisma.ShopUserUpdateManyWithoutShopNestedInput
+  warehouse?: Prisma.WarehouseUpdateManyWithoutShopNestedInput
 }
 
-export type SHOPUncheckedUpdateWithoutREPAIRInput = {
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type ShopUncheckedUpdateWithoutRepairsInput = {
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photo_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  SHOP_USER?: Prisma.SHOP_USERUncheckedUpdateManyWithoutSHOPNestedInput
-  WAREHOUSE?: Prisma.WAREHOUSEUncheckedUpdateManyWithoutSHOPNestedInput
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shopUsers?: Prisma.ShopUserUncheckedUpdateManyWithoutShopNestedInput
+  warehouse?: Prisma.WarehouseUncheckedUpdateManyWithoutShopNestedInput
 }
 
-export type SHOPCreateWithoutSHOP_USERInput = {
-  shop_id: number
+export type ShopCreateWithoutShopUsersInput = {
+  shopId: number
   name: string
   address?: string | null
-  phone_number?: string | null
+  phoneNumber?: string | null
   email?: string | null
-  photo_url?: string | null
-  REPAIR?: Prisma.REPAIRCreateNestedManyWithoutSHOPInput
-  WAREHOUSE?: Prisma.WAREHOUSECreateNestedManyWithoutSHOPInput
+  photoUrl?: string | null
+  repairs?: Prisma.RepairCreateNestedManyWithoutShopInput
+  warehouse?: Prisma.WarehouseCreateNestedManyWithoutShopInput
 }
 
-export type SHOPUncheckedCreateWithoutSHOP_USERInput = {
-  shop_id: number
+export type ShopUncheckedCreateWithoutShopUsersInput = {
+  shopId: number
   name: string
   address?: string | null
-  phone_number?: string | null
+  phoneNumber?: string | null
   email?: string | null
-  photo_url?: string | null
-  REPAIR?: Prisma.REPAIRUncheckedCreateNestedManyWithoutSHOPInput
-  WAREHOUSE?: Prisma.WAREHOUSEUncheckedCreateNestedManyWithoutSHOPInput
+  photoUrl?: string | null
+  repairs?: Prisma.RepairUncheckedCreateNestedManyWithoutShopInput
+  warehouse?: Prisma.WarehouseUncheckedCreateNestedManyWithoutShopInput
 }
 
-export type SHOPCreateOrConnectWithoutSHOP_USERInput = {
-  where: Prisma.SHOPWhereUniqueInput
-  create: Prisma.XOR<Prisma.SHOPCreateWithoutSHOP_USERInput, Prisma.SHOPUncheckedCreateWithoutSHOP_USERInput>
+export type ShopCreateOrConnectWithoutShopUsersInput = {
+  where: Prisma.ShopWhereUniqueInput
+  create: Prisma.XOR<Prisma.ShopCreateWithoutShopUsersInput, Prisma.ShopUncheckedCreateWithoutShopUsersInput>
 }
 
-export type SHOPUpsertWithoutSHOP_USERInput = {
-  update: Prisma.XOR<Prisma.SHOPUpdateWithoutSHOP_USERInput, Prisma.SHOPUncheckedUpdateWithoutSHOP_USERInput>
-  create: Prisma.XOR<Prisma.SHOPCreateWithoutSHOP_USERInput, Prisma.SHOPUncheckedCreateWithoutSHOP_USERInput>
-  where?: Prisma.SHOPWhereInput
+export type ShopUpsertWithoutShopUsersInput = {
+  update: Prisma.XOR<Prisma.ShopUpdateWithoutShopUsersInput, Prisma.ShopUncheckedUpdateWithoutShopUsersInput>
+  create: Prisma.XOR<Prisma.ShopCreateWithoutShopUsersInput, Prisma.ShopUncheckedCreateWithoutShopUsersInput>
+  where?: Prisma.ShopWhereInput
 }
 
-export type SHOPUpdateToOneWithWhereWithoutSHOP_USERInput = {
-  where?: Prisma.SHOPWhereInput
-  data: Prisma.XOR<Prisma.SHOPUpdateWithoutSHOP_USERInput, Prisma.SHOPUncheckedUpdateWithoutSHOP_USERInput>
+export type ShopUpdateToOneWithWhereWithoutShopUsersInput = {
+  where?: Prisma.ShopWhereInput
+  data: Prisma.XOR<Prisma.ShopUpdateWithoutShopUsersInput, Prisma.ShopUncheckedUpdateWithoutShopUsersInput>
 }
 
-export type SHOPUpdateWithoutSHOP_USERInput = {
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type ShopUpdateWithoutShopUsersInput = {
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photo_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  REPAIR?: Prisma.REPAIRUpdateManyWithoutSHOPNestedInput
-  WAREHOUSE?: Prisma.WAREHOUSEUpdateManyWithoutSHOPNestedInput
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  repairs?: Prisma.RepairUpdateManyWithoutShopNestedInput
+  warehouse?: Prisma.WarehouseUpdateManyWithoutShopNestedInput
 }
 
-export type SHOPUncheckedUpdateWithoutSHOP_USERInput = {
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type ShopUncheckedUpdateWithoutShopUsersInput = {
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photo_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  REPAIR?: Prisma.REPAIRUncheckedUpdateManyWithoutSHOPNestedInput
-  WAREHOUSE?: Prisma.WAREHOUSEUncheckedUpdateManyWithoutSHOPNestedInput
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  repairs?: Prisma.RepairUncheckedUpdateManyWithoutShopNestedInput
+  warehouse?: Prisma.WarehouseUncheckedUpdateManyWithoutShopNestedInput
 }
 
-export type SHOPCreateWithoutWAREHOUSEInput = {
-  shop_id: number
+export type ShopCreateWithoutWarehouseInput = {
+  shopId: number
   name: string
   address?: string | null
-  phone_number?: string | null
+  phoneNumber?: string | null
   email?: string | null
-  photo_url?: string | null
-  REPAIR?: Prisma.REPAIRCreateNestedManyWithoutSHOPInput
-  SHOP_USER?: Prisma.SHOP_USERCreateNestedManyWithoutSHOPInput
+  photoUrl?: string | null
+  repairs?: Prisma.RepairCreateNestedManyWithoutShopInput
+  shopUsers?: Prisma.ShopUserCreateNestedManyWithoutShopInput
 }
 
-export type SHOPUncheckedCreateWithoutWAREHOUSEInput = {
-  shop_id: number
+export type ShopUncheckedCreateWithoutWarehouseInput = {
+  shopId: number
   name: string
   address?: string | null
-  phone_number?: string | null
+  phoneNumber?: string | null
   email?: string | null
-  photo_url?: string | null
-  REPAIR?: Prisma.REPAIRUncheckedCreateNestedManyWithoutSHOPInput
-  SHOP_USER?: Prisma.SHOP_USERUncheckedCreateNestedManyWithoutSHOPInput
+  photoUrl?: string | null
+  repairs?: Prisma.RepairUncheckedCreateNestedManyWithoutShopInput
+  shopUsers?: Prisma.ShopUserUncheckedCreateNestedManyWithoutShopInput
 }
 
-export type SHOPCreateOrConnectWithoutWAREHOUSEInput = {
-  where: Prisma.SHOPWhereUniqueInput
-  create: Prisma.XOR<Prisma.SHOPCreateWithoutWAREHOUSEInput, Prisma.SHOPUncheckedCreateWithoutWAREHOUSEInput>
+export type ShopCreateOrConnectWithoutWarehouseInput = {
+  where: Prisma.ShopWhereUniqueInput
+  create: Prisma.XOR<Prisma.ShopCreateWithoutWarehouseInput, Prisma.ShopUncheckedCreateWithoutWarehouseInput>
 }
 
-export type SHOPUpsertWithoutWAREHOUSEInput = {
-  update: Prisma.XOR<Prisma.SHOPUpdateWithoutWAREHOUSEInput, Prisma.SHOPUncheckedUpdateWithoutWAREHOUSEInput>
-  create: Prisma.XOR<Prisma.SHOPCreateWithoutWAREHOUSEInput, Prisma.SHOPUncheckedCreateWithoutWAREHOUSEInput>
-  where?: Prisma.SHOPWhereInput
+export type ShopUpsertWithoutWarehouseInput = {
+  update: Prisma.XOR<Prisma.ShopUpdateWithoutWarehouseInput, Prisma.ShopUncheckedUpdateWithoutWarehouseInput>
+  create: Prisma.XOR<Prisma.ShopCreateWithoutWarehouseInput, Prisma.ShopUncheckedCreateWithoutWarehouseInput>
+  where?: Prisma.ShopWhereInput
 }
 
-export type SHOPUpdateToOneWithWhereWithoutWAREHOUSEInput = {
-  where?: Prisma.SHOPWhereInput
-  data: Prisma.XOR<Prisma.SHOPUpdateWithoutWAREHOUSEInput, Prisma.SHOPUncheckedUpdateWithoutWAREHOUSEInput>
+export type ShopUpdateToOneWithWhereWithoutWarehouseInput = {
+  where?: Prisma.ShopWhereInput
+  data: Prisma.XOR<Prisma.ShopUpdateWithoutWarehouseInput, Prisma.ShopUncheckedUpdateWithoutWarehouseInput>
 }
 
-export type SHOPUpdateWithoutWAREHOUSEInput = {
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type ShopUpdateWithoutWarehouseInput = {
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photo_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  REPAIR?: Prisma.REPAIRUpdateManyWithoutSHOPNestedInput
-  SHOP_USER?: Prisma.SHOP_USERUpdateManyWithoutSHOPNestedInput
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  repairs?: Prisma.RepairUpdateManyWithoutShopNestedInput
+  shopUsers?: Prisma.ShopUserUpdateManyWithoutShopNestedInput
 }
 
-export type SHOPUncheckedUpdateWithoutWAREHOUSEInput = {
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type ShopUncheckedUpdateWithoutWarehouseInput = {
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photo_url?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  REPAIR?: Prisma.REPAIRUncheckedUpdateManyWithoutSHOPNestedInput
-  SHOP_USER?: Prisma.SHOP_USERUncheckedUpdateManyWithoutSHOPNestedInput
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  repairs?: Prisma.RepairUncheckedUpdateManyWithoutShopNestedInput
+  shopUsers?: Prisma.ShopUserUncheckedUpdateManyWithoutShopNestedInput
 }
 
 
 /**
- * Count Type SHOPCountOutputType
+ * Count Type ShopCountOutputType
  */
 
-export type SHOPCountOutputType = {
-  REPAIR: number
-  SHOP_USER: number
-  WAREHOUSE: number
+export type ShopCountOutputType = {
+  repairs: number
+  shopUsers: number
+  warehouse: number
 }
 
-export type SHOPCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  REPAIR?: boolean | SHOPCountOutputTypeCountREPAIRArgs
-  SHOP_USER?: boolean | SHOPCountOutputTypeCountSHOP_USERArgs
-  WAREHOUSE?: boolean | SHOPCountOutputTypeCountWAREHOUSEArgs
+export type ShopCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  repairs?: boolean | ShopCountOutputTypeCountRepairsArgs
+  shopUsers?: boolean | ShopCountOutputTypeCountShopUsersArgs
+  warehouse?: boolean | ShopCountOutputTypeCountWarehouseArgs
 }
 
 /**
- * SHOPCountOutputType without action
+ * ShopCountOutputType without action
  */
-export type SHOPCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ShopCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the SHOPCountOutputType
+   * Select specific fields to fetch from the ShopCountOutputType
    */
-  select?: Prisma.SHOPCountOutputTypeSelect<ExtArgs> | null
+  select?: Prisma.ShopCountOutputTypeSelect<ExtArgs> | null
 }
 
 /**
- * SHOPCountOutputType without action
+ * ShopCountOutputType without action
  */
-export type SHOPCountOutputTypeCountREPAIRArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.REPAIRWhereInput
+export type ShopCountOutputTypeCountRepairsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.RepairWhereInput
 }
 
 /**
- * SHOPCountOutputType without action
+ * ShopCountOutputType without action
  */
-export type SHOPCountOutputTypeCountSHOP_USERArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.SHOP_USERWhereInput
+export type ShopCountOutputTypeCountShopUsersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ShopUserWhereInput
 }
 
 /**
- * SHOPCountOutputType without action
+ * ShopCountOutputType without action
  */
-export type SHOPCountOutputTypeCountWAREHOUSEArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.WAREHOUSEWhereInput
+export type ShopCountOutputTypeCountWarehouseArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.WarehouseWhereInput
 }
 
 
-export type SHOPSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-  shop_id?: boolean
+export type ShopSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  shopId?: boolean
   name?: boolean
   address?: boolean
-  phone_number?: boolean
+  phoneNumber?: boolean
   email?: boolean
-  photo_url?: boolean
-  REPAIR?: boolean | Prisma.SHOP$REPAIRArgs<ExtArgs>
-  SHOP_USER?: boolean | Prisma.SHOP$SHOP_USERArgs<ExtArgs>
-  WAREHOUSE?: boolean | Prisma.SHOP$WAREHOUSEArgs<ExtArgs>
-  _count?: boolean | Prisma.SHOPCountOutputTypeDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["sHOP"]>
+  photoUrl?: boolean
+  repairs?: boolean | Prisma.Shop$repairsArgs<ExtArgs>
+  shopUsers?: boolean | Prisma.Shop$shopUsersArgs<ExtArgs>
+  warehouse?: boolean | Prisma.Shop$warehouseArgs<ExtArgs>
+  _count?: boolean | Prisma.ShopCountOutputTypeDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["shop"]>
 
 
 
-export type SHOPSelectScalar = {
-  shop_id?: boolean
+export type ShopSelectScalar = {
+  shopId?: boolean
   name?: boolean
   address?: boolean
-  phone_number?: boolean
+  phoneNumber?: boolean
   email?: boolean
-  photo_url?: boolean
+  photoUrl?: boolean
 }
 
-export type SHOPOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"shop_id" | "name" | "address" | "phone_number" | "email" | "photo_url", ExtArgs["result"]["sHOP"]>
-export type SHOPInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  REPAIR?: boolean | Prisma.SHOP$REPAIRArgs<ExtArgs>
-  SHOP_USER?: boolean | Prisma.SHOP$SHOP_USERArgs<ExtArgs>
-  WAREHOUSE?: boolean | Prisma.SHOP$WAREHOUSEArgs<ExtArgs>
-  _count?: boolean | Prisma.SHOPCountOutputTypeDefaultArgs<ExtArgs>
+export type ShopOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"shopId" | "name" | "address" | "phoneNumber" | "email" | "photoUrl", ExtArgs["result"]["shop"]>
+export type ShopInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  repairs?: boolean | Prisma.Shop$repairsArgs<ExtArgs>
+  shopUsers?: boolean | Prisma.Shop$shopUsersArgs<ExtArgs>
+  warehouse?: boolean | Prisma.Shop$warehouseArgs<ExtArgs>
+  _count?: boolean | Prisma.ShopCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $SHOPPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "SHOP"
+export type $ShopPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "Shop"
   objects: {
-    REPAIR: Prisma.$REPAIRPayload<ExtArgs>[]
-    SHOP_USER: Prisma.$SHOP_USERPayload<ExtArgs>[]
-    WAREHOUSE: Prisma.$WAREHOUSEPayload<ExtArgs>[]
+    repairs: Prisma.$RepairPayload<ExtArgs>[]
+    shopUsers: Prisma.$ShopUserPayload<ExtArgs>[]
+    warehouse: Prisma.$WarehousePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
-    shop_id: number
+    shopId: number
     name: string
     address: string | null
-    phone_number: string | null
+    phoneNumber: string | null
     email: string | null
-    photo_url: string | null
-  }, ExtArgs["result"]["sHOP"]>
+    photoUrl: string | null
+  }, ExtArgs["result"]["shop"]>
   composites: {}
 }
 
-export type SHOPGetPayload<S extends boolean | null | undefined | SHOPDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$SHOPPayload, S>
+export type ShopGetPayload<S extends boolean | null | undefined | ShopDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$ShopPayload, S>
 
-export type SHOPCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<SHOPFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: SHOPCountAggregateInputType | true
+export type ShopCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<ShopFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: ShopCountAggregateInputType | true
   }
 
-export interface SHOPDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['SHOP'], meta: { name: 'SHOP' } }
+export interface ShopDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Shop'], meta: { name: 'Shop' } }
   /**
-   * Find zero or one SHOP that matches the filter.
-   * @param {SHOPFindUniqueArgs} args - Arguments to find a SHOP
+   * Find zero or one Shop that matches the filter.
+   * @param {ShopFindUniqueArgs} args - Arguments to find a Shop
    * @example
-   * // Get one SHOP
-   * const sHOP = await prisma.sHOP.findUnique({
+   * // Get one Shop
+   * const shop = await prisma.shop.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends SHOPFindUniqueArgs>(args: Prisma.SelectSubset<T, SHOPFindUniqueArgs<ExtArgs>>): Prisma.Prisma__SHOPClient<runtime.Types.Result.GetResult<Prisma.$SHOPPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends ShopFindUniqueArgs>(args: Prisma.SelectSubset<T, ShopFindUniqueArgs<ExtArgs>>): Prisma.Prisma__ShopClient<runtime.Types.Result.GetResult<Prisma.$ShopPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one SHOP that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Shop that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {SHOPFindUniqueOrThrowArgs} args - Arguments to find a SHOP
+   * @param {ShopFindUniqueOrThrowArgs} args - Arguments to find a Shop
    * @example
-   * // Get one SHOP
-   * const sHOP = await prisma.sHOP.findUniqueOrThrow({
+   * // Get one Shop
+   * const shop = await prisma.shop.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends SHOPFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, SHOPFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__SHOPClient<runtime.Types.Result.GetResult<Prisma.$SHOPPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends ShopFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, ShopFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__ShopClient<runtime.Types.Result.GetResult<Prisma.$ShopPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first SHOP that matches the filter.
+   * Find the first Shop that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {SHOPFindFirstArgs} args - Arguments to find a SHOP
+   * @param {ShopFindFirstArgs} args - Arguments to find a Shop
    * @example
-   * // Get one SHOP
-   * const sHOP = await prisma.sHOP.findFirst({
+   * // Get one Shop
+   * const shop = await prisma.shop.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends SHOPFindFirstArgs>(args?: Prisma.SelectSubset<T, SHOPFindFirstArgs<ExtArgs>>): Prisma.Prisma__SHOPClient<runtime.Types.Result.GetResult<Prisma.$SHOPPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends ShopFindFirstArgs>(args?: Prisma.SelectSubset<T, ShopFindFirstArgs<ExtArgs>>): Prisma.Prisma__ShopClient<runtime.Types.Result.GetResult<Prisma.$ShopPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first SHOP that matches the filter or
+   * Find the first Shop that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {SHOPFindFirstOrThrowArgs} args - Arguments to find a SHOP
+   * @param {ShopFindFirstOrThrowArgs} args - Arguments to find a Shop
    * @example
-   * // Get one SHOP
-   * const sHOP = await prisma.sHOP.findFirstOrThrow({
+   * // Get one Shop
+   * const shop = await prisma.shop.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends SHOPFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, SHOPFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__SHOPClient<runtime.Types.Result.GetResult<Prisma.$SHOPPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends ShopFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, ShopFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__ShopClient<runtime.Types.Result.GetResult<Prisma.$ShopPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more SHOPS that matches the filter.
+   * Find zero or more Shops that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {SHOPFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {ShopFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all SHOPS
-   * const sHOPS = await prisma.sHOP.findMany()
+   * // Get all Shops
+   * const shops = await prisma.shop.findMany()
    * 
-   * // Get first 10 SHOPS
-   * const sHOPS = await prisma.sHOP.findMany({ take: 10 })
+   * // Get first 10 Shops
+   * const shops = await prisma.shop.findMany({ take: 10 })
    * 
-   * // Only select the `shop_id`
-   * const sHOPWithShop_idOnly = await prisma.sHOP.findMany({ select: { shop_id: true } })
+   * // Only select the `shopId`
+   * const shopWithShopIdOnly = await prisma.shop.findMany({ select: { shopId: true } })
    * 
    */
-  findMany<T extends SHOPFindManyArgs>(args?: Prisma.SelectSubset<T, SHOPFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SHOPPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends ShopFindManyArgs>(args?: Prisma.SelectSubset<T, ShopFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ShopPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a SHOP.
-   * @param {SHOPCreateArgs} args - Arguments to create a SHOP.
+   * Create a Shop.
+   * @param {ShopCreateArgs} args - Arguments to create a Shop.
    * @example
-   * // Create one SHOP
-   * const SHOP = await prisma.sHOP.create({
+   * // Create one Shop
+   * const Shop = await prisma.shop.create({
    *   data: {
-   *     // ... data to create a SHOP
+   *     // ... data to create a Shop
    *   }
    * })
    * 
    */
-  create<T extends SHOPCreateArgs>(args: Prisma.SelectSubset<T, SHOPCreateArgs<ExtArgs>>): Prisma.Prisma__SHOPClient<runtime.Types.Result.GetResult<Prisma.$SHOPPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends ShopCreateArgs>(args: Prisma.SelectSubset<T, ShopCreateArgs<ExtArgs>>): Prisma.Prisma__ShopClient<runtime.Types.Result.GetResult<Prisma.$ShopPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many SHOPS.
-   * @param {SHOPCreateManyArgs} args - Arguments to create many SHOPS.
+   * Create many Shops.
+   * @param {ShopCreateManyArgs} args - Arguments to create many Shops.
    * @example
-   * // Create many SHOPS
-   * const sHOP = await prisma.sHOP.createMany({
+   * // Create many Shops
+   * const shop = await prisma.shop.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends SHOPCreateManyArgs>(args?: Prisma.SelectSubset<T, SHOPCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends ShopCreateManyArgs>(args?: Prisma.SelectSubset<T, ShopCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a SHOP.
-   * @param {SHOPDeleteArgs} args - Arguments to delete one SHOP.
+   * Delete a Shop.
+   * @param {ShopDeleteArgs} args - Arguments to delete one Shop.
    * @example
-   * // Delete one SHOP
-   * const SHOP = await prisma.sHOP.delete({
+   * // Delete one Shop
+   * const Shop = await prisma.shop.delete({
    *   where: {
-   *     // ... filter to delete one SHOP
+   *     // ... filter to delete one Shop
    *   }
    * })
    * 
    */
-  delete<T extends SHOPDeleteArgs>(args: Prisma.SelectSubset<T, SHOPDeleteArgs<ExtArgs>>): Prisma.Prisma__SHOPClient<runtime.Types.Result.GetResult<Prisma.$SHOPPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends ShopDeleteArgs>(args: Prisma.SelectSubset<T, ShopDeleteArgs<ExtArgs>>): Prisma.Prisma__ShopClient<runtime.Types.Result.GetResult<Prisma.$ShopPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one SHOP.
-   * @param {SHOPUpdateArgs} args - Arguments to update one SHOP.
+   * Update one Shop.
+   * @param {ShopUpdateArgs} args - Arguments to update one Shop.
    * @example
-   * // Update one SHOP
-   * const sHOP = await prisma.sHOP.update({
+   * // Update one Shop
+   * const shop = await prisma.shop.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -867,30 +867,30 @@ export interface SHOPDelegate<ExtArgs extends runtime.Types.Extensions.InternalA
    * })
    * 
    */
-  update<T extends SHOPUpdateArgs>(args: Prisma.SelectSubset<T, SHOPUpdateArgs<ExtArgs>>): Prisma.Prisma__SHOPClient<runtime.Types.Result.GetResult<Prisma.$SHOPPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends ShopUpdateArgs>(args: Prisma.SelectSubset<T, ShopUpdateArgs<ExtArgs>>): Prisma.Prisma__ShopClient<runtime.Types.Result.GetResult<Prisma.$ShopPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more SHOPS.
-   * @param {SHOPDeleteManyArgs} args - Arguments to filter SHOPS to delete.
+   * Delete zero or more Shops.
+   * @param {ShopDeleteManyArgs} args - Arguments to filter Shops to delete.
    * @example
-   * // Delete a few SHOPS
-   * const { count } = await prisma.sHOP.deleteMany({
+   * // Delete a few Shops
+   * const { count } = await prisma.shop.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends SHOPDeleteManyArgs>(args?: Prisma.SelectSubset<T, SHOPDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends ShopDeleteManyArgs>(args?: Prisma.SelectSubset<T, ShopDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more SHOPS.
+   * Update zero or more Shops.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {SHOPUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {ShopUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many SHOPS
-   * const sHOP = await prisma.sHOP.updateMany({
+   * // Update many Shops
+   * const shop = await prisma.shop.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -900,56 +900,56 @@ export interface SHOPDelegate<ExtArgs extends runtime.Types.Extensions.InternalA
    * })
    * 
    */
-  updateMany<T extends SHOPUpdateManyArgs>(args: Prisma.SelectSubset<T, SHOPUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends ShopUpdateManyArgs>(args: Prisma.SelectSubset<T, ShopUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one SHOP.
-   * @param {SHOPUpsertArgs} args - Arguments to update or create a SHOP.
+   * Create or update one Shop.
+   * @param {ShopUpsertArgs} args - Arguments to update or create a Shop.
    * @example
-   * // Update or create a SHOP
-   * const sHOP = await prisma.sHOP.upsert({
+   * // Update or create a Shop
+   * const shop = await prisma.shop.upsert({
    *   create: {
-   *     // ... data to create a SHOP
+   *     // ... data to create a Shop
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the SHOP we want to update
+   *     // ... the filter for the Shop we want to update
    *   }
    * })
    */
-  upsert<T extends SHOPUpsertArgs>(args: Prisma.SelectSubset<T, SHOPUpsertArgs<ExtArgs>>): Prisma.Prisma__SHOPClient<runtime.Types.Result.GetResult<Prisma.$SHOPPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends ShopUpsertArgs>(args: Prisma.SelectSubset<T, ShopUpsertArgs<ExtArgs>>): Prisma.Prisma__ShopClient<runtime.Types.Result.GetResult<Prisma.$ShopPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of SHOPS.
+   * Count the number of Shops.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {SHOPCountArgs} args - Arguments to filter SHOPS to count.
+   * @param {ShopCountArgs} args - Arguments to filter Shops to count.
    * @example
-   * // Count the number of SHOPS
-   * const count = await prisma.sHOP.count({
+   * // Count the number of Shops
+   * const count = await prisma.shop.count({
    *   where: {
-   *     // ... the filter for the SHOPS we want to count
+   *     // ... the filter for the Shops we want to count
    *   }
    * })
   **/
-  count<T extends SHOPCountArgs>(
-    args?: Prisma.Subset<T, SHOPCountArgs>,
+  count<T extends ShopCountArgs>(
+    args?: Prisma.Subset<T, ShopCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], SHOPCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], ShopCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a SHOP.
+   * Allows you to perform aggregations operations on a Shop.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {SHOPAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {ShopAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -969,13 +969,13 @@ export interface SHOPDelegate<ExtArgs extends runtime.Types.Extensions.InternalA
    *   take: 10,
    * })
   **/
-  aggregate<T extends SHOPAggregateArgs>(args: Prisma.Subset<T, SHOPAggregateArgs>): Prisma.PrismaPromise<GetSHOPAggregateType<T>>
+  aggregate<T extends ShopAggregateArgs>(args: Prisma.Subset<T, ShopAggregateArgs>): Prisma.PrismaPromise<GetShopAggregateType<T>>
 
   /**
-   * Group by SHOP.
+   * Group by Shop.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {SHOPGroupByArgs} args - Group by arguments.
+   * @param {ShopGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -990,14 +990,14 @@ export interface SHOPDelegate<ExtArgs extends runtime.Types.Extensions.InternalA
    * 
   **/
   groupBy<
-    T extends SHOPGroupByArgs,
+    T extends ShopGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: SHOPGroupByArgs['orderBy'] }
-      : { orderBy?: SHOPGroupByArgs['orderBy'] },
+      ? { orderBy: ShopGroupByArgs['orderBy'] }
+      : { orderBy?: ShopGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1046,24 +1046,24 @@ export interface SHOPDelegate<ExtArgs extends runtime.Types.Extensions.InternalA
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, SHOPGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSHOPGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, ShopGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetShopGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the SHOP model
+ * Fields of the Shop model
  */
-readonly fields: SHOPFieldRefs;
+readonly fields: ShopFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for SHOP.
+ * The delegate class that acts as a "Promise-like" for Shop.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__SHOPClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__ShopClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  REPAIR<T extends Prisma.SHOP$REPAIRArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.SHOP$REPAIRArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$REPAIRPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  SHOP_USER<T extends Prisma.SHOP$SHOP_USERArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.SHOP$SHOP_USERArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SHOP_USERPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  WAREHOUSE<T extends Prisma.SHOP$WAREHOUSEArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.SHOP$WAREHOUSEArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WAREHOUSEPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  repairs<T extends Prisma.Shop$repairsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Shop$repairsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RepairPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  shopUsers<T extends Prisma.Shop$shopUsersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Shop$shopUsersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ShopUserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  warehouse<T extends Prisma.Shop$warehouseArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Shop$warehouseArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WarehousePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1090,448 +1090,448 @@ export interface Prisma__SHOPClient<T, Null = never, ExtArgs extends runtime.Typ
 
 
 /**
- * Fields of the SHOP model
+ * Fields of the Shop model
  */
-export interface SHOPFieldRefs {
-  readonly shop_id: Prisma.FieldRef<"SHOP", 'Int'>
-  readonly name: Prisma.FieldRef<"SHOP", 'String'>
-  readonly address: Prisma.FieldRef<"SHOP", 'String'>
-  readonly phone_number: Prisma.FieldRef<"SHOP", 'String'>
-  readonly email: Prisma.FieldRef<"SHOP", 'String'>
-  readonly photo_url: Prisma.FieldRef<"SHOP", 'String'>
+export interface ShopFieldRefs {
+  readonly shopId: Prisma.FieldRef<"Shop", 'Int'>
+  readonly name: Prisma.FieldRef<"Shop", 'String'>
+  readonly address: Prisma.FieldRef<"Shop", 'String'>
+  readonly phoneNumber: Prisma.FieldRef<"Shop", 'String'>
+  readonly email: Prisma.FieldRef<"Shop", 'String'>
+  readonly photoUrl: Prisma.FieldRef<"Shop", 'String'>
 }
     
 
 // Custom InputTypes
 /**
- * SHOP findUnique
+ * Shop findUnique
  */
-export type SHOPFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ShopFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the SHOP
+   * Select specific fields to fetch from the Shop
    */
-  select?: Prisma.SHOPSelect<ExtArgs> | null
+  select?: Prisma.ShopSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the SHOP
+   * Omit specific fields from the Shop
    */
-  omit?: Prisma.SHOPOmit<ExtArgs> | null
+  omit?: Prisma.ShopOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.SHOPInclude<ExtArgs> | null
+  include?: Prisma.ShopInclude<ExtArgs> | null
   /**
-   * Filter, which SHOP to fetch.
+   * Filter, which Shop to fetch.
    */
-  where: Prisma.SHOPWhereUniqueInput
+  where: Prisma.ShopWhereUniqueInput
 }
 
 /**
- * SHOP findUniqueOrThrow
+ * Shop findUniqueOrThrow
  */
-export type SHOPFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ShopFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the SHOP
+   * Select specific fields to fetch from the Shop
    */
-  select?: Prisma.SHOPSelect<ExtArgs> | null
+  select?: Prisma.ShopSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the SHOP
+   * Omit specific fields from the Shop
    */
-  omit?: Prisma.SHOPOmit<ExtArgs> | null
+  omit?: Prisma.ShopOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.SHOPInclude<ExtArgs> | null
+  include?: Prisma.ShopInclude<ExtArgs> | null
   /**
-   * Filter, which SHOP to fetch.
+   * Filter, which Shop to fetch.
    */
-  where: Prisma.SHOPWhereUniqueInput
+  where: Prisma.ShopWhereUniqueInput
 }
 
 /**
- * SHOP findFirst
+ * Shop findFirst
  */
-export type SHOPFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ShopFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the SHOP
+   * Select specific fields to fetch from the Shop
    */
-  select?: Prisma.SHOPSelect<ExtArgs> | null
+  select?: Prisma.ShopSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the SHOP
+   * Omit specific fields from the Shop
    */
-  omit?: Prisma.SHOPOmit<ExtArgs> | null
+  omit?: Prisma.ShopOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.SHOPInclude<ExtArgs> | null
+  include?: Prisma.ShopInclude<ExtArgs> | null
   /**
-   * Filter, which SHOP to fetch.
+   * Filter, which Shop to fetch.
    */
-  where?: Prisma.SHOPWhereInput
+  where?: Prisma.ShopWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of SHOPS to fetch.
+   * Determine the order of Shops to fetch.
    */
-  orderBy?: Prisma.SHOPOrderByWithRelationInput | Prisma.SHOPOrderByWithRelationInput[]
+  orderBy?: Prisma.ShopOrderByWithRelationInput | Prisma.ShopOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for SHOPS.
+   * Sets the position for searching for Shops.
    */
-  cursor?: Prisma.SHOPWhereUniqueInput
+  cursor?: Prisma.ShopWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` SHOPS from the position of the cursor.
+   * Take `±n` Shops from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` SHOPS.
+   * Skip the first `n` Shops.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of SHOPS.
+   * Filter by unique combinations of Shops.
    */
-  distinct?: Prisma.SHOPScalarFieldEnum | Prisma.SHOPScalarFieldEnum[]
+  distinct?: Prisma.ShopScalarFieldEnum | Prisma.ShopScalarFieldEnum[]
 }
 
 /**
- * SHOP findFirstOrThrow
+ * Shop findFirstOrThrow
  */
-export type SHOPFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ShopFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the SHOP
+   * Select specific fields to fetch from the Shop
    */
-  select?: Prisma.SHOPSelect<ExtArgs> | null
+  select?: Prisma.ShopSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the SHOP
+   * Omit specific fields from the Shop
    */
-  omit?: Prisma.SHOPOmit<ExtArgs> | null
+  omit?: Prisma.ShopOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.SHOPInclude<ExtArgs> | null
+  include?: Prisma.ShopInclude<ExtArgs> | null
   /**
-   * Filter, which SHOP to fetch.
+   * Filter, which Shop to fetch.
    */
-  where?: Prisma.SHOPWhereInput
+  where?: Prisma.ShopWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of SHOPS to fetch.
+   * Determine the order of Shops to fetch.
    */
-  orderBy?: Prisma.SHOPOrderByWithRelationInput | Prisma.SHOPOrderByWithRelationInput[]
+  orderBy?: Prisma.ShopOrderByWithRelationInput | Prisma.ShopOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for SHOPS.
+   * Sets the position for searching for Shops.
    */
-  cursor?: Prisma.SHOPWhereUniqueInput
+  cursor?: Prisma.ShopWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` SHOPS from the position of the cursor.
+   * Take `±n` Shops from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` SHOPS.
+   * Skip the first `n` Shops.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of SHOPS.
+   * Filter by unique combinations of Shops.
    */
-  distinct?: Prisma.SHOPScalarFieldEnum | Prisma.SHOPScalarFieldEnum[]
+  distinct?: Prisma.ShopScalarFieldEnum | Prisma.ShopScalarFieldEnum[]
 }
 
 /**
- * SHOP findMany
+ * Shop findMany
  */
-export type SHOPFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ShopFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the SHOP
+   * Select specific fields to fetch from the Shop
    */
-  select?: Prisma.SHOPSelect<ExtArgs> | null
+  select?: Prisma.ShopSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the SHOP
+   * Omit specific fields from the Shop
    */
-  omit?: Prisma.SHOPOmit<ExtArgs> | null
+  omit?: Prisma.ShopOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.SHOPInclude<ExtArgs> | null
+  include?: Prisma.ShopInclude<ExtArgs> | null
   /**
-   * Filter, which SHOPS to fetch.
+   * Filter, which Shops to fetch.
    */
-  where?: Prisma.SHOPWhereInput
+  where?: Prisma.ShopWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of SHOPS to fetch.
+   * Determine the order of Shops to fetch.
    */
-  orderBy?: Prisma.SHOPOrderByWithRelationInput | Prisma.SHOPOrderByWithRelationInput[]
+  orderBy?: Prisma.ShopOrderByWithRelationInput | Prisma.ShopOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing SHOPS.
+   * Sets the position for listing Shops.
    */
-  cursor?: Prisma.SHOPWhereUniqueInput
+  cursor?: Prisma.ShopWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` SHOPS from the position of the cursor.
+   * Take `±n` Shops from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` SHOPS.
+   * Skip the first `n` Shops.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of SHOPS.
+   * Filter by unique combinations of Shops.
    */
-  distinct?: Prisma.SHOPScalarFieldEnum | Prisma.SHOPScalarFieldEnum[]
+  distinct?: Prisma.ShopScalarFieldEnum | Prisma.ShopScalarFieldEnum[]
 }
 
 /**
- * SHOP create
+ * Shop create
  */
-export type SHOPCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ShopCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the SHOP
+   * Select specific fields to fetch from the Shop
    */
-  select?: Prisma.SHOPSelect<ExtArgs> | null
+  select?: Prisma.ShopSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the SHOP
+   * Omit specific fields from the Shop
    */
-  omit?: Prisma.SHOPOmit<ExtArgs> | null
+  omit?: Prisma.ShopOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.SHOPInclude<ExtArgs> | null
+  include?: Prisma.ShopInclude<ExtArgs> | null
   /**
-   * The data needed to create a SHOP.
+   * The data needed to create a Shop.
    */
-  data: Prisma.XOR<Prisma.SHOPCreateInput, Prisma.SHOPUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.ShopCreateInput, Prisma.ShopUncheckedCreateInput>
 }
 
 /**
- * SHOP createMany
+ * Shop createMany
  */
-export type SHOPCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ShopCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many SHOPS.
+   * The data used to create many Shops.
    */
-  data: Prisma.SHOPCreateManyInput | Prisma.SHOPCreateManyInput[]
+  data: Prisma.ShopCreateManyInput | Prisma.ShopCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * SHOP update
+ * Shop update
  */
-export type SHOPUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ShopUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the SHOP
+   * Select specific fields to fetch from the Shop
    */
-  select?: Prisma.SHOPSelect<ExtArgs> | null
+  select?: Prisma.ShopSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the SHOP
+   * Omit specific fields from the Shop
    */
-  omit?: Prisma.SHOPOmit<ExtArgs> | null
+  omit?: Prisma.ShopOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.SHOPInclude<ExtArgs> | null
+  include?: Prisma.ShopInclude<ExtArgs> | null
   /**
-   * The data needed to update a SHOP.
+   * The data needed to update a Shop.
    */
-  data: Prisma.XOR<Prisma.SHOPUpdateInput, Prisma.SHOPUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.ShopUpdateInput, Prisma.ShopUncheckedUpdateInput>
   /**
-   * Choose, which SHOP to update.
+   * Choose, which Shop to update.
    */
-  where: Prisma.SHOPWhereUniqueInput
+  where: Prisma.ShopWhereUniqueInput
 }
 
 /**
- * SHOP updateMany
+ * Shop updateMany
  */
-export type SHOPUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ShopUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update SHOPS.
+   * The data used to update Shops.
    */
-  data: Prisma.XOR<Prisma.SHOPUpdateManyMutationInput, Prisma.SHOPUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.ShopUpdateManyMutationInput, Prisma.ShopUncheckedUpdateManyInput>
   /**
-   * Filter which SHOPS to update
+   * Filter which Shops to update
    */
-  where?: Prisma.SHOPWhereInput
+  where?: Prisma.ShopWhereInput
   /**
-   * Limit how many SHOPS to update.
+   * Limit how many Shops to update.
    */
   limit?: number
 }
 
 /**
- * SHOP upsert
+ * Shop upsert
  */
-export type SHOPUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ShopUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the SHOP
+   * Select specific fields to fetch from the Shop
    */
-  select?: Prisma.SHOPSelect<ExtArgs> | null
+  select?: Prisma.ShopSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the SHOP
+   * Omit specific fields from the Shop
    */
-  omit?: Prisma.SHOPOmit<ExtArgs> | null
+  omit?: Prisma.ShopOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.SHOPInclude<ExtArgs> | null
+  include?: Prisma.ShopInclude<ExtArgs> | null
   /**
-   * The filter to search for the SHOP to update in case it exists.
+   * The filter to search for the Shop to update in case it exists.
    */
-  where: Prisma.SHOPWhereUniqueInput
+  where: Prisma.ShopWhereUniqueInput
   /**
-   * In case the SHOP found by the `where` argument doesn't exist, create a new SHOP with this data.
+   * In case the Shop found by the `where` argument doesn't exist, create a new Shop with this data.
    */
-  create: Prisma.XOR<Prisma.SHOPCreateInput, Prisma.SHOPUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.ShopCreateInput, Prisma.ShopUncheckedCreateInput>
   /**
-   * In case the SHOP was found with the provided `where` argument, update it with this data.
+   * In case the Shop was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.SHOPUpdateInput, Prisma.SHOPUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.ShopUpdateInput, Prisma.ShopUncheckedUpdateInput>
 }
 
 /**
- * SHOP delete
+ * Shop delete
  */
-export type SHOPDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ShopDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the SHOP
+   * Select specific fields to fetch from the Shop
    */
-  select?: Prisma.SHOPSelect<ExtArgs> | null
+  select?: Prisma.ShopSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the SHOP
+   * Omit specific fields from the Shop
    */
-  omit?: Prisma.SHOPOmit<ExtArgs> | null
+  omit?: Prisma.ShopOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.SHOPInclude<ExtArgs> | null
+  include?: Prisma.ShopInclude<ExtArgs> | null
   /**
-   * Filter which SHOP to delete.
+   * Filter which Shop to delete.
    */
-  where: Prisma.SHOPWhereUniqueInput
+  where: Prisma.ShopWhereUniqueInput
 }
 
 /**
- * SHOP deleteMany
+ * Shop deleteMany
  */
-export type SHOPDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ShopDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which SHOPS to delete
+   * Filter which Shops to delete
    */
-  where?: Prisma.SHOPWhereInput
+  where?: Prisma.ShopWhereInput
   /**
-   * Limit how many SHOPS to delete.
+   * Limit how many Shops to delete.
    */
   limit?: number
 }
 
 /**
- * SHOP.REPAIR
+ * Shop.repairs
  */
-export type SHOP$REPAIRArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Shop$repairsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the REPAIR
+   * Select specific fields to fetch from the Repair
    */
-  select?: Prisma.REPAIRSelect<ExtArgs> | null
+  select?: Prisma.RepairSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the REPAIR
+   * Omit specific fields from the Repair
    */
-  omit?: Prisma.REPAIROmit<ExtArgs> | null
+  omit?: Prisma.RepairOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.REPAIRInclude<ExtArgs> | null
-  where?: Prisma.REPAIRWhereInput
-  orderBy?: Prisma.REPAIROrderByWithRelationInput | Prisma.REPAIROrderByWithRelationInput[]
-  cursor?: Prisma.REPAIRWhereUniqueInput
+  include?: Prisma.RepairInclude<ExtArgs> | null
+  where?: Prisma.RepairWhereInput
+  orderBy?: Prisma.RepairOrderByWithRelationInput | Prisma.RepairOrderByWithRelationInput[]
+  cursor?: Prisma.RepairWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.REPAIRScalarFieldEnum | Prisma.REPAIRScalarFieldEnum[]
+  distinct?: Prisma.RepairScalarFieldEnum | Prisma.RepairScalarFieldEnum[]
 }
 
 /**
- * SHOP.SHOP_USER
+ * Shop.shopUsers
  */
-export type SHOP$SHOP_USERArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Shop$shopUsersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the SHOP_USER
+   * Select specific fields to fetch from the ShopUser
    */
-  select?: Prisma.SHOP_USERSelect<ExtArgs> | null
+  select?: Prisma.ShopUserSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the SHOP_USER
+   * Omit specific fields from the ShopUser
    */
-  omit?: Prisma.SHOP_USEROmit<ExtArgs> | null
+  omit?: Prisma.ShopUserOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.SHOP_USERInclude<ExtArgs> | null
-  where?: Prisma.SHOP_USERWhereInput
-  orderBy?: Prisma.SHOP_USEROrderByWithRelationInput | Prisma.SHOP_USEROrderByWithRelationInput[]
-  cursor?: Prisma.SHOP_USERWhereUniqueInput
+  include?: Prisma.ShopUserInclude<ExtArgs> | null
+  where?: Prisma.ShopUserWhereInput
+  orderBy?: Prisma.ShopUserOrderByWithRelationInput | Prisma.ShopUserOrderByWithRelationInput[]
+  cursor?: Prisma.ShopUserWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.SHOP_USERScalarFieldEnum | Prisma.SHOP_USERScalarFieldEnum[]
+  distinct?: Prisma.ShopUserScalarFieldEnum | Prisma.ShopUserScalarFieldEnum[]
 }
 
 /**
- * SHOP.WAREHOUSE
+ * Shop.warehouse
  */
-export type SHOP$WAREHOUSEArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Shop$warehouseArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the WAREHOUSE
+   * Select specific fields to fetch from the Warehouse
    */
-  select?: Prisma.WAREHOUSESelect<ExtArgs> | null
+  select?: Prisma.WarehouseSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the WAREHOUSE
+   * Omit specific fields from the Warehouse
    */
-  omit?: Prisma.WAREHOUSEOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.WAREHOUSEInclude<ExtArgs> | null
-  where?: Prisma.WAREHOUSEWhereInput
-  orderBy?: Prisma.WAREHOUSEOrderByWithRelationInput | Prisma.WAREHOUSEOrderByWithRelationInput[]
-  cursor?: Prisma.WAREHOUSEWhereUniqueInput
+  include?: Prisma.WarehouseInclude<ExtArgs> | null
+  where?: Prisma.WarehouseWhereInput
+  orderBy?: Prisma.WarehouseOrderByWithRelationInput | Prisma.WarehouseOrderByWithRelationInput[]
+  cursor?: Prisma.WarehouseWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.WAREHOUSEScalarFieldEnum | Prisma.WAREHOUSEScalarFieldEnum[]
+  distinct?: Prisma.WarehouseScalarFieldEnum | Prisma.WarehouseScalarFieldEnum[]
 }
 
 /**
- * SHOP without action
+ * Shop without action
  */
-export type SHOPDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ShopDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the SHOP
+   * Select specific fields to fetch from the Shop
    */
-  select?: Prisma.SHOPSelect<ExtArgs> | null
+  select?: Prisma.ShopSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the SHOP
+   * Omit specific fields from the Shop
    */
-  omit?: Prisma.SHOPOmit<ExtArgs> | null
+  omit?: Prisma.ShopOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.SHOPInclude<ExtArgs> | null
+  include?: Prisma.ShopInclude<ExtArgs> | null
 }

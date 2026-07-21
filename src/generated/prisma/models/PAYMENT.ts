@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `PAYMENT` model and its related types.
+ * This file exports the `Payment` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,443 +13,443 @@ import type * as $Enums from "../enums"
 import type * as Prisma from "../internal/prismaNamespace"
 
 /**
- * Model PAYMENT
+ * Model Payment
  * 
  */
-export type PAYMENTModel = runtime.Types.Result.DefaultSelection<Prisma.$PAYMENTPayload>
+export type PaymentModel = runtime.Types.Result.DefaultSelection<Prisma.$PaymentPayload>
 
-export type AggregatePAYMENT = {
-  _count: PAYMENTCountAggregateOutputType | null
-  _avg: PAYMENTAvgAggregateOutputType | null
-  _sum: PAYMENTSumAggregateOutputType | null
-  _min: PAYMENTMinAggregateOutputType | null
-  _max: PAYMENTMaxAggregateOutputType | null
+export type AggregatePayment = {
+  _count: PaymentCountAggregateOutputType | null
+  _avg: PaymentAvgAggregateOutputType | null
+  _sum: PaymentSumAggregateOutputType | null
+  _min: PaymentMinAggregateOutputType | null
+  _max: PaymentMaxAggregateOutputType | null
 }
 
-export type PAYMENTAvgAggregateOutputType = {
-  payment_id: number | null
-  invoice_id: number | null
+export type PaymentAvgAggregateOutputType = {
+  paymentId: number | null
+  invoiceId: number | null
   amount: runtime.Decimal | null
-  payment_method_id: number | null
+  paymentMethodId: number | null
 }
 
-export type PAYMENTSumAggregateOutputType = {
-  payment_id: number | null
-  invoice_id: number | null
+export type PaymentSumAggregateOutputType = {
+  paymentId: number | null
+  invoiceId: number | null
   amount: runtime.Decimal | null
-  payment_method_id: number | null
+  paymentMethodId: number | null
 }
 
-export type PAYMENTMinAggregateOutputType = {
-  payment_id: number | null
-  invoice_id: number | null
-  payment_date: Date | null
+export type PaymentMinAggregateOutputType = {
+  paymentId: number | null
+  invoiceId: number | null
+  paymentDate: Date | null
   amount: runtime.Decimal | null
-  payment_method_id: number | null
+  paymentMethodId: number | null
   reference: string | null
 }
 
-export type PAYMENTMaxAggregateOutputType = {
-  payment_id: number | null
-  invoice_id: number | null
-  payment_date: Date | null
+export type PaymentMaxAggregateOutputType = {
+  paymentId: number | null
+  invoiceId: number | null
+  paymentDate: Date | null
   amount: runtime.Decimal | null
-  payment_method_id: number | null
+  paymentMethodId: number | null
   reference: string | null
 }
 
-export type PAYMENTCountAggregateOutputType = {
-  payment_id: number
-  invoice_id: number
-  payment_date: number
+export type PaymentCountAggregateOutputType = {
+  paymentId: number
+  invoiceId: number
+  paymentDate: number
   amount: number
-  payment_method_id: number
+  paymentMethodId: number
   reference: number
   _all: number
 }
 
 
-export type PAYMENTAvgAggregateInputType = {
-  payment_id?: true
-  invoice_id?: true
+export type PaymentAvgAggregateInputType = {
+  paymentId?: true
+  invoiceId?: true
   amount?: true
-  payment_method_id?: true
+  paymentMethodId?: true
 }
 
-export type PAYMENTSumAggregateInputType = {
-  payment_id?: true
-  invoice_id?: true
+export type PaymentSumAggregateInputType = {
+  paymentId?: true
+  invoiceId?: true
   amount?: true
-  payment_method_id?: true
+  paymentMethodId?: true
 }
 
-export type PAYMENTMinAggregateInputType = {
-  payment_id?: true
-  invoice_id?: true
-  payment_date?: true
+export type PaymentMinAggregateInputType = {
+  paymentId?: true
+  invoiceId?: true
+  paymentDate?: true
   amount?: true
-  payment_method_id?: true
+  paymentMethodId?: true
   reference?: true
 }
 
-export type PAYMENTMaxAggregateInputType = {
-  payment_id?: true
-  invoice_id?: true
-  payment_date?: true
+export type PaymentMaxAggregateInputType = {
+  paymentId?: true
+  invoiceId?: true
+  paymentDate?: true
   amount?: true
-  payment_method_id?: true
+  paymentMethodId?: true
   reference?: true
 }
 
-export type PAYMENTCountAggregateInputType = {
-  payment_id?: true
-  invoice_id?: true
-  payment_date?: true
+export type PaymentCountAggregateInputType = {
+  paymentId?: true
+  invoiceId?: true
+  paymentDate?: true
   amount?: true
-  payment_method_id?: true
+  paymentMethodId?: true
   reference?: true
   _all?: true
 }
 
-export type PAYMENTAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PaymentAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which PAYMENT to aggregate.
+   * Filter which Payment to aggregate.
    */
-  where?: Prisma.PAYMENTWhereInput
+  where?: Prisma.PaymentWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of PAYMENTS to fetch.
+   * Determine the order of Payments to fetch.
    */
-  orderBy?: Prisma.PAYMENTOrderByWithRelationInput | Prisma.PAYMENTOrderByWithRelationInput[]
+  orderBy?: Prisma.PaymentOrderByWithRelationInput | Prisma.PaymentOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.PAYMENTWhereUniqueInput
+  cursor?: Prisma.PaymentWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` PAYMENTS from the position of the cursor.
+   * Take `±n` Payments from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` PAYMENTS.
+   * Skip the first `n` Payments.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned PAYMENTS
+   * Count returned Payments
   **/
-  _count?: true | PAYMENTCountAggregateInputType
+  _count?: true | PaymentCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to average
   **/
-  _avg?: PAYMENTAvgAggregateInputType
+  _avg?: PaymentAvgAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to sum
   **/
-  _sum?: PAYMENTSumAggregateInputType
+  _sum?: PaymentSumAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: PAYMENTMinAggregateInputType
+  _min?: PaymentMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: PAYMENTMaxAggregateInputType
+  _max?: PaymentMaxAggregateInputType
 }
 
-export type GetPAYMENTAggregateType<T extends PAYMENTAggregateArgs> = {
-      [P in keyof T & keyof AggregatePAYMENT]: P extends '_count' | 'count'
+export type GetPaymentAggregateType<T extends PaymentAggregateArgs> = {
+      [P in keyof T & keyof AggregatePayment]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregatePAYMENT[P]>
-    : Prisma.GetScalarType<T[P], AggregatePAYMENT[P]>
+      : Prisma.GetScalarType<T[P], AggregatePayment[P]>
+    : Prisma.GetScalarType<T[P], AggregatePayment[P]>
 }
 
 
 
 
-export type PAYMENTGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.PAYMENTWhereInput
-  orderBy?: Prisma.PAYMENTOrderByWithAggregationInput | Prisma.PAYMENTOrderByWithAggregationInput[]
-  by: Prisma.PAYMENTScalarFieldEnum[] | Prisma.PAYMENTScalarFieldEnum
-  having?: Prisma.PAYMENTScalarWhereWithAggregatesInput
+export type PaymentGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PaymentWhereInput
+  orderBy?: Prisma.PaymentOrderByWithAggregationInput | Prisma.PaymentOrderByWithAggregationInput[]
+  by: Prisma.PaymentScalarFieldEnum[] | Prisma.PaymentScalarFieldEnum
+  having?: Prisma.PaymentScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: PAYMENTCountAggregateInputType | true
-  _avg?: PAYMENTAvgAggregateInputType
-  _sum?: PAYMENTSumAggregateInputType
-  _min?: PAYMENTMinAggregateInputType
-  _max?: PAYMENTMaxAggregateInputType
+  _count?: PaymentCountAggregateInputType | true
+  _avg?: PaymentAvgAggregateInputType
+  _sum?: PaymentSumAggregateInputType
+  _min?: PaymentMinAggregateInputType
+  _max?: PaymentMaxAggregateInputType
 }
 
-export type PAYMENTGroupByOutputType = {
-  payment_id: number
-  invoice_id: number
-  payment_date: Date
+export type PaymentGroupByOutputType = {
+  paymentId: number
+  invoiceId: number
+  paymentDate: Date
   amount: runtime.Decimal
-  payment_method_id: number | null
+  paymentMethodId: number | null
   reference: string | null
-  _count: PAYMENTCountAggregateOutputType | null
-  _avg: PAYMENTAvgAggregateOutputType | null
-  _sum: PAYMENTSumAggregateOutputType | null
-  _min: PAYMENTMinAggregateOutputType | null
-  _max: PAYMENTMaxAggregateOutputType | null
+  _count: PaymentCountAggregateOutputType | null
+  _avg: PaymentAvgAggregateOutputType | null
+  _sum: PaymentSumAggregateOutputType | null
+  _min: PaymentMinAggregateOutputType | null
+  _max: PaymentMaxAggregateOutputType | null
 }
 
-export type GetPAYMENTGroupByPayload<T extends PAYMENTGroupByArgs> = Prisma.PrismaPromise<
+export type GetPaymentGroupByPayload<T extends PaymentGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<PAYMENTGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<PaymentGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof PAYMENTGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof PaymentGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], PAYMENTGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], PAYMENTGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], PaymentGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], PaymentGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type PAYMENTWhereInput = {
-  AND?: Prisma.PAYMENTWhereInput | Prisma.PAYMENTWhereInput[]
-  OR?: Prisma.PAYMENTWhereInput[]
-  NOT?: Prisma.PAYMENTWhereInput | Prisma.PAYMENTWhereInput[]
-  payment_id?: Prisma.IntFilter<"PAYMENT"> | number
-  invoice_id?: Prisma.IntFilter<"PAYMENT"> | number
-  payment_date?: Prisma.DateTimeFilter<"PAYMENT"> | Date | string
-  amount?: Prisma.DecimalFilter<"PAYMENT"> | runtime.Decimal | runtime.DecimalJsLike | number | string
-  payment_method_id?: Prisma.IntNullableFilter<"PAYMENT"> | number | null
-  reference?: Prisma.StringNullableFilter<"PAYMENT"> | string | null
-  INVOICE?: Prisma.XOR<Prisma.INVOICEScalarRelationFilter, Prisma.INVOICEWhereInput>
-  PAYMENT_METHOD?: Prisma.XOR<Prisma.PAYMENT_METHODNullableScalarRelationFilter, Prisma.PAYMENT_METHODWhereInput> | null
+export type PaymentWhereInput = {
+  AND?: Prisma.PaymentWhereInput | Prisma.PaymentWhereInput[]
+  OR?: Prisma.PaymentWhereInput[]
+  NOT?: Prisma.PaymentWhereInput | Prisma.PaymentWhereInput[]
+  paymentId?: Prisma.IntFilter<"Payment"> | number
+  invoiceId?: Prisma.IntFilter<"Payment"> | number
+  paymentDate?: Prisma.DateTimeFilter<"Payment"> | Date | string
+  amount?: Prisma.DecimalFilter<"Payment"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  paymentMethodId?: Prisma.IntNullableFilter<"Payment"> | number | null
+  reference?: Prisma.StringNullableFilter<"Payment"> | string | null
+  invoice?: Prisma.XOR<Prisma.InvoiceScalarRelationFilter, Prisma.InvoiceWhereInput>
+  paymentMethod?: Prisma.XOR<Prisma.PaymentMethodNullableScalarRelationFilter, Prisma.PaymentMethodWhereInput> | null
 }
 
-export type PAYMENTOrderByWithRelationInput = {
-  payment_id?: Prisma.SortOrder
-  invoice_id?: Prisma.SortOrder
-  payment_date?: Prisma.SortOrder
+export type PaymentOrderByWithRelationInput = {
+  paymentId?: Prisma.SortOrder
+  invoiceId?: Prisma.SortOrder
+  paymentDate?: Prisma.SortOrder
   amount?: Prisma.SortOrder
-  payment_method_id?: Prisma.SortOrderInput | Prisma.SortOrder
+  paymentMethodId?: Prisma.SortOrderInput | Prisma.SortOrder
   reference?: Prisma.SortOrderInput | Prisma.SortOrder
-  INVOICE?: Prisma.INVOICEOrderByWithRelationInput
-  PAYMENT_METHOD?: Prisma.PAYMENT_METHODOrderByWithRelationInput
-  _relevance?: Prisma.PAYMENTOrderByRelevanceInput
+  invoice?: Prisma.InvoiceOrderByWithRelationInput
+  paymentMethod?: Prisma.PaymentMethodOrderByWithRelationInput
+  _relevance?: Prisma.PaymentOrderByRelevanceInput
 }
 
-export type PAYMENTWhereUniqueInput = Prisma.AtLeast<{
-  payment_id?: number
-  AND?: Prisma.PAYMENTWhereInput | Prisma.PAYMENTWhereInput[]
-  OR?: Prisma.PAYMENTWhereInput[]
-  NOT?: Prisma.PAYMENTWhereInput | Prisma.PAYMENTWhereInput[]
-  invoice_id?: Prisma.IntFilter<"PAYMENT"> | number
-  payment_date?: Prisma.DateTimeFilter<"PAYMENT"> | Date | string
-  amount?: Prisma.DecimalFilter<"PAYMENT"> | runtime.Decimal | runtime.DecimalJsLike | number | string
-  payment_method_id?: Prisma.IntNullableFilter<"PAYMENT"> | number | null
-  reference?: Prisma.StringNullableFilter<"PAYMENT"> | string | null
-  INVOICE?: Prisma.XOR<Prisma.INVOICEScalarRelationFilter, Prisma.INVOICEWhereInput>
-  PAYMENT_METHOD?: Prisma.XOR<Prisma.PAYMENT_METHODNullableScalarRelationFilter, Prisma.PAYMENT_METHODWhereInput> | null
-}, "payment_id">
+export type PaymentWhereUniqueInput = Prisma.AtLeast<{
+  paymentId?: number
+  AND?: Prisma.PaymentWhereInput | Prisma.PaymentWhereInput[]
+  OR?: Prisma.PaymentWhereInput[]
+  NOT?: Prisma.PaymentWhereInput | Prisma.PaymentWhereInput[]
+  invoiceId?: Prisma.IntFilter<"Payment"> | number
+  paymentDate?: Prisma.DateTimeFilter<"Payment"> | Date | string
+  amount?: Prisma.DecimalFilter<"Payment"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  paymentMethodId?: Prisma.IntNullableFilter<"Payment"> | number | null
+  reference?: Prisma.StringNullableFilter<"Payment"> | string | null
+  invoice?: Prisma.XOR<Prisma.InvoiceScalarRelationFilter, Prisma.InvoiceWhereInput>
+  paymentMethod?: Prisma.XOR<Prisma.PaymentMethodNullableScalarRelationFilter, Prisma.PaymentMethodWhereInput> | null
+}, "paymentId">
 
-export type PAYMENTOrderByWithAggregationInput = {
-  payment_id?: Prisma.SortOrder
-  invoice_id?: Prisma.SortOrder
-  payment_date?: Prisma.SortOrder
+export type PaymentOrderByWithAggregationInput = {
+  paymentId?: Prisma.SortOrder
+  invoiceId?: Prisma.SortOrder
+  paymentDate?: Prisma.SortOrder
   amount?: Prisma.SortOrder
-  payment_method_id?: Prisma.SortOrderInput | Prisma.SortOrder
+  paymentMethodId?: Prisma.SortOrderInput | Prisma.SortOrder
   reference?: Prisma.SortOrderInput | Prisma.SortOrder
-  _count?: Prisma.PAYMENTCountOrderByAggregateInput
-  _avg?: Prisma.PAYMENTAvgOrderByAggregateInput
-  _max?: Prisma.PAYMENTMaxOrderByAggregateInput
-  _min?: Prisma.PAYMENTMinOrderByAggregateInput
-  _sum?: Prisma.PAYMENTSumOrderByAggregateInput
+  _count?: Prisma.PaymentCountOrderByAggregateInput
+  _avg?: Prisma.PaymentAvgOrderByAggregateInput
+  _max?: Prisma.PaymentMaxOrderByAggregateInput
+  _min?: Prisma.PaymentMinOrderByAggregateInput
+  _sum?: Prisma.PaymentSumOrderByAggregateInput
 }
 
-export type PAYMENTScalarWhereWithAggregatesInput = {
-  AND?: Prisma.PAYMENTScalarWhereWithAggregatesInput | Prisma.PAYMENTScalarWhereWithAggregatesInput[]
-  OR?: Prisma.PAYMENTScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.PAYMENTScalarWhereWithAggregatesInput | Prisma.PAYMENTScalarWhereWithAggregatesInput[]
-  payment_id?: Prisma.IntWithAggregatesFilter<"PAYMENT"> | number
-  invoice_id?: Prisma.IntWithAggregatesFilter<"PAYMENT"> | number
-  payment_date?: Prisma.DateTimeWithAggregatesFilter<"PAYMENT"> | Date | string
-  amount?: Prisma.DecimalWithAggregatesFilter<"PAYMENT"> | runtime.Decimal | runtime.DecimalJsLike | number | string
-  payment_method_id?: Prisma.IntNullableWithAggregatesFilter<"PAYMENT"> | number | null
-  reference?: Prisma.StringNullableWithAggregatesFilter<"PAYMENT"> | string | null
+export type PaymentScalarWhereWithAggregatesInput = {
+  AND?: Prisma.PaymentScalarWhereWithAggregatesInput | Prisma.PaymentScalarWhereWithAggregatesInput[]
+  OR?: Prisma.PaymentScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.PaymentScalarWhereWithAggregatesInput | Prisma.PaymentScalarWhereWithAggregatesInput[]
+  paymentId?: Prisma.IntWithAggregatesFilter<"Payment"> | number
+  invoiceId?: Prisma.IntWithAggregatesFilter<"Payment"> | number
+  paymentDate?: Prisma.DateTimeWithAggregatesFilter<"Payment"> | Date | string
+  amount?: Prisma.DecimalWithAggregatesFilter<"Payment"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  paymentMethodId?: Prisma.IntNullableWithAggregatesFilter<"Payment"> | number | null
+  reference?: Prisma.StringNullableWithAggregatesFilter<"Payment"> | string | null
 }
 
-export type PAYMENTCreateInput = {
-  payment_id: number
-  payment_date: Date | string
+export type PaymentCreateInput = {
+  paymentId: number
+  paymentDate: Date | string
   amount: runtime.Decimal | runtime.DecimalJsLike | number | string
   reference?: string | null
-  INVOICE: Prisma.INVOICECreateNestedOneWithoutPAYMENTInput
-  PAYMENT_METHOD?: Prisma.PAYMENT_METHODCreateNestedOneWithoutPAYMENTInput
+  invoice: Prisma.InvoiceCreateNestedOneWithoutPaymentsInput
+  paymentMethod?: Prisma.PaymentMethodCreateNestedOneWithoutPaymentsInput
 }
 
-export type PAYMENTUncheckedCreateInput = {
-  payment_id: number
-  invoice_id: number
-  payment_date: Date | string
+export type PaymentUncheckedCreateInput = {
+  paymentId: number
+  invoiceId: number
+  paymentDate: Date | string
   amount: runtime.Decimal | runtime.DecimalJsLike | number | string
-  payment_method_id?: number | null
-  reference?: string | null
-}
-
-export type PAYMENTUpdateInput = {
-  payment_id?: Prisma.IntFieldUpdateOperationsInput | number
-  payment_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  amount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  INVOICE?: Prisma.INVOICEUpdateOneRequiredWithoutPAYMENTNestedInput
-  PAYMENT_METHOD?: Prisma.PAYMENT_METHODUpdateOneWithoutPAYMENTNestedInput
-}
-
-export type PAYMENTUncheckedUpdateInput = {
-  payment_id?: Prisma.IntFieldUpdateOperationsInput | number
-  invoice_id?: Prisma.IntFieldUpdateOperationsInput | number
-  payment_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  amount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  payment_method_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-}
-
-export type PAYMENTCreateManyInput = {
-  payment_id: number
-  invoice_id: number
-  payment_date: Date | string
-  amount: runtime.Decimal | runtime.DecimalJsLike | number | string
-  payment_method_id?: number | null
+  paymentMethodId?: number | null
   reference?: string | null
 }
 
-export type PAYMENTUpdateManyMutationInput = {
-  payment_id?: Prisma.IntFieldUpdateOperationsInput | number
-  payment_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+export type PaymentUpdateInput = {
+  paymentId?: Prisma.IntFieldUpdateOperationsInput | number
+  paymentDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  amount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  invoice?: Prisma.InvoiceUpdateOneRequiredWithoutPaymentsNestedInput
+  paymentMethod?: Prisma.PaymentMethodUpdateOneWithoutPaymentsNestedInput
+}
+
+export type PaymentUncheckedUpdateInput = {
+  paymentId?: Prisma.IntFieldUpdateOperationsInput | number
+  invoiceId?: Prisma.IntFieldUpdateOperationsInput | number
+  paymentDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  amount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  paymentMethodId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+export type PaymentCreateManyInput = {
+  paymentId: number
+  invoiceId: number
+  paymentDate: Date | string
+  amount: runtime.Decimal | runtime.DecimalJsLike | number | string
+  paymentMethodId?: number | null
+  reference?: string | null
+}
+
+export type PaymentUpdateManyMutationInput = {
+  paymentId?: Prisma.IntFieldUpdateOperationsInput | number
+  paymentDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   amount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
-export type PAYMENTUncheckedUpdateManyInput = {
-  payment_id?: Prisma.IntFieldUpdateOperationsInput | number
-  invoice_id?: Prisma.IntFieldUpdateOperationsInput | number
-  payment_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+export type PaymentUncheckedUpdateManyInput = {
+  paymentId?: Prisma.IntFieldUpdateOperationsInput | number
+  invoiceId?: Prisma.IntFieldUpdateOperationsInput | number
+  paymentDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   amount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  payment_method_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  paymentMethodId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
-export type PAYMENTListRelationFilter = {
-  every?: Prisma.PAYMENTWhereInput
-  some?: Prisma.PAYMENTWhereInput
-  none?: Prisma.PAYMENTWhereInput
+export type PaymentListRelationFilter = {
+  every?: Prisma.PaymentWhereInput
+  some?: Prisma.PaymentWhereInput
+  none?: Prisma.PaymentWhereInput
 }
 
-export type PAYMENTOrderByRelationAggregateInput = {
+export type PaymentOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type PAYMENTOrderByRelevanceInput = {
-  fields: Prisma.PAYMENTOrderByRelevanceFieldEnum | Prisma.PAYMENTOrderByRelevanceFieldEnum[]
+export type PaymentOrderByRelevanceInput = {
+  fields: Prisma.PaymentOrderByRelevanceFieldEnum | Prisma.PaymentOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type PAYMENTCountOrderByAggregateInput = {
-  payment_id?: Prisma.SortOrder
-  invoice_id?: Prisma.SortOrder
-  payment_date?: Prisma.SortOrder
+export type PaymentCountOrderByAggregateInput = {
+  paymentId?: Prisma.SortOrder
+  invoiceId?: Prisma.SortOrder
+  paymentDate?: Prisma.SortOrder
   amount?: Prisma.SortOrder
-  payment_method_id?: Prisma.SortOrder
+  paymentMethodId?: Prisma.SortOrder
   reference?: Prisma.SortOrder
 }
 
-export type PAYMENTAvgOrderByAggregateInput = {
-  payment_id?: Prisma.SortOrder
-  invoice_id?: Prisma.SortOrder
+export type PaymentAvgOrderByAggregateInput = {
+  paymentId?: Prisma.SortOrder
+  invoiceId?: Prisma.SortOrder
   amount?: Prisma.SortOrder
-  payment_method_id?: Prisma.SortOrder
+  paymentMethodId?: Prisma.SortOrder
 }
 
-export type PAYMENTMaxOrderByAggregateInput = {
-  payment_id?: Prisma.SortOrder
-  invoice_id?: Prisma.SortOrder
-  payment_date?: Prisma.SortOrder
+export type PaymentMaxOrderByAggregateInput = {
+  paymentId?: Prisma.SortOrder
+  invoiceId?: Prisma.SortOrder
+  paymentDate?: Prisma.SortOrder
   amount?: Prisma.SortOrder
-  payment_method_id?: Prisma.SortOrder
+  paymentMethodId?: Prisma.SortOrder
   reference?: Prisma.SortOrder
 }
 
-export type PAYMENTMinOrderByAggregateInput = {
-  payment_id?: Prisma.SortOrder
-  invoice_id?: Prisma.SortOrder
-  payment_date?: Prisma.SortOrder
+export type PaymentMinOrderByAggregateInput = {
+  paymentId?: Prisma.SortOrder
+  invoiceId?: Prisma.SortOrder
+  paymentDate?: Prisma.SortOrder
   amount?: Prisma.SortOrder
-  payment_method_id?: Prisma.SortOrder
+  paymentMethodId?: Prisma.SortOrder
   reference?: Prisma.SortOrder
 }
 
-export type PAYMENTSumOrderByAggregateInput = {
-  payment_id?: Prisma.SortOrder
-  invoice_id?: Prisma.SortOrder
+export type PaymentSumOrderByAggregateInput = {
+  paymentId?: Prisma.SortOrder
+  invoiceId?: Prisma.SortOrder
   amount?: Prisma.SortOrder
-  payment_method_id?: Prisma.SortOrder
+  paymentMethodId?: Prisma.SortOrder
 }
 
-export type PAYMENTCreateNestedManyWithoutINVOICEInput = {
-  create?: Prisma.XOR<Prisma.PAYMENTCreateWithoutINVOICEInput, Prisma.PAYMENTUncheckedCreateWithoutINVOICEInput> | Prisma.PAYMENTCreateWithoutINVOICEInput[] | Prisma.PAYMENTUncheckedCreateWithoutINVOICEInput[]
-  connectOrCreate?: Prisma.PAYMENTCreateOrConnectWithoutINVOICEInput | Prisma.PAYMENTCreateOrConnectWithoutINVOICEInput[]
-  createMany?: Prisma.PAYMENTCreateManyINVOICEInputEnvelope
-  connect?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
+export type PaymentCreateNestedManyWithoutInvoiceInput = {
+  create?: Prisma.XOR<Prisma.PaymentCreateWithoutInvoiceInput, Prisma.PaymentUncheckedCreateWithoutInvoiceInput> | Prisma.PaymentCreateWithoutInvoiceInput[] | Prisma.PaymentUncheckedCreateWithoutInvoiceInput[]
+  connectOrCreate?: Prisma.PaymentCreateOrConnectWithoutInvoiceInput | Prisma.PaymentCreateOrConnectWithoutInvoiceInput[]
+  createMany?: Prisma.PaymentCreateManyInvoiceInputEnvelope
+  connect?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
 }
 
-export type PAYMENTUncheckedCreateNestedManyWithoutINVOICEInput = {
-  create?: Prisma.XOR<Prisma.PAYMENTCreateWithoutINVOICEInput, Prisma.PAYMENTUncheckedCreateWithoutINVOICEInput> | Prisma.PAYMENTCreateWithoutINVOICEInput[] | Prisma.PAYMENTUncheckedCreateWithoutINVOICEInput[]
-  connectOrCreate?: Prisma.PAYMENTCreateOrConnectWithoutINVOICEInput | Prisma.PAYMENTCreateOrConnectWithoutINVOICEInput[]
-  createMany?: Prisma.PAYMENTCreateManyINVOICEInputEnvelope
-  connect?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
+export type PaymentUncheckedCreateNestedManyWithoutInvoiceInput = {
+  create?: Prisma.XOR<Prisma.PaymentCreateWithoutInvoiceInput, Prisma.PaymentUncheckedCreateWithoutInvoiceInput> | Prisma.PaymentCreateWithoutInvoiceInput[] | Prisma.PaymentUncheckedCreateWithoutInvoiceInput[]
+  connectOrCreate?: Prisma.PaymentCreateOrConnectWithoutInvoiceInput | Prisma.PaymentCreateOrConnectWithoutInvoiceInput[]
+  createMany?: Prisma.PaymentCreateManyInvoiceInputEnvelope
+  connect?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
 }
 
-export type PAYMENTUpdateManyWithoutINVOICENestedInput = {
-  create?: Prisma.XOR<Prisma.PAYMENTCreateWithoutINVOICEInput, Prisma.PAYMENTUncheckedCreateWithoutINVOICEInput> | Prisma.PAYMENTCreateWithoutINVOICEInput[] | Prisma.PAYMENTUncheckedCreateWithoutINVOICEInput[]
-  connectOrCreate?: Prisma.PAYMENTCreateOrConnectWithoutINVOICEInput | Prisma.PAYMENTCreateOrConnectWithoutINVOICEInput[]
-  upsert?: Prisma.PAYMENTUpsertWithWhereUniqueWithoutINVOICEInput | Prisma.PAYMENTUpsertWithWhereUniqueWithoutINVOICEInput[]
-  createMany?: Prisma.PAYMENTCreateManyINVOICEInputEnvelope
-  set?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
-  disconnect?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
-  delete?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
-  connect?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
-  update?: Prisma.PAYMENTUpdateWithWhereUniqueWithoutINVOICEInput | Prisma.PAYMENTUpdateWithWhereUniqueWithoutINVOICEInput[]
-  updateMany?: Prisma.PAYMENTUpdateManyWithWhereWithoutINVOICEInput | Prisma.PAYMENTUpdateManyWithWhereWithoutINVOICEInput[]
-  deleteMany?: Prisma.PAYMENTScalarWhereInput | Prisma.PAYMENTScalarWhereInput[]
+export type PaymentUpdateManyWithoutInvoiceNestedInput = {
+  create?: Prisma.XOR<Prisma.PaymentCreateWithoutInvoiceInput, Prisma.PaymentUncheckedCreateWithoutInvoiceInput> | Prisma.PaymentCreateWithoutInvoiceInput[] | Prisma.PaymentUncheckedCreateWithoutInvoiceInput[]
+  connectOrCreate?: Prisma.PaymentCreateOrConnectWithoutInvoiceInput | Prisma.PaymentCreateOrConnectWithoutInvoiceInput[]
+  upsert?: Prisma.PaymentUpsertWithWhereUniqueWithoutInvoiceInput | Prisma.PaymentUpsertWithWhereUniqueWithoutInvoiceInput[]
+  createMany?: Prisma.PaymentCreateManyInvoiceInputEnvelope
+  set?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
+  disconnect?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
+  delete?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
+  connect?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
+  update?: Prisma.PaymentUpdateWithWhereUniqueWithoutInvoiceInput | Prisma.PaymentUpdateWithWhereUniqueWithoutInvoiceInput[]
+  updateMany?: Prisma.PaymentUpdateManyWithWhereWithoutInvoiceInput | Prisma.PaymentUpdateManyWithWhereWithoutInvoiceInput[]
+  deleteMany?: Prisma.PaymentScalarWhereInput | Prisma.PaymentScalarWhereInput[]
 }
 
-export type PAYMENTUncheckedUpdateManyWithoutINVOICENestedInput = {
-  create?: Prisma.XOR<Prisma.PAYMENTCreateWithoutINVOICEInput, Prisma.PAYMENTUncheckedCreateWithoutINVOICEInput> | Prisma.PAYMENTCreateWithoutINVOICEInput[] | Prisma.PAYMENTUncheckedCreateWithoutINVOICEInput[]
-  connectOrCreate?: Prisma.PAYMENTCreateOrConnectWithoutINVOICEInput | Prisma.PAYMENTCreateOrConnectWithoutINVOICEInput[]
-  upsert?: Prisma.PAYMENTUpsertWithWhereUniqueWithoutINVOICEInput | Prisma.PAYMENTUpsertWithWhereUniqueWithoutINVOICEInput[]
-  createMany?: Prisma.PAYMENTCreateManyINVOICEInputEnvelope
-  set?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
-  disconnect?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
-  delete?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
-  connect?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
-  update?: Prisma.PAYMENTUpdateWithWhereUniqueWithoutINVOICEInput | Prisma.PAYMENTUpdateWithWhereUniqueWithoutINVOICEInput[]
-  updateMany?: Prisma.PAYMENTUpdateManyWithWhereWithoutINVOICEInput | Prisma.PAYMENTUpdateManyWithWhereWithoutINVOICEInput[]
-  deleteMany?: Prisma.PAYMENTScalarWhereInput | Prisma.PAYMENTScalarWhereInput[]
+export type PaymentUncheckedUpdateManyWithoutInvoiceNestedInput = {
+  create?: Prisma.XOR<Prisma.PaymentCreateWithoutInvoiceInput, Prisma.PaymentUncheckedCreateWithoutInvoiceInput> | Prisma.PaymentCreateWithoutInvoiceInput[] | Prisma.PaymentUncheckedCreateWithoutInvoiceInput[]
+  connectOrCreate?: Prisma.PaymentCreateOrConnectWithoutInvoiceInput | Prisma.PaymentCreateOrConnectWithoutInvoiceInput[]
+  upsert?: Prisma.PaymentUpsertWithWhereUniqueWithoutInvoiceInput | Prisma.PaymentUpsertWithWhereUniqueWithoutInvoiceInput[]
+  createMany?: Prisma.PaymentCreateManyInvoiceInputEnvelope
+  set?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
+  disconnect?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
+  delete?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
+  connect?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
+  update?: Prisma.PaymentUpdateWithWhereUniqueWithoutInvoiceInput | Prisma.PaymentUpdateWithWhereUniqueWithoutInvoiceInput[]
+  updateMany?: Prisma.PaymentUpdateManyWithWhereWithoutInvoiceInput | Prisma.PaymentUpdateManyWithWhereWithoutInvoiceInput[]
+  deleteMany?: Prisma.PaymentScalarWhereInput | Prisma.PaymentScalarWhereInput[]
 }
 
 export type DecimalFieldUpdateOperationsInput = {
@@ -468,388 +468,388 @@ export type NullableIntFieldUpdateOperationsInput = {
   divide?: number
 }
 
-export type PAYMENTCreateNestedManyWithoutPAYMENT_METHODInput = {
-  create?: Prisma.XOR<Prisma.PAYMENTCreateWithoutPAYMENT_METHODInput, Prisma.PAYMENTUncheckedCreateWithoutPAYMENT_METHODInput> | Prisma.PAYMENTCreateWithoutPAYMENT_METHODInput[] | Prisma.PAYMENTUncheckedCreateWithoutPAYMENT_METHODInput[]
-  connectOrCreate?: Prisma.PAYMENTCreateOrConnectWithoutPAYMENT_METHODInput | Prisma.PAYMENTCreateOrConnectWithoutPAYMENT_METHODInput[]
-  createMany?: Prisma.PAYMENTCreateManyPAYMENT_METHODInputEnvelope
-  connect?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
+export type PaymentCreateNestedManyWithoutPaymentMethodInput = {
+  create?: Prisma.XOR<Prisma.PaymentCreateWithoutPaymentMethodInput, Prisma.PaymentUncheckedCreateWithoutPaymentMethodInput> | Prisma.PaymentCreateWithoutPaymentMethodInput[] | Prisma.PaymentUncheckedCreateWithoutPaymentMethodInput[]
+  connectOrCreate?: Prisma.PaymentCreateOrConnectWithoutPaymentMethodInput | Prisma.PaymentCreateOrConnectWithoutPaymentMethodInput[]
+  createMany?: Prisma.PaymentCreateManyPaymentMethodInputEnvelope
+  connect?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
 }
 
-export type PAYMENTUncheckedCreateNestedManyWithoutPAYMENT_METHODInput = {
-  create?: Prisma.XOR<Prisma.PAYMENTCreateWithoutPAYMENT_METHODInput, Prisma.PAYMENTUncheckedCreateWithoutPAYMENT_METHODInput> | Prisma.PAYMENTCreateWithoutPAYMENT_METHODInput[] | Prisma.PAYMENTUncheckedCreateWithoutPAYMENT_METHODInput[]
-  connectOrCreate?: Prisma.PAYMENTCreateOrConnectWithoutPAYMENT_METHODInput | Prisma.PAYMENTCreateOrConnectWithoutPAYMENT_METHODInput[]
-  createMany?: Prisma.PAYMENTCreateManyPAYMENT_METHODInputEnvelope
-  connect?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
+export type PaymentUncheckedCreateNestedManyWithoutPaymentMethodInput = {
+  create?: Prisma.XOR<Prisma.PaymentCreateWithoutPaymentMethodInput, Prisma.PaymentUncheckedCreateWithoutPaymentMethodInput> | Prisma.PaymentCreateWithoutPaymentMethodInput[] | Prisma.PaymentUncheckedCreateWithoutPaymentMethodInput[]
+  connectOrCreate?: Prisma.PaymentCreateOrConnectWithoutPaymentMethodInput | Prisma.PaymentCreateOrConnectWithoutPaymentMethodInput[]
+  createMany?: Prisma.PaymentCreateManyPaymentMethodInputEnvelope
+  connect?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
 }
 
-export type PAYMENTUpdateManyWithoutPAYMENT_METHODNestedInput = {
-  create?: Prisma.XOR<Prisma.PAYMENTCreateWithoutPAYMENT_METHODInput, Prisma.PAYMENTUncheckedCreateWithoutPAYMENT_METHODInput> | Prisma.PAYMENTCreateWithoutPAYMENT_METHODInput[] | Prisma.PAYMENTUncheckedCreateWithoutPAYMENT_METHODInput[]
-  connectOrCreate?: Prisma.PAYMENTCreateOrConnectWithoutPAYMENT_METHODInput | Prisma.PAYMENTCreateOrConnectWithoutPAYMENT_METHODInput[]
-  upsert?: Prisma.PAYMENTUpsertWithWhereUniqueWithoutPAYMENT_METHODInput | Prisma.PAYMENTUpsertWithWhereUniqueWithoutPAYMENT_METHODInput[]
-  createMany?: Prisma.PAYMENTCreateManyPAYMENT_METHODInputEnvelope
-  set?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
-  disconnect?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
-  delete?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
-  connect?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
-  update?: Prisma.PAYMENTUpdateWithWhereUniqueWithoutPAYMENT_METHODInput | Prisma.PAYMENTUpdateWithWhereUniqueWithoutPAYMENT_METHODInput[]
-  updateMany?: Prisma.PAYMENTUpdateManyWithWhereWithoutPAYMENT_METHODInput | Prisma.PAYMENTUpdateManyWithWhereWithoutPAYMENT_METHODInput[]
-  deleteMany?: Prisma.PAYMENTScalarWhereInput | Prisma.PAYMENTScalarWhereInput[]
+export type PaymentUpdateManyWithoutPaymentMethodNestedInput = {
+  create?: Prisma.XOR<Prisma.PaymentCreateWithoutPaymentMethodInput, Prisma.PaymentUncheckedCreateWithoutPaymentMethodInput> | Prisma.PaymentCreateWithoutPaymentMethodInput[] | Prisma.PaymentUncheckedCreateWithoutPaymentMethodInput[]
+  connectOrCreate?: Prisma.PaymentCreateOrConnectWithoutPaymentMethodInput | Prisma.PaymentCreateOrConnectWithoutPaymentMethodInput[]
+  upsert?: Prisma.PaymentUpsertWithWhereUniqueWithoutPaymentMethodInput | Prisma.PaymentUpsertWithWhereUniqueWithoutPaymentMethodInput[]
+  createMany?: Prisma.PaymentCreateManyPaymentMethodInputEnvelope
+  set?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
+  disconnect?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
+  delete?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
+  connect?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
+  update?: Prisma.PaymentUpdateWithWhereUniqueWithoutPaymentMethodInput | Prisma.PaymentUpdateWithWhereUniqueWithoutPaymentMethodInput[]
+  updateMany?: Prisma.PaymentUpdateManyWithWhereWithoutPaymentMethodInput | Prisma.PaymentUpdateManyWithWhereWithoutPaymentMethodInput[]
+  deleteMany?: Prisma.PaymentScalarWhereInput | Prisma.PaymentScalarWhereInput[]
 }
 
-export type PAYMENTUncheckedUpdateManyWithoutPAYMENT_METHODNestedInput = {
-  create?: Prisma.XOR<Prisma.PAYMENTCreateWithoutPAYMENT_METHODInput, Prisma.PAYMENTUncheckedCreateWithoutPAYMENT_METHODInput> | Prisma.PAYMENTCreateWithoutPAYMENT_METHODInput[] | Prisma.PAYMENTUncheckedCreateWithoutPAYMENT_METHODInput[]
-  connectOrCreate?: Prisma.PAYMENTCreateOrConnectWithoutPAYMENT_METHODInput | Prisma.PAYMENTCreateOrConnectWithoutPAYMENT_METHODInput[]
-  upsert?: Prisma.PAYMENTUpsertWithWhereUniqueWithoutPAYMENT_METHODInput | Prisma.PAYMENTUpsertWithWhereUniqueWithoutPAYMENT_METHODInput[]
-  createMany?: Prisma.PAYMENTCreateManyPAYMENT_METHODInputEnvelope
-  set?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
-  disconnect?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
-  delete?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
-  connect?: Prisma.PAYMENTWhereUniqueInput | Prisma.PAYMENTWhereUniqueInput[]
-  update?: Prisma.PAYMENTUpdateWithWhereUniqueWithoutPAYMENT_METHODInput | Prisma.PAYMENTUpdateWithWhereUniqueWithoutPAYMENT_METHODInput[]
-  updateMany?: Prisma.PAYMENTUpdateManyWithWhereWithoutPAYMENT_METHODInput | Prisma.PAYMENTUpdateManyWithWhereWithoutPAYMENT_METHODInput[]
-  deleteMany?: Prisma.PAYMENTScalarWhereInput | Prisma.PAYMENTScalarWhereInput[]
+export type PaymentUncheckedUpdateManyWithoutPaymentMethodNestedInput = {
+  create?: Prisma.XOR<Prisma.PaymentCreateWithoutPaymentMethodInput, Prisma.PaymentUncheckedCreateWithoutPaymentMethodInput> | Prisma.PaymentCreateWithoutPaymentMethodInput[] | Prisma.PaymentUncheckedCreateWithoutPaymentMethodInput[]
+  connectOrCreate?: Prisma.PaymentCreateOrConnectWithoutPaymentMethodInput | Prisma.PaymentCreateOrConnectWithoutPaymentMethodInput[]
+  upsert?: Prisma.PaymentUpsertWithWhereUniqueWithoutPaymentMethodInput | Prisma.PaymentUpsertWithWhereUniqueWithoutPaymentMethodInput[]
+  createMany?: Prisma.PaymentCreateManyPaymentMethodInputEnvelope
+  set?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
+  disconnect?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
+  delete?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
+  connect?: Prisma.PaymentWhereUniqueInput | Prisma.PaymentWhereUniqueInput[]
+  update?: Prisma.PaymentUpdateWithWhereUniqueWithoutPaymentMethodInput | Prisma.PaymentUpdateWithWhereUniqueWithoutPaymentMethodInput[]
+  updateMany?: Prisma.PaymentUpdateManyWithWhereWithoutPaymentMethodInput | Prisma.PaymentUpdateManyWithWhereWithoutPaymentMethodInput[]
+  deleteMany?: Prisma.PaymentScalarWhereInput | Prisma.PaymentScalarWhereInput[]
 }
 
-export type PAYMENTCreateWithoutINVOICEInput = {
-  payment_id: number
-  payment_date: Date | string
+export type PaymentCreateWithoutInvoiceInput = {
+  paymentId: number
+  paymentDate: Date | string
   amount: runtime.Decimal | runtime.DecimalJsLike | number | string
   reference?: string | null
-  PAYMENT_METHOD?: Prisma.PAYMENT_METHODCreateNestedOneWithoutPAYMENTInput
+  paymentMethod?: Prisma.PaymentMethodCreateNestedOneWithoutPaymentsInput
 }
 
-export type PAYMENTUncheckedCreateWithoutINVOICEInput = {
-  payment_id: number
-  payment_date: Date | string
+export type PaymentUncheckedCreateWithoutInvoiceInput = {
+  paymentId: number
+  paymentDate: Date | string
   amount: runtime.Decimal | runtime.DecimalJsLike | number | string
-  payment_method_id?: number | null
+  paymentMethodId?: number | null
   reference?: string | null
 }
 
-export type PAYMENTCreateOrConnectWithoutINVOICEInput = {
-  where: Prisma.PAYMENTWhereUniqueInput
-  create: Prisma.XOR<Prisma.PAYMENTCreateWithoutINVOICEInput, Prisma.PAYMENTUncheckedCreateWithoutINVOICEInput>
+export type PaymentCreateOrConnectWithoutInvoiceInput = {
+  where: Prisma.PaymentWhereUniqueInput
+  create: Prisma.XOR<Prisma.PaymentCreateWithoutInvoiceInput, Prisma.PaymentUncheckedCreateWithoutInvoiceInput>
 }
 
-export type PAYMENTCreateManyINVOICEInputEnvelope = {
-  data: Prisma.PAYMENTCreateManyINVOICEInput | Prisma.PAYMENTCreateManyINVOICEInput[]
+export type PaymentCreateManyInvoiceInputEnvelope = {
+  data: Prisma.PaymentCreateManyInvoiceInput | Prisma.PaymentCreateManyInvoiceInput[]
   skipDuplicates?: boolean
 }
 
-export type PAYMENTUpsertWithWhereUniqueWithoutINVOICEInput = {
-  where: Prisma.PAYMENTWhereUniqueInput
-  update: Prisma.XOR<Prisma.PAYMENTUpdateWithoutINVOICEInput, Prisma.PAYMENTUncheckedUpdateWithoutINVOICEInput>
-  create: Prisma.XOR<Prisma.PAYMENTCreateWithoutINVOICEInput, Prisma.PAYMENTUncheckedCreateWithoutINVOICEInput>
+export type PaymentUpsertWithWhereUniqueWithoutInvoiceInput = {
+  where: Prisma.PaymentWhereUniqueInput
+  update: Prisma.XOR<Prisma.PaymentUpdateWithoutInvoiceInput, Prisma.PaymentUncheckedUpdateWithoutInvoiceInput>
+  create: Prisma.XOR<Prisma.PaymentCreateWithoutInvoiceInput, Prisma.PaymentUncheckedCreateWithoutInvoiceInput>
 }
 
-export type PAYMENTUpdateWithWhereUniqueWithoutINVOICEInput = {
-  where: Prisma.PAYMENTWhereUniqueInput
-  data: Prisma.XOR<Prisma.PAYMENTUpdateWithoutINVOICEInput, Prisma.PAYMENTUncheckedUpdateWithoutINVOICEInput>
+export type PaymentUpdateWithWhereUniqueWithoutInvoiceInput = {
+  where: Prisma.PaymentWhereUniqueInput
+  data: Prisma.XOR<Prisma.PaymentUpdateWithoutInvoiceInput, Prisma.PaymentUncheckedUpdateWithoutInvoiceInput>
 }
 
-export type PAYMENTUpdateManyWithWhereWithoutINVOICEInput = {
-  where: Prisma.PAYMENTScalarWhereInput
-  data: Prisma.XOR<Prisma.PAYMENTUpdateManyMutationInput, Prisma.PAYMENTUncheckedUpdateManyWithoutINVOICEInput>
+export type PaymentUpdateManyWithWhereWithoutInvoiceInput = {
+  where: Prisma.PaymentScalarWhereInput
+  data: Prisma.XOR<Prisma.PaymentUpdateManyMutationInput, Prisma.PaymentUncheckedUpdateManyWithoutInvoiceInput>
 }
 
-export type PAYMENTScalarWhereInput = {
-  AND?: Prisma.PAYMENTScalarWhereInput | Prisma.PAYMENTScalarWhereInput[]
-  OR?: Prisma.PAYMENTScalarWhereInput[]
-  NOT?: Prisma.PAYMENTScalarWhereInput | Prisma.PAYMENTScalarWhereInput[]
-  payment_id?: Prisma.IntFilter<"PAYMENT"> | number
-  invoice_id?: Prisma.IntFilter<"PAYMENT"> | number
-  payment_date?: Prisma.DateTimeFilter<"PAYMENT"> | Date | string
-  amount?: Prisma.DecimalFilter<"PAYMENT"> | runtime.Decimal | runtime.DecimalJsLike | number | string
-  payment_method_id?: Prisma.IntNullableFilter<"PAYMENT"> | number | null
-  reference?: Prisma.StringNullableFilter<"PAYMENT"> | string | null
+export type PaymentScalarWhereInput = {
+  AND?: Prisma.PaymentScalarWhereInput | Prisma.PaymentScalarWhereInput[]
+  OR?: Prisma.PaymentScalarWhereInput[]
+  NOT?: Prisma.PaymentScalarWhereInput | Prisma.PaymentScalarWhereInput[]
+  paymentId?: Prisma.IntFilter<"Payment"> | number
+  invoiceId?: Prisma.IntFilter<"Payment"> | number
+  paymentDate?: Prisma.DateTimeFilter<"Payment"> | Date | string
+  amount?: Prisma.DecimalFilter<"Payment"> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  paymentMethodId?: Prisma.IntNullableFilter<"Payment"> | number | null
+  reference?: Prisma.StringNullableFilter<"Payment"> | string | null
 }
 
-export type PAYMENTCreateWithoutPAYMENT_METHODInput = {
-  payment_id: number
-  payment_date: Date | string
+export type PaymentCreateWithoutPaymentMethodInput = {
+  paymentId: number
+  paymentDate: Date | string
   amount: runtime.Decimal | runtime.DecimalJsLike | number | string
   reference?: string | null
-  INVOICE: Prisma.INVOICECreateNestedOneWithoutPAYMENTInput
+  invoice: Prisma.InvoiceCreateNestedOneWithoutPaymentsInput
 }
 
-export type PAYMENTUncheckedCreateWithoutPAYMENT_METHODInput = {
-  payment_id: number
-  invoice_id: number
-  payment_date: Date | string
+export type PaymentUncheckedCreateWithoutPaymentMethodInput = {
+  paymentId: number
+  invoiceId: number
+  paymentDate: Date | string
   amount: runtime.Decimal | runtime.DecimalJsLike | number | string
   reference?: string | null
 }
 
-export type PAYMENTCreateOrConnectWithoutPAYMENT_METHODInput = {
-  where: Prisma.PAYMENTWhereUniqueInput
-  create: Prisma.XOR<Prisma.PAYMENTCreateWithoutPAYMENT_METHODInput, Prisma.PAYMENTUncheckedCreateWithoutPAYMENT_METHODInput>
+export type PaymentCreateOrConnectWithoutPaymentMethodInput = {
+  where: Prisma.PaymentWhereUniqueInput
+  create: Prisma.XOR<Prisma.PaymentCreateWithoutPaymentMethodInput, Prisma.PaymentUncheckedCreateWithoutPaymentMethodInput>
 }
 
-export type PAYMENTCreateManyPAYMENT_METHODInputEnvelope = {
-  data: Prisma.PAYMENTCreateManyPAYMENT_METHODInput | Prisma.PAYMENTCreateManyPAYMENT_METHODInput[]
+export type PaymentCreateManyPaymentMethodInputEnvelope = {
+  data: Prisma.PaymentCreateManyPaymentMethodInput | Prisma.PaymentCreateManyPaymentMethodInput[]
   skipDuplicates?: boolean
 }
 
-export type PAYMENTUpsertWithWhereUniqueWithoutPAYMENT_METHODInput = {
-  where: Prisma.PAYMENTWhereUniqueInput
-  update: Prisma.XOR<Prisma.PAYMENTUpdateWithoutPAYMENT_METHODInput, Prisma.PAYMENTUncheckedUpdateWithoutPAYMENT_METHODInput>
-  create: Prisma.XOR<Prisma.PAYMENTCreateWithoutPAYMENT_METHODInput, Prisma.PAYMENTUncheckedCreateWithoutPAYMENT_METHODInput>
+export type PaymentUpsertWithWhereUniqueWithoutPaymentMethodInput = {
+  where: Prisma.PaymentWhereUniqueInput
+  update: Prisma.XOR<Prisma.PaymentUpdateWithoutPaymentMethodInput, Prisma.PaymentUncheckedUpdateWithoutPaymentMethodInput>
+  create: Prisma.XOR<Prisma.PaymentCreateWithoutPaymentMethodInput, Prisma.PaymentUncheckedCreateWithoutPaymentMethodInput>
 }
 
-export type PAYMENTUpdateWithWhereUniqueWithoutPAYMENT_METHODInput = {
-  where: Prisma.PAYMENTWhereUniqueInput
-  data: Prisma.XOR<Prisma.PAYMENTUpdateWithoutPAYMENT_METHODInput, Prisma.PAYMENTUncheckedUpdateWithoutPAYMENT_METHODInput>
+export type PaymentUpdateWithWhereUniqueWithoutPaymentMethodInput = {
+  where: Prisma.PaymentWhereUniqueInput
+  data: Prisma.XOR<Prisma.PaymentUpdateWithoutPaymentMethodInput, Prisma.PaymentUncheckedUpdateWithoutPaymentMethodInput>
 }
 
-export type PAYMENTUpdateManyWithWhereWithoutPAYMENT_METHODInput = {
-  where: Prisma.PAYMENTScalarWhereInput
-  data: Prisma.XOR<Prisma.PAYMENTUpdateManyMutationInput, Prisma.PAYMENTUncheckedUpdateManyWithoutPAYMENT_METHODInput>
+export type PaymentUpdateManyWithWhereWithoutPaymentMethodInput = {
+  where: Prisma.PaymentScalarWhereInput
+  data: Prisma.XOR<Prisma.PaymentUpdateManyMutationInput, Prisma.PaymentUncheckedUpdateManyWithoutPaymentMethodInput>
 }
 
-export type PAYMENTCreateManyINVOICEInput = {
-  payment_id: number
-  payment_date: Date | string
+export type PaymentCreateManyInvoiceInput = {
+  paymentId: number
+  paymentDate: Date | string
   amount: runtime.Decimal | runtime.DecimalJsLike | number | string
-  payment_method_id?: number | null
+  paymentMethodId?: number | null
   reference?: string | null
 }
 
-export type PAYMENTUpdateWithoutINVOICEInput = {
-  payment_id?: Prisma.IntFieldUpdateOperationsInput | number
-  payment_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+export type PaymentUpdateWithoutInvoiceInput = {
+  paymentId?: Prisma.IntFieldUpdateOperationsInput | number
+  paymentDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   amount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  PAYMENT_METHOD?: Prisma.PAYMENT_METHODUpdateOneWithoutPAYMENTNestedInput
+  paymentMethod?: Prisma.PaymentMethodUpdateOneWithoutPaymentsNestedInput
 }
 
-export type PAYMENTUncheckedUpdateWithoutINVOICEInput = {
-  payment_id?: Prisma.IntFieldUpdateOperationsInput | number
-  payment_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+export type PaymentUncheckedUpdateWithoutInvoiceInput = {
+  paymentId?: Prisma.IntFieldUpdateOperationsInput | number
+  paymentDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   amount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  payment_method_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-}
-
-export type PAYMENTUncheckedUpdateManyWithoutINVOICEInput = {
-  payment_id?: Prisma.IntFieldUpdateOperationsInput | number
-  payment_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  amount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  payment_method_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  paymentMethodId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
-export type PAYMENTCreateManyPAYMENT_METHODInput = {
-  payment_id: number
-  invoice_id: number
-  payment_date: Date | string
+export type PaymentUncheckedUpdateManyWithoutInvoiceInput = {
+  paymentId?: Prisma.IntFieldUpdateOperationsInput | number
+  paymentDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  amount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  paymentMethodId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+export type PaymentCreateManyPaymentMethodInput = {
+  paymentId: number
+  invoiceId: number
+  paymentDate: Date | string
   amount: runtime.Decimal | runtime.DecimalJsLike | number | string
   reference?: string | null
 }
 
-export type PAYMENTUpdateWithoutPAYMENT_METHODInput = {
-  payment_id?: Prisma.IntFieldUpdateOperationsInput | number
-  payment_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+export type PaymentUpdateWithoutPaymentMethodInput = {
+  paymentId?: Prisma.IntFieldUpdateOperationsInput | number
+  paymentDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   amount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  INVOICE?: Prisma.INVOICEUpdateOneRequiredWithoutPAYMENTNestedInput
+  invoice?: Prisma.InvoiceUpdateOneRequiredWithoutPaymentsNestedInput
 }
 
-export type PAYMENTUncheckedUpdateWithoutPAYMENT_METHODInput = {
-  payment_id?: Prisma.IntFieldUpdateOperationsInput | number
-  invoice_id?: Prisma.IntFieldUpdateOperationsInput | number
-  payment_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  amount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-}
-
-export type PAYMENTUncheckedUpdateManyWithoutPAYMENT_METHODInput = {
-  payment_id?: Prisma.IntFieldUpdateOperationsInput | number
-  invoice_id?: Prisma.IntFieldUpdateOperationsInput | number
-  payment_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+export type PaymentUncheckedUpdateWithoutPaymentMethodInput = {
+  paymentId?: Prisma.IntFieldUpdateOperationsInput | number
+  invoiceId?: Prisma.IntFieldUpdateOperationsInput | number
+  paymentDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   amount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
+export type PaymentUncheckedUpdateManyWithoutPaymentMethodInput = {
+  paymentId?: Prisma.IntFieldUpdateOperationsInput | number
+  invoiceId?: Prisma.IntFieldUpdateOperationsInput | number
+  paymentDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  amount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  reference?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
 
 
-export type PAYMENTSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-  payment_id?: boolean
-  invoice_id?: boolean
-  payment_date?: boolean
+
+export type PaymentSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  paymentId?: boolean
+  invoiceId?: boolean
+  paymentDate?: boolean
   amount?: boolean
-  payment_method_id?: boolean
+  paymentMethodId?: boolean
   reference?: boolean
-  INVOICE?: boolean | Prisma.INVOICEDefaultArgs<ExtArgs>
-  PAYMENT_METHOD?: boolean | Prisma.PAYMENT$PAYMENT_METHODArgs<ExtArgs>
-}, ExtArgs["result"]["pAYMENT"]>
+  invoice?: boolean | Prisma.InvoiceDefaultArgs<ExtArgs>
+  paymentMethod?: boolean | Prisma.Payment$paymentMethodArgs<ExtArgs>
+}, ExtArgs["result"]["payment"]>
 
 
 
-export type PAYMENTSelectScalar = {
-  payment_id?: boolean
-  invoice_id?: boolean
-  payment_date?: boolean
+export type PaymentSelectScalar = {
+  paymentId?: boolean
+  invoiceId?: boolean
+  paymentDate?: boolean
   amount?: boolean
-  payment_method_id?: boolean
+  paymentMethodId?: boolean
   reference?: boolean
 }
 
-export type PAYMENTOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"payment_id" | "invoice_id" | "payment_date" | "amount" | "payment_method_id" | "reference", ExtArgs["result"]["pAYMENT"]>
-export type PAYMENTInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  INVOICE?: boolean | Prisma.INVOICEDefaultArgs<ExtArgs>
-  PAYMENT_METHOD?: boolean | Prisma.PAYMENT$PAYMENT_METHODArgs<ExtArgs>
+export type PaymentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"paymentId" | "invoiceId" | "paymentDate" | "amount" | "paymentMethodId" | "reference", ExtArgs["result"]["payment"]>
+export type PaymentInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  invoice?: boolean | Prisma.InvoiceDefaultArgs<ExtArgs>
+  paymentMethod?: boolean | Prisma.Payment$paymentMethodArgs<ExtArgs>
 }
 
-export type $PAYMENTPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "PAYMENT"
+export type $PaymentPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "Payment"
   objects: {
-    INVOICE: Prisma.$INVOICEPayload<ExtArgs>
-    PAYMENT_METHOD: Prisma.$PAYMENT_METHODPayload<ExtArgs> | null
+    invoice: Prisma.$InvoicePayload<ExtArgs>
+    paymentMethod: Prisma.$PaymentMethodPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
-    payment_id: number
-    invoice_id: number
-    payment_date: Date
+    paymentId: number
+    invoiceId: number
+    paymentDate: Date
     amount: runtime.Decimal
-    payment_method_id: number | null
+    paymentMethodId: number | null
     reference: string | null
-  }, ExtArgs["result"]["pAYMENT"]>
+  }, ExtArgs["result"]["payment"]>
   composites: {}
 }
 
-export type PAYMENTGetPayload<S extends boolean | null | undefined | PAYMENTDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$PAYMENTPayload, S>
+export type PaymentGetPayload<S extends boolean | null | undefined | PaymentDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$PaymentPayload, S>
 
-export type PAYMENTCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<PAYMENTFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: PAYMENTCountAggregateInputType | true
+export type PaymentCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<PaymentFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: PaymentCountAggregateInputType | true
   }
 
-export interface PAYMENTDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['PAYMENT'], meta: { name: 'PAYMENT' } }
+export interface PaymentDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Payment'], meta: { name: 'Payment' } }
   /**
-   * Find zero or one PAYMENT that matches the filter.
-   * @param {PAYMENTFindUniqueArgs} args - Arguments to find a PAYMENT
+   * Find zero or one Payment that matches the filter.
+   * @param {PaymentFindUniqueArgs} args - Arguments to find a Payment
    * @example
-   * // Get one PAYMENT
-   * const pAYMENT = await prisma.pAYMENT.findUnique({
+   * // Get one Payment
+   * const payment = await prisma.payment.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends PAYMENTFindUniqueArgs>(args: Prisma.SelectSubset<T, PAYMENTFindUniqueArgs<ExtArgs>>): Prisma.Prisma__PAYMENTClient<runtime.Types.Result.GetResult<Prisma.$PAYMENTPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends PaymentFindUniqueArgs>(args: Prisma.SelectSubset<T, PaymentFindUniqueArgs<ExtArgs>>): Prisma.Prisma__PaymentClient<runtime.Types.Result.GetResult<Prisma.$PaymentPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one PAYMENT that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Payment that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {PAYMENTFindUniqueOrThrowArgs} args - Arguments to find a PAYMENT
+   * @param {PaymentFindUniqueOrThrowArgs} args - Arguments to find a Payment
    * @example
-   * // Get one PAYMENT
-   * const pAYMENT = await prisma.pAYMENT.findUniqueOrThrow({
+   * // Get one Payment
+   * const payment = await prisma.payment.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends PAYMENTFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, PAYMENTFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__PAYMENTClient<runtime.Types.Result.GetResult<Prisma.$PAYMENTPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends PaymentFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, PaymentFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__PaymentClient<runtime.Types.Result.GetResult<Prisma.$PaymentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first PAYMENT that matches the filter.
+   * Find the first Payment that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PAYMENTFindFirstArgs} args - Arguments to find a PAYMENT
+   * @param {PaymentFindFirstArgs} args - Arguments to find a Payment
    * @example
-   * // Get one PAYMENT
-   * const pAYMENT = await prisma.pAYMENT.findFirst({
+   * // Get one Payment
+   * const payment = await prisma.payment.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends PAYMENTFindFirstArgs>(args?: Prisma.SelectSubset<T, PAYMENTFindFirstArgs<ExtArgs>>): Prisma.Prisma__PAYMENTClient<runtime.Types.Result.GetResult<Prisma.$PAYMENTPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends PaymentFindFirstArgs>(args?: Prisma.SelectSubset<T, PaymentFindFirstArgs<ExtArgs>>): Prisma.Prisma__PaymentClient<runtime.Types.Result.GetResult<Prisma.$PaymentPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first PAYMENT that matches the filter or
+   * Find the first Payment that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PAYMENTFindFirstOrThrowArgs} args - Arguments to find a PAYMENT
+   * @param {PaymentFindFirstOrThrowArgs} args - Arguments to find a Payment
    * @example
-   * // Get one PAYMENT
-   * const pAYMENT = await prisma.pAYMENT.findFirstOrThrow({
+   * // Get one Payment
+   * const payment = await prisma.payment.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends PAYMENTFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, PAYMENTFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__PAYMENTClient<runtime.Types.Result.GetResult<Prisma.$PAYMENTPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends PaymentFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, PaymentFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__PaymentClient<runtime.Types.Result.GetResult<Prisma.$PaymentPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more PAYMENTS that matches the filter.
+   * Find zero or more Payments that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PAYMENTFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {PaymentFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all PAYMENTS
-   * const pAYMENTS = await prisma.pAYMENT.findMany()
+   * // Get all Payments
+   * const payments = await prisma.payment.findMany()
    * 
-   * // Get first 10 PAYMENTS
-   * const pAYMENTS = await prisma.pAYMENT.findMany({ take: 10 })
+   * // Get first 10 Payments
+   * const payments = await prisma.payment.findMany({ take: 10 })
    * 
-   * // Only select the `payment_id`
-   * const pAYMENTWithPayment_idOnly = await prisma.pAYMENT.findMany({ select: { payment_id: true } })
+   * // Only select the `paymentId`
+   * const paymentWithPaymentIdOnly = await prisma.payment.findMany({ select: { paymentId: true } })
    * 
    */
-  findMany<T extends PAYMENTFindManyArgs>(args?: Prisma.SelectSubset<T, PAYMENTFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PAYMENTPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends PaymentFindManyArgs>(args?: Prisma.SelectSubset<T, PaymentFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PaymentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a PAYMENT.
-   * @param {PAYMENTCreateArgs} args - Arguments to create a PAYMENT.
+   * Create a Payment.
+   * @param {PaymentCreateArgs} args - Arguments to create a Payment.
    * @example
-   * // Create one PAYMENT
-   * const PAYMENT = await prisma.pAYMENT.create({
+   * // Create one Payment
+   * const Payment = await prisma.payment.create({
    *   data: {
-   *     // ... data to create a PAYMENT
+   *     // ... data to create a Payment
    *   }
    * })
    * 
    */
-  create<T extends PAYMENTCreateArgs>(args: Prisma.SelectSubset<T, PAYMENTCreateArgs<ExtArgs>>): Prisma.Prisma__PAYMENTClient<runtime.Types.Result.GetResult<Prisma.$PAYMENTPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends PaymentCreateArgs>(args: Prisma.SelectSubset<T, PaymentCreateArgs<ExtArgs>>): Prisma.Prisma__PaymentClient<runtime.Types.Result.GetResult<Prisma.$PaymentPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many PAYMENTS.
-   * @param {PAYMENTCreateManyArgs} args - Arguments to create many PAYMENTS.
+   * Create many Payments.
+   * @param {PaymentCreateManyArgs} args - Arguments to create many Payments.
    * @example
-   * // Create many PAYMENTS
-   * const pAYMENT = await prisma.pAYMENT.createMany({
+   * // Create many Payments
+   * const payment = await prisma.payment.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends PAYMENTCreateManyArgs>(args?: Prisma.SelectSubset<T, PAYMENTCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends PaymentCreateManyArgs>(args?: Prisma.SelectSubset<T, PaymentCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a PAYMENT.
-   * @param {PAYMENTDeleteArgs} args - Arguments to delete one PAYMENT.
+   * Delete a Payment.
+   * @param {PaymentDeleteArgs} args - Arguments to delete one Payment.
    * @example
-   * // Delete one PAYMENT
-   * const PAYMENT = await prisma.pAYMENT.delete({
+   * // Delete one Payment
+   * const Payment = await prisma.payment.delete({
    *   where: {
-   *     // ... filter to delete one PAYMENT
+   *     // ... filter to delete one Payment
    *   }
    * })
    * 
    */
-  delete<T extends PAYMENTDeleteArgs>(args: Prisma.SelectSubset<T, PAYMENTDeleteArgs<ExtArgs>>): Prisma.Prisma__PAYMENTClient<runtime.Types.Result.GetResult<Prisma.$PAYMENTPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends PaymentDeleteArgs>(args: Prisma.SelectSubset<T, PaymentDeleteArgs<ExtArgs>>): Prisma.Prisma__PaymentClient<runtime.Types.Result.GetResult<Prisma.$PaymentPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one PAYMENT.
-   * @param {PAYMENTUpdateArgs} args - Arguments to update one PAYMENT.
+   * Update one Payment.
+   * @param {PaymentUpdateArgs} args - Arguments to update one Payment.
    * @example
-   * // Update one PAYMENT
-   * const pAYMENT = await prisma.pAYMENT.update({
+   * // Update one Payment
+   * const payment = await prisma.payment.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -859,30 +859,30 @@ export interface PAYMENTDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  update<T extends PAYMENTUpdateArgs>(args: Prisma.SelectSubset<T, PAYMENTUpdateArgs<ExtArgs>>): Prisma.Prisma__PAYMENTClient<runtime.Types.Result.GetResult<Prisma.$PAYMENTPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends PaymentUpdateArgs>(args: Prisma.SelectSubset<T, PaymentUpdateArgs<ExtArgs>>): Prisma.Prisma__PaymentClient<runtime.Types.Result.GetResult<Prisma.$PaymentPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more PAYMENTS.
-   * @param {PAYMENTDeleteManyArgs} args - Arguments to filter PAYMENTS to delete.
+   * Delete zero or more Payments.
+   * @param {PaymentDeleteManyArgs} args - Arguments to filter Payments to delete.
    * @example
-   * // Delete a few PAYMENTS
-   * const { count } = await prisma.pAYMENT.deleteMany({
+   * // Delete a few Payments
+   * const { count } = await prisma.payment.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends PAYMENTDeleteManyArgs>(args?: Prisma.SelectSubset<T, PAYMENTDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends PaymentDeleteManyArgs>(args?: Prisma.SelectSubset<T, PaymentDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more PAYMENTS.
+   * Update zero or more Payments.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PAYMENTUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {PaymentUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many PAYMENTS
-   * const pAYMENT = await prisma.pAYMENT.updateMany({
+   * // Update many Payments
+   * const payment = await prisma.payment.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -892,56 +892,56 @@ export interface PAYMENTDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  updateMany<T extends PAYMENTUpdateManyArgs>(args: Prisma.SelectSubset<T, PAYMENTUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends PaymentUpdateManyArgs>(args: Prisma.SelectSubset<T, PaymentUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one PAYMENT.
-   * @param {PAYMENTUpsertArgs} args - Arguments to update or create a PAYMENT.
+   * Create or update one Payment.
+   * @param {PaymentUpsertArgs} args - Arguments to update or create a Payment.
    * @example
-   * // Update or create a PAYMENT
-   * const pAYMENT = await prisma.pAYMENT.upsert({
+   * // Update or create a Payment
+   * const payment = await prisma.payment.upsert({
    *   create: {
-   *     // ... data to create a PAYMENT
+   *     // ... data to create a Payment
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the PAYMENT we want to update
+   *     // ... the filter for the Payment we want to update
    *   }
    * })
    */
-  upsert<T extends PAYMENTUpsertArgs>(args: Prisma.SelectSubset<T, PAYMENTUpsertArgs<ExtArgs>>): Prisma.Prisma__PAYMENTClient<runtime.Types.Result.GetResult<Prisma.$PAYMENTPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends PaymentUpsertArgs>(args: Prisma.SelectSubset<T, PaymentUpsertArgs<ExtArgs>>): Prisma.Prisma__PaymentClient<runtime.Types.Result.GetResult<Prisma.$PaymentPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of PAYMENTS.
+   * Count the number of Payments.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PAYMENTCountArgs} args - Arguments to filter PAYMENTS to count.
+   * @param {PaymentCountArgs} args - Arguments to filter Payments to count.
    * @example
-   * // Count the number of PAYMENTS
-   * const count = await prisma.pAYMENT.count({
+   * // Count the number of Payments
+   * const count = await prisma.payment.count({
    *   where: {
-   *     // ... the filter for the PAYMENTS we want to count
+   *     // ... the filter for the Payments we want to count
    *   }
    * })
   **/
-  count<T extends PAYMENTCountArgs>(
-    args?: Prisma.Subset<T, PAYMENTCountArgs>,
+  count<T extends PaymentCountArgs>(
+    args?: Prisma.Subset<T, PaymentCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], PAYMENTCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], PaymentCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a PAYMENT.
+   * Allows you to perform aggregations operations on a Payment.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PAYMENTAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {PaymentAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -961,13 +961,13 @@ export interface PAYMENTDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   take: 10,
    * })
   **/
-  aggregate<T extends PAYMENTAggregateArgs>(args: Prisma.Subset<T, PAYMENTAggregateArgs>): Prisma.PrismaPromise<GetPAYMENTAggregateType<T>>
+  aggregate<T extends PaymentAggregateArgs>(args: Prisma.Subset<T, PaymentAggregateArgs>): Prisma.PrismaPromise<GetPaymentAggregateType<T>>
 
   /**
-   * Group by PAYMENT.
+   * Group by Payment.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PAYMENTGroupByArgs} args - Group by arguments.
+   * @param {PaymentGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -982,14 +982,14 @@ export interface PAYMENTDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * 
   **/
   groupBy<
-    T extends PAYMENTGroupByArgs,
+    T extends PaymentGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: PAYMENTGroupByArgs['orderBy'] }
-      : { orderBy?: PAYMENTGroupByArgs['orderBy'] },
+      ? { orderBy: PaymentGroupByArgs['orderBy'] }
+      : { orderBy?: PaymentGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1038,23 +1038,23 @@ export interface PAYMENTDelegate<ExtArgs extends runtime.Types.Extensions.Intern
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, PAYMENTGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPAYMENTGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, PaymentGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPaymentGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the PAYMENT model
+ * Fields of the Payment model
  */
-readonly fields: PAYMENTFieldRefs;
+readonly fields: PaymentFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for PAYMENT.
+ * The delegate class that acts as a "Promise-like" for Payment.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__PAYMENTClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__PaymentClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  INVOICE<T extends Prisma.INVOICEDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.INVOICEDefaultArgs<ExtArgs>>): Prisma.Prisma__INVOICEClient<runtime.Types.Result.GetResult<Prisma.$INVOICEPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  PAYMENT_METHOD<T extends Prisma.PAYMENT$PAYMENT_METHODArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PAYMENT$PAYMENT_METHODArgs<ExtArgs>>): Prisma.Prisma__PAYMENT_METHODClient<runtime.Types.Result.GetResult<Prisma.$PAYMENT_METHODPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  invoice<T extends Prisma.InvoiceDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.InvoiceDefaultArgs<ExtArgs>>): Prisma.Prisma__InvoiceClient<runtime.Types.Result.GetResult<Prisma.$InvoicePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  paymentMethod<T extends Prisma.Payment$paymentMethodArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Payment$paymentMethodArgs<ExtArgs>>): Prisma.Prisma__PaymentMethodClient<runtime.Types.Result.GetResult<Prisma.$PaymentMethodPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1081,395 +1081,395 @@ export interface Prisma__PAYMENTClient<T, Null = never, ExtArgs extends runtime.
 
 
 /**
- * Fields of the PAYMENT model
+ * Fields of the Payment model
  */
-export interface PAYMENTFieldRefs {
-  readonly payment_id: Prisma.FieldRef<"PAYMENT", 'Int'>
-  readonly invoice_id: Prisma.FieldRef<"PAYMENT", 'Int'>
-  readonly payment_date: Prisma.FieldRef<"PAYMENT", 'DateTime'>
-  readonly amount: Prisma.FieldRef<"PAYMENT", 'Decimal'>
-  readonly payment_method_id: Prisma.FieldRef<"PAYMENT", 'Int'>
-  readonly reference: Prisma.FieldRef<"PAYMENT", 'String'>
+export interface PaymentFieldRefs {
+  readonly paymentId: Prisma.FieldRef<"Payment", 'Int'>
+  readonly invoiceId: Prisma.FieldRef<"Payment", 'Int'>
+  readonly paymentDate: Prisma.FieldRef<"Payment", 'DateTime'>
+  readonly amount: Prisma.FieldRef<"Payment", 'Decimal'>
+  readonly paymentMethodId: Prisma.FieldRef<"Payment", 'Int'>
+  readonly reference: Prisma.FieldRef<"Payment", 'String'>
 }
     
 
 // Custom InputTypes
 /**
- * PAYMENT findUnique
+ * Payment findUnique
  */
-export type PAYMENTFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PaymentFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PAYMENT
+   * Select specific fields to fetch from the Payment
    */
-  select?: Prisma.PAYMENTSelect<ExtArgs> | null
+  select?: Prisma.PaymentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PAYMENT
+   * Omit specific fields from the Payment
    */
-  omit?: Prisma.PAYMENTOmit<ExtArgs> | null
+  omit?: Prisma.PaymentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PAYMENTInclude<ExtArgs> | null
+  include?: Prisma.PaymentInclude<ExtArgs> | null
   /**
-   * Filter, which PAYMENT to fetch.
+   * Filter, which Payment to fetch.
    */
-  where: Prisma.PAYMENTWhereUniqueInput
+  where: Prisma.PaymentWhereUniqueInput
 }
 
 /**
- * PAYMENT findUniqueOrThrow
+ * Payment findUniqueOrThrow
  */
-export type PAYMENTFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PaymentFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PAYMENT
+   * Select specific fields to fetch from the Payment
    */
-  select?: Prisma.PAYMENTSelect<ExtArgs> | null
+  select?: Prisma.PaymentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PAYMENT
+   * Omit specific fields from the Payment
    */
-  omit?: Prisma.PAYMENTOmit<ExtArgs> | null
+  omit?: Prisma.PaymentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PAYMENTInclude<ExtArgs> | null
+  include?: Prisma.PaymentInclude<ExtArgs> | null
   /**
-   * Filter, which PAYMENT to fetch.
+   * Filter, which Payment to fetch.
    */
-  where: Prisma.PAYMENTWhereUniqueInput
+  where: Prisma.PaymentWhereUniqueInput
 }
 
 /**
- * PAYMENT findFirst
+ * Payment findFirst
  */
-export type PAYMENTFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PaymentFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PAYMENT
+   * Select specific fields to fetch from the Payment
    */
-  select?: Prisma.PAYMENTSelect<ExtArgs> | null
+  select?: Prisma.PaymentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PAYMENT
+   * Omit specific fields from the Payment
    */
-  omit?: Prisma.PAYMENTOmit<ExtArgs> | null
+  omit?: Prisma.PaymentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PAYMENTInclude<ExtArgs> | null
+  include?: Prisma.PaymentInclude<ExtArgs> | null
   /**
-   * Filter, which PAYMENT to fetch.
+   * Filter, which Payment to fetch.
    */
-  where?: Prisma.PAYMENTWhereInput
+  where?: Prisma.PaymentWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of PAYMENTS to fetch.
+   * Determine the order of Payments to fetch.
    */
-  orderBy?: Prisma.PAYMENTOrderByWithRelationInput | Prisma.PAYMENTOrderByWithRelationInput[]
+  orderBy?: Prisma.PaymentOrderByWithRelationInput | Prisma.PaymentOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for PAYMENTS.
+   * Sets the position for searching for Payments.
    */
-  cursor?: Prisma.PAYMENTWhereUniqueInput
+  cursor?: Prisma.PaymentWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` PAYMENTS from the position of the cursor.
+   * Take `±n` Payments from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` PAYMENTS.
+   * Skip the first `n` Payments.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of PAYMENTS.
+   * Filter by unique combinations of Payments.
    */
-  distinct?: Prisma.PAYMENTScalarFieldEnum | Prisma.PAYMENTScalarFieldEnum[]
+  distinct?: Prisma.PaymentScalarFieldEnum | Prisma.PaymentScalarFieldEnum[]
 }
 
 /**
- * PAYMENT findFirstOrThrow
+ * Payment findFirstOrThrow
  */
-export type PAYMENTFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PaymentFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PAYMENT
+   * Select specific fields to fetch from the Payment
    */
-  select?: Prisma.PAYMENTSelect<ExtArgs> | null
+  select?: Prisma.PaymentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PAYMENT
+   * Omit specific fields from the Payment
    */
-  omit?: Prisma.PAYMENTOmit<ExtArgs> | null
+  omit?: Prisma.PaymentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PAYMENTInclude<ExtArgs> | null
+  include?: Prisma.PaymentInclude<ExtArgs> | null
   /**
-   * Filter, which PAYMENT to fetch.
+   * Filter, which Payment to fetch.
    */
-  where?: Prisma.PAYMENTWhereInput
+  where?: Prisma.PaymentWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of PAYMENTS to fetch.
+   * Determine the order of Payments to fetch.
    */
-  orderBy?: Prisma.PAYMENTOrderByWithRelationInput | Prisma.PAYMENTOrderByWithRelationInput[]
+  orderBy?: Prisma.PaymentOrderByWithRelationInput | Prisma.PaymentOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for PAYMENTS.
+   * Sets the position for searching for Payments.
    */
-  cursor?: Prisma.PAYMENTWhereUniqueInput
+  cursor?: Prisma.PaymentWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` PAYMENTS from the position of the cursor.
+   * Take `±n` Payments from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` PAYMENTS.
+   * Skip the first `n` Payments.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of PAYMENTS.
+   * Filter by unique combinations of Payments.
    */
-  distinct?: Prisma.PAYMENTScalarFieldEnum | Prisma.PAYMENTScalarFieldEnum[]
+  distinct?: Prisma.PaymentScalarFieldEnum | Prisma.PaymentScalarFieldEnum[]
 }
 
 /**
- * PAYMENT findMany
+ * Payment findMany
  */
-export type PAYMENTFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PaymentFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PAYMENT
+   * Select specific fields to fetch from the Payment
    */
-  select?: Prisma.PAYMENTSelect<ExtArgs> | null
+  select?: Prisma.PaymentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PAYMENT
+   * Omit specific fields from the Payment
    */
-  omit?: Prisma.PAYMENTOmit<ExtArgs> | null
+  omit?: Prisma.PaymentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PAYMENTInclude<ExtArgs> | null
+  include?: Prisma.PaymentInclude<ExtArgs> | null
   /**
-   * Filter, which PAYMENTS to fetch.
+   * Filter, which Payments to fetch.
    */
-  where?: Prisma.PAYMENTWhereInput
+  where?: Prisma.PaymentWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of PAYMENTS to fetch.
+   * Determine the order of Payments to fetch.
    */
-  orderBy?: Prisma.PAYMENTOrderByWithRelationInput | Prisma.PAYMENTOrderByWithRelationInput[]
+  orderBy?: Prisma.PaymentOrderByWithRelationInput | Prisma.PaymentOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing PAYMENTS.
+   * Sets the position for listing Payments.
    */
-  cursor?: Prisma.PAYMENTWhereUniqueInput
+  cursor?: Prisma.PaymentWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` PAYMENTS from the position of the cursor.
+   * Take `±n` Payments from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` PAYMENTS.
+   * Skip the first `n` Payments.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of PAYMENTS.
+   * Filter by unique combinations of Payments.
    */
-  distinct?: Prisma.PAYMENTScalarFieldEnum | Prisma.PAYMENTScalarFieldEnum[]
+  distinct?: Prisma.PaymentScalarFieldEnum | Prisma.PaymentScalarFieldEnum[]
 }
 
 /**
- * PAYMENT create
+ * Payment create
  */
-export type PAYMENTCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PaymentCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PAYMENT
+   * Select specific fields to fetch from the Payment
    */
-  select?: Prisma.PAYMENTSelect<ExtArgs> | null
+  select?: Prisma.PaymentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PAYMENT
+   * Omit specific fields from the Payment
    */
-  omit?: Prisma.PAYMENTOmit<ExtArgs> | null
+  omit?: Prisma.PaymentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PAYMENTInclude<ExtArgs> | null
+  include?: Prisma.PaymentInclude<ExtArgs> | null
   /**
-   * The data needed to create a PAYMENT.
+   * The data needed to create a Payment.
    */
-  data: Prisma.XOR<Prisma.PAYMENTCreateInput, Prisma.PAYMENTUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.PaymentCreateInput, Prisma.PaymentUncheckedCreateInput>
 }
 
 /**
- * PAYMENT createMany
+ * Payment createMany
  */
-export type PAYMENTCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PaymentCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many PAYMENTS.
+   * The data used to create many Payments.
    */
-  data: Prisma.PAYMENTCreateManyInput | Prisma.PAYMENTCreateManyInput[]
+  data: Prisma.PaymentCreateManyInput | Prisma.PaymentCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * PAYMENT update
+ * Payment update
  */
-export type PAYMENTUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PaymentUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PAYMENT
+   * Select specific fields to fetch from the Payment
    */
-  select?: Prisma.PAYMENTSelect<ExtArgs> | null
+  select?: Prisma.PaymentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PAYMENT
+   * Omit specific fields from the Payment
    */
-  omit?: Prisma.PAYMENTOmit<ExtArgs> | null
+  omit?: Prisma.PaymentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PAYMENTInclude<ExtArgs> | null
+  include?: Prisma.PaymentInclude<ExtArgs> | null
   /**
-   * The data needed to update a PAYMENT.
+   * The data needed to update a Payment.
    */
-  data: Prisma.XOR<Prisma.PAYMENTUpdateInput, Prisma.PAYMENTUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.PaymentUpdateInput, Prisma.PaymentUncheckedUpdateInput>
   /**
-   * Choose, which PAYMENT to update.
+   * Choose, which Payment to update.
    */
-  where: Prisma.PAYMENTWhereUniqueInput
+  where: Prisma.PaymentWhereUniqueInput
 }
 
 /**
- * PAYMENT updateMany
+ * Payment updateMany
  */
-export type PAYMENTUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PaymentUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update PAYMENTS.
+   * The data used to update Payments.
    */
-  data: Prisma.XOR<Prisma.PAYMENTUpdateManyMutationInput, Prisma.PAYMENTUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.PaymentUpdateManyMutationInput, Prisma.PaymentUncheckedUpdateManyInput>
   /**
-   * Filter which PAYMENTS to update
+   * Filter which Payments to update
    */
-  where?: Prisma.PAYMENTWhereInput
+  where?: Prisma.PaymentWhereInput
   /**
-   * Limit how many PAYMENTS to update.
+   * Limit how many Payments to update.
    */
   limit?: number
 }
 
 /**
- * PAYMENT upsert
+ * Payment upsert
  */
-export type PAYMENTUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PaymentUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PAYMENT
+   * Select specific fields to fetch from the Payment
    */
-  select?: Prisma.PAYMENTSelect<ExtArgs> | null
+  select?: Prisma.PaymentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PAYMENT
+   * Omit specific fields from the Payment
    */
-  omit?: Prisma.PAYMENTOmit<ExtArgs> | null
+  omit?: Prisma.PaymentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PAYMENTInclude<ExtArgs> | null
+  include?: Prisma.PaymentInclude<ExtArgs> | null
   /**
-   * The filter to search for the PAYMENT to update in case it exists.
+   * The filter to search for the Payment to update in case it exists.
    */
-  where: Prisma.PAYMENTWhereUniqueInput
+  where: Prisma.PaymentWhereUniqueInput
   /**
-   * In case the PAYMENT found by the `where` argument doesn't exist, create a new PAYMENT with this data.
+   * In case the Payment found by the `where` argument doesn't exist, create a new Payment with this data.
    */
-  create: Prisma.XOR<Prisma.PAYMENTCreateInput, Prisma.PAYMENTUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.PaymentCreateInput, Prisma.PaymentUncheckedCreateInput>
   /**
-   * In case the PAYMENT was found with the provided `where` argument, update it with this data.
+   * In case the Payment was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.PAYMENTUpdateInput, Prisma.PAYMENTUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.PaymentUpdateInput, Prisma.PaymentUncheckedUpdateInput>
 }
 
 /**
- * PAYMENT delete
+ * Payment delete
  */
-export type PAYMENTDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PaymentDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PAYMENT
+   * Select specific fields to fetch from the Payment
    */
-  select?: Prisma.PAYMENTSelect<ExtArgs> | null
+  select?: Prisma.PaymentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PAYMENT
+   * Omit specific fields from the Payment
    */
-  omit?: Prisma.PAYMENTOmit<ExtArgs> | null
+  omit?: Prisma.PaymentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PAYMENTInclude<ExtArgs> | null
+  include?: Prisma.PaymentInclude<ExtArgs> | null
   /**
-   * Filter which PAYMENT to delete.
+   * Filter which Payment to delete.
    */
-  where: Prisma.PAYMENTWhereUniqueInput
+  where: Prisma.PaymentWhereUniqueInput
 }
 
 /**
- * PAYMENT deleteMany
+ * Payment deleteMany
  */
-export type PAYMENTDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PaymentDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which PAYMENTS to delete
+   * Filter which Payments to delete
    */
-  where?: Prisma.PAYMENTWhereInput
+  where?: Prisma.PaymentWhereInput
   /**
-   * Limit how many PAYMENTS to delete.
+   * Limit how many Payments to delete.
    */
   limit?: number
 }
 
 /**
- * PAYMENT.PAYMENT_METHOD
+ * Payment.paymentMethod
  */
-export type PAYMENT$PAYMENT_METHODArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Payment$paymentMethodArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PAYMENT_METHOD
+   * Select specific fields to fetch from the PaymentMethod
    */
-  select?: Prisma.PAYMENT_METHODSelect<ExtArgs> | null
+  select?: Prisma.PaymentMethodSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PAYMENT_METHOD
+   * Omit specific fields from the PaymentMethod
    */
-  omit?: Prisma.PAYMENT_METHODOmit<ExtArgs> | null
+  omit?: Prisma.PaymentMethodOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PAYMENT_METHODInclude<ExtArgs> | null
-  where?: Prisma.PAYMENT_METHODWhereInput
+  include?: Prisma.PaymentMethodInclude<ExtArgs> | null
+  where?: Prisma.PaymentMethodWhereInput
 }
 
 /**
- * PAYMENT without action
+ * Payment without action
  */
-export type PAYMENTDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PaymentDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PAYMENT
+   * Select specific fields to fetch from the Payment
    */
-  select?: Prisma.PAYMENTSelect<ExtArgs> | null
+  select?: Prisma.PaymentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PAYMENT
+   * Omit specific fields from the Payment
    */
-  omit?: Prisma.PAYMENTOmit<ExtArgs> | null
+  omit?: Prisma.PaymentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PAYMENTInclude<ExtArgs> | null
+  include?: Prisma.PaymentInclude<ExtArgs> | null
 }

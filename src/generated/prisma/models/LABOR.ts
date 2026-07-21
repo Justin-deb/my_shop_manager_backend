@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `LABOR` model and its related types.
+ * This file exports the `Labor` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,398 +13,398 @@ import type * as $Enums from "../enums"
 import type * as Prisma from "../internal/prismaNamespace"
 
 /**
- * Model LABOR
+ * Model Labor
  * 
  */
-export type LABORModel = runtime.Types.Result.DefaultSelection<Prisma.$LABORPayload>
+export type LaborModel = runtime.Types.Result.DefaultSelection<Prisma.$LaborPayload>
 
-export type AggregateLABOR = {
-  _count: LABORCountAggregateOutputType | null
-  _avg: LABORAvgAggregateOutputType | null
-  _sum: LABORSumAggregateOutputType | null
-  _min: LABORMinAggregateOutputType | null
-  _max: LABORMaxAggregateOutputType | null
+export type AggregateLabor = {
+  _count: LaborCountAggregateOutputType | null
+  _avg: LaborAvgAggregateOutputType | null
+  _sum: LaborSumAggregateOutputType | null
+  _min: LaborMinAggregateOutputType | null
+  _max: LaborMaxAggregateOutputType | null
 }
 
-export type LABORAvgAggregateOutputType = {
-  labor_id: number | null
-  repair_id: number | null
+export type LaborAvgAggregateOutputType = {
+  laborId: number | null
+  repairId: number | null
   hours: runtime.Decimal | null
-  hourly_rate: runtime.Decimal | null
+  hourlyRate: runtime.Decimal | null
 }
 
-export type LABORSumAggregateOutputType = {
-  labor_id: number | null
-  repair_id: number | null
+export type LaborSumAggregateOutputType = {
+  laborId: number | null
+  repairId: number | null
   hours: runtime.Decimal | null
-  hourly_rate: runtime.Decimal | null
+  hourlyRate: runtime.Decimal | null
 }
 
-export type LABORMinAggregateOutputType = {
-  labor_id: number | null
-  repair_id: number | null
+export type LaborMinAggregateOutputType = {
+  laborId: number | null
+  repairId: number | null
   description: string | null
   hours: runtime.Decimal | null
-  hourly_rate: runtime.Decimal | null
-  performed_at: Date | null
+  hourlyRate: runtime.Decimal | null
+  performedAt: Date | null
 }
 
-export type LABORMaxAggregateOutputType = {
-  labor_id: number | null
-  repair_id: number | null
+export type LaborMaxAggregateOutputType = {
+  laborId: number | null
+  repairId: number | null
   description: string | null
   hours: runtime.Decimal | null
-  hourly_rate: runtime.Decimal | null
-  performed_at: Date | null
+  hourlyRate: runtime.Decimal | null
+  performedAt: Date | null
 }
 
-export type LABORCountAggregateOutputType = {
-  labor_id: number
-  repair_id: number
+export type LaborCountAggregateOutputType = {
+  laborId: number
+  repairId: number
   description: number
   hours: number
-  hourly_rate: number
-  performed_at: number
+  hourlyRate: number
+  performedAt: number
   _all: number
 }
 
 
-export type LABORAvgAggregateInputType = {
-  labor_id?: true
-  repair_id?: true
+export type LaborAvgAggregateInputType = {
+  laborId?: true
+  repairId?: true
   hours?: true
-  hourly_rate?: true
+  hourlyRate?: true
 }
 
-export type LABORSumAggregateInputType = {
-  labor_id?: true
-  repair_id?: true
+export type LaborSumAggregateInputType = {
+  laborId?: true
+  repairId?: true
   hours?: true
-  hourly_rate?: true
+  hourlyRate?: true
 }
 
-export type LABORMinAggregateInputType = {
-  labor_id?: true
-  repair_id?: true
+export type LaborMinAggregateInputType = {
+  laborId?: true
+  repairId?: true
   description?: true
   hours?: true
-  hourly_rate?: true
-  performed_at?: true
+  hourlyRate?: true
+  performedAt?: true
 }
 
-export type LABORMaxAggregateInputType = {
-  labor_id?: true
-  repair_id?: true
+export type LaborMaxAggregateInputType = {
+  laborId?: true
+  repairId?: true
   description?: true
   hours?: true
-  hourly_rate?: true
-  performed_at?: true
+  hourlyRate?: true
+  performedAt?: true
 }
 
-export type LABORCountAggregateInputType = {
-  labor_id?: true
-  repair_id?: true
+export type LaborCountAggregateInputType = {
+  laborId?: true
+  repairId?: true
   description?: true
   hours?: true
-  hourly_rate?: true
-  performed_at?: true
+  hourlyRate?: true
+  performedAt?: true
   _all?: true
 }
 
-export type LABORAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type LaborAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which LABOR to aggregate.
+   * Filter which Labor to aggregate.
    */
-  where?: Prisma.LABORWhereInput
+  where?: Prisma.LaborWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of LABORS to fetch.
+   * Determine the order of Labors to fetch.
    */
-  orderBy?: Prisma.LABOROrderByWithRelationInput | Prisma.LABOROrderByWithRelationInput[]
+  orderBy?: Prisma.LaborOrderByWithRelationInput | Prisma.LaborOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.LABORWhereUniqueInput
+  cursor?: Prisma.LaborWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` LABORS from the position of the cursor.
+   * Take `±n` Labors from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` LABORS.
+   * Skip the first `n` Labors.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned LABORS
+   * Count returned Labors
   **/
-  _count?: true | LABORCountAggregateInputType
+  _count?: true | LaborCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to average
   **/
-  _avg?: LABORAvgAggregateInputType
+  _avg?: LaborAvgAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to sum
   **/
-  _sum?: LABORSumAggregateInputType
+  _sum?: LaborSumAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: LABORMinAggregateInputType
+  _min?: LaborMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: LABORMaxAggregateInputType
+  _max?: LaborMaxAggregateInputType
 }
 
-export type GetLABORAggregateType<T extends LABORAggregateArgs> = {
-      [P in keyof T & keyof AggregateLABOR]: P extends '_count' | 'count'
+export type GetLaborAggregateType<T extends LaborAggregateArgs> = {
+      [P in keyof T & keyof AggregateLabor]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateLABOR[P]>
-    : Prisma.GetScalarType<T[P], AggregateLABOR[P]>
+      : Prisma.GetScalarType<T[P], AggregateLabor[P]>
+    : Prisma.GetScalarType<T[P], AggregateLabor[P]>
 }
 
 
 
 
-export type LABORGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.LABORWhereInput
-  orderBy?: Prisma.LABOROrderByWithAggregationInput | Prisma.LABOROrderByWithAggregationInput[]
-  by: Prisma.LABORScalarFieldEnum[] | Prisma.LABORScalarFieldEnum
-  having?: Prisma.LABORScalarWhereWithAggregatesInput
+export type LaborGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.LaborWhereInput
+  orderBy?: Prisma.LaborOrderByWithAggregationInput | Prisma.LaborOrderByWithAggregationInput[]
+  by: Prisma.LaborScalarFieldEnum[] | Prisma.LaborScalarFieldEnum
+  having?: Prisma.LaborScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: LABORCountAggregateInputType | true
-  _avg?: LABORAvgAggregateInputType
-  _sum?: LABORSumAggregateInputType
-  _min?: LABORMinAggregateInputType
-  _max?: LABORMaxAggregateInputType
+  _count?: LaborCountAggregateInputType | true
+  _avg?: LaborAvgAggregateInputType
+  _sum?: LaborSumAggregateInputType
+  _min?: LaborMinAggregateInputType
+  _max?: LaborMaxAggregateInputType
 }
 
-export type LABORGroupByOutputType = {
-  labor_id: number
-  repair_id: number
+export type LaborGroupByOutputType = {
+  laborId: number
+  repairId: number
   description: string | null
   hours: runtime.Decimal | null
-  hourly_rate: runtime.Decimal | null
-  performed_at: Date
-  _count: LABORCountAggregateOutputType | null
-  _avg: LABORAvgAggregateOutputType | null
-  _sum: LABORSumAggregateOutputType | null
-  _min: LABORMinAggregateOutputType | null
-  _max: LABORMaxAggregateOutputType | null
+  hourlyRate: runtime.Decimal | null
+  performedAt: Date
+  _count: LaborCountAggregateOutputType | null
+  _avg: LaborAvgAggregateOutputType | null
+  _sum: LaborSumAggregateOutputType | null
+  _min: LaborMinAggregateOutputType | null
+  _max: LaborMaxAggregateOutputType | null
 }
 
-export type GetLABORGroupByPayload<T extends LABORGroupByArgs> = Prisma.PrismaPromise<
+export type GetLaborGroupByPayload<T extends LaborGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<LABORGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<LaborGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof LABORGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof LaborGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], LABORGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], LABORGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], LaborGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], LaborGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type LABORWhereInput = {
-  AND?: Prisma.LABORWhereInput | Prisma.LABORWhereInput[]
-  OR?: Prisma.LABORWhereInput[]
-  NOT?: Prisma.LABORWhereInput | Prisma.LABORWhereInput[]
-  labor_id?: Prisma.IntFilter<"LABOR"> | number
-  repair_id?: Prisma.IntFilter<"LABOR"> | number
-  description?: Prisma.StringNullableFilter<"LABOR"> | string | null
-  hours?: Prisma.DecimalNullableFilter<"LABOR"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  hourly_rate?: Prisma.DecimalNullableFilter<"LABOR"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  performed_at?: Prisma.DateTimeFilter<"LABOR"> | Date | string
-  REPAIR?: Prisma.XOR<Prisma.REPAIRScalarRelationFilter, Prisma.REPAIRWhereInput>
+export type LaborWhereInput = {
+  AND?: Prisma.LaborWhereInput | Prisma.LaborWhereInput[]
+  OR?: Prisma.LaborWhereInput[]
+  NOT?: Prisma.LaborWhereInput | Prisma.LaborWhereInput[]
+  laborId?: Prisma.IntFilter<"Labor"> | number
+  repairId?: Prisma.IntFilter<"Labor"> | number
+  description?: Prisma.StringNullableFilter<"Labor"> | string | null
+  hours?: Prisma.DecimalNullableFilter<"Labor"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  hourlyRate?: Prisma.DecimalNullableFilter<"Labor"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  performedAt?: Prisma.DateTimeFilter<"Labor"> | Date | string
+  repair?: Prisma.XOR<Prisma.RepairScalarRelationFilter, Prisma.RepairWhereInput>
 }
 
-export type LABOROrderByWithRelationInput = {
-  labor_id?: Prisma.SortOrder
-  repair_id?: Prisma.SortOrder
+export type LaborOrderByWithRelationInput = {
+  laborId?: Prisma.SortOrder
+  repairId?: Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
   hours?: Prisma.SortOrderInput | Prisma.SortOrder
-  hourly_rate?: Prisma.SortOrderInput | Prisma.SortOrder
-  performed_at?: Prisma.SortOrder
-  REPAIR?: Prisma.REPAIROrderByWithRelationInput
-  _relevance?: Prisma.LABOROrderByRelevanceInput
+  hourlyRate?: Prisma.SortOrderInput | Prisma.SortOrder
+  performedAt?: Prisma.SortOrder
+  repair?: Prisma.RepairOrderByWithRelationInput
+  _relevance?: Prisma.LaborOrderByRelevanceInput
 }
 
-export type LABORWhereUniqueInput = Prisma.AtLeast<{
-  labor_id?: number
-  AND?: Prisma.LABORWhereInput | Prisma.LABORWhereInput[]
-  OR?: Prisma.LABORWhereInput[]
-  NOT?: Prisma.LABORWhereInput | Prisma.LABORWhereInput[]
-  repair_id?: Prisma.IntFilter<"LABOR"> | number
-  description?: Prisma.StringNullableFilter<"LABOR"> | string | null
-  hours?: Prisma.DecimalNullableFilter<"LABOR"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  hourly_rate?: Prisma.DecimalNullableFilter<"LABOR"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  performed_at?: Prisma.DateTimeFilter<"LABOR"> | Date | string
-  REPAIR?: Prisma.XOR<Prisma.REPAIRScalarRelationFilter, Prisma.REPAIRWhereInput>
-}, "labor_id">
+export type LaborWhereUniqueInput = Prisma.AtLeast<{
+  laborId?: number
+  AND?: Prisma.LaborWhereInput | Prisma.LaborWhereInput[]
+  OR?: Prisma.LaborWhereInput[]
+  NOT?: Prisma.LaborWhereInput | Prisma.LaborWhereInput[]
+  repairId?: Prisma.IntFilter<"Labor"> | number
+  description?: Prisma.StringNullableFilter<"Labor"> | string | null
+  hours?: Prisma.DecimalNullableFilter<"Labor"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  hourlyRate?: Prisma.DecimalNullableFilter<"Labor"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  performedAt?: Prisma.DateTimeFilter<"Labor"> | Date | string
+  repair?: Prisma.XOR<Prisma.RepairScalarRelationFilter, Prisma.RepairWhereInput>
+}, "laborId">
 
-export type LABOROrderByWithAggregationInput = {
-  labor_id?: Prisma.SortOrder
-  repair_id?: Prisma.SortOrder
+export type LaborOrderByWithAggregationInput = {
+  laborId?: Prisma.SortOrder
+  repairId?: Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
   hours?: Prisma.SortOrderInput | Prisma.SortOrder
-  hourly_rate?: Prisma.SortOrderInput | Prisma.SortOrder
-  performed_at?: Prisma.SortOrder
-  _count?: Prisma.LABORCountOrderByAggregateInput
-  _avg?: Prisma.LABORAvgOrderByAggregateInput
-  _max?: Prisma.LABORMaxOrderByAggregateInput
-  _min?: Prisma.LABORMinOrderByAggregateInput
-  _sum?: Prisma.LABORSumOrderByAggregateInput
+  hourlyRate?: Prisma.SortOrderInput | Prisma.SortOrder
+  performedAt?: Prisma.SortOrder
+  _count?: Prisma.LaborCountOrderByAggregateInput
+  _avg?: Prisma.LaborAvgOrderByAggregateInput
+  _max?: Prisma.LaborMaxOrderByAggregateInput
+  _min?: Prisma.LaborMinOrderByAggregateInput
+  _sum?: Prisma.LaborSumOrderByAggregateInput
 }
 
-export type LABORScalarWhereWithAggregatesInput = {
-  AND?: Prisma.LABORScalarWhereWithAggregatesInput | Prisma.LABORScalarWhereWithAggregatesInput[]
-  OR?: Prisma.LABORScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.LABORScalarWhereWithAggregatesInput | Prisma.LABORScalarWhereWithAggregatesInput[]
-  labor_id?: Prisma.IntWithAggregatesFilter<"LABOR"> | number
-  repair_id?: Prisma.IntWithAggregatesFilter<"LABOR"> | number
-  description?: Prisma.StringNullableWithAggregatesFilter<"LABOR"> | string | null
-  hours?: Prisma.DecimalNullableWithAggregatesFilter<"LABOR"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  hourly_rate?: Prisma.DecimalNullableWithAggregatesFilter<"LABOR"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  performed_at?: Prisma.DateTimeWithAggregatesFilter<"LABOR"> | Date | string
+export type LaborScalarWhereWithAggregatesInput = {
+  AND?: Prisma.LaborScalarWhereWithAggregatesInput | Prisma.LaborScalarWhereWithAggregatesInput[]
+  OR?: Prisma.LaborScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.LaborScalarWhereWithAggregatesInput | Prisma.LaborScalarWhereWithAggregatesInput[]
+  laborId?: Prisma.IntWithAggregatesFilter<"Labor"> | number
+  repairId?: Prisma.IntWithAggregatesFilter<"Labor"> | number
+  description?: Prisma.StringNullableWithAggregatesFilter<"Labor"> | string | null
+  hours?: Prisma.DecimalNullableWithAggregatesFilter<"Labor"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  hourlyRate?: Prisma.DecimalNullableWithAggregatesFilter<"Labor"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  performedAt?: Prisma.DateTimeWithAggregatesFilter<"Labor"> | Date | string
 }
 
-export type LABORCreateInput = {
-  labor_id: number
+export type LaborCreateInput = {
+  laborId: number
   description?: string | null
   hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  hourly_rate?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  performed_at: Date | string
-  REPAIR: Prisma.REPAIRCreateNestedOneWithoutLABORInput
+  hourlyRate?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  performedAt: Date | string
+  repair: Prisma.RepairCreateNestedOneWithoutLaborInput
 }
 
-export type LABORUncheckedCreateInput = {
-  labor_id: number
-  repair_id: number
+export type LaborUncheckedCreateInput = {
+  laborId: number
+  repairId: number
   description?: string | null
   hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  hourly_rate?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  performed_at: Date | string
+  hourlyRate?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  performedAt: Date | string
 }
 
-export type LABORUpdateInput = {
-  labor_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type LaborUpdateInput = {
+  laborId?: Prisma.IntFieldUpdateOperationsInput | number
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  hourly_rate?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  performed_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  REPAIR?: Prisma.REPAIRUpdateOneRequiredWithoutLABORNestedInput
+  hourlyRate?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  performedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  repair?: Prisma.RepairUpdateOneRequiredWithoutLaborNestedInput
 }
 
-export type LABORUncheckedUpdateInput = {
-  labor_id?: Prisma.IntFieldUpdateOperationsInput | number
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type LaborUncheckedUpdateInput = {
+  laborId?: Prisma.IntFieldUpdateOperationsInput | number
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  hourly_rate?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  performed_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  hourlyRate?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  performedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type LABORCreateManyInput = {
-  labor_id: number
-  repair_id: number
+export type LaborCreateManyInput = {
+  laborId: number
+  repairId: number
   description?: string | null
   hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  hourly_rate?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  performed_at: Date | string
+  hourlyRate?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  performedAt: Date | string
 }
 
-export type LABORUpdateManyMutationInput = {
-  labor_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type LaborUpdateManyMutationInput = {
+  laborId?: Prisma.IntFieldUpdateOperationsInput | number
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  hourly_rate?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  performed_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  hourlyRate?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  performedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type LABORUncheckedUpdateManyInput = {
-  labor_id?: Prisma.IntFieldUpdateOperationsInput | number
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type LaborUncheckedUpdateManyInput = {
+  laborId?: Prisma.IntFieldUpdateOperationsInput | number
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  hourly_rate?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  performed_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  hourlyRate?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  performedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type LABOROrderByRelevanceInput = {
-  fields: Prisma.LABOROrderByRelevanceFieldEnum | Prisma.LABOROrderByRelevanceFieldEnum[]
+export type LaborOrderByRelevanceInput = {
+  fields: Prisma.LaborOrderByRelevanceFieldEnum | Prisma.LaborOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type LABORCountOrderByAggregateInput = {
-  labor_id?: Prisma.SortOrder
-  repair_id?: Prisma.SortOrder
+export type LaborCountOrderByAggregateInput = {
+  laborId?: Prisma.SortOrder
+  repairId?: Prisma.SortOrder
   description?: Prisma.SortOrder
   hours?: Prisma.SortOrder
-  hourly_rate?: Prisma.SortOrder
-  performed_at?: Prisma.SortOrder
+  hourlyRate?: Prisma.SortOrder
+  performedAt?: Prisma.SortOrder
 }
 
-export type LABORAvgOrderByAggregateInput = {
-  labor_id?: Prisma.SortOrder
-  repair_id?: Prisma.SortOrder
+export type LaborAvgOrderByAggregateInput = {
+  laborId?: Prisma.SortOrder
+  repairId?: Prisma.SortOrder
   hours?: Prisma.SortOrder
-  hourly_rate?: Prisma.SortOrder
+  hourlyRate?: Prisma.SortOrder
 }
 
-export type LABORMaxOrderByAggregateInput = {
-  labor_id?: Prisma.SortOrder
-  repair_id?: Prisma.SortOrder
+export type LaborMaxOrderByAggregateInput = {
+  laborId?: Prisma.SortOrder
+  repairId?: Prisma.SortOrder
   description?: Prisma.SortOrder
   hours?: Prisma.SortOrder
-  hourly_rate?: Prisma.SortOrder
-  performed_at?: Prisma.SortOrder
+  hourlyRate?: Prisma.SortOrder
+  performedAt?: Prisma.SortOrder
 }
 
-export type LABORMinOrderByAggregateInput = {
-  labor_id?: Prisma.SortOrder
-  repair_id?: Prisma.SortOrder
+export type LaborMinOrderByAggregateInput = {
+  laborId?: Prisma.SortOrder
+  repairId?: Prisma.SortOrder
   description?: Prisma.SortOrder
   hours?: Prisma.SortOrder
-  hourly_rate?: Prisma.SortOrder
-  performed_at?: Prisma.SortOrder
+  hourlyRate?: Prisma.SortOrder
+  performedAt?: Prisma.SortOrder
 }
 
-export type LABORSumOrderByAggregateInput = {
-  labor_id?: Prisma.SortOrder
-  repair_id?: Prisma.SortOrder
+export type LaborSumOrderByAggregateInput = {
+  laborId?: Prisma.SortOrder
+  repairId?: Prisma.SortOrder
   hours?: Prisma.SortOrder
-  hourly_rate?: Prisma.SortOrder
+  hourlyRate?: Prisma.SortOrder
 }
 
-export type LABORListRelationFilter = {
-  every?: Prisma.LABORWhereInput
-  some?: Prisma.LABORWhereInput
-  none?: Prisma.LABORWhereInput
+export type LaborListRelationFilter = {
+  every?: Prisma.LaborWhereInput
+  some?: Prisma.LaborWhereInput
+  none?: Prisma.LaborWhereInput
 }
 
-export type LABOROrderByRelationAggregateInput = {
+export type LaborOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
@@ -416,311 +416,311 @@ export type DateTimeFieldUpdateOperationsInput = {
   set?: Date | string
 }
 
-export type LABORCreateNestedManyWithoutREPAIRInput = {
-  create?: Prisma.XOR<Prisma.LABORCreateWithoutREPAIRInput, Prisma.LABORUncheckedCreateWithoutREPAIRInput> | Prisma.LABORCreateWithoutREPAIRInput[] | Prisma.LABORUncheckedCreateWithoutREPAIRInput[]
-  connectOrCreate?: Prisma.LABORCreateOrConnectWithoutREPAIRInput | Prisma.LABORCreateOrConnectWithoutREPAIRInput[]
-  createMany?: Prisma.LABORCreateManyREPAIRInputEnvelope
-  connect?: Prisma.LABORWhereUniqueInput | Prisma.LABORWhereUniqueInput[]
+export type LaborCreateNestedManyWithoutRepairInput = {
+  create?: Prisma.XOR<Prisma.LaborCreateWithoutRepairInput, Prisma.LaborUncheckedCreateWithoutRepairInput> | Prisma.LaborCreateWithoutRepairInput[] | Prisma.LaborUncheckedCreateWithoutRepairInput[]
+  connectOrCreate?: Prisma.LaborCreateOrConnectWithoutRepairInput | Prisma.LaborCreateOrConnectWithoutRepairInput[]
+  createMany?: Prisma.LaborCreateManyRepairInputEnvelope
+  connect?: Prisma.LaborWhereUniqueInput | Prisma.LaborWhereUniqueInput[]
 }
 
-export type LABORUncheckedCreateNestedManyWithoutREPAIRInput = {
-  create?: Prisma.XOR<Prisma.LABORCreateWithoutREPAIRInput, Prisma.LABORUncheckedCreateWithoutREPAIRInput> | Prisma.LABORCreateWithoutREPAIRInput[] | Prisma.LABORUncheckedCreateWithoutREPAIRInput[]
-  connectOrCreate?: Prisma.LABORCreateOrConnectWithoutREPAIRInput | Prisma.LABORCreateOrConnectWithoutREPAIRInput[]
-  createMany?: Prisma.LABORCreateManyREPAIRInputEnvelope
-  connect?: Prisma.LABORWhereUniqueInput | Prisma.LABORWhereUniqueInput[]
+export type LaborUncheckedCreateNestedManyWithoutRepairInput = {
+  create?: Prisma.XOR<Prisma.LaborCreateWithoutRepairInput, Prisma.LaborUncheckedCreateWithoutRepairInput> | Prisma.LaborCreateWithoutRepairInput[] | Prisma.LaborUncheckedCreateWithoutRepairInput[]
+  connectOrCreate?: Prisma.LaborCreateOrConnectWithoutRepairInput | Prisma.LaborCreateOrConnectWithoutRepairInput[]
+  createMany?: Prisma.LaborCreateManyRepairInputEnvelope
+  connect?: Prisma.LaborWhereUniqueInput | Prisma.LaborWhereUniqueInput[]
 }
 
-export type LABORUpdateManyWithoutREPAIRNestedInput = {
-  create?: Prisma.XOR<Prisma.LABORCreateWithoutREPAIRInput, Prisma.LABORUncheckedCreateWithoutREPAIRInput> | Prisma.LABORCreateWithoutREPAIRInput[] | Prisma.LABORUncheckedCreateWithoutREPAIRInput[]
-  connectOrCreate?: Prisma.LABORCreateOrConnectWithoutREPAIRInput | Prisma.LABORCreateOrConnectWithoutREPAIRInput[]
-  upsert?: Prisma.LABORUpsertWithWhereUniqueWithoutREPAIRInput | Prisma.LABORUpsertWithWhereUniqueWithoutREPAIRInput[]
-  createMany?: Prisma.LABORCreateManyREPAIRInputEnvelope
-  set?: Prisma.LABORWhereUniqueInput | Prisma.LABORWhereUniqueInput[]
-  disconnect?: Prisma.LABORWhereUniqueInput | Prisma.LABORWhereUniqueInput[]
-  delete?: Prisma.LABORWhereUniqueInput | Prisma.LABORWhereUniqueInput[]
-  connect?: Prisma.LABORWhereUniqueInput | Prisma.LABORWhereUniqueInput[]
-  update?: Prisma.LABORUpdateWithWhereUniqueWithoutREPAIRInput | Prisma.LABORUpdateWithWhereUniqueWithoutREPAIRInput[]
-  updateMany?: Prisma.LABORUpdateManyWithWhereWithoutREPAIRInput | Prisma.LABORUpdateManyWithWhereWithoutREPAIRInput[]
-  deleteMany?: Prisma.LABORScalarWhereInput | Prisma.LABORScalarWhereInput[]
+export type LaborUpdateManyWithoutRepairNestedInput = {
+  create?: Prisma.XOR<Prisma.LaborCreateWithoutRepairInput, Prisma.LaborUncheckedCreateWithoutRepairInput> | Prisma.LaborCreateWithoutRepairInput[] | Prisma.LaborUncheckedCreateWithoutRepairInput[]
+  connectOrCreate?: Prisma.LaborCreateOrConnectWithoutRepairInput | Prisma.LaborCreateOrConnectWithoutRepairInput[]
+  upsert?: Prisma.LaborUpsertWithWhereUniqueWithoutRepairInput | Prisma.LaborUpsertWithWhereUniqueWithoutRepairInput[]
+  createMany?: Prisma.LaborCreateManyRepairInputEnvelope
+  set?: Prisma.LaborWhereUniqueInput | Prisma.LaborWhereUniqueInput[]
+  disconnect?: Prisma.LaborWhereUniqueInput | Prisma.LaborWhereUniqueInput[]
+  delete?: Prisma.LaborWhereUniqueInput | Prisma.LaborWhereUniqueInput[]
+  connect?: Prisma.LaborWhereUniqueInput | Prisma.LaborWhereUniqueInput[]
+  update?: Prisma.LaborUpdateWithWhereUniqueWithoutRepairInput | Prisma.LaborUpdateWithWhereUniqueWithoutRepairInput[]
+  updateMany?: Prisma.LaborUpdateManyWithWhereWithoutRepairInput | Prisma.LaborUpdateManyWithWhereWithoutRepairInput[]
+  deleteMany?: Prisma.LaborScalarWhereInput | Prisma.LaborScalarWhereInput[]
 }
 
-export type LABORUncheckedUpdateManyWithoutREPAIRNestedInput = {
-  create?: Prisma.XOR<Prisma.LABORCreateWithoutREPAIRInput, Prisma.LABORUncheckedCreateWithoutREPAIRInput> | Prisma.LABORCreateWithoutREPAIRInput[] | Prisma.LABORUncheckedCreateWithoutREPAIRInput[]
-  connectOrCreate?: Prisma.LABORCreateOrConnectWithoutREPAIRInput | Prisma.LABORCreateOrConnectWithoutREPAIRInput[]
-  upsert?: Prisma.LABORUpsertWithWhereUniqueWithoutREPAIRInput | Prisma.LABORUpsertWithWhereUniqueWithoutREPAIRInput[]
-  createMany?: Prisma.LABORCreateManyREPAIRInputEnvelope
-  set?: Prisma.LABORWhereUniqueInput | Prisma.LABORWhereUniqueInput[]
-  disconnect?: Prisma.LABORWhereUniqueInput | Prisma.LABORWhereUniqueInput[]
-  delete?: Prisma.LABORWhereUniqueInput | Prisma.LABORWhereUniqueInput[]
-  connect?: Prisma.LABORWhereUniqueInput | Prisma.LABORWhereUniqueInput[]
-  update?: Prisma.LABORUpdateWithWhereUniqueWithoutREPAIRInput | Prisma.LABORUpdateWithWhereUniqueWithoutREPAIRInput[]
-  updateMany?: Prisma.LABORUpdateManyWithWhereWithoutREPAIRInput | Prisma.LABORUpdateManyWithWhereWithoutREPAIRInput[]
-  deleteMany?: Prisma.LABORScalarWhereInput | Prisma.LABORScalarWhereInput[]
+export type LaborUncheckedUpdateManyWithoutRepairNestedInput = {
+  create?: Prisma.XOR<Prisma.LaborCreateWithoutRepairInput, Prisma.LaborUncheckedCreateWithoutRepairInput> | Prisma.LaborCreateWithoutRepairInput[] | Prisma.LaborUncheckedCreateWithoutRepairInput[]
+  connectOrCreate?: Prisma.LaborCreateOrConnectWithoutRepairInput | Prisma.LaborCreateOrConnectWithoutRepairInput[]
+  upsert?: Prisma.LaborUpsertWithWhereUniqueWithoutRepairInput | Prisma.LaborUpsertWithWhereUniqueWithoutRepairInput[]
+  createMany?: Prisma.LaborCreateManyRepairInputEnvelope
+  set?: Prisma.LaborWhereUniqueInput | Prisma.LaborWhereUniqueInput[]
+  disconnect?: Prisma.LaborWhereUniqueInput | Prisma.LaborWhereUniqueInput[]
+  delete?: Prisma.LaborWhereUniqueInput | Prisma.LaborWhereUniqueInput[]
+  connect?: Prisma.LaborWhereUniqueInput | Prisma.LaborWhereUniqueInput[]
+  update?: Prisma.LaborUpdateWithWhereUniqueWithoutRepairInput | Prisma.LaborUpdateWithWhereUniqueWithoutRepairInput[]
+  updateMany?: Prisma.LaborUpdateManyWithWhereWithoutRepairInput | Prisma.LaborUpdateManyWithWhereWithoutRepairInput[]
+  deleteMany?: Prisma.LaborScalarWhereInput | Prisma.LaborScalarWhereInput[]
 }
 
-export type LABORCreateWithoutREPAIRInput = {
-  labor_id: number
+export type LaborCreateWithoutRepairInput = {
+  laborId: number
   description?: string | null
   hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  hourly_rate?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  performed_at: Date | string
+  hourlyRate?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  performedAt: Date | string
 }
 
-export type LABORUncheckedCreateWithoutREPAIRInput = {
-  labor_id: number
+export type LaborUncheckedCreateWithoutRepairInput = {
+  laborId: number
   description?: string | null
   hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  hourly_rate?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  performed_at: Date | string
+  hourlyRate?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  performedAt: Date | string
 }
 
-export type LABORCreateOrConnectWithoutREPAIRInput = {
-  where: Prisma.LABORWhereUniqueInput
-  create: Prisma.XOR<Prisma.LABORCreateWithoutREPAIRInput, Prisma.LABORUncheckedCreateWithoutREPAIRInput>
+export type LaborCreateOrConnectWithoutRepairInput = {
+  where: Prisma.LaborWhereUniqueInput
+  create: Prisma.XOR<Prisma.LaborCreateWithoutRepairInput, Prisma.LaborUncheckedCreateWithoutRepairInput>
 }
 
-export type LABORCreateManyREPAIRInputEnvelope = {
-  data: Prisma.LABORCreateManyREPAIRInput | Prisma.LABORCreateManyREPAIRInput[]
+export type LaborCreateManyRepairInputEnvelope = {
+  data: Prisma.LaborCreateManyRepairInput | Prisma.LaborCreateManyRepairInput[]
   skipDuplicates?: boolean
 }
 
-export type LABORUpsertWithWhereUniqueWithoutREPAIRInput = {
-  where: Prisma.LABORWhereUniqueInput
-  update: Prisma.XOR<Prisma.LABORUpdateWithoutREPAIRInput, Prisma.LABORUncheckedUpdateWithoutREPAIRInput>
-  create: Prisma.XOR<Prisma.LABORCreateWithoutREPAIRInput, Prisma.LABORUncheckedCreateWithoutREPAIRInput>
+export type LaborUpsertWithWhereUniqueWithoutRepairInput = {
+  where: Prisma.LaborWhereUniqueInput
+  update: Prisma.XOR<Prisma.LaborUpdateWithoutRepairInput, Prisma.LaborUncheckedUpdateWithoutRepairInput>
+  create: Prisma.XOR<Prisma.LaborCreateWithoutRepairInput, Prisma.LaborUncheckedCreateWithoutRepairInput>
 }
 
-export type LABORUpdateWithWhereUniqueWithoutREPAIRInput = {
-  where: Prisma.LABORWhereUniqueInput
-  data: Prisma.XOR<Prisma.LABORUpdateWithoutREPAIRInput, Prisma.LABORUncheckedUpdateWithoutREPAIRInput>
+export type LaborUpdateWithWhereUniqueWithoutRepairInput = {
+  where: Prisma.LaborWhereUniqueInput
+  data: Prisma.XOR<Prisma.LaborUpdateWithoutRepairInput, Prisma.LaborUncheckedUpdateWithoutRepairInput>
 }
 
-export type LABORUpdateManyWithWhereWithoutREPAIRInput = {
-  where: Prisma.LABORScalarWhereInput
-  data: Prisma.XOR<Prisma.LABORUpdateManyMutationInput, Prisma.LABORUncheckedUpdateManyWithoutREPAIRInput>
+export type LaborUpdateManyWithWhereWithoutRepairInput = {
+  where: Prisma.LaborScalarWhereInput
+  data: Prisma.XOR<Prisma.LaborUpdateManyMutationInput, Prisma.LaborUncheckedUpdateManyWithoutRepairInput>
 }
 
-export type LABORScalarWhereInput = {
-  AND?: Prisma.LABORScalarWhereInput | Prisma.LABORScalarWhereInput[]
-  OR?: Prisma.LABORScalarWhereInput[]
-  NOT?: Prisma.LABORScalarWhereInput | Prisma.LABORScalarWhereInput[]
-  labor_id?: Prisma.IntFilter<"LABOR"> | number
-  repair_id?: Prisma.IntFilter<"LABOR"> | number
-  description?: Prisma.StringNullableFilter<"LABOR"> | string | null
-  hours?: Prisma.DecimalNullableFilter<"LABOR"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  hourly_rate?: Prisma.DecimalNullableFilter<"LABOR"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  performed_at?: Prisma.DateTimeFilter<"LABOR"> | Date | string
+export type LaborScalarWhereInput = {
+  AND?: Prisma.LaborScalarWhereInput | Prisma.LaborScalarWhereInput[]
+  OR?: Prisma.LaborScalarWhereInput[]
+  NOT?: Prisma.LaborScalarWhereInput | Prisma.LaborScalarWhereInput[]
+  laborId?: Prisma.IntFilter<"Labor"> | number
+  repairId?: Prisma.IntFilter<"Labor"> | number
+  description?: Prisma.StringNullableFilter<"Labor"> | string | null
+  hours?: Prisma.DecimalNullableFilter<"Labor"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  hourlyRate?: Prisma.DecimalNullableFilter<"Labor"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  performedAt?: Prisma.DateTimeFilter<"Labor"> | Date | string
 }
 
-export type LABORCreateManyREPAIRInput = {
-  labor_id: number
+export type LaborCreateManyRepairInput = {
+  laborId: number
   description?: string | null
   hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  hourly_rate?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  performed_at: Date | string
+  hourlyRate?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  performedAt: Date | string
 }
 
-export type LABORUpdateWithoutREPAIRInput = {
-  labor_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type LaborUpdateWithoutRepairInput = {
+  laborId?: Prisma.IntFieldUpdateOperationsInput | number
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  hourly_rate?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  performed_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  hourlyRate?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  performedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type LABORUncheckedUpdateWithoutREPAIRInput = {
-  labor_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type LaborUncheckedUpdateWithoutRepairInput = {
+  laborId?: Prisma.IntFieldUpdateOperationsInput | number
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  hourly_rate?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  performed_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  hourlyRate?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  performedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type LABORUncheckedUpdateManyWithoutREPAIRInput = {
-  labor_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type LaborUncheckedUpdateManyWithoutRepairInput = {
+  laborId?: Prisma.IntFieldUpdateOperationsInput | number
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  hourly_rate?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  performed_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  hourlyRate?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  performedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 
 
-export type LABORSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-  labor_id?: boolean
-  repair_id?: boolean
+export type LaborSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  laborId?: boolean
+  repairId?: boolean
   description?: boolean
   hours?: boolean
-  hourly_rate?: boolean
-  performed_at?: boolean
-  REPAIR?: boolean | Prisma.REPAIRDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["lABOR"]>
+  hourlyRate?: boolean
+  performedAt?: boolean
+  repair?: boolean | Prisma.RepairDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["labor"]>
 
 
 
-export type LABORSelectScalar = {
-  labor_id?: boolean
-  repair_id?: boolean
+export type LaborSelectScalar = {
+  laborId?: boolean
+  repairId?: boolean
   description?: boolean
   hours?: boolean
-  hourly_rate?: boolean
-  performed_at?: boolean
+  hourlyRate?: boolean
+  performedAt?: boolean
 }
 
-export type LABOROmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"labor_id" | "repair_id" | "description" | "hours" | "hourly_rate" | "performed_at", ExtArgs["result"]["lABOR"]>
-export type LABORInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  REPAIR?: boolean | Prisma.REPAIRDefaultArgs<ExtArgs>
+export type LaborOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"laborId" | "repairId" | "description" | "hours" | "hourlyRate" | "performedAt", ExtArgs["result"]["labor"]>
+export type LaborInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  repair?: boolean | Prisma.RepairDefaultArgs<ExtArgs>
 }
 
-export type $LABORPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "LABOR"
+export type $LaborPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "Labor"
   objects: {
-    REPAIR: Prisma.$REPAIRPayload<ExtArgs>
+    repair: Prisma.$RepairPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
-    labor_id: number
-    repair_id: number
+    laborId: number
+    repairId: number
     description: string | null
     hours: runtime.Decimal | null
-    hourly_rate: runtime.Decimal | null
-    performed_at: Date
-  }, ExtArgs["result"]["lABOR"]>
+    hourlyRate: runtime.Decimal | null
+    performedAt: Date
+  }, ExtArgs["result"]["labor"]>
   composites: {}
 }
 
-export type LABORGetPayload<S extends boolean | null | undefined | LABORDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$LABORPayload, S>
+export type LaborGetPayload<S extends boolean | null | undefined | LaborDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$LaborPayload, S>
 
-export type LABORCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<LABORFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: LABORCountAggregateInputType | true
+export type LaborCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<LaborFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: LaborCountAggregateInputType | true
   }
 
-export interface LABORDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['LABOR'], meta: { name: 'LABOR' } }
+export interface LaborDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Labor'], meta: { name: 'Labor' } }
   /**
-   * Find zero or one LABOR that matches the filter.
-   * @param {LABORFindUniqueArgs} args - Arguments to find a LABOR
+   * Find zero or one Labor that matches the filter.
+   * @param {LaborFindUniqueArgs} args - Arguments to find a Labor
    * @example
-   * // Get one LABOR
-   * const lABOR = await prisma.lABOR.findUnique({
+   * // Get one Labor
+   * const labor = await prisma.labor.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends LABORFindUniqueArgs>(args: Prisma.SelectSubset<T, LABORFindUniqueArgs<ExtArgs>>): Prisma.Prisma__LABORClient<runtime.Types.Result.GetResult<Prisma.$LABORPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends LaborFindUniqueArgs>(args: Prisma.SelectSubset<T, LaborFindUniqueArgs<ExtArgs>>): Prisma.Prisma__LaborClient<runtime.Types.Result.GetResult<Prisma.$LaborPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one LABOR that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Labor that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {LABORFindUniqueOrThrowArgs} args - Arguments to find a LABOR
+   * @param {LaborFindUniqueOrThrowArgs} args - Arguments to find a Labor
    * @example
-   * // Get one LABOR
-   * const lABOR = await prisma.lABOR.findUniqueOrThrow({
+   * // Get one Labor
+   * const labor = await prisma.labor.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends LABORFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, LABORFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__LABORClient<runtime.Types.Result.GetResult<Prisma.$LABORPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends LaborFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, LaborFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__LaborClient<runtime.Types.Result.GetResult<Prisma.$LaborPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first LABOR that matches the filter.
+   * Find the first Labor that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {LABORFindFirstArgs} args - Arguments to find a LABOR
+   * @param {LaborFindFirstArgs} args - Arguments to find a Labor
    * @example
-   * // Get one LABOR
-   * const lABOR = await prisma.lABOR.findFirst({
+   * // Get one Labor
+   * const labor = await prisma.labor.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends LABORFindFirstArgs>(args?: Prisma.SelectSubset<T, LABORFindFirstArgs<ExtArgs>>): Prisma.Prisma__LABORClient<runtime.Types.Result.GetResult<Prisma.$LABORPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends LaborFindFirstArgs>(args?: Prisma.SelectSubset<T, LaborFindFirstArgs<ExtArgs>>): Prisma.Prisma__LaborClient<runtime.Types.Result.GetResult<Prisma.$LaborPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first LABOR that matches the filter or
+   * Find the first Labor that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {LABORFindFirstOrThrowArgs} args - Arguments to find a LABOR
+   * @param {LaborFindFirstOrThrowArgs} args - Arguments to find a Labor
    * @example
-   * // Get one LABOR
-   * const lABOR = await prisma.lABOR.findFirstOrThrow({
+   * // Get one Labor
+   * const labor = await prisma.labor.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends LABORFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, LABORFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__LABORClient<runtime.Types.Result.GetResult<Prisma.$LABORPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends LaborFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, LaborFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__LaborClient<runtime.Types.Result.GetResult<Prisma.$LaborPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more LABORS that matches the filter.
+   * Find zero or more Labors that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {LABORFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {LaborFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all LABORS
-   * const lABORS = await prisma.lABOR.findMany()
+   * // Get all Labors
+   * const labors = await prisma.labor.findMany()
    * 
-   * // Get first 10 LABORS
-   * const lABORS = await prisma.lABOR.findMany({ take: 10 })
+   * // Get first 10 Labors
+   * const labors = await prisma.labor.findMany({ take: 10 })
    * 
-   * // Only select the `labor_id`
-   * const lABORWithLabor_idOnly = await prisma.lABOR.findMany({ select: { labor_id: true } })
+   * // Only select the `laborId`
+   * const laborWithLaborIdOnly = await prisma.labor.findMany({ select: { laborId: true } })
    * 
    */
-  findMany<T extends LABORFindManyArgs>(args?: Prisma.SelectSubset<T, LABORFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LABORPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends LaborFindManyArgs>(args?: Prisma.SelectSubset<T, LaborFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LaborPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a LABOR.
-   * @param {LABORCreateArgs} args - Arguments to create a LABOR.
+   * Create a Labor.
+   * @param {LaborCreateArgs} args - Arguments to create a Labor.
    * @example
-   * // Create one LABOR
-   * const LABOR = await prisma.lABOR.create({
+   * // Create one Labor
+   * const Labor = await prisma.labor.create({
    *   data: {
-   *     // ... data to create a LABOR
+   *     // ... data to create a Labor
    *   }
    * })
    * 
    */
-  create<T extends LABORCreateArgs>(args: Prisma.SelectSubset<T, LABORCreateArgs<ExtArgs>>): Prisma.Prisma__LABORClient<runtime.Types.Result.GetResult<Prisma.$LABORPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends LaborCreateArgs>(args: Prisma.SelectSubset<T, LaborCreateArgs<ExtArgs>>): Prisma.Prisma__LaborClient<runtime.Types.Result.GetResult<Prisma.$LaborPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many LABORS.
-   * @param {LABORCreateManyArgs} args - Arguments to create many LABORS.
+   * Create many Labors.
+   * @param {LaborCreateManyArgs} args - Arguments to create many Labors.
    * @example
-   * // Create many LABORS
-   * const lABOR = await prisma.lABOR.createMany({
+   * // Create many Labors
+   * const labor = await prisma.labor.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends LABORCreateManyArgs>(args?: Prisma.SelectSubset<T, LABORCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends LaborCreateManyArgs>(args?: Prisma.SelectSubset<T, LaborCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a LABOR.
-   * @param {LABORDeleteArgs} args - Arguments to delete one LABOR.
+   * Delete a Labor.
+   * @param {LaborDeleteArgs} args - Arguments to delete one Labor.
    * @example
-   * // Delete one LABOR
-   * const LABOR = await prisma.lABOR.delete({
+   * // Delete one Labor
+   * const Labor = await prisma.labor.delete({
    *   where: {
-   *     // ... filter to delete one LABOR
+   *     // ... filter to delete one Labor
    *   }
    * })
    * 
    */
-  delete<T extends LABORDeleteArgs>(args: Prisma.SelectSubset<T, LABORDeleteArgs<ExtArgs>>): Prisma.Prisma__LABORClient<runtime.Types.Result.GetResult<Prisma.$LABORPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends LaborDeleteArgs>(args: Prisma.SelectSubset<T, LaborDeleteArgs<ExtArgs>>): Prisma.Prisma__LaborClient<runtime.Types.Result.GetResult<Prisma.$LaborPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one LABOR.
-   * @param {LABORUpdateArgs} args - Arguments to update one LABOR.
+   * Update one Labor.
+   * @param {LaborUpdateArgs} args - Arguments to update one Labor.
    * @example
-   * // Update one LABOR
-   * const lABOR = await prisma.lABOR.update({
+   * // Update one Labor
+   * const labor = await prisma.labor.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -730,30 +730,30 @@ export interface LABORDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * })
    * 
    */
-  update<T extends LABORUpdateArgs>(args: Prisma.SelectSubset<T, LABORUpdateArgs<ExtArgs>>): Prisma.Prisma__LABORClient<runtime.Types.Result.GetResult<Prisma.$LABORPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends LaborUpdateArgs>(args: Prisma.SelectSubset<T, LaborUpdateArgs<ExtArgs>>): Prisma.Prisma__LaborClient<runtime.Types.Result.GetResult<Prisma.$LaborPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more LABORS.
-   * @param {LABORDeleteManyArgs} args - Arguments to filter LABORS to delete.
+   * Delete zero or more Labors.
+   * @param {LaborDeleteManyArgs} args - Arguments to filter Labors to delete.
    * @example
-   * // Delete a few LABORS
-   * const { count } = await prisma.lABOR.deleteMany({
+   * // Delete a few Labors
+   * const { count } = await prisma.labor.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends LABORDeleteManyArgs>(args?: Prisma.SelectSubset<T, LABORDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends LaborDeleteManyArgs>(args?: Prisma.SelectSubset<T, LaborDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more LABORS.
+   * Update zero or more Labors.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {LABORUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {LaborUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many LABORS
-   * const lABOR = await prisma.lABOR.updateMany({
+   * // Update many Labors
+   * const labor = await prisma.labor.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -763,56 +763,56 @@ export interface LABORDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * })
    * 
    */
-  updateMany<T extends LABORUpdateManyArgs>(args: Prisma.SelectSubset<T, LABORUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends LaborUpdateManyArgs>(args: Prisma.SelectSubset<T, LaborUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one LABOR.
-   * @param {LABORUpsertArgs} args - Arguments to update or create a LABOR.
+   * Create or update one Labor.
+   * @param {LaborUpsertArgs} args - Arguments to update or create a Labor.
    * @example
-   * // Update or create a LABOR
-   * const lABOR = await prisma.lABOR.upsert({
+   * // Update or create a Labor
+   * const labor = await prisma.labor.upsert({
    *   create: {
-   *     // ... data to create a LABOR
+   *     // ... data to create a Labor
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the LABOR we want to update
+   *     // ... the filter for the Labor we want to update
    *   }
    * })
    */
-  upsert<T extends LABORUpsertArgs>(args: Prisma.SelectSubset<T, LABORUpsertArgs<ExtArgs>>): Prisma.Prisma__LABORClient<runtime.Types.Result.GetResult<Prisma.$LABORPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends LaborUpsertArgs>(args: Prisma.SelectSubset<T, LaborUpsertArgs<ExtArgs>>): Prisma.Prisma__LaborClient<runtime.Types.Result.GetResult<Prisma.$LaborPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of LABORS.
+   * Count the number of Labors.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {LABORCountArgs} args - Arguments to filter LABORS to count.
+   * @param {LaborCountArgs} args - Arguments to filter Labors to count.
    * @example
-   * // Count the number of LABORS
-   * const count = await prisma.lABOR.count({
+   * // Count the number of Labors
+   * const count = await prisma.labor.count({
    *   where: {
-   *     // ... the filter for the LABORS we want to count
+   *     // ... the filter for the Labors we want to count
    *   }
    * })
   **/
-  count<T extends LABORCountArgs>(
-    args?: Prisma.Subset<T, LABORCountArgs>,
+  count<T extends LaborCountArgs>(
+    args?: Prisma.Subset<T, LaborCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], LABORCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], LaborCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a LABOR.
+   * Allows you to perform aggregations operations on a Labor.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {LABORAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {LaborAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -832,13 +832,13 @@ export interface LABORDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    *   take: 10,
    * })
   **/
-  aggregate<T extends LABORAggregateArgs>(args: Prisma.Subset<T, LABORAggregateArgs>): Prisma.PrismaPromise<GetLABORAggregateType<T>>
+  aggregate<T extends LaborAggregateArgs>(args: Prisma.Subset<T, LaborAggregateArgs>): Prisma.PrismaPromise<GetLaborAggregateType<T>>
 
   /**
-   * Group by LABOR.
+   * Group by Labor.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {LABORGroupByArgs} args - Group by arguments.
+   * @param {LaborGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -853,14 +853,14 @@ export interface LABORDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * 
   **/
   groupBy<
-    T extends LABORGroupByArgs,
+    T extends LaborGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: LABORGroupByArgs['orderBy'] }
-      : { orderBy?: LABORGroupByArgs['orderBy'] },
+      ? { orderBy: LaborGroupByArgs['orderBy'] }
+      : { orderBy?: LaborGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -909,22 +909,22 @@ export interface LABORDelegate<ExtArgs extends runtime.Types.Extensions.Internal
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, LABORGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetLABORGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, LaborGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetLaborGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the LABOR model
+ * Fields of the Labor model
  */
-readonly fields: LABORFieldRefs;
+readonly fields: LaborFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for LABOR.
+ * The delegate class that acts as a "Promise-like" for Labor.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__LABORClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__LaborClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  REPAIR<T extends Prisma.REPAIRDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.REPAIRDefaultArgs<ExtArgs>>): Prisma.Prisma__REPAIRClient<runtime.Types.Result.GetResult<Prisma.$REPAIRPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  repair<T extends Prisma.RepairDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.RepairDefaultArgs<ExtArgs>>): Prisma.Prisma__RepairClient<runtime.Types.Result.GetResult<Prisma.$RepairPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -951,376 +951,376 @@ export interface Prisma__LABORClient<T, Null = never, ExtArgs extends runtime.Ty
 
 
 /**
- * Fields of the LABOR model
+ * Fields of the Labor model
  */
-export interface LABORFieldRefs {
-  readonly labor_id: Prisma.FieldRef<"LABOR", 'Int'>
-  readonly repair_id: Prisma.FieldRef<"LABOR", 'Int'>
-  readonly description: Prisma.FieldRef<"LABOR", 'String'>
-  readonly hours: Prisma.FieldRef<"LABOR", 'Decimal'>
-  readonly hourly_rate: Prisma.FieldRef<"LABOR", 'Decimal'>
-  readonly performed_at: Prisma.FieldRef<"LABOR", 'DateTime'>
+export interface LaborFieldRefs {
+  readonly laborId: Prisma.FieldRef<"Labor", 'Int'>
+  readonly repairId: Prisma.FieldRef<"Labor", 'Int'>
+  readonly description: Prisma.FieldRef<"Labor", 'String'>
+  readonly hours: Prisma.FieldRef<"Labor", 'Decimal'>
+  readonly hourlyRate: Prisma.FieldRef<"Labor", 'Decimal'>
+  readonly performedAt: Prisma.FieldRef<"Labor", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * LABOR findUnique
+ * Labor findUnique
  */
-export type LABORFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type LaborFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LABOR
+   * Select specific fields to fetch from the Labor
    */
-  select?: Prisma.LABORSelect<ExtArgs> | null
+  select?: Prisma.LaborSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LABOR
+   * Omit specific fields from the Labor
    */
-  omit?: Prisma.LABOROmit<ExtArgs> | null
+  omit?: Prisma.LaborOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LABORInclude<ExtArgs> | null
+  include?: Prisma.LaborInclude<ExtArgs> | null
   /**
-   * Filter, which LABOR to fetch.
+   * Filter, which Labor to fetch.
    */
-  where: Prisma.LABORWhereUniqueInput
+  where: Prisma.LaborWhereUniqueInput
 }
 
 /**
- * LABOR findUniqueOrThrow
+ * Labor findUniqueOrThrow
  */
-export type LABORFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type LaborFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LABOR
+   * Select specific fields to fetch from the Labor
    */
-  select?: Prisma.LABORSelect<ExtArgs> | null
+  select?: Prisma.LaborSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LABOR
+   * Omit specific fields from the Labor
    */
-  omit?: Prisma.LABOROmit<ExtArgs> | null
+  omit?: Prisma.LaborOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LABORInclude<ExtArgs> | null
+  include?: Prisma.LaborInclude<ExtArgs> | null
   /**
-   * Filter, which LABOR to fetch.
+   * Filter, which Labor to fetch.
    */
-  where: Prisma.LABORWhereUniqueInput
+  where: Prisma.LaborWhereUniqueInput
 }
 
 /**
- * LABOR findFirst
+ * Labor findFirst
  */
-export type LABORFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type LaborFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LABOR
+   * Select specific fields to fetch from the Labor
    */
-  select?: Prisma.LABORSelect<ExtArgs> | null
+  select?: Prisma.LaborSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LABOR
+   * Omit specific fields from the Labor
    */
-  omit?: Prisma.LABOROmit<ExtArgs> | null
+  omit?: Prisma.LaborOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LABORInclude<ExtArgs> | null
+  include?: Prisma.LaborInclude<ExtArgs> | null
   /**
-   * Filter, which LABOR to fetch.
+   * Filter, which Labor to fetch.
    */
-  where?: Prisma.LABORWhereInput
+  where?: Prisma.LaborWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of LABORS to fetch.
+   * Determine the order of Labors to fetch.
    */
-  orderBy?: Prisma.LABOROrderByWithRelationInput | Prisma.LABOROrderByWithRelationInput[]
+  orderBy?: Prisma.LaborOrderByWithRelationInput | Prisma.LaborOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for LABORS.
+   * Sets the position for searching for Labors.
    */
-  cursor?: Prisma.LABORWhereUniqueInput
+  cursor?: Prisma.LaborWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` LABORS from the position of the cursor.
+   * Take `±n` Labors from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` LABORS.
+   * Skip the first `n` Labors.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of LABORS.
+   * Filter by unique combinations of Labors.
    */
-  distinct?: Prisma.LABORScalarFieldEnum | Prisma.LABORScalarFieldEnum[]
+  distinct?: Prisma.LaborScalarFieldEnum | Prisma.LaborScalarFieldEnum[]
 }
 
 /**
- * LABOR findFirstOrThrow
+ * Labor findFirstOrThrow
  */
-export type LABORFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type LaborFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LABOR
+   * Select specific fields to fetch from the Labor
    */
-  select?: Prisma.LABORSelect<ExtArgs> | null
+  select?: Prisma.LaborSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LABOR
+   * Omit specific fields from the Labor
    */
-  omit?: Prisma.LABOROmit<ExtArgs> | null
+  omit?: Prisma.LaborOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LABORInclude<ExtArgs> | null
+  include?: Prisma.LaborInclude<ExtArgs> | null
   /**
-   * Filter, which LABOR to fetch.
+   * Filter, which Labor to fetch.
    */
-  where?: Prisma.LABORWhereInput
+  where?: Prisma.LaborWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of LABORS to fetch.
+   * Determine the order of Labors to fetch.
    */
-  orderBy?: Prisma.LABOROrderByWithRelationInput | Prisma.LABOROrderByWithRelationInput[]
+  orderBy?: Prisma.LaborOrderByWithRelationInput | Prisma.LaborOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for LABORS.
+   * Sets the position for searching for Labors.
    */
-  cursor?: Prisma.LABORWhereUniqueInput
+  cursor?: Prisma.LaborWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` LABORS from the position of the cursor.
+   * Take `±n` Labors from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` LABORS.
+   * Skip the first `n` Labors.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of LABORS.
+   * Filter by unique combinations of Labors.
    */
-  distinct?: Prisma.LABORScalarFieldEnum | Prisma.LABORScalarFieldEnum[]
+  distinct?: Prisma.LaborScalarFieldEnum | Prisma.LaborScalarFieldEnum[]
 }
 
 /**
- * LABOR findMany
+ * Labor findMany
  */
-export type LABORFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type LaborFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LABOR
+   * Select specific fields to fetch from the Labor
    */
-  select?: Prisma.LABORSelect<ExtArgs> | null
+  select?: Prisma.LaborSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LABOR
+   * Omit specific fields from the Labor
    */
-  omit?: Prisma.LABOROmit<ExtArgs> | null
+  omit?: Prisma.LaborOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LABORInclude<ExtArgs> | null
+  include?: Prisma.LaborInclude<ExtArgs> | null
   /**
-   * Filter, which LABORS to fetch.
+   * Filter, which Labors to fetch.
    */
-  where?: Prisma.LABORWhereInput
+  where?: Prisma.LaborWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of LABORS to fetch.
+   * Determine the order of Labors to fetch.
    */
-  orderBy?: Prisma.LABOROrderByWithRelationInput | Prisma.LABOROrderByWithRelationInput[]
+  orderBy?: Prisma.LaborOrderByWithRelationInput | Prisma.LaborOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing LABORS.
+   * Sets the position for listing Labors.
    */
-  cursor?: Prisma.LABORWhereUniqueInput
+  cursor?: Prisma.LaborWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` LABORS from the position of the cursor.
+   * Take `±n` Labors from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` LABORS.
+   * Skip the first `n` Labors.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of LABORS.
+   * Filter by unique combinations of Labors.
    */
-  distinct?: Prisma.LABORScalarFieldEnum | Prisma.LABORScalarFieldEnum[]
+  distinct?: Prisma.LaborScalarFieldEnum | Prisma.LaborScalarFieldEnum[]
 }
 
 /**
- * LABOR create
+ * Labor create
  */
-export type LABORCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type LaborCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LABOR
+   * Select specific fields to fetch from the Labor
    */
-  select?: Prisma.LABORSelect<ExtArgs> | null
+  select?: Prisma.LaborSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LABOR
+   * Omit specific fields from the Labor
    */
-  omit?: Prisma.LABOROmit<ExtArgs> | null
+  omit?: Prisma.LaborOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LABORInclude<ExtArgs> | null
+  include?: Prisma.LaborInclude<ExtArgs> | null
   /**
-   * The data needed to create a LABOR.
+   * The data needed to create a Labor.
    */
-  data: Prisma.XOR<Prisma.LABORCreateInput, Prisma.LABORUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.LaborCreateInput, Prisma.LaborUncheckedCreateInput>
 }
 
 /**
- * LABOR createMany
+ * Labor createMany
  */
-export type LABORCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type LaborCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many LABORS.
+   * The data used to create many Labors.
    */
-  data: Prisma.LABORCreateManyInput | Prisma.LABORCreateManyInput[]
+  data: Prisma.LaborCreateManyInput | Prisma.LaborCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * LABOR update
+ * Labor update
  */
-export type LABORUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type LaborUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LABOR
+   * Select specific fields to fetch from the Labor
    */
-  select?: Prisma.LABORSelect<ExtArgs> | null
+  select?: Prisma.LaborSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LABOR
+   * Omit specific fields from the Labor
    */
-  omit?: Prisma.LABOROmit<ExtArgs> | null
+  omit?: Prisma.LaborOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LABORInclude<ExtArgs> | null
+  include?: Prisma.LaborInclude<ExtArgs> | null
   /**
-   * The data needed to update a LABOR.
+   * The data needed to update a Labor.
    */
-  data: Prisma.XOR<Prisma.LABORUpdateInput, Prisma.LABORUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.LaborUpdateInput, Prisma.LaborUncheckedUpdateInput>
   /**
-   * Choose, which LABOR to update.
+   * Choose, which Labor to update.
    */
-  where: Prisma.LABORWhereUniqueInput
+  where: Prisma.LaborWhereUniqueInput
 }
 
 /**
- * LABOR updateMany
+ * Labor updateMany
  */
-export type LABORUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type LaborUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update LABORS.
+   * The data used to update Labors.
    */
-  data: Prisma.XOR<Prisma.LABORUpdateManyMutationInput, Prisma.LABORUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.LaborUpdateManyMutationInput, Prisma.LaborUncheckedUpdateManyInput>
   /**
-   * Filter which LABORS to update
+   * Filter which Labors to update
    */
-  where?: Prisma.LABORWhereInput
+  where?: Prisma.LaborWhereInput
   /**
-   * Limit how many LABORS to update.
+   * Limit how many Labors to update.
    */
   limit?: number
 }
 
 /**
- * LABOR upsert
+ * Labor upsert
  */
-export type LABORUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type LaborUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LABOR
+   * Select specific fields to fetch from the Labor
    */
-  select?: Prisma.LABORSelect<ExtArgs> | null
+  select?: Prisma.LaborSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LABOR
+   * Omit specific fields from the Labor
    */
-  omit?: Prisma.LABOROmit<ExtArgs> | null
+  omit?: Prisma.LaborOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LABORInclude<ExtArgs> | null
+  include?: Prisma.LaborInclude<ExtArgs> | null
   /**
-   * The filter to search for the LABOR to update in case it exists.
+   * The filter to search for the Labor to update in case it exists.
    */
-  where: Prisma.LABORWhereUniqueInput
+  where: Prisma.LaborWhereUniqueInput
   /**
-   * In case the LABOR found by the `where` argument doesn't exist, create a new LABOR with this data.
+   * In case the Labor found by the `where` argument doesn't exist, create a new Labor with this data.
    */
-  create: Prisma.XOR<Prisma.LABORCreateInput, Prisma.LABORUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.LaborCreateInput, Prisma.LaborUncheckedCreateInput>
   /**
-   * In case the LABOR was found with the provided `where` argument, update it with this data.
+   * In case the Labor was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.LABORUpdateInput, Prisma.LABORUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.LaborUpdateInput, Prisma.LaborUncheckedUpdateInput>
 }
 
 /**
- * LABOR delete
+ * Labor delete
  */
-export type LABORDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type LaborDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LABOR
+   * Select specific fields to fetch from the Labor
    */
-  select?: Prisma.LABORSelect<ExtArgs> | null
+  select?: Prisma.LaborSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LABOR
+   * Omit specific fields from the Labor
    */
-  omit?: Prisma.LABOROmit<ExtArgs> | null
+  omit?: Prisma.LaborOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LABORInclude<ExtArgs> | null
+  include?: Prisma.LaborInclude<ExtArgs> | null
   /**
-   * Filter which LABOR to delete.
+   * Filter which Labor to delete.
    */
-  where: Prisma.LABORWhereUniqueInput
+  where: Prisma.LaborWhereUniqueInput
 }
 
 /**
- * LABOR deleteMany
+ * Labor deleteMany
  */
-export type LABORDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type LaborDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which LABORS to delete
+   * Filter which Labors to delete
    */
-  where?: Prisma.LABORWhereInput
+  where?: Prisma.LaborWhereInput
   /**
-   * Limit how many LABORS to delete.
+   * Limit how many Labors to delete.
    */
   limit?: number
 }
 
 /**
- * LABOR without action
+ * Labor without action
  */
-export type LABORDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type LaborDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LABOR
+   * Select specific fields to fetch from the Labor
    */
-  select?: Prisma.LABORSelect<ExtArgs> | null
+  select?: Prisma.LaborSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LABOR
+   * Omit specific fields from the Labor
    */
-  omit?: Prisma.LABOROmit<ExtArgs> | null
+  omit?: Prisma.LaborOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LABORInclude<ExtArgs> | null
+  include?: Prisma.LaborInclude<ExtArgs> | null
 }

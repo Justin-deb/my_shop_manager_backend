@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `INVOICE` model and its related types.
+ * This file exports the `Invoice` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,61 +13,61 @@ import type * as $Enums from "../enums"
 import type * as Prisma from "../internal/prismaNamespace"
 
 /**
- * Model INVOICE
+ * Model Invoice
  * 
  */
-export type INVOICEModel = runtime.Types.Result.DefaultSelection<Prisma.$INVOICEPayload>
+export type InvoiceModel = runtime.Types.Result.DefaultSelection<Prisma.$InvoicePayload>
 
-export type AggregateINVOICE = {
-  _count: INVOICECountAggregateOutputType | null
-  _avg: INVOICEAvgAggregateOutputType | null
-  _sum: INVOICESumAggregateOutputType | null
-  _min: INVOICEMinAggregateOutputType | null
-  _max: INVOICEMaxAggregateOutputType | null
+export type AggregateInvoice = {
+  _count: InvoiceCountAggregateOutputType | null
+  _avg: InvoiceAvgAggregateOutputType | null
+  _sum: InvoiceSumAggregateOutputType | null
+  _min: InvoiceMinAggregateOutputType | null
+  _max: InvoiceMaxAggregateOutputType | null
 }
 
-export type INVOICEAvgAggregateOutputType = {
-  invoice_id: number | null
-  repair_id: number | null
+export type InvoiceAvgAggregateOutputType = {
+  invoiceId: number | null
+  repairId: number | null
   subtotal: runtime.Decimal | null
   tax: runtime.Decimal | null
   discount: runtime.Decimal | null
   total: runtime.Decimal | null
 }
 
-export type INVOICESumAggregateOutputType = {
-  invoice_id: number | null
-  repair_id: number | null
+export type InvoiceSumAggregateOutputType = {
+  invoiceId: number | null
+  repairId: number | null
   subtotal: runtime.Decimal | null
   tax: runtime.Decimal | null
   discount: runtime.Decimal | null
   total: runtime.Decimal | null
 }
 
-export type INVOICEMinAggregateOutputType = {
-  invoice_id: number | null
-  repair_id: number | null
-  issue_date: Date | null
+export type InvoiceMinAggregateOutputType = {
+  invoiceId: number | null
+  repairId: number | null
+  issueDate: Date | null
   subtotal: runtime.Decimal | null
   tax: runtime.Decimal | null
   discount: runtime.Decimal | null
   total: runtime.Decimal | null
 }
 
-export type INVOICEMaxAggregateOutputType = {
-  invoice_id: number | null
-  repair_id: number | null
-  issue_date: Date | null
+export type InvoiceMaxAggregateOutputType = {
+  invoiceId: number | null
+  repairId: number | null
+  issueDate: Date | null
   subtotal: runtime.Decimal | null
   tax: runtime.Decimal | null
   discount: runtime.Decimal | null
   total: runtime.Decimal | null
 }
 
-export type INVOICECountAggregateOutputType = {
-  invoice_id: number
-  repair_id: number
-  issue_date: number
+export type InvoiceCountAggregateOutputType = {
+  invoiceId: number
+  repairId: number
+  issueDate: number
   subtotal: number
   tax: number
   discount: number
@@ -76,48 +76,48 @@ export type INVOICECountAggregateOutputType = {
 }
 
 
-export type INVOICEAvgAggregateInputType = {
-  invoice_id?: true
-  repair_id?: true
+export type InvoiceAvgAggregateInputType = {
+  invoiceId?: true
+  repairId?: true
   subtotal?: true
   tax?: true
   discount?: true
   total?: true
 }
 
-export type INVOICESumAggregateInputType = {
-  invoice_id?: true
-  repair_id?: true
+export type InvoiceSumAggregateInputType = {
+  invoiceId?: true
+  repairId?: true
   subtotal?: true
   tax?: true
   discount?: true
   total?: true
 }
 
-export type INVOICEMinAggregateInputType = {
-  invoice_id?: true
-  repair_id?: true
-  issue_date?: true
+export type InvoiceMinAggregateInputType = {
+  invoiceId?: true
+  repairId?: true
+  issueDate?: true
   subtotal?: true
   tax?: true
   discount?: true
   total?: true
 }
 
-export type INVOICEMaxAggregateInputType = {
-  invoice_id?: true
-  repair_id?: true
-  issue_date?: true
+export type InvoiceMaxAggregateInputType = {
+  invoiceId?: true
+  repairId?: true
+  issueDate?: true
   subtotal?: true
   tax?: true
   discount?: true
   total?: true
 }
 
-export type INVOICECountAggregateInputType = {
-  invoice_id?: true
-  repair_id?: true
-  issue_date?: true
+export type InvoiceCountAggregateInputType = {
+  invoiceId?: true
+  repairId?: true
+  issueDate?: true
   subtotal?: true
   tax?: true
   discount?: true
@@ -125,321 +125,321 @@ export type INVOICECountAggregateInputType = {
   _all?: true
 }
 
-export type INVOICEAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type InvoiceAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which INVOICE to aggregate.
+   * Filter which Invoice to aggregate.
    */
-  where?: Prisma.INVOICEWhereInput
+  where?: Prisma.InvoiceWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of INVOICES to fetch.
+   * Determine the order of Invoices to fetch.
    */
-  orderBy?: Prisma.INVOICEOrderByWithRelationInput | Prisma.INVOICEOrderByWithRelationInput[]
+  orderBy?: Prisma.InvoiceOrderByWithRelationInput | Prisma.InvoiceOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.INVOICEWhereUniqueInput
+  cursor?: Prisma.InvoiceWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` INVOICES from the position of the cursor.
+   * Take `±n` Invoices from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` INVOICES.
+   * Skip the first `n` Invoices.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned INVOICES
+   * Count returned Invoices
   **/
-  _count?: true | INVOICECountAggregateInputType
+  _count?: true | InvoiceCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to average
   **/
-  _avg?: INVOICEAvgAggregateInputType
+  _avg?: InvoiceAvgAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to sum
   **/
-  _sum?: INVOICESumAggregateInputType
+  _sum?: InvoiceSumAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: INVOICEMinAggregateInputType
+  _min?: InvoiceMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: INVOICEMaxAggregateInputType
+  _max?: InvoiceMaxAggregateInputType
 }
 
-export type GetINVOICEAggregateType<T extends INVOICEAggregateArgs> = {
-      [P in keyof T & keyof AggregateINVOICE]: P extends '_count' | 'count'
+export type GetInvoiceAggregateType<T extends InvoiceAggregateArgs> = {
+      [P in keyof T & keyof AggregateInvoice]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateINVOICE[P]>
-    : Prisma.GetScalarType<T[P], AggregateINVOICE[P]>
+      : Prisma.GetScalarType<T[P], AggregateInvoice[P]>
+    : Prisma.GetScalarType<T[P], AggregateInvoice[P]>
 }
 
 
 
 
-export type INVOICEGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.INVOICEWhereInput
-  orderBy?: Prisma.INVOICEOrderByWithAggregationInput | Prisma.INVOICEOrderByWithAggregationInput[]
-  by: Prisma.INVOICEScalarFieldEnum[] | Prisma.INVOICEScalarFieldEnum
-  having?: Prisma.INVOICEScalarWhereWithAggregatesInput
+export type InvoiceGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.InvoiceWhereInput
+  orderBy?: Prisma.InvoiceOrderByWithAggregationInput | Prisma.InvoiceOrderByWithAggregationInput[]
+  by: Prisma.InvoiceScalarFieldEnum[] | Prisma.InvoiceScalarFieldEnum
+  having?: Prisma.InvoiceScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: INVOICECountAggregateInputType | true
-  _avg?: INVOICEAvgAggregateInputType
-  _sum?: INVOICESumAggregateInputType
-  _min?: INVOICEMinAggregateInputType
-  _max?: INVOICEMaxAggregateInputType
+  _count?: InvoiceCountAggregateInputType | true
+  _avg?: InvoiceAvgAggregateInputType
+  _sum?: InvoiceSumAggregateInputType
+  _min?: InvoiceMinAggregateInputType
+  _max?: InvoiceMaxAggregateInputType
 }
 
-export type INVOICEGroupByOutputType = {
-  invoice_id: number
-  repair_id: number
-  issue_date: Date | null
+export type InvoiceGroupByOutputType = {
+  invoiceId: number
+  repairId: number
+  issueDate: Date | null
   subtotal: runtime.Decimal | null
   tax: runtime.Decimal | null
   discount: runtime.Decimal | null
   total: runtime.Decimal | null
-  _count: INVOICECountAggregateOutputType | null
-  _avg: INVOICEAvgAggregateOutputType | null
-  _sum: INVOICESumAggregateOutputType | null
-  _min: INVOICEMinAggregateOutputType | null
-  _max: INVOICEMaxAggregateOutputType | null
+  _count: InvoiceCountAggregateOutputType | null
+  _avg: InvoiceAvgAggregateOutputType | null
+  _sum: InvoiceSumAggregateOutputType | null
+  _min: InvoiceMinAggregateOutputType | null
+  _max: InvoiceMaxAggregateOutputType | null
 }
 
-export type GetINVOICEGroupByPayload<T extends INVOICEGroupByArgs> = Prisma.PrismaPromise<
+export type GetInvoiceGroupByPayload<T extends InvoiceGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<INVOICEGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<InvoiceGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof INVOICEGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof InvoiceGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], INVOICEGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], INVOICEGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], InvoiceGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], InvoiceGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type INVOICEWhereInput = {
-  AND?: Prisma.INVOICEWhereInput | Prisma.INVOICEWhereInput[]
-  OR?: Prisma.INVOICEWhereInput[]
-  NOT?: Prisma.INVOICEWhereInput | Prisma.INVOICEWhereInput[]
-  invoice_id?: Prisma.IntFilter<"INVOICE"> | number
-  repair_id?: Prisma.IntFilter<"INVOICE"> | number
-  issue_date?: Prisma.DateTimeNullableFilter<"INVOICE"> | Date | string | null
-  subtotal?: Prisma.DecimalNullableFilter<"INVOICE"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  tax?: Prisma.DecimalNullableFilter<"INVOICE"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  discount?: Prisma.DecimalNullableFilter<"INVOICE"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  total?: Prisma.DecimalNullableFilter<"INVOICE"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  REPAIR?: Prisma.XOR<Prisma.REPAIRScalarRelationFilter, Prisma.REPAIRWhereInput>
-  PAYMENT?: Prisma.PAYMENTListRelationFilter
+export type InvoiceWhereInput = {
+  AND?: Prisma.InvoiceWhereInput | Prisma.InvoiceWhereInput[]
+  OR?: Prisma.InvoiceWhereInput[]
+  NOT?: Prisma.InvoiceWhereInput | Prisma.InvoiceWhereInput[]
+  invoiceId?: Prisma.IntFilter<"Invoice"> | number
+  repairId?: Prisma.IntFilter<"Invoice"> | number
+  issueDate?: Prisma.DateTimeNullableFilter<"Invoice"> | Date | string | null
+  subtotal?: Prisma.DecimalNullableFilter<"Invoice"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  tax?: Prisma.DecimalNullableFilter<"Invoice"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  discount?: Prisma.DecimalNullableFilter<"Invoice"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  total?: Prisma.DecimalNullableFilter<"Invoice"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  repair?: Prisma.XOR<Prisma.RepairScalarRelationFilter, Prisma.RepairWhereInput>
+  payments?: Prisma.PaymentListRelationFilter
 }
 
-export type INVOICEOrderByWithRelationInput = {
-  invoice_id?: Prisma.SortOrder
-  repair_id?: Prisma.SortOrder
-  issue_date?: Prisma.SortOrderInput | Prisma.SortOrder
+export type InvoiceOrderByWithRelationInput = {
+  invoiceId?: Prisma.SortOrder
+  repairId?: Prisma.SortOrder
+  issueDate?: Prisma.SortOrderInput | Prisma.SortOrder
   subtotal?: Prisma.SortOrderInput | Prisma.SortOrder
   tax?: Prisma.SortOrderInput | Prisma.SortOrder
   discount?: Prisma.SortOrderInput | Prisma.SortOrder
   total?: Prisma.SortOrderInput | Prisma.SortOrder
-  REPAIR?: Prisma.REPAIROrderByWithRelationInput
-  PAYMENT?: Prisma.PAYMENTOrderByRelationAggregateInput
+  repair?: Prisma.RepairOrderByWithRelationInput
+  payments?: Prisma.PaymentOrderByRelationAggregateInput
 }
 
-export type INVOICEWhereUniqueInput = Prisma.AtLeast<{
-  invoice_id?: number
-  repair_id?: number
-  AND?: Prisma.INVOICEWhereInput | Prisma.INVOICEWhereInput[]
-  OR?: Prisma.INVOICEWhereInput[]
-  NOT?: Prisma.INVOICEWhereInput | Prisma.INVOICEWhereInput[]
-  issue_date?: Prisma.DateTimeNullableFilter<"INVOICE"> | Date | string | null
-  subtotal?: Prisma.DecimalNullableFilter<"INVOICE"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  tax?: Prisma.DecimalNullableFilter<"INVOICE"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  discount?: Prisma.DecimalNullableFilter<"INVOICE"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  total?: Prisma.DecimalNullableFilter<"INVOICE"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  REPAIR?: Prisma.XOR<Prisma.REPAIRScalarRelationFilter, Prisma.REPAIRWhereInput>
-  PAYMENT?: Prisma.PAYMENTListRelationFilter
-}, "invoice_id" | "repair_id">
+export type InvoiceWhereUniqueInput = Prisma.AtLeast<{
+  invoiceId?: number
+  repairId?: number
+  AND?: Prisma.InvoiceWhereInput | Prisma.InvoiceWhereInput[]
+  OR?: Prisma.InvoiceWhereInput[]
+  NOT?: Prisma.InvoiceWhereInput | Prisma.InvoiceWhereInput[]
+  issueDate?: Prisma.DateTimeNullableFilter<"Invoice"> | Date | string | null
+  subtotal?: Prisma.DecimalNullableFilter<"Invoice"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  tax?: Prisma.DecimalNullableFilter<"Invoice"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  discount?: Prisma.DecimalNullableFilter<"Invoice"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  total?: Prisma.DecimalNullableFilter<"Invoice"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  repair?: Prisma.XOR<Prisma.RepairScalarRelationFilter, Prisma.RepairWhereInput>
+  payments?: Prisma.PaymentListRelationFilter
+}, "invoiceId" | "repairId">
 
-export type INVOICEOrderByWithAggregationInput = {
-  invoice_id?: Prisma.SortOrder
-  repair_id?: Prisma.SortOrder
-  issue_date?: Prisma.SortOrderInput | Prisma.SortOrder
+export type InvoiceOrderByWithAggregationInput = {
+  invoiceId?: Prisma.SortOrder
+  repairId?: Prisma.SortOrder
+  issueDate?: Prisma.SortOrderInput | Prisma.SortOrder
   subtotal?: Prisma.SortOrderInput | Prisma.SortOrder
   tax?: Prisma.SortOrderInput | Prisma.SortOrder
   discount?: Prisma.SortOrderInput | Prisma.SortOrder
   total?: Prisma.SortOrderInput | Prisma.SortOrder
-  _count?: Prisma.INVOICECountOrderByAggregateInput
-  _avg?: Prisma.INVOICEAvgOrderByAggregateInput
-  _max?: Prisma.INVOICEMaxOrderByAggregateInput
-  _min?: Prisma.INVOICEMinOrderByAggregateInput
-  _sum?: Prisma.INVOICESumOrderByAggregateInput
+  _count?: Prisma.InvoiceCountOrderByAggregateInput
+  _avg?: Prisma.InvoiceAvgOrderByAggregateInput
+  _max?: Prisma.InvoiceMaxOrderByAggregateInput
+  _min?: Prisma.InvoiceMinOrderByAggregateInput
+  _sum?: Prisma.InvoiceSumOrderByAggregateInput
 }
 
-export type INVOICEScalarWhereWithAggregatesInput = {
-  AND?: Prisma.INVOICEScalarWhereWithAggregatesInput | Prisma.INVOICEScalarWhereWithAggregatesInput[]
-  OR?: Prisma.INVOICEScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.INVOICEScalarWhereWithAggregatesInput | Prisma.INVOICEScalarWhereWithAggregatesInput[]
-  invoice_id?: Prisma.IntWithAggregatesFilter<"INVOICE"> | number
-  repair_id?: Prisma.IntWithAggregatesFilter<"INVOICE"> | number
-  issue_date?: Prisma.DateTimeNullableWithAggregatesFilter<"INVOICE"> | Date | string | null
-  subtotal?: Prisma.DecimalNullableWithAggregatesFilter<"INVOICE"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  tax?: Prisma.DecimalNullableWithAggregatesFilter<"INVOICE"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  discount?: Prisma.DecimalNullableWithAggregatesFilter<"INVOICE"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  total?: Prisma.DecimalNullableWithAggregatesFilter<"INVOICE"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+export type InvoiceScalarWhereWithAggregatesInput = {
+  AND?: Prisma.InvoiceScalarWhereWithAggregatesInput | Prisma.InvoiceScalarWhereWithAggregatesInput[]
+  OR?: Prisma.InvoiceScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.InvoiceScalarWhereWithAggregatesInput | Prisma.InvoiceScalarWhereWithAggregatesInput[]
+  invoiceId?: Prisma.IntWithAggregatesFilter<"Invoice"> | number
+  repairId?: Prisma.IntWithAggregatesFilter<"Invoice"> | number
+  issueDate?: Prisma.DateTimeNullableWithAggregatesFilter<"Invoice"> | Date | string | null
+  subtotal?: Prisma.DecimalNullableWithAggregatesFilter<"Invoice"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  tax?: Prisma.DecimalNullableWithAggregatesFilter<"Invoice"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  discount?: Prisma.DecimalNullableWithAggregatesFilter<"Invoice"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  total?: Prisma.DecimalNullableWithAggregatesFilter<"Invoice"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
 }
 
-export type INVOICECreateInput = {
-  invoice_id: number
-  issue_date?: Date | string | null
+export type InvoiceCreateInput = {
+  invoiceId: number
+  issueDate?: Date | string | null
   subtotal?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   discount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   total?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  REPAIR: Prisma.REPAIRCreateNestedOneWithoutINVOICEInput
-  PAYMENT?: Prisma.PAYMENTCreateNestedManyWithoutINVOICEInput
+  repair: Prisma.RepairCreateNestedOneWithoutInvoiceInput
+  payments?: Prisma.PaymentCreateNestedManyWithoutInvoiceInput
 }
 
-export type INVOICEUncheckedCreateInput = {
-  invoice_id: number
-  repair_id: number
-  issue_date?: Date | string | null
+export type InvoiceUncheckedCreateInput = {
+  invoiceId: number
+  repairId: number
+  issueDate?: Date | string | null
   subtotal?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   discount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   total?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  PAYMENT?: Prisma.PAYMENTUncheckedCreateNestedManyWithoutINVOICEInput
+  payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutInvoiceInput
 }
 
-export type INVOICEUpdateInput = {
-  invoice_id?: Prisma.IntFieldUpdateOperationsInput | number
-  issue_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type InvoiceUpdateInput = {
+  invoiceId?: Prisma.IntFieldUpdateOperationsInput | number
+  issueDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   subtotal?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   discount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   total?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  REPAIR?: Prisma.REPAIRUpdateOneRequiredWithoutINVOICENestedInput
-  PAYMENT?: Prisma.PAYMENTUpdateManyWithoutINVOICENestedInput
+  repair?: Prisma.RepairUpdateOneRequiredWithoutInvoiceNestedInput
+  payments?: Prisma.PaymentUpdateManyWithoutInvoiceNestedInput
 }
 
-export type INVOICEUncheckedUpdateInput = {
-  invoice_id?: Prisma.IntFieldUpdateOperationsInput | number
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  issue_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type InvoiceUncheckedUpdateInput = {
+  invoiceId?: Prisma.IntFieldUpdateOperationsInput | number
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  issueDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   subtotal?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   discount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   total?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  PAYMENT?: Prisma.PAYMENTUncheckedUpdateManyWithoutINVOICENestedInput
+  payments?: Prisma.PaymentUncheckedUpdateManyWithoutInvoiceNestedInput
 }
 
-export type INVOICECreateManyInput = {
-  invoice_id: number
-  repair_id: number
-  issue_date?: Date | string | null
+export type InvoiceCreateManyInput = {
+  invoiceId: number
+  repairId: number
+  issueDate?: Date | string | null
   subtotal?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   discount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   total?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
 }
 
-export type INVOICEUpdateManyMutationInput = {
-  invoice_id?: Prisma.IntFieldUpdateOperationsInput | number
-  issue_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type InvoiceUpdateManyMutationInput = {
+  invoiceId?: Prisma.IntFieldUpdateOperationsInput | number
+  issueDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   subtotal?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   discount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   total?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
 }
 
-export type INVOICEUncheckedUpdateManyInput = {
-  invoice_id?: Prisma.IntFieldUpdateOperationsInput | number
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  issue_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type InvoiceUncheckedUpdateManyInput = {
+  invoiceId?: Prisma.IntFieldUpdateOperationsInput | number
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  issueDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   subtotal?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   discount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   total?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
 }
 
-export type INVOICECountOrderByAggregateInput = {
-  invoice_id?: Prisma.SortOrder
-  repair_id?: Prisma.SortOrder
-  issue_date?: Prisma.SortOrder
+export type InvoiceCountOrderByAggregateInput = {
+  invoiceId?: Prisma.SortOrder
+  repairId?: Prisma.SortOrder
+  issueDate?: Prisma.SortOrder
   subtotal?: Prisma.SortOrder
   tax?: Prisma.SortOrder
   discount?: Prisma.SortOrder
   total?: Prisma.SortOrder
 }
 
-export type INVOICEAvgOrderByAggregateInput = {
-  invoice_id?: Prisma.SortOrder
-  repair_id?: Prisma.SortOrder
+export type InvoiceAvgOrderByAggregateInput = {
+  invoiceId?: Prisma.SortOrder
+  repairId?: Prisma.SortOrder
   subtotal?: Prisma.SortOrder
   tax?: Prisma.SortOrder
   discount?: Prisma.SortOrder
   total?: Prisma.SortOrder
 }
 
-export type INVOICEMaxOrderByAggregateInput = {
-  invoice_id?: Prisma.SortOrder
-  repair_id?: Prisma.SortOrder
-  issue_date?: Prisma.SortOrder
+export type InvoiceMaxOrderByAggregateInput = {
+  invoiceId?: Prisma.SortOrder
+  repairId?: Prisma.SortOrder
+  issueDate?: Prisma.SortOrder
   subtotal?: Prisma.SortOrder
   tax?: Prisma.SortOrder
   discount?: Prisma.SortOrder
   total?: Prisma.SortOrder
 }
 
-export type INVOICEMinOrderByAggregateInput = {
-  invoice_id?: Prisma.SortOrder
-  repair_id?: Prisma.SortOrder
-  issue_date?: Prisma.SortOrder
+export type InvoiceMinOrderByAggregateInput = {
+  invoiceId?: Prisma.SortOrder
+  repairId?: Prisma.SortOrder
+  issueDate?: Prisma.SortOrder
   subtotal?: Prisma.SortOrder
   tax?: Prisma.SortOrder
   discount?: Prisma.SortOrder
   total?: Prisma.SortOrder
 }
 
-export type INVOICESumOrderByAggregateInput = {
-  invoice_id?: Prisma.SortOrder
-  repair_id?: Prisma.SortOrder
+export type InvoiceSumOrderByAggregateInput = {
+  invoiceId?: Prisma.SortOrder
+  repairId?: Prisma.SortOrder
   subtotal?: Prisma.SortOrder
   tax?: Prisma.SortOrder
   discount?: Prisma.SortOrder
   total?: Prisma.SortOrder
 }
 
-export type INVOICEScalarRelationFilter = {
-  is?: Prisma.INVOICEWhereInput
-  isNot?: Prisma.INVOICEWhereInput
+export type InvoiceScalarRelationFilter = {
+  is?: Prisma.InvoiceWhereInput
+  isNot?: Prisma.InvoiceWhereInput
 }
 
-export type INVOICENullableScalarRelationFilter = {
-  is?: Prisma.INVOICEWhereInput | null
-  isNot?: Prisma.INVOICEWhereInput | null
+export type InvoiceNullableScalarRelationFilter = {
+  is?: Prisma.InvoiceWhereInput | null
+  isNot?: Prisma.InvoiceWhereInput | null
 }
 
 export type IntFieldUpdateOperationsInput = {
@@ -462,378 +462,378 @@ export type NullableDecimalFieldUpdateOperationsInput = {
   divide?: runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
-export type INVOICECreateNestedOneWithoutPAYMENTInput = {
-  create?: Prisma.XOR<Prisma.INVOICECreateWithoutPAYMENTInput, Prisma.INVOICEUncheckedCreateWithoutPAYMENTInput>
-  connectOrCreate?: Prisma.INVOICECreateOrConnectWithoutPAYMENTInput
-  connect?: Prisma.INVOICEWhereUniqueInput
+export type InvoiceCreateNestedOneWithoutPaymentsInput = {
+  create?: Prisma.XOR<Prisma.InvoiceCreateWithoutPaymentsInput, Prisma.InvoiceUncheckedCreateWithoutPaymentsInput>
+  connectOrCreate?: Prisma.InvoiceCreateOrConnectWithoutPaymentsInput
+  connect?: Prisma.InvoiceWhereUniqueInput
 }
 
-export type INVOICEUpdateOneRequiredWithoutPAYMENTNestedInput = {
-  create?: Prisma.XOR<Prisma.INVOICECreateWithoutPAYMENTInput, Prisma.INVOICEUncheckedCreateWithoutPAYMENTInput>
-  connectOrCreate?: Prisma.INVOICECreateOrConnectWithoutPAYMENTInput
-  upsert?: Prisma.INVOICEUpsertWithoutPAYMENTInput
-  connect?: Prisma.INVOICEWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.INVOICEUpdateToOneWithWhereWithoutPAYMENTInput, Prisma.INVOICEUpdateWithoutPAYMENTInput>, Prisma.INVOICEUncheckedUpdateWithoutPAYMENTInput>
+export type InvoiceUpdateOneRequiredWithoutPaymentsNestedInput = {
+  create?: Prisma.XOR<Prisma.InvoiceCreateWithoutPaymentsInput, Prisma.InvoiceUncheckedCreateWithoutPaymentsInput>
+  connectOrCreate?: Prisma.InvoiceCreateOrConnectWithoutPaymentsInput
+  upsert?: Prisma.InvoiceUpsertWithoutPaymentsInput
+  connect?: Prisma.InvoiceWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.InvoiceUpdateToOneWithWhereWithoutPaymentsInput, Prisma.InvoiceUpdateWithoutPaymentsInput>, Prisma.InvoiceUncheckedUpdateWithoutPaymentsInput>
 }
 
-export type INVOICECreateNestedOneWithoutREPAIRInput = {
-  create?: Prisma.XOR<Prisma.INVOICECreateWithoutREPAIRInput, Prisma.INVOICEUncheckedCreateWithoutREPAIRInput>
-  connectOrCreate?: Prisma.INVOICECreateOrConnectWithoutREPAIRInput
-  connect?: Prisma.INVOICEWhereUniqueInput
+export type InvoiceCreateNestedOneWithoutRepairInput = {
+  create?: Prisma.XOR<Prisma.InvoiceCreateWithoutRepairInput, Prisma.InvoiceUncheckedCreateWithoutRepairInput>
+  connectOrCreate?: Prisma.InvoiceCreateOrConnectWithoutRepairInput
+  connect?: Prisma.InvoiceWhereUniqueInput
 }
 
-export type INVOICEUncheckedCreateNestedOneWithoutREPAIRInput = {
-  create?: Prisma.XOR<Prisma.INVOICECreateWithoutREPAIRInput, Prisma.INVOICEUncheckedCreateWithoutREPAIRInput>
-  connectOrCreate?: Prisma.INVOICECreateOrConnectWithoutREPAIRInput
-  connect?: Prisma.INVOICEWhereUniqueInput
+export type InvoiceUncheckedCreateNestedOneWithoutRepairInput = {
+  create?: Prisma.XOR<Prisma.InvoiceCreateWithoutRepairInput, Prisma.InvoiceUncheckedCreateWithoutRepairInput>
+  connectOrCreate?: Prisma.InvoiceCreateOrConnectWithoutRepairInput
+  connect?: Prisma.InvoiceWhereUniqueInput
 }
 
-export type INVOICEUpdateOneWithoutREPAIRNestedInput = {
-  create?: Prisma.XOR<Prisma.INVOICECreateWithoutREPAIRInput, Prisma.INVOICEUncheckedCreateWithoutREPAIRInput>
-  connectOrCreate?: Prisma.INVOICECreateOrConnectWithoutREPAIRInput
-  upsert?: Prisma.INVOICEUpsertWithoutREPAIRInput
-  disconnect?: Prisma.INVOICEWhereInput | boolean
-  delete?: Prisma.INVOICEWhereInput | boolean
-  connect?: Prisma.INVOICEWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.INVOICEUpdateToOneWithWhereWithoutREPAIRInput, Prisma.INVOICEUpdateWithoutREPAIRInput>, Prisma.INVOICEUncheckedUpdateWithoutREPAIRInput>
+export type InvoiceUpdateOneWithoutRepairNestedInput = {
+  create?: Prisma.XOR<Prisma.InvoiceCreateWithoutRepairInput, Prisma.InvoiceUncheckedCreateWithoutRepairInput>
+  connectOrCreate?: Prisma.InvoiceCreateOrConnectWithoutRepairInput
+  upsert?: Prisma.InvoiceUpsertWithoutRepairInput
+  disconnect?: Prisma.InvoiceWhereInput | boolean
+  delete?: Prisma.InvoiceWhereInput | boolean
+  connect?: Prisma.InvoiceWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.InvoiceUpdateToOneWithWhereWithoutRepairInput, Prisma.InvoiceUpdateWithoutRepairInput>, Prisma.InvoiceUncheckedUpdateWithoutRepairInput>
 }
 
-export type INVOICEUncheckedUpdateOneWithoutREPAIRNestedInput = {
-  create?: Prisma.XOR<Prisma.INVOICECreateWithoutREPAIRInput, Prisma.INVOICEUncheckedCreateWithoutREPAIRInput>
-  connectOrCreate?: Prisma.INVOICECreateOrConnectWithoutREPAIRInput
-  upsert?: Prisma.INVOICEUpsertWithoutREPAIRInput
-  disconnect?: Prisma.INVOICEWhereInput | boolean
-  delete?: Prisma.INVOICEWhereInput | boolean
-  connect?: Prisma.INVOICEWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.INVOICEUpdateToOneWithWhereWithoutREPAIRInput, Prisma.INVOICEUpdateWithoutREPAIRInput>, Prisma.INVOICEUncheckedUpdateWithoutREPAIRInput>
+export type InvoiceUncheckedUpdateOneWithoutRepairNestedInput = {
+  create?: Prisma.XOR<Prisma.InvoiceCreateWithoutRepairInput, Prisma.InvoiceUncheckedCreateWithoutRepairInput>
+  connectOrCreate?: Prisma.InvoiceCreateOrConnectWithoutRepairInput
+  upsert?: Prisma.InvoiceUpsertWithoutRepairInput
+  disconnect?: Prisma.InvoiceWhereInput | boolean
+  delete?: Prisma.InvoiceWhereInput | boolean
+  connect?: Prisma.InvoiceWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.InvoiceUpdateToOneWithWhereWithoutRepairInput, Prisma.InvoiceUpdateWithoutRepairInput>, Prisma.InvoiceUncheckedUpdateWithoutRepairInput>
 }
 
-export type INVOICECreateWithoutPAYMENTInput = {
-  invoice_id: number
-  issue_date?: Date | string | null
+export type InvoiceCreateWithoutPaymentsInput = {
+  invoiceId: number
+  issueDate?: Date | string | null
   subtotal?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   discount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   total?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  REPAIR: Prisma.REPAIRCreateNestedOneWithoutINVOICEInput
+  repair: Prisma.RepairCreateNestedOneWithoutInvoiceInput
 }
 
-export type INVOICEUncheckedCreateWithoutPAYMENTInput = {
-  invoice_id: number
-  repair_id: number
-  issue_date?: Date | string | null
+export type InvoiceUncheckedCreateWithoutPaymentsInput = {
+  invoiceId: number
+  repairId: number
+  issueDate?: Date | string | null
   subtotal?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   discount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   total?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
 }
 
-export type INVOICECreateOrConnectWithoutPAYMENTInput = {
-  where: Prisma.INVOICEWhereUniqueInput
-  create: Prisma.XOR<Prisma.INVOICECreateWithoutPAYMENTInput, Prisma.INVOICEUncheckedCreateWithoutPAYMENTInput>
+export type InvoiceCreateOrConnectWithoutPaymentsInput = {
+  where: Prisma.InvoiceWhereUniqueInput
+  create: Prisma.XOR<Prisma.InvoiceCreateWithoutPaymentsInput, Prisma.InvoiceUncheckedCreateWithoutPaymentsInput>
 }
 
-export type INVOICEUpsertWithoutPAYMENTInput = {
-  update: Prisma.XOR<Prisma.INVOICEUpdateWithoutPAYMENTInput, Prisma.INVOICEUncheckedUpdateWithoutPAYMENTInput>
-  create: Prisma.XOR<Prisma.INVOICECreateWithoutPAYMENTInput, Prisma.INVOICEUncheckedCreateWithoutPAYMENTInput>
-  where?: Prisma.INVOICEWhereInput
+export type InvoiceUpsertWithoutPaymentsInput = {
+  update: Prisma.XOR<Prisma.InvoiceUpdateWithoutPaymentsInput, Prisma.InvoiceUncheckedUpdateWithoutPaymentsInput>
+  create: Prisma.XOR<Prisma.InvoiceCreateWithoutPaymentsInput, Prisma.InvoiceUncheckedCreateWithoutPaymentsInput>
+  where?: Prisma.InvoiceWhereInput
 }
 
-export type INVOICEUpdateToOneWithWhereWithoutPAYMENTInput = {
-  where?: Prisma.INVOICEWhereInput
-  data: Prisma.XOR<Prisma.INVOICEUpdateWithoutPAYMENTInput, Prisma.INVOICEUncheckedUpdateWithoutPAYMENTInput>
+export type InvoiceUpdateToOneWithWhereWithoutPaymentsInput = {
+  where?: Prisma.InvoiceWhereInput
+  data: Prisma.XOR<Prisma.InvoiceUpdateWithoutPaymentsInput, Prisma.InvoiceUncheckedUpdateWithoutPaymentsInput>
 }
 
-export type INVOICEUpdateWithoutPAYMENTInput = {
-  invoice_id?: Prisma.IntFieldUpdateOperationsInput | number
-  issue_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type InvoiceUpdateWithoutPaymentsInput = {
+  invoiceId?: Prisma.IntFieldUpdateOperationsInput | number
+  issueDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   subtotal?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   discount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   total?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  REPAIR?: Prisma.REPAIRUpdateOneRequiredWithoutINVOICENestedInput
+  repair?: Prisma.RepairUpdateOneRequiredWithoutInvoiceNestedInput
 }
 
-export type INVOICEUncheckedUpdateWithoutPAYMENTInput = {
-  invoice_id?: Prisma.IntFieldUpdateOperationsInput | number
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  issue_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type InvoiceUncheckedUpdateWithoutPaymentsInput = {
+  invoiceId?: Prisma.IntFieldUpdateOperationsInput | number
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  issueDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   subtotal?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   discount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   total?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
 }
 
-export type INVOICECreateWithoutREPAIRInput = {
-  invoice_id: number
-  issue_date?: Date | string | null
+export type InvoiceCreateWithoutRepairInput = {
+  invoiceId: number
+  issueDate?: Date | string | null
   subtotal?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   discount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   total?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  PAYMENT?: Prisma.PAYMENTCreateNestedManyWithoutINVOICEInput
+  payments?: Prisma.PaymentCreateNestedManyWithoutInvoiceInput
 }
 
-export type INVOICEUncheckedCreateWithoutREPAIRInput = {
-  invoice_id: number
-  issue_date?: Date | string | null
+export type InvoiceUncheckedCreateWithoutRepairInput = {
+  invoiceId: number
+  issueDate?: Date | string | null
   subtotal?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   discount?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   total?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  PAYMENT?: Prisma.PAYMENTUncheckedCreateNestedManyWithoutINVOICEInput
+  payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutInvoiceInput
 }
 
-export type INVOICECreateOrConnectWithoutREPAIRInput = {
-  where: Prisma.INVOICEWhereUniqueInput
-  create: Prisma.XOR<Prisma.INVOICECreateWithoutREPAIRInput, Prisma.INVOICEUncheckedCreateWithoutREPAIRInput>
+export type InvoiceCreateOrConnectWithoutRepairInput = {
+  where: Prisma.InvoiceWhereUniqueInput
+  create: Prisma.XOR<Prisma.InvoiceCreateWithoutRepairInput, Prisma.InvoiceUncheckedCreateWithoutRepairInput>
 }
 
-export type INVOICEUpsertWithoutREPAIRInput = {
-  update: Prisma.XOR<Prisma.INVOICEUpdateWithoutREPAIRInput, Prisma.INVOICEUncheckedUpdateWithoutREPAIRInput>
-  create: Prisma.XOR<Prisma.INVOICECreateWithoutREPAIRInput, Prisma.INVOICEUncheckedCreateWithoutREPAIRInput>
-  where?: Prisma.INVOICEWhereInput
+export type InvoiceUpsertWithoutRepairInput = {
+  update: Prisma.XOR<Prisma.InvoiceUpdateWithoutRepairInput, Prisma.InvoiceUncheckedUpdateWithoutRepairInput>
+  create: Prisma.XOR<Prisma.InvoiceCreateWithoutRepairInput, Prisma.InvoiceUncheckedCreateWithoutRepairInput>
+  where?: Prisma.InvoiceWhereInput
 }
 
-export type INVOICEUpdateToOneWithWhereWithoutREPAIRInput = {
-  where?: Prisma.INVOICEWhereInput
-  data: Prisma.XOR<Prisma.INVOICEUpdateWithoutREPAIRInput, Prisma.INVOICEUncheckedUpdateWithoutREPAIRInput>
+export type InvoiceUpdateToOneWithWhereWithoutRepairInput = {
+  where?: Prisma.InvoiceWhereInput
+  data: Prisma.XOR<Prisma.InvoiceUpdateWithoutRepairInput, Prisma.InvoiceUncheckedUpdateWithoutRepairInput>
 }
 
-export type INVOICEUpdateWithoutREPAIRInput = {
-  invoice_id?: Prisma.IntFieldUpdateOperationsInput | number
-  issue_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type InvoiceUpdateWithoutRepairInput = {
+  invoiceId?: Prisma.IntFieldUpdateOperationsInput | number
+  issueDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   subtotal?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   discount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   total?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  PAYMENT?: Prisma.PAYMENTUpdateManyWithoutINVOICENestedInput
+  payments?: Prisma.PaymentUpdateManyWithoutInvoiceNestedInput
 }
 
-export type INVOICEUncheckedUpdateWithoutREPAIRInput = {
-  invoice_id?: Prisma.IntFieldUpdateOperationsInput | number
-  issue_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type InvoiceUncheckedUpdateWithoutRepairInput = {
+  invoiceId?: Prisma.IntFieldUpdateOperationsInput | number
+  issueDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   subtotal?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   discount?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   total?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  PAYMENT?: Prisma.PAYMENTUncheckedUpdateManyWithoutINVOICENestedInput
+  payments?: Prisma.PaymentUncheckedUpdateManyWithoutInvoiceNestedInput
 }
 
 
 /**
- * Count Type INVOICECountOutputType
+ * Count Type InvoiceCountOutputType
  */
 
-export type INVOICECountOutputType = {
-  PAYMENT: number
+export type InvoiceCountOutputType = {
+  payments: number
 }
 
-export type INVOICECountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  PAYMENT?: boolean | INVOICECountOutputTypeCountPAYMENTArgs
+export type InvoiceCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  payments?: boolean | InvoiceCountOutputTypeCountPaymentsArgs
 }
 
 /**
- * INVOICECountOutputType without action
+ * InvoiceCountOutputType without action
  */
-export type INVOICECountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type InvoiceCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the INVOICECountOutputType
+   * Select specific fields to fetch from the InvoiceCountOutputType
    */
-  select?: Prisma.INVOICECountOutputTypeSelect<ExtArgs> | null
+  select?: Prisma.InvoiceCountOutputTypeSelect<ExtArgs> | null
 }
 
 /**
- * INVOICECountOutputType without action
+ * InvoiceCountOutputType without action
  */
-export type INVOICECountOutputTypeCountPAYMENTArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.PAYMENTWhereInput
+export type InvoiceCountOutputTypeCountPaymentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PaymentWhereInput
 }
 
 
-export type INVOICESelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-  invoice_id?: boolean
-  repair_id?: boolean
-  issue_date?: boolean
+export type InvoiceSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  invoiceId?: boolean
+  repairId?: boolean
+  issueDate?: boolean
   subtotal?: boolean
   tax?: boolean
   discount?: boolean
   total?: boolean
-  REPAIR?: boolean | Prisma.REPAIRDefaultArgs<ExtArgs>
-  PAYMENT?: boolean | Prisma.INVOICE$PAYMENTArgs<ExtArgs>
-  _count?: boolean | Prisma.INVOICECountOutputTypeDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["iNVOICE"]>
+  repair?: boolean | Prisma.RepairDefaultArgs<ExtArgs>
+  payments?: boolean | Prisma.Invoice$paymentsArgs<ExtArgs>
+  _count?: boolean | Prisma.InvoiceCountOutputTypeDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["invoice"]>
 
 
 
-export type INVOICESelectScalar = {
-  invoice_id?: boolean
-  repair_id?: boolean
-  issue_date?: boolean
+export type InvoiceSelectScalar = {
+  invoiceId?: boolean
+  repairId?: boolean
+  issueDate?: boolean
   subtotal?: boolean
   tax?: boolean
   discount?: boolean
   total?: boolean
 }
 
-export type INVOICEOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"invoice_id" | "repair_id" | "issue_date" | "subtotal" | "tax" | "discount" | "total", ExtArgs["result"]["iNVOICE"]>
-export type INVOICEInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  REPAIR?: boolean | Prisma.REPAIRDefaultArgs<ExtArgs>
-  PAYMENT?: boolean | Prisma.INVOICE$PAYMENTArgs<ExtArgs>
-  _count?: boolean | Prisma.INVOICECountOutputTypeDefaultArgs<ExtArgs>
+export type InvoiceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"invoiceId" | "repairId" | "issueDate" | "subtotal" | "tax" | "discount" | "total", ExtArgs["result"]["invoice"]>
+export type InvoiceInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  repair?: boolean | Prisma.RepairDefaultArgs<ExtArgs>
+  payments?: boolean | Prisma.Invoice$paymentsArgs<ExtArgs>
+  _count?: boolean | Prisma.InvoiceCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $INVOICEPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "INVOICE"
+export type $InvoicePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "Invoice"
   objects: {
-    REPAIR: Prisma.$REPAIRPayload<ExtArgs>
-    PAYMENT: Prisma.$PAYMENTPayload<ExtArgs>[]
+    repair: Prisma.$RepairPayload<ExtArgs>
+    payments: Prisma.$PaymentPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
-    invoice_id: number
-    repair_id: number
-    issue_date: Date | null
+    invoiceId: number
+    repairId: number
+    issueDate: Date | null
     subtotal: runtime.Decimal | null
     tax: runtime.Decimal | null
     discount: runtime.Decimal | null
     total: runtime.Decimal | null
-  }, ExtArgs["result"]["iNVOICE"]>
+  }, ExtArgs["result"]["invoice"]>
   composites: {}
 }
 
-export type INVOICEGetPayload<S extends boolean | null | undefined | INVOICEDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$INVOICEPayload, S>
+export type InvoiceGetPayload<S extends boolean | null | undefined | InvoiceDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$InvoicePayload, S>
 
-export type INVOICECountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<INVOICEFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: INVOICECountAggregateInputType | true
+export type InvoiceCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<InvoiceFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: InvoiceCountAggregateInputType | true
   }
 
-export interface INVOICEDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['INVOICE'], meta: { name: 'INVOICE' } }
+export interface InvoiceDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Invoice'], meta: { name: 'Invoice' } }
   /**
-   * Find zero or one INVOICE that matches the filter.
-   * @param {INVOICEFindUniqueArgs} args - Arguments to find a INVOICE
+   * Find zero or one Invoice that matches the filter.
+   * @param {InvoiceFindUniqueArgs} args - Arguments to find a Invoice
    * @example
-   * // Get one INVOICE
-   * const iNVOICE = await prisma.iNVOICE.findUnique({
+   * // Get one Invoice
+   * const invoice = await prisma.invoice.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends INVOICEFindUniqueArgs>(args: Prisma.SelectSubset<T, INVOICEFindUniqueArgs<ExtArgs>>): Prisma.Prisma__INVOICEClient<runtime.Types.Result.GetResult<Prisma.$INVOICEPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends InvoiceFindUniqueArgs>(args: Prisma.SelectSubset<T, InvoiceFindUniqueArgs<ExtArgs>>): Prisma.Prisma__InvoiceClient<runtime.Types.Result.GetResult<Prisma.$InvoicePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one INVOICE that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Invoice that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {INVOICEFindUniqueOrThrowArgs} args - Arguments to find a INVOICE
+   * @param {InvoiceFindUniqueOrThrowArgs} args - Arguments to find a Invoice
    * @example
-   * // Get one INVOICE
-   * const iNVOICE = await prisma.iNVOICE.findUniqueOrThrow({
+   * // Get one Invoice
+   * const invoice = await prisma.invoice.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends INVOICEFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, INVOICEFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__INVOICEClient<runtime.Types.Result.GetResult<Prisma.$INVOICEPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends InvoiceFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, InvoiceFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__InvoiceClient<runtime.Types.Result.GetResult<Prisma.$InvoicePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first INVOICE that matches the filter.
+   * Find the first Invoice that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {INVOICEFindFirstArgs} args - Arguments to find a INVOICE
+   * @param {InvoiceFindFirstArgs} args - Arguments to find a Invoice
    * @example
-   * // Get one INVOICE
-   * const iNVOICE = await prisma.iNVOICE.findFirst({
+   * // Get one Invoice
+   * const invoice = await prisma.invoice.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends INVOICEFindFirstArgs>(args?: Prisma.SelectSubset<T, INVOICEFindFirstArgs<ExtArgs>>): Prisma.Prisma__INVOICEClient<runtime.Types.Result.GetResult<Prisma.$INVOICEPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends InvoiceFindFirstArgs>(args?: Prisma.SelectSubset<T, InvoiceFindFirstArgs<ExtArgs>>): Prisma.Prisma__InvoiceClient<runtime.Types.Result.GetResult<Prisma.$InvoicePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first INVOICE that matches the filter or
+   * Find the first Invoice that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {INVOICEFindFirstOrThrowArgs} args - Arguments to find a INVOICE
+   * @param {InvoiceFindFirstOrThrowArgs} args - Arguments to find a Invoice
    * @example
-   * // Get one INVOICE
-   * const iNVOICE = await prisma.iNVOICE.findFirstOrThrow({
+   * // Get one Invoice
+   * const invoice = await prisma.invoice.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends INVOICEFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, INVOICEFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__INVOICEClient<runtime.Types.Result.GetResult<Prisma.$INVOICEPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends InvoiceFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, InvoiceFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__InvoiceClient<runtime.Types.Result.GetResult<Prisma.$InvoicePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more INVOICES that matches the filter.
+   * Find zero or more Invoices that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {INVOICEFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {InvoiceFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all INVOICES
-   * const iNVOICES = await prisma.iNVOICE.findMany()
+   * // Get all Invoices
+   * const invoices = await prisma.invoice.findMany()
    * 
-   * // Get first 10 INVOICES
-   * const iNVOICES = await prisma.iNVOICE.findMany({ take: 10 })
+   * // Get first 10 Invoices
+   * const invoices = await prisma.invoice.findMany({ take: 10 })
    * 
-   * // Only select the `invoice_id`
-   * const iNVOICEWithInvoice_idOnly = await prisma.iNVOICE.findMany({ select: { invoice_id: true } })
+   * // Only select the `invoiceId`
+   * const invoiceWithInvoiceIdOnly = await prisma.invoice.findMany({ select: { invoiceId: true } })
    * 
    */
-  findMany<T extends INVOICEFindManyArgs>(args?: Prisma.SelectSubset<T, INVOICEFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$INVOICEPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends InvoiceFindManyArgs>(args?: Prisma.SelectSubset<T, InvoiceFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InvoicePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a INVOICE.
-   * @param {INVOICECreateArgs} args - Arguments to create a INVOICE.
+   * Create a Invoice.
+   * @param {InvoiceCreateArgs} args - Arguments to create a Invoice.
    * @example
-   * // Create one INVOICE
-   * const INVOICE = await prisma.iNVOICE.create({
+   * // Create one Invoice
+   * const Invoice = await prisma.invoice.create({
    *   data: {
-   *     // ... data to create a INVOICE
+   *     // ... data to create a Invoice
    *   }
    * })
    * 
    */
-  create<T extends INVOICECreateArgs>(args: Prisma.SelectSubset<T, INVOICECreateArgs<ExtArgs>>): Prisma.Prisma__INVOICEClient<runtime.Types.Result.GetResult<Prisma.$INVOICEPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends InvoiceCreateArgs>(args: Prisma.SelectSubset<T, InvoiceCreateArgs<ExtArgs>>): Prisma.Prisma__InvoiceClient<runtime.Types.Result.GetResult<Prisma.$InvoicePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many INVOICES.
-   * @param {INVOICECreateManyArgs} args - Arguments to create many INVOICES.
+   * Create many Invoices.
+   * @param {InvoiceCreateManyArgs} args - Arguments to create many Invoices.
    * @example
-   * // Create many INVOICES
-   * const iNVOICE = await prisma.iNVOICE.createMany({
+   * // Create many Invoices
+   * const invoice = await prisma.invoice.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends INVOICECreateManyArgs>(args?: Prisma.SelectSubset<T, INVOICECreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends InvoiceCreateManyArgs>(args?: Prisma.SelectSubset<T, InvoiceCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a INVOICE.
-   * @param {INVOICEDeleteArgs} args - Arguments to delete one INVOICE.
+   * Delete a Invoice.
+   * @param {InvoiceDeleteArgs} args - Arguments to delete one Invoice.
    * @example
-   * // Delete one INVOICE
-   * const INVOICE = await prisma.iNVOICE.delete({
+   * // Delete one Invoice
+   * const Invoice = await prisma.invoice.delete({
    *   where: {
-   *     // ... filter to delete one INVOICE
+   *     // ... filter to delete one Invoice
    *   }
    * })
    * 
    */
-  delete<T extends INVOICEDeleteArgs>(args: Prisma.SelectSubset<T, INVOICEDeleteArgs<ExtArgs>>): Prisma.Prisma__INVOICEClient<runtime.Types.Result.GetResult<Prisma.$INVOICEPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends InvoiceDeleteArgs>(args: Prisma.SelectSubset<T, InvoiceDeleteArgs<ExtArgs>>): Prisma.Prisma__InvoiceClient<runtime.Types.Result.GetResult<Prisma.$InvoicePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one INVOICE.
-   * @param {INVOICEUpdateArgs} args - Arguments to update one INVOICE.
+   * Update one Invoice.
+   * @param {InvoiceUpdateArgs} args - Arguments to update one Invoice.
    * @example
-   * // Update one INVOICE
-   * const iNVOICE = await prisma.iNVOICE.update({
+   * // Update one Invoice
+   * const invoice = await prisma.invoice.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -843,30 +843,30 @@ export interface INVOICEDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  update<T extends INVOICEUpdateArgs>(args: Prisma.SelectSubset<T, INVOICEUpdateArgs<ExtArgs>>): Prisma.Prisma__INVOICEClient<runtime.Types.Result.GetResult<Prisma.$INVOICEPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends InvoiceUpdateArgs>(args: Prisma.SelectSubset<T, InvoiceUpdateArgs<ExtArgs>>): Prisma.Prisma__InvoiceClient<runtime.Types.Result.GetResult<Prisma.$InvoicePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more INVOICES.
-   * @param {INVOICEDeleteManyArgs} args - Arguments to filter INVOICES to delete.
+   * Delete zero or more Invoices.
+   * @param {InvoiceDeleteManyArgs} args - Arguments to filter Invoices to delete.
    * @example
-   * // Delete a few INVOICES
-   * const { count } = await prisma.iNVOICE.deleteMany({
+   * // Delete a few Invoices
+   * const { count } = await prisma.invoice.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends INVOICEDeleteManyArgs>(args?: Prisma.SelectSubset<T, INVOICEDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends InvoiceDeleteManyArgs>(args?: Prisma.SelectSubset<T, InvoiceDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more INVOICES.
+   * Update zero or more Invoices.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {INVOICEUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {InvoiceUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many INVOICES
-   * const iNVOICE = await prisma.iNVOICE.updateMany({
+   * // Update many Invoices
+   * const invoice = await prisma.invoice.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -876,56 +876,56 @@ export interface INVOICEDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  updateMany<T extends INVOICEUpdateManyArgs>(args: Prisma.SelectSubset<T, INVOICEUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends InvoiceUpdateManyArgs>(args: Prisma.SelectSubset<T, InvoiceUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one INVOICE.
-   * @param {INVOICEUpsertArgs} args - Arguments to update or create a INVOICE.
+   * Create or update one Invoice.
+   * @param {InvoiceUpsertArgs} args - Arguments to update or create a Invoice.
    * @example
-   * // Update or create a INVOICE
-   * const iNVOICE = await prisma.iNVOICE.upsert({
+   * // Update or create a Invoice
+   * const invoice = await prisma.invoice.upsert({
    *   create: {
-   *     // ... data to create a INVOICE
+   *     // ... data to create a Invoice
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the INVOICE we want to update
+   *     // ... the filter for the Invoice we want to update
    *   }
    * })
    */
-  upsert<T extends INVOICEUpsertArgs>(args: Prisma.SelectSubset<T, INVOICEUpsertArgs<ExtArgs>>): Prisma.Prisma__INVOICEClient<runtime.Types.Result.GetResult<Prisma.$INVOICEPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends InvoiceUpsertArgs>(args: Prisma.SelectSubset<T, InvoiceUpsertArgs<ExtArgs>>): Prisma.Prisma__InvoiceClient<runtime.Types.Result.GetResult<Prisma.$InvoicePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of INVOICES.
+   * Count the number of Invoices.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {INVOICECountArgs} args - Arguments to filter INVOICES to count.
+   * @param {InvoiceCountArgs} args - Arguments to filter Invoices to count.
    * @example
-   * // Count the number of INVOICES
-   * const count = await prisma.iNVOICE.count({
+   * // Count the number of Invoices
+   * const count = await prisma.invoice.count({
    *   where: {
-   *     // ... the filter for the INVOICES we want to count
+   *     // ... the filter for the Invoices we want to count
    *   }
    * })
   **/
-  count<T extends INVOICECountArgs>(
-    args?: Prisma.Subset<T, INVOICECountArgs>,
+  count<T extends InvoiceCountArgs>(
+    args?: Prisma.Subset<T, InvoiceCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], INVOICECountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], InvoiceCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a INVOICE.
+   * Allows you to perform aggregations operations on a Invoice.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {INVOICEAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {InvoiceAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -945,13 +945,13 @@ export interface INVOICEDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   take: 10,
    * })
   **/
-  aggregate<T extends INVOICEAggregateArgs>(args: Prisma.Subset<T, INVOICEAggregateArgs>): Prisma.PrismaPromise<GetINVOICEAggregateType<T>>
+  aggregate<T extends InvoiceAggregateArgs>(args: Prisma.Subset<T, InvoiceAggregateArgs>): Prisma.PrismaPromise<GetInvoiceAggregateType<T>>
 
   /**
-   * Group by INVOICE.
+   * Group by Invoice.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {INVOICEGroupByArgs} args - Group by arguments.
+   * @param {InvoiceGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -966,14 +966,14 @@ export interface INVOICEDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * 
   **/
   groupBy<
-    T extends INVOICEGroupByArgs,
+    T extends InvoiceGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: INVOICEGroupByArgs['orderBy'] }
-      : { orderBy?: INVOICEGroupByArgs['orderBy'] },
+      ? { orderBy: InvoiceGroupByArgs['orderBy'] }
+      : { orderBy?: InvoiceGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1022,23 +1022,23 @@ export interface INVOICEDelegate<ExtArgs extends runtime.Types.Extensions.Intern
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, INVOICEGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetINVOICEGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, InvoiceGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetInvoiceGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the INVOICE model
+ * Fields of the Invoice model
  */
-readonly fields: INVOICEFieldRefs;
+readonly fields: InvoiceFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for INVOICE.
+ * The delegate class that acts as a "Promise-like" for Invoice.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__INVOICEClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__InvoiceClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  REPAIR<T extends Prisma.REPAIRDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.REPAIRDefaultArgs<ExtArgs>>): Prisma.Prisma__REPAIRClient<runtime.Types.Result.GetResult<Prisma.$REPAIRPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  PAYMENT<T extends Prisma.INVOICE$PAYMENTArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.INVOICE$PAYMENTArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PAYMENTPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  repair<T extends Prisma.RepairDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.RepairDefaultArgs<ExtArgs>>): Prisma.Prisma__RepairClient<runtime.Types.Result.GetResult<Prisma.$RepairPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  payments<T extends Prisma.Invoice$paymentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Invoice$paymentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PaymentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1065,401 +1065,401 @@ export interface Prisma__INVOICEClient<T, Null = never, ExtArgs extends runtime.
 
 
 /**
- * Fields of the INVOICE model
+ * Fields of the Invoice model
  */
-export interface INVOICEFieldRefs {
-  readonly invoice_id: Prisma.FieldRef<"INVOICE", 'Int'>
-  readonly repair_id: Prisma.FieldRef<"INVOICE", 'Int'>
-  readonly issue_date: Prisma.FieldRef<"INVOICE", 'DateTime'>
-  readonly subtotal: Prisma.FieldRef<"INVOICE", 'Decimal'>
-  readonly tax: Prisma.FieldRef<"INVOICE", 'Decimal'>
-  readonly discount: Prisma.FieldRef<"INVOICE", 'Decimal'>
-  readonly total: Prisma.FieldRef<"INVOICE", 'Decimal'>
+export interface InvoiceFieldRefs {
+  readonly invoiceId: Prisma.FieldRef<"Invoice", 'Int'>
+  readonly repairId: Prisma.FieldRef<"Invoice", 'Int'>
+  readonly issueDate: Prisma.FieldRef<"Invoice", 'DateTime'>
+  readonly subtotal: Prisma.FieldRef<"Invoice", 'Decimal'>
+  readonly tax: Prisma.FieldRef<"Invoice", 'Decimal'>
+  readonly discount: Prisma.FieldRef<"Invoice", 'Decimal'>
+  readonly total: Prisma.FieldRef<"Invoice", 'Decimal'>
 }
     
 
 // Custom InputTypes
 /**
- * INVOICE findUnique
+ * Invoice findUnique
  */
-export type INVOICEFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type InvoiceFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the INVOICE
+   * Select specific fields to fetch from the Invoice
    */
-  select?: Prisma.INVOICESelect<ExtArgs> | null
+  select?: Prisma.InvoiceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the INVOICE
+   * Omit specific fields from the Invoice
    */
-  omit?: Prisma.INVOICEOmit<ExtArgs> | null
+  omit?: Prisma.InvoiceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.INVOICEInclude<ExtArgs> | null
+  include?: Prisma.InvoiceInclude<ExtArgs> | null
   /**
-   * Filter, which INVOICE to fetch.
+   * Filter, which Invoice to fetch.
    */
-  where: Prisma.INVOICEWhereUniqueInput
+  where: Prisma.InvoiceWhereUniqueInput
 }
 
 /**
- * INVOICE findUniqueOrThrow
+ * Invoice findUniqueOrThrow
  */
-export type INVOICEFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type InvoiceFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the INVOICE
+   * Select specific fields to fetch from the Invoice
    */
-  select?: Prisma.INVOICESelect<ExtArgs> | null
+  select?: Prisma.InvoiceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the INVOICE
+   * Omit specific fields from the Invoice
    */
-  omit?: Prisma.INVOICEOmit<ExtArgs> | null
+  omit?: Prisma.InvoiceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.INVOICEInclude<ExtArgs> | null
+  include?: Prisma.InvoiceInclude<ExtArgs> | null
   /**
-   * Filter, which INVOICE to fetch.
+   * Filter, which Invoice to fetch.
    */
-  where: Prisma.INVOICEWhereUniqueInput
+  where: Prisma.InvoiceWhereUniqueInput
 }
 
 /**
- * INVOICE findFirst
+ * Invoice findFirst
  */
-export type INVOICEFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type InvoiceFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the INVOICE
+   * Select specific fields to fetch from the Invoice
    */
-  select?: Prisma.INVOICESelect<ExtArgs> | null
+  select?: Prisma.InvoiceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the INVOICE
+   * Omit specific fields from the Invoice
    */
-  omit?: Prisma.INVOICEOmit<ExtArgs> | null
+  omit?: Prisma.InvoiceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.INVOICEInclude<ExtArgs> | null
+  include?: Prisma.InvoiceInclude<ExtArgs> | null
   /**
-   * Filter, which INVOICE to fetch.
+   * Filter, which Invoice to fetch.
    */
-  where?: Prisma.INVOICEWhereInput
+  where?: Prisma.InvoiceWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of INVOICES to fetch.
+   * Determine the order of Invoices to fetch.
    */
-  orderBy?: Prisma.INVOICEOrderByWithRelationInput | Prisma.INVOICEOrderByWithRelationInput[]
+  orderBy?: Prisma.InvoiceOrderByWithRelationInput | Prisma.InvoiceOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for INVOICES.
+   * Sets the position for searching for Invoices.
    */
-  cursor?: Prisma.INVOICEWhereUniqueInput
+  cursor?: Prisma.InvoiceWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` INVOICES from the position of the cursor.
+   * Take `±n` Invoices from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` INVOICES.
+   * Skip the first `n` Invoices.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of INVOICES.
+   * Filter by unique combinations of Invoices.
    */
-  distinct?: Prisma.INVOICEScalarFieldEnum | Prisma.INVOICEScalarFieldEnum[]
+  distinct?: Prisma.InvoiceScalarFieldEnum | Prisma.InvoiceScalarFieldEnum[]
 }
 
 /**
- * INVOICE findFirstOrThrow
+ * Invoice findFirstOrThrow
  */
-export type INVOICEFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type InvoiceFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the INVOICE
+   * Select specific fields to fetch from the Invoice
    */
-  select?: Prisma.INVOICESelect<ExtArgs> | null
+  select?: Prisma.InvoiceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the INVOICE
+   * Omit specific fields from the Invoice
    */
-  omit?: Prisma.INVOICEOmit<ExtArgs> | null
+  omit?: Prisma.InvoiceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.INVOICEInclude<ExtArgs> | null
+  include?: Prisma.InvoiceInclude<ExtArgs> | null
   /**
-   * Filter, which INVOICE to fetch.
+   * Filter, which Invoice to fetch.
    */
-  where?: Prisma.INVOICEWhereInput
+  where?: Prisma.InvoiceWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of INVOICES to fetch.
+   * Determine the order of Invoices to fetch.
    */
-  orderBy?: Prisma.INVOICEOrderByWithRelationInput | Prisma.INVOICEOrderByWithRelationInput[]
+  orderBy?: Prisma.InvoiceOrderByWithRelationInput | Prisma.InvoiceOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for INVOICES.
+   * Sets the position for searching for Invoices.
    */
-  cursor?: Prisma.INVOICEWhereUniqueInput
+  cursor?: Prisma.InvoiceWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` INVOICES from the position of the cursor.
+   * Take `±n` Invoices from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` INVOICES.
+   * Skip the first `n` Invoices.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of INVOICES.
+   * Filter by unique combinations of Invoices.
    */
-  distinct?: Prisma.INVOICEScalarFieldEnum | Prisma.INVOICEScalarFieldEnum[]
+  distinct?: Prisma.InvoiceScalarFieldEnum | Prisma.InvoiceScalarFieldEnum[]
 }
 
 /**
- * INVOICE findMany
+ * Invoice findMany
  */
-export type INVOICEFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type InvoiceFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the INVOICE
+   * Select specific fields to fetch from the Invoice
    */
-  select?: Prisma.INVOICESelect<ExtArgs> | null
+  select?: Prisma.InvoiceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the INVOICE
+   * Omit specific fields from the Invoice
    */
-  omit?: Prisma.INVOICEOmit<ExtArgs> | null
+  omit?: Prisma.InvoiceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.INVOICEInclude<ExtArgs> | null
+  include?: Prisma.InvoiceInclude<ExtArgs> | null
   /**
-   * Filter, which INVOICES to fetch.
+   * Filter, which Invoices to fetch.
    */
-  where?: Prisma.INVOICEWhereInput
+  where?: Prisma.InvoiceWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of INVOICES to fetch.
+   * Determine the order of Invoices to fetch.
    */
-  orderBy?: Prisma.INVOICEOrderByWithRelationInput | Prisma.INVOICEOrderByWithRelationInput[]
+  orderBy?: Prisma.InvoiceOrderByWithRelationInput | Prisma.InvoiceOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing INVOICES.
+   * Sets the position for listing Invoices.
    */
-  cursor?: Prisma.INVOICEWhereUniqueInput
+  cursor?: Prisma.InvoiceWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` INVOICES from the position of the cursor.
+   * Take `±n` Invoices from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` INVOICES.
+   * Skip the first `n` Invoices.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of INVOICES.
+   * Filter by unique combinations of Invoices.
    */
-  distinct?: Prisma.INVOICEScalarFieldEnum | Prisma.INVOICEScalarFieldEnum[]
+  distinct?: Prisma.InvoiceScalarFieldEnum | Prisma.InvoiceScalarFieldEnum[]
 }
 
 /**
- * INVOICE create
+ * Invoice create
  */
-export type INVOICECreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type InvoiceCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the INVOICE
+   * Select specific fields to fetch from the Invoice
    */
-  select?: Prisma.INVOICESelect<ExtArgs> | null
+  select?: Prisma.InvoiceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the INVOICE
+   * Omit specific fields from the Invoice
    */
-  omit?: Prisma.INVOICEOmit<ExtArgs> | null
+  omit?: Prisma.InvoiceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.INVOICEInclude<ExtArgs> | null
+  include?: Prisma.InvoiceInclude<ExtArgs> | null
   /**
-   * The data needed to create a INVOICE.
+   * The data needed to create a Invoice.
    */
-  data: Prisma.XOR<Prisma.INVOICECreateInput, Prisma.INVOICEUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.InvoiceCreateInput, Prisma.InvoiceUncheckedCreateInput>
 }
 
 /**
- * INVOICE createMany
+ * Invoice createMany
  */
-export type INVOICECreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type InvoiceCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many INVOICES.
+   * The data used to create many Invoices.
    */
-  data: Prisma.INVOICECreateManyInput | Prisma.INVOICECreateManyInput[]
+  data: Prisma.InvoiceCreateManyInput | Prisma.InvoiceCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * INVOICE update
+ * Invoice update
  */
-export type INVOICEUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type InvoiceUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the INVOICE
+   * Select specific fields to fetch from the Invoice
    */
-  select?: Prisma.INVOICESelect<ExtArgs> | null
+  select?: Prisma.InvoiceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the INVOICE
+   * Omit specific fields from the Invoice
    */
-  omit?: Prisma.INVOICEOmit<ExtArgs> | null
+  omit?: Prisma.InvoiceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.INVOICEInclude<ExtArgs> | null
+  include?: Prisma.InvoiceInclude<ExtArgs> | null
   /**
-   * The data needed to update a INVOICE.
+   * The data needed to update a Invoice.
    */
-  data: Prisma.XOR<Prisma.INVOICEUpdateInput, Prisma.INVOICEUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.InvoiceUpdateInput, Prisma.InvoiceUncheckedUpdateInput>
   /**
-   * Choose, which INVOICE to update.
+   * Choose, which Invoice to update.
    */
-  where: Prisma.INVOICEWhereUniqueInput
+  where: Prisma.InvoiceWhereUniqueInput
 }
 
 /**
- * INVOICE updateMany
+ * Invoice updateMany
  */
-export type INVOICEUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type InvoiceUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update INVOICES.
+   * The data used to update Invoices.
    */
-  data: Prisma.XOR<Prisma.INVOICEUpdateManyMutationInput, Prisma.INVOICEUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.InvoiceUpdateManyMutationInput, Prisma.InvoiceUncheckedUpdateManyInput>
   /**
-   * Filter which INVOICES to update
+   * Filter which Invoices to update
    */
-  where?: Prisma.INVOICEWhereInput
+  where?: Prisma.InvoiceWhereInput
   /**
-   * Limit how many INVOICES to update.
+   * Limit how many Invoices to update.
    */
   limit?: number
 }
 
 /**
- * INVOICE upsert
+ * Invoice upsert
  */
-export type INVOICEUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type InvoiceUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the INVOICE
+   * Select specific fields to fetch from the Invoice
    */
-  select?: Prisma.INVOICESelect<ExtArgs> | null
+  select?: Prisma.InvoiceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the INVOICE
+   * Omit specific fields from the Invoice
    */
-  omit?: Prisma.INVOICEOmit<ExtArgs> | null
+  omit?: Prisma.InvoiceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.INVOICEInclude<ExtArgs> | null
+  include?: Prisma.InvoiceInclude<ExtArgs> | null
   /**
-   * The filter to search for the INVOICE to update in case it exists.
+   * The filter to search for the Invoice to update in case it exists.
    */
-  where: Prisma.INVOICEWhereUniqueInput
+  where: Prisma.InvoiceWhereUniqueInput
   /**
-   * In case the INVOICE found by the `where` argument doesn't exist, create a new INVOICE with this data.
+   * In case the Invoice found by the `where` argument doesn't exist, create a new Invoice with this data.
    */
-  create: Prisma.XOR<Prisma.INVOICECreateInput, Prisma.INVOICEUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.InvoiceCreateInput, Prisma.InvoiceUncheckedCreateInput>
   /**
-   * In case the INVOICE was found with the provided `where` argument, update it with this data.
+   * In case the Invoice was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.INVOICEUpdateInput, Prisma.INVOICEUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.InvoiceUpdateInput, Prisma.InvoiceUncheckedUpdateInput>
 }
 
 /**
- * INVOICE delete
+ * Invoice delete
  */
-export type INVOICEDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type InvoiceDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the INVOICE
+   * Select specific fields to fetch from the Invoice
    */
-  select?: Prisma.INVOICESelect<ExtArgs> | null
+  select?: Prisma.InvoiceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the INVOICE
+   * Omit specific fields from the Invoice
    */
-  omit?: Prisma.INVOICEOmit<ExtArgs> | null
+  omit?: Prisma.InvoiceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.INVOICEInclude<ExtArgs> | null
+  include?: Prisma.InvoiceInclude<ExtArgs> | null
   /**
-   * Filter which INVOICE to delete.
+   * Filter which Invoice to delete.
    */
-  where: Prisma.INVOICEWhereUniqueInput
+  where: Prisma.InvoiceWhereUniqueInput
 }
 
 /**
- * INVOICE deleteMany
+ * Invoice deleteMany
  */
-export type INVOICEDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type InvoiceDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which INVOICES to delete
+   * Filter which Invoices to delete
    */
-  where?: Prisma.INVOICEWhereInput
+  where?: Prisma.InvoiceWhereInput
   /**
-   * Limit how many INVOICES to delete.
+   * Limit how many Invoices to delete.
    */
   limit?: number
 }
 
 /**
- * INVOICE.PAYMENT
+ * Invoice.payments
  */
-export type INVOICE$PAYMENTArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Invoice$paymentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PAYMENT
+   * Select specific fields to fetch from the Payment
    */
-  select?: Prisma.PAYMENTSelect<ExtArgs> | null
+  select?: Prisma.PaymentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PAYMENT
+   * Omit specific fields from the Payment
    */
-  omit?: Prisma.PAYMENTOmit<ExtArgs> | null
+  omit?: Prisma.PaymentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PAYMENTInclude<ExtArgs> | null
-  where?: Prisma.PAYMENTWhereInput
-  orderBy?: Prisma.PAYMENTOrderByWithRelationInput | Prisma.PAYMENTOrderByWithRelationInput[]
-  cursor?: Prisma.PAYMENTWhereUniqueInput
+  include?: Prisma.PaymentInclude<ExtArgs> | null
+  where?: Prisma.PaymentWhereInput
+  orderBy?: Prisma.PaymentOrderByWithRelationInput | Prisma.PaymentOrderByWithRelationInput[]
+  cursor?: Prisma.PaymentWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.PAYMENTScalarFieldEnum | Prisma.PAYMENTScalarFieldEnum[]
+  distinct?: Prisma.PaymentScalarFieldEnum | Prisma.PaymentScalarFieldEnum[]
 }
 
 /**
- * INVOICE without action
+ * Invoice without action
  */
-export type INVOICEDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type InvoiceDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the INVOICE
+   * Select specific fields to fetch from the Invoice
    */
-  select?: Prisma.INVOICESelect<ExtArgs> | null
+  select?: Prisma.InvoiceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the INVOICE
+   * Omit specific fields from the Invoice
    */
-  omit?: Prisma.INVOICEOmit<ExtArgs> | null
+  omit?: Prisma.InvoiceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.INVOICEInclude<ExtArgs> | null
+  include?: Prisma.InvoiceInclude<ExtArgs> | null
 }

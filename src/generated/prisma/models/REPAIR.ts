@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `REPAIR` model and its related types.
+ * This file exports the `Repair` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,1714 +13,1714 @@ import type * as $Enums from "../enums"
 import type * as Prisma from "../internal/prismaNamespace"
 
 /**
- * Model REPAIR
+ * Model Repair
  * 
  */
-export type REPAIRModel = runtime.Types.Result.DefaultSelection<Prisma.$REPAIRPayload>
+export type RepairModel = runtime.Types.Result.DefaultSelection<Prisma.$RepairPayload>
 
-export type AggregateREPAIR = {
-  _count: REPAIRCountAggregateOutputType | null
-  _avg: REPAIRAvgAggregateOutputType | null
-  _sum: REPAIRSumAggregateOutputType | null
-  _min: REPAIRMinAggregateOutputType | null
-  _max: REPAIRMaxAggregateOutputType | null
+export type AggregateRepair = {
+  _count: RepairCountAggregateOutputType | null
+  _avg: RepairAvgAggregateOutputType | null
+  _sum: RepairSumAggregateOutputType | null
+  _min: RepairMinAggregateOutputType | null
+  _max: RepairMaxAggregateOutputType | null
 }
 
-export type REPAIRAvgAggregateOutputType = {
-  repair_id: number | null
-  product_id: number | null
-  shop_id: number | null
-  status_id: number | null
-  estimated_hours: runtime.Decimal | null
-  worked_hours: runtime.Decimal | null
+export type RepairAvgAggregateOutputType = {
+  repairId: number | null
+  productId: number | null
+  shopId: number | null
+  statusId: number | null
+  estimatedHours: runtime.Decimal | null
+  workedHours: runtime.Decimal | null
 }
 
-export type REPAIRSumAggregateOutputType = {
-  repair_id: number | null
-  product_id: number | null
-  shop_id: number | null
-  status_id: number | null
-  estimated_hours: runtime.Decimal | null
-  worked_hours: runtime.Decimal | null
+export type RepairSumAggregateOutputType = {
+  repairId: number | null
+  productId: number | null
+  shopId: number | null
+  statusId: number | null
+  estimatedHours: runtime.Decimal | null
+  workedHours: runtime.Decimal | null
 }
 
-export type REPAIRMinAggregateOutputType = {
-  repair_id: number | null
-  product_id: number | null
-  shop_id: number | null
-  status_id: number | null
-  estimated_hours: runtime.Decimal | null
-  worked_hours: runtime.Decimal | null
-  received_date: Date | null
-  finish_date: Date | null
-  return_date: Date | null
+export type RepairMinAggregateOutputType = {
+  repairId: number | null
+  productId: number | null
+  shopId: number | null
+  statusId: number | null
+  estimatedHours: runtime.Decimal | null
+  workedHours: runtime.Decimal | null
+  receivedDate: Date | null
+  finishDate: Date | null
+  returnDate: Date | null
   notes: string | null
-  problem_description: string | null
+  problemDescription: string | null
 }
 
-export type REPAIRMaxAggregateOutputType = {
-  repair_id: number | null
-  product_id: number | null
-  shop_id: number | null
-  status_id: number | null
-  estimated_hours: runtime.Decimal | null
-  worked_hours: runtime.Decimal | null
-  received_date: Date | null
-  finish_date: Date | null
-  return_date: Date | null
+export type RepairMaxAggregateOutputType = {
+  repairId: number | null
+  productId: number | null
+  shopId: number | null
+  statusId: number | null
+  estimatedHours: runtime.Decimal | null
+  workedHours: runtime.Decimal | null
+  receivedDate: Date | null
+  finishDate: Date | null
+  returnDate: Date | null
   notes: string | null
-  problem_description: string | null
+  problemDescription: string | null
 }
 
-export type REPAIRCountAggregateOutputType = {
-  repair_id: number
-  product_id: number
-  shop_id: number
-  status_id: number
-  estimated_hours: number
-  worked_hours: number
-  received_date: number
-  finish_date: number
-  return_date: number
+export type RepairCountAggregateOutputType = {
+  repairId: number
+  productId: number
+  shopId: number
+  statusId: number
+  estimatedHours: number
+  workedHours: number
+  receivedDate: number
+  finishDate: number
+  returnDate: number
   notes: number
-  problem_description: number
+  problemDescription: number
   _all: number
 }
 
 
-export type REPAIRAvgAggregateInputType = {
-  repair_id?: true
-  product_id?: true
-  shop_id?: true
-  status_id?: true
-  estimated_hours?: true
-  worked_hours?: true
+export type RepairAvgAggregateInputType = {
+  repairId?: true
+  productId?: true
+  shopId?: true
+  statusId?: true
+  estimatedHours?: true
+  workedHours?: true
 }
 
-export type REPAIRSumAggregateInputType = {
-  repair_id?: true
-  product_id?: true
-  shop_id?: true
-  status_id?: true
-  estimated_hours?: true
-  worked_hours?: true
+export type RepairSumAggregateInputType = {
+  repairId?: true
+  productId?: true
+  shopId?: true
+  statusId?: true
+  estimatedHours?: true
+  workedHours?: true
 }
 
-export type REPAIRMinAggregateInputType = {
-  repair_id?: true
-  product_id?: true
-  shop_id?: true
-  status_id?: true
-  estimated_hours?: true
-  worked_hours?: true
-  received_date?: true
-  finish_date?: true
-  return_date?: true
+export type RepairMinAggregateInputType = {
+  repairId?: true
+  productId?: true
+  shopId?: true
+  statusId?: true
+  estimatedHours?: true
+  workedHours?: true
+  receivedDate?: true
+  finishDate?: true
+  returnDate?: true
   notes?: true
-  problem_description?: true
+  problemDescription?: true
 }
 
-export type REPAIRMaxAggregateInputType = {
-  repair_id?: true
-  product_id?: true
-  shop_id?: true
-  status_id?: true
-  estimated_hours?: true
-  worked_hours?: true
-  received_date?: true
-  finish_date?: true
-  return_date?: true
+export type RepairMaxAggregateInputType = {
+  repairId?: true
+  productId?: true
+  shopId?: true
+  statusId?: true
+  estimatedHours?: true
+  workedHours?: true
+  receivedDate?: true
+  finishDate?: true
+  returnDate?: true
   notes?: true
-  problem_description?: true
+  problemDescription?: true
 }
 
-export type REPAIRCountAggregateInputType = {
-  repair_id?: true
-  product_id?: true
-  shop_id?: true
-  status_id?: true
-  estimated_hours?: true
-  worked_hours?: true
-  received_date?: true
-  finish_date?: true
-  return_date?: true
+export type RepairCountAggregateInputType = {
+  repairId?: true
+  productId?: true
+  shopId?: true
+  statusId?: true
+  estimatedHours?: true
+  workedHours?: true
+  receivedDate?: true
+  finishDate?: true
+  returnDate?: true
   notes?: true
-  problem_description?: true
+  problemDescription?: true
   _all?: true
 }
 
-export type REPAIRAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type RepairAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which REPAIR to aggregate.
+   * Filter which Repair to aggregate.
    */
-  where?: Prisma.REPAIRWhereInput
+  where?: Prisma.RepairWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of REPAIRS to fetch.
+   * Determine the order of Repairs to fetch.
    */
-  orderBy?: Prisma.REPAIROrderByWithRelationInput | Prisma.REPAIROrderByWithRelationInput[]
+  orderBy?: Prisma.RepairOrderByWithRelationInput | Prisma.RepairOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.REPAIRWhereUniqueInput
+  cursor?: Prisma.RepairWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` REPAIRS from the position of the cursor.
+   * Take `±n` Repairs from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` REPAIRS.
+   * Skip the first `n` Repairs.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned REPAIRS
+   * Count returned Repairs
   **/
-  _count?: true | REPAIRCountAggregateInputType
+  _count?: true | RepairCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to average
   **/
-  _avg?: REPAIRAvgAggregateInputType
+  _avg?: RepairAvgAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to sum
   **/
-  _sum?: REPAIRSumAggregateInputType
+  _sum?: RepairSumAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: REPAIRMinAggregateInputType
+  _min?: RepairMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: REPAIRMaxAggregateInputType
+  _max?: RepairMaxAggregateInputType
 }
 
-export type GetREPAIRAggregateType<T extends REPAIRAggregateArgs> = {
-      [P in keyof T & keyof AggregateREPAIR]: P extends '_count' | 'count'
+export type GetRepairAggregateType<T extends RepairAggregateArgs> = {
+      [P in keyof T & keyof AggregateRepair]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateREPAIR[P]>
-    : Prisma.GetScalarType<T[P], AggregateREPAIR[P]>
+      : Prisma.GetScalarType<T[P], AggregateRepair[P]>
+    : Prisma.GetScalarType<T[P], AggregateRepair[P]>
 }
 
 
 
 
-export type REPAIRGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.REPAIRWhereInput
-  orderBy?: Prisma.REPAIROrderByWithAggregationInput | Prisma.REPAIROrderByWithAggregationInput[]
-  by: Prisma.REPAIRScalarFieldEnum[] | Prisma.REPAIRScalarFieldEnum
-  having?: Prisma.REPAIRScalarWhereWithAggregatesInput
+export type RepairGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.RepairWhereInput
+  orderBy?: Prisma.RepairOrderByWithAggregationInput | Prisma.RepairOrderByWithAggregationInput[]
+  by: Prisma.RepairScalarFieldEnum[] | Prisma.RepairScalarFieldEnum
+  having?: Prisma.RepairScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: REPAIRCountAggregateInputType | true
-  _avg?: REPAIRAvgAggregateInputType
-  _sum?: REPAIRSumAggregateInputType
-  _min?: REPAIRMinAggregateInputType
-  _max?: REPAIRMaxAggregateInputType
+  _count?: RepairCountAggregateInputType | true
+  _avg?: RepairAvgAggregateInputType
+  _sum?: RepairSumAggregateInputType
+  _min?: RepairMinAggregateInputType
+  _max?: RepairMaxAggregateInputType
 }
 
-export type REPAIRGroupByOutputType = {
-  repair_id: number
-  product_id: number
-  shop_id: number
-  status_id: number
-  estimated_hours: runtime.Decimal | null
-  worked_hours: runtime.Decimal | null
-  received_date: Date | null
-  finish_date: Date | null
-  return_date: Date | null
+export type RepairGroupByOutputType = {
+  repairId: number
+  productId: number
+  shopId: number
+  statusId: number
+  estimatedHours: runtime.Decimal | null
+  workedHours: runtime.Decimal | null
+  receivedDate: Date | null
+  finishDate: Date | null
+  returnDate: Date | null
   notes: string | null
-  problem_description: string | null
-  _count: REPAIRCountAggregateOutputType | null
-  _avg: REPAIRAvgAggregateOutputType | null
-  _sum: REPAIRSumAggregateOutputType | null
-  _min: REPAIRMinAggregateOutputType | null
-  _max: REPAIRMaxAggregateOutputType | null
+  problemDescription: string | null
+  _count: RepairCountAggregateOutputType | null
+  _avg: RepairAvgAggregateOutputType | null
+  _sum: RepairSumAggregateOutputType | null
+  _min: RepairMinAggregateOutputType | null
+  _max: RepairMaxAggregateOutputType | null
 }
 
-export type GetREPAIRGroupByPayload<T extends REPAIRGroupByArgs> = Prisma.PrismaPromise<
+export type GetRepairGroupByPayload<T extends RepairGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<REPAIRGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<RepairGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof REPAIRGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof RepairGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], REPAIRGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], REPAIRGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], RepairGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], RepairGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type REPAIRWhereInput = {
-  AND?: Prisma.REPAIRWhereInput | Prisma.REPAIRWhereInput[]
-  OR?: Prisma.REPAIRWhereInput[]
-  NOT?: Prisma.REPAIRWhereInput | Prisma.REPAIRWhereInput[]
-  repair_id?: Prisma.IntFilter<"REPAIR"> | number
-  product_id?: Prisma.IntFilter<"REPAIR"> | number
-  shop_id?: Prisma.IntFilter<"REPAIR"> | number
-  status_id?: Prisma.IntFilter<"REPAIR"> | number
-  estimated_hours?: Prisma.DecimalNullableFilter<"REPAIR"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.DecimalNullableFilter<"REPAIR"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.DateTimeNullableFilter<"REPAIR"> | Date | string | null
-  finish_date?: Prisma.DateTimeNullableFilter<"REPAIR"> | Date | string | null
-  return_date?: Prisma.DateTimeNullableFilter<"REPAIR"> | Date | string | null
-  notes?: Prisma.StringNullableFilter<"REPAIR"> | string | null
-  problem_description?: Prisma.StringNullableFilter<"REPAIR"> | string | null
-  INVOICE?: Prisma.XOR<Prisma.INVOICENullableScalarRelationFilter, Prisma.INVOICEWhereInput> | null
-  LABOR?: Prisma.LABORListRelationFilter
-  PRODUCT?: Prisma.XOR<Prisma.PRODUCTScalarRelationFilter, Prisma.PRODUCTWhereInput>
-  SHOP?: Prisma.XOR<Prisma.SHOPScalarRelationFilter, Prisma.SHOPWhereInput>
-  STATUS?: Prisma.XOR<Prisma.STATUSScalarRelationFilter, Prisma.STATUSWhereInput>
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTListRelationFilter
-  REPAIR_PART?: Prisma.REPAIR_PARTListRelationFilter
+export type RepairWhereInput = {
+  AND?: Prisma.RepairWhereInput | Prisma.RepairWhereInput[]
+  OR?: Prisma.RepairWhereInput[]
+  NOT?: Prisma.RepairWhereInput | Prisma.RepairWhereInput[]
+  repairId?: Prisma.IntFilter<"Repair"> | number
+  productId?: Prisma.IntFilter<"Repair"> | number
+  shopId?: Prisma.IntFilter<"Repair"> | number
+  statusId?: Prisma.IntFilter<"Repair"> | number
+  estimatedHours?: Prisma.DecimalNullableFilter<"Repair"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.DecimalNullableFilter<"Repair"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.DateTimeNullableFilter<"Repair"> | Date | string | null
+  finishDate?: Prisma.DateTimeNullableFilter<"Repair"> | Date | string | null
+  returnDate?: Prisma.DateTimeNullableFilter<"Repair"> | Date | string | null
+  notes?: Prisma.StringNullableFilter<"Repair"> | string | null
+  problemDescription?: Prisma.StringNullableFilter<"Repair"> | string | null
+  invoice?: Prisma.XOR<Prisma.InvoiceNullableScalarRelationFilter, Prisma.InvoiceWhereInput> | null
+  labor?: Prisma.LaborListRelationFilter
+  product?: Prisma.XOR<Prisma.ProductScalarRelationFilter, Prisma.ProductWhereInput>
+  shop?: Prisma.XOR<Prisma.ShopScalarRelationFilter, Prisma.ShopWhereInput>
+  status?: Prisma.XOR<Prisma.StatusScalarRelationFilter, Prisma.StatusWhereInput>
+  repairAssignments?: Prisma.RepairAssignmentListRelationFilter
+  repairParts?: Prisma.RepairPartListRelationFilter
 }
 
-export type REPAIROrderByWithRelationInput = {
-  repair_id?: Prisma.SortOrder
-  product_id?: Prisma.SortOrder
-  shop_id?: Prisma.SortOrder
-  status_id?: Prisma.SortOrder
-  estimated_hours?: Prisma.SortOrderInput | Prisma.SortOrder
-  worked_hours?: Prisma.SortOrderInput | Prisma.SortOrder
-  received_date?: Prisma.SortOrderInput | Prisma.SortOrder
-  finish_date?: Prisma.SortOrderInput | Prisma.SortOrder
-  return_date?: Prisma.SortOrderInput | Prisma.SortOrder
+export type RepairOrderByWithRelationInput = {
+  repairId?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
+  statusId?: Prisma.SortOrder
+  estimatedHours?: Prisma.SortOrderInput | Prisma.SortOrder
+  workedHours?: Prisma.SortOrderInput | Prisma.SortOrder
+  receivedDate?: Prisma.SortOrderInput | Prisma.SortOrder
+  finishDate?: Prisma.SortOrderInput | Prisma.SortOrder
+  returnDate?: Prisma.SortOrderInput | Prisma.SortOrder
   notes?: Prisma.SortOrderInput | Prisma.SortOrder
-  problem_description?: Prisma.SortOrderInput | Prisma.SortOrder
-  INVOICE?: Prisma.INVOICEOrderByWithRelationInput
-  LABOR?: Prisma.LABOROrderByRelationAggregateInput
-  PRODUCT?: Prisma.PRODUCTOrderByWithRelationInput
-  SHOP?: Prisma.SHOPOrderByWithRelationInput
-  STATUS?: Prisma.STATUSOrderByWithRelationInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTOrderByRelationAggregateInput
-  REPAIR_PART?: Prisma.REPAIR_PARTOrderByRelationAggregateInput
-  _relevance?: Prisma.REPAIROrderByRelevanceInput
+  problemDescription?: Prisma.SortOrderInput | Prisma.SortOrder
+  invoice?: Prisma.InvoiceOrderByWithRelationInput
+  labor?: Prisma.LaborOrderByRelationAggregateInput
+  product?: Prisma.ProductOrderByWithRelationInput
+  shop?: Prisma.ShopOrderByWithRelationInput
+  status?: Prisma.StatusOrderByWithRelationInput
+  repairAssignments?: Prisma.RepairAssignmentOrderByRelationAggregateInput
+  repairParts?: Prisma.RepairPartOrderByRelationAggregateInput
+  _relevance?: Prisma.RepairOrderByRelevanceInput
 }
 
-export type REPAIRWhereUniqueInput = Prisma.AtLeast<{
-  repair_id?: number
-  AND?: Prisma.REPAIRWhereInput | Prisma.REPAIRWhereInput[]
-  OR?: Prisma.REPAIRWhereInput[]
-  NOT?: Prisma.REPAIRWhereInput | Prisma.REPAIRWhereInput[]
-  product_id?: Prisma.IntFilter<"REPAIR"> | number
-  shop_id?: Prisma.IntFilter<"REPAIR"> | number
-  status_id?: Prisma.IntFilter<"REPAIR"> | number
-  estimated_hours?: Prisma.DecimalNullableFilter<"REPAIR"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.DecimalNullableFilter<"REPAIR"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.DateTimeNullableFilter<"REPAIR"> | Date | string | null
-  finish_date?: Prisma.DateTimeNullableFilter<"REPAIR"> | Date | string | null
-  return_date?: Prisma.DateTimeNullableFilter<"REPAIR"> | Date | string | null
-  notes?: Prisma.StringNullableFilter<"REPAIR"> | string | null
-  problem_description?: Prisma.StringNullableFilter<"REPAIR"> | string | null
-  INVOICE?: Prisma.XOR<Prisma.INVOICENullableScalarRelationFilter, Prisma.INVOICEWhereInput> | null
-  LABOR?: Prisma.LABORListRelationFilter
-  PRODUCT?: Prisma.XOR<Prisma.PRODUCTScalarRelationFilter, Prisma.PRODUCTWhereInput>
-  SHOP?: Prisma.XOR<Prisma.SHOPScalarRelationFilter, Prisma.SHOPWhereInput>
-  STATUS?: Prisma.XOR<Prisma.STATUSScalarRelationFilter, Prisma.STATUSWhereInput>
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTListRelationFilter
-  REPAIR_PART?: Prisma.REPAIR_PARTListRelationFilter
-}, "repair_id">
+export type RepairWhereUniqueInput = Prisma.AtLeast<{
+  repairId?: number
+  AND?: Prisma.RepairWhereInput | Prisma.RepairWhereInput[]
+  OR?: Prisma.RepairWhereInput[]
+  NOT?: Prisma.RepairWhereInput | Prisma.RepairWhereInput[]
+  productId?: Prisma.IntFilter<"Repair"> | number
+  shopId?: Prisma.IntFilter<"Repair"> | number
+  statusId?: Prisma.IntFilter<"Repair"> | number
+  estimatedHours?: Prisma.DecimalNullableFilter<"Repair"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.DecimalNullableFilter<"Repair"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.DateTimeNullableFilter<"Repair"> | Date | string | null
+  finishDate?: Prisma.DateTimeNullableFilter<"Repair"> | Date | string | null
+  returnDate?: Prisma.DateTimeNullableFilter<"Repair"> | Date | string | null
+  notes?: Prisma.StringNullableFilter<"Repair"> | string | null
+  problemDescription?: Prisma.StringNullableFilter<"Repair"> | string | null
+  invoice?: Prisma.XOR<Prisma.InvoiceNullableScalarRelationFilter, Prisma.InvoiceWhereInput> | null
+  labor?: Prisma.LaborListRelationFilter
+  product?: Prisma.XOR<Prisma.ProductScalarRelationFilter, Prisma.ProductWhereInput>
+  shop?: Prisma.XOR<Prisma.ShopScalarRelationFilter, Prisma.ShopWhereInput>
+  status?: Prisma.XOR<Prisma.StatusScalarRelationFilter, Prisma.StatusWhereInput>
+  repairAssignments?: Prisma.RepairAssignmentListRelationFilter
+  repairParts?: Prisma.RepairPartListRelationFilter
+}, "repairId">
 
-export type REPAIROrderByWithAggregationInput = {
-  repair_id?: Prisma.SortOrder
-  product_id?: Prisma.SortOrder
-  shop_id?: Prisma.SortOrder
-  status_id?: Prisma.SortOrder
-  estimated_hours?: Prisma.SortOrderInput | Prisma.SortOrder
-  worked_hours?: Prisma.SortOrderInput | Prisma.SortOrder
-  received_date?: Prisma.SortOrderInput | Prisma.SortOrder
-  finish_date?: Prisma.SortOrderInput | Prisma.SortOrder
-  return_date?: Prisma.SortOrderInput | Prisma.SortOrder
+export type RepairOrderByWithAggregationInput = {
+  repairId?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
+  statusId?: Prisma.SortOrder
+  estimatedHours?: Prisma.SortOrderInput | Prisma.SortOrder
+  workedHours?: Prisma.SortOrderInput | Prisma.SortOrder
+  receivedDate?: Prisma.SortOrderInput | Prisma.SortOrder
+  finishDate?: Prisma.SortOrderInput | Prisma.SortOrder
+  returnDate?: Prisma.SortOrderInput | Prisma.SortOrder
   notes?: Prisma.SortOrderInput | Prisma.SortOrder
-  problem_description?: Prisma.SortOrderInput | Prisma.SortOrder
-  _count?: Prisma.REPAIRCountOrderByAggregateInput
-  _avg?: Prisma.REPAIRAvgOrderByAggregateInput
-  _max?: Prisma.REPAIRMaxOrderByAggregateInput
-  _min?: Prisma.REPAIRMinOrderByAggregateInput
-  _sum?: Prisma.REPAIRSumOrderByAggregateInput
+  problemDescription?: Prisma.SortOrderInput | Prisma.SortOrder
+  _count?: Prisma.RepairCountOrderByAggregateInput
+  _avg?: Prisma.RepairAvgOrderByAggregateInput
+  _max?: Prisma.RepairMaxOrderByAggregateInput
+  _min?: Prisma.RepairMinOrderByAggregateInput
+  _sum?: Prisma.RepairSumOrderByAggregateInput
 }
 
-export type REPAIRScalarWhereWithAggregatesInput = {
-  AND?: Prisma.REPAIRScalarWhereWithAggregatesInput | Prisma.REPAIRScalarWhereWithAggregatesInput[]
-  OR?: Prisma.REPAIRScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.REPAIRScalarWhereWithAggregatesInput | Prisma.REPAIRScalarWhereWithAggregatesInput[]
-  repair_id?: Prisma.IntWithAggregatesFilter<"REPAIR"> | number
-  product_id?: Prisma.IntWithAggregatesFilter<"REPAIR"> | number
-  shop_id?: Prisma.IntWithAggregatesFilter<"REPAIR"> | number
-  status_id?: Prisma.IntWithAggregatesFilter<"REPAIR"> | number
-  estimated_hours?: Prisma.DecimalNullableWithAggregatesFilter<"REPAIR"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.DecimalNullableWithAggregatesFilter<"REPAIR"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.DateTimeNullableWithAggregatesFilter<"REPAIR"> | Date | string | null
-  finish_date?: Prisma.DateTimeNullableWithAggregatesFilter<"REPAIR"> | Date | string | null
-  return_date?: Prisma.DateTimeNullableWithAggregatesFilter<"REPAIR"> | Date | string | null
-  notes?: Prisma.StringNullableWithAggregatesFilter<"REPAIR"> | string | null
-  problem_description?: Prisma.StringNullableWithAggregatesFilter<"REPAIR"> | string | null
+export type RepairScalarWhereWithAggregatesInput = {
+  AND?: Prisma.RepairScalarWhereWithAggregatesInput | Prisma.RepairScalarWhereWithAggregatesInput[]
+  OR?: Prisma.RepairScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.RepairScalarWhereWithAggregatesInput | Prisma.RepairScalarWhereWithAggregatesInput[]
+  repairId?: Prisma.IntWithAggregatesFilter<"Repair"> | number
+  productId?: Prisma.IntWithAggregatesFilter<"Repair"> | number
+  shopId?: Prisma.IntWithAggregatesFilter<"Repair"> | number
+  statusId?: Prisma.IntWithAggregatesFilter<"Repair"> | number
+  estimatedHours?: Prisma.DecimalNullableWithAggregatesFilter<"Repair"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.DecimalNullableWithAggregatesFilter<"Repair"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.DateTimeNullableWithAggregatesFilter<"Repair"> | Date | string | null
+  finishDate?: Prisma.DateTimeNullableWithAggregatesFilter<"Repair"> | Date | string | null
+  returnDate?: Prisma.DateTimeNullableWithAggregatesFilter<"Repair"> | Date | string | null
+  notes?: Prisma.StringNullableWithAggregatesFilter<"Repair"> | string | null
+  problemDescription?: Prisma.StringNullableWithAggregatesFilter<"Repair"> | string | null
 }
 
-export type REPAIRCreateInput = {
-  repair_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairCreateInput = {
+  repairId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
-  INVOICE?: Prisma.INVOICECreateNestedOneWithoutREPAIRInput
-  LABOR?: Prisma.LABORCreateNestedManyWithoutREPAIRInput
-  PRODUCT: Prisma.PRODUCTCreateNestedOneWithoutREPAIRInput
-  SHOP: Prisma.SHOPCreateNestedOneWithoutREPAIRInput
-  STATUS: Prisma.STATUSCreateNestedOneWithoutREPAIRInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTCreateNestedManyWithoutREPAIRInput
-  REPAIR_PART?: Prisma.REPAIR_PARTCreateNestedManyWithoutREPAIRInput
+  problemDescription?: string | null
+  invoice?: Prisma.InvoiceCreateNestedOneWithoutRepairInput
+  labor?: Prisma.LaborCreateNestedManyWithoutRepairInput
+  product: Prisma.ProductCreateNestedOneWithoutRepairsInput
+  shop: Prisma.ShopCreateNestedOneWithoutRepairsInput
+  status: Prisma.StatusCreateNestedOneWithoutRepairsInput
+  repairAssignments?: Prisma.RepairAssignmentCreateNestedManyWithoutRepairInput
+  repairParts?: Prisma.RepairPartCreateNestedManyWithoutRepairInput
 }
 
-export type REPAIRUncheckedCreateInput = {
-  repair_id: number
-  product_id: number
-  shop_id: number
-  status_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairUncheckedCreateInput = {
+  repairId: number
+  productId: number
+  shopId: number
+  statusId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
-  INVOICE?: Prisma.INVOICEUncheckedCreateNestedOneWithoutREPAIRInput
-  LABOR?: Prisma.LABORUncheckedCreateNestedManyWithoutREPAIRInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUncheckedCreateNestedManyWithoutREPAIRInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUncheckedCreateNestedManyWithoutREPAIRInput
+  problemDescription?: string | null
+  invoice?: Prisma.InvoiceUncheckedCreateNestedOneWithoutRepairInput
+  labor?: Prisma.LaborUncheckedCreateNestedManyWithoutRepairInput
+  repairAssignments?: Prisma.RepairAssignmentUncheckedCreateNestedManyWithoutRepairInput
+  repairParts?: Prisma.RepairPartUncheckedCreateNestedManyWithoutRepairInput
 }
 
-export type REPAIRUpdateInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUpdateInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  INVOICE?: Prisma.INVOICEUpdateOneWithoutREPAIRNestedInput
-  LABOR?: Prisma.LABORUpdateManyWithoutREPAIRNestedInput
-  PRODUCT?: Prisma.PRODUCTUpdateOneRequiredWithoutREPAIRNestedInput
-  SHOP?: Prisma.SHOPUpdateOneRequiredWithoutREPAIRNestedInput
-  STATUS?: Prisma.STATUSUpdateOneRequiredWithoutREPAIRNestedInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUpdateManyWithoutREPAIRNestedInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUpdateManyWithoutREPAIRNestedInput
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  invoice?: Prisma.InvoiceUpdateOneWithoutRepairNestedInput
+  labor?: Prisma.LaborUpdateManyWithoutRepairNestedInput
+  product?: Prisma.ProductUpdateOneRequiredWithoutRepairsNestedInput
+  shop?: Prisma.ShopUpdateOneRequiredWithoutRepairsNestedInput
+  status?: Prisma.StatusUpdateOneRequiredWithoutRepairsNestedInput
+  repairAssignments?: Prisma.RepairAssignmentUpdateManyWithoutRepairNestedInput
+  repairParts?: Prisma.RepairPartUpdateManyWithoutRepairNestedInput
 }
 
-export type REPAIRUncheckedUpdateInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  product_id?: Prisma.IntFieldUpdateOperationsInput | number
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
-  status_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUncheckedUpdateInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  productId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
+  statusId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  INVOICE?: Prisma.INVOICEUncheckedUpdateOneWithoutREPAIRNestedInput
-  LABOR?: Prisma.LABORUncheckedUpdateManyWithoutREPAIRNestedInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUncheckedUpdateManyWithoutREPAIRNestedInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUncheckedUpdateManyWithoutREPAIRNestedInput
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  invoice?: Prisma.InvoiceUncheckedUpdateOneWithoutRepairNestedInput
+  labor?: Prisma.LaborUncheckedUpdateManyWithoutRepairNestedInput
+  repairAssignments?: Prisma.RepairAssignmentUncheckedUpdateManyWithoutRepairNestedInput
+  repairParts?: Prisma.RepairPartUncheckedUpdateManyWithoutRepairNestedInput
 }
 
-export type REPAIRCreateManyInput = {
-  repair_id: number
-  product_id: number
-  shop_id: number
-  status_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairCreateManyInput = {
+  repairId: number
+  productId: number
+  shopId: number
+  statusId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
+  problemDescription?: string | null
 }
 
-export type REPAIRUpdateManyMutationInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUpdateManyMutationInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
-export type REPAIRUncheckedUpdateManyInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  product_id?: Prisma.IntFieldUpdateOperationsInput | number
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
-  status_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUncheckedUpdateManyInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  productId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
+  statusId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
-export type REPAIRScalarRelationFilter = {
-  is?: Prisma.REPAIRWhereInput
-  isNot?: Prisma.REPAIRWhereInput
+export type RepairScalarRelationFilter = {
+  is?: Prisma.RepairWhereInput
+  isNot?: Prisma.RepairWhereInput
 }
 
-export type REPAIRListRelationFilter = {
-  every?: Prisma.REPAIRWhereInput
-  some?: Prisma.REPAIRWhereInput
-  none?: Prisma.REPAIRWhereInput
+export type RepairListRelationFilter = {
+  every?: Prisma.RepairWhereInput
+  some?: Prisma.RepairWhereInput
+  none?: Prisma.RepairWhereInput
 }
 
-export type REPAIROrderByRelationAggregateInput = {
+export type RepairOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type REPAIROrderByRelevanceInput = {
-  fields: Prisma.REPAIROrderByRelevanceFieldEnum | Prisma.REPAIROrderByRelevanceFieldEnum[]
+export type RepairOrderByRelevanceInput = {
+  fields: Prisma.RepairOrderByRelevanceFieldEnum | Prisma.RepairOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type REPAIRCountOrderByAggregateInput = {
-  repair_id?: Prisma.SortOrder
-  product_id?: Prisma.SortOrder
-  shop_id?: Prisma.SortOrder
-  status_id?: Prisma.SortOrder
-  estimated_hours?: Prisma.SortOrder
-  worked_hours?: Prisma.SortOrder
-  received_date?: Prisma.SortOrder
-  finish_date?: Prisma.SortOrder
-  return_date?: Prisma.SortOrder
+export type RepairCountOrderByAggregateInput = {
+  repairId?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
+  statusId?: Prisma.SortOrder
+  estimatedHours?: Prisma.SortOrder
+  workedHours?: Prisma.SortOrder
+  receivedDate?: Prisma.SortOrder
+  finishDate?: Prisma.SortOrder
+  returnDate?: Prisma.SortOrder
   notes?: Prisma.SortOrder
-  problem_description?: Prisma.SortOrder
+  problemDescription?: Prisma.SortOrder
 }
 
-export type REPAIRAvgOrderByAggregateInput = {
-  repair_id?: Prisma.SortOrder
-  product_id?: Prisma.SortOrder
-  shop_id?: Prisma.SortOrder
-  status_id?: Prisma.SortOrder
-  estimated_hours?: Prisma.SortOrder
-  worked_hours?: Prisma.SortOrder
+export type RepairAvgOrderByAggregateInput = {
+  repairId?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
+  statusId?: Prisma.SortOrder
+  estimatedHours?: Prisma.SortOrder
+  workedHours?: Prisma.SortOrder
 }
 
-export type REPAIRMaxOrderByAggregateInput = {
-  repair_id?: Prisma.SortOrder
-  product_id?: Prisma.SortOrder
-  shop_id?: Prisma.SortOrder
-  status_id?: Prisma.SortOrder
-  estimated_hours?: Prisma.SortOrder
-  worked_hours?: Prisma.SortOrder
-  received_date?: Prisma.SortOrder
-  finish_date?: Prisma.SortOrder
-  return_date?: Prisma.SortOrder
+export type RepairMaxOrderByAggregateInput = {
+  repairId?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
+  statusId?: Prisma.SortOrder
+  estimatedHours?: Prisma.SortOrder
+  workedHours?: Prisma.SortOrder
+  receivedDate?: Prisma.SortOrder
+  finishDate?: Prisma.SortOrder
+  returnDate?: Prisma.SortOrder
   notes?: Prisma.SortOrder
-  problem_description?: Prisma.SortOrder
+  problemDescription?: Prisma.SortOrder
 }
 
-export type REPAIRMinOrderByAggregateInput = {
-  repair_id?: Prisma.SortOrder
-  product_id?: Prisma.SortOrder
-  shop_id?: Prisma.SortOrder
-  status_id?: Prisma.SortOrder
-  estimated_hours?: Prisma.SortOrder
-  worked_hours?: Prisma.SortOrder
-  received_date?: Prisma.SortOrder
-  finish_date?: Prisma.SortOrder
-  return_date?: Prisma.SortOrder
+export type RepairMinOrderByAggregateInput = {
+  repairId?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
+  statusId?: Prisma.SortOrder
+  estimatedHours?: Prisma.SortOrder
+  workedHours?: Prisma.SortOrder
+  receivedDate?: Prisma.SortOrder
+  finishDate?: Prisma.SortOrder
+  returnDate?: Prisma.SortOrder
   notes?: Prisma.SortOrder
-  problem_description?: Prisma.SortOrder
+  problemDescription?: Prisma.SortOrder
 }
 
-export type REPAIRSumOrderByAggregateInput = {
-  repair_id?: Prisma.SortOrder
-  product_id?: Prisma.SortOrder
-  shop_id?: Prisma.SortOrder
-  status_id?: Prisma.SortOrder
-  estimated_hours?: Prisma.SortOrder
-  worked_hours?: Prisma.SortOrder
+export type RepairSumOrderByAggregateInput = {
+  repairId?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
+  statusId?: Prisma.SortOrder
+  estimatedHours?: Prisma.SortOrder
+  workedHours?: Prisma.SortOrder
 }
 
-export type REPAIRCreateNestedOneWithoutINVOICEInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutINVOICEInput, Prisma.REPAIRUncheckedCreateWithoutINVOICEInput>
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutINVOICEInput
-  connect?: Prisma.REPAIRWhereUniqueInput
+export type RepairCreateNestedOneWithoutInvoiceInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutInvoiceInput, Prisma.RepairUncheckedCreateWithoutInvoiceInput>
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutInvoiceInput
+  connect?: Prisma.RepairWhereUniqueInput
 }
 
-export type REPAIRUpdateOneRequiredWithoutINVOICENestedInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutINVOICEInput, Prisma.REPAIRUncheckedCreateWithoutINVOICEInput>
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutINVOICEInput
-  upsert?: Prisma.REPAIRUpsertWithoutINVOICEInput
-  connect?: Prisma.REPAIRWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.REPAIRUpdateToOneWithWhereWithoutINVOICEInput, Prisma.REPAIRUpdateWithoutINVOICEInput>, Prisma.REPAIRUncheckedUpdateWithoutINVOICEInput>
+export type RepairUpdateOneRequiredWithoutInvoiceNestedInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutInvoiceInput, Prisma.RepairUncheckedCreateWithoutInvoiceInput>
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutInvoiceInput
+  upsert?: Prisma.RepairUpsertWithoutInvoiceInput
+  connect?: Prisma.RepairWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.RepairUpdateToOneWithWhereWithoutInvoiceInput, Prisma.RepairUpdateWithoutInvoiceInput>, Prisma.RepairUncheckedUpdateWithoutInvoiceInput>
 }
 
-export type REPAIRCreateNestedOneWithoutLABORInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutLABORInput, Prisma.REPAIRUncheckedCreateWithoutLABORInput>
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutLABORInput
-  connect?: Prisma.REPAIRWhereUniqueInput
+export type RepairCreateNestedOneWithoutLaborInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutLaborInput, Prisma.RepairUncheckedCreateWithoutLaborInput>
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutLaborInput
+  connect?: Prisma.RepairWhereUniqueInput
 }
 
-export type REPAIRUpdateOneRequiredWithoutLABORNestedInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutLABORInput, Prisma.REPAIRUncheckedCreateWithoutLABORInput>
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutLABORInput
-  upsert?: Prisma.REPAIRUpsertWithoutLABORInput
-  connect?: Prisma.REPAIRWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.REPAIRUpdateToOneWithWhereWithoutLABORInput, Prisma.REPAIRUpdateWithoutLABORInput>, Prisma.REPAIRUncheckedUpdateWithoutLABORInput>
+export type RepairUpdateOneRequiredWithoutLaborNestedInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutLaborInput, Prisma.RepairUncheckedCreateWithoutLaborInput>
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutLaborInput
+  upsert?: Prisma.RepairUpsertWithoutLaborInput
+  connect?: Prisma.RepairWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.RepairUpdateToOneWithWhereWithoutLaborInput, Prisma.RepairUpdateWithoutLaborInput>, Prisma.RepairUncheckedUpdateWithoutLaborInput>
 }
 
-export type REPAIRCreateNestedManyWithoutPRODUCTInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutPRODUCTInput, Prisma.REPAIRUncheckedCreateWithoutPRODUCTInput> | Prisma.REPAIRCreateWithoutPRODUCTInput[] | Prisma.REPAIRUncheckedCreateWithoutPRODUCTInput[]
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutPRODUCTInput | Prisma.REPAIRCreateOrConnectWithoutPRODUCTInput[]
-  createMany?: Prisma.REPAIRCreateManyPRODUCTInputEnvelope
-  connect?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
+export type RepairCreateNestedManyWithoutProductInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutProductInput, Prisma.RepairUncheckedCreateWithoutProductInput> | Prisma.RepairCreateWithoutProductInput[] | Prisma.RepairUncheckedCreateWithoutProductInput[]
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutProductInput | Prisma.RepairCreateOrConnectWithoutProductInput[]
+  createMany?: Prisma.RepairCreateManyProductInputEnvelope
+  connect?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
 }
 
-export type REPAIRUncheckedCreateNestedManyWithoutPRODUCTInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutPRODUCTInput, Prisma.REPAIRUncheckedCreateWithoutPRODUCTInput> | Prisma.REPAIRCreateWithoutPRODUCTInput[] | Prisma.REPAIRUncheckedCreateWithoutPRODUCTInput[]
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutPRODUCTInput | Prisma.REPAIRCreateOrConnectWithoutPRODUCTInput[]
-  createMany?: Prisma.REPAIRCreateManyPRODUCTInputEnvelope
-  connect?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
+export type RepairUncheckedCreateNestedManyWithoutProductInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutProductInput, Prisma.RepairUncheckedCreateWithoutProductInput> | Prisma.RepairCreateWithoutProductInput[] | Prisma.RepairUncheckedCreateWithoutProductInput[]
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutProductInput | Prisma.RepairCreateOrConnectWithoutProductInput[]
+  createMany?: Prisma.RepairCreateManyProductInputEnvelope
+  connect?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
 }
 
-export type REPAIRUpdateManyWithoutPRODUCTNestedInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutPRODUCTInput, Prisma.REPAIRUncheckedCreateWithoutPRODUCTInput> | Prisma.REPAIRCreateWithoutPRODUCTInput[] | Prisma.REPAIRUncheckedCreateWithoutPRODUCTInput[]
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutPRODUCTInput | Prisma.REPAIRCreateOrConnectWithoutPRODUCTInput[]
-  upsert?: Prisma.REPAIRUpsertWithWhereUniqueWithoutPRODUCTInput | Prisma.REPAIRUpsertWithWhereUniqueWithoutPRODUCTInput[]
-  createMany?: Prisma.REPAIRCreateManyPRODUCTInputEnvelope
-  set?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  disconnect?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  delete?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  connect?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  update?: Prisma.REPAIRUpdateWithWhereUniqueWithoutPRODUCTInput | Prisma.REPAIRUpdateWithWhereUniqueWithoutPRODUCTInput[]
-  updateMany?: Prisma.REPAIRUpdateManyWithWhereWithoutPRODUCTInput | Prisma.REPAIRUpdateManyWithWhereWithoutPRODUCTInput[]
-  deleteMany?: Prisma.REPAIRScalarWhereInput | Prisma.REPAIRScalarWhereInput[]
+export type RepairUpdateManyWithoutProductNestedInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutProductInput, Prisma.RepairUncheckedCreateWithoutProductInput> | Prisma.RepairCreateWithoutProductInput[] | Prisma.RepairUncheckedCreateWithoutProductInput[]
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutProductInput | Prisma.RepairCreateOrConnectWithoutProductInput[]
+  upsert?: Prisma.RepairUpsertWithWhereUniqueWithoutProductInput | Prisma.RepairUpsertWithWhereUniqueWithoutProductInput[]
+  createMany?: Prisma.RepairCreateManyProductInputEnvelope
+  set?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  disconnect?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  delete?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  connect?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  update?: Prisma.RepairUpdateWithWhereUniqueWithoutProductInput | Prisma.RepairUpdateWithWhereUniqueWithoutProductInput[]
+  updateMany?: Prisma.RepairUpdateManyWithWhereWithoutProductInput | Prisma.RepairUpdateManyWithWhereWithoutProductInput[]
+  deleteMany?: Prisma.RepairScalarWhereInput | Prisma.RepairScalarWhereInput[]
 }
 
-export type REPAIRUncheckedUpdateManyWithoutPRODUCTNestedInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutPRODUCTInput, Prisma.REPAIRUncheckedCreateWithoutPRODUCTInput> | Prisma.REPAIRCreateWithoutPRODUCTInput[] | Prisma.REPAIRUncheckedCreateWithoutPRODUCTInput[]
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutPRODUCTInput | Prisma.REPAIRCreateOrConnectWithoutPRODUCTInput[]
-  upsert?: Prisma.REPAIRUpsertWithWhereUniqueWithoutPRODUCTInput | Prisma.REPAIRUpsertWithWhereUniqueWithoutPRODUCTInput[]
-  createMany?: Prisma.REPAIRCreateManyPRODUCTInputEnvelope
-  set?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  disconnect?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  delete?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  connect?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  update?: Prisma.REPAIRUpdateWithWhereUniqueWithoutPRODUCTInput | Prisma.REPAIRUpdateWithWhereUniqueWithoutPRODUCTInput[]
-  updateMany?: Prisma.REPAIRUpdateManyWithWhereWithoutPRODUCTInput | Prisma.REPAIRUpdateManyWithWhereWithoutPRODUCTInput[]
-  deleteMany?: Prisma.REPAIRScalarWhereInput | Prisma.REPAIRScalarWhereInput[]
+export type RepairUncheckedUpdateManyWithoutProductNestedInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutProductInput, Prisma.RepairUncheckedCreateWithoutProductInput> | Prisma.RepairCreateWithoutProductInput[] | Prisma.RepairUncheckedCreateWithoutProductInput[]
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutProductInput | Prisma.RepairCreateOrConnectWithoutProductInput[]
+  upsert?: Prisma.RepairUpsertWithWhereUniqueWithoutProductInput | Prisma.RepairUpsertWithWhereUniqueWithoutProductInput[]
+  createMany?: Prisma.RepairCreateManyProductInputEnvelope
+  set?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  disconnect?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  delete?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  connect?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  update?: Prisma.RepairUpdateWithWhereUniqueWithoutProductInput | Prisma.RepairUpdateWithWhereUniqueWithoutProductInput[]
+  updateMany?: Prisma.RepairUpdateManyWithWhereWithoutProductInput | Prisma.RepairUpdateManyWithWhereWithoutProductInput[]
+  deleteMany?: Prisma.RepairScalarWhereInput | Prisma.RepairScalarWhereInput[]
 }
 
-export type REPAIRCreateNestedOneWithoutREPAIR_ASSIGNMENTInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutREPAIR_ASSIGNMENTInput, Prisma.REPAIRUncheckedCreateWithoutREPAIR_ASSIGNMENTInput>
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutREPAIR_ASSIGNMENTInput
-  connect?: Prisma.REPAIRWhereUniqueInput
+export type RepairCreateNestedOneWithoutRepairAssignmentsInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutRepairAssignmentsInput, Prisma.RepairUncheckedCreateWithoutRepairAssignmentsInput>
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutRepairAssignmentsInput
+  connect?: Prisma.RepairWhereUniqueInput
 }
 
-export type REPAIRUpdateOneRequiredWithoutREPAIR_ASSIGNMENTNestedInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutREPAIR_ASSIGNMENTInput, Prisma.REPAIRUncheckedCreateWithoutREPAIR_ASSIGNMENTInput>
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutREPAIR_ASSIGNMENTInput
-  upsert?: Prisma.REPAIRUpsertWithoutREPAIR_ASSIGNMENTInput
-  connect?: Prisma.REPAIRWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.REPAIRUpdateToOneWithWhereWithoutREPAIR_ASSIGNMENTInput, Prisma.REPAIRUpdateWithoutREPAIR_ASSIGNMENTInput>, Prisma.REPAIRUncheckedUpdateWithoutREPAIR_ASSIGNMENTInput>
+export type RepairUpdateOneRequiredWithoutRepairAssignmentsNestedInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutRepairAssignmentsInput, Prisma.RepairUncheckedCreateWithoutRepairAssignmentsInput>
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutRepairAssignmentsInput
+  upsert?: Prisma.RepairUpsertWithoutRepairAssignmentsInput
+  connect?: Prisma.RepairWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.RepairUpdateToOneWithWhereWithoutRepairAssignmentsInput, Prisma.RepairUpdateWithoutRepairAssignmentsInput>, Prisma.RepairUncheckedUpdateWithoutRepairAssignmentsInput>
 }
 
-export type REPAIRCreateNestedOneWithoutREPAIR_PARTInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutREPAIR_PARTInput, Prisma.REPAIRUncheckedCreateWithoutREPAIR_PARTInput>
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutREPAIR_PARTInput
-  connect?: Prisma.REPAIRWhereUniqueInput
+export type RepairCreateNestedOneWithoutRepairPartsInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutRepairPartsInput, Prisma.RepairUncheckedCreateWithoutRepairPartsInput>
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutRepairPartsInput
+  connect?: Prisma.RepairWhereUniqueInput
 }
 
-export type REPAIRUpdateOneRequiredWithoutREPAIR_PARTNestedInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutREPAIR_PARTInput, Prisma.REPAIRUncheckedCreateWithoutREPAIR_PARTInput>
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutREPAIR_PARTInput
-  upsert?: Prisma.REPAIRUpsertWithoutREPAIR_PARTInput
-  connect?: Prisma.REPAIRWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.REPAIRUpdateToOneWithWhereWithoutREPAIR_PARTInput, Prisma.REPAIRUpdateWithoutREPAIR_PARTInput>, Prisma.REPAIRUncheckedUpdateWithoutREPAIR_PARTInput>
+export type RepairUpdateOneRequiredWithoutRepairPartsNestedInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutRepairPartsInput, Prisma.RepairUncheckedCreateWithoutRepairPartsInput>
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutRepairPartsInput
+  upsert?: Prisma.RepairUpsertWithoutRepairPartsInput
+  connect?: Prisma.RepairWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.RepairUpdateToOneWithWhereWithoutRepairPartsInput, Prisma.RepairUpdateWithoutRepairPartsInput>, Prisma.RepairUncheckedUpdateWithoutRepairPartsInput>
 }
 
-export type REPAIRCreateNestedManyWithoutSHOPInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutSHOPInput, Prisma.REPAIRUncheckedCreateWithoutSHOPInput> | Prisma.REPAIRCreateWithoutSHOPInput[] | Prisma.REPAIRUncheckedCreateWithoutSHOPInput[]
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutSHOPInput | Prisma.REPAIRCreateOrConnectWithoutSHOPInput[]
-  createMany?: Prisma.REPAIRCreateManySHOPInputEnvelope
-  connect?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
+export type RepairCreateNestedManyWithoutShopInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutShopInput, Prisma.RepairUncheckedCreateWithoutShopInput> | Prisma.RepairCreateWithoutShopInput[] | Prisma.RepairUncheckedCreateWithoutShopInput[]
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutShopInput | Prisma.RepairCreateOrConnectWithoutShopInput[]
+  createMany?: Prisma.RepairCreateManyShopInputEnvelope
+  connect?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
 }
 
-export type REPAIRUncheckedCreateNestedManyWithoutSHOPInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutSHOPInput, Prisma.REPAIRUncheckedCreateWithoutSHOPInput> | Prisma.REPAIRCreateWithoutSHOPInput[] | Prisma.REPAIRUncheckedCreateWithoutSHOPInput[]
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutSHOPInput | Prisma.REPAIRCreateOrConnectWithoutSHOPInput[]
-  createMany?: Prisma.REPAIRCreateManySHOPInputEnvelope
-  connect?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
+export type RepairUncheckedCreateNestedManyWithoutShopInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutShopInput, Prisma.RepairUncheckedCreateWithoutShopInput> | Prisma.RepairCreateWithoutShopInput[] | Prisma.RepairUncheckedCreateWithoutShopInput[]
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutShopInput | Prisma.RepairCreateOrConnectWithoutShopInput[]
+  createMany?: Prisma.RepairCreateManyShopInputEnvelope
+  connect?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
 }
 
-export type REPAIRUpdateManyWithoutSHOPNestedInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutSHOPInput, Prisma.REPAIRUncheckedCreateWithoutSHOPInput> | Prisma.REPAIRCreateWithoutSHOPInput[] | Prisma.REPAIRUncheckedCreateWithoutSHOPInput[]
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutSHOPInput | Prisma.REPAIRCreateOrConnectWithoutSHOPInput[]
-  upsert?: Prisma.REPAIRUpsertWithWhereUniqueWithoutSHOPInput | Prisma.REPAIRUpsertWithWhereUniqueWithoutSHOPInput[]
-  createMany?: Prisma.REPAIRCreateManySHOPInputEnvelope
-  set?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  disconnect?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  delete?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  connect?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  update?: Prisma.REPAIRUpdateWithWhereUniqueWithoutSHOPInput | Prisma.REPAIRUpdateWithWhereUniqueWithoutSHOPInput[]
-  updateMany?: Prisma.REPAIRUpdateManyWithWhereWithoutSHOPInput | Prisma.REPAIRUpdateManyWithWhereWithoutSHOPInput[]
-  deleteMany?: Prisma.REPAIRScalarWhereInput | Prisma.REPAIRScalarWhereInput[]
+export type RepairUpdateManyWithoutShopNestedInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutShopInput, Prisma.RepairUncheckedCreateWithoutShopInput> | Prisma.RepairCreateWithoutShopInput[] | Prisma.RepairUncheckedCreateWithoutShopInput[]
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutShopInput | Prisma.RepairCreateOrConnectWithoutShopInput[]
+  upsert?: Prisma.RepairUpsertWithWhereUniqueWithoutShopInput | Prisma.RepairUpsertWithWhereUniqueWithoutShopInput[]
+  createMany?: Prisma.RepairCreateManyShopInputEnvelope
+  set?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  disconnect?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  delete?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  connect?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  update?: Prisma.RepairUpdateWithWhereUniqueWithoutShopInput | Prisma.RepairUpdateWithWhereUniqueWithoutShopInput[]
+  updateMany?: Prisma.RepairUpdateManyWithWhereWithoutShopInput | Prisma.RepairUpdateManyWithWhereWithoutShopInput[]
+  deleteMany?: Prisma.RepairScalarWhereInput | Prisma.RepairScalarWhereInput[]
 }
 
-export type REPAIRUncheckedUpdateManyWithoutSHOPNestedInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutSHOPInput, Prisma.REPAIRUncheckedCreateWithoutSHOPInput> | Prisma.REPAIRCreateWithoutSHOPInput[] | Prisma.REPAIRUncheckedCreateWithoutSHOPInput[]
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutSHOPInput | Prisma.REPAIRCreateOrConnectWithoutSHOPInput[]
-  upsert?: Prisma.REPAIRUpsertWithWhereUniqueWithoutSHOPInput | Prisma.REPAIRUpsertWithWhereUniqueWithoutSHOPInput[]
-  createMany?: Prisma.REPAIRCreateManySHOPInputEnvelope
-  set?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  disconnect?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  delete?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  connect?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  update?: Prisma.REPAIRUpdateWithWhereUniqueWithoutSHOPInput | Prisma.REPAIRUpdateWithWhereUniqueWithoutSHOPInput[]
-  updateMany?: Prisma.REPAIRUpdateManyWithWhereWithoutSHOPInput | Prisma.REPAIRUpdateManyWithWhereWithoutSHOPInput[]
-  deleteMany?: Prisma.REPAIRScalarWhereInput | Prisma.REPAIRScalarWhereInput[]
+export type RepairUncheckedUpdateManyWithoutShopNestedInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutShopInput, Prisma.RepairUncheckedCreateWithoutShopInput> | Prisma.RepairCreateWithoutShopInput[] | Prisma.RepairUncheckedCreateWithoutShopInput[]
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutShopInput | Prisma.RepairCreateOrConnectWithoutShopInput[]
+  upsert?: Prisma.RepairUpsertWithWhereUniqueWithoutShopInput | Prisma.RepairUpsertWithWhereUniqueWithoutShopInput[]
+  createMany?: Prisma.RepairCreateManyShopInputEnvelope
+  set?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  disconnect?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  delete?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  connect?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  update?: Prisma.RepairUpdateWithWhereUniqueWithoutShopInput | Prisma.RepairUpdateWithWhereUniqueWithoutShopInput[]
+  updateMany?: Prisma.RepairUpdateManyWithWhereWithoutShopInput | Prisma.RepairUpdateManyWithWhereWithoutShopInput[]
+  deleteMany?: Prisma.RepairScalarWhereInput | Prisma.RepairScalarWhereInput[]
 }
 
-export type REPAIRCreateNestedManyWithoutSTATUSInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutSTATUSInput, Prisma.REPAIRUncheckedCreateWithoutSTATUSInput> | Prisma.REPAIRCreateWithoutSTATUSInput[] | Prisma.REPAIRUncheckedCreateWithoutSTATUSInput[]
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutSTATUSInput | Prisma.REPAIRCreateOrConnectWithoutSTATUSInput[]
-  createMany?: Prisma.REPAIRCreateManySTATUSInputEnvelope
-  connect?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
+export type RepairCreateNestedManyWithoutStatusInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutStatusInput, Prisma.RepairUncheckedCreateWithoutStatusInput> | Prisma.RepairCreateWithoutStatusInput[] | Prisma.RepairUncheckedCreateWithoutStatusInput[]
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutStatusInput | Prisma.RepairCreateOrConnectWithoutStatusInput[]
+  createMany?: Prisma.RepairCreateManyStatusInputEnvelope
+  connect?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
 }
 
-export type REPAIRUncheckedCreateNestedManyWithoutSTATUSInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutSTATUSInput, Prisma.REPAIRUncheckedCreateWithoutSTATUSInput> | Prisma.REPAIRCreateWithoutSTATUSInput[] | Prisma.REPAIRUncheckedCreateWithoutSTATUSInput[]
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutSTATUSInput | Prisma.REPAIRCreateOrConnectWithoutSTATUSInput[]
-  createMany?: Prisma.REPAIRCreateManySTATUSInputEnvelope
-  connect?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
+export type RepairUncheckedCreateNestedManyWithoutStatusInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutStatusInput, Prisma.RepairUncheckedCreateWithoutStatusInput> | Prisma.RepairCreateWithoutStatusInput[] | Prisma.RepairUncheckedCreateWithoutStatusInput[]
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutStatusInput | Prisma.RepairCreateOrConnectWithoutStatusInput[]
+  createMany?: Prisma.RepairCreateManyStatusInputEnvelope
+  connect?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
 }
 
-export type REPAIRUpdateManyWithoutSTATUSNestedInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutSTATUSInput, Prisma.REPAIRUncheckedCreateWithoutSTATUSInput> | Prisma.REPAIRCreateWithoutSTATUSInput[] | Prisma.REPAIRUncheckedCreateWithoutSTATUSInput[]
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutSTATUSInput | Prisma.REPAIRCreateOrConnectWithoutSTATUSInput[]
-  upsert?: Prisma.REPAIRUpsertWithWhereUniqueWithoutSTATUSInput | Prisma.REPAIRUpsertWithWhereUniqueWithoutSTATUSInput[]
-  createMany?: Prisma.REPAIRCreateManySTATUSInputEnvelope
-  set?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  disconnect?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  delete?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  connect?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  update?: Prisma.REPAIRUpdateWithWhereUniqueWithoutSTATUSInput | Prisma.REPAIRUpdateWithWhereUniqueWithoutSTATUSInput[]
-  updateMany?: Prisma.REPAIRUpdateManyWithWhereWithoutSTATUSInput | Prisma.REPAIRUpdateManyWithWhereWithoutSTATUSInput[]
-  deleteMany?: Prisma.REPAIRScalarWhereInput | Prisma.REPAIRScalarWhereInput[]
+export type RepairUpdateManyWithoutStatusNestedInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutStatusInput, Prisma.RepairUncheckedCreateWithoutStatusInput> | Prisma.RepairCreateWithoutStatusInput[] | Prisma.RepairUncheckedCreateWithoutStatusInput[]
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutStatusInput | Prisma.RepairCreateOrConnectWithoutStatusInput[]
+  upsert?: Prisma.RepairUpsertWithWhereUniqueWithoutStatusInput | Prisma.RepairUpsertWithWhereUniqueWithoutStatusInput[]
+  createMany?: Prisma.RepairCreateManyStatusInputEnvelope
+  set?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  disconnect?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  delete?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  connect?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  update?: Prisma.RepairUpdateWithWhereUniqueWithoutStatusInput | Prisma.RepairUpdateWithWhereUniqueWithoutStatusInput[]
+  updateMany?: Prisma.RepairUpdateManyWithWhereWithoutStatusInput | Prisma.RepairUpdateManyWithWhereWithoutStatusInput[]
+  deleteMany?: Prisma.RepairScalarWhereInput | Prisma.RepairScalarWhereInput[]
 }
 
-export type REPAIRUncheckedUpdateManyWithoutSTATUSNestedInput = {
-  create?: Prisma.XOR<Prisma.REPAIRCreateWithoutSTATUSInput, Prisma.REPAIRUncheckedCreateWithoutSTATUSInput> | Prisma.REPAIRCreateWithoutSTATUSInput[] | Prisma.REPAIRUncheckedCreateWithoutSTATUSInput[]
-  connectOrCreate?: Prisma.REPAIRCreateOrConnectWithoutSTATUSInput | Prisma.REPAIRCreateOrConnectWithoutSTATUSInput[]
-  upsert?: Prisma.REPAIRUpsertWithWhereUniqueWithoutSTATUSInput | Prisma.REPAIRUpsertWithWhereUniqueWithoutSTATUSInput[]
-  createMany?: Prisma.REPAIRCreateManySTATUSInputEnvelope
-  set?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  disconnect?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  delete?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  connect?: Prisma.REPAIRWhereUniqueInput | Prisma.REPAIRWhereUniqueInput[]
-  update?: Prisma.REPAIRUpdateWithWhereUniqueWithoutSTATUSInput | Prisma.REPAIRUpdateWithWhereUniqueWithoutSTATUSInput[]
-  updateMany?: Prisma.REPAIRUpdateManyWithWhereWithoutSTATUSInput | Prisma.REPAIRUpdateManyWithWhereWithoutSTATUSInput[]
-  deleteMany?: Prisma.REPAIRScalarWhereInput | Prisma.REPAIRScalarWhereInput[]
+export type RepairUncheckedUpdateManyWithoutStatusNestedInput = {
+  create?: Prisma.XOR<Prisma.RepairCreateWithoutStatusInput, Prisma.RepairUncheckedCreateWithoutStatusInput> | Prisma.RepairCreateWithoutStatusInput[] | Prisma.RepairUncheckedCreateWithoutStatusInput[]
+  connectOrCreate?: Prisma.RepairCreateOrConnectWithoutStatusInput | Prisma.RepairCreateOrConnectWithoutStatusInput[]
+  upsert?: Prisma.RepairUpsertWithWhereUniqueWithoutStatusInput | Prisma.RepairUpsertWithWhereUniqueWithoutStatusInput[]
+  createMany?: Prisma.RepairCreateManyStatusInputEnvelope
+  set?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  disconnect?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  delete?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  connect?: Prisma.RepairWhereUniqueInput | Prisma.RepairWhereUniqueInput[]
+  update?: Prisma.RepairUpdateWithWhereUniqueWithoutStatusInput | Prisma.RepairUpdateWithWhereUniqueWithoutStatusInput[]
+  updateMany?: Prisma.RepairUpdateManyWithWhereWithoutStatusInput | Prisma.RepairUpdateManyWithWhereWithoutStatusInput[]
+  deleteMany?: Prisma.RepairScalarWhereInput | Prisma.RepairScalarWhereInput[]
 }
 
-export type REPAIRCreateWithoutINVOICEInput = {
-  repair_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairCreateWithoutInvoiceInput = {
+  repairId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
-  LABOR?: Prisma.LABORCreateNestedManyWithoutREPAIRInput
-  PRODUCT: Prisma.PRODUCTCreateNestedOneWithoutREPAIRInput
-  SHOP: Prisma.SHOPCreateNestedOneWithoutREPAIRInput
-  STATUS: Prisma.STATUSCreateNestedOneWithoutREPAIRInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTCreateNestedManyWithoutREPAIRInput
-  REPAIR_PART?: Prisma.REPAIR_PARTCreateNestedManyWithoutREPAIRInput
+  problemDescription?: string | null
+  labor?: Prisma.LaborCreateNestedManyWithoutRepairInput
+  product: Prisma.ProductCreateNestedOneWithoutRepairsInput
+  shop: Prisma.ShopCreateNestedOneWithoutRepairsInput
+  status: Prisma.StatusCreateNestedOneWithoutRepairsInput
+  repairAssignments?: Prisma.RepairAssignmentCreateNestedManyWithoutRepairInput
+  repairParts?: Prisma.RepairPartCreateNestedManyWithoutRepairInput
 }
 
-export type REPAIRUncheckedCreateWithoutINVOICEInput = {
-  repair_id: number
-  product_id: number
-  shop_id: number
-  status_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairUncheckedCreateWithoutInvoiceInput = {
+  repairId: number
+  productId: number
+  shopId: number
+  statusId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
-  LABOR?: Prisma.LABORUncheckedCreateNestedManyWithoutREPAIRInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUncheckedCreateNestedManyWithoutREPAIRInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUncheckedCreateNestedManyWithoutREPAIRInput
+  problemDescription?: string | null
+  labor?: Prisma.LaborUncheckedCreateNestedManyWithoutRepairInput
+  repairAssignments?: Prisma.RepairAssignmentUncheckedCreateNestedManyWithoutRepairInput
+  repairParts?: Prisma.RepairPartUncheckedCreateNestedManyWithoutRepairInput
 }
 
-export type REPAIRCreateOrConnectWithoutINVOICEInput = {
-  where: Prisma.REPAIRWhereUniqueInput
-  create: Prisma.XOR<Prisma.REPAIRCreateWithoutINVOICEInput, Prisma.REPAIRUncheckedCreateWithoutINVOICEInput>
+export type RepairCreateOrConnectWithoutInvoiceInput = {
+  where: Prisma.RepairWhereUniqueInput
+  create: Prisma.XOR<Prisma.RepairCreateWithoutInvoiceInput, Prisma.RepairUncheckedCreateWithoutInvoiceInput>
 }
 
-export type REPAIRUpsertWithoutINVOICEInput = {
-  update: Prisma.XOR<Prisma.REPAIRUpdateWithoutINVOICEInput, Prisma.REPAIRUncheckedUpdateWithoutINVOICEInput>
-  create: Prisma.XOR<Prisma.REPAIRCreateWithoutINVOICEInput, Prisma.REPAIRUncheckedCreateWithoutINVOICEInput>
-  where?: Prisma.REPAIRWhereInput
+export type RepairUpsertWithoutInvoiceInput = {
+  update: Prisma.XOR<Prisma.RepairUpdateWithoutInvoiceInput, Prisma.RepairUncheckedUpdateWithoutInvoiceInput>
+  create: Prisma.XOR<Prisma.RepairCreateWithoutInvoiceInput, Prisma.RepairUncheckedCreateWithoutInvoiceInput>
+  where?: Prisma.RepairWhereInput
 }
 
-export type REPAIRUpdateToOneWithWhereWithoutINVOICEInput = {
-  where?: Prisma.REPAIRWhereInput
-  data: Prisma.XOR<Prisma.REPAIRUpdateWithoutINVOICEInput, Prisma.REPAIRUncheckedUpdateWithoutINVOICEInput>
+export type RepairUpdateToOneWithWhereWithoutInvoiceInput = {
+  where?: Prisma.RepairWhereInput
+  data: Prisma.XOR<Prisma.RepairUpdateWithoutInvoiceInput, Prisma.RepairUncheckedUpdateWithoutInvoiceInput>
 }
 
-export type REPAIRUpdateWithoutINVOICEInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUpdateWithoutInvoiceInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  LABOR?: Prisma.LABORUpdateManyWithoutREPAIRNestedInput
-  PRODUCT?: Prisma.PRODUCTUpdateOneRequiredWithoutREPAIRNestedInput
-  SHOP?: Prisma.SHOPUpdateOneRequiredWithoutREPAIRNestedInput
-  STATUS?: Prisma.STATUSUpdateOneRequiredWithoutREPAIRNestedInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUpdateManyWithoutREPAIRNestedInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUpdateManyWithoutREPAIRNestedInput
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  labor?: Prisma.LaborUpdateManyWithoutRepairNestedInput
+  product?: Prisma.ProductUpdateOneRequiredWithoutRepairsNestedInput
+  shop?: Prisma.ShopUpdateOneRequiredWithoutRepairsNestedInput
+  status?: Prisma.StatusUpdateOneRequiredWithoutRepairsNestedInput
+  repairAssignments?: Prisma.RepairAssignmentUpdateManyWithoutRepairNestedInput
+  repairParts?: Prisma.RepairPartUpdateManyWithoutRepairNestedInput
 }
 
-export type REPAIRUncheckedUpdateWithoutINVOICEInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  product_id?: Prisma.IntFieldUpdateOperationsInput | number
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
-  status_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUncheckedUpdateWithoutInvoiceInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  productId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
+  statusId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  LABOR?: Prisma.LABORUncheckedUpdateManyWithoutREPAIRNestedInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUncheckedUpdateManyWithoutREPAIRNestedInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUncheckedUpdateManyWithoutREPAIRNestedInput
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  labor?: Prisma.LaborUncheckedUpdateManyWithoutRepairNestedInput
+  repairAssignments?: Prisma.RepairAssignmentUncheckedUpdateManyWithoutRepairNestedInput
+  repairParts?: Prisma.RepairPartUncheckedUpdateManyWithoutRepairNestedInput
 }
 
-export type REPAIRCreateWithoutLABORInput = {
-  repair_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairCreateWithoutLaborInput = {
+  repairId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
-  INVOICE?: Prisma.INVOICECreateNestedOneWithoutREPAIRInput
-  PRODUCT: Prisma.PRODUCTCreateNestedOneWithoutREPAIRInput
-  SHOP: Prisma.SHOPCreateNestedOneWithoutREPAIRInput
-  STATUS: Prisma.STATUSCreateNestedOneWithoutREPAIRInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTCreateNestedManyWithoutREPAIRInput
-  REPAIR_PART?: Prisma.REPAIR_PARTCreateNestedManyWithoutREPAIRInput
+  problemDescription?: string | null
+  invoice?: Prisma.InvoiceCreateNestedOneWithoutRepairInput
+  product: Prisma.ProductCreateNestedOneWithoutRepairsInput
+  shop: Prisma.ShopCreateNestedOneWithoutRepairsInput
+  status: Prisma.StatusCreateNestedOneWithoutRepairsInput
+  repairAssignments?: Prisma.RepairAssignmentCreateNestedManyWithoutRepairInput
+  repairParts?: Prisma.RepairPartCreateNestedManyWithoutRepairInput
 }
 
-export type REPAIRUncheckedCreateWithoutLABORInput = {
-  repair_id: number
-  product_id: number
-  shop_id: number
-  status_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairUncheckedCreateWithoutLaborInput = {
+  repairId: number
+  productId: number
+  shopId: number
+  statusId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
-  INVOICE?: Prisma.INVOICEUncheckedCreateNestedOneWithoutREPAIRInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUncheckedCreateNestedManyWithoutREPAIRInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUncheckedCreateNestedManyWithoutREPAIRInput
+  problemDescription?: string | null
+  invoice?: Prisma.InvoiceUncheckedCreateNestedOneWithoutRepairInput
+  repairAssignments?: Prisma.RepairAssignmentUncheckedCreateNestedManyWithoutRepairInput
+  repairParts?: Prisma.RepairPartUncheckedCreateNestedManyWithoutRepairInput
 }
 
-export type REPAIRCreateOrConnectWithoutLABORInput = {
-  where: Prisma.REPAIRWhereUniqueInput
-  create: Prisma.XOR<Prisma.REPAIRCreateWithoutLABORInput, Prisma.REPAIRUncheckedCreateWithoutLABORInput>
+export type RepairCreateOrConnectWithoutLaborInput = {
+  where: Prisma.RepairWhereUniqueInput
+  create: Prisma.XOR<Prisma.RepairCreateWithoutLaborInput, Prisma.RepairUncheckedCreateWithoutLaborInput>
 }
 
-export type REPAIRUpsertWithoutLABORInput = {
-  update: Prisma.XOR<Prisma.REPAIRUpdateWithoutLABORInput, Prisma.REPAIRUncheckedUpdateWithoutLABORInput>
-  create: Prisma.XOR<Prisma.REPAIRCreateWithoutLABORInput, Prisma.REPAIRUncheckedCreateWithoutLABORInput>
-  where?: Prisma.REPAIRWhereInput
+export type RepairUpsertWithoutLaborInput = {
+  update: Prisma.XOR<Prisma.RepairUpdateWithoutLaborInput, Prisma.RepairUncheckedUpdateWithoutLaborInput>
+  create: Prisma.XOR<Prisma.RepairCreateWithoutLaborInput, Prisma.RepairUncheckedCreateWithoutLaborInput>
+  where?: Prisma.RepairWhereInput
 }
 
-export type REPAIRUpdateToOneWithWhereWithoutLABORInput = {
-  where?: Prisma.REPAIRWhereInput
-  data: Prisma.XOR<Prisma.REPAIRUpdateWithoutLABORInput, Prisma.REPAIRUncheckedUpdateWithoutLABORInput>
+export type RepairUpdateToOneWithWhereWithoutLaborInput = {
+  where?: Prisma.RepairWhereInput
+  data: Prisma.XOR<Prisma.RepairUpdateWithoutLaborInput, Prisma.RepairUncheckedUpdateWithoutLaborInput>
 }
 
-export type REPAIRUpdateWithoutLABORInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUpdateWithoutLaborInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  INVOICE?: Prisma.INVOICEUpdateOneWithoutREPAIRNestedInput
-  PRODUCT?: Prisma.PRODUCTUpdateOneRequiredWithoutREPAIRNestedInput
-  SHOP?: Prisma.SHOPUpdateOneRequiredWithoutREPAIRNestedInput
-  STATUS?: Prisma.STATUSUpdateOneRequiredWithoutREPAIRNestedInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUpdateManyWithoutREPAIRNestedInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUpdateManyWithoutREPAIRNestedInput
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  invoice?: Prisma.InvoiceUpdateOneWithoutRepairNestedInput
+  product?: Prisma.ProductUpdateOneRequiredWithoutRepairsNestedInput
+  shop?: Prisma.ShopUpdateOneRequiredWithoutRepairsNestedInput
+  status?: Prisma.StatusUpdateOneRequiredWithoutRepairsNestedInput
+  repairAssignments?: Prisma.RepairAssignmentUpdateManyWithoutRepairNestedInput
+  repairParts?: Prisma.RepairPartUpdateManyWithoutRepairNestedInput
 }
 
-export type REPAIRUncheckedUpdateWithoutLABORInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  product_id?: Prisma.IntFieldUpdateOperationsInput | number
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
-  status_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUncheckedUpdateWithoutLaborInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  productId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
+  statusId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  INVOICE?: Prisma.INVOICEUncheckedUpdateOneWithoutREPAIRNestedInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUncheckedUpdateManyWithoutREPAIRNestedInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUncheckedUpdateManyWithoutREPAIRNestedInput
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  invoice?: Prisma.InvoiceUncheckedUpdateOneWithoutRepairNestedInput
+  repairAssignments?: Prisma.RepairAssignmentUncheckedUpdateManyWithoutRepairNestedInput
+  repairParts?: Prisma.RepairPartUncheckedUpdateManyWithoutRepairNestedInput
 }
 
-export type REPAIRCreateWithoutPRODUCTInput = {
-  repair_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairCreateWithoutProductInput = {
+  repairId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
-  INVOICE?: Prisma.INVOICECreateNestedOneWithoutREPAIRInput
-  LABOR?: Prisma.LABORCreateNestedManyWithoutREPAIRInput
-  SHOP: Prisma.SHOPCreateNestedOneWithoutREPAIRInput
-  STATUS: Prisma.STATUSCreateNestedOneWithoutREPAIRInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTCreateNestedManyWithoutREPAIRInput
-  REPAIR_PART?: Prisma.REPAIR_PARTCreateNestedManyWithoutREPAIRInput
+  problemDescription?: string | null
+  invoice?: Prisma.InvoiceCreateNestedOneWithoutRepairInput
+  labor?: Prisma.LaborCreateNestedManyWithoutRepairInput
+  shop: Prisma.ShopCreateNestedOneWithoutRepairsInput
+  status: Prisma.StatusCreateNestedOneWithoutRepairsInput
+  repairAssignments?: Prisma.RepairAssignmentCreateNestedManyWithoutRepairInput
+  repairParts?: Prisma.RepairPartCreateNestedManyWithoutRepairInput
 }
 
-export type REPAIRUncheckedCreateWithoutPRODUCTInput = {
-  repair_id: number
-  shop_id: number
-  status_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairUncheckedCreateWithoutProductInput = {
+  repairId: number
+  shopId: number
+  statusId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
-  INVOICE?: Prisma.INVOICEUncheckedCreateNestedOneWithoutREPAIRInput
-  LABOR?: Prisma.LABORUncheckedCreateNestedManyWithoutREPAIRInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUncheckedCreateNestedManyWithoutREPAIRInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUncheckedCreateNestedManyWithoutREPAIRInput
+  problemDescription?: string | null
+  invoice?: Prisma.InvoiceUncheckedCreateNestedOneWithoutRepairInput
+  labor?: Prisma.LaborUncheckedCreateNestedManyWithoutRepairInput
+  repairAssignments?: Prisma.RepairAssignmentUncheckedCreateNestedManyWithoutRepairInput
+  repairParts?: Prisma.RepairPartUncheckedCreateNestedManyWithoutRepairInput
 }
 
-export type REPAIRCreateOrConnectWithoutPRODUCTInput = {
-  where: Prisma.REPAIRWhereUniqueInput
-  create: Prisma.XOR<Prisma.REPAIRCreateWithoutPRODUCTInput, Prisma.REPAIRUncheckedCreateWithoutPRODUCTInput>
+export type RepairCreateOrConnectWithoutProductInput = {
+  where: Prisma.RepairWhereUniqueInput
+  create: Prisma.XOR<Prisma.RepairCreateWithoutProductInput, Prisma.RepairUncheckedCreateWithoutProductInput>
 }
 
-export type REPAIRCreateManyPRODUCTInputEnvelope = {
-  data: Prisma.REPAIRCreateManyPRODUCTInput | Prisma.REPAIRCreateManyPRODUCTInput[]
+export type RepairCreateManyProductInputEnvelope = {
+  data: Prisma.RepairCreateManyProductInput | Prisma.RepairCreateManyProductInput[]
   skipDuplicates?: boolean
 }
 
-export type REPAIRUpsertWithWhereUniqueWithoutPRODUCTInput = {
-  where: Prisma.REPAIRWhereUniqueInput
-  update: Prisma.XOR<Prisma.REPAIRUpdateWithoutPRODUCTInput, Prisma.REPAIRUncheckedUpdateWithoutPRODUCTInput>
-  create: Prisma.XOR<Prisma.REPAIRCreateWithoutPRODUCTInput, Prisma.REPAIRUncheckedCreateWithoutPRODUCTInput>
+export type RepairUpsertWithWhereUniqueWithoutProductInput = {
+  where: Prisma.RepairWhereUniqueInput
+  update: Prisma.XOR<Prisma.RepairUpdateWithoutProductInput, Prisma.RepairUncheckedUpdateWithoutProductInput>
+  create: Prisma.XOR<Prisma.RepairCreateWithoutProductInput, Prisma.RepairUncheckedCreateWithoutProductInput>
 }
 
-export type REPAIRUpdateWithWhereUniqueWithoutPRODUCTInput = {
-  where: Prisma.REPAIRWhereUniqueInput
-  data: Prisma.XOR<Prisma.REPAIRUpdateWithoutPRODUCTInput, Prisma.REPAIRUncheckedUpdateWithoutPRODUCTInput>
+export type RepairUpdateWithWhereUniqueWithoutProductInput = {
+  where: Prisma.RepairWhereUniqueInput
+  data: Prisma.XOR<Prisma.RepairUpdateWithoutProductInput, Prisma.RepairUncheckedUpdateWithoutProductInput>
 }
 
-export type REPAIRUpdateManyWithWhereWithoutPRODUCTInput = {
-  where: Prisma.REPAIRScalarWhereInput
-  data: Prisma.XOR<Prisma.REPAIRUpdateManyMutationInput, Prisma.REPAIRUncheckedUpdateManyWithoutPRODUCTInput>
+export type RepairUpdateManyWithWhereWithoutProductInput = {
+  where: Prisma.RepairScalarWhereInput
+  data: Prisma.XOR<Prisma.RepairUpdateManyMutationInput, Prisma.RepairUncheckedUpdateManyWithoutProductInput>
 }
 
-export type REPAIRScalarWhereInput = {
-  AND?: Prisma.REPAIRScalarWhereInput | Prisma.REPAIRScalarWhereInput[]
-  OR?: Prisma.REPAIRScalarWhereInput[]
-  NOT?: Prisma.REPAIRScalarWhereInput | Prisma.REPAIRScalarWhereInput[]
-  repair_id?: Prisma.IntFilter<"REPAIR"> | number
-  product_id?: Prisma.IntFilter<"REPAIR"> | number
-  shop_id?: Prisma.IntFilter<"REPAIR"> | number
-  status_id?: Prisma.IntFilter<"REPAIR"> | number
-  estimated_hours?: Prisma.DecimalNullableFilter<"REPAIR"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.DecimalNullableFilter<"REPAIR"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.DateTimeNullableFilter<"REPAIR"> | Date | string | null
-  finish_date?: Prisma.DateTimeNullableFilter<"REPAIR"> | Date | string | null
-  return_date?: Prisma.DateTimeNullableFilter<"REPAIR"> | Date | string | null
-  notes?: Prisma.StringNullableFilter<"REPAIR"> | string | null
-  problem_description?: Prisma.StringNullableFilter<"REPAIR"> | string | null
+export type RepairScalarWhereInput = {
+  AND?: Prisma.RepairScalarWhereInput | Prisma.RepairScalarWhereInput[]
+  OR?: Prisma.RepairScalarWhereInput[]
+  NOT?: Prisma.RepairScalarWhereInput | Prisma.RepairScalarWhereInput[]
+  repairId?: Prisma.IntFilter<"Repair"> | number
+  productId?: Prisma.IntFilter<"Repair"> | number
+  shopId?: Prisma.IntFilter<"Repair"> | number
+  statusId?: Prisma.IntFilter<"Repair"> | number
+  estimatedHours?: Prisma.DecimalNullableFilter<"Repair"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.DecimalNullableFilter<"Repair"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.DateTimeNullableFilter<"Repair"> | Date | string | null
+  finishDate?: Prisma.DateTimeNullableFilter<"Repair"> | Date | string | null
+  returnDate?: Prisma.DateTimeNullableFilter<"Repair"> | Date | string | null
+  notes?: Prisma.StringNullableFilter<"Repair"> | string | null
+  problemDescription?: Prisma.StringNullableFilter<"Repair"> | string | null
 }
 
-export type REPAIRCreateWithoutREPAIR_ASSIGNMENTInput = {
-  repair_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairCreateWithoutRepairAssignmentsInput = {
+  repairId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
-  INVOICE?: Prisma.INVOICECreateNestedOneWithoutREPAIRInput
-  LABOR?: Prisma.LABORCreateNestedManyWithoutREPAIRInput
-  PRODUCT: Prisma.PRODUCTCreateNestedOneWithoutREPAIRInput
-  SHOP: Prisma.SHOPCreateNestedOneWithoutREPAIRInput
-  STATUS: Prisma.STATUSCreateNestedOneWithoutREPAIRInput
-  REPAIR_PART?: Prisma.REPAIR_PARTCreateNestedManyWithoutREPAIRInput
+  problemDescription?: string | null
+  invoice?: Prisma.InvoiceCreateNestedOneWithoutRepairInput
+  labor?: Prisma.LaborCreateNestedManyWithoutRepairInput
+  product: Prisma.ProductCreateNestedOneWithoutRepairsInput
+  shop: Prisma.ShopCreateNestedOneWithoutRepairsInput
+  status: Prisma.StatusCreateNestedOneWithoutRepairsInput
+  repairParts?: Prisma.RepairPartCreateNestedManyWithoutRepairInput
 }
 
-export type REPAIRUncheckedCreateWithoutREPAIR_ASSIGNMENTInput = {
-  repair_id: number
-  product_id: number
-  shop_id: number
-  status_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairUncheckedCreateWithoutRepairAssignmentsInput = {
+  repairId: number
+  productId: number
+  shopId: number
+  statusId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
-  INVOICE?: Prisma.INVOICEUncheckedCreateNestedOneWithoutREPAIRInput
-  LABOR?: Prisma.LABORUncheckedCreateNestedManyWithoutREPAIRInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUncheckedCreateNestedManyWithoutREPAIRInput
+  problemDescription?: string | null
+  invoice?: Prisma.InvoiceUncheckedCreateNestedOneWithoutRepairInput
+  labor?: Prisma.LaborUncheckedCreateNestedManyWithoutRepairInput
+  repairParts?: Prisma.RepairPartUncheckedCreateNestedManyWithoutRepairInput
 }
 
-export type REPAIRCreateOrConnectWithoutREPAIR_ASSIGNMENTInput = {
-  where: Prisma.REPAIRWhereUniqueInput
-  create: Prisma.XOR<Prisma.REPAIRCreateWithoutREPAIR_ASSIGNMENTInput, Prisma.REPAIRUncheckedCreateWithoutREPAIR_ASSIGNMENTInput>
+export type RepairCreateOrConnectWithoutRepairAssignmentsInput = {
+  where: Prisma.RepairWhereUniqueInput
+  create: Prisma.XOR<Prisma.RepairCreateWithoutRepairAssignmentsInput, Prisma.RepairUncheckedCreateWithoutRepairAssignmentsInput>
 }
 
-export type REPAIRUpsertWithoutREPAIR_ASSIGNMENTInput = {
-  update: Prisma.XOR<Prisma.REPAIRUpdateWithoutREPAIR_ASSIGNMENTInput, Prisma.REPAIRUncheckedUpdateWithoutREPAIR_ASSIGNMENTInput>
-  create: Prisma.XOR<Prisma.REPAIRCreateWithoutREPAIR_ASSIGNMENTInput, Prisma.REPAIRUncheckedCreateWithoutREPAIR_ASSIGNMENTInput>
-  where?: Prisma.REPAIRWhereInput
+export type RepairUpsertWithoutRepairAssignmentsInput = {
+  update: Prisma.XOR<Prisma.RepairUpdateWithoutRepairAssignmentsInput, Prisma.RepairUncheckedUpdateWithoutRepairAssignmentsInput>
+  create: Prisma.XOR<Prisma.RepairCreateWithoutRepairAssignmentsInput, Prisma.RepairUncheckedCreateWithoutRepairAssignmentsInput>
+  where?: Prisma.RepairWhereInput
 }
 
-export type REPAIRUpdateToOneWithWhereWithoutREPAIR_ASSIGNMENTInput = {
-  where?: Prisma.REPAIRWhereInput
-  data: Prisma.XOR<Prisma.REPAIRUpdateWithoutREPAIR_ASSIGNMENTInput, Prisma.REPAIRUncheckedUpdateWithoutREPAIR_ASSIGNMENTInput>
+export type RepairUpdateToOneWithWhereWithoutRepairAssignmentsInput = {
+  where?: Prisma.RepairWhereInput
+  data: Prisma.XOR<Prisma.RepairUpdateWithoutRepairAssignmentsInput, Prisma.RepairUncheckedUpdateWithoutRepairAssignmentsInput>
 }
 
-export type REPAIRUpdateWithoutREPAIR_ASSIGNMENTInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUpdateWithoutRepairAssignmentsInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  INVOICE?: Prisma.INVOICEUpdateOneWithoutREPAIRNestedInput
-  LABOR?: Prisma.LABORUpdateManyWithoutREPAIRNestedInput
-  PRODUCT?: Prisma.PRODUCTUpdateOneRequiredWithoutREPAIRNestedInput
-  SHOP?: Prisma.SHOPUpdateOneRequiredWithoutREPAIRNestedInput
-  STATUS?: Prisma.STATUSUpdateOneRequiredWithoutREPAIRNestedInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUpdateManyWithoutREPAIRNestedInput
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  invoice?: Prisma.InvoiceUpdateOneWithoutRepairNestedInput
+  labor?: Prisma.LaborUpdateManyWithoutRepairNestedInput
+  product?: Prisma.ProductUpdateOneRequiredWithoutRepairsNestedInput
+  shop?: Prisma.ShopUpdateOneRequiredWithoutRepairsNestedInput
+  status?: Prisma.StatusUpdateOneRequiredWithoutRepairsNestedInput
+  repairParts?: Prisma.RepairPartUpdateManyWithoutRepairNestedInput
 }
 
-export type REPAIRUncheckedUpdateWithoutREPAIR_ASSIGNMENTInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  product_id?: Prisma.IntFieldUpdateOperationsInput | number
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
-  status_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUncheckedUpdateWithoutRepairAssignmentsInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  productId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
+  statusId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  INVOICE?: Prisma.INVOICEUncheckedUpdateOneWithoutREPAIRNestedInput
-  LABOR?: Prisma.LABORUncheckedUpdateManyWithoutREPAIRNestedInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUncheckedUpdateManyWithoutREPAIRNestedInput
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  invoice?: Prisma.InvoiceUncheckedUpdateOneWithoutRepairNestedInput
+  labor?: Prisma.LaborUncheckedUpdateManyWithoutRepairNestedInput
+  repairParts?: Prisma.RepairPartUncheckedUpdateManyWithoutRepairNestedInput
 }
 
-export type REPAIRCreateWithoutREPAIR_PARTInput = {
-  repair_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairCreateWithoutRepairPartsInput = {
+  repairId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
-  INVOICE?: Prisma.INVOICECreateNestedOneWithoutREPAIRInput
-  LABOR?: Prisma.LABORCreateNestedManyWithoutREPAIRInput
-  PRODUCT: Prisma.PRODUCTCreateNestedOneWithoutREPAIRInput
-  SHOP: Prisma.SHOPCreateNestedOneWithoutREPAIRInput
-  STATUS: Prisma.STATUSCreateNestedOneWithoutREPAIRInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTCreateNestedManyWithoutREPAIRInput
+  problemDescription?: string | null
+  invoice?: Prisma.InvoiceCreateNestedOneWithoutRepairInput
+  labor?: Prisma.LaborCreateNestedManyWithoutRepairInput
+  product: Prisma.ProductCreateNestedOneWithoutRepairsInput
+  shop: Prisma.ShopCreateNestedOneWithoutRepairsInput
+  status: Prisma.StatusCreateNestedOneWithoutRepairsInput
+  repairAssignments?: Prisma.RepairAssignmentCreateNestedManyWithoutRepairInput
 }
 
-export type REPAIRUncheckedCreateWithoutREPAIR_PARTInput = {
-  repair_id: number
-  product_id: number
-  shop_id: number
-  status_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairUncheckedCreateWithoutRepairPartsInput = {
+  repairId: number
+  productId: number
+  shopId: number
+  statusId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
-  INVOICE?: Prisma.INVOICEUncheckedCreateNestedOneWithoutREPAIRInput
-  LABOR?: Prisma.LABORUncheckedCreateNestedManyWithoutREPAIRInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUncheckedCreateNestedManyWithoutREPAIRInput
+  problemDescription?: string | null
+  invoice?: Prisma.InvoiceUncheckedCreateNestedOneWithoutRepairInput
+  labor?: Prisma.LaborUncheckedCreateNestedManyWithoutRepairInput
+  repairAssignments?: Prisma.RepairAssignmentUncheckedCreateNestedManyWithoutRepairInput
 }
 
-export type REPAIRCreateOrConnectWithoutREPAIR_PARTInput = {
-  where: Prisma.REPAIRWhereUniqueInput
-  create: Prisma.XOR<Prisma.REPAIRCreateWithoutREPAIR_PARTInput, Prisma.REPAIRUncheckedCreateWithoutREPAIR_PARTInput>
+export type RepairCreateOrConnectWithoutRepairPartsInput = {
+  where: Prisma.RepairWhereUniqueInput
+  create: Prisma.XOR<Prisma.RepairCreateWithoutRepairPartsInput, Prisma.RepairUncheckedCreateWithoutRepairPartsInput>
 }
 
-export type REPAIRUpsertWithoutREPAIR_PARTInput = {
-  update: Prisma.XOR<Prisma.REPAIRUpdateWithoutREPAIR_PARTInput, Prisma.REPAIRUncheckedUpdateWithoutREPAIR_PARTInput>
-  create: Prisma.XOR<Prisma.REPAIRCreateWithoutREPAIR_PARTInput, Prisma.REPAIRUncheckedCreateWithoutREPAIR_PARTInput>
-  where?: Prisma.REPAIRWhereInput
+export type RepairUpsertWithoutRepairPartsInput = {
+  update: Prisma.XOR<Prisma.RepairUpdateWithoutRepairPartsInput, Prisma.RepairUncheckedUpdateWithoutRepairPartsInput>
+  create: Prisma.XOR<Prisma.RepairCreateWithoutRepairPartsInput, Prisma.RepairUncheckedCreateWithoutRepairPartsInput>
+  where?: Prisma.RepairWhereInput
 }
 
-export type REPAIRUpdateToOneWithWhereWithoutREPAIR_PARTInput = {
-  where?: Prisma.REPAIRWhereInput
-  data: Prisma.XOR<Prisma.REPAIRUpdateWithoutREPAIR_PARTInput, Prisma.REPAIRUncheckedUpdateWithoutREPAIR_PARTInput>
+export type RepairUpdateToOneWithWhereWithoutRepairPartsInput = {
+  where?: Prisma.RepairWhereInput
+  data: Prisma.XOR<Prisma.RepairUpdateWithoutRepairPartsInput, Prisma.RepairUncheckedUpdateWithoutRepairPartsInput>
 }
 
-export type REPAIRUpdateWithoutREPAIR_PARTInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUpdateWithoutRepairPartsInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  INVOICE?: Prisma.INVOICEUpdateOneWithoutREPAIRNestedInput
-  LABOR?: Prisma.LABORUpdateManyWithoutREPAIRNestedInput
-  PRODUCT?: Prisma.PRODUCTUpdateOneRequiredWithoutREPAIRNestedInput
-  SHOP?: Prisma.SHOPUpdateOneRequiredWithoutREPAIRNestedInput
-  STATUS?: Prisma.STATUSUpdateOneRequiredWithoutREPAIRNestedInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUpdateManyWithoutREPAIRNestedInput
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  invoice?: Prisma.InvoiceUpdateOneWithoutRepairNestedInput
+  labor?: Prisma.LaborUpdateManyWithoutRepairNestedInput
+  product?: Prisma.ProductUpdateOneRequiredWithoutRepairsNestedInput
+  shop?: Prisma.ShopUpdateOneRequiredWithoutRepairsNestedInput
+  status?: Prisma.StatusUpdateOneRequiredWithoutRepairsNestedInput
+  repairAssignments?: Prisma.RepairAssignmentUpdateManyWithoutRepairNestedInput
 }
 
-export type REPAIRUncheckedUpdateWithoutREPAIR_PARTInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  product_id?: Prisma.IntFieldUpdateOperationsInput | number
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
-  status_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUncheckedUpdateWithoutRepairPartsInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  productId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
+  statusId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  INVOICE?: Prisma.INVOICEUncheckedUpdateOneWithoutREPAIRNestedInput
-  LABOR?: Prisma.LABORUncheckedUpdateManyWithoutREPAIRNestedInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUncheckedUpdateManyWithoutREPAIRNestedInput
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  invoice?: Prisma.InvoiceUncheckedUpdateOneWithoutRepairNestedInput
+  labor?: Prisma.LaborUncheckedUpdateManyWithoutRepairNestedInput
+  repairAssignments?: Prisma.RepairAssignmentUncheckedUpdateManyWithoutRepairNestedInput
 }
 
-export type REPAIRCreateWithoutSHOPInput = {
-  repair_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairCreateWithoutShopInput = {
+  repairId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
-  INVOICE?: Prisma.INVOICECreateNestedOneWithoutREPAIRInput
-  LABOR?: Prisma.LABORCreateNestedManyWithoutREPAIRInput
-  PRODUCT: Prisma.PRODUCTCreateNestedOneWithoutREPAIRInput
-  STATUS: Prisma.STATUSCreateNestedOneWithoutREPAIRInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTCreateNestedManyWithoutREPAIRInput
-  REPAIR_PART?: Prisma.REPAIR_PARTCreateNestedManyWithoutREPAIRInput
+  problemDescription?: string | null
+  invoice?: Prisma.InvoiceCreateNestedOneWithoutRepairInput
+  labor?: Prisma.LaborCreateNestedManyWithoutRepairInput
+  product: Prisma.ProductCreateNestedOneWithoutRepairsInput
+  status: Prisma.StatusCreateNestedOneWithoutRepairsInput
+  repairAssignments?: Prisma.RepairAssignmentCreateNestedManyWithoutRepairInput
+  repairParts?: Prisma.RepairPartCreateNestedManyWithoutRepairInput
 }
 
-export type REPAIRUncheckedCreateWithoutSHOPInput = {
-  repair_id: number
-  product_id: number
-  status_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairUncheckedCreateWithoutShopInput = {
+  repairId: number
+  productId: number
+  statusId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
-  INVOICE?: Prisma.INVOICEUncheckedCreateNestedOneWithoutREPAIRInput
-  LABOR?: Prisma.LABORUncheckedCreateNestedManyWithoutREPAIRInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUncheckedCreateNestedManyWithoutREPAIRInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUncheckedCreateNestedManyWithoutREPAIRInput
+  problemDescription?: string | null
+  invoice?: Prisma.InvoiceUncheckedCreateNestedOneWithoutRepairInput
+  labor?: Prisma.LaborUncheckedCreateNestedManyWithoutRepairInput
+  repairAssignments?: Prisma.RepairAssignmentUncheckedCreateNestedManyWithoutRepairInput
+  repairParts?: Prisma.RepairPartUncheckedCreateNestedManyWithoutRepairInput
 }
 
-export type REPAIRCreateOrConnectWithoutSHOPInput = {
-  where: Prisma.REPAIRWhereUniqueInput
-  create: Prisma.XOR<Prisma.REPAIRCreateWithoutSHOPInput, Prisma.REPAIRUncheckedCreateWithoutSHOPInput>
+export type RepairCreateOrConnectWithoutShopInput = {
+  where: Prisma.RepairWhereUniqueInput
+  create: Prisma.XOR<Prisma.RepairCreateWithoutShopInput, Prisma.RepairUncheckedCreateWithoutShopInput>
 }
 
-export type REPAIRCreateManySHOPInputEnvelope = {
-  data: Prisma.REPAIRCreateManySHOPInput | Prisma.REPAIRCreateManySHOPInput[]
+export type RepairCreateManyShopInputEnvelope = {
+  data: Prisma.RepairCreateManyShopInput | Prisma.RepairCreateManyShopInput[]
   skipDuplicates?: boolean
 }
 
-export type REPAIRUpsertWithWhereUniqueWithoutSHOPInput = {
-  where: Prisma.REPAIRWhereUniqueInput
-  update: Prisma.XOR<Prisma.REPAIRUpdateWithoutSHOPInput, Prisma.REPAIRUncheckedUpdateWithoutSHOPInput>
-  create: Prisma.XOR<Prisma.REPAIRCreateWithoutSHOPInput, Prisma.REPAIRUncheckedCreateWithoutSHOPInput>
+export type RepairUpsertWithWhereUniqueWithoutShopInput = {
+  where: Prisma.RepairWhereUniqueInput
+  update: Prisma.XOR<Prisma.RepairUpdateWithoutShopInput, Prisma.RepairUncheckedUpdateWithoutShopInput>
+  create: Prisma.XOR<Prisma.RepairCreateWithoutShopInput, Prisma.RepairUncheckedCreateWithoutShopInput>
 }
 
-export type REPAIRUpdateWithWhereUniqueWithoutSHOPInput = {
-  where: Prisma.REPAIRWhereUniqueInput
-  data: Prisma.XOR<Prisma.REPAIRUpdateWithoutSHOPInput, Prisma.REPAIRUncheckedUpdateWithoutSHOPInput>
+export type RepairUpdateWithWhereUniqueWithoutShopInput = {
+  where: Prisma.RepairWhereUniqueInput
+  data: Prisma.XOR<Prisma.RepairUpdateWithoutShopInput, Prisma.RepairUncheckedUpdateWithoutShopInput>
 }
 
-export type REPAIRUpdateManyWithWhereWithoutSHOPInput = {
-  where: Prisma.REPAIRScalarWhereInput
-  data: Prisma.XOR<Prisma.REPAIRUpdateManyMutationInput, Prisma.REPAIRUncheckedUpdateManyWithoutSHOPInput>
+export type RepairUpdateManyWithWhereWithoutShopInput = {
+  where: Prisma.RepairScalarWhereInput
+  data: Prisma.XOR<Prisma.RepairUpdateManyMutationInput, Prisma.RepairUncheckedUpdateManyWithoutShopInput>
 }
 
-export type REPAIRCreateWithoutSTATUSInput = {
-  repair_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairCreateWithoutStatusInput = {
+  repairId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
-  INVOICE?: Prisma.INVOICECreateNestedOneWithoutREPAIRInput
-  LABOR?: Prisma.LABORCreateNestedManyWithoutREPAIRInput
-  PRODUCT: Prisma.PRODUCTCreateNestedOneWithoutREPAIRInput
-  SHOP: Prisma.SHOPCreateNestedOneWithoutREPAIRInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTCreateNestedManyWithoutREPAIRInput
-  REPAIR_PART?: Prisma.REPAIR_PARTCreateNestedManyWithoutREPAIRInput
+  problemDescription?: string | null
+  invoice?: Prisma.InvoiceCreateNestedOneWithoutRepairInput
+  labor?: Prisma.LaborCreateNestedManyWithoutRepairInput
+  product: Prisma.ProductCreateNestedOneWithoutRepairsInput
+  shop: Prisma.ShopCreateNestedOneWithoutRepairsInput
+  repairAssignments?: Prisma.RepairAssignmentCreateNestedManyWithoutRepairInput
+  repairParts?: Prisma.RepairPartCreateNestedManyWithoutRepairInput
 }
 
-export type REPAIRUncheckedCreateWithoutSTATUSInput = {
-  repair_id: number
-  product_id: number
-  shop_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairUncheckedCreateWithoutStatusInput = {
+  repairId: number
+  productId: number
+  shopId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
-  INVOICE?: Prisma.INVOICEUncheckedCreateNestedOneWithoutREPAIRInput
-  LABOR?: Prisma.LABORUncheckedCreateNestedManyWithoutREPAIRInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUncheckedCreateNestedManyWithoutREPAIRInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUncheckedCreateNestedManyWithoutREPAIRInput
+  problemDescription?: string | null
+  invoice?: Prisma.InvoiceUncheckedCreateNestedOneWithoutRepairInput
+  labor?: Prisma.LaborUncheckedCreateNestedManyWithoutRepairInput
+  repairAssignments?: Prisma.RepairAssignmentUncheckedCreateNestedManyWithoutRepairInput
+  repairParts?: Prisma.RepairPartUncheckedCreateNestedManyWithoutRepairInput
 }
 
-export type REPAIRCreateOrConnectWithoutSTATUSInput = {
-  where: Prisma.REPAIRWhereUniqueInput
-  create: Prisma.XOR<Prisma.REPAIRCreateWithoutSTATUSInput, Prisma.REPAIRUncheckedCreateWithoutSTATUSInput>
+export type RepairCreateOrConnectWithoutStatusInput = {
+  where: Prisma.RepairWhereUniqueInput
+  create: Prisma.XOR<Prisma.RepairCreateWithoutStatusInput, Prisma.RepairUncheckedCreateWithoutStatusInput>
 }
 
-export type REPAIRCreateManySTATUSInputEnvelope = {
-  data: Prisma.REPAIRCreateManySTATUSInput | Prisma.REPAIRCreateManySTATUSInput[]
+export type RepairCreateManyStatusInputEnvelope = {
+  data: Prisma.RepairCreateManyStatusInput | Prisma.RepairCreateManyStatusInput[]
   skipDuplicates?: boolean
 }
 
-export type REPAIRUpsertWithWhereUniqueWithoutSTATUSInput = {
-  where: Prisma.REPAIRWhereUniqueInput
-  update: Prisma.XOR<Prisma.REPAIRUpdateWithoutSTATUSInput, Prisma.REPAIRUncheckedUpdateWithoutSTATUSInput>
-  create: Prisma.XOR<Prisma.REPAIRCreateWithoutSTATUSInput, Prisma.REPAIRUncheckedCreateWithoutSTATUSInput>
+export type RepairUpsertWithWhereUniqueWithoutStatusInput = {
+  where: Prisma.RepairWhereUniqueInput
+  update: Prisma.XOR<Prisma.RepairUpdateWithoutStatusInput, Prisma.RepairUncheckedUpdateWithoutStatusInput>
+  create: Prisma.XOR<Prisma.RepairCreateWithoutStatusInput, Prisma.RepairUncheckedCreateWithoutStatusInput>
 }
 
-export type REPAIRUpdateWithWhereUniqueWithoutSTATUSInput = {
-  where: Prisma.REPAIRWhereUniqueInput
-  data: Prisma.XOR<Prisma.REPAIRUpdateWithoutSTATUSInput, Prisma.REPAIRUncheckedUpdateWithoutSTATUSInput>
+export type RepairUpdateWithWhereUniqueWithoutStatusInput = {
+  where: Prisma.RepairWhereUniqueInput
+  data: Prisma.XOR<Prisma.RepairUpdateWithoutStatusInput, Prisma.RepairUncheckedUpdateWithoutStatusInput>
 }
 
-export type REPAIRUpdateManyWithWhereWithoutSTATUSInput = {
-  where: Prisma.REPAIRScalarWhereInput
-  data: Prisma.XOR<Prisma.REPAIRUpdateManyMutationInput, Prisma.REPAIRUncheckedUpdateManyWithoutSTATUSInput>
+export type RepairUpdateManyWithWhereWithoutStatusInput = {
+  where: Prisma.RepairScalarWhereInput
+  data: Prisma.XOR<Prisma.RepairUpdateManyMutationInput, Prisma.RepairUncheckedUpdateManyWithoutStatusInput>
 }
 
-export type REPAIRCreateManyPRODUCTInput = {
-  repair_id: number
-  shop_id: number
-  status_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairCreateManyProductInput = {
+  repairId: number
+  shopId: number
+  statusId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
+  problemDescription?: string | null
 }
 
-export type REPAIRUpdateWithoutPRODUCTInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUpdateWithoutProductInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  INVOICE?: Prisma.INVOICEUpdateOneWithoutREPAIRNestedInput
-  LABOR?: Prisma.LABORUpdateManyWithoutREPAIRNestedInput
-  SHOP?: Prisma.SHOPUpdateOneRequiredWithoutREPAIRNestedInput
-  STATUS?: Prisma.STATUSUpdateOneRequiredWithoutREPAIRNestedInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUpdateManyWithoutREPAIRNestedInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUpdateManyWithoutREPAIRNestedInput
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  invoice?: Prisma.InvoiceUpdateOneWithoutRepairNestedInput
+  labor?: Prisma.LaborUpdateManyWithoutRepairNestedInput
+  shop?: Prisma.ShopUpdateOneRequiredWithoutRepairsNestedInput
+  status?: Prisma.StatusUpdateOneRequiredWithoutRepairsNestedInput
+  repairAssignments?: Prisma.RepairAssignmentUpdateManyWithoutRepairNestedInput
+  repairParts?: Prisma.RepairPartUpdateManyWithoutRepairNestedInput
 }
 
-export type REPAIRUncheckedUpdateWithoutPRODUCTInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
-  status_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUncheckedUpdateWithoutProductInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
+  statusId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  INVOICE?: Prisma.INVOICEUncheckedUpdateOneWithoutREPAIRNestedInput
-  LABOR?: Prisma.LABORUncheckedUpdateManyWithoutREPAIRNestedInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUncheckedUpdateManyWithoutREPAIRNestedInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUncheckedUpdateManyWithoutREPAIRNestedInput
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  invoice?: Prisma.InvoiceUncheckedUpdateOneWithoutRepairNestedInput
+  labor?: Prisma.LaborUncheckedUpdateManyWithoutRepairNestedInput
+  repairAssignments?: Prisma.RepairAssignmentUncheckedUpdateManyWithoutRepairNestedInput
+  repairParts?: Prisma.RepairPartUncheckedUpdateManyWithoutRepairNestedInput
 }
 
-export type REPAIRUncheckedUpdateManyWithoutPRODUCTInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
-  status_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUncheckedUpdateManyWithoutProductInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
+  statusId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
-export type REPAIRCreateManySHOPInput = {
-  repair_id: number
-  product_id: number
-  status_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairCreateManyShopInput = {
+  repairId: number
+  productId: number
+  statusId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
+  problemDescription?: string | null
 }
 
-export type REPAIRUpdateWithoutSHOPInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUpdateWithoutShopInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  INVOICE?: Prisma.INVOICEUpdateOneWithoutREPAIRNestedInput
-  LABOR?: Prisma.LABORUpdateManyWithoutREPAIRNestedInput
-  PRODUCT?: Prisma.PRODUCTUpdateOneRequiredWithoutREPAIRNestedInput
-  STATUS?: Prisma.STATUSUpdateOneRequiredWithoutREPAIRNestedInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUpdateManyWithoutREPAIRNestedInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUpdateManyWithoutREPAIRNestedInput
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  invoice?: Prisma.InvoiceUpdateOneWithoutRepairNestedInput
+  labor?: Prisma.LaborUpdateManyWithoutRepairNestedInput
+  product?: Prisma.ProductUpdateOneRequiredWithoutRepairsNestedInput
+  status?: Prisma.StatusUpdateOneRequiredWithoutRepairsNestedInput
+  repairAssignments?: Prisma.RepairAssignmentUpdateManyWithoutRepairNestedInput
+  repairParts?: Prisma.RepairPartUpdateManyWithoutRepairNestedInput
 }
 
-export type REPAIRUncheckedUpdateWithoutSHOPInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  product_id?: Prisma.IntFieldUpdateOperationsInput | number
-  status_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUncheckedUpdateWithoutShopInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  productId?: Prisma.IntFieldUpdateOperationsInput | number
+  statusId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  INVOICE?: Prisma.INVOICEUncheckedUpdateOneWithoutREPAIRNestedInput
-  LABOR?: Prisma.LABORUncheckedUpdateManyWithoutREPAIRNestedInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUncheckedUpdateManyWithoutREPAIRNestedInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUncheckedUpdateManyWithoutREPAIRNestedInput
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  invoice?: Prisma.InvoiceUncheckedUpdateOneWithoutRepairNestedInput
+  labor?: Prisma.LaborUncheckedUpdateManyWithoutRepairNestedInput
+  repairAssignments?: Prisma.RepairAssignmentUncheckedUpdateManyWithoutRepairNestedInput
+  repairParts?: Prisma.RepairPartUncheckedUpdateManyWithoutRepairNestedInput
 }
 
-export type REPAIRUncheckedUpdateManyWithoutSHOPInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  product_id?: Prisma.IntFieldUpdateOperationsInput | number
-  status_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUncheckedUpdateManyWithoutShopInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  productId?: Prisma.IntFieldUpdateOperationsInput | number
+  statusId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
-export type REPAIRCreateManySTATUSInput = {
-  repair_id: number
-  product_id: number
-  shop_id: number
-  estimated_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Date | string | null
-  finish_date?: Date | string | null
-  return_date?: Date | string | null
+export type RepairCreateManyStatusInput = {
+  repairId: number
+  productId: number
+  shopId: number
+  estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Date | string | null
+  finishDate?: Date | string | null
+  returnDate?: Date | string | null
   notes?: string | null
-  problem_description?: string | null
+  problemDescription?: string | null
 }
 
-export type REPAIRUpdateWithoutSTATUSInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUpdateWithoutStatusInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  INVOICE?: Prisma.INVOICEUpdateOneWithoutREPAIRNestedInput
-  LABOR?: Prisma.LABORUpdateManyWithoutREPAIRNestedInput
-  PRODUCT?: Prisma.PRODUCTUpdateOneRequiredWithoutREPAIRNestedInput
-  SHOP?: Prisma.SHOPUpdateOneRequiredWithoutREPAIRNestedInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUpdateManyWithoutREPAIRNestedInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUpdateManyWithoutREPAIRNestedInput
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  invoice?: Prisma.InvoiceUpdateOneWithoutRepairNestedInput
+  labor?: Prisma.LaborUpdateManyWithoutRepairNestedInput
+  product?: Prisma.ProductUpdateOneRequiredWithoutRepairsNestedInput
+  shop?: Prisma.ShopUpdateOneRequiredWithoutRepairsNestedInput
+  repairAssignments?: Prisma.RepairAssignmentUpdateManyWithoutRepairNestedInput
+  repairParts?: Prisma.RepairPartUpdateManyWithoutRepairNestedInput
 }
 
-export type REPAIRUncheckedUpdateWithoutSTATUSInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  product_id?: Prisma.IntFieldUpdateOperationsInput | number
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUncheckedUpdateWithoutStatusInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  productId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  INVOICE?: Prisma.INVOICEUncheckedUpdateOneWithoutREPAIRNestedInput
-  LABOR?: Prisma.LABORUncheckedUpdateManyWithoutREPAIRNestedInput
-  REPAIR_ASSIGNMENT?: Prisma.REPAIR_ASSIGNMENTUncheckedUpdateManyWithoutREPAIRNestedInput
-  REPAIR_PART?: Prisma.REPAIR_PARTUncheckedUpdateManyWithoutREPAIRNestedInput
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  invoice?: Prisma.InvoiceUncheckedUpdateOneWithoutRepairNestedInput
+  labor?: Prisma.LaborUncheckedUpdateManyWithoutRepairNestedInput
+  repairAssignments?: Prisma.RepairAssignmentUncheckedUpdateManyWithoutRepairNestedInput
+  repairParts?: Prisma.RepairPartUncheckedUpdateManyWithoutRepairNestedInput
 }
 
-export type REPAIRUncheckedUpdateManyWithoutSTATUSInput = {
-  repair_id?: Prisma.IntFieldUpdateOperationsInput | number
-  product_id?: Prisma.IntFieldUpdateOperationsInput | number
-  shop_id?: Prisma.IntFieldUpdateOperationsInput | number
-  estimated_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  worked_hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
-  received_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finish_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  return_date?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+export type RepairUncheckedUpdateManyWithoutStatusInput = {
+  repairId?: Prisma.IntFieldUpdateOperationsInput | number
+  productId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
+  estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  receivedDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  finishDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  returnDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  problem_description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  problemDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
 /**
- * Count Type REPAIRCountOutputType
+ * Count Type RepairCountOutputType
  */
 
-export type REPAIRCountOutputType = {
-  LABOR: number
-  REPAIR_ASSIGNMENT: number
-  REPAIR_PART: number
+export type RepairCountOutputType = {
+  labor: number
+  repairAssignments: number
+  repairParts: number
 }
 
-export type REPAIRCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  LABOR?: boolean | REPAIRCountOutputTypeCountLABORArgs
-  REPAIR_ASSIGNMENT?: boolean | REPAIRCountOutputTypeCountREPAIR_ASSIGNMENTArgs
-  REPAIR_PART?: boolean | REPAIRCountOutputTypeCountREPAIR_PARTArgs
+export type RepairCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  labor?: boolean | RepairCountOutputTypeCountLaborArgs
+  repairAssignments?: boolean | RepairCountOutputTypeCountRepairAssignmentsArgs
+  repairParts?: boolean | RepairCountOutputTypeCountRepairPartsArgs
 }
 
 /**
- * REPAIRCountOutputType without action
+ * RepairCountOutputType without action
  */
-export type REPAIRCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type RepairCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the REPAIRCountOutputType
+   * Select specific fields to fetch from the RepairCountOutputType
    */
-  select?: Prisma.REPAIRCountOutputTypeSelect<ExtArgs> | null
+  select?: Prisma.RepairCountOutputTypeSelect<ExtArgs> | null
 }
 
 /**
- * REPAIRCountOutputType without action
+ * RepairCountOutputType without action
  */
-export type REPAIRCountOutputTypeCountLABORArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.LABORWhereInput
+export type RepairCountOutputTypeCountLaborArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.LaborWhereInput
 }
 
 /**
- * REPAIRCountOutputType without action
+ * RepairCountOutputType without action
  */
-export type REPAIRCountOutputTypeCountREPAIR_ASSIGNMENTArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.REPAIR_ASSIGNMENTWhereInput
+export type RepairCountOutputTypeCountRepairAssignmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.RepairAssignmentWhereInput
 }
 
 /**
- * REPAIRCountOutputType without action
+ * RepairCountOutputType without action
  */
-export type REPAIRCountOutputTypeCountREPAIR_PARTArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.REPAIR_PARTWhereInput
+export type RepairCountOutputTypeCountRepairPartsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.RepairPartWhereInput
 }
 
 
-export type REPAIRSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-  repair_id?: boolean
-  product_id?: boolean
-  shop_id?: boolean
-  status_id?: boolean
-  estimated_hours?: boolean
-  worked_hours?: boolean
-  received_date?: boolean
-  finish_date?: boolean
-  return_date?: boolean
+export type RepairSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  repairId?: boolean
+  productId?: boolean
+  shopId?: boolean
+  statusId?: boolean
+  estimatedHours?: boolean
+  workedHours?: boolean
+  receivedDate?: boolean
+  finishDate?: boolean
+  returnDate?: boolean
   notes?: boolean
-  problem_description?: boolean
-  INVOICE?: boolean | Prisma.REPAIR$INVOICEArgs<ExtArgs>
-  LABOR?: boolean | Prisma.REPAIR$LABORArgs<ExtArgs>
-  PRODUCT?: boolean | Prisma.PRODUCTDefaultArgs<ExtArgs>
-  SHOP?: boolean | Prisma.SHOPDefaultArgs<ExtArgs>
-  STATUS?: boolean | Prisma.STATUSDefaultArgs<ExtArgs>
-  REPAIR_ASSIGNMENT?: boolean | Prisma.REPAIR$REPAIR_ASSIGNMENTArgs<ExtArgs>
-  REPAIR_PART?: boolean | Prisma.REPAIR$REPAIR_PARTArgs<ExtArgs>
-  _count?: boolean | Prisma.REPAIRCountOutputTypeDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["rEPAIR"]>
+  problemDescription?: boolean
+  invoice?: boolean | Prisma.Repair$invoiceArgs<ExtArgs>
+  labor?: boolean | Prisma.Repair$laborArgs<ExtArgs>
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+  shop?: boolean | Prisma.ShopDefaultArgs<ExtArgs>
+  status?: boolean | Prisma.StatusDefaultArgs<ExtArgs>
+  repairAssignments?: boolean | Prisma.Repair$repairAssignmentsArgs<ExtArgs>
+  repairParts?: boolean | Prisma.Repair$repairPartsArgs<ExtArgs>
+  _count?: boolean | Prisma.RepairCountOutputTypeDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["repair"]>
 
 
 
-export type REPAIRSelectScalar = {
-  repair_id?: boolean
-  product_id?: boolean
-  shop_id?: boolean
-  status_id?: boolean
-  estimated_hours?: boolean
-  worked_hours?: boolean
-  received_date?: boolean
-  finish_date?: boolean
-  return_date?: boolean
+export type RepairSelectScalar = {
+  repairId?: boolean
+  productId?: boolean
+  shopId?: boolean
+  statusId?: boolean
+  estimatedHours?: boolean
+  workedHours?: boolean
+  receivedDate?: boolean
+  finishDate?: boolean
+  returnDate?: boolean
   notes?: boolean
-  problem_description?: boolean
+  problemDescription?: boolean
 }
 
-export type REPAIROmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"repair_id" | "product_id" | "shop_id" | "status_id" | "estimated_hours" | "worked_hours" | "received_date" | "finish_date" | "return_date" | "notes" | "problem_description", ExtArgs["result"]["rEPAIR"]>
-export type REPAIRInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  INVOICE?: boolean | Prisma.REPAIR$INVOICEArgs<ExtArgs>
-  LABOR?: boolean | Prisma.REPAIR$LABORArgs<ExtArgs>
-  PRODUCT?: boolean | Prisma.PRODUCTDefaultArgs<ExtArgs>
-  SHOP?: boolean | Prisma.SHOPDefaultArgs<ExtArgs>
-  STATUS?: boolean | Prisma.STATUSDefaultArgs<ExtArgs>
-  REPAIR_ASSIGNMENT?: boolean | Prisma.REPAIR$REPAIR_ASSIGNMENTArgs<ExtArgs>
-  REPAIR_PART?: boolean | Prisma.REPAIR$REPAIR_PARTArgs<ExtArgs>
-  _count?: boolean | Prisma.REPAIRCountOutputTypeDefaultArgs<ExtArgs>
+export type RepairOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"repairId" | "productId" | "shopId" | "statusId" | "estimatedHours" | "workedHours" | "receivedDate" | "finishDate" | "returnDate" | "notes" | "problemDescription", ExtArgs["result"]["repair"]>
+export type RepairInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  invoice?: boolean | Prisma.Repair$invoiceArgs<ExtArgs>
+  labor?: boolean | Prisma.Repair$laborArgs<ExtArgs>
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+  shop?: boolean | Prisma.ShopDefaultArgs<ExtArgs>
+  status?: boolean | Prisma.StatusDefaultArgs<ExtArgs>
+  repairAssignments?: boolean | Prisma.Repair$repairAssignmentsArgs<ExtArgs>
+  repairParts?: boolean | Prisma.Repair$repairPartsArgs<ExtArgs>
+  _count?: boolean | Prisma.RepairCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $REPAIRPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "REPAIR"
+export type $RepairPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "Repair"
   objects: {
-    INVOICE: Prisma.$INVOICEPayload<ExtArgs> | null
-    LABOR: Prisma.$LABORPayload<ExtArgs>[]
-    PRODUCT: Prisma.$PRODUCTPayload<ExtArgs>
-    SHOP: Prisma.$SHOPPayload<ExtArgs>
-    STATUS: Prisma.$STATUSPayload<ExtArgs>
-    REPAIR_ASSIGNMENT: Prisma.$REPAIR_ASSIGNMENTPayload<ExtArgs>[]
-    REPAIR_PART: Prisma.$REPAIR_PARTPayload<ExtArgs>[]
+    invoice: Prisma.$InvoicePayload<ExtArgs> | null
+    labor: Prisma.$LaborPayload<ExtArgs>[]
+    product: Prisma.$ProductPayload<ExtArgs>
+    shop: Prisma.$ShopPayload<ExtArgs>
+    status: Prisma.$StatusPayload<ExtArgs>
+    repairAssignments: Prisma.$RepairAssignmentPayload<ExtArgs>[]
+    repairParts: Prisma.$RepairPartPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
-    repair_id: number
-    product_id: number
-    shop_id: number
-    status_id: number
-    estimated_hours: runtime.Decimal | null
-    worked_hours: runtime.Decimal | null
-    received_date: Date | null
-    finish_date: Date | null
-    return_date: Date | null
+    repairId: number
+    productId: number
+    shopId: number
+    statusId: number
+    estimatedHours: runtime.Decimal | null
+    workedHours: runtime.Decimal | null
+    receivedDate: Date | null
+    finishDate: Date | null
+    returnDate: Date | null
     notes: string | null
-    problem_description: string | null
-  }, ExtArgs["result"]["rEPAIR"]>
+    problemDescription: string | null
+  }, ExtArgs["result"]["repair"]>
   composites: {}
 }
 
-export type REPAIRGetPayload<S extends boolean | null | undefined | REPAIRDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$REPAIRPayload, S>
+export type RepairGetPayload<S extends boolean | null | undefined | RepairDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$RepairPayload, S>
 
-export type REPAIRCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<REPAIRFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: REPAIRCountAggregateInputType | true
+export type RepairCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<RepairFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: RepairCountAggregateInputType | true
   }
 
-export interface REPAIRDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['REPAIR'], meta: { name: 'REPAIR' } }
+export interface RepairDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Repair'], meta: { name: 'Repair' } }
   /**
-   * Find zero or one REPAIR that matches the filter.
-   * @param {REPAIRFindUniqueArgs} args - Arguments to find a REPAIR
+   * Find zero or one Repair that matches the filter.
+   * @param {RepairFindUniqueArgs} args - Arguments to find a Repair
    * @example
-   * // Get one REPAIR
-   * const rEPAIR = await prisma.rEPAIR.findUnique({
+   * // Get one Repair
+   * const repair = await prisma.repair.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends REPAIRFindUniqueArgs>(args: Prisma.SelectSubset<T, REPAIRFindUniqueArgs<ExtArgs>>): Prisma.Prisma__REPAIRClient<runtime.Types.Result.GetResult<Prisma.$REPAIRPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends RepairFindUniqueArgs>(args: Prisma.SelectSubset<T, RepairFindUniqueArgs<ExtArgs>>): Prisma.Prisma__RepairClient<runtime.Types.Result.GetResult<Prisma.$RepairPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one REPAIR that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Repair that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {REPAIRFindUniqueOrThrowArgs} args - Arguments to find a REPAIR
+   * @param {RepairFindUniqueOrThrowArgs} args - Arguments to find a Repair
    * @example
-   * // Get one REPAIR
-   * const rEPAIR = await prisma.rEPAIR.findUniqueOrThrow({
+   * // Get one Repair
+   * const repair = await prisma.repair.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends REPAIRFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, REPAIRFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__REPAIRClient<runtime.Types.Result.GetResult<Prisma.$REPAIRPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends RepairFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, RepairFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__RepairClient<runtime.Types.Result.GetResult<Prisma.$RepairPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first REPAIR that matches the filter.
+   * Find the first Repair that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {REPAIRFindFirstArgs} args - Arguments to find a REPAIR
+   * @param {RepairFindFirstArgs} args - Arguments to find a Repair
    * @example
-   * // Get one REPAIR
-   * const rEPAIR = await prisma.rEPAIR.findFirst({
+   * // Get one Repair
+   * const repair = await prisma.repair.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends REPAIRFindFirstArgs>(args?: Prisma.SelectSubset<T, REPAIRFindFirstArgs<ExtArgs>>): Prisma.Prisma__REPAIRClient<runtime.Types.Result.GetResult<Prisma.$REPAIRPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends RepairFindFirstArgs>(args?: Prisma.SelectSubset<T, RepairFindFirstArgs<ExtArgs>>): Prisma.Prisma__RepairClient<runtime.Types.Result.GetResult<Prisma.$RepairPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first REPAIR that matches the filter or
+   * Find the first Repair that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {REPAIRFindFirstOrThrowArgs} args - Arguments to find a REPAIR
+   * @param {RepairFindFirstOrThrowArgs} args - Arguments to find a Repair
    * @example
-   * // Get one REPAIR
-   * const rEPAIR = await prisma.rEPAIR.findFirstOrThrow({
+   * // Get one Repair
+   * const repair = await prisma.repair.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends REPAIRFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, REPAIRFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__REPAIRClient<runtime.Types.Result.GetResult<Prisma.$REPAIRPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends RepairFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, RepairFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__RepairClient<runtime.Types.Result.GetResult<Prisma.$RepairPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more REPAIRS that matches the filter.
+   * Find zero or more Repairs that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {REPAIRFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {RepairFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all REPAIRS
-   * const rEPAIRS = await prisma.rEPAIR.findMany()
+   * // Get all Repairs
+   * const repairs = await prisma.repair.findMany()
    * 
-   * // Get first 10 REPAIRS
-   * const rEPAIRS = await prisma.rEPAIR.findMany({ take: 10 })
+   * // Get first 10 Repairs
+   * const repairs = await prisma.repair.findMany({ take: 10 })
    * 
-   * // Only select the `repair_id`
-   * const rEPAIRWithRepair_idOnly = await prisma.rEPAIR.findMany({ select: { repair_id: true } })
+   * // Only select the `repairId`
+   * const repairWithRepairIdOnly = await prisma.repair.findMany({ select: { repairId: true } })
    * 
    */
-  findMany<T extends REPAIRFindManyArgs>(args?: Prisma.SelectSubset<T, REPAIRFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$REPAIRPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends RepairFindManyArgs>(args?: Prisma.SelectSubset<T, RepairFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RepairPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a REPAIR.
-   * @param {REPAIRCreateArgs} args - Arguments to create a REPAIR.
+   * Create a Repair.
+   * @param {RepairCreateArgs} args - Arguments to create a Repair.
    * @example
-   * // Create one REPAIR
-   * const REPAIR = await prisma.rEPAIR.create({
+   * // Create one Repair
+   * const Repair = await prisma.repair.create({
    *   data: {
-   *     // ... data to create a REPAIR
+   *     // ... data to create a Repair
    *   }
    * })
    * 
    */
-  create<T extends REPAIRCreateArgs>(args: Prisma.SelectSubset<T, REPAIRCreateArgs<ExtArgs>>): Prisma.Prisma__REPAIRClient<runtime.Types.Result.GetResult<Prisma.$REPAIRPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends RepairCreateArgs>(args: Prisma.SelectSubset<T, RepairCreateArgs<ExtArgs>>): Prisma.Prisma__RepairClient<runtime.Types.Result.GetResult<Prisma.$RepairPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many REPAIRS.
-   * @param {REPAIRCreateManyArgs} args - Arguments to create many REPAIRS.
+   * Create many Repairs.
+   * @param {RepairCreateManyArgs} args - Arguments to create many Repairs.
    * @example
-   * // Create many REPAIRS
-   * const rEPAIR = await prisma.rEPAIR.createMany({
+   * // Create many Repairs
+   * const repair = await prisma.repair.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends REPAIRCreateManyArgs>(args?: Prisma.SelectSubset<T, REPAIRCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends RepairCreateManyArgs>(args?: Prisma.SelectSubset<T, RepairCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a REPAIR.
-   * @param {REPAIRDeleteArgs} args - Arguments to delete one REPAIR.
+   * Delete a Repair.
+   * @param {RepairDeleteArgs} args - Arguments to delete one Repair.
    * @example
-   * // Delete one REPAIR
-   * const REPAIR = await prisma.rEPAIR.delete({
+   * // Delete one Repair
+   * const Repair = await prisma.repair.delete({
    *   where: {
-   *     // ... filter to delete one REPAIR
+   *     // ... filter to delete one Repair
    *   }
    * })
    * 
    */
-  delete<T extends REPAIRDeleteArgs>(args: Prisma.SelectSubset<T, REPAIRDeleteArgs<ExtArgs>>): Prisma.Prisma__REPAIRClient<runtime.Types.Result.GetResult<Prisma.$REPAIRPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends RepairDeleteArgs>(args: Prisma.SelectSubset<T, RepairDeleteArgs<ExtArgs>>): Prisma.Prisma__RepairClient<runtime.Types.Result.GetResult<Prisma.$RepairPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one REPAIR.
-   * @param {REPAIRUpdateArgs} args - Arguments to update one REPAIR.
+   * Update one Repair.
+   * @param {RepairUpdateArgs} args - Arguments to update one Repair.
    * @example
-   * // Update one REPAIR
-   * const rEPAIR = await prisma.rEPAIR.update({
+   * // Update one Repair
+   * const repair = await prisma.repair.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -1730,30 +1730,30 @@ export interface REPAIRDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    * 
    */
-  update<T extends REPAIRUpdateArgs>(args: Prisma.SelectSubset<T, REPAIRUpdateArgs<ExtArgs>>): Prisma.Prisma__REPAIRClient<runtime.Types.Result.GetResult<Prisma.$REPAIRPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends RepairUpdateArgs>(args: Prisma.SelectSubset<T, RepairUpdateArgs<ExtArgs>>): Prisma.Prisma__RepairClient<runtime.Types.Result.GetResult<Prisma.$RepairPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more REPAIRS.
-   * @param {REPAIRDeleteManyArgs} args - Arguments to filter REPAIRS to delete.
+   * Delete zero or more Repairs.
+   * @param {RepairDeleteManyArgs} args - Arguments to filter Repairs to delete.
    * @example
-   * // Delete a few REPAIRS
-   * const { count } = await prisma.rEPAIR.deleteMany({
+   * // Delete a few Repairs
+   * const { count } = await prisma.repair.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends REPAIRDeleteManyArgs>(args?: Prisma.SelectSubset<T, REPAIRDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends RepairDeleteManyArgs>(args?: Prisma.SelectSubset<T, RepairDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more REPAIRS.
+   * Update zero or more Repairs.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {REPAIRUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {RepairUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many REPAIRS
-   * const rEPAIR = await prisma.rEPAIR.updateMany({
+   * // Update many Repairs
+   * const repair = await prisma.repair.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -1763,56 +1763,56 @@ export interface REPAIRDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    * 
    */
-  updateMany<T extends REPAIRUpdateManyArgs>(args: Prisma.SelectSubset<T, REPAIRUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends RepairUpdateManyArgs>(args: Prisma.SelectSubset<T, RepairUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one REPAIR.
-   * @param {REPAIRUpsertArgs} args - Arguments to update or create a REPAIR.
+   * Create or update one Repair.
+   * @param {RepairUpsertArgs} args - Arguments to update or create a Repair.
    * @example
-   * // Update or create a REPAIR
-   * const rEPAIR = await prisma.rEPAIR.upsert({
+   * // Update or create a Repair
+   * const repair = await prisma.repair.upsert({
    *   create: {
-   *     // ... data to create a REPAIR
+   *     // ... data to create a Repair
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the REPAIR we want to update
+   *     // ... the filter for the Repair we want to update
    *   }
    * })
    */
-  upsert<T extends REPAIRUpsertArgs>(args: Prisma.SelectSubset<T, REPAIRUpsertArgs<ExtArgs>>): Prisma.Prisma__REPAIRClient<runtime.Types.Result.GetResult<Prisma.$REPAIRPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends RepairUpsertArgs>(args: Prisma.SelectSubset<T, RepairUpsertArgs<ExtArgs>>): Prisma.Prisma__RepairClient<runtime.Types.Result.GetResult<Prisma.$RepairPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of REPAIRS.
+   * Count the number of Repairs.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {REPAIRCountArgs} args - Arguments to filter REPAIRS to count.
+   * @param {RepairCountArgs} args - Arguments to filter Repairs to count.
    * @example
-   * // Count the number of REPAIRS
-   * const count = await prisma.rEPAIR.count({
+   * // Count the number of Repairs
+   * const count = await prisma.repair.count({
    *   where: {
-   *     // ... the filter for the REPAIRS we want to count
+   *     // ... the filter for the Repairs we want to count
    *   }
    * })
   **/
-  count<T extends REPAIRCountArgs>(
-    args?: Prisma.Subset<T, REPAIRCountArgs>,
+  count<T extends RepairCountArgs>(
+    args?: Prisma.Subset<T, RepairCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], REPAIRCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], RepairCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a REPAIR.
+   * Allows you to perform aggregations operations on a Repair.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {REPAIRAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {RepairAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -1832,13 +1832,13 @@ export interface REPAIRDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   take: 10,
    * })
   **/
-  aggregate<T extends REPAIRAggregateArgs>(args: Prisma.Subset<T, REPAIRAggregateArgs>): Prisma.PrismaPromise<GetREPAIRAggregateType<T>>
+  aggregate<T extends RepairAggregateArgs>(args: Prisma.Subset<T, RepairAggregateArgs>): Prisma.PrismaPromise<GetRepairAggregateType<T>>
 
   /**
-   * Group by REPAIR.
+   * Group by Repair.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {REPAIRGroupByArgs} args - Group by arguments.
+   * @param {RepairGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1853,14 +1853,14 @@ export interface REPAIRDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * 
   **/
   groupBy<
-    T extends REPAIRGroupByArgs,
+    T extends RepairGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: REPAIRGroupByArgs['orderBy'] }
-      : { orderBy?: REPAIRGroupByArgs['orderBy'] },
+      ? { orderBy: RepairGroupByArgs['orderBy'] }
+      : { orderBy?: RepairGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1909,28 +1909,28 @@ export interface REPAIRDelegate<ExtArgs extends runtime.Types.Extensions.Interna
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, REPAIRGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetREPAIRGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, RepairGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRepairGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the REPAIR model
+ * Fields of the Repair model
  */
-readonly fields: REPAIRFieldRefs;
+readonly fields: RepairFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for REPAIR.
+ * The delegate class that acts as a "Promise-like" for Repair.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__REPAIRClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__RepairClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  INVOICE<T extends Prisma.REPAIR$INVOICEArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.REPAIR$INVOICEArgs<ExtArgs>>): Prisma.Prisma__INVOICEClient<runtime.Types.Result.GetResult<Prisma.$INVOICEPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  LABOR<T extends Prisma.REPAIR$LABORArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.REPAIR$LABORArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LABORPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  PRODUCT<T extends Prisma.PRODUCTDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PRODUCTDefaultArgs<ExtArgs>>): Prisma.Prisma__PRODUCTClient<runtime.Types.Result.GetResult<Prisma.$PRODUCTPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  SHOP<T extends Prisma.SHOPDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.SHOPDefaultArgs<ExtArgs>>): Prisma.Prisma__SHOPClient<runtime.Types.Result.GetResult<Prisma.$SHOPPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  STATUS<T extends Prisma.STATUSDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.STATUSDefaultArgs<ExtArgs>>): Prisma.Prisma__STATUSClient<runtime.Types.Result.GetResult<Prisma.$STATUSPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  REPAIR_ASSIGNMENT<T extends Prisma.REPAIR$REPAIR_ASSIGNMENTArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.REPAIR$REPAIR_ASSIGNMENTArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$REPAIR_ASSIGNMENTPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  REPAIR_PART<T extends Prisma.REPAIR$REPAIR_PARTArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.REPAIR$REPAIR_PARTArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$REPAIR_PARTPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  invoice<T extends Prisma.Repair$invoiceArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Repair$invoiceArgs<ExtArgs>>): Prisma.Prisma__InvoiceClient<runtime.Types.Result.GetResult<Prisma.$InvoicePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  labor<T extends Prisma.Repair$laborArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Repair$laborArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LaborPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  product<T extends Prisma.ProductDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ProductDefaultArgs<ExtArgs>>): Prisma.Prisma__ProductClient<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  shop<T extends Prisma.ShopDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ShopDefaultArgs<ExtArgs>>): Prisma.Prisma__ShopClient<runtime.Types.Result.GetResult<Prisma.$ShopPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  status<T extends Prisma.StatusDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StatusDefaultArgs<ExtArgs>>): Prisma.Prisma__StatusClient<runtime.Types.Result.GetResult<Prisma.$StatusPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  repairAssignments<T extends Prisma.Repair$repairAssignmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Repair$repairAssignmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RepairAssignmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  repairParts<T extends Prisma.Repair$repairPartsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Repair$repairPartsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RepairPartPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1957,472 +1957,472 @@ export interface Prisma__REPAIRClient<T, Null = never, ExtArgs extends runtime.T
 
 
 /**
- * Fields of the REPAIR model
+ * Fields of the Repair model
  */
-export interface REPAIRFieldRefs {
-  readonly repair_id: Prisma.FieldRef<"REPAIR", 'Int'>
-  readonly product_id: Prisma.FieldRef<"REPAIR", 'Int'>
-  readonly shop_id: Prisma.FieldRef<"REPAIR", 'Int'>
-  readonly status_id: Prisma.FieldRef<"REPAIR", 'Int'>
-  readonly estimated_hours: Prisma.FieldRef<"REPAIR", 'Decimal'>
-  readonly worked_hours: Prisma.FieldRef<"REPAIR", 'Decimal'>
-  readonly received_date: Prisma.FieldRef<"REPAIR", 'DateTime'>
-  readonly finish_date: Prisma.FieldRef<"REPAIR", 'DateTime'>
-  readonly return_date: Prisma.FieldRef<"REPAIR", 'DateTime'>
-  readonly notes: Prisma.FieldRef<"REPAIR", 'String'>
-  readonly problem_description: Prisma.FieldRef<"REPAIR", 'String'>
+export interface RepairFieldRefs {
+  readonly repairId: Prisma.FieldRef<"Repair", 'Int'>
+  readonly productId: Prisma.FieldRef<"Repair", 'Int'>
+  readonly shopId: Prisma.FieldRef<"Repair", 'Int'>
+  readonly statusId: Prisma.FieldRef<"Repair", 'Int'>
+  readonly estimatedHours: Prisma.FieldRef<"Repair", 'Decimal'>
+  readonly workedHours: Prisma.FieldRef<"Repair", 'Decimal'>
+  readonly receivedDate: Prisma.FieldRef<"Repair", 'DateTime'>
+  readonly finishDate: Prisma.FieldRef<"Repair", 'DateTime'>
+  readonly returnDate: Prisma.FieldRef<"Repair", 'DateTime'>
+  readonly notes: Prisma.FieldRef<"Repair", 'String'>
+  readonly problemDescription: Prisma.FieldRef<"Repair", 'String'>
 }
     
 
 // Custom InputTypes
 /**
- * REPAIR findUnique
+ * Repair findUnique
  */
-export type REPAIRFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type RepairFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the REPAIR
+   * Select specific fields to fetch from the Repair
    */
-  select?: Prisma.REPAIRSelect<ExtArgs> | null
+  select?: Prisma.RepairSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the REPAIR
+   * Omit specific fields from the Repair
    */
-  omit?: Prisma.REPAIROmit<ExtArgs> | null
+  omit?: Prisma.RepairOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.REPAIRInclude<ExtArgs> | null
+  include?: Prisma.RepairInclude<ExtArgs> | null
   /**
-   * Filter, which REPAIR to fetch.
+   * Filter, which Repair to fetch.
    */
-  where: Prisma.REPAIRWhereUniqueInput
+  where: Prisma.RepairWhereUniqueInput
 }
 
 /**
- * REPAIR findUniqueOrThrow
+ * Repair findUniqueOrThrow
  */
-export type REPAIRFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type RepairFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the REPAIR
+   * Select specific fields to fetch from the Repair
    */
-  select?: Prisma.REPAIRSelect<ExtArgs> | null
+  select?: Prisma.RepairSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the REPAIR
+   * Omit specific fields from the Repair
    */
-  omit?: Prisma.REPAIROmit<ExtArgs> | null
+  omit?: Prisma.RepairOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.REPAIRInclude<ExtArgs> | null
+  include?: Prisma.RepairInclude<ExtArgs> | null
   /**
-   * Filter, which REPAIR to fetch.
+   * Filter, which Repair to fetch.
    */
-  where: Prisma.REPAIRWhereUniqueInput
+  where: Prisma.RepairWhereUniqueInput
 }
 
 /**
- * REPAIR findFirst
+ * Repair findFirst
  */
-export type REPAIRFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type RepairFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the REPAIR
+   * Select specific fields to fetch from the Repair
    */
-  select?: Prisma.REPAIRSelect<ExtArgs> | null
+  select?: Prisma.RepairSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the REPAIR
+   * Omit specific fields from the Repair
    */
-  omit?: Prisma.REPAIROmit<ExtArgs> | null
+  omit?: Prisma.RepairOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.REPAIRInclude<ExtArgs> | null
+  include?: Prisma.RepairInclude<ExtArgs> | null
   /**
-   * Filter, which REPAIR to fetch.
+   * Filter, which Repair to fetch.
    */
-  where?: Prisma.REPAIRWhereInput
+  where?: Prisma.RepairWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of REPAIRS to fetch.
+   * Determine the order of Repairs to fetch.
    */
-  orderBy?: Prisma.REPAIROrderByWithRelationInput | Prisma.REPAIROrderByWithRelationInput[]
+  orderBy?: Prisma.RepairOrderByWithRelationInput | Prisma.RepairOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for REPAIRS.
+   * Sets the position for searching for Repairs.
    */
-  cursor?: Prisma.REPAIRWhereUniqueInput
+  cursor?: Prisma.RepairWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` REPAIRS from the position of the cursor.
+   * Take `±n` Repairs from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` REPAIRS.
+   * Skip the first `n` Repairs.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of REPAIRS.
+   * Filter by unique combinations of Repairs.
    */
-  distinct?: Prisma.REPAIRScalarFieldEnum | Prisma.REPAIRScalarFieldEnum[]
+  distinct?: Prisma.RepairScalarFieldEnum | Prisma.RepairScalarFieldEnum[]
 }
 
 /**
- * REPAIR findFirstOrThrow
+ * Repair findFirstOrThrow
  */
-export type REPAIRFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type RepairFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the REPAIR
+   * Select specific fields to fetch from the Repair
    */
-  select?: Prisma.REPAIRSelect<ExtArgs> | null
+  select?: Prisma.RepairSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the REPAIR
+   * Omit specific fields from the Repair
    */
-  omit?: Prisma.REPAIROmit<ExtArgs> | null
+  omit?: Prisma.RepairOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.REPAIRInclude<ExtArgs> | null
+  include?: Prisma.RepairInclude<ExtArgs> | null
   /**
-   * Filter, which REPAIR to fetch.
+   * Filter, which Repair to fetch.
    */
-  where?: Prisma.REPAIRWhereInput
+  where?: Prisma.RepairWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of REPAIRS to fetch.
+   * Determine the order of Repairs to fetch.
    */
-  orderBy?: Prisma.REPAIROrderByWithRelationInput | Prisma.REPAIROrderByWithRelationInput[]
+  orderBy?: Prisma.RepairOrderByWithRelationInput | Prisma.RepairOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for REPAIRS.
+   * Sets the position for searching for Repairs.
    */
-  cursor?: Prisma.REPAIRWhereUniqueInput
+  cursor?: Prisma.RepairWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` REPAIRS from the position of the cursor.
+   * Take `±n` Repairs from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` REPAIRS.
+   * Skip the first `n` Repairs.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of REPAIRS.
+   * Filter by unique combinations of Repairs.
    */
-  distinct?: Prisma.REPAIRScalarFieldEnum | Prisma.REPAIRScalarFieldEnum[]
+  distinct?: Prisma.RepairScalarFieldEnum | Prisma.RepairScalarFieldEnum[]
 }
 
 /**
- * REPAIR findMany
+ * Repair findMany
  */
-export type REPAIRFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type RepairFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the REPAIR
+   * Select specific fields to fetch from the Repair
    */
-  select?: Prisma.REPAIRSelect<ExtArgs> | null
+  select?: Prisma.RepairSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the REPAIR
+   * Omit specific fields from the Repair
    */
-  omit?: Prisma.REPAIROmit<ExtArgs> | null
+  omit?: Prisma.RepairOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.REPAIRInclude<ExtArgs> | null
+  include?: Prisma.RepairInclude<ExtArgs> | null
   /**
-   * Filter, which REPAIRS to fetch.
+   * Filter, which Repairs to fetch.
    */
-  where?: Prisma.REPAIRWhereInput
+  where?: Prisma.RepairWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of REPAIRS to fetch.
+   * Determine the order of Repairs to fetch.
    */
-  orderBy?: Prisma.REPAIROrderByWithRelationInput | Prisma.REPAIROrderByWithRelationInput[]
+  orderBy?: Prisma.RepairOrderByWithRelationInput | Prisma.RepairOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing REPAIRS.
+   * Sets the position for listing Repairs.
    */
-  cursor?: Prisma.REPAIRWhereUniqueInput
+  cursor?: Prisma.RepairWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` REPAIRS from the position of the cursor.
+   * Take `±n` Repairs from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` REPAIRS.
+   * Skip the first `n` Repairs.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of REPAIRS.
+   * Filter by unique combinations of Repairs.
    */
-  distinct?: Prisma.REPAIRScalarFieldEnum | Prisma.REPAIRScalarFieldEnum[]
+  distinct?: Prisma.RepairScalarFieldEnum | Prisma.RepairScalarFieldEnum[]
 }
 
 /**
- * REPAIR create
+ * Repair create
  */
-export type REPAIRCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type RepairCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the REPAIR
+   * Select specific fields to fetch from the Repair
    */
-  select?: Prisma.REPAIRSelect<ExtArgs> | null
+  select?: Prisma.RepairSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the REPAIR
+   * Omit specific fields from the Repair
    */
-  omit?: Prisma.REPAIROmit<ExtArgs> | null
+  omit?: Prisma.RepairOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.REPAIRInclude<ExtArgs> | null
+  include?: Prisma.RepairInclude<ExtArgs> | null
   /**
-   * The data needed to create a REPAIR.
+   * The data needed to create a Repair.
    */
-  data: Prisma.XOR<Prisma.REPAIRCreateInput, Prisma.REPAIRUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.RepairCreateInput, Prisma.RepairUncheckedCreateInput>
 }
 
 /**
- * REPAIR createMany
+ * Repair createMany
  */
-export type REPAIRCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type RepairCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many REPAIRS.
+   * The data used to create many Repairs.
    */
-  data: Prisma.REPAIRCreateManyInput | Prisma.REPAIRCreateManyInput[]
+  data: Prisma.RepairCreateManyInput | Prisma.RepairCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * REPAIR update
+ * Repair update
  */
-export type REPAIRUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type RepairUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the REPAIR
+   * Select specific fields to fetch from the Repair
    */
-  select?: Prisma.REPAIRSelect<ExtArgs> | null
+  select?: Prisma.RepairSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the REPAIR
+   * Omit specific fields from the Repair
    */
-  omit?: Prisma.REPAIROmit<ExtArgs> | null
+  omit?: Prisma.RepairOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.REPAIRInclude<ExtArgs> | null
+  include?: Prisma.RepairInclude<ExtArgs> | null
   /**
-   * The data needed to update a REPAIR.
+   * The data needed to update a Repair.
    */
-  data: Prisma.XOR<Prisma.REPAIRUpdateInput, Prisma.REPAIRUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.RepairUpdateInput, Prisma.RepairUncheckedUpdateInput>
   /**
-   * Choose, which REPAIR to update.
+   * Choose, which Repair to update.
    */
-  where: Prisma.REPAIRWhereUniqueInput
+  where: Prisma.RepairWhereUniqueInput
 }
 
 /**
- * REPAIR updateMany
+ * Repair updateMany
  */
-export type REPAIRUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type RepairUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update REPAIRS.
+   * The data used to update Repairs.
    */
-  data: Prisma.XOR<Prisma.REPAIRUpdateManyMutationInput, Prisma.REPAIRUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.RepairUpdateManyMutationInput, Prisma.RepairUncheckedUpdateManyInput>
   /**
-   * Filter which REPAIRS to update
+   * Filter which Repairs to update
    */
-  where?: Prisma.REPAIRWhereInput
+  where?: Prisma.RepairWhereInput
   /**
-   * Limit how many REPAIRS to update.
+   * Limit how many Repairs to update.
    */
   limit?: number
 }
 
 /**
- * REPAIR upsert
+ * Repair upsert
  */
-export type REPAIRUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type RepairUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the REPAIR
+   * Select specific fields to fetch from the Repair
    */
-  select?: Prisma.REPAIRSelect<ExtArgs> | null
+  select?: Prisma.RepairSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the REPAIR
+   * Omit specific fields from the Repair
    */
-  omit?: Prisma.REPAIROmit<ExtArgs> | null
+  omit?: Prisma.RepairOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.REPAIRInclude<ExtArgs> | null
+  include?: Prisma.RepairInclude<ExtArgs> | null
   /**
-   * The filter to search for the REPAIR to update in case it exists.
+   * The filter to search for the Repair to update in case it exists.
    */
-  where: Prisma.REPAIRWhereUniqueInput
+  where: Prisma.RepairWhereUniqueInput
   /**
-   * In case the REPAIR found by the `where` argument doesn't exist, create a new REPAIR with this data.
+   * In case the Repair found by the `where` argument doesn't exist, create a new Repair with this data.
    */
-  create: Prisma.XOR<Prisma.REPAIRCreateInput, Prisma.REPAIRUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.RepairCreateInput, Prisma.RepairUncheckedCreateInput>
   /**
-   * In case the REPAIR was found with the provided `where` argument, update it with this data.
+   * In case the Repair was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.REPAIRUpdateInput, Prisma.REPAIRUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.RepairUpdateInput, Prisma.RepairUncheckedUpdateInput>
 }
 
 /**
- * REPAIR delete
+ * Repair delete
  */
-export type REPAIRDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type RepairDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the REPAIR
+   * Select specific fields to fetch from the Repair
    */
-  select?: Prisma.REPAIRSelect<ExtArgs> | null
+  select?: Prisma.RepairSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the REPAIR
+   * Omit specific fields from the Repair
    */
-  omit?: Prisma.REPAIROmit<ExtArgs> | null
+  omit?: Prisma.RepairOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.REPAIRInclude<ExtArgs> | null
+  include?: Prisma.RepairInclude<ExtArgs> | null
   /**
-   * Filter which REPAIR to delete.
+   * Filter which Repair to delete.
    */
-  where: Prisma.REPAIRWhereUniqueInput
+  where: Prisma.RepairWhereUniqueInput
 }
 
 /**
- * REPAIR deleteMany
+ * Repair deleteMany
  */
-export type REPAIRDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type RepairDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which REPAIRS to delete
+   * Filter which Repairs to delete
    */
-  where?: Prisma.REPAIRWhereInput
+  where?: Prisma.RepairWhereInput
   /**
-   * Limit how many REPAIRS to delete.
+   * Limit how many Repairs to delete.
    */
   limit?: number
 }
 
 /**
- * REPAIR.INVOICE
+ * Repair.invoice
  */
-export type REPAIR$INVOICEArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Repair$invoiceArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the INVOICE
+   * Select specific fields to fetch from the Invoice
    */
-  select?: Prisma.INVOICESelect<ExtArgs> | null
+  select?: Prisma.InvoiceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the INVOICE
+   * Omit specific fields from the Invoice
    */
-  omit?: Prisma.INVOICEOmit<ExtArgs> | null
+  omit?: Prisma.InvoiceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.INVOICEInclude<ExtArgs> | null
-  where?: Prisma.INVOICEWhereInput
+  include?: Prisma.InvoiceInclude<ExtArgs> | null
+  where?: Prisma.InvoiceWhereInput
 }
 
 /**
- * REPAIR.LABOR
+ * Repair.labor
  */
-export type REPAIR$LABORArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Repair$laborArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the LABOR
+   * Select specific fields to fetch from the Labor
    */
-  select?: Prisma.LABORSelect<ExtArgs> | null
+  select?: Prisma.LaborSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the LABOR
+   * Omit specific fields from the Labor
    */
-  omit?: Prisma.LABOROmit<ExtArgs> | null
+  omit?: Prisma.LaborOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.LABORInclude<ExtArgs> | null
-  where?: Prisma.LABORWhereInput
-  orderBy?: Prisma.LABOROrderByWithRelationInput | Prisma.LABOROrderByWithRelationInput[]
-  cursor?: Prisma.LABORWhereUniqueInput
+  include?: Prisma.LaborInclude<ExtArgs> | null
+  where?: Prisma.LaborWhereInput
+  orderBy?: Prisma.LaborOrderByWithRelationInput | Prisma.LaborOrderByWithRelationInput[]
+  cursor?: Prisma.LaborWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.LABORScalarFieldEnum | Prisma.LABORScalarFieldEnum[]
+  distinct?: Prisma.LaborScalarFieldEnum | Prisma.LaborScalarFieldEnum[]
 }
 
 /**
- * REPAIR.REPAIR_ASSIGNMENT
+ * Repair.repairAssignments
  */
-export type REPAIR$REPAIR_ASSIGNMENTArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Repair$repairAssignmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the REPAIR_ASSIGNMENT
+   * Select specific fields to fetch from the RepairAssignment
    */
-  select?: Prisma.REPAIR_ASSIGNMENTSelect<ExtArgs> | null
+  select?: Prisma.RepairAssignmentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the REPAIR_ASSIGNMENT
+   * Omit specific fields from the RepairAssignment
    */
-  omit?: Prisma.REPAIR_ASSIGNMENTOmit<ExtArgs> | null
+  omit?: Prisma.RepairAssignmentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.REPAIR_ASSIGNMENTInclude<ExtArgs> | null
-  where?: Prisma.REPAIR_ASSIGNMENTWhereInput
-  orderBy?: Prisma.REPAIR_ASSIGNMENTOrderByWithRelationInput | Prisma.REPAIR_ASSIGNMENTOrderByWithRelationInput[]
-  cursor?: Prisma.REPAIR_ASSIGNMENTWhereUniqueInput
+  include?: Prisma.RepairAssignmentInclude<ExtArgs> | null
+  where?: Prisma.RepairAssignmentWhereInput
+  orderBy?: Prisma.RepairAssignmentOrderByWithRelationInput | Prisma.RepairAssignmentOrderByWithRelationInput[]
+  cursor?: Prisma.RepairAssignmentWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.REPAIR_ASSIGNMENTScalarFieldEnum | Prisma.REPAIR_ASSIGNMENTScalarFieldEnum[]
+  distinct?: Prisma.RepairAssignmentScalarFieldEnum | Prisma.RepairAssignmentScalarFieldEnum[]
 }
 
 /**
- * REPAIR.REPAIR_PART
+ * Repair.repairParts
  */
-export type REPAIR$REPAIR_PARTArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Repair$repairPartsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the REPAIR_PART
+   * Select specific fields to fetch from the RepairPart
    */
-  select?: Prisma.REPAIR_PARTSelect<ExtArgs> | null
+  select?: Prisma.RepairPartSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the REPAIR_PART
+   * Omit specific fields from the RepairPart
    */
-  omit?: Prisma.REPAIR_PARTOmit<ExtArgs> | null
+  omit?: Prisma.RepairPartOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.REPAIR_PARTInclude<ExtArgs> | null
-  where?: Prisma.REPAIR_PARTWhereInput
-  orderBy?: Prisma.REPAIR_PARTOrderByWithRelationInput | Prisma.REPAIR_PARTOrderByWithRelationInput[]
-  cursor?: Prisma.REPAIR_PARTWhereUniqueInput
+  include?: Prisma.RepairPartInclude<ExtArgs> | null
+  where?: Prisma.RepairPartWhereInput
+  orderBy?: Prisma.RepairPartOrderByWithRelationInput | Prisma.RepairPartOrderByWithRelationInput[]
+  cursor?: Prisma.RepairPartWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.REPAIR_PARTScalarFieldEnum | Prisma.REPAIR_PARTScalarFieldEnum[]
+  distinct?: Prisma.RepairPartScalarFieldEnum | Prisma.RepairPartScalarFieldEnum[]
 }
 
 /**
- * REPAIR without action
+ * Repair without action
  */
-export type REPAIRDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type RepairDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the REPAIR
+   * Select specific fields to fetch from the Repair
    */
-  select?: Prisma.REPAIRSelect<ExtArgs> | null
+  select?: Prisma.RepairSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the REPAIR
+   * Omit specific fields from the Repair
    */
-  omit?: Prisma.REPAIROmit<ExtArgs> | null
+  omit?: Prisma.RepairOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.REPAIRInclude<ExtArgs> | null
+  include?: Prisma.RepairInclude<ExtArgs> | null
 }

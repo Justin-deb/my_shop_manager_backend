@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `STATUS` model and its related types.
+ * This file exports the `Status` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,541 +13,541 @@ import type * as $Enums from "../enums"
 import type * as Prisma from "../internal/prismaNamespace"
 
 /**
- * Model STATUS
+ * Model Status
  * 
  */
-export type STATUSModel = runtime.Types.Result.DefaultSelection<Prisma.$STATUSPayload>
+export type StatusModel = runtime.Types.Result.DefaultSelection<Prisma.$StatusPayload>
 
-export type AggregateSTATUS = {
-  _count: STATUSCountAggregateOutputType | null
-  _avg: STATUSAvgAggregateOutputType | null
-  _sum: STATUSSumAggregateOutputType | null
-  _min: STATUSMinAggregateOutputType | null
-  _max: STATUSMaxAggregateOutputType | null
+export type AggregateStatus = {
+  _count: StatusCountAggregateOutputType | null
+  _avg: StatusAvgAggregateOutputType | null
+  _sum: StatusSumAggregateOutputType | null
+  _min: StatusMinAggregateOutputType | null
+  _max: StatusMaxAggregateOutputType | null
 }
 
-export type STATUSAvgAggregateOutputType = {
-  status_id: number | null
+export type StatusAvgAggregateOutputType = {
+  statusId: number | null
 }
 
-export type STATUSSumAggregateOutputType = {
-  status_id: number | null
+export type StatusSumAggregateOutputType = {
+  statusId: number | null
 }
 
-export type STATUSMinAggregateOutputType = {
-  status_id: number | null
+export type StatusMinAggregateOutputType = {
+  statusId: number | null
   name: string | null
 }
 
-export type STATUSMaxAggregateOutputType = {
-  status_id: number | null
+export type StatusMaxAggregateOutputType = {
+  statusId: number | null
   name: string | null
 }
 
-export type STATUSCountAggregateOutputType = {
-  status_id: number
+export type StatusCountAggregateOutputType = {
+  statusId: number
   name: number
   _all: number
 }
 
 
-export type STATUSAvgAggregateInputType = {
-  status_id?: true
+export type StatusAvgAggregateInputType = {
+  statusId?: true
 }
 
-export type STATUSSumAggregateInputType = {
-  status_id?: true
+export type StatusSumAggregateInputType = {
+  statusId?: true
 }
 
-export type STATUSMinAggregateInputType = {
-  status_id?: true
+export type StatusMinAggregateInputType = {
+  statusId?: true
   name?: true
 }
 
-export type STATUSMaxAggregateInputType = {
-  status_id?: true
+export type StatusMaxAggregateInputType = {
+  statusId?: true
   name?: true
 }
 
-export type STATUSCountAggregateInputType = {
-  status_id?: true
+export type StatusCountAggregateInputType = {
+  statusId?: true
   name?: true
   _all?: true
 }
 
-export type STATUSAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type StatusAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which STATUS to aggregate.
+   * Filter which Status to aggregate.
    */
-  where?: Prisma.STATUSWhereInput
+  where?: Prisma.StatusWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of STATUSES to fetch.
+   * Determine the order of Statuses to fetch.
    */
-  orderBy?: Prisma.STATUSOrderByWithRelationInput | Prisma.STATUSOrderByWithRelationInput[]
+  orderBy?: Prisma.StatusOrderByWithRelationInput | Prisma.StatusOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.STATUSWhereUniqueInput
+  cursor?: Prisma.StatusWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` STATUSES from the position of the cursor.
+   * Take `±n` Statuses from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` STATUSES.
+   * Skip the first `n` Statuses.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned STATUSES
+   * Count returned Statuses
   **/
-  _count?: true | STATUSCountAggregateInputType
+  _count?: true | StatusCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to average
   **/
-  _avg?: STATUSAvgAggregateInputType
+  _avg?: StatusAvgAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to sum
   **/
-  _sum?: STATUSSumAggregateInputType
+  _sum?: StatusSumAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: STATUSMinAggregateInputType
+  _min?: StatusMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: STATUSMaxAggregateInputType
+  _max?: StatusMaxAggregateInputType
 }
 
-export type GetSTATUSAggregateType<T extends STATUSAggregateArgs> = {
-      [P in keyof T & keyof AggregateSTATUS]: P extends '_count' | 'count'
+export type GetStatusAggregateType<T extends StatusAggregateArgs> = {
+      [P in keyof T & keyof AggregateStatus]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateSTATUS[P]>
-    : Prisma.GetScalarType<T[P], AggregateSTATUS[P]>
+      : Prisma.GetScalarType<T[P], AggregateStatus[P]>
+    : Prisma.GetScalarType<T[P], AggregateStatus[P]>
 }
 
 
 
 
-export type STATUSGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.STATUSWhereInput
-  orderBy?: Prisma.STATUSOrderByWithAggregationInput | Prisma.STATUSOrderByWithAggregationInput[]
-  by: Prisma.STATUSScalarFieldEnum[] | Prisma.STATUSScalarFieldEnum
-  having?: Prisma.STATUSScalarWhereWithAggregatesInput
+export type StatusGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StatusWhereInput
+  orderBy?: Prisma.StatusOrderByWithAggregationInput | Prisma.StatusOrderByWithAggregationInput[]
+  by: Prisma.StatusScalarFieldEnum[] | Prisma.StatusScalarFieldEnum
+  having?: Prisma.StatusScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: STATUSCountAggregateInputType | true
-  _avg?: STATUSAvgAggregateInputType
-  _sum?: STATUSSumAggregateInputType
-  _min?: STATUSMinAggregateInputType
-  _max?: STATUSMaxAggregateInputType
+  _count?: StatusCountAggregateInputType | true
+  _avg?: StatusAvgAggregateInputType
+  _sum?: StatusSumAggregateInputType
+  _min?: StatusMinAggregateInputType
+  _max?: StatusMaxAggregateInputType
 }
 
-export type STATUSGroupByOutputType = {
-  status_id: number
+export type StatusGroupByOutputType = {
+  statusId: number
   name: string
-  _count: STATUSCountAggregateOutputType | null
-  _avg: STATUSAvgAggregateOutputType | null
-  _sum: STATUSSumAggregateOutputType | null
-  _min: STATUSMinAggregateOutputType | null
-  _max: STATUSMaxAggregateOutputType | null
+  _count: StatusCountAggregateOutputType | null
+  _avg: StatusAvgAggregateOutputType | null
+  _sum: StatusSumAggregateOutputType | null
+  _min: StatusMinAggregateOutputType | null
+  _max: StatusMaxAggregateOutputType | null
 }
 
-export type GetSTATUSGroupByPayload<T extends STATUSGroupByArgs> = Prisma.PrismaPromise<
+export type GetStatusGroupByPayload<T extends StatusGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<STATUSGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<StatusGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof STATUSGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof StatusGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], STATUSGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], STATUSGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], StatusGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], StatusGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type STATUSWhereInput = {
-  AND?: Prisma.STATUSWhereInput | Prisma.STATUSWhereInput[]
-  OR?: Prisma.STATUSWhereInput[]
-  NOT?: Prisma.STATUSWhereInput | Prisma.STATUSWhereInput[]
-  status_id?: Prisma.IntFilter<"STATUS"> | number
-  name?: Prisma.StringFilter<"STATUS"> | string
-  REPAIR?: Prisma.REPAIRListRelationFilter
+export type StatusWhereInput = {
+  AND?: Prisma.StatusWhereInput | Prisma.StatusWhereInput[]
+  OR?: Prisma.StatusWhereInput[]
+  NOT?: Prisma.StatusWhereInput | Prisma.StatusWhereInput[]
+  statusId?: Prisma.IntFilter<"Status"> | number
+  name?: Prisma.StringFilter<"Status"> | string
+  repairs?: Prisma.RepairListRelationFilter
 }
 
-export type STATUSOrderByWithRelationInput = {
-  status_id?: Prisma.SortOrder
+export type StatusOrderByWithRelationInput = {
+  statusId?: Prisma.SortOrder
   name?: Prisma.SortOrder
-  REPAIR?: Prisma.REPAIROrderByRelationAggregateInput
-  _relevance?: Prisma.STATUSOrderByRelevanceInput
+  repairs?: Prisma.RepairOrderByRelationAggregateInput
+  _relevance?: Prisma.StatusOrderByRelevanceInput
 }
 
-export type STATUSWhereUniqueInput = Prisma.AtLeast<{
-  status_id?: number
+export type StatusWhereUniqueInput = Prisma.AtLeast<{
+  statusId?: number
   name?: string
-  AND?: Prisma.STATUSWhereInput | Prisma.STATUSWhereInput[]
-  OR?: Prisma.STATUSWhereInput[]
-  NOT?: Prisma.STATUSWhereInput | Prisma.STATUSWhereInput[]
-  REPAIR?: Prisma.REPAIRListRelationFilter
-}, "status_id" | "name">
+  AND?: Prisma.StatusWhereInput | Prisma.StatusWhereInput[]
+  OR?: Prisma.StatusWhereInput[]
+  NOT?: Prisma.StatusWhereInput | Prisma.StatusWhereInput[]
+  repairs?: Prisma.RepairListRelationFilter
+}, "statusId" | "name">
 
-export type STATUSOrderByWithAggregationInput = {
-  status_id?: Prisma.SortOrder
+export type StatusOrderByWithAggregationInput = {
+  statusId?: Prisma.SortOrder
   name?: Prisma.SortOrder
-  _count?: Prisma.STATUSCountOrderByAggregateInput
-  _avg?: Prisma.STATUSAvgOrderByAggregateInput
-  _max?: Prisma.STATUSMaxOrderByAggregateInput
-  _min?: Prisma.STATUSMinOrderByAggregateInput
-  _sum?: Prisma.STATUSSumOrderByAggregateInput
+  _count?: Prisma.StatusCountOrderByAggregateInput
+  _avg?: Prisma.StatusAvgOrderByAggregateInput
+  _max?: Prisma.StatusMaxOrderByAggregateInput
+  _min?: Prisma.StatusMinOrderByAggregateInput
+  _sum?: Prisma.StatusSumOrderByAggregateInput
 }
 
-export type STATUSScalarWhereWithAggregatesInput = {
-  AND?: Prisma.STATUSScalarWhereWithAggregatesInput | Prisma.STATUSScalarWhereWithAggregatesInput[]
-  OR?: Prisma.STATUSScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.STATUSScalarWhereWithAggregatesInput | Prisma.STATUSScalarWhereWithAggregatesInput[]
-  status_id?: Prisma.IntWithAggregatesFilter<"STATUS"> | number
-  name?: Prisma.StringWithAggregatesFilter<"STATUS"> | string
+export type StatusScalarWhereWithAggregatesInput = {
+  AND?: Prisma.StatusScalarWhereWithAggregatesInput | Prisma.StatusScalarWhereWithAggregatesInput[]
+  OR?: Prisma.StatusScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.StatusScalarWhereWithAggregatesInput | Prisma.StatusScalarWhereWithAggregatesInput[]
+  statusId?: Prisma.IntWithAggregatesFilter<"Status"> | number
+  name?: Prisma.StringWithAggregatesFilter<"Status"> | string
 }
 
-export type STATUSCreateInput = {
-  status_id: number
+export type StatusCreateInput = {
+  statusId: number
   name: string
-  REPAIR?: Prisma.REPAIRCreateNestedManyWithoutSTATUSInput
+  repairs?: Prisma.RepairCreateNestedManyWithoutStatusInput
 }
 
-export type STATUSUncheckedCreateInput = {
-  status_id: number
+export type StatusUncheckedCreateInput = {
+  statusId: number
   name: string
-  REPAIR?: Prisma.REPAIRUncheckedCreateNestedManyWithoutSTATUSInput
+  repairs?: Prisma.RepairUncheckedCreateNestedManyWithoutStatusInput
 }
 
-export type STATUSUpdateInput = {
-  status_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type StatusUpdateInput = {
+  statusId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  REPAIR?: Prisma.REPAIRUpdateManyWithoutSTATUSNestedInput
+  repairs?: Prisma.RepairUpdateManyWithoutStatusNestedInput
 }
 
-export type STATUSUncheckedUpdateInput = {
-  status_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type StatusUncheckedUpdateInput = {
+  statusId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  REPAIR?: Prisma.REPAIRUncheckedUpdateManyWithoutSTATUSNestedInput
+  repairs?: Prisma.RepairUncheckedUpdateManyWithoutStatusNestedInput
 }
 
-export type STATUSCreateManyInput = {
-  status_id: number
+export type StatusCreateManyInput = {
+  statusId: number
   name: string
 }
 
-export type STATUSUpdateManyMutationInput = {
-  status_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type StatusUpdateManyMutationInput = {
+  statusId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
-export type STATUSUncheckedUpdateManyInput = {
-  status_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type StatusUncheckedUpdateManyInput = {
+  statusId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
-export type STATUSScalarRelationFilter = {
-  is?: Prisma.STATUSWhereInput
-  isNot?: Prisma.STATUSWhereInput
+export type StatusScalarRelationFilter = {
+  is?: Prisma.StatusWhereInput
+  isNot?: Prisma.StatusWhereInput
 }
 
-export type STATUSOrderByRelevanceInput = {
-  fields: Prisma.STATUSOrderByRelevanceFieldEnum | Prisma.STATUSOrderByRelevanceFieldEnum[]
+export type StatusOrderByRelevanceInput = {
+  fields: Prisma.StatusOrderByRelevanceFieldEnum | Prisma.StatusOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type STATUSCountOrderByAggregateInput = {
-  status_id?: Prisma.SortOrder
+export type StatusCountOrderByAggregateInput = {
+  statusId?: Prisma.SortOrder
   name?: Prisma.SortOrder
 }
 
-export type STATUSAvgOrderByAggregateInput = {
-  status_id?: Prisma.SortOrder
+export type StatusAvgOrderByAggregateInput = {
+  statusId?: Prisma.SortOrder
 }
 
-export type STATUSMaxOrderByAggregateInput = {
-  status_id?: Prisma.SortOrder
+export type StatusMaxOrderByAggregateInput = {
+  statusId?: Prisma.SortOrder
   name?: Prisma.SortOrder
 }
 
-export type STATUSMinOrderByAggregateInput = {
-  status_id?: Prisma.SortOrder
+export type StatusMinOrderByAggregateInput = {
+  statusId?: Prisma.SortOrder
   name?: Prisma.SortOrder
 }
 
-export type STATUSSumOrderByAggregateInput = {
-  status_id?: Prisma.SortOrder
+export type StatusSumOrderByAggregateInput = {
+  statusId?: Prisma.SortOrder
 }
 
-export type STATUSCreateNestedOneWithoutREPAIRInput = {
-  create?: Prisma.XOR<Prisma.STATUSCreateWithoutREPAIRInput, Prisma.STATUSUncheckedCreateWithoutREPAIRInput>
-  connectOrCreate?: Prisma.STATUSCreateOrConnectWithoutREPAIRInput
-  connect?: Prisma.STATUSWhereUniqueInput
+export type StatusCreateNestedOneWithoutRepairsInput = {
+  create?: Prisma.XOR<Prisma.StatusCreateWithoutRepairsInput, Prisma.StatusUncheckedCreateWithoutRepairsInput>
+  connectOrCreate?: Prisma.StatusCreateOrConnectWithoutRepairsInput
+  connect?: Prisma.StatusWhereUniqueInput
 }
 
-export type STATUSUpdateOneRequiredWithoutREPAIRNestedInput = {
-  create?: Prisma.XOR<Prisma.STATUSCreateWithoutREPAIRInput, Prisma.STATUSUncheckedCreateWithoutREPAIRInput>
-  connectOrCreate?: Prisma.STATUSCreateOrConnectWithoutREPAIRInput
-  upsert?: Prisma.STATUSUpsertWithoutREPAIRInput
-  connect?: Prisma.STATUSWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.STATUSUpdateToOneWithWhereWithoutREPAIRInput, Prisma.STATUSUpdateWithoutREPAIRInput>, Prisma.STATUSUncheckedUpdateWithoutREPAIRInput>
+export type StatusUpdateOneRequiredWithoutRepairsNestedInput = {
+  create?: Prisma.XOR<Prisma.StatusCreateWithoutRepairsInput, Prisma.StatusUncheckedCreateWithoutRepairsInput>
+  connectOrCreate?: Prisma.StatusCreateOrConnectWithoutRepairsInput
+  upsert?: Prisma.StatusUpsertWithoutRepairsInput
+  connect?: Prisma.StatusWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.StatusUpdateToOneWithWhereWithoutRepairsInput, Prisma.StatusUpdateWithoutRepairsInput>, Prisma.StatusUncheckedUpdateWithoutRepairsInput>
 }
 
-export type STATUSCreateWithoutREPAIRInput = {
-  status_id: number
+export type StatusCreateWithoutRepairsInput = {
+  statusId: number
   name: string
 }
 
-export type STATUSUncheckedCreateWithoutREPAIRInput = {
-  status_id: number
+export type StatusUncheckedCreateWithoutRepairsInput = {
+  statusId: number
   name: string
 }
 
-export type STATUSCreateOrConnectWithoutREPAIRInput = {
-  where: Prisma.STATUSWhereUniqueInput
-  create: Prisma.XOR<Prisma.STATUSCreateWithoutREPAIRInput, Prisma.STATUSUncheckedCreateWithoutREPAIRInput>
+export type StatusCreateOrConnectWithoutRepairsInput = {
+  where: Prisma.StatusWhereUniqueInput
+  create: Prisma.XOR<Prisma.StatusCreateWithoutRepairsInput, Prisma.StatusUncheckedCreateWithoutRepairsInput>
 }
 
-export type STATUSUpsertWithoutREPAIRInput = {
-  update: Prisma.XOR<Prisma.STATUSUpdateWithoutREPAIRInput, Prisma.STATUSUncheckedUpdateWithoutREPAIRInput>
-  create: Prisma.XOR<Prisma.STATUSCreateWithoutREPAIRInput, Prisma.STATUSUncheckedCreateWithoutREPAIRInput>
-  where?: Prisma.STATUSWhereInput
+export type StatusUpsertWithoutRepairsInput = {
+  update: Prisma.XOR<Prisma.StatusUpdateWithoutRepairsInput, Prisma.StatusUncheckedUpdateWithoutRepairsInput>
+  create: Prisma.XOR<Prisma.StatusCreateWithoutRepairsInput, Prisma.StatusUncheckedCreateWithoutRepairsInput>
+  where?: Prisma.StatusWhereInput
 }
 
-export type STATUSUpdateToOneWithWhereWithoutREPAIRInput = {
-  where?: Prisma.STATUSWhereInput
-  data: Prisma.XOR<Prisma.STATUSUpdateWithoutREPAIRInput, Prisma.STATUSUncheckedUpdateWithoutREPAIRInput>
+export type StatusUpdateToOneWithWhereWithoutRepairsInput = {
+  where?: Prisma.StatusWhereInput
+  data: Prisma.XOR<Prisma.StatusUpdateWithoutRepairsInput, Prisma.StatusUncheckedUpdateWithoutRepairsInput>
 }
 
-export type STATUSUpdateWithoutREPAIRInput = {
-  status_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type StatusUpdateWithoutRepairsInput = {
+  statusId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
-export type STATUSUncheckedUpdateWithoutREPAIRInput = {
-  status_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type StatusUncheckedUpdateWithoutRepairsInput = {
+  statusId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 
 /**
- * Count Type STATUSCountOutputType
+ * Count Type StatusCountOutputType
  */
 
-export type STATUSCountOutputType = {
-  REPAIR: number
+export type StatusCountOutputType = {
+  repairs: number
 }
 
-export type STATUSCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  REPAIR?: boolean | STATUSCountOutputTypeCountREPAIRArgs
+export type StatusCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  repairs?: boolean | StatusCountOutputTypeCountRepairsArgs
 }
 
 /**
- * STATUSCountOutputType without action
+ * StatusCountOutputType without action
  */
-export type STATUSCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type StatusCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the STATUSCountOutputType
+   * Select specific fields to fetch from the StatusCountOutputType
    */
-  select?: Prisma.STATUSCountOutputTypeSelect<ExtArgs> | null
+  select?: Prisma.StatusCountOutputTypeSelect<ExtArgs> | null
 }
 
 /**
- * STATUSCountOutputType without action
+ * StatusCountOutputType without action
  */
-export type STATUSCountOutputTypeCountREPAIRArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.REPAIRWhereInput
+export type StatusCountOutputTypeCountRepairsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.RepairWhereInput
 }
 
 
-export type STATUSSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-  status_id?: boolean
+export type StatusSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  statusId?: boolean
   name?: boolean
-  REPAIR?: boolean | Prisma.STATUS$REPAIRArgs<ExtArgs>
-  _count?: boolean | Prisma.STATUSCountOutputTypeDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["sTATUS"]>
+  repairs?: boolean | Prisma.Status$repairsArgs<ExtArgs>
+  _count?: boolean | Prisma.StatusCountOutputTypeDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["status"]>
 
 
 
-export type STATUSSelectScalar = {
-  status_id?: boolean
+export type StatusSelectScalar = {
+  statusId?: boolean
   name?: boolean
 }
 
-export type STATUSOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"status_id" | "name", ExtArgs["result"]["sTATUS"]>
-export type STATUSInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  REPAIR?: boolean | Prisma.STATUS$REPAIRArgs<ExtArgs>
-  _count?: boolean | Prisma.STATUSCountOutputTypeDefaultArgs<ExtArgs>
+export type StatusOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"statusId" | "name", ExtArgs["result"]["status"]>
+export type StatusInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  repairs?: boolean | Prisma.Status$repairsArgs<ExtArgs>
+  _count?: boolean | Prisma.StatusCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $STATUSPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "STATUS"
+export type $StatusPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "Status"
   objects: {
-    REPAIR: Prisma.$REPAIRPayload<ExtArgs>[]
+    repairs: Prisma.$RepairPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
-    status_id: number
+    statusId: number
     name: string
-  }, ExtArgs["result"]["sTATUS"]>
+  }, ExtArgs["result"]["status"]>
   composites: {}
 }
 
-export type STATUSGetPayload<S extends boolean | null | undefined | STATUSDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$STATUSPayload, S>
+export type StatusGetPayload<S extends boolean | null | undefined | StatusDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$StatusPayload, S>
 
-export type STATUSCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<STATUSFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: STATUSCountAggregateInputType | true
+export type StatusCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<StatusFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: StatusCountAggregateInputType | true
   }
 
-export interface STATUSDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['STATUS'], meta: { name: 'STATUS' } }
+export interface StatusDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Status'], meta: { name: 'Status' } }
   /**
-   * Find zero or one STATUS that matches the filter.
-   * @param {STATUSFindUniqueArgs} args - Arguments to find a STATUS
+   * Find zero or one Status that matches the filter.
+   * @param {StatusFindUniqueArgs} args - Arguments to find a Status
    * @example
-   * // Get one STATUS
-   * const sTATUS = await prisma.sTATUS.findUnique({
+   * // Get one Status
+   * const status = await prisma.status.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends STATUSFindUniqueArgs>(args: Prisma.SelectSubset<T, STATUSFindUniqueArgs<ExtArgs>>): Prisma.Prisma__STATUSClient<runtime.Types.Result.GetResult<Prisma.$STATUSPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends StatusFindUniqueArgs>(args: Prisma.SelectSubset<T, StatusFindUniqueArgs<ExtArgs>>): Prisma.Prisma__StatusClient<runtime.Types.Result.GetResult<Prisma.$StatusPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one STATUS that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Status that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {STATUSFindUniqueOrThrowArgs} args - Arguments to find a STATUS
+   * @param {StatusFindUniqueOrThrowArgs} args - Arguments to find a Status
    * @example
-   * // Get one STATUS
-   * const sTATUS = await prisma.sTATUS.findUniqueOrThrow({
+   * // Get one Status
+   * const status = await prisma.status.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends STATUSFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, STATUSFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__STATUSClient<runtime.Types.Result.GetResult<Prisma.$STATUSPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends StatusFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, StatusFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__StatusClient<runtime.Types.Result.GetResult<Prisma.$StatusPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first STATUS that matches the filter.
+   * Find the first Status that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {STATUSFindFirstArgs} args - Arguments to find a STATUS
+   * @param {StatusFindFirstArgs} args - Arguments to find a Status
    * @example
-   * // Get one STATUS
-   * const sTATUS = await prisma.sTATUS.findFirst({
+   * // Get one Status
+   * const status = await prisma.status.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends STATUSFindFirstArgs>(args?: Prisma.SelectSubset<T, STATUSFindFirstArgs<ExtArgs>>): Prisma.Prisma__STATUSClient<runtime.Types.Result.GetResult<Prisma.$STATUSPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends StatusFindFirstArgs>(args?: Prisma.SelectSubset<T, StatusFindFirstArgs<ExtArgs>>): Prisma.Prisma__StatusClient<runtime.Types.Result.GetResult<Prisma.$StatusPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first STATUS that matches the filter or
+   * Find the first Status that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {STATUSFindFirstOrThrowArgs} args - Arguments to find a STATUS
+   * @param {StatusFindFirstOrThrowArgs} args - Arguments to find a Status
    * @example
-   * // Get one STATUS
-   * const sTATUS = await prisma.sTATUS.findFirstOrThrow({
+   * // Get one Status
+   * const status = await prisma.status.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends STATUSFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, STATUSFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__STATUSClient<runtime.Types.Result.GetResult<Prisma.$STATUSPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends StatusFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, StatusFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__StatusClient<runtime.Types.Result.GetResult<Prisma.$StatusPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more STATUSES that matches the filter.
+   * Find zero or more Statuses that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {STATUSFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {StatusFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all STATUSES
-   * const sTATUSES = await prisma.sTATUS.findMany()
+   * // Get all Statuses
+   * const statuses = await prisma.status.findMany()
    * 
-   * // Get first 10 STATUSES
-   * const sTATUSES = await prisma.sTATUS.findMany({ take: 10 })
+   * // Get first 10 Statuses
+   * const statuses = await prisma.status.findMany({ take: 10 })
    * 
-   * // Only select the `status_id`
-   * const sTATUSWithStatus_idOnly = await prisma.sTATUS.findMany({ select: { status_id: true } })
+   * // Only select the `statusId`
+   * const statusWithStatusIdOnly = await prisma.status.findMany({ select: { statusId: true } })
    * 
    */
-  findMany<T extends STATUSFindManyArgs>(args?: Prisma.SelectSubset<T, STATUSFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$STATUSPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends StatusFindManyArgs>(args?: Prisma.SelectSubset<T, StatusFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StatusPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a STATUS.
-   * @param {STATUSCreateArgs} args - Arguments to create a STATUS.
+   * Create a Status.
+   * @param {StatusCreateArgs} args - Arguments to create a Status.
    * @example
-   * // Create one STATUS
-   * const STATUS = await prisma.sTATUS.create({
+   * // Create one Status
+   * const Status = await prisma.status.create({
    *   data: {
-   *     // ... data to create a STATUS
+   *     // ... data to create a Status
    *   }
    * })
    * 
    */
-  create<T extends STATUSCreateArgs>(args: Prisma.SelectSubset<T, STATUSCreateArgs<ExtArgs>>): Prisma.Prisma__STATUSClient<runtime.Types.Result.GetResult<Prisma.$STATUSPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends StatusCreateArgs>(args: Prisma.SelectSubset<T, StatusCreateArgs<ExtArgs>>): Prisma.Prisma__StatusClient<runtime.Types.Result.GetResult<Prisma.$StatusPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many STATUSES.
-   * @param {STATUSCreateManyArgs} args - Arguments to create many STATUSES.
+   * Create many Statuses.
+   * @param {StatusCreateManyArgs} args - Arguments to create many Statuses.
    * @example
-   * // Create many STATUSES
-   * const sTATUS = await prisma.sTATUS.createMany({
+   * // Create many Statuses
+   * const status = await prisma.status.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends STATUSCreateManyArgs>(args?: Prisma.SelectSubset<T, STATUSCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends StatusCreateManyArgs>(args?: Prisma.SelectSubset<T, StatusCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a STATUS.
-   * @param {STATUSDeleteArgs} args - Arguments to delete one STATUS.
+   * Delete a Status.
+   * @param {StatusDeleteArgs} args - Arguments to delete one Status.
    * @example
-   * // Delete one STATUS
-   * const STATUS = await prisma.sTATUS.delete({
+   * // Delete one Status
+   * const Status = await prisma.status.delete({
    *   where: {
-   *     // ... filter to delete one STATUS
+   *     // ... filter to delete one Status
    *   }
    * })
    * 
    */
-  delete<T extends STATUSDeleteArgs>(args: Prisma.SelectSubset<T, STATUSDeleteArgs<ExtArgs>>): Prisma.Prisma__STATUSClient<runtime.Types.Result.GetResult<Prisma.$STATUSPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends StatusDeleteArgs>(args: Prisma.SelectSubset<T, StatusDeleteArgs<ExtArgs>>): Prisma.Prisma__StatusClient<runtime.Types.Result.GetResult<Prisma.$StatusPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one STATUS.
-   * @param {STATUSUpdateArgs} args - Arguments to update one STATUS.
+   * Update one Status.
+   * @param {StatusUpdateArgs} args - Arguments to update one Status.
    * @example
-   * // Update one STATUS
-   * const sTATUS = await prisma.sTATUS.update({
+   * // Update one Status
+   * const status = await prisma.status.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -557,30 +557,30 @@ export interface STATUSDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    * 
    */
-  update<T extends STATUSUpdateArgs>(args: Prisma.SelectSubset<T, STATUSUpdateArgs<ExtArgs>>): Prisma.Prisma__STATUSClient<runtime.Types.Result.GetResult<Prisma.$STATUSPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends StatusUpdateArgs>(args: Prisma.SelectSubset<T, StatusUpdateArgs<ExtArgs>>): Prisma.Prisma__StatusClient<runtime.Types.Result.GetResult<Prisma.$StatusPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more STATUSES.
-   * @param {STATUSDeleteManyArgs} args - Arguments to filter STATUSES to delete.
+   * Delete zero or more Statuses.
+   * @param {StatusDeleteManyArgs} args - Arguments to filter Statuses to delete.
    * @example
-   * // Delete a few STATUSES
-   * const { count } = await prisma.sTATUS.deleteMany({
+   * // Delete a few Statuses
+   * const { count } = await prisma.status.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends STATUSDeleteManyArgs>(args?: Prisma.SelectSubset<T, STATUSDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends StatusDeleteManyArgs>(args?: Prisma.SelectSubset<T, StatusDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more STATUSES.
+   * Update zero or more Statuses.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {STATUSUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {StatusUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many STATUSES
-   * const sTATUS = await prisma.sTATUS.updateMany({
+   * // Update many Statuses
+   * const status = await prisma.status.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -590,56 +590,56 @@ export interface STATUSDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    * 
    */
-  updateMany<T extends STATUSUpdateManyArgs>(args: Prisma.SelectSubset<T, STATUSUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends StatusUpdateManyArgs>(args: Prisma.SelectSubset<T, StatusUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one STATUS.
-   * @param {STATUSUpsertArgs} args - Arguments to update or create a STATUS.
+   * Create or update one Status.
+   * @param {StatusUpsertArgs} args - Arguments to update or create a Status.
    * @example
-   * // Update or create a STATUS
-   * const sTATUS = await prisma.sTATUS.upsert({
+   * // Update or create a Status
+   * const status = await prisma.status.upsert({
    *   create: {
-   *     // ... data to create a STATUS
+   *     // ... data to create a Status
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the STATUS we want to update
+   *     // ... the filter for the Status we want to update
    *   }
    * })
    */
-  upsert<T extends STATUSUpsertArgs>(args: Prisma.SelectSubset<T, STATUSUpsertArgs<ExtArgs>>): Prisma.Prisma__STATUSClient<runtime.Types.Result.GetResult<Prisma.$STATUSPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends StatusUpsertArgs>(args: Prisma.SelectSubset<T, StatusUpsertArgs<ExtArgs>>): Prisma.Prisma__StatusClient<runtime.Types.Result.GetResult<Prisma.$StatusPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of STATUSES.
+   * Count the number of Statuses.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {STATUSCountArgs} args - Arguments to filter STATUSES to count.
+   * @param {StatusCountArgs} args - Arguments to filter Statuses to count.
    * @example
-   * // Count the number of STATUSES
-   * const count = await prisma.sTATUS.count({
+   * // Count the number of Statuses
+   * const count = await prisma.status.count({
    *   where: {
-   *     // ... the filter for the STATUSES we want to count
+   *     // ... the filter for the Statuses we want to count
    *   }
    * })
   **/
-  count<T extends STATUSCountArgs>(
-    args?: Prisma.Subset<T, STATUSCountArgs>,
+  count<T extends StatusCountArgs>(
+    args?: Prisma.Subset<T, StatusCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], STATUSCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], StatusCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a STATUS.
+   * Allows you to perform aggregations operations on a Status.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {STATUSAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {StatusAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -659,13 +659,13 @@ export interface STATUSDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   take: 10,
    * })
   **/
-  aggregate<T extends STATUSAggregateArgs>(args: Prisma.Subset<T, STATUSAggregateArgs>): Prisma.PrismaPromise<GetSTATUSAggregateType<T>>
+  aggregate<T extends StatusAggregateArgs>(args: Prisma.Subset<T, StatusAggregateArgs>): Prisma.PrismaPromise<GetStatusAggregateType<T>>
 
   /**
-   * Group by STATUS.
+   * Group by Status.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {STATUSGroupByArgs} args - Group by arguments.
+   * @param {StatusGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -680,14 +680,14 @@ export interface STATUSDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * 
   **/
   groupBy<
-    T extends STATUSGroupByArgs,
+    T extends StatusGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: STATUSGroupByArgs['orderBy'] }
-      : { orderBy?: STATUSGroupByArgs['orderBy'] },
+      ? { orderBy: StatusGroupByArgs['orderBy'] }
+      : { orderBy?: StatusGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -736,22 +736,22 @@ export interface STATUSDelegate<ExtArgs extends runtime.Types.Extensions.Interna
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, STATUSGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSTATUSGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, StatusGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetStatusGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the STATUS model
+ * Fields of the Status model
  */
-readonly fields: STATUSFieldRefs;
+readonly fields: StatusFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for STATUS.
+ * The delegate class that acts as a "Promise-like" for Status.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__STATUSClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__StatusClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  REPAIR<T extends Prisma.STATUS$REPAIRArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.STATUS$REPAIRArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$REPAIRPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  repairs<T extends Prisma.Status$repairsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Status$repairsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RepairPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -778,396 +778,396 @@ export interface Prisma__STATUSClient<T, Null = never, ExtArgs extends runtime.T
 
 
 /**
- * Fields of the STATUS model
+ * Fields of the Status model
  */
-export interface STATUSFieldRefs {
-  readonly status_id: Prisma.FieldRef<"STATUS", 'Int'>
-  readonly name: Prisma.FieldRef<"STATUS", 'String'>
+export interface StatusFieldRefs {
+  readonly statusId: Prisma.FieldRef<"Status", 'Int'>
+  readonly name: Prisma.FieldRef<"Status", 'String'>
 }
     
 
 // Custom InputTypes
 /**
- * STATUS findUnique
+ * Status findUnique
  */
-export type STATUSFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type StatusFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the STATUS
+   * Select specific fields to fetch from the Status
    */
-  select?: Prisma.STATUSSelect<ExtArgs> | null
+  select?: Prisma.StatusSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the STATUS
+   * Omit specific fields from the Status
    */
-  omit?: Prisma.STATUSOmit<ExtArgs> | null
+  omit?: Prisma.StatusOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.STATUSInclude<ExtArgs> | null
+  include?: Prisma.StatusInclude<ExtArgs> | null
   /**
-   * Filter, which STATUS to fetch.
+   * Filter, which Status to fetch.
    */
-  where: Prisma.STATUSWhereUniqueInput
+  where: Prisma.StatusWhereUniqueInput
 }
 
 /**
- * STATUS findUniqueOrThrow
+ * Status findUniqueOrThrow
  */
-export type STATUSFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type StatusFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the STATUS
+   * Select specific fields to fetch from the Status
    */
-  select?: Prisma.STATUSSelect<ExtArgs> | null
+  select?: Prisma.StatusSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the STATUS
+   * Omit specific fields from the Status
    */
-  omit?: Prisma.STATUSOmit<ExtArgs> | null
+  omit?: Prisma.StatusOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.STATUSInclude<ExtArgs> | null
+  include?: Prisma.StatusInclude<ExtArgs> | null
   /**
-   * Filter, which STATUS to fetch.
+   * Filter, which Status to fetch.
    */
-  where: Prisma.STATUSWhereUniqueInput
+  where: Prisma.StatusWhereUniqueInput
 }
 
 /**
- * STATUS findFirst
+ * Status findFirst
  */
-export type STATUSFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type StatusFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the STATUS
+   * Select specific fields to fetch from the Status
    */
-  select?: Prisma.STATUSSelect<ExtArgs> | null
+  select?: Prisma.StatusSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the STATUS
+   * Omit specific fields from the Status
    */
-  omit?: Prisma.STATUSOmit<ExtArgs> | null
+  omit?: Prisma.StatusOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.STATUSInclude<ExtArgs> | null
+  include?: Prisma.StatusInclude<ExtArgs> | null
   /**
-   * Filter, which STATUS to fetch.
+   * Filter, which Status to fetch.
    */
-  where?: Prisma.STATUSWhereInput
+  where?: Prisma.StatusWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of STATUSES to fetch.
+   * Determine the order of Statuses to fetch.
    */
-  orderBy?: Prisma.STATUSOrderByWithRelationInput | Prisma.STATUSOrderByWithRelationInput[]
+  orderBy?: Prisma.StatusOrderByWithRelationInput | Prisma.StatusOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for STATUSES.
+   * Sets the position for searching for Statuses.
    */
-  cursor?: Prisma.STATUSWhereUniqueInput
+  cursor?: Prisma.StatusWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` STATUSES from the position of the cursor.
+   * Take `±n` Statuses from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` STATUSES.
+   * Skip the first `n` Statuses.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of STATUSES.
+   * Filter by unique combinations of Statuses.
    */
-  distinct?: Prisma.STATUSScalarFieldEnum | Prisma.STATUSScalarFieldEnum[]
+  distinct?: Prisma.StatusScalarFieldEnum | Prisma.StatusScalarFieldEnum[]
 }
 
 /**
- * STATUS findFirstOrThrow
+ * Status findFirstOrThrow
  */
-export type STATUSFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type StatusFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the STATUS
+   * Select specific fields to fetch from the Status
    */
-  select?: Prisma.STATUSSelect<ExtArgs> | null
+  select?: Prisma.StatusSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the STATUS
+   * Omit specific fields from the Status
    */
-  omit?: Prisma.STATUSOmit<ExtArgs> | null
+  omit?: Prisma.StatusOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.STATUSInclude<ExtArgs> | null
+  include?: Prisma.StatusInclude<ExtArgs> | null
   /**
-   * Filter, which STATUS to fetch.
+   * Filter, which Status to fetch.
    */
-  where?: Prisma.STATUSWhereInput
+  where?: Prisma.StatusWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of STATUSES to fetch.
+   * Determine the order of Statuses to fetch.
    */
-  orderBy?: Prisma.STATUSOrderByWithRelationInput | Prisma.STATUSOrderByWithRelationInput[]
+  orderBy?: Prisma.StatusOrderByWithRelationInput | Prisma.StatusOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for STATUSES.
+   * Sets the position for searching for Statuses.
    */
-  cursor?: Prisma.STATUSWhereUniqueInput
+  cursor?: Prisma.StatusWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` STATUSES from the position of the cursor.
+   * Take `±n` Statuses from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` STATUSES.
+   * Skip the first `n` Statuses.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of STATUSES.
+   * Filter by unique combinations of Statuses.
    */
-  distinct?: Prisma.STATUSScalarFieldEnum | Prisma.STATUSScalarFieldEnum[]
+  distinct?: Prisma.StatusScalarFieldEnum | Prisma.StatusScalarFieldEnum[]
 }
 
 /**
- * STATUS findMany
+ * Status findMany
  */
-export type STATUSFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type StatusFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the STATUS
+   * Select specific fields to fetch from the Status
    */
-  select?: Prisma.STATUSSelect<ExtArgs> | null
+  select?: Prisma.StatusSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the STATUS
+   * Omit specific fields from the Status
    */
-  omit?: Prisma.STATUSOmit<ExtArgs> | null
+  omit?: Prisma.StatusOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.STATUSInclude<ExtArgs> | null
+  include?: Prisma.StatusInclude<ExtArgs> | null
   /**
-   * Filter, which STATUSES to fetch.
+   * Filter, which Statuses to fetch.
    */
-  where?: Prisma.STATUSWhereInput
+  where?: Prisma.StatusWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of STATUSES to fetch.
+   * Determine the order of Statuses to fetch.
    */
-  orderBy?: Prisma.STATUSOrderByWithRelationInput | Prisma.STATUSOrderByWithRelationInput[]
+  orderBy?: Prisma.StatusOrderByWithRelationInput | Prisma.StatusOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing STATUSES.
+   * Sets the position for listing Statuses.
    */
-  cursor?: Prisma.STATUSWhereUniqueInput
+  cursor?: Prisma.StatusWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` STATUSES from the position of the cursor.
+   * Take `±n` Statuses from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` STATUSES.
+   * Skip the first `n` Statuses.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of STATUSES.
+   * Filter by unique combinations of Statuses.
    */
-  distinct?: Prisma.STATUSScalarFieldEnum | Prisma.STATUSScalarFieldEnum[]
+  distinct?: Prisma.StatusScalarFieldEnum | Prisma.StatusScalarFieldEnum[]
 }
 
 /**
- * STATUS create
+ * Status create
  */
-export type STATUSCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type StatusCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the STATUS
+   * Select specific fields to fetch from the Status
    */
-  select?: Prisma.STATUSSelect<ExtArgs> | null
+  select?: Prisma.StatusSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the STATUS
+   * Omit specific fields from the Status
    */
-  omit?: Prisma.STATUSOmit<ExtArgs> | null
+  omit?: Prisma.StatusOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.STATUSInclude<ExtArgs> | null
+  include?: Prisma.StatusInclude<ExtArgs> | null
   /**
-   * The data needed to create a STATUS.
+   * The data needed to create a Status.
    */
-  data: Prisma.XOR<Prisma.STATUSCreateInput, Prisma.STATUSUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.StatusCreateInput, Prisma.StatusUncheckedCreateInput>
 }
 
 /**
- * STATUS createMany
+ * Status createMany
  */
-export type STATUSCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type StatusCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many STATUSES.
+   * The data used to create many Statuses.
    */
-  data: Prisma.STATUSCreateManyInput | Prisma.STATUSCreateManyInput[]
+  data: Prisma.StatusCreateManyInput | Prisma.StatusCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * STATUS update
+ * Status update
  */
-export type STATUSUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type StatusUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the STATUS
+   * Select specific fields to fetch from the Status
    */
-  select?: Prisma.STATUSSelect<ExtArgs> | null
+  select?: Prisma.StatusSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the STATUS
+   * Omit specific fields from the Status
    */
-  omit?: Prisma.STATUSOmit<ExtArgs> | null
+  omit?: Prisma.StatusOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.STATUSInclude<ExtArgs> | null
+  include?: Prisma.StatusInclude<ExtArgs> | null
   /**
-   * The data needed to update a STATUS.
+   * The data needed to update a Status.
    */
-  data: Prisma.XOR<Prisma.STATUSUpdateInput, Prisma.STATUSUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.StatusUpdateInput, Prisma.StatusUncheckedUpdateInput>
   /**
-   * Choose, which STATUS to update.
+   * Choose, which Status to update.
    */
-  where: Prisma.STATUSWhereUniqueInput
+  where: Prisma.StatusWhereUniqueInput
 }
 
 /**
- * STATUS updateMany
+ * Status updateMany
  */
-export type STATUSUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type StatusUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update STATUSES.
+   * The data used to update Statuses.
    */
-  data: Prisma.XOR<Prisma.STATUSUpdateManyMutationInput, Prisma.STATUSUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.StatusUpdateManyMutationInput, Prisma.StatusUncheckedUpdateManyInput>
   /**
-   * Filter which STATUSES to update
+   * Filter which Statuses to update
    */
-  where?: Prisma.STATUSWhereInput
+  where?: Prisma.StatusWhereInput
   /**
-   * Limit how many STATUSES to update.
+   * Limit how many Statuses to update.
    */
   limit?: number
 }
 
 /**
- * STATUS upsert
+ * Status upsert
  */
-export type STATUSUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type StatusUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the STATUS
+   * Select specific fields to fetch from the Status
    */
-  select?: Prisma.STATUSSelect<ExtArgs> | null
+  select?: Prisma.StatusSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the STATUS
+   * Omit specific fields from the Status
    */
-  omit?: Prisma.STATUSOmit<ExtArgs> | null
+  omit?: Prisma.StatusOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.STATUSInclude<ExtArgs> | null
+  include?: Prisma.StatusInclude<ExtArgs> | null
   /**
-   * The filter to search for the STATUS to update in case it exists.
+   * The filter to search for the Status to update in case it exists.
    */
-  where: Prisma.STATUSWhereUniqueInput
+  where: Prisma.StatusWhereUniqueInput
   /**
-   * In case the STATUS found by the `where` argument doesn't exist, create a new STATUS with this data.
+   * In case the Status found by the `where` argument doesn't exist, create a new Status with this data.
    */
-  create: Prisma.XOR<Prisma.STATUSCreateInput, Prisma.STATUSUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.StatusCreateInput, Prisma.StatusUncheckedCreateInput>
   /**
-   * In case the STATUS was found with the provided `where` argument, update it with this data.
+   * In case the Status was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.STATUSUpdateInput, Prisma.STATUSUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.StatusUpdateInput, Prisma.StatusUncheckedUpdateInput>
 }
 
 /**
- * STATUS delete
+ * Status delete
  */
-export type STATUSDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type StatusDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the STATUS
+   * Select specific fields to fetch from the Status
    */
-  select?: Prisma.STATUSSelect<ExtArgs> | null
+  select?: Prisma.StatusSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the STATUS
+   * Omit specific fields from the Status
    */
-  omit?: Prisma.STATUSOmit<ExtArgs> | null
+  omit?: Prisma.StatusOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.STATUSInclude<ExtArgs> | null
+  include?: Prisma.StatusInclude<ExtArgs> | null
   /**
-   * Filter which STATUS to delete.
+   * Filter which Status to delete.
    */
-  where: Prisma.STATUSWhereUniqueInput
+  where: Prisma.StatusWhereUniqueInput
 }
 
 /**
- * STATUS deleteMany
+ * Status deleteMany
  */
-export type STATUSDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type StatusDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which STATUSES to delete
+   * Filter which Statuses to delete
    */
-  where?: Prisma.STATUSWhereInput
+  where?: Prisma.StatusWhereInput
   /**
-   * Limit how many STATUSES to delete.
+   * Limit how many Statuses to delete.
    */
   limit?: number
 }
 
 /**
- * STATUS.REPAIR
+ * Status.repairs
  */
-export type STATUS$REPAIRArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Status$repairsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the REPAIR
+   * Select specific fields to fetch from the Repair
    */
-  select?: Prisma.REPAIRSelect<ExtArgs> | null
+  select?: Prisma.RepairSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the REPAIR
+   * Omit specific fields from the Repair
    */
-  omit?: Prisma.REPAIROmit<ExtArgs> | null
+  omit?: Prisma.RepairOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.REPAIRInclude<ExtArgs> | null
-  where?: Prisma.REPAIRWhereInput
-  orderBy?: Prisma.REPAIROrderByWithRelationInput | Prisma.REPAIROrderByWithRelationInput[]
-  cursor?: Prisma.REPAIRWhereUniqueInput
+  include?: Prisma.RepairInclude<ExtArgs> | null
+  where?: Prisma.RepairWhereInput
+  orderBy?: Prisma.RepairOrderByWithRelationInput | Prisma.RepairOrderByWithRelationInput[]
+  cursor?: Prisma.RepairWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.REPAIRScalarFieldEnum | Prisma.REPAIRScalarFieldEnum[]
+  distinct?: Prisma.RepairScalarFieldEnum | Prisma.RepairScalarFieldEnum[]
 }
 
 /**
- * STATUS without action
+ * Status without action
  */
-export type STATUSDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type StatusDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the STATUS
+   * Select specific fields to fetch from the Status
    */
-  select?: Prisma.STATUSSelect<ExtArgs> | null
+  select?: Prisma.StatusSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the STATUS
+   * Omit specific fields from the Status
    */
-  omit?: Prisma.STATUSOmit<ExtArgs> | null
+  omit?: Prisma.StatusOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.STATUSInclude<ExtArgs> | null
+  include?: Prisma.StatusInclude<ExtArgs> | null
 }

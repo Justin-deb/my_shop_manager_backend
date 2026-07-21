@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `PIECE` model and its related types.
+ * This file exports the `Piece` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,655 +13,655 @@ import type * as $Enums from "../enums"
 import type * as Prisma from "../internal/prismaNamespace"
 
 /**
- * Model PIECE
+ * Model Piece
  * 
  */
-export type PIECEModel = runtime.Types.Result.DefaultSelection<Prisma.$PIECEPayload>
+export type PieceModel = runtime.Types.Result.DefaultSelection<Prisma.$PiecePayload>
 
-export type AggregatePIECE = {
-  _count: PIECECountAggregateOutputType | null
-  _avg: PIECEAvgAggregateOutputType | null
-  _sum: PIECESumAggregateOutputType | null
-  _min: PIECEMinAggregateOutputType | null
-  _max: PIECEMaxAggregateOutputType | null
+export type AggregatePiece = {
+  _count: PieceCountAggregateOutputType | null
+  _avg: PieceAvgAggregateOutputType | null
+  _sum: PieceSumAggregateOutputType | null
+  _min: PieceMinAggregateOutputType | null
+  _max: PieceMaxAggregateOutputType | null
 }
 
-export type PIECEAvgAggregateOutputType = {
-  piece_id: number | null
+export type PieceAvgAggregateOutputType = {
+  pieceId: number | null
 }
 
-export type PIECESumAggregateOutputType = {
-  piece_id: number | null
+export type PieceSumAggregateOutputType = {
+  pieceId: number | null
 }
 
-export type PIECEMinAggregateOutputType = {
-  piece_id: number | null
+export type PieceMinAggregateOutputType = {
+  pieceId: number | null
   name: string | null
   details: string | null
 }
 
-export type PIECEMaxAggregateOutputType = {
-  piece_id: number | null
+export type PieceMaxAggregateOutputType = {
+  pieceId: number | null
   name: string | null
   details: string | null
 }
 
-export type PIECECountAggregateOutputType = {
-  piece_id: number
+export type PieceCountAggregateOutputType = {
+  pieceId: number
   name: number
   details: number
   _all: number
 }
 
 
-export type PIECEAvgAggregateInputType = {
-  piece_id?: true
+export type PieceAvgAggregateInputType = {
+  pieceId?: true
 }
 
-export type PIECESumAggregateInputType = {
-  piece_id?: true
+export type PieceSumAggregateInputType = {
+  pieceId?: true
 }
 
-export type PIECEMinAggregateInputType = {
-  piece_id?: true
+export type PieceMinAggregateInputType = {
+  pieceId?: true
   name?: true
   details?: true
 }
 
-export type PIECEMaxAggregateInputType = {
-  piece_id?: true
+export type PieceMaxAggregateInputType = {
+  pieceId?: true
   name?: true
   details?: true
 }
 
-export type PIECECountAggregateInputType = {
-  piece_id?: true
+export type PieceCountAggregateInputType = {
+  pieceId?: true
   name?: true
   details?: true
   _all?: true
 }
 
-export type PIECEAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PieceAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which PIECE to aggregate.
+   * Filter which Piece to aggregate.
    */
-  where?: Prisma.PIECEWhereInput
+  where?: Prisma.PieceWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of PIECES to fetch.
+   * Determine the order of Pieces to fetch.
    */
-  orderBy?: Prisma.PIECEOrderByWithRelationInput | Prisma.PIECEOrderByWithRelationInput[]
+  orderBy?: Prisma.PieceOrderByWithRelationInput | Prisma.PieceOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.PIECEWhereUniqueInput
+  cursor?: Prisma.PieceWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` PIECES from the position of the cursor.
+   * Take `±n` Pieces from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` PIECES.
+   * Skip the first `n` Pieces.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned PIECES
+   * Count returned Pieces
   **/
-  _count?: true | PIECECountAggregateInputType
+  _count?: true | PieceCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to average
   **/
-  _avg?: PIECEAvgAggregateInputType
+  _avg?: PieceAvgAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to sum
   **/
-  _sum?: PIECESumAggregateInputType
+  _sum?: PieceSumAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: PIECEMinAggregateInputType
+  _min?: PieceMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: PIECEMaxAggregateInputType
+  _max?: PieceMaxAggregateInputType
 }
 
-export type GetPIECEAggregateType<T extends PIECEAggregateArgs> = {
-      [P in keyof T & keyof AggregatePIECE]: P extends '_count' | 'count'
+export type GetPieceAggregateType<T extends PieceAggregateArgs> = {
+      [P in keyof T & keyof AggregatePiece]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregatePIECE[P]>
-    : Prisma.GetScalarType<T[P], AggregatePIECE[P]>
+      : Prisma.GetScalarType<T[P], AggregatePiece[P]>
+    : Prisma.GetScalarType<T[P], AggregatePiece[P]>
 }
 
 
 
 
-export type PIECEGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.PIECEWhereInput
-  orderBy?: Prisma.PIECEOrderByWithAggregationInput | Prisma.PIECEOrderByWithAggregationInput[]
-  by: Prisma.PIECEScalarFieldEnum[] | Prisma.PIECEScalarFieldEnum
-  having?: Prisma.PIECEScalarWhereWithAggregatesInput
+export type PieceGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PieceWhereInput
+  orderBy?: Prisma.PieceOrderByWithAggregationInput | Prisma.PieceOrderByWithAggregationInput[]
+  by: Prisma.PieceScalarFieldEnum[] | Prisma.PieceScalarFieldEnum
+  having?: Prisma.PieceScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: PIECECountAggregateInputType | true
-  _avg?: PIECEAvgAggregateInputType
-  _sum?: PIECESumAggregateInputType
-  _min?: PIECEMinAggregateInputType
-  _max?: PIECEMaxAggregateInputType
+  _count?: PieceCountAggregateInputType | true
+  _avg?: PieceAvgAggregateInputType
+  _sum?: PieceSumAggregateInputType
+  _min?: PieceMinAggregateInputType
+  _max?: PieceMaxAggregateInputType
 }
 
-export type PIECEGroupByOutputType = {
-  piece_id: number
+export type PieceGroupByOutputType = {
+  pieceId: number
   name: string
   details: string | null
-  _count: PIECECountAggregateOutputType | null
-  _avg: PIECEAvgAggregateOutputType | null
-  _sum: PIECESumAggregateOutputType | null
-  _min: PIECEMinAggregateOutputType | null
-  _max: PIECEMaxAggregateOutputType | null
+  _count: PieceCountAggregateOutputType | null
+  _avg: PieceAvgAggregateOutputType | null
+  _sum: PieceSumAggregateOutputType | null
+  _min: PieceMinAggregateOutputType | null
+  _max: PieceMaxAggregateOutputType | null
 }
 
-export type GetPIECEGroupByPayload<T extends PIECEGroupByArgs> = Prisma.PrismaPromise<
+export type GetPieceGroupByPayload<T extends PieceGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<PIECEGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<PieceGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof PIECEGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof PieceGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], PIECEGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], PIECEGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], PieceGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], PieceGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type PIECEWhereInput = {
-  AND?: Prisma.PIECEWhereInput | Prisma.PIECEWhereInput[]
-  OR?: Prisma.PIECEWhereInput[]
-  NOT?: Prisma.PIECEWhereInput | Prisma.PIECEWhereInput[]
-  piece_id?: Prisma.IntFilter<"PIECE"> | number
-  name?: Prisma.StringFilter<"PIECE"> | string
-  details?: Prisma.StringNullableFilter<"PIECE"> | string | null
-  REPAIR_PART?: Prisma.REPAIR_PARTListRelationFilter
-  WAREHOUSE?: Prisma.WAREHOUSEListRelationFilter
+export type PieceWhereInput = {
+  AND?: Prisma.PieceWhereInput | Prisma.PieceWhereInput[]
+  OR?: Prisma.PieceWhereInput[]
+  NOT?: Prisma.PieceWhereInput | Prisma.PieceWhereInput[]
+  pieceId?: Prisma.IntFilter<"Piece"> | number
+  name?: Prisma.StringFilter<"Piece"> | string
+  details?: Prisma.StringNullableFilter<"Piece"> | string | null
+  repairPart?: Prisma.RepairPartListRelationFilter
+  warehouse?: Prisma.WarehouseListRelationFilter
 }
 
-export type PIECEOrderByWithRelationInput = {
-  piece_id?: Prisma.SortOrder
+export type PieceOrderByWithRelationInput = {
+  pieceId?: Prisma.SortOrder
   name?: Prisma.SortOrder
   details?: Prisma.SortOrderInput | Prisma.SortOrder
-  REPAIR_PART?: Prisma.REPAIR_PARTOrderByRelationAggregateInput
-  WAREHOUSE?: Prisma.WAREHOUSEOrderByRelationAggregateInput
-  _relevance?: Prisma.PIECEOrderByRelevanceInput
+  repairPart?: Prisma.RepairPartOrderByRelationAggregateInput
+  warehouse?: Prisma.WarehouseOrderByRelationAggregateInput
+  _relevance?: Prisma.PieceOrderByRelevanceInput
 }
 
-export type PIECEWhereUniqueInput = Prisma.AtLeast<{
-  piece_id?: number
-  AND?: Prisma.PIECEWhereInput | Prisma.PIECEWhereInput[]
-  OR?: Prisma.PIECEWhereInput[]
-  NOT?: Prisma.PIECEWhereInput | Prisma.PIECEWhereInput[]
-  name?: Prisma.StringFilter<"PIECE"> | string
-  details?: Prisma.StringNullableFilter<"PIECE"> | string | null
-  REPAIR_PART?: Prisma.REPAIR_PARTListRelationFilter
-  WAREHOUSE?: Prisma.WAREHOUSEListRelationFilter
-}, "piece_id">
+export type PieceWhereUniqueInput = Prisma.AtLeast<{
+  pieceId?: number
+  AND?: Prisma.PieceWhereInput | Prisma.PieceWhereInput[]
+  OR?: Prisma.PieceWhereInput[]
+  NOT?: Prisma.PieceWhereInput | Prisma.PieceWhereInput[]
+  name?: Prisma.StringFilter<"Piece"> | string
+  details?: Prisma.StringNullableFilter<"Piece"> | string | null
+  repairPart?: Prisma.RepairPartListRelationFilter
+  warehouse?: Prisma.WarehouseListRelationFilter
+}, "pieceId">
 
-export type PIECEOrderByWithAggregationInput = {
-  piece_id?: Prisma.SortOrder
+export type PieceOrderByWithAggregationInput = {
+  pieceId?: Prisma.SortOrder
   name?: Prisma.SortOrder
   details?: Prisma.SortOrderInput | Prisma.SortOrder
-  _count?: Prisma.PIECECountOrderByAggregateInput
-  _avg?: Prisma.PIECEAvgOrderByAggregateInput
-  _max?: Prisma.PIECEMaxOrderByAggregateInput
-  _min?: Prisma.PIECEMinOrderByAggregateInput
-  _sum?: Prisma.PIECESumOrderByAggregateInput
+  _count?: Prisma.PieceCountOrderByAggregateInput
+  _avg?: Prisma.PieceAvgOrderByAggregateInput
+  _max?: Prisma.PieceMaxOrderByAggregateInput
+  _min?: Prisma.PieceMinOrderByAggregateInput
+  _sum?: Prisma.PieceSumOrderByAggregateInput
 }
 
-export type PIECEScalarWhereWithAggregatesInput = {
-  AND?: Prisma.PIECEScalarWhereWithAggregatesInput | Prisma.PIECEScalarWhereWithAggregatesInput[]
-  OR?: Prisma.PIECEScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.PIECEScalarWhereWithAggregatesInput | Prisma.PIECEScalarWhereWithAggregatesInput[]
-  piece_id?: Prisma.IntWithAggregatesFilter<"PIECE"> | number
-  name?: Prisma.StringWithAggregatesFilter<"PIECE"> | string
-  details?: Prisma.StringNullableWithAggregatesFilter<"PIECE"> | string | null
+export type PieceScalarWhereWithAggregatesInput = {
+  AND?: Prisma.PieceScalarWhereWithAggregatesInput | Prisma.PieceScalarWhereWithAggregatesInput[]
+  OR?: Prisma.PieceScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.PieceScalarWhereWithAggregatesInput | Prisma.PieceScalarWhereWithAggregatesInput[]
+  pieceId?: Prisma.IntWithAggregatesFilter<"Piece"> | number
+  name?: Prisma.StringWithAggregatesFilter<"Piece"> | string
+  details?: Prisma.StringNullableWithAggregatesFilter<"Piece"> | string | null
 }
 
-export type PIECECreateInput = {
-  piece_id: number
+export type PieceCreateInput = {
+  pieceId: number
   name: string
   details?: string | null
-  REPAIR_PART?: Prisma.REPAIR_PARTCreateNestedManyWithoutPIECEInput
-  WAREHOUSE?: Prisma.WAREHOUSECreateNestedManyWithoutPIECEInput
+  repairPart?: Prisma.RepairPartCreateNestedManyWithoutPieceInput
+  warehouse?: Prisma.WarehouseCreateNestedManyWithoutPieceInput
 }
 
-export type PIECEUncheckedCreateInput = {
-  piece_id: number
+export type PieceUncheckedCreateInput = {
+  pieceId: number
   name: string
   details?: string | null
-  REPAIR_PART?: Prisma.REPAIR_PARTUncheckedCreateNestedManyWithoutPIECEInput
-  WAREHOUSE?: Prisma.WAREHOUSEUncheckedCreateNestedManyWithoutPIECEInput
+  repairPart?: Prisma.RepairPartUncheckedCreateNestedManyWithoutPieceInput
+  warehouse?: Prisma.WarehouseUncheckedCreateNestedManyWithoutPieceInput
 }
 
-export type PIECEUpdateInput = {
-  piece_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type PieceUpdateInput = {
+  pieceId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  REPAIR_PART?: Prisma.REPAIR_PARTUpdateManyWithoutPIECENestedInput
-  WAREHOUSE?: Prisma.WAREHOUSEUpdateManyWithoutPIECENestedInput
+  repairPart?: Prisma.RepairPartUpdateManyWithoutPieceNestedInput
+  warehouse?: Prisma.WarehouseUpdateManyWithoutPieceNestedInput
 }
 
-export type PIECEUncheckedUpdateInput = {
-  piece_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type PieceUncheckedUpdateInput = {
+  pieceId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  REPAIR_PART?: Prisma.REPAIR_PARTUncheckedUpdateManyWithoutPIECENestedInput
-  WAREHOUSE?: Prisma.WAREHOUSEUncheckedUpdateManyWithoutPIECENestedInput
+  repairPart?: Prisma.RepairPartUncheckedUpdateManyWithoutPieceNestedInput
+  warehouse?: Prisma.WarehouseUncheckedUpdateManyWithoutPieceNestedInput
 }
 
-export type PIECECreateManyInput = {
-  piece_id: number
+export type PieceCreateManyInput = {
+  pieceId: number
   name: string
   details?: string | null
 }
 
-export type PIECEUpdateManyMutationInput = {
-  piece_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type PieceUpdateManyMutationInput = {
+  pieceId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
-export type PIECEUncheckedUpdateManyInput = {
-  piece_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type PieceUncheckedUpdateManyInput = {
+  pieceId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
-export type PIECEOrderByRelevanceInput = {
-  fields: Prisma.PIECEOrderByRelevanceFieldEnum | Prisma.PIECEOrderByRelevanceFieldEnum[]
+export type PieceOrderByRelevanceInput = {
+  fields: Prisma.PieceOrderByRelevanceFieldEnum | Prisma.PieceOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type PIECECountOrderByAggregateInput = {
-  piece_id?: Prisma.SortOrder
+export type PieceCountOrderByAggregateInput = {
+  pieceId?: Prisma.SortOrder
   name?: Prisma.SortOrder
   details?: Prisma.SortOrder
 }
 
-export type PIECEAvgOrderByAggregateInput = {
-  piece_id?: Prisma.SortOrder
+export type PieceAvgOrderByAggregateInput = {
+  pieceId?: Prisma.SortOrder
 }
 
-export type PIECEMaxOrderByAggregateInput = {
-  piece_id?: Prisma.SortOrder
+export type PieceMaxOrderByAggregateInput = {
+  pieceId?: Prisma.SortOrder
   name?: Prisma.SortOrder
   details?: Prisma.SortOrder
 }
 
-export type PIECEMinOrderByAggregateInput = {
-  piece_id?: Prisma.SortOrder
+export type PieceMinOrderByAggregateInput = {
+  pieceId?: Prisma.SortOrder
   name?: Prisma.SortOrder
   details?: Prisma.SortOrder
 }
 
-export type PIECESumOrderByAggregateInput = {
-  piece_id?: Prisma.SortOrder
+export type PieceSumOrderByAggregateInput = {
+  pieceId?: Prisma.SortOrder
 }
 
-export type PIECEScalarRelationFilter = {
-  is?: Prisma.PIECEWhereInput
-  isNot?: Prisma.PIECEWhereInput
+export type PieceScalarRelationFilter = {
+  is?: Prisma.PieceWhereInput
+  isNot?: Prisma.PieceWhereInput
 }
 
 export type StringFieldUpdateOperationsInput = {
   set?: string
 }
 
-export type PIECECreateNestedOneWithoutREPAIR_PARTInput = {
-  create?: Prisma.XOR<Prisma.PIECECreateWithoutREPAIR_PARTInput, Prisma.PIECEUncheckedCreateWithoutREPAIR_PARTInput>
-  connectOrCreate?: Prisma.PIECECreateOrConnectWithoutREPAIR_PARTInput
-  connect?: Prisma.PIECEWhereUniqueInput
+export type PieceCreateNestedOneWithoutRepairPartInput = {
+  create?: Prisma.XOR<Prisma.PieceCreateWithoutRepairPartInput, Prisma.PieceUncheckedCreateWithoutRepairPartInput>
+  connectOrCreate?: Prisma.PieceCreateOrConnectWithoutRepairPartInput
+  connect?: Prisma.PieceWhereUniqueInput
 }
 
-export type PIECEUpdateOneRequiredWithoutREPAIR_PARTNestedInput = {
-  create?: Prisma.XOR<Prisma.PIECECreateWithoutREPAIR_PARTInput, Prisma.PIECEUncheckedCreateWithoutREPAIR_PARTInput>
-  connectOrCreate?: Prisma.PIECECreateOrConnectWithoutREPAIR_PARTInput
-  upsert?: Prisma.PIECEUpsertWithoutREPAIR_PARTInput
-  connect?: Prisma.PIECEWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.PIECEUpdateToOneWithWhereWithoutREPAIR_PARTInput, Prisma.PIECEUpdateWithoutREPAIR_PARTInput>, Prisma.PIECEUncheckedUpdateWithoutREPAIR_PARTInput>
+export type PieceUpdateOneRequiredWithoutRepairPartNestedInput = {
+  create?: Prisma.XOR<Prisma.PieceCreateWithoutRepairPartInput, Prisma.PieceUncheckedCreateWithoutRepairPartInput>
+  connectOrCreate?: Prisma.PieceCreateOrConnectWithoutRepairPartInput
+  upsert?: Prisma.PieceUpsertWithoutRepairPartInput
+  connect?: Prisma.PieceWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.PieceUpdateToOneWithWhereWithoutRepairPartInput, Prisma.PieceUpdateWithoutRepairPartInput>, Prisma.PieceUncheckedUpdateWithoutRepairPartInput>
 }
 
-export type PIECECreateNestedOneWithoutWAREHOUSEInput = {
-  create?: Prisma.XOR<Prisma.PIECECreateWithoutWAREHOUSEInput, Prisma.PIECEUncheckedCreateWithoutWAREHOUSEInput>
-  connectOrCreate?: Prisma.PIECECreateOrConnectWithoutWAREHOUSEInput
-  connect?: Prisma.PIECEWhereUniqueInput
+export type PieceCreateNestedOneWithoutWarehouseInput = {
+  create?: Prisma.XOR<Prisma.PieceCreateWithoutWarehouseInput, Prisma.PieceUncheckedCreateWithoutWarehouseInput>
+  connectOrCreate?: Prisma.PieceCreateOrConnectWithoutWarehouseInput
+  connect?: Prisma.PieceWhereUniqueInput
 }
 
-export type PIECEUpdateOneRequiredWithoutWAREHOUSENestedInput = {
-  create?: Prisma.XOR<Prisma.PIECECreateWithoutWAREHOUSEInput, Prisma.PIECEUncheckedCreateWithoutWAREHOUSEInput>
-  connectOrCreate?: Prisma.PIECECreateOrConnectWithoutWAREHOUSEInput
-  upsert?: Prisma.PIECEUpsertWithoutWAREHOUSEInput
-  connect?: Prisma.PIECEWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.PIECEUpdateToOneWithWhereWithoutWAREHOUSEInput, Prisma.PIECEUpdateWithoutWAREHOUSEInput>, Prisma.PIECEUncheckedUpdateWithoutWAREHOUSEInput>
+export type PieceUpdateOneRequiredWithoutWarehouseNestedInput = {
+  create?: Prisma.XOR<Prisma.PieceCreateWithoutWarehouseInput, Prisma.PieceUncheckedCreateWithoutWarehouseInput>
+  connectOrCreate?: Prisma.PieceCreateOrConnectWithoutWarehouseInput
+  upsert?: Prisma.PieceUpsertWithoutWarehouseInput
+  connect?: Prisma.PieceWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.PieceUpdateToOneWithWhereWithoutWarehouseInput, Prisma.PieceUpdateWithoutWarehouseInput>, Prisma.PieceUncheckedUpdateWithoutWarehouseInput>
 }
 
-export type PIECECreateWithoutREPAIR_PARTInput = {
-  piece_id: number
+export type PieceCreateWithoutRepairPartInput = {
+  pieceId: number
   name: string
   details?: string | null
-  WAREHOUSE?: Prisma.WAREHOUSECreateNestedManyWithoutPIECEInput
+  warehouse?: Prisma.WarehouseCreateNestedManyWithoutPieceInput
 }
 
-export type PIECEUncheckedCreateWithoutREPAIR_PARTInput = {
-  piece_id: number
+export type PieceUncheckedCreateWithoutRepairPartInput = {
+  pieceId: number
   name: string
   details?: string | null
-  WAREHOUSE?: Prisma.WAREHOUSEUncheckedCreateNestedManyWithoutPIECEInput
+  warehouse?: Prisma.WarehouseUncheckedCreateNestedManyWithoutPieceInput
 }
 
-export type PIECECreateOrConnectWithoutREPAIR_PARTInput = {
-  where: Prisma.PIECEWhereUniqueInput
-  create: Prisma.XOR<Prisma.PIECECreateWithoutREPAIR_PARTInput, Prisma.PIECEUncheckedCreateWithoutREPAIR_PARTInput>
+export type PieceCreateOrConnectWithoutRepairPartInput = {
+  where: Prisma.PieceWhereUniqueInput
+  create: Prisma.XOR<Prisma.PieceCreateWithoutRepairPartInput, Prisma.PieceUncheckedCreateWithoutRepairPartInput>
 }
 
-export type PIECEUpsertWithoutREPAIR_PARTInput = {
-  update: Prisma.XOR<Prisma.PIECEUpdateWithoutREPAIR_PARTInput, Prisma.PIECEUncheckedUpdateWithoutREPAIR_PARTInput>
-  create: Prisma.XOR<Prisma.PIECECreateWithoutREPAIR_PARTInput, Prisma.PIECEUncheckedCreateWithoutREPAIR_PARTInput>
-  where?: Prisma.PIECEWhereInput
+export type PieceUpsertWithoutRepairPartInput = {
+  update: Prisma.XOR<Prisma.PieceUpdateWithoutRepairPartInput, Prisma.PieceUncheckedUpdateWithoutRepairPartInput>
+  create: Prisma.XOR<Prisma.PieceCreateWithoutRepairPartInput, Prisma.PieceUncheckedCreateWithoutRepairPartInput>
+  where?: Prisma.PieceWhereInput
 }
 
-export type PIECEUpdateToOneWithWhereWithoutREPAIR_PARTInput = {
-  where?: Prisma.PIECEWhereInput
-  data: Prisma.XOR<Prisma.PIECEUpdateWithoutREPAIR_PARTInput, Prisma.PIECEUncheckedUpdateWithoutREPAIR_PARTInput>
+export type PieceUpdateToOneWithWhereWithoutRepairPartInput = {
+  where?: Prisma.PieceWhereInput
+  data: Prisma.XOR<Prisma.PieceUpdateWithoutRepairPartInput, Prisma.PieceUncheckedUpdateWithoutRepairPartInput>
 }
 
-export type PIECEUpdateWithoutREPAIR_PARTInput = {
-  piece_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type PieceUpdateWithoutRepairPartInput = {
+  pieceId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  WAREHOUSE?: Prisma.WAREHOUSEUpdateManyWithoutPIECENestedInput
+  warehouse?: Prisma.WarehouseUpdateManyWithoutPieceNestedInput
 }
 
-export type PIECEUncheckedUpdateWithoutREPAIR_PARTInput = {
-  piece_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type PieceUncheckedUpdateWithoutRepairPartInput = {
+  pieceId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  WAREHOUSE?: Prisma.WAREHOUSEUncheckedUpdateManyWithoutPIECENestedInput
+  warehouse?: Prisma.WarehouseUncheckedUpdateManyWithoutPieceNestedInput
 }
 
-export type PIECECreateWithoutWAREHOUSEInput = {
-  piece_id: number
+export type PieceCreateWithoutWarehouseInput = {
+  pieceId: number
   name: string
   details?: string | null
-  REPAIR_PART?: Prisma.REPAIR_PARTCreateNestedManyWithoutPIECEInput
+  repairPart?: Prisma.RepairPartCreateNestedManyWithoutPieceInput
 }
 
-export type PIECEUncheckedCreateWithoutWAREHOUSEInput = {
-  piece_id: number
+export type PieceUncheckedCreateWithoutWarehouseInput = {
+  pieceId: number
   name: string
   details?: string | null
-  REPAIR_PART?: Prisma.REPAIR_PARTUncheckedCreateNestedManyWithoutPIECEInput
+  repairPart?: Prisma.RepairPartUncheckedCreateNestedManyWithoutPieceInput
 }
 
-export type PIECECreateOrConnectWithoutWAREHOUSEInput = {
-  where: Prisma.PIECEWhereUniqueInput
-  create: Prisma.XOR<Prisma.PIECECreateWithoutWAREHOUSEInput, Prisma.PIECEUncheckedCreateWithoutWAREHOUSEInput>
+export type PieceCreateOrConnectWithoutWarehouseInput = {
+  where: Prisma.PieceWhereUniqueInput
+  create: Prisma.XOR<Prisma.PieceCreateWithoutWarehouseInput, Prisma.PieceUncheckedCreateWithoutWarehouseInput>
 }
 
-export type PIECEUpsertWithoutWAREHOUSEInput = {
-  update: Prisma.XOR<Prisma.PIECEUpdateWithoutWAREHOUSEInput, Prisma.PIECEUncheckedUpdateWithoutWAREHOUSEInput>
-  create: Prisma.XOR<Prisma.PIECECreateWithoutWAREHOUSEInput, Prisma.PIECEUncheckedCreateWithoutWAREHOUSEInput>
-  where?: Prisma.PIECEWhereInput
+export type PieceUpsertWithoutWarehouseInput = {
+  update: Prisma.XOR<Prisma.PieceUpdateWithoutWarehouseInput, Prisma.PieceUncheckedUpdateWithoutWarehouseInput>
+  create: Prisma.XOR<Prisma.PieceCreateWithoutWarehouseInput, Prisma.PieceUncheckedCreateWithoutWarehouseInput>
+  where?: Prisma.PieceWhereInput
 }
 
-export type PIECEUpdateToOneWithWhereWithoutWAREHOUSEInput = {
-  where?: Prisma.PIECEWhereInput
-  data: Prisma.XOR<Prisma.PIECEUpdateWithoutWAREHOUSEInput, Prisma.PIECEUncheckedUpdateWithoutWAREHOUSEInput>
+export type PieceUpdateToOneWithWhereWithoutWarehouseInput = {
+  where?: Prisma.PieceWhereInput
+  data: Prisma.XOR<Prisma.PieceUpdateWithoutWarehouseInput, Prisma.PieceUncheckedUpdateWithoutWarehouseInput>
 }
 
-export type PIECEUpdateWithoutWAREHOUSEInput = {
-  piece_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type PieceUpdateWithoutWarehouseInput = {
+  pieceId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  REPAIR_PART?: Prisma.REPAIR_PARTUpdateManyWithoutPIECENestedInput
+  repairPart?: Prisma.RepairPartUpdateManyWithoutPieceNestedInput
 }
 
-export type PIECEUncheckedUpdateWithoutWAREHOUSEInput = {
-  piece_id?: Prisma.IntFieldUpdateOperationsInput | number
+export type PieceUncheckedUpdateWithoutWarehouseInput = {
+  pieceId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  REPAIR_PART?: Prisma.REPAIR_PARTUncheckedUpdateManyWithoutPIECENestedInput
+  repairPart?: Prisma.RepairPartUncheckedUpdateManyWithoutPieceNestedInput
 }
 
 
 /**
- * Count Type PIECECountOutputType
+ * Count Type PieceCountOutputType
  */
 
-export type PIECECountOutputType = {
-  REPAIR_PART: number
-  WAREHOUSE: number
+export type PieceCountOutputType = {
+  repairPart: number
+  warehouse: number
 }
 
-export type PIECECountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  REPAIR_PART?: boolean | PIECECountOutputTypeCountREPAIR_PARTArgs
-  WAREHOUSE?: boolean | PIECECountOutputTypeCountWAREHOUSEArgs
+export type PieceCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  repairPart?: boolean | PieceCountOutputTypeCountRepairPartArgs
+  warehouse?: boolean | PieceCountOutputTypeCountWarehouseArgs
 }
 
 /**
- * PIECECountOutputType without action
+ * PieceCountOutputType without action
  */
-export type PIECECountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PieceCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PIECECountOutputType
+   * Select specific fields to fetch from the PieceCountOutputType
    */
-  select?: Prisma.PIECECountOutputTypeSelect<ExtArgs> | null
+  select?: Prisma.PieceCountOutputTypeSelect<ExtArgs> | null
 }
 
 /**
- * PIECECountOutputType without action
+ * PieceCountOutputType without action
  */
-export type PIECECountOutputTypeCountREPAIR_PARTArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.REPAIR_PARTWhereInput
+export type PieceCountOutputTypeCountRepairPartArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.RepairPartWhereInput
 }
 
 /**
- * PIECECountOutputType without action
+ * PieceCountOutputType without action
  */
-export type PIECECountOutputTypeCountWAREHOUSEArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.WAREHOUSEWhereInput
+export type PieceCountOutputTypeCountWarehouseArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.WarehouseWhereInput
 }
 
 
-export type PIECESelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-  piece_id?: boolean
+export type PieceSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  pieceId?: boolean
   name?: boolean
   details?: boolean
-  REPAIR_PART?: boolean | Prisma.PIECE$REPAIR_PARTArgs<ExtArgs>
-  WAREHOUSE?: boolean | Prisma.PIECE$WAREHOUSEArgs<ExtArgs>
-  _count?: boolean | Prisma.PIECECountOutputTypeDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["pIECE"]>
+  repairPart?: boolean | Prisma.Piece$repairPartArgs<ExtArgs>
+  warehouse?: boolean | Prisma.Piece$warehouseArgs<ExtArgs>
+  _count?: boolean | Prisma.PieceCountOutputTypeDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["piece"]>
 
 
 
-export type PIECESelectScalar = {
-  piece_id?: boolean
+export type PieceSelectScalar = {
+  pieceId?: boolean
   name?: boolean
   details?: boolean
 }
 
-export type PIECEOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"piece_id" | "name" | "details", ExtArgs["result"]["pIECE"]>
-export type PIECEInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  REPAIR_PART?: boolean | Prisma.PIECE$REPAIR_PARTArgs<ExtArgs>
-  WAREHOUSE?: boolean | Prisma.PIECE$WAREHOUSEArgs<ExtArgs>
-  _count?: boolean | Prisma.PIECECountOutputTypeDefaultArgs<ExtArgs>
+export type PieceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"pieceId" | "name" | "details", ExtArgs["result"]["piece"]>
+export type PieceInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  repairPart?: boolean | Prisma.Piece$repairPartArgs<ExtArgs>
+  warehouse?: boolean | Prisma.Piece$warehouseArgs<ExtArgs>
+  _count?: boolean | Prisma.PieceCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $PIECEPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "PIECE"
+export type $PiecePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "Piece"
   objects: {
-    REPAIR_PART: Prisma.$REPAIR_PARTPayload<ExtArgs>[]
-    WAREHOUSE: Prisma.$WAREHOUSEPayload<ExtArgs>[]
+    repairPart: Prisma.$RepairPartPayload<ExtArgs>[]
+    warehouse: Prisma.$WarehousePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
-    piece_id: number
+    pieceId: number
     name: string
     details: string | null
-  }, ExtArgs["result"]["pIECE"]>
+  }, ExtArgs["result"]["piece"]>
   composites: {}
 }
 
-export type PIECEGetPayload<S extends boolean | null | undefined | PIECEDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$PIECEPayload, S>
+export type PieceGetPayload<S extends boolean | null | undefined | PieceDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$PiecePayload, S>
 
-export type PIECECountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<PIECEFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: PIECECountAggregateInputType | true
+export type PieceCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<PieceFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: PieceCountAggregateInputType | true
   }
 
-export interface PIECEDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['PIECE'], meta: { name: 'PIECE' } }
+export interface PieceDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Piece'], meta: { name: 'Piece' } }
   /**
-   * Find zero or one PIECE that matches the filter.
-   * @param {PIECEFindUniqueArgs} args - Arguments to find a PIECE
+   * Find zero or one Piece that matches the filter.
+   * @param {PieceFindUniqueArgs} args - Arguments to find a Piece
    * @example
-   * // Get one PIECE
-   * const pIECE = await prisma.pIECE.findUnique({
+   * // Get one Piece
+   * const piece = await prisma.piece.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends PIECEFindUniqueArgs>(args: Prisma.SelectSubset<T, PIECEFindUniqueArgs<ExtArgs>>): Prisma.Prisma__PIECEClient<runtime.Types.Result.GetResult<Prisma.$PIECEPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends PieceFindUniqueArgs>(args: Prisma.SelectSubset<T, PieceFindUniqueArgs<ExtArgs>>): Prisma.Prisma__PieceClient<runtime.Types.Result.GetResult<Prisma.$PiecePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one PIECE that matches the filter or throw an error with `error.code='P2025'`
+   * Find one Piece that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {PIECEFindUniqueOrThrowArgs} args - Arguments to find a PIECE
+   * @param {PieceFindUniqueOrThrowArgs} args - Arguments to find a Piece
    * @example
-   * // Get one PIECE
-   * const pIECE = await prisma.pIECE.findUniqueOrThrow({
+   * // Get one Piece
+   * const piece = await prisma.piece.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends PIECEFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, PIECEFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__PIECEClient<runtime.Types.Result.GetResult<Prisma.$PIECEPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends PieceFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, PieceFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__PieceClient<runtime.Types.Result.GetResult<Prisma.$PiecePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first PIECE that matches the filter.
+   * Find the first Piece that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PIECEFindFirstArgs} args - Arguments to find a PIECE
+   * @param {PieceFindFirstArgs} args - Arguments to find a Piece
    * @example
-   * // Get one PIECE
-   * const pIECE = await prisma.pIECE.findFirst({
+   * // Get one Piece
+   * const piece = await prisma.piece.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends PIECEFindFirstArgs>(args?: Prisma.SelectSubset<T, PIECEFindFirstArgs<ExtArgs>>): Prisma.Prisma__PIECEClient<runtime.Types.Result.GetResult<Prisma.$PIECEPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends PieceFindFirstArgs>(args?: Prisma.SelectSubset<T, PieceFindFirstArgs<ExtArgs>>): Prisma.Prisma__PieceClient<runtime.Types.Result.GetResult<Prisma.$PiecePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first PIECE that matches the filter or
+   * Find the first Piece that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PIECEFindFirstOrThrowArgs} args - Arguments to find a PIECE
+   * @param {PieceFindFirstOrThrowArgs} args - Arguments to find a Piece
    * @example
-   * // Get one PIECE
-   * const pIECE = await prisma.pIECE.findFirstOrThrow({
+   * // Get one Piece
+   * const piece = await prisma.piece.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends PIECEFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, PIECEFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__PIECEClient<runtime.Types.Result.GetResult<Prisma.$PIECEPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends PieceFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, PieceFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__PieceClient<runtime.Types.Result.GetResult<Prisma.$PiecePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more PIECES that matches the filter.
+   * Find zero or more Pieces that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PIECEFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {PieceFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all PIECES
-   * const pIECES = await prisma.pIECE.findMany()
+   * // Get all Pieces
+   * const pieces = await prisma.piece.findMany()
    * 
-   * // Get first 10 PIECES
-   * const pIECES = await prisma.pIECE.findMany({ take: 10 })
+   * // Get first 10 Pieces
+   * const pieces = await prisma.piece.findMany({ take: 10 })
    * 
-   * // Only select the `piece_id`
-   * const pIECEWithPiece_idOnly = await prisma.pIECE.findMany({ select: { piece_id: true } })
+   * // Only select the `pieceId`
+   * const pieceWithPieceIdOnly = await prisma.piece.findMany({ select: { pieceId: true } })
    * 
    */
-  findMany<T extends PIECEFindManyArgs>(args?: Prisma.SelectSubset<T, PIECEFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PIECEPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends PieceFindManyArgs>(args?: Prisma.SelectSubset<T, PieceFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PiecePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a PIECE.
-   * @param {PIECECreateArgs} args - Arguments to create a PIECE.
+   * Create a Piece.
+   * @param {PieceCreateArgs} args - Arguments to create a Piece.
    * @example
-   * // Create one PIECE
-   * const PIECE = await prisma.pIECE.create({
+   * // Create one Piece
+   * const Piece = await prisma.piece.create({
    *   data: {
-   *     // ... data to create a PIECE
+   *     // ... data to create a Piece
    *   }
    * })
    * 
    */
-  create<T extends PIECECreateArgs>(args: Prisma.SelectSubset<T, PIECECreateArgs<ExtArgs>>): Prisma.Prisma__PIECEClient<runtime.Types.Result.GetResult<Prisma.$PIECEPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends PieceCreateArgs>(args: Prisma.SelectSubset<T, PieceCreateArgs<ExtArgs>>): Prisma.Prisma__PieceClient<runtime.Types.Result.GetResult<Prisma.$PiecePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many PIECES.
-   * @param {PIECECreateManyArgs} args - Arguments to create many PIECES.
+   * Create many Pieces.
+   * @param {PieceCreateManyArgs} args - Arguments to create many Pieces.
    * @example
-   * // Create many PIECES
-   * const pIECE = await prisma.pIECE.createMany({
+   * // Create many Pieces
+   * const piece = await prisma.piece.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends PIECECreateManyArgs>(args?: Prisma.SelectSubset<T, PIECECreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends PieceCreateManyArgs>(args?: Prisma.SelectSubset<T, PieceCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a PIECE.
-   * @param {PIECEDeleteArgs} args - Arguments to delete one PIECE.
+   * Delete a Piece.
+   * @param {PieceDeleteArgs} args - Arguments to delete one Piece.
    * @example
-   * // Delete one PIECE
-   * const PIECE = await prisma.pIECE.delete({
+   * // Delete one Piece
+   * const Piece = await prisma.piece.delete({
    *   where: {
-   *     // ... filter to delete one PIECE
+   *     // ... filter to delete one Piece
    *   }
    * })
    * 
    */
-  delete<T extends PIECEDeleteArgs>(args: Prisma.SelectSubset<T, PIECEDeleteArgs<ExtArgs>>): Prisma.Prisma__PIECEClient<runtime.Types.Result.GetResult<Prisma.$PIECEPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends PieceDeleteArgs>(args: Prisma.SelectSubset<T, PieceDeleteArgs<ExtArgs>>): Prisma.Prisma__PieceClient<runtime.Types.Result.GetResult<Prisma.$PiecePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one PIECE.
-   * @param {PIECEUpdateArgs} args - Arguments to update one PIECE.
+   * Update one Piece.
+   * @param {PieceUpdateArgs} args - Arguments to update one Piece.
    * @example
-   * // Update one PIECE
-   * const pIECE = await prisma.pIECE.update({
+   * // Update one Piece
+   * const piece = await prisma.piece.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -671,30 +671,30 @@ export interface PIECEDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * })
    * 
    */
-  update<T extends PIECEUpdateArgs>(args: Prisma.SelectSubset<T, PIECEUpdateArgs<ExtArgs>>): Prisma.Prisma__PIECEClient<runtime.Types.Result.GetResult<Prisma.$PIECEPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends PieceUpdateArgs>(args: Prisma.SelectSubset<T, PieceUpdateArgs<ExtArgs>>): Prisma.Prisma__PieceClient<runtime.Types.Result.GetResult<Prisma.$PiecePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more PIECES.
-   * @param {PIECEDeleteManyArgs} args - Arguments to filter PIECES to delete.
+   * Delete zero or more Pieces.
+   * @param {PieceDeleteManyArgs} args - Arguments to filter Pieces to delete.
    * @example
-   * // Delete a few PIECES
-   * const { count } = await prisma.pIECE.deleteMany({
+   * // Delete a few Pieces
+   * const { count } = await prisma.piece.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends PIECEDeleteManyArgs>(args?: Prisma.SelectSubset<T, PIECEDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends PieceDeleteManyArgs>(args?: Prisma.SelectSubset<T, PieceDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more PIECES.
+   * Update zero or more Pieces.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PIECEUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {PieceUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many PIECES
-   * const pIECE = await prisma.pIECE.updateMany({
+   * // Update many Pieces
+   * const piece = await prisma.piece.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -704,56 +704,56 @@ export interface PIECEDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * })
    * 
    */
-  updateMany<T extends PIECEUpdateManyArgs>(args: Prisma.SelectSubset<T, PIECEUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends PieceUpdateManyArgs>(args: Prisma.SelectSubset<T, PieceUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one PIECE.
-   * @param {PIECEUpsertArgs} args - Arguments to update or create a PIECE.
+   * Create or update one Piece.
+   * @param {PieceUpsertArgs} args - Arguments to update or create a Piece.
    * @example
-   * // Update or create a PIECE
-   * const pIECE = await prisma.pIECE.upsert({
+   * // Update or create a Piece
+   * const piece = await prisma.piece.upsert({
    *   create: {
-   *     // ... data to create a PIECE
+   *     // ... data to create a Piece
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the PIECE we want to update
+   *     // ... the filter for the Piece we want to update
    *   }
    * })
    */
-  upsert<T extends PIECEUpsertArgs>(args: Prisma.SelectSubset<T, PIECEUpsertArgs<ExtArgs>>): Prisma.Prisma__PIECEClient<runtime.Types.Result.GetResult<Prisma.$PIECEPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends PieceUpsertArgs>(args: Prisma.SelectSubset<T, PieceUpsertArgs<ExtArgs>>): Prisma.Prisma__PieceClient<runtime.Types.Result.GetResult<Prisma.$PiecePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of PIECES.
+   * Count the number of Pieces.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PIECECountArgs} args - Arguments to filter PIECES to count.
+   * @param {PieceCountArgs} args - Arguments to filter Pieces to count.
    * @example
-   * // Count the number of PIECES
-   * const count = await prisma.pIECE.count({
+   * // Count the number of Pieces
+   * const count = await prisma.piece.count({
    *   where: {
-   *     // ... the filter for the PIECES we want to count
+   *     // ... the filter for the Pieces we want to count
    *   }
    * })
   **/
-  count<T extends PIECECountArgs>(
-    args?: Prisma.Subset<T, PIECECountArgs>,
+  count<T extends PieceCountArgs>(
+    args?: Prisma.Subset<T, PieceCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], PIECECountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], PieceCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a PIECE.
+   * Allows you to perform aggregations operations on a Piece.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PIECEAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {PieceAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -773,13 +773,13 @@ export interface PIECEDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    *   take: 10,
    * })
   **/
-  aggregate<T extends PIECEAggregateArgs>(args: Prisma.Subset<T, PIECEAggregateArgs>): Prisma.PrismaPromise<GetPIECEAggregateType<T>>
+  aggregate<T extends PieceAggregateArgs>(args: Prisma.Subset<T, PieceAggregateArgs>): Prisma.PrismaPromise<GetPieceAggregateType<T>>
 
   /**
-   * Group by PIECE.
+   * Group by Piece.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {PIECEGroupByArgs} args - Group by arguments.
+   * @param {PieceGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -794,14 +794,14 @@ export interface PIECEDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * 
   **/
   groupBy<
-    T extends PIECEGroupByArgs,
+    T extends PieceGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: PIECEGroupByArgs['orderBy'] }
-      : { orderBy?: PIECEGroupByArgs['orderBy'] },
+      ? { orderBy: PieceGroupByArgs['orderBy'] }
+      : { orderBy?: PieceGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -850,23 +850,23 @@ export interface PIECEDelegate<ExtArgs extends runtime.Types.Extensions.Internal
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, PIECEGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPIECEGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, PieceGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPieceGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the PIECE model
+ * Fields of the Piece model
  */
-readonly fields: PIECEFieldRefs;
+readonly fields: PieceFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for PIECE.
+ * The delegate class that acts as a "Promise-like" for Piece.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__PIECEClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__PieceClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  REPAIR_PART<T extends Prisma.PIECE$REPAIR_PARTArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PIECE$REPAIR_PARTArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$REPAIR_PARTPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  WAREHOUSE<T extends Prisma.PIECE$WAREHOUSEArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PIECE$WAREHOUSEArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WAREHOUSEPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  repairPart<T extends Prisma.Piece$repairPartArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Piece$repairPartArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RepairPartPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  warehouse<T extends Prisma.Piece$warehouseArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Piece$warehouseArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WarehousePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -893,421 +893,421 @@ export interface Prisma__PIECEClient<T, Null = never, ExtArgs extends runtime.Ty
 
 
 /**
- * Fields of the PIECE model
+ * Fields of the Piece model
  */
-export interface PIECEFieldRefs {
-  readonly piece_id: Prisma.FieldRef<"PIECE", 'Int'>
-  readonly name: Prisma.FieldRef<"PIECE", 'String'>
-  readonly details: Prisma.FieldRef<"PIECE", 'String'>
+export interface PieceFieldRefs {
+  readonly pieceId: Prisma.FieldRef<"Piece", 'Int'>
+  readonly name: Prisma.FieldRef<"Piece", 'String'>
+  readonly details: Prisma.FieldRef<"Piece", 'String'>
 }
     
 
 // Custom InputTypes
 /**
- * PIECE findUnique
+ * Piece findUnique
  */
-export type PIECEFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PieceFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PIECE
+   * Select specific fields to fetch from the Piece
    */
-  select?: Prisma.PIECESelect<ExtArgs> | null
+  select?: Prisma.PieceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PIECE
+   * Omit specific fields from the Piece
    */
-  omit?: Prisma.PIECEOmit<ExtArgs> | null
+  omit?: Prisma.PieceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PIECEInclude<ExtArgs> | null
+  include?: Prisma.PieceInclude<ExtArgs> | null
   /**
-   * Filter, which PIECE to fetch.
+   * Filter, which Piece to fetch.
    */
-  where: Prisma.PIECEWhereUniqueInput
+  where: Prisma.PieceWhereUniqueInput
 }
 
 /**
- * PIECE findUniqueOrThrow
+ * Piece findUniqueOrThrow
  */
-export type PIECEFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PieceFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PIECE
+   * Select specific fields to fetch from the Piece
    */
-  select?: Prisma.PIECESelect<ExtArgs> | null
+  select?: Prisma.PieceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PIECE
+   * Omit specific fields from the Piece
    */
-  omit?: Prisma.PIECEOmit<ExtArgs> | null
+  omit?: Prisma.PieceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PIECEInclude<ExtArgs> | null
+  include?: Prisma.PieceInclude<ExtArgs> | null
   /**
-   * Filter, which PIECE to fetch.
+   * Filter, which Piece to fetch.
    */
-  where: Prisma.PIECEWhereUniqueInput
+  where: Prisma.PieceWhereUniqueInput
 }
 
 /**
- * PIECE findFirst
+ * Piece findFirst
  */
-export type PIECEFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PieceFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PIECE
+   * Select specific fields to fetch from the Piece
    */
-  select?: Prisma.PIECESelect<ExtArgs> | null
+  select?: Prisma.PieceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PIECE
+   * Omit specific fields from the Piece
    */
-  omit?: Prisma.PIECEOmit<ExtArgs> | null
+  omit?: Prisma.PieceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PIECEInclude<ExtArgs> | null
+  include?: Prisma.PieceInclude<ExtArgs> | null
   /**
-   * Filter, which PIECE to fetch.
+   * Filter, which Piece to fetch.
    */
-  where?: Prisma.PIECEWhereInput
+  where?: Prisma.PieceWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of PIECES to fetch.
+   * Determine the order of Pieces to fetch.
    */
-  orderBy?: Prisma.PIECEOrderByWithRelationInput | Prisma.PIECEOrderByWithRelationInput[]
+  orderBy?: Prisma.PieceOrderByWithRelationInput | Prisma.PieceOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for PIECES.
+   * Sets the position for searching for Pieces.
    */
-  cursor?: Prisma.PIECEWhereUniqueInput
+  cursor?: Prisma.PieceWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` PIECES from the position of the cursor.
+   * Take `±n` Pieces from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` PIECES.
+   * Skip the first `n` Pieces.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of PIECES.
+   * Filter by unique combinations of Pieces.
    */
-  distinct?: Prisma.PIECEScalarFieldEnum | Prisma.PIECEScalarFieldEnum[]
+  distinct?: Prisma.PieceScalarFieldEnum | Prisma.PieceScalarFieldEnum[]
 }
 
 /**
- * PIECE findFirstOrThrow
+ * Piece findFirstOrThrow
  */
-export type PIECEFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PieceFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PIECE
+   * Select specific fields to fetch from the Piece
    */
-  select?: Prisma.PIECESelect<ExtArgs> | null
+  select?: Prisma.PieceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PIECE
+   * Omit specific fields from the Piece
    */
-  omit?: Prisma.PIECEOmit<ExtArgs> | null
+  omit?: Prisma.PieceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PIECEInclude<ExtArgs> | null
+  include?: Prisma.PieceInclude<ExtArgs> | null
   /**
-   * Filter, which PIECE to fetch.
+   * Filter, which Piece to fetch.
    */
-  where?: Prisma.PIECEWhereInput
+  where?: Prisma.PieceWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of PIECES to fetch.
+   * Determine the order of Pieces to fetch.
    */
-  orderBy?: Prisma.PIECEOrderByWithRelationInput | Prisma.PIECEOrderByWithRelationInput[]
+  orderBy?: Prisma.PieceOrderByWithRelationInput | Prisma.PieceOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for PIECES.
+   * Sets the position for searching for Pieces.
    */
-  cursor?: Prisma.PIECEWhereUniqueInput
+  cursor?: Prisma.PieceWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` PIECES from the position of the cursor.
+   * Take `±n` Pieces from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` PIECES.
+   * Skip the first `n` Pieces.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of PIECES.
+   * Filter by unique combinations of Pieces.
    */
-  distinct?: Prisma.PIECEScalarFieldEnum | Prisma.PIECEScalarFieldEnum[]
+  distinct?: Prisma.PieceScalarFieldEnum | Prisma.PieceScalarFieldEnum[]
 }
 
 /**
- * PIECE findMany
+ * Piece findMany
  */
-export type PIECEFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PieceFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PIECE
+   * Select specific fields to fetch from the Piece
    */
-  select?: Prisma.PIECESelect<ExtArgs> | null
+  select?: Prisma.PieceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PIECE
+   * Omit specific fields from the Piece
    */
-  omit?: Prisma.PIECEOmit<ExtArgs> | null
+  omit?: Prisma.PieceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PIECEInclude<ExtArgs> | null
+  include?: Prisma.PieceInclude<ExtArgs> | null
   /**
-   * Filter, which PIECES to fetch.
+   * Filter, which Pieces to fetch.
    */
-  where?: Prisma.PIECEWhereInput
+  where?: Prisma.PieceWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of PIECES to fetch.
+   * Determine the order of Pieces to fetch.
    */
-  orderBy?: Prisma.PIECEOrderByWithRelationInput | Prisma.PIECEOrderByWithRelationInput[]
+  orderBy?: Prisma.PieceOrderByWithRelationInput | Prisma.PieceOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing PIECES.
+   * Sets the position for listing Pieces.
    */
-  cursor?: Prisma.PIECEWhereUniqueInput
+  cursor?: Prisma.PieceWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` PIECES from the position of the cursor.
+   * Take `±n` Pieces from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` PIECES.
+   * Skip the first `n` Pieces.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of PIECES.
+   * Filter by unique combinations of Pieces.
    */
-  distinct?: Prisma.PIECEScalarFieldEnum | Prisma.PIECEScalarFieldEnum[]
+  distinct?: Prisma.PieceScalarFieldEnum | Prisma.PieceScalarFieldEnum[]
 }
 
 /**
- * PIECE create
+ * Piece create
  */
-export type PIECECreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PieceCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PIECE
+   * Select specific fields to fetch from the Piece
    */
-  select?: Prisma.PIECESelect<ExtArgs> | null
+  select?: Prisma.PieceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PIECE
+   * Omit specific fields from the Piece
    */
-  omit?: Prisma.PIECEOmit<ExtArgs> | null
+  omit?: Prisma.PieceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PIECEInclude<ExtArgs> | null
+  include?: Prisma.PieceInclude<ExtArgs> | null
   /**
-   * The data needed to create a PIECE.
+   * The data needed to create a Piece.
    */
-  data: Prisma.XOR<Prisma.PIECECreateInput, Prisma.PIECEUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.PieceCreateInput, Prisma.PieceUncheckedCreateInput>
 }
 
 /**
- * PIECE createMany
+ * Piece createMany
  */
-export type PIECECreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PieceCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many PIECES.
+   * The data used to create many Pieces.
    */
-  data: Prisma.PIECECreateManyInput | Prisma.PIECECreateManyInput[]
+  data: Prisma.PieceCreateManyInput | Prisma.PieceCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * PIECE update
+ * Piece update
  */
-export type PIECEUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PieceUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PIECE
+   * Select specific fields to fetch from the Piece
    */
-  select?: Prisma.PIECESelect<ExtArgs> | null
+  select?: Prisma.PieceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PIECE
+   * Omit specific fields from the Piece
    */
-  omit?: Prisma.PIECEOmit<ExtArgs> | null
+  omit?: Prisma.PieceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PIECEInclude<ExtArgs> | null
+  include?: Prisma.PieceInclude<ExtArgs> | null
   /**
-   * The data needed to update a PIECE.
+   * The data needed to update a Piece.
    */
-  data: Prisma.XOR<Prisma.PIECEUpdateInput, Prisma.PIECEUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.PieceUpdateInput, Prisma.PieceUncheckedUpdateInput>
   /**
-   * Choose, which PIECE to update.
+   * Choose, which Piece to update.
    */
-  where: Prisma.PIECEWhereUniqueInput
+  where: Prisma.PieceWhereUniqueInput
 }
 
 /**
- * PIECE updateMany
+ * Piece updateMany
  */
-export type PIECEUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PieceUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update PIECES.
+   * The data used to update Pieces.
    */
-  data: Prisma.XOR<Prisma.PIECEUpdateManyMutationInput, Prisma.PIECEUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.PieceUpdateManyMutationInput, Prisma.PieceUncheckedUpdateManyInput>
   /**
-   * Filter which PIECES to update
+   * Filter which Pieces to update
    */
-  where?: Prisma.PIECEWhereInput
+  where?: Prisma.PieceWhereInput
   /**
-   * Limit how many PIECES to update.
+   * Limit how many Pieces to update.
    */
   limit?: number
 }
 
 /**
- * PIECE upsert
+ * Piece upsert
  */
-export type PIECEUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PieceUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PIECE
+   * Select specific fields to fetch from the Piece
    */
-  select?: Prisma.PIECESelect<ExtArgs> | null
+  select?: Prisma.PieceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PIECE
+   * Omit specific fields from the Piece
    */
-  omit?: Prisma.PIECEOmit<ExtArgs> | null
+  omit?: Prisma.PieceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PIECEInclude<ExtArgs> | null
+  include?: Prisma.PieceInclude<ExtArgs> | null
   /**
-   * The filter to search for the PIECE to update in case it exists.
+   * The filter to search for the Piece to update in case it exists.
    */
-  where: Prisma.PIECEWhereUniqueInput
+  where: Prisma.PieceWhereUniqueInput
   /**
-   * In case the PIECE found by the `where` argument doesn't exist, create a new PIECE with this data.
+   * In case the Piece found by the `where` argument doesn't exist, create a new Piece with this data.
    */
-  create: Prisma.XOR<Prisma.PIECECreateInput, Prisma.PIECEUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.PieceCreateInput, Prisma.PieceUncheckedCreateInput>
   /**
-   * In case the PIECE was found with the provided `where` argument, update it with this data.
+   * In case the Piece was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.PIECEUpdateInput, Prisma.PIECEUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.PieceUpdateInput, Prisma.PieceUncheckedUpdateInput>
 }
 
 /**
- * PIECE delete
+ * Piece delete
  */
-export type PIECEDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PieceDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PIECE
+   * Select specific fields to fetch from the Piece
    */
-  select?: Prisma.PIECESelect<ExtArgs> | null
+  select?: Prisma.PieceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PIECE
+   * Omit specific fields from the Piece
    */
-  omit?: Prisma.PIECEOmit<ExtArgs> | null
+  omit?: Prisma.PieceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PIECEInclude<ExtArgs> | null
+  include?: Prisma.PieceInclude<ExtArgs> | null
   /**
-   * Filter which PIECE to delete.
+   * Filter which Piece to delete.
    */
-  where: Prisma.PIECEWhereUniqueInput
+  where: Prisma.PieceWhereUniqueInput
 }
 
 /**
- * PIECE deleteMany
+ * Piece deleteMany
  */
-export type PIECEDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PieceDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which PIECES to delete
+   * Filter which Pieces to delete
    */
-  where?: Prisma.PIECEWhereInput
+  where?: Prisma.PieceWhereInput
   /**
-   * Limit how many PIECES to delete.
+   * Limit how many Pieces to delete.
    */
   limit?: number
 }
 
 /**
- * PIECE.REPAIR_PART
+ * Piece.repairPart
  */
-export type PIECE$REPAIR_PARTArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Piece$repairPartArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the REPAIR_PART
+   * Select specific fields to fetch from the RepairPart
    */
-  select?: Prisma.REPAIR_PARTSelect<ExtArgs> | null
+  select?: Prisma.RepairPartSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the REPAIR_PART
+   * Omit specific fields from the RepairPart
    */
-  omit?: Prisma.REPAIR_PARTOmit<ExtArgs> | null
+  omit?: Prisma.RepairPartOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.REPAIR_PARTInclude<ExtArgs> | null
-  where?: Prisma.REPAIR_PARTWhereInput
-  orderBy?: Prisma.REPAIR_PARTOrderByWithRelationInput | Prisma.REPAIR_PARTOrderByWithRelationInput[]
-  cursor?: Prisma.REPAIR_PARTWhereUniqueInput
+  include?: Prisma.RepairPartInclude<ExtArgs> | null
+  where?: Prisma.RepairPartWhereInput
+  orderBy?: Prisma.RepairPartOrderByWithRelationInput | Prisma.RepairPartOrderByWithRelationInput[]
+  cursor?: Prisma.RepairPartWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.REPAIR_PARTScalarFieldEnum | Prisma.REPAIR_PARTScalarFieldEnum[]
+  distinct?: Prisma.RepairPartScalarFieldEnum | Prisma.RepairPartScalarFieldEnum[]
 }
 
 /**
- * PIECE.WAREHOUSE
+ * Piece.warehouse
  */
-export type PIECE$WAREHOUSEArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Piece$warehouseArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the WAREHOUSE
+   * Select specific fields to fetch from the Warehouse
    */
-  select?: Prisma.WAREHOUSESelect<ExtArgs> | null
+  select?: Prisma.WarehouseSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the WAREHOUSE
+   * Omit specific fields from the Warehouse
    */
-  omit?: Prisma.WAREHOUSEOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.WAREHOUSEInclude<ExtArgs> | null
-  where?: Prisma.WAREHOUSEWhereInput
-  orderBy?: Prisma.WAREHOUSEOrderByWithRelationInput | Prisma.WAREHOUSEOrderByWithRelationInput[]
-  cursor?: Prisma.WAREHOUSEWhereUniqueInput
+  include?: Prisma.WarehouseInclude<ExtArgs> | null
+  where?: Prisma.WarehouseWhereInput
+  orderBy?: Prisma.WarehouseOrderByWithRelationInput | Prisma.WarehouseOrderByWithRelationInput[]
+  cursor?: Prisma.WarehouseWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.WAREHOUSEScalarFieldEnum | Prisma.WAREHOUSEScalarFieldEnum[]
+  distinct?: Prisma.WarehouseScalarFieldEnum | Prisma.WarehouseScalarFieldEnum[]
 }
 
 /**
- * PIECE without action
+ * Piece without action
  */
-export type PIECEDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PieceDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the PIECE
+   * Select specific fields to fetch from the Piece
    */
-  select?: Prisma.PIECESelect<ExtArgs> | null
+  select?: Prisma.PieceSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the PIECE
+   * Omit specific fields from the Piece
    */
-  omit?: Prisma.PIECEOmit<ExtArgs> | null
+  omit?: Prisma.PieceOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PIECEInclude<ExtArgs> | null
+  include?: Prisma.PieceInclude<ExtArgs> | null
 }

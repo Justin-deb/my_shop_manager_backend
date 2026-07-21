@@ -29,8 +29,8 @@ export * from "./enums"
  * const prisma = new PrismaClient({
  *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
  * })
- * // Fetch zero or more INVOICES
- * const iNVOICES = await prisma.iNVOICE.findMany()
+ * // Fetch zero or more Invoices
+ * const invoices = await prisma.invoice.findMany()
  * ```
  * 
  * Read more in our [docs](https://pris.ly/d/client).
@@ -40,87 +40,87 @@ export type PrismaClient<LogOpts extends Prisma.LogLevel = never, OmitOpts exten
 export { Prisma }
 
 /**
- * Model INVOICE
+ * Model Invoice
  * 
  */
-export type INVOICE = Prisma.INVOICEModel
+export type Invoice = Prisma.InvoiceModel
 /**
- * Model LABOR
+ * Model Labor
  * 
  */
-export type LABOR = Prisma.LABORModel
+export type Labor = Prisma.LaborModel
 /**
- * Model PAYMENT
+ * Model Payment
  * 
  */
-export type PAYMENT = Prisma.PAYMENTModel
+export type Payment = Prisma.PaymentModel
 /**
- * Model PAYMENT_METHOD
+ * Model PaymentMethod
  * 
  */
-export type PAYMENT_METHOD = Prisma.PAYMENT_METHODModel
+export type PaymentMethod = Prisma.PaymentMethodModel
 /**
- * Model PIECE
+ * Model Piece
  * 
  */
-export type PIECE = Prisma.PIECEModel
+export type Piece = Prisma.PieceModel
 /**
- * Model POSITION
+ * Model Position
  * 
  */
-export type POSITION = Prisma.POSITIONModel
+export type Position = Prisma.PositionModel
 /**
- * Model PRODUCT
+ * Model Product
  * 
  */
-export type PRODUCT = Prisma.PRODUCTModel
+export type Product = Prisma.ProductModel
 /**
- * Model PRODUCT_TYPE
+ * Model ProductType
  * 
  */
-export type PRODUCT_TYPE = Prisma.PRODUCT_TYPEModel
+export type ProductType = Prisma.ProductTypeModel
 /**
- * Model REPAIR
+ * Model Repair
  * 
  */
-export type REPAIR = Prisma.REPAIRModel
+export type Repair = Prisma.RepairModel
 /**
- * Model REPAIR_ASSIGNMENT
+ * Model RepairAssignment
  * 
  */
-export type REPAIR_ASSIGNMENT = Prisma.REPAIR_ASSIGNMENTModel
+export type RepairAssignment = Prisma.RepairAssignmentModel
 /**
- * Model REPAIR_PART
+ * Model RepairPart
  * 
  */
-export type REPAIR_PART = Prisma.REPAIR_PARTModel
+export type RepairPart = Prisma.RepairPartModel
 /**
- * Model ROLE
+ * Model Role
  * 
  */
-export type ROLE = Prisma.ROLEModel
+export type Role = Prisma.RoleModel
 /**
- * Model SHOP
+ * Model Shop
  * 
  */
-export type SHOP = Prisma.SHOPModel
+export type Shop = Prisma.ShopModel
 /**
- * Model SHOP_USER
+ * Model ShopUser
  * 
  */
-export type SHOP_USER = Prisma.SHOP_USERModel
+export type ShopUser = Prisma.ShopUserModel
 /**
- * Model STATUS
+ * Model Status
  * 
  */
-export type STATUS = Prisma.STATUSModel
+export type Status = Prisma.StatusModel
 /**
- * Model USER
+ * Model User
  * 
  */
-export type USER = Prisma.USERModel
+export type User = Prisma.UserModel
 /**
- * Model WAREHOUSE
+ * Model Warehouse
  * 
  */
-export type WAREHOUSE = Prisma.WAREHOUSEModel
+export type Warehouse = Prisma.WarehouseModel
