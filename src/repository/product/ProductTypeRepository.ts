@@ -29,4 +29,10 @@ export const create = (productType:ProductTypeCreateInput) => {
     });
 }
 
-//TODO: Add delete
+export const deleteType = (id:number) =>{
+    return prisma.productType.delete({
+        where:{
+            typeId:id
+        }
+    });
+}
