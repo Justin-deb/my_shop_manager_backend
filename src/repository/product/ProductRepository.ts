@@ -70,7 +70,7 @@ export const create = (product:ProductCreateInput) =>{
     });
 }
 
-export const deleteProduct = (id:number) =>{
+export const remove = (id:number) =>{
     return prisma.product.delete({
         where:{
             productId:id

@@ -29,7 +29,7 @@ export const create = (productType:ProductTypeCreateInput) => {
     });
 }
 
-export const deleteType = (id:number) =>{
+export const remove = (id:number) =>{
     return prisma.productType.delete({
         where:{
             typeId:id
