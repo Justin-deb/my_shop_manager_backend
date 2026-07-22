@@ -60,15 +60,15 @@ export const ModelName = {
   Product: 'Product',
   ProductType: 'ProductType',
   Repair: 'Repair',
-  RepairAssignment: 'RepairAssignment',
   RepairPart: 'RepairPart',
   Role: 'Role',
   Shop: 'Shop',
-  ShopUser: 'ShopUser',
   Status: 'Status',
   User: 'User',
   Warehouse: 'Warehouse',
-  UserProduct: 'UserProduct'
+  UserProduct: 'UserProduct',
+  Assignment: 'Assignment',
+  Employee: 'Employee'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -187,16 +187,6 @@ export const RepairScalarFieldEnum = {
 export type RepairScalarFieldEnum = (typeof RepairScalarFieldEnum)[keyof typeof RepairScalarFieldEnum]
 
 
-export const RepairAssignmentScalarFieldEnum = {
-  repairId: 'repairId',
-  userId: 'userId',
-  assignedAt: 'assignedAt',
-  completedAt: 'completedAt'
-} as const
-
-export type RepairAssignmentScalarFieldEnum = (typeof RepairAssignmentScalarFieldEnum)[keyof typeof RepairAssignmentScalarFieldEnum]
-
-
 export const RepairPartScalarFieldEnum = {
   repairId: 'repairId',
   pieceId: 'pieceId',
@@ -226,15 +216,6 @@ export const ShopScalarFieldEnum = {
 } as const
 
 export type ShopScalarFieldEnum = (typeof ShopScalarFieldEnum)[keyof typeof ShopScalarFieldEnum]
-
-
-export const ShopUserScalarFieldEnum = {
-  shopId: 'shopId',
-  userId: 'userId',
-  positionId: 'positionId'
-} as const
-
-export type ShopUserScalarFieldEnum = (typeof ShopUserScalarFieldEnum)[keyof typeof ShopUserScalarFieldEnum]
 
 
 export const StatusScalarFieldEnum = {
@@ -278,6 +259,27 @@ export const UserProductScalarFieldEnum = {
 } as const
 
 export type UserProductScalarFieldEnum = (typeof UserProductScalarFieldEnum)[keyof typeof UserProductScalarFieldEnum]
+
+
+export const AssignmentScalarFieldEnum = {
+  assignmentId: 'assignmentId',
+  repairId: 'repairId',
+  userId: 'userId',
+  shopId: 'shopId',
+  assignedAt: 'assignedAt',
+  finishedAt: 'finishedAt'
+} as const
+
+export type AssignmentScalarFieldEnum = (typeof AssignmentScalarFieldEnum)[keyof typeof AssignmentScalarFieldEnum]
+
+
+export const EmployeeScalarFieldEnum = {
+  shopId: 'shopId',
+  userId: 'userId',
+  positionId: 'positionId'
+} as const
+
+export type EmployeeScalarFieldEnum = (typeof EmployeeScalarFieldEnum)[keyof typeof EmployeeScalarFieldEnum]
 
 
 export const SortOrder = {

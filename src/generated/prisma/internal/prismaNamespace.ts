@@ -406,15 +406,15 @@ export const ModelName = {
   Product: 'Product',
   ProductType: 'ProductType',
   Repair: 'Repair',
-  RepairAssignment: 'RepairAssignment',
   RepairPart: 'RepairPart',
   Role: 'Role',
   Shop: 'Shop',
-  ShopUser: 'ShopUser',
   Status: 'Status',
   User: 'User',
   Warehouse: 'Warehouse',
-  UserProduct: 'UserProduct'
+  UserProduct: 'UserProduct',
+  Assignment: 'Assignment',
+  Employee: 'Employee'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -430,7 +430,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "invoice" | "labor" | "payment" | "paymentMethod" | "piece" | "position" | "product" | "productType" | "repair" | "repairAssignment" | "repairPart" | "role" | "shop" | "shopUser" | "status" | "user" | "warehouse" | "userProduct"
+    modelProps: "invoice" | "labor" | "payment" | "paymentMethod" | "piece" | "position" | "product" | "productType" | "repair" | "repairPart" | "role" | "shop" | "status" | "user" | "warehouse" | "userProduct" | "assignment" | "employee"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1028,72 +1028,6 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    RepairAssignment: {
-      payload: Prisma.$RepairAssignmentPayload<ExtArgs>
-      fields: Prisma.RepairAssignmentFieldRefs
-      operations: {
-        findUnique: {
-          args: Prisma.RepairAssignmentFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$RepairAssignmentPayload> | null
-        }
-        findUniqueOrThrow: {
-          args: Prisma.RepairAssignmentFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$RepairAssignmentPayload>
-        }
-        findFirst: {
-          args: Prisma.RepairAssignmentFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$RepairAssignmentPayload> | null
-        }
-        findFirstOrThrow: {
-          args: Prisma.RepairAssignmentFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$RepairAssignmentPayload>
-        }
-        findMany: {
-          args: Prisma.RepairAssignmentFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$RepairAssignmentPayload>[]
-        }
-        create: {
-          args: Prisma.RepairAssignmentCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$RepairAssignmentPayload>
-        }
-        createMany: {
-          args: Prisma.RepairAssignmentCreateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        delete: {
-          args: Prisma.RepairAssignmentDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$RepairAssignmentPayload>
-        }
-        update: {
-          args: Prisma.RepairAssignmentUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$RepairAssignmentPayload>
-        }
-        deleteMany: {
-          args: Prisma.RepairAssignmentDeleteManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        updateMany: {
-          args: Prisma.RepairAssignmentUpdateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        upsert: {
-          args: Prisma.RepairAssignmentUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$RepairAssignmentPayload>
-        }
-        aggregate: {
-          args: Prisma.RepairAssignmentAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateRepairAssignment>
-        }
-        groupBy: {
-          args: Prisma.RepairAssignmentGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.RepairAssignmentGroupByOutputType>[]
-        }
-        count: {
-          args: Prisma.RepairAssignmentCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.RepairAssignmentCountAggregateOutputType> | number
-        }
-      }
-    }
     RepairPart: {
       payload: Prisma.$RepairPartPayload<ExtArgs>
       fields: Prisma.RepairPartFieldRefs
@@ -1289,72 +1223,6 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.ShopCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.ShopCountAggregateOutputType> | number
-        }
-      }
-    }
-    ShopUser: {
-      payload: Prisma.$ShopUserPayload<ExtArgs>
-      fields: Prisma.ShopUserFieldRefs
-      operations: {
-        findUnique: {
-          args: Prisma.ShopUserFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShopUserPayload> | null
-        }
-        findUniqueOrThrow: {
-          args: Prisma.ShopUserFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShopUserPayload>
-        }
-        findFirst: {
-          args: Prisma.ShopUserFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShopUserPayload> | null
-        }
-        findFirstOrThrow: {
-          args: Prisma.ShopUserFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShopUserPayload>
-        }
-        findMany: {
-          args: Prisma.ShopUserFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShopUserPayload>[]
-        }
-        create: {
-          args: Prisma.ShopUserCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShopUserPayload>
-        }
-        createMany: {
-          args: Prisma.ShopUserCreateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        delete: {
-          args: Prisma.ShopUserDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShopUserPayload>
-        }
-        update: {
-          args: Prisma.ShopUserUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShopUserPayload>
-        }
-        deleteMany: {
-          args: Prisma.ShopUserDeleteManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        updateMany: {
-          args: Prisma.ShopUserUpdateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        upsert: {
-          args: Prisma.ShopUserUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ShopUserPayload>
-        }
-        aggregate: {
-          args: Prisma.ShopUserAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateShopUser>
-        }
-        groupBy: {
-          args: Prisma.ShopUserGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.ShopUserGroupByOutputType>[]
-        }
-        count: {
-          args: Prisma.ShopUserCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.ShopUserCountAggregateOutputType> | number
         }
       }
     }
@@ -1622,6 +1490,138 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Assignment: {
+      payload: Prisma.$AssignmentPayload<ExtArgs>
+      fields: Prisma.AssignmentFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.AssignmentFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssignmentPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.AssignmentFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssignmentPayload>
+        }
+        findFirst: {
+          args: Prisma.AssignmentFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssignmentPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.AssignmentFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssignmentPayload>
+        }
+        findMany: {
+          args: Prisma.AssignmentFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssignmentPayload>[]
+        }
+        create: {
+          args: Prisma.AssignmentCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssignmentPayload>
+        }
+        createMany: {
+          args: Prisma.AssignmentCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.AssignmentDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssignmentPayload>
+        }
+        update: {
+          args: Prisma.AssignmentUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssignmentPayload>
+        }
+        deleteMany: {
+          args: Prisma.AssignmentDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.AssignmentUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.AssignmentUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssignmentPayload>
+        }
+        aggregate: {
+          args: Prisma.AssignmentAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateAssignment>
+        }
+        groupBy: {
+          args: Prisma.AssignmentGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AssignmentGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.AssignmentCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AssignmentCountAggregateOutputType> | number
+        }
+      }
+    }
+    Employee: {
+      payload: Prisma.$EmployeePayload<ExtArgs>
+      fields: Prisma.EmployeeFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.EmployeeFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmployeePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.EmployeeFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmployeePayload>
+        }
+        findFirst: {
+          args: Prisma.EmployeeFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmployeePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.EmployeeFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmployeePayload>
+        }
+        findMany: {
+          args: Prisma.EmployeeFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmployeePayload>[]
+        }
+        create: {
+          args: Prisma.EmployeeCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmployeePayload>
+        }
+        createMany: {
+          args: Prisma.EmployeeCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.EmployeeDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmployeePayload>
+        }
+        update: {
+          args: Prisma.EmployeeUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmployeePayload>
+        }
+        deleteMany: {
+          args: Prisma.EmployeeDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.EmployeeUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.EmployeeUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EmployeePayload>
+        }
+        aggregate: {
+          args: Prisma.EmployeeAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateEmployee>
+        }
+        groupBy: {
+          args: Prisma.EmployeeGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.EmployeeGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.EmployeeCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.EmployeeCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1761,16 +1761,6 @@ export const RepairScalarFieldEnum = {
 export type RepairScalarFieldEnum = (typeof RepairScalarFieldEnum)[keyof typeof RepairScalarFieldEnum]
 
 
-export const RepairAssignmentScalarFieldEnum = {
-  repairId: 'repairId',
-  userId: 'userId',
-  assignedAt: 'assignedAt',
-  completedAt: 'completedAt'
-} as const
-
-export type RepairAssignmentScalarFieldEnum = (typeof RepairAssignmentScalarFieldEnum)[keyof typeof RepairAssignmentScalarFieldEnum]
-
-
 export const RepairPartScalarFieldEnum = {
   repairId: 'repairId',
   pieceId: 'pieceId',
@@ -1800,15 +1790,6 @@ export const ShopScalarFieldEnum = {
 } as const
 
 export type ShopScalarFieldEnum = (typeof ShopScalarFieldEnum)[keyof typeof ShopScalarFieldEnum]
-
-
-export const ShopUserScalarFieldEnum = {
-  shopId: 'shopId',
-  userId: 'userId',
-  positionId: 'positionId'
-} as const
-
-export type ShopUserScalarFieldEnum = (typeof ShopUserScalarFieldEnum)[keyof typeof ShopUserScalarFieldEnum]
 
 
 export const StatusScalarFieldEnum = {
@@ -1852,6 +1833,27 @@ export const UserProductScalarFieldEnum = {
 } as const
 
 export type UserProductScalarFieldEnum = (typeof UserProductScalarFieldEnum)[keyof typeof UserProductScalarFieldEnum]
+
+
+export const AssignmentScalarFieldEnum = {
+  assignmentId: 'assignmentId',
+  repairId: 'repairId',
+  userId: 'userId',
+  shopId: 'shopId',
+  assignedAt: 'assignedAt',
+  finishedAt: 'finishedAt'
+} as const
+
+export type AssignmentScalarFieldEnum = (typeof AssignmentScalarFieldEnum)[keyof typeof AssignmentScalarFieldEnum]
+
+
+export const EmployeeScalarFieldEnum = {
+  shopId: 'shopId',
+  userId: 'userId',
+  positionId: 'positionId'
+} as const
+
+export type EmployeeScalarFieldEnum = (typeof EmployeeScalarFieldEnum)[keyof typeof EmployeeScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -2184,15 +2186,15 @@ export type GlobalOmitConfig = {
   product?: Prisma.ProductOmit
   productType?: Prisma.ProductTypeOmit
   repair?: Prisma.RepairOmit
-  repairAssignment?: Prisma.RepairAssignmentOmit
   repairPart?: Prisma.RepairPartOmit
   role?: Prisma.RoleOmit
   shop?: Prisma.ShopOmit
-  shopUser?: Prisma.ShopUserOmit
   status?: Prisma.StatusOmit
   user?: Prisma.UserOmit
   warehouse?: Prisma.WarehouseOmit
   userProduct?: Prisma.UserProductOmit
+  assignment?: Prisma.AssignmentOmit
+  employee?: Prisma.EmployeeOmit
 }
 
 /* Types for Logging */

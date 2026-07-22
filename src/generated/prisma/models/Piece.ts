@@ -328,10 +328,6 @@ export type PieceScalarRelationFilter = {
   isNot?: Prisma.PieceWhereInput
 }
 
-export type StringFieldUpdateOperationsInput = {
-  set?: string
-}
-
 export type PieceCreateNestedOneWithoutRepairPartsInput = {
   create?: Prisma.XOR<Prisma.PieceCreateWithoutRepairPartsInput, Prisma.PieceUncheckedCreateWithoutRepairPartsInput>
   connectOrCreate?: Prisma.PieceCreateOrConnectWithoutRepairPartsInput
