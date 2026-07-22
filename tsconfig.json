@@ -8,7 +8,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "useUnknownInCatchVariables": false,
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals","node"]
   },
   "ts-node": {
     "swc": true,
@@ -17,6 +17,7 @@
   "include": [
     "src/**/*.ts",
     "tests/**/*.ts",
+    "prisma.config.ts",
     "scripts",
     "eslint.config.ts",
     "vitest.config.mts"
