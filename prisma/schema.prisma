@@ -8,9 +8,9 @@ datasource db {
 }
 
 model Invoice {
-  invoiceId Int       @id @map("invoice_id")
+  invoiceId Int       @id @default(autoincrement()) @map("invoice_id")
   repairId  Int       @unique(map: "repair_id") @map("repair_id")
-  issueDate DateTime? @db.DateTime(0) @map("issue_date")
+  issueDate DateTime? @map("issue_date") @db.DateTime(0)
   subtotal  Decimal?  @db.Decimal(10, 2)
   tax       Decimal?  @db.Decimal(10, 2)
   discount  Decimal?  @db.Decimal(10, 2)
@@ -22,12 +22,12 @@ model Invoice {
 }
 
 model Labor {
-  laborId     Int      @id @map("labor_id")
+  laborId     Int      @id @default(autoincrement()) @map("labor_id")
   repairId    Int      @map("repair_id")
   description String?  @db.VarChar(255)
   hours       Decimal? @db.Decimal(5, 2)
-  hourlyRate  Decimal? @db.Decimal(10, 2)
-  performedAt DateTime @db.DateTime(0) @map("performed_at")
+  hourlyRate  Decimal? @map("hourly_rate") @db.Decimal(10, 2)
+  performedAt DateTime @map("performed_at") @db.DateTime(0)
   repair      Repair   @relation(fields: [repairId], references: [repairId], onDelete: NoAction, onUpdate: NoAction, map: "LABOR_ibfk_1")
 
   @@index([repairId], map: "repair_id")
@@ -35,13 +35,13 @@ model Labor {
 }
 
 model Payment {
-  paymentId       Int           @id @map("payment_id")
-  invoiceId       Int           @map("invoice_id")
-  paymentDate     DateTime      @db.DateTime(0) @map("payment_date")
-  amount          Decimal       @db.Decimal(10, 2)
-  paymentMethodId Int?          @map("payment_method_id")
-  reference       String?       @db.VarChar(255)
-  invoice         Invoice       @relation(fields: [invoiceId], references: [invoiceId], onDelete: NoAction, onUpdate: NoAction, map: "PAYMENT_ibfk_1")
+  paymentId       Int            @id @default(autoincrement()) @map("payment_id")
+  invoiceId       Int            @map("invoice_id")
+  paymentDate     DateTime       @map("payment_date") @db.DateTime(0)
+  amount          Decimal        @db.Decimal(10, 2)
+  paymentMethodId Int?           @map("payment_method_id")
+  reference       String?        @db.VarChar(255)
+  invoice         Invoice        @relation(fields: [invoiceId], references: [invoiceId], onDelete: NoAction, onUpdate: NoAction, map: "PAYMENT_ibfk_1")
   paymentMethod   PaymentMethod? @relation(fields: [paymentMethodId], references: [paymentMethodId], onDelete: NoAction, onUpdate: NoAction, map: "PAYMENT_ibfk_2")
 
   @@index([invoiceId], map: "invoice_id")
@@ -50,7 +50,7 @@ model Payment {
 }
 
 model PaymentMethod {
-  paymentMethodId Int       @id @map("payment_method_id")
+  paymentMethodId Int       @id @default(autoincrement()) @map("payment_method_id")
   name            String?   @db.VarChar(50)
   payments        Payment[]
 
@@ -58,17 +58,17 @@ model PaymentMethod {
 }
 
 model Piece {
-  pieceId    Int      @id @map("piece_id")
-  name       String   @db.VarChar(255)
-  details    String?  @db.Text
-  repairPart RepairPart[]
-  warehouse  Warehouse[]
+  pieceId     Int          @id @default(autoincrement()) @map("piece_id")
+  name        String       @db.VarChar(255)
+  details     String?      @db.Text
+  repairParts RepairPart[]
+  warehouses  Warehouse[]
 
   @@map("PIECE")
 }
 
 model Position {
-  positionId Int        @id @map("position_id")
+  positionId Int        @id @default(autoincrement()) @map("position_id")
   name       String     @unique(map: "name") @db.VarChar(255)
   shopUsers  ShopUser[]
 
@@ -76,48 +76,46 @@ model Position {
 }
 
 model Product {
-  productId      Int          @id @map("product_id")
-  ownerId        Int          @map("owner_id")
-  typeId         Int          @map("type_id")
-  manufacturer   String?      @db.VarChar(255)
-  model          String?      @db.VarChar(255)
-  productionYear Int?         @map("production_year")
-  serialNumber   String?      @db.VarChar(255) @map("serial_number")
-  name           String?      @db.VarChar(255)
-  user           User         @relation(fields: [ownerId], references: [userId], onDelete: NoAction, onUpdate: NoAction, map: "PRODUCT_ibfk_1")
-  productType    ProductType  @relation(fields: [typeId], references: [typeId], onDelete: NoAction, onUpdate: NoAction, map: "PRODUCT_ibfk_2")
+  productId      Int           @id @default(autoincrement()) @map("product_id")
+  typeId         Int           @map("type_id")
+  manufacturer   String?       @db.VarChar(255)
+  model          String?       @db.VarChar(255)
+  productionYear Int?          @map("production_year")
+  name           String?       @db.VarChar(255)
+  photoUrl       String?       @map("photo_url") @db.VarChar(255)
+  productType    ProductType   @relation(fields: [typeId], references: [typeId], onDelete: NoAction, onUpdate: NoAction, map: "PRODUCT_ibfk_2")
   repairs        Repair[]
+  userProducts   UserProduct[]
 
-  @@index([ownerId], map: "owner_id")
   @@index([typeId], map: "type_id")
   @@map("PRODUCT")
 }
 
 model ProductType {
-  typeId  Int       @id @map("type_id")
-  name    String    @unique(map: "name") @db.VarChar(255)
-  product Product[]
+  typeId   Int       @id @default(autoincrement()) @map("type_id")
+  name     String    @unique(map: "name") @db.VarChar(255)
+  products Product[]
 
   @@map("PRODUCT_TYPE")
 }
 
 model Repair {
-  repairId           Int                 @id @map("repair_id")
-  productId          Int                 @map("product_id")
-  shopId             Int                 @map("shop_id")
-  statusId           Int                 @map("status_id")
-  estimatedHours     Decimal?            @db.Decimal(5, 2) @map("estimated_hours")
-  workedHours        Decimal?            @db.Decimal(5, 2) @map("worked_hours")
-  receivedDate       DateTime?           @db.DateTime(0) @map("received_date")
-  finishDate         DateTime?           @db.DateTime(0) @map("finish_date")
-  returnDate         DateTime?           @db.DateTime(0) @map("return_date")
-  notes              String?             @db.Text
-  problemDescription String?             @db.Text @map("problem_description")
+  repairId           Int                @id @default(autoincrement()) @map("repair_id")
+  productId          Int                @map("product_id")
+  shopId             Int                @map("shop_id")
+  statusId           Int                @map("status_id")
+  estimatedHours     Decimal?           @map("estimated_hours") @db.Decimal(5, 2)
+  workedHours        Decimal?           @map("worked_hours") @db.Decimal(5, 2)
+  receivedDate       DateTime?          @map("received_date") @db.DateTime(0)
+  finishDate         DateTime?          @map("finish_date") @db.DateTime(0)
+  returnDate         DateTime?          @map("return_date") @db.DateTime(0)
+  notes              String?            @db.Text
+  problemDescription String?            @map("problem_description") @db.Text
   invoice            Invoice?
-  labor              Labor[]
-  product            Product             @relation(fields: [productId], references: [productId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_ibfk_1")
-  shop               Shop                @relation(fields: [shopId], references: [shopId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_ibfk_2")
-  status             Status              @relation(fields: [statusId], references: [statusId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_ibfk_3")
+  labourEntries      Labor[]
+  product            Product            @relation(fields: [productId], references: [productId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_ibfk_1")
+  shop               Shop               @relation(fields: [shopId], references: [shopId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_ibfk_2")
+  status             Status             @relation(fields: [statusId], references: [statusId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_ibfk_3")
   repairAssignments  RepairAssignment[]
   repairParts        RepairPart[]
 
@@ -128,10 +126,10 @@ model Repair {
 }
 
 model RepairAssignment {
-  repairId    Int
-  userId      Int
-  assignedAt  DateTime  @db.DateTime(0) @map("assigned_at")
-  completedAt DateTime? @db.DateTime(0) @map("completed_at")
+  repairId    Int       @map("repair_id")
+  userId      Int       @map("user_id")
+  assignedAt  DateTime  @map("assigned_at") @db.DateTime(0)
+  completedAt DateTime? @map("completed_at") @db.DateTime(0)
   repair      Repair    @relation(fields: [repairId], references: [repairId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_ASSIGNMENT_ibfk_1")
   user        User      @relation(fields: [userId], references: [userId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_ASSIGNMENT_ibfk_2")
 
@@ -141,11 +139,11 @@ model RepairAssignment {
 }
 
 model RepairPart {
-  repairId  Int
-  pieceId   Int
+  repairId  Int      @map("repair_id")
+  pieceId   Int      @map("piece_id")
   quantity  Int
-  unitPrice Decimal? @db.Decimal(10, 2) @map("unit_price")
-  addedAt   DateTime @db.DateTime(0) @map("added_at")
+  unitPrice Decimal? @map("unit_price") @db.Decimal(10, 2)
+  addedAt   DateTime @map("added_at") @db.DateTime(0)
   repair    Repair   @relation(fields: [repairId], references: [repairId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_PART_ibfk_1")
   piece     Piece    @relation(fields: [pieceId], references: [pieceId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_PART_ibfk_2")
 
@@ -155,7 +153,7 @@ model RepairPart {
 }
 
 model Role {
-  roleId Int    @id @map("role_id")
+  roleId Int    @id @default(autoincrement()) @map("role_id")
   name   String @unique(map: "name") @db.VarChar(255)
   users  User[]
 
@@ -163,23 +161,23 @@ model Role {
 }
 
 model Shop {
-  shopId      Int         @id @map("shop_id")
+  shopId      Int         @id @default(autoincrement()) @map("shop_id")
   name        String      @db.VarChar(255)
   address     String?     @db.VarChar(255)
-  phoneNumber String?     @db.VarChar(255) @map("phone_number")
+  phoneNumber String?     @map("phone_number") @db.VarChar(255)
   email       String?     @unique(map: "email") @db.VarChar(255)
-  photoUrl    String?     @db.VarChar(255) @map("photo_url")
+  photoUrl    String?     @map("photo_url") @db.VarChar(255)
   repairs     Repair[]
   shopUsers   ShopUser[]
-  warehouse   Warehouse[]
+  warehouses  Warehouse[]
 
   @@map("SHOP")
 }
 
 model ShopUser {
-  shopId     Int
-  userId     Int
-  positionId Int
+  shopId     Int      @map("shop_id")
+  userId     Int      @map("user_id")
+  positionId Int      @map("position_id")
   shop       Shop     @relation(fields: [shopId], references: [shopId], onDelete: NoAction, onUpdate: NoAction, map: "SHOP_USER_ibfk_1")
   user       User     @relation(fields: [userId], references: [userId], onDelete: NoAction, onUpdate: NoAction, map: "SHOP_USER_ibfk_2")
   position   Position @relation(fields: [positionId], references: [positionId], onDelete: NoAction, onUpdate: NoAction, map: "SHOP_USER_ibfk_3")
@@ -191,7 +189,7 @@ model ShopUser {
 }
 
 model Status {
-  statusId Int      @id @map("status_id")
+  statusId Int      @id @default(autoincrement()) @map("status_id")
   name     String   @unique(map: "name") @db.VarChar(255)
   repairs  Repair[]
 
@@ -199,33 +197,46 @@ model Status {
 }
 
 model User {
-  userId           Int                 @id @map("user_id")
-  roleId           Int                 @map("role_id")
-  firstName        String              @db.VarChar(255) @map("first_name")
-  middleName       String?             @db.VarChar(255) @map("middle_name")
-  lastName         String              @db.VarChar(255) @map("last_name")
-  secondLastName   String              @db.VarChar(255) @map("second_last_name")
-  email            String?             @unique(map: "email") @db.VarChar(255)
-  passwordHash     String?             @db.VarChar(255) @map("password_hash")
-  phoneNumber      String?             @db.VarChar(255) @map("phone_number")
-  products         Product[]
+  userId            Int                @id @default(autoincrement()) @map("user_id")
+  roleId            Int                @map("role_id")
+  firstName         String             @map("first_name") @db.VarChar(255)
+  middleName        String?            @map("middle_name") @db.VarChar(255)
+  lastName          String             @map("last_name") @db.VarChar(255)
+  secondLastName    String             @map("second_last_name") @db.VarChar(255)
+  email             String?            @unique(map: "email") @db.VarChar(255)
+  passwordHash      String?            @map("password_hash") @db.VarChar(255)
+  phoneNumber       String?            @map("phone_number") @db.VarChar(255)
   repairAssignments RepairAssignment[]
-  shopUsers        ShopUser[]
-  role             Role                @relation(fields: [roleId], references: [roleId], onDelete: NoAction, onUpdate: NoAction, map: "USER_ibfk_1")
+  shopUsers         ShopUser[]
+  role              Role               @relation(fields: [roleId], references: [roleId], onDelete: NoAction, onUpdate: NoAction, map: "USER_ibfk_1")
+  userProducts      UserProduct[]
 
   @@index([roleId], map: "role_id")
   @@map("USER")
 }
 
 model Warehouse {
-  shopId  Int
-  pieceId Int
+  shopId   Int     @map("shop_id")
+  pieceId  Int     @map("piece_id")
   quantity Int
-  notes   String? @db.Text
-  shop    Shop   @relation(fields: [shopId], references: [shopId], onDelete: NoAction, onUpdate: NoAction, map: "WAREHOUSE_ibfk_1")
-  piece   Piece  @relation(fields: [pieceId], references: [pieceId], onDelete: NoAction, onUpdate: NoAction, map: "WAREHOUSE_ibfk_2")
+  notes    String? @db.Text
+  shop     Shop    @relation(fields: [shopId], references: [shopId], onDelete: NoAction, onUpdate: NoAction, map: "WAREHOUSE_ibfk_1")
+  piece    Piece   @relation(fields: [pieceId], references: [pieceId], onDelete: NoAction, onUpdate: NoAction, map: "WAREHOUSE_ibfk_2")
 
   @@id([shopId, pieceId])
   @@index([pieceId], map: "piece_id")
   @@map("WAREHOUSE")
+}
+
+model UserProduct {
+  productId    Int     @map("product_id")
+  ownerId      Int     @map("owner_id")
+  serialNumber String? @map("serial_number") @db.VarChar(255)
+  name         String? @db.VarChar(255)
+  user         User    @relation(fields: [ownerId], references: [userId], onDelete: NoAction, onUpdate: NoAction, map: "fk_user_product_owner")
+  product      Product @relation(fields: [productId], references: [productId], onDelete: NoAction, onUpdate: NoAction, map: "fk_user_product_product")
+
+  @@id([productId, ownerId])
+  @@index([ownerId], map: "fk_user_product_owner")
+  @@map("USER_PRODUCT")
 }

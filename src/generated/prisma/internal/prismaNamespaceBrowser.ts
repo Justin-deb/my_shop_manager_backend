@@ -67,7 +67,8 @@ export const ModelName = {
   ShopUser: 'ShopUser',
   Status: 'Status',
   User: 'User',
-  Warehouse: 'Warehouse'
+  Warehouse: 'Warehouse',
+  UserProduct: 'UserProduct'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -150,13 +151,12 @@ export type PositionScalarFieldEnum = (typeof PositionScalarFieldEnum)[keyof typ
 
 export const ProductScalarFieldEnum = {
   productId: 'productId',
-  ownerId: 'ownerId',
   typeId: 'typeId',
   manufacturer: 'manufacturer',
   model: 'model',
   productionYear: 'productionYear',
-  serialNumber: 'serialNumber',
-  name: 'name'
+  name: 'name',
+  photoUrl: 'photoUrl'
 } as const
 
 export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
@@ -270,6 +270,16 @@ export const WarehouseScalarFieldEnum = {
 export type WarehouseScalarFieldEnum = (typeof WarehouseScalarFieldEnum)[keyof typeof WarehouseScalarFieldEnum]
 
 
+export const UserProductScalarFieldEnum = {
+  productId: 'productId',
+  ownerId: 'ownerId',
+  serialNumber: 'serialNumber',
+  name: 'name'
+} as const
+
+export type UserProductScalarFieldEnum = (typeof UserProductScalarFieldEnum)[keyof typeof UserProductScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -325,8 +335,8 @@ export type PositionOrderByRelevanceFieldEnum = (typeof PositionOrderByRelevance
 export const ProductOrderByRelevanceFieldEnum = {
   manufacturer: 'manufacturer',
   model: 'model',
-  serialNumber: 'serialNumber',
-  name: 'name'
+  name: 'name',
+  photoUrl: 'photoUrl'
 } as const
 
 export type ProductOrderByRelevanceFieldEnum = (typeof ProductOrderByRelevanceFieldEnum)[keyof typeof ProductOrderByRelevanceFieldEnum]
@@ -390,4 +400,12 @@ export const WarehouseOrderByRelevanceFieldEnum = {
 } as const
 
 export type WarehouseOrderByRelevanceFieldEnum = (typeof WarehouseOrderByRelevanceFieldEnum)[keyof typeof WarehouseOrderByRelevanceFieldEnum]
+
+
+export const UserProductOrderByRelevanceFieldEnum = {
+  serialNumber: 'serialNumber',
+  name: 'name'
+} as const
+
+export type UserProductOrderByRelevanceFieldEnum = (typeof UserProductOrderByRelevanceFieldEnum)[keyof typeof UserProductOrderByRelevanceFieldEnum]
 

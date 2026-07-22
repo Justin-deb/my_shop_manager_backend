@@ -268,8 +268,8 @@ export type WarehouseScalarWhereWithAggregatesInput = {
 export type WarehouseCreateInput = {
   quantity: number
   notes?: string | null
-  shop: Prisma.ShopCreateNestedOneWithoutWarehouseInput
-  piece: Prisma.PieceCreateNestedOneWithoutWarehouseInput
+  shop: Prisma.ShopCreateNestedOneWithoutWarehousesInput
+  piece: Prisma.PieceCreateNestedOneWithoutWarehousesInput
 }
 
 export type WarehouseUncheckedCreateInput = {
@@ -282,8 +282,8 @@ export type WarehouseUncheckedCreateInput = {
 export type WarehouseUpdateInput = {
   quantity?: Prisma.IntFieldUpdateOperationsInput | number
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  shop?: Prisma.ShopUpdateOneRequiredWithoutWarehouseNestedInput
-  piece?: Prisma.PieceUpdateOneRequiredWithoutWarehouseNestedInput
+  shop?: Prisma.ShopUpdateOneRequiredWithoutWarehousesNestedInput
+  piece?: Prisma.PieceUpdateOneRequiredWithoutWarehousesNestedInput
 }
 
 export type WarehouseUncheckedUpdateInput = {
@@ -453,7 +453,7 @@ export type WarehouseUncheckedUpdateManyWithoutShopNestedInput = {
 export type WarehouseCreateWithoutPieceInput = {
   quantity: number
   notes?: string | null
-  shop: Prisma.ShopCreateNestedOneWithoutWarehouseInput
+  shop: Prisma.ShopCreateNestedOneWithoutWarehousesInput
 }
 
 export type WarehouseUncheckedCreateWithoutPieceInput = {
@@ -501,7 +501,7 @@ export type WarehouseScalarWhereInput = {
 export type WarehouseCreateWithoutShopInput = {
   quantity: number
   notes?: string | null
-  piece: Prisma.PieceCreateNestedOneWithoutWarehouseInput
+  piece: Prisma.PieceCreateNestedOneWithoutWarehousesInput
 }
 
 export type WarehouseUncheckedCreateWithoutShopInput = {
@@ -545,7 +545,7 @@ export type WarehouseCreateManyPieceInput = {
 export type WarehouseUpdateWithoutPieceInput = {
   quantity?: Prisma.IntFieldUpdateOperationsInput | number
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  shop?: Prisma.ShopUpdateOneRequiredWithoutWarehouseNestedInput
+  shop?: Prisma.ShopUpdateOneRequiredWithoutWarehousesNestedInput
 }
 
 export type WarehouseUncheckedUpdateWithoutPieceInput = {
@@ -569,7 +569,7 @@ export type WarehouseCreateManyShopInput = {
 export type WarehouseUpdateWithoutShopInput = {
   quantity?: Prisma.IntFieldUpdateOperationsInput | number
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  piece?: Prisma.PieceUpdateOneRequiredWithoutWarehouseNestedInput
+  piece?: Prisma.PieceUpdateOneRequiredWithoutWarehousesNestedInput
 }
 
 export type WarehouseUncheckedUpdateWithoutShopInput = {

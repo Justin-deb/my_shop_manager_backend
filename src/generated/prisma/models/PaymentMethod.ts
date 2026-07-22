@@ -230,19 +230,17 @@ export type PaymentMethodScalarWhereWithAggregatesInput = {
 }
 
 export type PaymentMethodCreateInput = {
-  paymentMethodId: number
   name?: string | null
   payments?: Prisma.PaymentCreateNestedManyWithoutPaymentMethodInput
 }
 
 export type PaymentMethodUncheckedCreateInput = {
-  paymentMethodId: number
+  paymentMethodId?: number
   name?: string | null
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutPaymentMethodInput
 }
 
 export type PaymentMethodUpdateInput = {
-  paymentMethodId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   payments?: Prisma.PaymentUpdateManyWithoutPaymentMethodNestedInput
 }
@@ -254,12 +252,11 @@ export type PaymentMethodUncheckedUpdateInput = {
 }
 
 export type PaymentMethodCreateManyInput = {
-  paymentMethodId: number
+  paymentMethodId?: number
   name?: string | null
 }
 
 export type PaymentMethodUpdateManyMutationInput = {
-  paymentMethodId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
@@ -319,12 +316,11 @@ export type PaymentMethodUpdateOneWithoutPaymentsNestedInput = {
 }
 
 export type PaymentMethodCreateWithoutPaymentsInput = {
-  paymentMethodId: number
   name?: string | null
 }
 
 export type PaymentMethodUncheckedCreateWithoutPaymentsInput = {
-  paymentMethodId: number
+  paymentMethodId?: number
   name?: string | null
 }
 
@@ -345,7 +341,6 @@ export type PaymentMethodUpdateToOneWithWhereWithoutPaymentsInput = {
 }
 
 export type PaymentMethodUpdateWithoutPaymentsInput = {
-  paymentMethodId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
@@ -1008,7 +1003,7 @@ export type PaymentMethodCreateArgs<ExtArgs extends runtime.Types.Extensions.Int
   /**
    * The data needed to create a PaymentMethod.
    */
-  data: Prisma.XOR<Prisma.PaymentMethodCreateInput, Prisma.PaymentMethodUncheckedCreateInput>
+  data?: Prisma.XOR<Prisma.PaymentMethodCreateInput, Prisma.PaymentMethodUncheckedCreateInput>
 }
 
 /**

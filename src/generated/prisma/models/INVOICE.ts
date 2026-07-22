@@ -312,7 +312,6 @@ export type InvoiceScalarWhereWithAggregatesInput = {
 }
 
 export type InvoiceCreateInput = {
-  invoiceId: number
   issueDate?: Date | string | null
   subtotal?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -323,7 +322,7 @@ export type InvoiceCreateInput = {
 }
 
 export type InvoiceUncheckedCreateInput = {
-  invoiceId: number
+  invoiceId?: number
   repairId: number
   issueDate?: Date | string | null
   subtotal?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -334,7 +333,6 @@ export type InvoiceUncheckedCreateInput = {
 }
 
 export type InvoiceUpdateInput = {
-  invoiceId?: Prisma.IntFieldUpdateOperationsInput | number
   issueDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   subtotal?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -356,7 +354,7 @@ export type InvoiceUncheckedUpdateInput = {
 }
 
 export type InvoiceCreateManyInput = {
-  invoiceId: number
+  invoiceId?: number
   repairId: number
   issueDate?: Date | string | null
   subtotal?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -366,7 +364,6 @@ export type InvoiceCreateManyInput = {
 }
 
 export type InvoiceUpdateManyMutationInput = {
-  invoiceId?: Prisma.IntFieldUpdateOperationsInput | number
   issueDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   subtotal?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -442,14 +439,6 @@ export type InvoiceNullableScalarRelationFilter = {
   isNot?: Prisma.InvoiceWhereInput | null
 }
 
-export type IntFieldUpdateOperationsInput = {
-  set?: number
-  increment?: number
-  decrement?: number
-  multiply?: number
-  divide?: number
-}
-
 export type NullableDateTimeFieldUpdateOperationsInput = {
   set?: Date | string | null
 }
@@ -460,6 +449,14 @@ export type NullableDecimalFieldUpdateOperationsInput = {
   decrement?: runtime.Decimal | runtime.DecimalJsLike | number | string
   multiply?: runtime.Decimal | runtime.DecimalJsLike | number | string
   divide?: runtime.Decimal | runtime.DecimalJsLike | number | string
+}
+
+export type IntFieldUpdateOperationsInput = {
+  set?: number
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
 }
 
 export type InvoiceCreateNestedOneWithoutPaymentsInput = {
@@ -509,7 +506,6 @@ export type InvoiceUncheckedUpdateOneWithoutRepairNestedInput = {
 }
 
 export type InvoiceCreateWithoutPaymentsInput = {
-  invoiceId: number
   issueDate?: Date | string | null
   subtotal?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -519,7 +515,7 @@ export type InvoiceCreateWithoutPaymentsInput = {
 }
 
 export type InvoiceUncheckedCreateWithoutPaymentsInput = {
-  invoiceId: number
+  invoiceId?: number
   repairId: number
   issueDate?: Date | string | null
   subtotal?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -545,7 +541,6 @@ export type InvoiceUpdateToOneWithWhereWithoutPaymentsInput = {
 }
 
 export type InvoiceUpdateWithoutPaymentsInput = {
-  invoiceId?: Prisma.IntFieldUpdateOperationsInput | number
   issueDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   subtotal?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -565,7 +560,6 @@ export type InvoiceUncheckedUpdateWithoutPaymentsInput = {
 }
 
 export type InvoiceCreateWithoutRepairInput = {
-  invoiceId: number
   issueDate?: Date | string | null
   subtotal?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -575,7 +569,7 @@ export type InvoiceCreateWithoutRepairInput = {
 }
 
 export type InvoiceUncheckedCreateWithoutRepairInput = {
-  invoiceId: number
+  invoiceId?: number
   issueDate?: Date | string | null
   subtotal?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -601,7 +595,6 @@ export type InvoiceUpdateToOneWithWhereWithoutRepairInput = {
 }
 
 export type InvoiceUpdateWithoutRepairInput = {
-  invoiceId?: Prisma.IntFieldUpdateOperationsInput | number
   issueDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   subtotal?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   tax?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null

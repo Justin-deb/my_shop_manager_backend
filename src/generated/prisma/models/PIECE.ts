@@ -200,16 +200,16 @@ export type PieceWhereInput = {
   pieceId?: Prisma.IntFilter<"Piece"> | number
   name?: Prisma.StringFilter<"Piece"> | string
   details?: Prisma.StringNullableFilter<"Piece"> | string | null
-  repairPart?: Prisma.RepairPartListRelationFilter
-  warehouse?: Prisma.WarehouseListRelationFilter
+  repairParts?: Prisma.RepairPartListRelationFilter
+  warehouses?: Prisma.WarehouseListRelationFilter
 }
 
 export type PieceOrderByWithRelationInput = {
   pieceId?: Prisma.SortOrder
   name?: Prisma.SortOrder
   details?: Prisma.SortOrderInput | Prisma.SortOrder
-  repairPart?: Prisma.RepairPartOrderByRelationAggregateInput
-  warehouse?: Prisma.WarehouseOrderByRelationAggregateInput
+  repairParts?: Prisma.RepairPartOrderByRelationAggregateInput
+  warehouses?: Prisma.WarehouseOrderByRelationAggregateInput
   _relevance?: Prisma.PieceOrderByRelevanceInput
 }
 
@@ -220,8 +220,8 @@ export type PieceWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.PieceWhereInput | Prisma.PieceWhereInput[]
   name?: Prisma.StringFilter<"Piece"> | string
   details?: Prisma.StringNullableFilter<"Piece"> | string | null
-  repairPart?: Prisma.RepairPartListRelationFilter
-  warehouse?: Prisma.WarehouseListRelationFilter
+  repairParts?: Prisma.RepairPartListRelationFilter
+  warehouses?: Prisma.WarehouseListRelationFilter
 }, "pieceId">
 
 export type PieceOrderByWithAggregationInput = {
@@ -245,45 +245,42 @@ export type PieceScalarWhereWithAggregatesInput = {
 }
 
 export type PieceCreateInput = {
-  pieceId: number
   name: string
   details?: string | null
-  repairPart?: Prisma.RepairPartCreateNestedManyWithoutPieceInput
-  warehouse?: Prisma.WarehouseCreateNestedManyWithoutPieceInput
+  repairParts?: Prisma.RepairPartCreateNestedManyWithoutPieceInput
+  warehouses?: Prisma.WarehouseCreateNestedManyWithoutPieceInput
 }
 
 export type PieceUncheckedCreateInput = {
-  pieceId: number
+  pieceId?: number
   name: string
   details?: string | null
-  repairPart?: Prisma.RepairPartUncheckedCreateNestedManyWithoutPieceInput
-  warehouse?: Prisma.WarehouseUncheckedCreateNestedManyWithoutPieceInput
+  repairParts?: Prisma.RepairPartUncheckedCreateNestedManyWithoutPieceInput
+  warehouses?: Prisma.WarehouseUncheckedCreateNestedManyWithoutPieceInput
 }
 
 export type PieceUpdateInput = {
-  pieceId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  repairPart?: Prisma.RepairPartUpdateManyWithoutPieceNestedInput
-  warehouse?: Prisma.WarehouseUpdateManyWithoutPieceNestedInput
+  repairParts?: Prisma.RepairPartUpdateManyWithoutPieceNestedInput
+  warehouses?: Prisma.WarehouseUpdateManyWithoutPieceNestedInput
 }
 
 export type PieceUncheckedUpdateInput = {
   pieceId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  repairPart?: Prisma.RepairPartUncheckedUpdateManyWithoutPieceNestedInput
-  warehouse?: Prisma.WarehouseUncheckedUpdateManyWithoutPieceNestedInput
+  repairParts?: Prisma.RepairPartUncheckedUpdateManyWithoutPieceNestedInput
+  warehouses?: Prisma.WarehouseUncheckedUpdateManyWithoutPieceNestedInput
 }
 
 export type PieceCreateManyInput = {
-  pieceId: number
+  pieceId?: number
   name: string
   details?: string | null
 }
 
 export type PieceUpdateManyMutationInput = {
-  pieceId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
@@ -335,120 +332,116 @@ export type StringFieldUpdateOperationsInput = {
   set?: string
 }
 
-export type PieceCreateNestedOneWithoutRepairPartInput = {
-  create?: Prisma.XOR<Prisma.PieceCreateWithoutRepairPartInput, Prisma.PieceUncheckedCreateWithoutRepairPartInput>
-  connectOrCreate?: Prisma.PieceCreateOrConnectWithoutRepairPartInput
+export type PieceCreateNestedOneWithoutRepairPartsInput = {
+  create?: Prisma.XOR<Prisma.PieceCreateWithoutRepairPartsInput, Prisma.PieceUncheckedCreateWithoutRepairPartsInput>
+  connectOrCreate?: Prisma.PieceCreateOrConnectWithoutRepairPartsInput
   connect?: Prisma.PieceWhereUniqueInput
 }
 
-export type PieceUpdateOneRequiredWithoutRepairPartNestedInput = {
-  create?: Prisma.XOR<Prisma.PieceCreateWithoutRepairPartInput, Prisma.PieceUncheckedCreateWithoutRepairPartInput>
-  connectOrCreate?: Prisma.PieceCreateOrConnectWithoutRepairPartInput
-  upsert?: Prisma.PieceUpsertWithoutRepairPartInput
+export type PieceUpdateOneRequiredWithoutRepairPartsNestedInput = {
+  create?: Prisma.XOR<Prisma.PieceCreateWithoutRepairPartsInput, Prisma.PieceUncheckedCreateWithoutRepairPartsInput>
+  connectOrCreate?: Prisma.PieceCreateOrConnectWithoutRepairPartsInput
+  upsert?: Prisma.PieceUpsertWithoutRepairPartsInput
   connect?: Prisma.PieceWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.PieceUpdateToOneWithWhereWithoutRepairPartInput, Prisma.PieceUpdateWithoutRepairPartInput>, Prisma.PieceUncheckedUpdateWithoutRepairPartInput>
+  update?: Prisma.XOR<Prisma.XOR<Prisma.PieceUpdateToOneWithWhereWithoutRepairPartsInput, Prisma.PieceUpdateWithoutRepairPartsInput>, Prisma.PieceUncheckedUpdateWithoutRepairPartsInput>
 }
 
-export type PieceCreateNestedOneWithoutWarehouseInput = {
-  create?: Prisma.XOR<Prisma.PieceCreateWithoutWarehouseInput, Prisma.PieceUncheckedCreateWithoutWarehouseInput>
-  connectOrCreate?: Prisma.PieceCreateOrConnectWithoutWarehouseInput
+export type PieceCreateNestedOneWithoutWarehousesInput = {
+  create?: Prisma.XOR<Prisma.PieceCreateWithoutWarehousesInput, Prisma.PieceUncheckedCreateWithoutWarehousesInput>
+  connectOrCreate?: Prisma.PieceCreateOrConnectWithoutWarehousesInput
   connect?: Prisma.PieceWhereUniqueInput
 }
 
-export type PieceUpdateOneRequiredWithoutWarehouseNestedInput = {
-  create?: Prisma.XOR<Prisma.PieceCreateWithoutWarehouseInput, Prisma.PieceUncheckedCreateWithoutWarehouseInput>
-  connectOrCreate?: Prisma.PieceCreateOrConnectWithoutWarehouseInput
-  upsert?: Prisma.PieceUpsertWithoutWarehouseInput
+export type PieceUpdateOneRequiredWithoutWarehousesNestedInput = {
+  create?: Prisma.XOR<Prisma.PieceCreateWithoutWarehousesInput, Prisma.PieceUncheckedCreateWithoutWarehousesInput>
+  connectOrCreate?: Prisma.PieceCreateOrConnectWithoutWarehousesInput
+  upsert?: Prisma.PieceUpsertWithoutWarehousesInput
   connect?: Prisma.PieceWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.PieceUpdateToOneWithWhereWithoutWarehouseInput, Prisma.PieceUpdateWithoutWarehouseInput>, Prisma.PieceUncheckedUpdateWithoutWarehouseInput>
+  update?: Prisma.XOR<Prisma.XOR<Prisma.PieceUpdateToOneWithWhereWithoutWarehousesInput, Prisma.PieceUpdateWithoutWarehousesInput>, Prisma.PieceUncheckedUpdateWithoutWarehousesInput>
 }
 
-export type PieceCreateWithoutRepairPartInput = {
-  pieceId: number
+export type PieceCreateWithoutRepairPartsInput = {
   name: string
   details?: string | null
-  warehouse?: Prisma.WarehouseCreateNestedManyWithoutPieceInput
+  warehouses?: Prisma.WarehouseCreateNestedManyWithoutPieceInput
 }
 
-export type PieceUncheckedCreateWithoutRepairPartInput = {
-  pieceId: number
+export type PieceUncheckedCreateWithoutRepairPartsInput = {
+  pieceId?: number
   name: string
   details?: string | null
-  warehouse?: Prisma.WarehouseUncheckedCreateNestedManyWithoutPieceInput
+  warehouses?: Prisma.WarehouseUncheckedCreateNestedManyWithoutPieceInput
 }
 
-export type PieceCreateOrConnectWithoutRepairPartInput = {
+export type PieceCreateOrConnectWithoutRepairPartsInput = {
   where: Prisma.PieceWhereUniqueInput
-  create: Prisma.XOR<Prisma.PieceCreateWithoutRepairPartInput, Prisma.PieceUncheckedCreateWithoutRepairPartInput>
+  create: Prisma.XOR<Prisma.PieceCreateWithoutRepairPartsInput, Prisma.PieceUncheckedCreateWithoutRepairPartsInput>
 }
 
-export type PieceUpsertWithoutRepairPartInput = {
-  update: Prisma.XOR<Prisma.PieceUpdateWithoutRepairPartInput, Prisma.PieceUncheckedUpdateWithoutRepairPartInput>
-  create: Prisma.XOR<Prisma.PieceCreateWithoutRepairPartInput, Prisma.PieceUncheckedCreateWithoutRepairPartInput>
+export type PieceUpsertWithoutRepairPartsInput = {
+  update: Prisma.XOR<Prisma.PieceUpdateWithoutRepairPartsInput, Prisma.PieceUncheckedUpdateWithoutRepairPartsInput>
+  create: Prisma.XOR<Prisma.PieceCreateWithoutRepairPartsInput, Prisma.PieceUncheckedCreateWithoutRepairPartsInput>
   where?: Prisma.PieceWhereInput
 }
 
-export type PieceUpdateToOneWithWhereWithoutRepairPartInput = {
+export type PieceUpdateToOneWithWhereWithoutRepairPartsInput = {
   where?: Prisma.PieceWhereInput
-  data: Prisma.XOR<Prisma.PieceUpdateWithoutRepairPartInput, Prisma.PieceUncheckedUpdateWithoutRepairPartInput>
+  data: Prisma.XOR<Prisma.PieceUpdateWithoutRepairPartsInput, Prisma.PieceUncheckedUpdateWithoutRepairPartsInput>
 }
 
-export type PieceUpdateWithoutRepairPartInput = {
+export type PieceUpdateWithoutRepairPartsInput = {
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  warehouses?: Prisma.WarehouseUpdateManyWithoutPieceNestedInput
+}
+
+export type PieceUncheckedUpdateWithoutRepairPartsInput = {
   pieceId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  warehouse?: Prisma.WarehouseUpdateManyWithoutPieceNestedInput
+  warehouses?: Prisma.WarehouseUncheckedUpdateManyWithoutPieceNestedInput
 }
 
-export type PieceUncheckedUpdateWithoutRepairPartInput = {
-  pieceId?: Prisma.IntFieldUpdateOperationsInput | number
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  warehouse?: Prisma.WarehouseUncheckedUpdateManyWithoutPieceNestedInput
-}
-
-export type PieceCreateWithoutWarehouseInput = {
-  pieceId: number
+export type PieceCreateWithoutWarehousesInput = {
   name: string
   details?: string | null
-  repairPart?: Prisma.RepairPartCreateNestedManyWithoutPieceInput
+  repairParts?: Prisma.RepairPartCreateNestedManyWithoutPieceInput
 }
 
-export type PieceUncheckedCreateWithoutWarehouseInput = {
-  pieceId: number
+export type PieceUncheckedCreateWithoutWarehousesInput = {
+  pieceId?: number
   name: string
   details?: string | null
-  repairPart?: Prisma.RepairPartUncheckedCreateNestedManyWithoutPieceInput
+  repairParts?: Prisma.RepairPartUncheckedCreateNestedManyWithoutPieceInput
 }
 
-export type PieceCreateOrConnectWithoutWarehouseInput = {
+export type PieceCreateOrConnectWithoutWarehousesInput = {
   where: Prisma.PieceWhereUniqueInput
-  create: Prisma.XOR<Prisma.PieceCreateWithoutWarehouseInput, Prisma.PieceUncheckedCreateWithoutWarehouseInput>
+  create: Prisma.XOR<Prisma.PieceCreateWithoutWarehousesInput, Prisma.PieceUncheckedCreateWithoutWarehousesInput>
 }
 
-export type PieceUpsertWithoutWarehouseInput = {
-  update: Prisma.XOR<Prisma.PieceUpdateWithoutWarehouseInput, Prisma.PieceUncheckedUpdateWithoutWarehouseInput>
-  create: Prisma.XOR<Prisma.PieceCreateWithoutWarehouseInput, Prisma.PieceUncheckedCreateWithoutWarehouseInput>
+export type PieceUpsertWithoutWarehousesInput = {
+  update: Prisma.XOR<Prisma.PieceUpdateWithoutWarehousesInput, Prisma.PieceUncheckedUpdateWithoutWarehousesInput>
+  create: Prisma.XOR<Prisma.PieceCreateWithoutWarehousesInput, Prisma.PieceUncheckedCreateWithoutWarehousesInput>
   where?: Prisma.PieceWhereInput
 }
 
-export type PieceUpdateToOneWithWhereWithoutWarehouseInput = {
+export type PieceUpdateToOneWithWhereWithoutWarehousesInput = {
   where?: Prisma.PieceWhereInput
-  data: Prisma.XOR<Prisma.PieceUpdateWithoutWarehouseInput, Prisma.PieceUncheckedUpdateWithoutWarehouseInput>
+  data: Prisma.XOR<Prisma.PieceUpdateWithoutWarehousesInput, Prisma.PieceUncheckedUpdateWithoutWarehousesInput>
 }
 
-export type PieceUpdateWithoutWarehouseInput = {
+export type PieceUpdateWithoutWarehousesInput = {
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  repairParts?: Prisma.RepairPartUpdateManyWithoutPieceNestedInput
+}
+
+export type PieceUncheckedUpdateWithoutWarehousesInput = {
   pieceId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  repairPart?: Prisma.RepairPartUpdateManyWithoutPieceNestedInput
-}
-
-export type PieceUncheckedUpdateWithoutWarehouseInput = {
-  pieceId?: Prisma.IntFieldUpdateOperationsInput | number
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  repairPart?: Prisma.RepairPartUncheckedUpdateManyWithoutPieceNestedInput
+  repairParts?: Prisma.RepairPartUncheckedUpdateManyWithoutPieceNestedInput
 }
 
 
@@ -457,13 +450,13 @@ export type PieceUncheckedUpdateWithoutWarehouseInput = {
  */
 
 export type PieceCountOutputType = {
-  repairPart: number
-  warehouse: number
+  repairParts: number
+  warehouses: number
 }
 
 export type PieceCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  repairPart?: boolean | PieceCountOutputTypeCountRepairPartArgs
-  warehouse?: boolean | PieceCountOutputTypeCountWarehouseArgs
+  repairParts?: boolean | PieceCountOutputTypeCountRepairPartsArgs
+  warehouses?: boolean | PieceCountOutputTypeCountWarehousesArgs
 }
 
 /**
@@ -479,14 +472,14 @@ export type PieceCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extens
 /**
  * PieceCountOutputType without action
  */
-export type PieceCountOutputTypeCountRepairPartArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PieceCountOutputTypeCountRepairPartsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.RepairPartWhereInput
 }
 
 /**
  * PieceCountOutputType without action
  */
-export type PieceCountOutputTypeCountWarehouseArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PieceCountOutputTypeCountWarehousesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.WarehouseWhereInput
 }
 
@@ -495,8 +488,8 @@ export type PieceSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   pieceId?: boolean
   name?: boolean
   details?: boolean
-  repairPart?: boolean | Prisma.Piece$repairPartArgs<ExtArgs>
-  warehouse?: boolean | Prisma.Piece$warehouseArgs<ExtArgs>
+  repairParts?: boolean | Prisma.Piece$repairPartsArgs<ExtArgs>
+  warehouses?: boolean | Prisma.Piece$warehousesArgs<ExtArgs>
   _count?: boolean | Prisma.PieceCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["piece"]>
 
@@ -510,16 +503,16 @@ export type PieceSelectScalar = {
 
 export type PieceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"pieceId" | "name" | "details", ExtArgs["result"]["piece"]>
 export type PieceInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  repairPart?: boolean | Prisma.Piece$repairPartArgs<ExtArgs>
-  warehouse?: boolean | Prisma.Piece$warehouseArgs<ExtArgs>
+  repairParts?: boolean | Prisma.Piece$repairPartsArgs<ExtArgs>
+  warehouses?: boolean | Prisma.Piece$warehousesArgs<ExtArgs>
   _count?: boolean | Prisma.PieceCountOutputTypeDefaultArgs<ExtArgs>
 }
 
 export type $PiecePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Piece"
   objects: {
-    repairPart: Prisma.$RepairPartPayload<ExtArgs>[]
-    warehouse: Prisma.$WarehousePayload<ExtArgs>[]
+    repairParts: Prisma.$RepairPartPayload<ExtArgs>[]
+    warehouses: Prisma.$WarehousePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     pieceId: number
@@ -865,8 +858,8 @@ readonly fields: PieceFieldRefs;
  */
 export interface Prisma__PieceClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  repairPart<T extends Prisma.Piece$repairPartArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Piece$repairPartArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RepairPartPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  warehouse<T extends Prisma.Piece$warehouseArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Piece$warehouseArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WarehousePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  repairParts<T extends Prisma.Piece$repairPartsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Piece$repairPartsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RepairPartPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  warehouses<T extends Prisma.Piece$warehousesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Piece$warehousesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WarehousePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1247,9 +1240,9 @@ export type PieceDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Interna
 }
 
 /**
- * Piece.repairPart
+ * Piece.repairParts
  */
-export type Piece$repairPartArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Piece$repairPartsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
    * Select specific fields to fetch from the RepairPart
    */
@@ -1271,9 +1264,9 @@ export type Piece$repairPartArgs<ExtArgs extends runtime.Types.Extensions.Intern
 }
 
 /**
- * Piece.warehouse
+ * Piece.warehouses
  */
-export type Piece$warehouseArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Piece$warehousesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
    * Select specific fields to fetch from the Warehouse
    */

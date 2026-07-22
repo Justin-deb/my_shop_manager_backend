@@ -230,19 +230,17 @@ export type PositionScalarWhereWithAggregatesInput = {
 }
 
 export type PositionCreateInput = {
-  positionId: number
   name: string
   shopUsers?: Prisma.ShopUserCreateNestedManyWithoutPositionInput
 }
 
 export type PositionUncheckedCreateInput = {
-  positionId: number
+  positionId?: number
   name: string
   shopUsers?: Prisma.ShopUserUncheckedCreateNestedManyWithoutPositionInput
 }
 
 export type PositionUpdateInput = {
-  positionId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   shopUsers?: Prisma.ShopUserUpdateManyWithoutPositionNestedInput
 }
@@ -254,12 +252,11 @@ export type PositionUncheckedUpdateInput = {
 }
 
 export type PositionCreateManyInput = {
-  positionId: number
+  positionId?: number
   name: string
 }
 
 export type PositionUpdateManyMutationInput = {
-  positionId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
@@ -317,12 +314,11 @@ export type PositionUpdateOneRequiredWithoutShopUsersNestedInput = {
 }
 
 export type PositionCreateWithoutShopUsersInput = {
-  positionId: number
   name: string
 }
 
 export type PositionUncheckedCreateWithoutShopUsersInput = {
-  positionId: number
+  positionId?: number
   name: string
 }
 
@@ -343,7 +339,6 @@ export type PositionUpdateToOneWithWhereWithoutShopUsersInput = {
 }
 
 export type PositionUpdateWithoutShopUsersInput = {
-  positionId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
 }
 

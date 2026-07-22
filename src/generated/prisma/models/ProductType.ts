@@ -192,13 +192,13 @@ export type ProductTypeWhereInput = {
   NOT?: Prisma.ProductTypeWhereInput | Prisma.ProductTypeWhereInput[]
   typeId?: Prisma.IntFilter<"ProductType"> | number
   name?: Prisma.StringFilter<"ProductType"> | string
-  product?: Prisma.ProductListRelationFilter
+  products?: Prisma.ProductListRelationFilter
 }
 
 export type ProductTypeOrderByWithRelationInput = {
   typeId?: Prisma.SortOrder
   name?: Prisma.SortOrder
-  product?: Prisma.ProductOrderByRelationAggregateInput
+  products?: Prisma.ProductOrderByRelationAggregateInput
   _relevance?: Prisma.ProductTypeOrderByRelevanceInput
 }
 
@@ -208,7 +208,7 @@ export type ProductTypeWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.ProductTypeWhereInput | Prisma.ProductTypeWhereInput[]
   OR?: Prisma.ProductTypeWhereInput[]
   NOT?: Prisma.ProductTypeWhereInput | Prisma.ProductTypeWhereInput[]
-  product?: Prisma.ProductListRelationFilter
+  products?: Prisma.ProductListRelationFilter
 }, "typeId" | "name">
 
 export type ProductTypeOrderByWithAggregationInput = {
@@ -230,36 +230,33 @@ export type ProductTypeScalarWhereWithAggregatesInput = {
 }
 
 export type ProductTypeCreateInput = {
-  typeId: number
   name: string
-  product?: Prisma.ProductCreateNestedManyWithoutProductTypeInput
+  products?: Prisma.ProductCreateNestedManyWithoutProductTypeInput
 }
 
 export type ProductTypeUncheckedCreateInput = {
-  typeId: number
+  typeId?: number
   name: string
-  product?: Prisma.ProductUncheckedCreateNestedManyWithoutProductTypeInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutProductTypeInput
 }
 
 export type ProductTypeUpdateInput = {
-  typeId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  product?: Prisma.ProductUpdateManyWithoutProductTypeNestedInput
+  products?: Prisma.ProductUpdateManyWithoutProductTypeNestedInput
 }
 
 export type ProductTypeUncheckedUpdateInput = {
   typeId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  product?: Prisma.ProductUncheckedUpdateManyWithoutProductTypeNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutProductTypeNestedInput
 }
 
 export type ProductTypeCreateManyInput = {
-  typeId: number
+  typeId?: number
   name: string
 }
 
 export type ProductTypeUpdateManyMutationInput = {
-  typeId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
@@ -302,52 +299,50 @@ export type ProductTypeSumOrderByAggregateInput = {
   typeId?: Prisma.SortOrder
 }
 
-export type ProductTypeCreateNestedOneWithoutProductInput = {
-  create?: Prisma.XOR<Prisma.ProductTypeCreateWithoutProductInput, Prisma.ProductTypeUncheckedCreateWithoutProductInput>
-  connectOrCreate?: Prisma.ProductTypeCreateOrConnectWithoutProductInput
+export type ProductTypeCreateNestedOneWithoutProductsInput = {
+  create?: Prisma.XOR<Prisma.ProductTypeCreateWithoutProductsInput, Prisma.ProductTypeUncheckedCreateWithoutProductsInput>
+  connectOrCreate?: Prisma.ProductTypeCreateOrConnectWithoutProductsInput
   connect?: Prisma.ProductTypeWhereUniqueInput
 }
 
-export type ProductTypeUpdateOneRequiredWithoutProductNestedInput = {
-  create?: Prisma.XOR<Prisma.ProductTypeCreateWithoutProductInput, Prisma.ProductTypeUncheckedCreateWithoutProductInput>
-  connectOrCreate?: Prisma.ProductTypeCreateOrConnectWithoutProductInput
-  upsert?: Prisma.ProductTypeUpsertWithoutProductInput
+export type ProductTypeUpdateOneRequiredWithoutProductsNestedInput = {
+  create?: Prisma.XOR<Prisma.ProductTypeCreateWithoutProductsInput, Prisma.ProductTypeUncheckedCreateWithoutProductsInput>
+  connectOrCreate?: Prisma.ProductTypeCreateOrConnectWithoutProductsInput
+  upsert?: Prisma.ProductTypeUpsertWithoutProductsInput
   connect?: Prisma.ProductTypeWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.ProductTypeUpdateToOneWithWhereWithoutProductInput, Prisma.ProductTypeUpdateWithoutProductInput>, Prisma.ProductTypeUncheckedUpdateWithoutProductInput>
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ProductTypeUpdateToOneWithWhereWithoutProductsInput, Prisma.ProductTypeUpdateWithoutProductsInput>, Prisma.ProductTypeUncheckedUpdateWithoutProductsInput>
 }
 
-export type ProductTypeCreateWithoutProductInput = {
-  typeId: number
+export type ProductTypeCreateWithoutProductsInput = {
   name: string
 }
 
-export type ProductTypeUncheckedCreateWithoutProductInput = {
-  typeId: number
+export type ProductTypeUncheckedCreateWithoutProductsInput = {
+  typeId?: number
   name: string
 }
 
-export type ProductTypeCreateOrConnectWithoutProductInput = {
+export type ProductTypeCreateOrConnectWithoutProductsInput = {
   where: Prisma.ProductTypeWhereUniqueInput
-  create: Prisma.XOR<Prisma.ProductTypeCreateWithoutProductInput, Prisma.ProductTypeUncheckedCreateWithoutProductInput>
+  create: Prisma.XOR<Prisma.ProductTypeCreateWithoutProductsInput, Prisma.ProductTypeUncheckedCreateWithoutProductsInput>
 }
 
-export type ProductTypeUpsertWithoutProductInput = {
-  update: Prisma.XOR<Prisma.ProductTypeUpdateWithoutProductInput, Prisma.ProductTypeUncheckedUpdateWithoutProductInput>
-  create: Prisma.XOR<Prisma.ProductTypeCreateWithoutProductInput, Prisma.ProductTypeUncheckedCreateWithoutProductInput>
+export type ProductTypeUpsertWithoutProductsInput = {
+  update: Prisma.XOR<Prisma.ProductTypeUpdateWithoutProductsInput, Prisma.ProductTypeUncheckedUpdateWithoutProductsInput>
+  create: Prisma.XOR<Prisma.ProductTypeCreateWithoutProductsInput, Prisma.ProductTypeUncheckedCreateWithoutProductsInput>
   where?: Prisma.ProductTypeWhereInput
 }
 
-export type ProductTypeUpdateToOneWithWhereWithoutProductInput = {
+export type ProductTypeUpdateToOneWithWhereWithoutProductsInput = {
   where?: Prisma.ProductTypeWhereInput
-  data: Prisma.XOR<Prisma.ProductTypeUpdateWithoutProductInput, Prisma.ProductTypeUncheckedUpdateWithoutProductInput>
+  data: Prisma.XOR<Prisma.ProductTypeUpdateWithoutProductsInput, Prisma.ProductTypeUncheckedUpdateWithoutProductsInput>
 }
 
-export type ProductTypeUpdateWithoutProductInput = {
-  typeId?: Prisma.IntFieldUpdateOperationsInput | number
+export type ProductTypeUpdateWithoutProductsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
-export type ProductTypeUncheckedUpdateWithoutProductInput = {
+export type ProductTypeUncheckedUpdateWithoutProductsInput = {
   typeId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
 }
@@ -358,11 +353,11 @@ export type ProductTypeUncheckedUpdateWithoutProductInput = {
  */
 
 export type ProductTypeCountOutputType = {
-  product: number
+  products: number
 }
 
 export type ProductTypeCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  product?: boolean | ProductTypeCountOutputTypeCountProductArgs
+  products?: boolean | ProductTypeCountOutputTypeCountProductsArgs
 }
 
 /**
@@ -378,7 +373,7 @@ export type ProductTypeCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.
 /**
  * ProductTypeCountOutputType without action
  */
-export type ProductTypeCountOutputTypeCountProductArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ProductTypeCountOutputTypeCountProductsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.ProductWhereInput
 }
 
@@ -386,7 +381,7 @@ export type ProductTypeCountOutputTypeCountProductArgs<ExtArgs extends runtime.T
 export type ProductTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   typeId?: boolean
   name?: boolean
-  product?: boolean | Prisma.ProductType$productArgs<ExtArgs>
+  products?: boolean | Prisma.ProductType$productsArgs<ExtArgs>
   _count?: boolean | Prisma.ProductTypeCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["productType"]>
 
@@ -399,14 +394,14 @@ export type ProductTypeSelectScalar = {
 
 export type ProductTypeOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"typeId" | "name", ExtArgs["result"]["productType"]>
 export type ProductTypeInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  product?: boolean | Prisma.ProductType$productArgs<ExtArgs>
+  products?: boolean | Prisma.ProductType$productsArgs<ExtArgs>
   _count?: boolean | Prisma.ProductTypeCountOutputTypeDefaultArgs<ExtArgs>
 }
 
 export type $ProductTypePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "ProductType"
   objects: {
-    product: Prisma.$ProductPayload<ExtArgs>[]
+    products: Prisma.$ProductPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     typeId: number
@@ -751,7 +746,7 @@ readonly fields: ProductTypeFieldRefs;
  */
 export interface Prisma__ProductTypeClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  product<T extends Prisma.ProductType$productArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ProductType$productArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  products<T extends Prisma.ProductType$productsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ProductType$productsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1131,9 +1126,9 @@ export type ProductTypeDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.I
 }
 
 /**
- * ProductType.product
+ * ProductType.products
  */
-export type ProductType$productArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ProductType$productsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
    * Select specific fields to fetch from the Product
    */

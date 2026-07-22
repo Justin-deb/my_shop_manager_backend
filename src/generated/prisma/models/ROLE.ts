@@ -230,19 +230,17 @@ export type RoleScalarWhereWithAggregatesInput = {
 }
 
 export type RoleCreateInput = {
-  roleId: number
   name: string
   users?: Prisma.UserCreateNestedManyWithoutRoleInput
 }
 
 export type RoleUncheckedCreateInput = {
-  roleId: number
+  roleId?: number
   name: string
   users?: Prisma.UserUncheckedCreateNestedManyWithoutRoleInput
 }
 
 export type RoleUpdateInput = {
-  roleId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   users?: Prisma.UserUpdateManyWithoutRoleNestedInput
 }
@@ -254,12 +252,11 @@ export type RoleUncheckedUpdateInput = {
 }
 
 export type RoleCreateManyInput = {
-  roleId: number
+  roleId?: number
   name: string
 }
 
 export type RoleUpdateManyMutationInput = {
-  roleId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
@@ -317,12 +314,11 @@ export type RoleUpdateOneRequiredWithoutUsersNestedInput = {
 }
 
 export type RoleCreateWithoutUsersInput = {
-  roleId: number
   name: string
 }
 
 export type RoleUncheckedCreateWithoutUsersInput = {
-  roleId: number
+  roleId?: number
   name: string
 }
 
@@ -343,7 +339,6 @@ export type RoleUpdateToOneWithWhereWithoutUsersInput = {
 }
 
 export type RoleUpdateWithoutUsersInput = {
-  roleId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
 }
 

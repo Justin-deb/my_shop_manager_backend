@@ -285,7 +285,7 @@ export type RepairPartCreateInput = {
   unitPrice?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   addedAt: Date | string
   repair: Prisma.RepairCreateNestedOneWithoutRepairPartsInput
-  piece: Prisma.PieceCreateNestedOneWithoutRepairPartInput
+  piece: Prisma.PieceCreateNestedOneWithoutRepairPartsInput
 }
 
 export type RepairPartUncheckedCreateInput = {
@@ -301,7 +301,7 @@ export type RepairPartUpdateInput = {
   unitPrice?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   addedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   repair?: Prisma.RepairUpdateOneRequiredWithoutRepairPartsNestedInput
-  piece?: Prisma.PieceUpdateOneRequiredWithoutRepairPartNestedInput
+  piece?: Prisma.PieceUpdateOneRequiredWithoutRepairPartsNestedInput
 }
 
 export type RepairPartUncheckedUpdateInput = {
@@ -526,7 +526,7 @@ export type RepairPartCreateWithoutRepairInput = {
   quantity: number
   unitPrice?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   addedAt: Date | string
-  piece: Prisma.PieceCreateNestedOneWithoutRepairPartInput
+  piece: Prisma.PieceCreateNestedOneWithoutRepairPartsInput
 }
 
 export type RepairPartUncheckedCreateWithoutRepairInput = {
@@ -601,7 +601,7 @@ export type RepairPartUpdateWithoutRepairInput = {
   quantity?: Prisma.IntFieldUpdateOperationsInput | number
   unitPrice?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   addedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  piece?: Prisma.PieceUpdateOneRequiredWithoutRepairPartNestedInput
+  piece?: Prisma.PieceUpdateOneRequiredWithoutRepairPartsNestedInput
 }
 
 export type RepairPartUncheckedUpdateWithoutRepairInput = {

@@ -290,16 +290,15 @@ export type LaborScalarWhereWithAggregatesInput = {
 }
 
 export type LaborCreateInput = {
-  laborId: number
   description?: string | null
   hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   hourlyRate?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   performedAt: Date | string
-  repair: Prisma.RepairCreateNestedOneWithoutLaborInput
+  repair: Prisma.RepairCreateNestedOneWithoutLabourEntriesInput
 }
 
 export type LaborUncheckedCreateInput = {
-  laborId: number
+  laborId?: number
   repairId: number
   description?: string | null
   hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -308,12 +307,11 @@ export type LaborUncheckedCreateInput = {
 }
 
 export type LaborUpdateInput = {
-  laborId?: Prisma.IntFieldUpdateOperationsInput | number
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   hourlyRate?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   performedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  repair?: Prisma.RepairUpdateOneRequiredWithoutLaborNestedInput
+  repair?: Prisma.RepairUpdateOneRequiredWithoutLabourEntriesNestedInput
 }
 
 export type LaborUncheckedUpdateInput = {
@@ -326,7 +324,7 @@ export type LaborUncheckedUpdateInput = {
 }
 
 export type LaborCreateManyInput = {
-  laborId: number
+  laborId?: number
   repairId: number
   description?: string | null
   hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -335,7 +333,6 @@ export type LaborCreateManyInput = {
 }
 
 export type LaborUpdateManyMutationInput = {
-  laborId?: Prisma.IntFieldUpdateOperationsInput | number
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   hourlyRate?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -459,7 +456,6 @@ export type LaborUncheckedUpdateManyWithoutRepairNestedInput = {
 }
 
 export type LaborCreateWithoutRepairInput = {
-  laborId: number
   description?: string | null
   hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   hourlyRate?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -467,7 +463,7 @@ export type LaborCreateWithoutRepairInput = {
 }
 
 export type LaborUncheckedCreateWithoutRepairInput = {
-  laborId: number
+  laborId?: number
   description?: string | null
   hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   hourlyRate?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -513,7 +509,7 @@ export type LaborScalarWhereInput = {
 }
 
 export type LaborCreateManyRepairInput = {
-  laborId: number
+  laborId?: number
   description?: string | null
   hours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   hourlyRate?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -521,7 +517,6 @@ export type LaborCreateManyRepairInput = {
 }
 
 export type LaborUpdateWithoutRepairInput = {
-  laborId?: Prisma.IntFieldUpdateOperationsInput | number
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   hours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   hourlyRate?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null

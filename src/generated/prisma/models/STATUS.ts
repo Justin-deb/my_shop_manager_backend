@@ -230,19 +230,17 @@ export type StatusScalarWhereWithAggregatesInput = {
 }
 
 export type StatusCreateInput = {
-  statusId: number
   name: string
   repairs?: Prisma.RepairCreateNestedManyWithoutStatusInput
 }
 
 export type StatusUncheckedCreateInput = {
-  statusId: number
+  statusId?: number
   name: string
   repairs?: Prisma.RepairUncheckedCreateNestedManyWithoutStatusInput
 }
 
 export type StatusUpdateInput = {
-  statusId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   repairs?: Prisma.RepairUpdateManyWithoutStatusNestedInput
 }
@@ -254,12 +252,11 @@ export type StatusUncheckedUpdateInput = {
 }
 
 export type StatusCreateManyInput = {
-  statusId: number
+  statusId?: number
   name: string
 }
 
 export type StatusUpdateManyMutationInput = {
-  statusId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
@@ -317,12 +314,11 @@ export type StatusUpdateOneRequiredWithoutRepairsNestedInput = {
 }
 
 export type StatusCreateWithoutRepairsInput = {
-  statusId: number
   name: string
 }
 
 export type StatusUncheckedCreateWithoutRepairsInput = {
-  statusId: number
+  statusId?: number
   name: string
 }
 
@@ -343,7 +339,6 @@ export type StatusUpdateToOneWithWhereWithoutRepairsInput = {
 }
 
 export type StatusUpdateWithoutRepairsInput = {
-  statusId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
 }
 

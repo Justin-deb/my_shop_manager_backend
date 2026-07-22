@@ -102,3 +102,8 @@ export type User = Prisma.UserModel
  * 
  */
 export type Warehouse = Prisma.WarehouseModel
+/**
+ * Model UserProduct
+ * 
+ */
+export type UserProduct = Prisma.UserProductModel
