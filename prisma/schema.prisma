@@ -154,10 +154,13 @@ model Shop {
   phoneNumber String?     @map("phone_number") @db.VarChar(255)
   email       String?     @unique(map: "email") @db.VarChar(255)
   photoUrl    String?     @map("photo_url") @db.VarChar(255)
+  ownerId     Int         @map("owner_id")
   employees   Employee[]
   repairs     Repair[]
+  user        User        @relation(fields: [ownerId], references: [userId], onDelete: NoAction, onUpdate: NoAction, map: "owner_id_key")
   warehouses  Warehouse[]
 
+  @@index([ownerId], map: "owner_id_key_idx")
   @@map("SHOP")
 }
 
@@ -180,6 +183,7 @@ model User {
   passwordHash   String?       @map("password_hash") @db.VarChar(255)
   phoneNumber    String?       @map("phone_number") @db.VarChar(20)
   employees      Employee[]
+  shops          Shop[]
   role           Role          @relation(fields: [roleId], references: [roleId], onDelete: NoAction, onUpdate: NoAction, map: "USER_ibfk_1")
   userProducts   UserProduct[]
 
