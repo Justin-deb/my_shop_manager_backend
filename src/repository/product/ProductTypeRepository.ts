@@ -1,4 +1,4 @@
-import { ProductTypeCreateInput } from "../../generated/prisma/models";
+import { ProductTypeCreateInput, ProductTypeUpdateInput } from "../../generated/prisma/models";
 import prisma from "../../models/common/prisma";
 
 export const findAll = () => {
@@ -25,6 +25,15 @@ export const findByName = (name:string) => {
 
 export const create = (productType:ProductTypeCreateInput) => {
     return prisma.productType.create({
+        data:productType
+    });
+}
+
+export const update = (typeId:number,productType:ProductTypeUpdateInput) =>{
+    return prisma.productType.update({
+        where:{
+            typeId
+        },
         data:productType
     });
 }

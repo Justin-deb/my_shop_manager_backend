@@ -70,14 +70,6 @@ export const create = (product:ProductCreateInput) =>{
     });
 }
 
-export const remove = (productId:number) =>{
-    return prisma.product.delete({
-        where:{
-            productId
-        }
-    });
-};
-
 export const update = (productId:number,product:ProductUpdateInput) =>{
     return prisma.product.update({
         where:{
@@ -86,3 +78,11 @@ export const update = (productId:number,product:ProductUpdateInput) =>{
         data:product
     });
 }
+
+export const remove = (productId:number) =>{
+    return prisma.product.delete({
+        where:{
+            productId
+        }
+    });
+};
