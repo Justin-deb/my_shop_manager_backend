@@ -5,16 +5,16 @@ export const findAll = () => {
     return prisma.productType.findMany();
 }
 
-export const findById = (id:number) => {
+export const findById = (typeId:number) => {
     return prisma.productType.findUniqueOrThrow({
         where: {
-            typeId:id
+            typeId
         }
     });
 }
 
 export const findByName = (name:string) => {
-    return prisma.productType.findMany({
+    return prisma.productType.findFirstOrThrow({
         where:{
             name:{
                 contains:name
@@ -29,10 +29,10 @@ export const create = (productType:ProductTypeCreateInput) => {
     });
 }
 
-export const remove = (id:number) =>{
+export const remove = (typeId:number) =>{
     return prisma.productType.delete({
         where:{
-            typeId:id
+            typeId
         }
     });
 }

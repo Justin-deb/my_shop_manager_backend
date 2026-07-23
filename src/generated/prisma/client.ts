@@ -85,11 +85,6 @@ export type ProductType = Prisma.ProductTypeModel
  */
 export type Repair = Prisma.RepairModel
 /**
- * Model RepairAssignment
- * 
- */
-export type RepairAssignment = Prisma.RepairAssignmentModel
-/**
  * Model RepairPart
  * 
  */
@@ -104,11 +99,6 @@ export type Role = Prisma.RoleModel
  * 
  */
 export type Shop = Prisma.ShopModel
-/**
- * Model ShopUser
- * 
- */
-export type ShopUser = Prisma.ShopUserModel
 /**
  * Model Status
  * 
@@ -129,3 +119,13 @@ export type Warehouse = Prisma.WarehouseModel
  * 
  */
 export type UserProduct = Prisma.UserProductModel
+/**
+ * Model Assignment
+ * 
+ */
+export type Assignment = Prisma.AssignmentModel
+/**
+ * Model Employee
+ * 
+ */
+export type Employee = Prisma.EmployeeModel

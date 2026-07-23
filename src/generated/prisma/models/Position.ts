@@ -192,13 +192,13 @@ export type PositionWhereInput = {
   NOT?: Prisma.PositionWhereInput | Prisma.PositionWhereInput[]
   positionId?: Prisma.IntFilter<"Position"> | number
   name?: Prisma.StringFilter<"Position"> | string
-  shopUsers?: Prisma.ShopUserListRelationFilter
+  employees?: Prisma.EmployeeListRelationFilter
 }
 
 export type PositionOrderByWithRelationInput = {
   positionId?: Prisma.SortOrder
   name?: Prisma.SortOrder
-  shopUsers?: Prisma.ShopUserOrderByRelationAggregateInput
+  employees?: Prisma.EmployeeOrderByRelationAggregateInput
   _relevance?: Prisma.PositionOrderByRelevanceInput
 }
 
@@ -208,7 +208,7 @@ export type PositionWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.PositionWhereInput | Prisma.PositionWhereInput[]
   OR?: Prisma.PositionWhereInput[]
   NOT?: Prisma.PositionWhereInput | Prisma.PositionWhereInput[]
-  shopUsers?: Prisma.ShopUserListRelationFilter
+  employees?: Prisma.EmployeeListRelationFilter
 }, "positionId" | "name">
 
 export type PositionOrderByWithAggregationInput = {
@@ -231,24 +231,24 @@ export type PositionScalarWhereWithAggregatesInput = {
 
 export type PositionCreateInput = {
   name: string
-  shopUsers?: Prisma.ShopUserCreateNestedManyWithoutPositionInput
+  employees?: Prisma.EmployeeCreateNestedManyWithoutPositionInput
 }
 
 export type PositionUncheckedCreateInput = {
   positionId?: number
   name: string
-  shopUsers?: Prisma.ShopUserUncheckedCreateNestedManyWithoutPositionInput
+  employees?: Prisma.EmployeeUncheckedCreateNestedManyWithoutPositionInput
 }
 
 export type PositionUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  shopUsers?: Prisma.ShopUserUpdateManyWithoutPositionNestedInput
+  employees?: Prisma.EmployeeUpdateManyWithoutPositionNestedInput
 }
 
 export type PositionUncheckedUpdateInput = {
   positionId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  shopUsers?: Prisma.ShopUserUncheckedUpdateManyWithoutPositionNestedInput
+  employees?: Prisma.EmployeeUncheckedUpdateManyWithoutPositionNestedInput
 }
 
 export type PositionCreateManyInput = {
@@ -299,50 +299,50 @@ export type PositionScalarRelationFilter = {
   isNot?: Prisma.PositionWhereInput
 }
 
-export type PositionCreateNestedOneWithoutShopUsersInput = {
-  create?: Prisma.XOR<Prisma.PositionCreateWithoutShopUsersInput, Prisma.PositionUncheckedCreateWithoutShopUsersInput>
-  connectOrCreate?: Prisma.PositionCreateOrConnectWithoutShopUsersInput
+export type PositionCreateNestedOneWithoutEmployeesInput = {
+  create?: Prisma.XOR<Prisma.PositionCreateWithoutEmployeesInput, Prisma.PositionUncheckedCreateWithoutEmployeesInput>
+  connectOrCreate?: Prisma.PositionCreateOrConnectWithoutEmployeesInput
   connect?: Prisma.PositionWhereUniqueInput
 }
 
-export type PositionUpdateOneRequiredWithoutShopUsersNestedInput = {
-  create?: Prisma.XOR<Prisma.PositionCreateWithoutShopUsersInput, Prisma.PositionUncheckedCreateWithoutShopUsersInput>
-  connectOrCreate?: Prisma.PositionCreateOrConnectWithoutShopUsersInput
-  upsert?: Prisma.PositionUpsertWithoutShopUsersInput
+export type PositionUpdateOneRequiredWithoutEmployeesNestedInput = {
+  create?: Prisma.XOR<Prisma.PositionCreateWithoutEmployeesInput, Prisma.PositionUncheckedCreateWithoutEmployeesInput>
+  connectOrCreate?: Prisma.PositionCreateOrConnectWithoutEmployeesInput
+  upsert?: Prisma.PositionUpsertWithoutEmployeesInput
   connect?: Prisma.PositionWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.PositionUpdateToOneWithWhereWithoutShopUsersInput, Prisma.PositionUpdateWithoutShopUsersInput>, Prisma.PositionUncheckedUpdateWithoutShopUsersInput>
+  update?: Prisma.XOR<Prisma.XOR<Prisma.PositionUpdateToOneWithWhereWithoutEmployeesInput, Prisma.PositionUpdateWithoutEmployeesInput>, Prisma.PositionUncheckedUpdateWithoutEmployeesInput>
 }
 
-export type PositionCreateWithoutShopUsersInput = {
+export type PositionCreateWithoutEmployeesInput = {
   name: string
 }
 
-export type PositionUncheckedCreateWithoutShopUsersInput = {
+export type PositionUncheckedCreateWithoutEmployeesInput = {
   positionId?: number
   name: string
 }
 
-export type PositionCreateOrConnectWithoutShopUsersInput = {
+export type PositionCreateOrConnectWithoutEmployeesInput = {
   where: Prisma.PositionWhereUniqueInput
-  create: Prisma.XOR<Prisma.PositionCreateWithoutShopUsersInput, Prisma.PositionUncheckedCreateWithoutShopUsersInput>
+  create: Prisma.XOR<Prisma.PositionCreateWithoutEmployeesInput, Prisma.PositionUncheckedCreateWithoutEmployeesInput>
 }
 
-export type PositionUpsertWithoutShopUsersInput = {
-  update: Prisma.XOR<Prisma.PositionUpdateWithoutShopUsersInput, Prisma.PositionUncheckedUpdateWithoutShopUsersInput>
-  create: Prisma.XOR<Prisma.PositionCreateWithoutShopUsersInput, Prisma.PositionUncheckedCreateWithoutShopUsersInput>
+export type PositionUpsertWithoutEmployeesInput = {
+  update: Prisma.XOR<Prisma.PositionUpdateWithoutEmployeesInput, Prisma.PositionUncheckedUpdateWithoutEmployeesInput>
+  create: Prisma.XOR<Prisma.PositionCreateWithoutEmployeesInput, Prisma.PositionUncheckedCreateWithoutEmployeesInput>
   where?: Prisma.PositionWhereInput
 }
 
-export type PositionUpdateToOneWithWhereWithoutShopUsersInput = {
+export type PositionUpdateToOneWithWhereWithoutEmployeesInput = {
   where?: Prisma.PositionWhereInput
-  data: Prisma.XOR<Prisma.PositionUpdateWithoutShopUsersInput, Prisma.PositionUncheckedUpdateWithoutShopUsersInput>
+  data: Prisma.XOR<Prisma.PositionUpdateWithoutEmployeesInput, Prisma.PositionUncheckedUpdateWithoutEmployeesInput>
 }
 
-export type PositionUpdateWithoutShopUsersInput = {
+export type PositionUpdateWithoutEmployeesInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
-export type PositionUncheckedUpdateWithoutShopUsersInput = {
+export type PositionUncheckedUpdateWithoutEmployeesInput = {
   positionId?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
 }
@@ -353,11 +353,11 @@ export type PositionUncheckedUpdateWithoutShopUsersInput = {
  */
 
 export type PositionCountOutputType = {
-  shopUsers: number
+  employees: number
 }
 
 export type PositionCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  shopUsers?: boolean | PositionCountOutputTypeCountShopUsersArgs
+  employees?: boolean | PositionCountOutputTypeCountEmployeesArgs
 }
 
 /**
@@ -373,15 +373,15 @@ export type PositionCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Ext
 /**
  * PositionCountOutputType without action
  */
-export type PositionCountOutputTypeCountShopUsersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ShopUserWhereInput
+export type PositionCountOutputTypeCountEmployeesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.EmployeeWhereInput
 }
 
 
 export type PositionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   positionId?: boolean
   name?: boolean
-  shopUsers?: boolean | Prisma.Position$shopUsersArgs<ExtArgs>
+  employees?: boolean | Prisma.Position$employeesArgs<ExtArgs>
   _count?: boolean | Prisma.PositionCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["position"]>
 
@@ -394,14 +394,14 @@ export type PositionSelectScalar = {
 
 export type PositionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"positionId" | "name", ExtArgs["result"]["position"]>
 export type PositionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  shopUsers?: boolean | Prisma.Position$shopUsersArgs<ExtArgs>
+  employees?: boolean | Prisma.Position$employeesArgs<ExtArgs>
   _count?: boolean | Prisma.PositionCountOutputTypeDefaultArgs<ExtArgs>
 }
 
 export type $PositionPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Position"
   objects: {
-    shopUsers: Prisma.$ShopUserPayload<ExtArgs>[]
+    employees: Prisma.$EmployeePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     positionId: number
@@ -746,7 +746,7 @@ readonly fields: PositionFieldRefs;
  */
 export interface Prisma__PositionClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  shopUsers<T extends Prisma.Position$shopUsersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Position$shopUsersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ShopUserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  employees<T extends Prisma.Position$employeesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Position$employeesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EmployeePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1126,27 +1126,27 @@ export type PositionDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Inte
 }
 
 /**
- * Position.shopUsers
+ * Position.employees
  */
-export type Position$shopUsersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Position$employeesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ShopUser
+   * Select specific fields to fetch from the Employee
    */
-  select?: Prisma.ShopUserSelect<ExtArgs> | null
+  select?: Prisma.EmployeeSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ShopUser
+   * Omit specific fields from the Employee
    */
-  omit?: Prisma.ShopUserOmit<ExtArgs> | null
+  omit?: Prisma.EmployeeOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ShopUserInclude<ExtArgs> | null
-  where?: Prisma.ShopUserWhereInput
-  orderBy?: Prisma.ShopUserOrderByWithRelationInput | Prisma.ShopUserOrderByWithRelationInput[]
-  cursor?: Prisma.ShopUserWhereUniqueInput
+  include?: Prisma.EmployeeInclude<ExtArgs> | null
+  where?: Prisma.EmployeeWhereInput
+  orderBy?: Prisma.EmployeeOrderByWithRelationInput | Prisma.EmployeeOrderByWithRelationInput[]
+  cursor?: Prisma.EmployeeWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.ShopUserScalarFieldEnum | Prisma.ShopUserScalarFieldEnum[]
+  distinct?: Prisma.EmployeeScalarFieldEnum | Prisma.EmployeeScalarFieldEnum[]
 }
 
 /**

@@ -13,10 +13,10 @@ export const findAll = () =>{
     });
 }
 
-export const findById = (id:number) =>{
+export const findById = (productId:number) =>{
     return prisma.product.findUniqueOrThrow({
         where:{
-            productId:id
+            productId
         },
         include
     });
@@ -70,18 +70,18 @@ export const create = (product:ProductCreateInput) =>{
     });
 }
 
-export const remove = (id:number) =>{
+export const remove = (productId:number) =>{
     return prisma.product.delete({
         where:{
-            productId:id
+            productId
         }
     });
 };
 
-export const update = (id:number,product:ProductUpdateInput) =>{
+export const update = (productId:number,product:ProductUpdateInput) =>{
     return prisma.product.update({
         where:{
-            productId:id
+            productId
         },
         data:product
     });
