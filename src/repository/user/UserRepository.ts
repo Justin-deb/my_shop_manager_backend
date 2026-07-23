@@ -12,10 +12,10 @@ export const findAll = () =>{
     });
 }
 
-export const findById = (id:number) =>{
+export const findById = (userId:number) =>{
     return prisma.user.findUniqueOrThrow({
         where:{
-            userId:id
+            userId
         },
         include
     });
