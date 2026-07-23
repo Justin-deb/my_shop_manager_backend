@@ -212,7 +212,8 @@ export const ShopScalarFieldEnum = {
   address: 'address',
   phoneNumber: 'phoneNumber',
   email: 'email',
-  photoUrl: 'photoUrl'
+  photoUrl: 'photoUrl',
+  ownerId: 'ownerId'
 } as const
 
 export type ShopScalarFieldEnum = (typeof ShopScalarFieldEnum)[keyof typeof ShopScalarFieldEnum]
