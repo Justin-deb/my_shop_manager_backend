@@ -1,4 +1,4 @@
-import { RoleCreateInput } from "../../generated/prisma/models";
+import { RoleCreateInput, RoleUpdateInput } from "../../generated/prisma/models";
 import prisma from "../../models/common/prisma";
 
 export const findAll = () =>{
@@ -25,6 +25,15 @@ export const findByName = (name:string) =>{
 
 export const create = (role:RoleCreateInput) =>{
     return prisma.role.create({
+        data:role
+    });
+}
+
+export const update = (roleId:number,role:RoleUpdateInput) =>{
+    return prisma.role.update({
+        where:{
+            roleId
+        },
         data:role
     });
 }
