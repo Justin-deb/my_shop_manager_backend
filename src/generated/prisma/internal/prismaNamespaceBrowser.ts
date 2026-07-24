@@ -173,6 +173,7 @@ export type ProductTypeScalarFieldEnum = (typeof ProductTypeScalarFieldEnum)[key
 export const RepairScalarFieldEnum = {
   repairId: 'repairId',
   productId: 'productId',
+  ownerId: 'ownerId',
   shopId: 'shopId',
   statusId: 'statusId',
   estimatedHours: 'estimatedHours',
