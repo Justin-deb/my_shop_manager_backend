@@ -102,6 +102,7 @@ model ProductType {
 model Repair {
   repairId           Int          @id @default(autoincrement()) @map("repair_id")
   productId          Int          @map("product_id")
+  ownerId            Int          @map("owner_id")
   shopId             Int          @map("shop_id")
   statusId           Int          @map("status_id")
   estimatedHours     Decimal?     @map("estimated_hours") @db.Decimal(5, 2)
@@ -117,11 +118,13 @@ model Repair {
   product            Product      @relation(fields: [productId], references: [productId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_ibfk_1")
   shop               Shop         @relation(fields: [shopId], references: [shopId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_ibfk_2")
   status             Status       @relation(fields: [statusId], references: [statusId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_ibfk_3")
+  userProduct       UserProduct  @relation(fields: [productId, ownerId], references: [productId, ownerId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_ibfk_4")
   repairParts        RepairPart[]
 
-  @@index([productId], map: "product_id")
   @@index([shopId], map: "shop_id")
   @@index([statusId], map: "status_id")
+  @@index([productId, ownerId], map: "REPAIR_ibfk_4")
+  @@index([ownerId, productId], map: "REPAIR_ibfk_4_idx")
   @@map("REPAIR")
 }
 
@@ -205,12 +208,13 @@ model Warehouse {
 }
 
 model UserProduct {
-  productId    Int     @map("product_id")
-  ownerId      Int     @map("owner_id")
-  serialNumber String? @map("serial_number") @db.VarChar(255)
-  name         String? @db.VarChar(255)
-  user         User    @relation(fields: [ownerId], references: [userId], onDelete: NoAction, onUpdate: NoAction, map: "fk_user_product_owner")
-  product      Product @relation(fields: [productId], references: [productId], onDelete: NoAction, onUpdate: NoAction, map: "fk_user_product_product")
+  productId    Int      @map("product_id")
+  ownerId      Int      @map("owner_id")
+  serialNumber String?  @map("serial_number") @db.VarChar(255)
+  name         String?  @db.VarChar(255)
+  repairs      Repair[]
+  user         User     @relation(fields: [ownerId], references: [userId], onDelete: NoAction, onUpdate: NoAction, map: "fk_user_product_owner")
+  product      Product  @relation(fields: [productId], references: [productId], onDelete: NoAction, onUpdate: NoAction, map: "fk_user_product_product")
 
   @@id([productId, ownerId])
   @@index([ownerId], map: "fk_user_product_owner")
