@@ -1,4 +1,4 @@
-export const PRISMA_ERROR_CODES = {
+export const PRISMA_CODES = {
     // Connection errors
     DATABASE_UNAVAILABLE: "P1001",
     CONNECTION_TIMEOUT: "P1002",
