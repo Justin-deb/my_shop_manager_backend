@@ -1,0 +1,18 @@
+export const PRISMA_ERROR_CODES = {
+    // Connection errors
+    DATABASE_UNAVAILABLE: "P1001",
+    CONNECTION_TIMEOUT: "P1002",
+    DATABASE_DOES_NOT_EXIST: "P1003",
+    ACCESS_DENIED: "P1010",
+
+    // Query errors
+    UNIQUE_CONSTRAINT: "P2002",
+    FOREIGN_KEY_CONSTRAINT: "P2003",
+    CONSTRAINT_FAILED: "P2004",
+    INVALID_VALUE: "P2005",
+    VALIDATION_ERROR: "P2006",
+    INVALID_DATA: "P2007",
+
+    // Record errors
+    RECORD_NOT_FOUND: "P2025",
+} as const;
