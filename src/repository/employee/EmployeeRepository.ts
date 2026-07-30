@@ -30,6 +30,18 @@ export const findByName = (name:string,shopId:number) =>{
     });
 }
 
+export const findById = (employeeId:number,shopId:number) =>{
+    return prisma.employee.findUniqueOrThrow({
+        where:{
+            shopId_userId:{
+                userId:employeeId,
+                shopId
+            }
+        },
+        include
+    });
+}
+
 export const create = (employee:EmployeeCreateInput) =>{
     return prisma.employee.create({
         data:employee
