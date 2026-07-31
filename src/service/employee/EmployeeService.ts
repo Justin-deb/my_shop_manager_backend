@@ -1,6 +1,7 @@
 import { PRISMA_CODES } from '../../common/constants/PrismaErrorCodes';
-import { CreateEmployeeDto } from '../../dto/employee/CreateEmployeeDto';
-import { UpdateEmployeeDto } from '../../dto/employee/UpdateEmployeeDto';
+import { mapPrismaError } from '../../common/utils/ErrorWrapper';
+import { CreateEmployeeDto } from '../../dto/employee/create/CreateEmployeeDto';
+import { UpdateEmployeeDto } from '../../dto/employee/update/UpdateEmployeeDto';
 import { BadRequestError } from '../../exceptions/BadRequestError';
 import { NotFoundError } from '../../exceptions/NotFoundError';
 import { EmployeeCreateInput, EmployeeUpdateInput, PrismaClientKnownRequestError } from '../../generated/prisma/internal/prismaNamespace';
@@ -20,15 +21,11 @@ export const findByName = (name:string, shopId:number) =>{
     return employeeRepository.findByName(employeeName,shopId);
 }
 
-export const findById = (employeeId:number,shopId:number) =>{
+export const findById = async (userId:number,shopId:number) =>{
     try {
-        return employeeRepository.findById(employeeId,shopId);
+        return await employeeRepository.findById(userId,shopId);
     } catch (error) {
-        if(error instanceof PrismaClientKnownRequestError && error.code === PRISMA_CODES.RECORD_NOT_FOUND){
-            throw new NotFoundError(`Employee not found by the id: ${employeeId}`);
-        }
-
-        throw error;
+        mapPrismaError(error,"Employee",userId.toString());
     }
 }
 
@@ -54,34 +51,26 @@ export const create = (employee:CreateEmployeeDto) =>{
     return employeeRepository.create(newEmployee);
 }
 
-export const update = (employee:UpdateEmployeeDto) =>{
+export const update = async (employee:UpdateEmployeeDto) =>{
     const newEmployee:EmployeeUpdateInput = {
         position:{
-            update:{
+            connect:{
                 positionId:employee.positionId
             }
         }
     }
 
     try {
-        return employeeRepository.update(employee.shopId,employee.employeeId,newEmployee);
+        return await employeeRepository.update(employee.shopId,employee.userId,newEmployee);
     } catch (error) {
-        if(error instanceof PrismaClientKnownRequestError && error.code === PRISMA_CODES.RECORD_NOT_FOUND){
-            throw new NotFoundError(`Employee not found by the id: ${employee.employeeId}`);
-        }
-
-        throw error;
+        mapPrismaError(error,"Employee",employee.userId.toString());
     }
 }
 
-export const remove = (employeeId:number,shopId:number) => {
+export const remove = async (userId:number,shopId:number) => {
     try {
-        return employeeRepository.remove(shopId,employeeId);
+        return await employeeRepository.remove(shopId,userId);
     } catch (error) {
-        if(error instanceof PrismaClientKnownRequestError && error.code === PRISMA_CODES.RECORD_NOT_FOUND){
-            throw new NotFoundError(`Employee not found by the id: ${employeeId}`);
-        }
-
-        throw error;
+        mapPrismaError(error,"Employee",userId.toString());
     }
 }

@@ -1,5 +1,5 @@
 export interface CreateEmployeeDto{
     userId:number,
-    positionId:number,
-    shopId:number
+    shopId:number,
+    positionId:number
 }

@@ -30,11 +30,11 @@ export const findByName = (name:string,shopId:number) =>{
     });
 }
 
-export const findById = (employeeId:number,shopId:number) =>{
+export const findById = (userId:number,shopId:number) =>{
     return prisma.employee.findUniqueOrThrow({
         where:{
             shopId_userId:{
-                userId:employeeId,
+                userId,
                 shopId
             }
         },
