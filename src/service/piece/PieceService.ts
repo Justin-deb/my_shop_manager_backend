@@ -1,4 +1,5 @@
 import { PRISMA_CODES } from '../../common/constants/PrismaErrorCodes';
+import { mapPrismaError } from '../../common/utils/ErrorWrapper';
 import { CreatePieceDto } from '../../dto/piece/CreatePieceDto';
 import { UpdatePieceDto } from '../../dto/piece/UpdatePieceDto';
 import { BadRequestError } from '../../exceptions/BadRequestError';
@@ -33,9 +34,7 @@ export const create = (newPiece:CreatePieceDto) =>{
             details:details,
         });
     } catch (error) {
-        if(error instanceof PrismaClientKnownRequestError && error.code === PRISMA_CODES.UNIQUE_CONSTRAINT){
-            throw new ConflictError('A piece with that name already exists');
-        }
+        mapPrismaError(error,"Piece");
     }
 }
 
@@ -49,11 +48,7 @@ export const update = (piece:UpdatePieceDto) =>{
     try {
         return pieceRepository.update(piece.id,{details})
     } catch (error) {
-        if(error instanceof PrismaClientKnownRequestError && error.code === PRISMA_CODES.RECORD_NOT_FOUND){
-            throw new NotFoundError(`Piece not found with the id: ${piece.id}`);
-        }
-
-        throw error
+        mapPrismaError(error,"Piece",piece.id.toString());
     }
 }
 
@@ -61,10 +56,6 @@ export const remove = (id:number) =>{
     try {
         return pieceRepository.remove(id);
     } catch (error) {
-        if(error instanceof PrismaClientKnownRequestError && error.code === PRISMA_CODES.RECORD_NOT_FOUND){
-            throw new NotFoundError(`Piece not found with the id: ${id}`);
-        }
-
-        throw error
+        mapPrismaError(error,"Piece",id.toString());
     }
 }

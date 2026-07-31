@@ -1,4 +1,4 @@
-import { PositionUpdateInput } from "../../generated/prisma/models";
+import { PositionCreateInput, PositionUpdateInput } from "../../generated/prisma/models";
 import prisma from "../../models/common/prisma";
 
 export const findAll = () =>{
@@ -20,6 +20,12 @@ export const findByName = (name:string) =>{
                 contains:name
             }
         }
+    });
+}
+
+export const create = (position:PositionCreateInput) =>{
+    return prisma.position.create({
+        data:position
     });
 }
 
