@@ -24,6 +24,7 @@
   "dependencies": {
     "@prisma/adapter-mariadb": "^7.9.0",
     "@prisma/client": "^7.9.0",
+    "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
     "cross-env": "^10.1.0",
     "dayjs": "^1.11.21",
@@ -42,7 +43,9 @@
     "@eslint/js": "^10.0.1",
     "@swc/core": "^1.15.46",
     "@trivago/prettier-plugin-sort-imports": "^6.0.2",
+    "@types/bcrypt": "^6.0.0",
     "@types/cookie-parser": "^1.4.10",
+    "@types/express": "^5.0.6",
     "@types/find": "^0.2.4",
     "@types/fs-extra": "^11.0.4",
     "@types/jsonfile": "^6.1.4",
