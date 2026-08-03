@@ -414,7 +414,8 @@ export const ModelName = {
   Warehouse: 'Warehouse',
   UserProduct: 'UserProduct',
   Assignment: 'Assignment',
-  Employee: 'Employee'
+  Employee: 'Employee',
+  Customer: 'Customer'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -430,7 +431,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "invoice" | "labor" | "payment" | "paymentMethod" | "piece" | "position" | "product" | "productType" | "repair" | "repairPart" | "role" | "shop" | "status" | "user" | "warehouse" | "userProduct" | "assignment" | "employee"
+    modelProps: "invoice" | "labor" | "payment" | "paymentMethod" | "piece" | "position" | "product" | "productType" | "repair" | "repairPart" | "role" | "shop" | "status" | "user" | "warehouse" | "userProduct" | "assignment" | "employee" | "customer"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1622,6 +1623,72 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Customer: {
+      payload: Prisma.$CustomerPayload<ExtArgs>
+      fields: Prisma.CustomerFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.CustomerFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.CustomerFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerPayload>
+        }
+        findFirst: {
+          args: Prisma.CustomerFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.CustomerFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerPayload>
+        }
+        findMany: {
+          args: Prisma.CustomerFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerPayload>[]
+        }
+        create: {
+          args: Prisma.CustomerCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerPayload>
+        }
+        createMany: {
+          args: Prisma.CustomerCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.CustomerDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerPayload>
+        }
+        update: {
+          args: Prisma.CustomerUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerPayload>
+        }
+        deleteMany: {
+          args: Prisma.CustomerDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.CustomerUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.CustomerUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerPayload>
+        }
+        aggregate: {
+          args: Prisma.CustomerAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCustomer>
+        }
+        groupBy: {
+          args: Prisma.CustomerGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CustomerGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.CustomerCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CustomerCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1747,7 +1814,7 @@ export type ProductTypeScalarFieldEnum = (typeof ProductTypeScalarFieldEnum)[key
 export const RepairScalarFieldEnum = {
   repairId: 'repairId',
   productId: 'productId',
-  ownerId: 'ownerId',
+  customerId: 'customerId',
   shopId: 'shopId',
   statusId: 'statusId',
   estimatedHours: 'estimatedHours',
@@ -1811,7 +1878,7 @@ export const UserScalarFieldEnum = {
   secondLastName: 'secondLastName',
   email: 'email',
   passwordHash: 'passwordHash',
-  phoneNumber: 'phoneNumber'
+  customerId: 'customerId'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -1829,7 +1896,7 @@ export type WarehouseScalarFieldEnum = (typeof WarehouseScalarFieldEnum)[keyof t
 
 export const UserProductScalarFieldEnum = {
   productId: 'productId',
-  ownerId: 'ownerId',
+  customerId: 'customerId',
   serialNumber: 'serialNumber',
   name: 'name'
 } as const
@@ -1856,6 +1923,19 @@ export const EmployeeScalarFieldEnum = {
 } as const
 
 export type EmployeeScalarFieldEnum = (typeof EmployeeScalarFieldEnum)[keyof typeof EmployeeScalarFieldEnum]
+
+
+export const CustomerScalarFieldEnum = {
+  customerId: 'customerId',
+  firstName: 'firstName',
+  middleName: 'middleName',
+  lastName: 'lastName',
+  secondLastName: 'secondLastName',
+  phoneNumber: 'phoneNumber',
+  email: 'email'
+} as const
+
+export type CustomerScalarFieldEnum = (typeof CustomerScalarFieldEnum)[keyof typeof CustomerScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1966,8 +2046,7 @@ export const UserOrderByRelevanceFieldEnum = {
   lastName: 'lastName',
   secondLastName: 'secondLastName',
   email: 'email',
-  passwordHash: 'passwordHash',
-  phoneNumber: 'phoneNumber'
+  passwordHash: 'passwordHash'
 } as const
 
 export type UserOrderByRelevanceFieldEnum = (typeof UserOrderByRelevanceFieldEnum)[keyof typeof UserOrderByRelevanceFieldEnum]
@@ -1986,6 +2065,18 @@ export const UserProductOrderByRelevanceFieldEnum = {
 } as const
 
 export type UserProductOrderByRelevanceFieldEnum = (typeof UserProductOrderByRelevanceFieldEnum)[keyof typeof UserProductOrderByRelevanceFieldEnum]
+
+
+export const CustomerOrderByRelevanceFieldEnum = {
+  firstName: 'firstName',
+  middleName: 'middleName',
+  lastName: 'lastName',
+  secondLastName: 'secondLastName',
+  phoneNumber: 'phoneNumber',
+  email: 'email'
+} as const
+
+export type CustomerOrderByRelevanceFieldEnum = (typeof CustomerOrderByRelevanceFieldEnum)[keyof typeof CustomerOrderByRelevanceFieldEnum]
 
 
 
@@ -2197,6 +2288,7 @@ export type GlobalOmitConfig = {
   userProduct?: Prisma.UserProductOmit
   assignment?: Prisma.AssignmentOmit
   employee?: Prisma.EmployeeOmit
+  customer?: Prisma.CustomerOmit
 }
 
 /* Types for Logging */

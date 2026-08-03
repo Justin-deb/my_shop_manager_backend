@@ -215,14 +215,14 @@ export type PieceOrderByWithRelationInput = {
 
 export type PieceWhereUniqueInput = Prisma.AtLeast<{
   pieceId?: number
+  name?: string
   AND?: Prisma.PieceWhereInput | Prisma.PieceWhereInput[]
   OR?: Prisma.PieceWhereInput[]
   NOT?: Prisma.PieceWhereInput | Prisma.PieceWhereInput[]
-  name?: Prisma.StringFilter<"Piece"> | string
   details?: Prisma.StringNullableFilter<"Piece"> | string | null
   repairParts?: Prisma.RepairPartListRelationFilter
   warehouses?: Prisma.WarehouseListRelationFilter
-}, "pieceId">
+}, "pieceId" | "name">
 
 export type PieceOrderByWithAggregationInput = {
   pieceId?: Prisma.SortOrder
