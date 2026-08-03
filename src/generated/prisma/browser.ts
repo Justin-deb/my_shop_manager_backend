@@ -107,3 +107,8 @@ export type Assignment = Prisma.AssignmentModel
  * 
  */
 export type Employee = Prisma.EmployeeModel
+/**
+ * Model Customer
+ * 
+ */
+export type Customer = Prisma.CustomerModel

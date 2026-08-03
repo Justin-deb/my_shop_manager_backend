@@ -29,7 +29,7 @@ export type AggregateRepair = {
 export type RepairAvgAggregateOutputType = {
   repairId: number | null
   productId: number | null
-  ownerId: number | null
+  customerId: number | null
   shopId: number | null
   statusId: number | null
   estimatedHours: runtime.Decimal | null
@@ -39,7 +39,7 @@ export type RepairAvgAggregateOutputType = {
 export type RepairSumAggregateOutputType = {
   repairId: number | null
   productId: number | null
-  ownerId: number | null
+  customerId: number | null
   shopId: number | null
   statusId: number | null
   estimatedHours: runtime.Decimal | null
@@ -49,7 +49,7 @@ export type RepairSumAggregateOutputType = {
 export type RepairMinAggregateOutputType = {
   repairId: number | null
   productId: number | null
-  ownerId: number | null
+  customerId: number | null
   shopId: number | null
   statusId: number | null
   estimatedHours: runtime.Decimal | null
@@ -64,7 +64,7 @@ export type RepairMinAggregateOutputType = {
 export type RepairMaxAggregateOutputType = {
   repairId: number | null
   productId: number | null
-  ownerId: number | null
+  customerId: number | null
   shopId: number | null
   statusId: number | null
   estimatedHours: runtime.Decimal | null
@@ -79,7 +79,7 @@ export type RepairMaxAggregateOutputType = {
 export type RepairCountAggregateOutputType = {
   repairId: number
   productId: number
-  ownerId: number
+  customerId: number
   shopId: number
   statusId: number
   estimatedHours: number
@@ -96,7 +96,7 @@ export type RepairCountAggregateOutputType = {
 export type RepairAvgAggregateInputType = {
   repairId?: true
   productId?: true
-  ownerId?: true
+  customerId?: true
   shopId?: true
   statusId?: true
   estimatedHours?: true
@@ -106,7 +106,7 @@ export type RepairAvgAggregateInputType = {
 export type RepairSumAggregateInputType = {
   repairId?: true
   productId?: true
-  ownerId?: true
+  customerId?: true
   shopId?: true
   statusId?: true
   estimatedHours?: true
@@ -116,7 +116,7 @@ export type RepairSumAggregateInputType = {
 export type RepairMinAggregateInputType = {
   repairId?: true
   productId?: true
-  ownerId?: true
+  customerId?: true
   shopId?: true
   statusId?: true
   estimatedHours?: true
@@ -131,7 +131,7 @@ export type RepairMinAggregateInputType = {
 export type RepairMaxAggregateInputType = {
   repairId?: true
   productId?: true
-  ownerId?: true
+  customerId?: true
   shopId?: true
   statusId?: true
   estimatedHours?: true
@@ -146,7 +146,7 @@ export type RepairMaxAggregateInputType = {
 export type RepairCountAggregateInputType = {
   repairId?: true
   productId?: true
-  ownerId?: true
+  customerId?: true
   shopId?: true
   statusId?: true
   estimatedHours?: true
@@ -248,7 +248,7 @@ export type RepairGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalA
 export type RepairGroupByOutputType = {
   repairId: number
   productId: number
-  ownerId: number
+  customerId: number
   shopId: number
   statusId: number
   estimatedHours: runtime.Decimal | null
@@ -286,7 +286,7 @@ export type RepairWhereInput = {
   NOT?: Prisma.RepairWhereInput | Prisma.RepairWhereInput[]
   repairId?: Prisma.IntFilter<"Repair"> | number
   productId?: Prisma.IntFilter<"Repair"> | number
-  ownerId?: Prisma.IntFilter<"Repair"> | number
+  customerId?: Prisma.IntFilter<"Repair"> | number
   shopId?: Prisma.IntFilter<"Repair"> | number
   statusId?: Prisma.IntFilter<"Repair"> | number
   estimatedHours?: Prisma.DecimalNullableFilter<"Repair"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -309,7 +309,7 @@ export type RepairWhereInput = {
 export type RepairOrderByWithRelationInput = {
   repairId?: Prisma.SortOrder
   productId?: Prisma.SortOrder
-  ownerId?: Prisma.SortOrder
+  customerId?: Prisma.SortOrder
   shopId?: Prisma.SortOrder
   statusId?: Prisma.SortOrder
   estimatedHours?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -336,7 +336,7 @@ export type RepairWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.RepairWhereInput[]
   NOT?: Prisma.RepairWhereInput | Prisma.RepairWhereInput[]
   productId?: Prisma.IntFilter<"Repair"> | number
-  ownerId?: Prisma.IntFilter<"Repair"> | number
+  customerId?: Prisma.IntFilter<"Repair"> | number
   shopId?: Prisma.IntFilter<"Repair"> | number
   statusId?: Prisma.IntFilter<"Repair"> | number
   estimatedHours?: Prisma.DecimalNullableFilter<"Repair"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -359,7 +359,7 @@ export type RepairWhereUniqueInput = Prisma.AtLeast<{
 export type RepairOrderByWithAggregationInput = {
   repairId?: Prisma.SortOrder
   productId?: Prisma.SortOrder
-  ownerId?: Prisma.SortOrder
+  customerId?: Prisma.SortOrder
   shopId?: Prisma.SortOrder
   statusId?: Prisma.SortOrder
   estimatedHours?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -382,7 +382,7 @@ export type RepairScalarWhereWithAggregatesInput = {
   NOT?: Prisma.RepairScalarWhereWithAggregatesInput | Prisma.RepairScalarWhereWithAggregatesInput[]
   repairId?: Prisma.IntWithAggregatesFilter<"Repair"> | number
   productId?: Prisma.IntWithAggregatesFilter<"Repair"> | number
-  ownerId?: Prisma.IntWithAggregatesFilter<"Repair"> | number
+  customerId?: Prisma.IntWithAggregatesFilter<"Repair"> | number
   shopId?: Prisma.IntWithAggregatesFilter<"Repair"> | number
   statusId?: Prisma.IntWithAggregatesFilter<"Repair"> | number
   estimatedHours?: Prisma.DecimalNullableWithAggregatesFilter<"Repair"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -415,7 +415,7 @@ export type RepairCreateInput = {
 export type RepairUncheckedCreateInput = {
   repairId?: number
   productId: number
-  ownerId: number
+  customerId: number
   shopId: number
   statusId: number
   estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -452,7 +452,7 @@ export type RepairUpdateInput = {
 export type RepairUncheckedUpdateInput = {
   repairId?: Prisma.IntFieldUpdateOperationsInput | number
   productId?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  customerId?: Prisma.IntFieldUpdateOperationsInput | number
   shopId?: Prisma.IntFieldUpdateOperationsInput | number
   statusId?: Prisma.IntFieldUpdateOperationsInput | number
   estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -471,7 +471,7 @@ export type RepairUncheckedUpdateInput = {
 export type RepairCreateManyInput = {
   repairId?: number
   productId: number
-  ownerId: number
+  customerId: number
   shopId: number
   statusId: number
   estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -496,7 +496,7 @@ export type RepairUpdateManyMutationInput = {
 export type RepairUncheckedUpdateManyInput = {
   repairId?: Prisma.IntFieldUpdateOperationsInput | number
   productId?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  customerId?: Prisma.IntFieldUpdateOperationsInput | number
   shopId?: Prisma.IntFieldUpdateOperationsInput | number
   statusId?: Prisma.IntFieldUpdateOperationsInput | number
   estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -532,7 +532,7 @@ export type RepairOrderByRelevanceInput = {
 export type RepairCountOrderByAggregateInput = {
   repairId?: Prisma.SortOrder
   productId?: Prisma.SortOrder
-  ownerId?: Prisma.SortOrder
+  customerId?: Prisma.SortOrder
   shopId?: Prisma.SortOrder
   statusId?: Prisma.SortOrder
   estimatedHours?: Prisma.SortOrder
@@ -547,7 +547,7 @@ export type RepairCountOrderByAggregateInput = {
 export type RepairAvgOrderByAggregateInput = {
   repairId?: Prisma.SortOrder
   productId?: Prisma.SortOrder
-  ownerId?: Prisma.SortOrder
+  customerId?: Prisma.SortOrder
   shopId?: Prisma.SortOrder
   statusId?: Prisma.SortOrder
   estimatedHours?: Prisma.SortOrder
@@ -557,7 +557,7 @@ export type RepairAvgOrderByAggregateInput = {
 export type RepairMaxOrderByAggregateInput = {
   repairId?: Prisma.SortOrder
   productId?: Prisma.SortOrder
-  ownerId?: Prisma.SortOrder
+  customerId?: Prisma.SortOrder
   shopId?: Prisma.SortOrder
   statusId?: Prisma.SortOrder
   estimatedHours?: Prisma.SortOrder
@@ -572,7 +572,7 @@ export type RepairMaxOrderByAggregateInput = {
 export type RepairMinOrderByAggregateInput = {
   repairId?: Prisma.SortOrder
   productId?: Prisma.SortOrder
-  ownerId?: Prisma.SortOrder
+  customerId?: Prisma.SortOrder
   shopId?: Prisma.SortOrder
   statusId?: Prisma.SortOrder
   estimatedHours?: Prisma.SortOrder
@@ -587,7 +587,7 @@ export type RepairMinOrderByAggregateInput = {
 export type RepairSumOrderByAggregateInput = {
   repairId?: Prisma.SortOrder
   productId?: Prisma.SortOrder
-  ownerId?: Prisma.SortOrder
+  customerId?: Prisma.SortOrder
   shopId?: Prisma.SortOrder
   statusId?: Prisma.SortOrder
   estimatedHours?: Prisma.SortOrder
@@ -838,7 +838,7 @@ export type RepairCreateWithoutInvoiceInput = {
 export type RepairUncheckedCreateWithoutInvoiceInput = {
   repairId?: number
   productId: number
-  ownerId: number
+  customerId: number
   shopId: number
   statusId: number
   estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -889,7 +889,7 @@ export type RepairUpdateWithoutInvoiceInput = {
 export type RepairUncheckedUpdateWithoutInvoiceInput = {
   repairId?: Prisma.IntFieldUpdateOperationsInput | number
   productId?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  customerId?: Prisma.IntFieldUpdateOperationsInput | number
   shopId?: Prisma.IntFieldUpdateOperationsInput | number
   statusId?: Prisma.IntFieldUpdateOperationsInput | number
   estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -924,7 +924,7 @@ export type RepairCreateWithoutLabourEntriesInput = {
 export type RepairUncheckedCreateWithoutLabourEntriesInput = {
   repairId?: number
   productId: number
-  ownerId: number
+  customerId: number
   shopId: number
   statusId: number
   estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -975,7 +975,7 @@ export type RepairUpdateWithoutLabourEntriesInput = {
 export type RepairUncheckedUpdateWithoutLabourEntriesInput = {
   repairId?: Prisma.IntFieldUpdateOperationsInput | number
   productId?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  customerId?: Prisma.IntFieldUpdateOperationsInput | number
   shopId?: Prisma.IntFieldUpdateOperationsInput | number
   statusId?: Prisma.IntFieldUpdateOperationsInput | number
   estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -1009,7 +1009,7 @@ export type RepairCreateWithoutProductInput = {
 
 export type RepairUncheckedCreateWithoutProductInput = {
   repairId?: number
-  ownerId: number
+  customerId: number
   shopId: number
   statusId: number
   estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -1057,7 +1057,7 @@ export type RepairScalarWhereInput = {
   NOT?: Prisma.RepairScalarWhereInput | Prisma.RepairScalarWhereInput[]
   repairId?: Prisma.IntFilter<"Repair"> | number
   productId?: Prisma.IntFilter<"Repair"> | number
-  ownerId?: Prisma.IntFilter<"Repair"> | number
+  customerId?: Prisma.IntFilter<"Repair"> | number
   shopId?: Prisma.IntFilter<"Repair"> | number
   statusId?: Prisma.IntFilter<"Repair"> | number
   estimatedHours?: Prisma.DecimalNullableFilter<"Repair"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -1089,7 +1089,7 @@ export type RepairCreateWithoutRepairPartsInput = {
 export type RepairUncheckedCreateWithoutRepairPartsInput = {
   repairId?: number
   productId: number
-  ownerId: number
+  customerId: number
   shopId: number
   statusId: number
   estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -1140,7 +1140,7 @@ export type RepairUpdateWithoutRepairPartsInput = {
 export type RepairUncheckedUpdateWithoutRepairPartsInput = {
   repairId?: Prisma.IntFieldUpdateOperationsInput | number
   productId?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  customerId?: Prisma.IntFieldUpdateOperationsInput | number
   shopId?: Prisma.IntFieldUpdateOperationsInput | number
   statusId?: Prisma.IntFieldUpdateOperationsInput | number
   estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -1175,7 +1175,7 @@ export type RepairCreateWithoutShopInput = {
 export type RepairUncheckedCreateWithoutShopInput = {
   repairId?: number
   productId: number
-  ownerId: number
+  customerId: number
   statusId: number
   estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -1236,7 +1236,7 @@ export type RepairCreateWithoutStatusInput = {
 export type RepairUncheckedCreateWithoutStatusInput = {
   repairId?: number
   productId: number
-  ownerId: number
+  customerId: number
   shopId: number
   estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -1357,7 +1357,7 @@ export type RepairCreateWithoutAssignmentsInput = {
 export type RepairUncheckedCreateWithoutAssignmentsInput = {
   repairId?: number
   productId: number
-  ownerId: number
+  customerId: number
   shopId: number
   statusId: number
   estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -1408,7 +1408,7 @@ export type RepairUpdateWithoutAssignmentsInput = {
 export type RepairUncheckedUpdateWithoutAssignmentsInput = {
   repairId?: Prisma.IntFieldUpdateOperationsInput | number
   productId?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  customerId?: Prisma.IntFieldUpdateOperationsInput | number
   shopId?: Prisma.IntFieldUpdateOperationsInput | number
   statusId?: Prisma.IntFieldUpdateOperationsInput | number
   estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -1425,7 +1425,7 @@ export type RepairUncheckedUpdateWithoutAssignmentsInput = {
 
 export type RepairCreateManyProductInput = {
   repairId?: number
-  ownerId: number
+  customerId: number
   shopId: number
   statusId: number
   estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -1456,7 +1456,7 @@ export type RepairUpdateWithoutProductInput = {
 
 export type RepairUncheckedUpdateWithoutProductInput = {
   repairId?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  customerId?: Prisma.IntFieldUpdateOperationsInput | number
   shopId?: Prisma.IntFieldUpdateOperationsInput | number
   statusId?: Prisma.IntFieldUpdateOperationsInput | number
   estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -1474,7 +1474,7 @@ export type RepairUncheckedUpdateWithoutProductInput = {
 
 export type RepairUncheckedUpdateManyWithoutProductInput = {
   repairId?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  customerId?: Prisma.IntFieldUpdateOperationsInput | number
   shopId?: Prisma.IntFieldUpdateOperationsInput | number
   statusId?: Prisma.IntFieldUpdateOperationsInput | number
   estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -1489,7 +1489,7 @@ export type RepairUncheckedUpdateManyWithoutProductInput = {
 export type RepairCreateManyShopInput = {
   repairId?: number
   productId: number
-  ownerId: number
+  customerId: number
   statusId: number
   estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -1520,7 +1520,7 @@ export type RepairUpdateWithoutShopInput = {
 export type RepairUncheckedUpdateWithoutShopInput = {
   repairId?: Prisma.IntFieldUpdateOperationsInput | number
   productId?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  customerId?: Prisma.IntFieldUpdateOperationsInput | number
   statusId?: Prisma.IntFieldUpdateOperationsInput | number
   estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -1538,7 +1538,7 @@ export type RepairUncheckedUpdateWithoutShopInput = {
 export type RepairUncheckedUpdateManyWithoutShopInput = {
   repairId?: Prisma.IntFieldUpdateOperationsInput | number
   productId?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  customerId?: Prisma.IntFieldUpdateOperationsInput | number
   statusId?: Prisma.IntFieldUpdateOperationsInput | number
   estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -1552,7 +1552,7 @@ export type RepairUncheckedUpdateManyWithoutShopInput = {
 export type RepairCreateManyStatusInput = {
   repairId?: number
   productId: number
-  ownerId: number
+  customerId: number
   shopId: number
   estimatedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   workedHours?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -1583,7 +1583,7 @@ export type RepairUpdateWithoutStatusInput = {
 export type RepairUncheckedUpdateWithoutStatusInput = {
   repairId?: Prisma.IntFieldUpdateOperationsInput | number
   productId?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  customerId?: Prisma.IntFieldUpdateOperationsInput | number
   shopId?: Prisma.IntFieldUpdateOperationsInput | number
   estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -1601,7 +1601,7 @@ export type RepairUncheckedUpdateWithoutStatusInput = {
 export type RepairUncheckedUpdateManyWithoutStatusInput = {
   repairId?: Prisma.IntFieldUpdateOperationsInput | number
   productId?: Prisma.IntFieldUpdateOperationsInput | number
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  customerId?: Prisma.IntFieldUpdateOperationsInput | number
   shopId?: Prisma.IntFieldUpdateOperationsInput | number
   estimatedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   workedHours?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -1724,7 +1724,7 @@ export type RepairCountOutputTypeCountRepairPartsArgs<ExtArgs extends runtime.Ty
 export type RepairSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   repairId?: boolean
   productId?: boolean
-  ownerId?: boolean
+  customerId?: boolean
   shopId?: boolean
   statusId?: boolean
   estimatedHours?: boolean
@@ -1750,7 +1750,7 @@ export type RepairSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
 export type RepairSelectScalar = {
   repairId?: boolean
   productId?: boolean
-  ownerId?: boolean
+  customerId?: boolean
   shopId?: boolean
   statusId?: boolean
   estimatedHours?: boolean
@@ -1762,7 +1762,7 @@ export type RepairSelectScalar = {
   problemDescription?: boolean
 }
 
-export type RepairOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"repairId" | "productId" | "ownerId" | "shopId" | "statusId" | "estimatedHours" | "workedHours" | "receivedDate" | "finishDate" | "returnDate" | "notes" | "problemDescription", ExtArgs["result"]["repair"]>
+export type RepairOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"repairId" | "productId" | "customerId" | "shopId" | "statusId" | "estimatedHours" | "workedHours" | "receivedDate" | "finishDate" | "returnDate" | "notes" | "problemDescription", ExtArgs["result"]["repair"]>
 export type RepairInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   assignments?: boolean | Prisma.Repair$assignmentsArgs<ExtArgs>
   invoice?: boolean | Prisma.Repair$invoiceArgs<ExtArgs>
@@ -1790,7 +1790,7 @@ export type $RepairPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     repairId: number
     productId: number
-    ownerId: number
+    customerId: number
     shopId: number
     statusId: number
     estimatedHours: runtime.Decimal | null
@@ -2179,7 +2179,7 @@ export interface Prisma__RepairClient<T, Null = never, ExtArgs extends runtime.T
 export interface RepairFieldRefs {
   readonly repairId: Prisma.FieldRef<"Repair", 'Int'>
   readonly productId: Prisma.FieldRef<"Repair", 'Int'>
-  readonly ownerId: Prisma.FieldRef<"Repair", 'Int'>
+  readonly customerId: Prisma.FieldRef<"Repair", 'Int'>
   readonly shopId: Prisma.FieldRef<"Repair", 'Int'>
   readonly statusId: Prisma.FieldRef<"Repair", 'Int'>
   readonly estimatedHours: Prisma.FieldRef<"Repair", 'Decimal'>

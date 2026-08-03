@@ -68,7 +68,8 @@ export const ModelName = {
   Warehouse: 'Warehouse',
   UserProduct: 'UserProduct',
   Assignment: 'Assignment',
-  Employee: 'Employee'
+  Employee: 'Employee',
+  Customer: 'Customer'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -173,7 +174,7 @@ export type ProductTypeScalarFieldEnum = (typeof ProductTypeScalarFieldEnum)[key
 export const RepairScalarFieldEnum = {
   repairId: 'repairId',
   productId: 'productId',
-  ownerId: 'ownerId',
+  customerId: 'customerId',
   shopId: 'shopId',
   statusId: 'statusId',
   estimatedHours: 'estimatedHours',
@@ -237,7 +238,7 @@ export const UserScalarFieldEnum = {
   secondLastName: 'secondLastName',
   email: 'email',
   passwordHash: 'passwordHash',
-  phoneNumber: 'phoneNumber'
+  customerId: 'customerId'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -255,7 +256,7 @@ export type WarehouseScalarFieldEnum = (typeof WarehouseScalarFieldEnum)[keyof t
 
 export const UserProductScalarFieldEnum = {
   productId: 'productId',
-  ownerId: 'ownerId',
+  customerId: 'customerId',
   serialNumber: 'serialNumber',
   name: 'name'
 } as const
@@ -282,6 +283,19 @@ export const EmployeeScalarFieldEnum = {
 } as const
 
 export type EmployeeScalarFieldEnum = (typeof EmployeeScalarFieldEnum)[keyof typeof EmployeeScalarFieldEnum]
+
+
+export const CustomerScalarFieldEnum = {
+  customerId: 'customerId',
+  firstName: 'firstName',
+  middleName: 'middleName',
+  lastName: 'lastName',
+  secondLastName: 'secondLastName',
+  phoneNumber: 'phoneNumber',
+  email: 'email'
+} as const
+
+export type CustomerScalarFieldEnum = (typeof CustomerScalarFieldEnum)[keyof typeof CustomerScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -392,8 +406,7 @@ export const UserOrderByRelevanceFieldEnum = {
   lastName: 'lastName',
   secondLastName: 'secondLastName',
   email: 'email',
-  passwordHash: 'passwordHash',
-  phoneNumber: 'phoneNumber'
+  passwordHash: 'passwordHash'
 } as const
 
 export type UserOrderByRelevanceFieldEnum = (typeof UserOrderByRelevanceFieldEnum)[keyof typeof UserOrderByRelevanceFieldEnum]
@@ -412,4 +425,16 @@ export const UserProductOrderByRelevanceFieldEnum = {
 } as const
 
 export type UserProductOrderByRelevanceFieldEnum = (typeof UserProductOrderByRelevanceFieldEnum)[keyof typeof UserProductOrderByRelevanceFieldEnum]
+
+
+export const CustomerOrderByRelevanceFieldEnum = {
+  firstName: 'firstName',
+  middleName: 'middleName',
+  lastName: 'lastName',
+  secondLastName: 'secondLastName',
+  phoneNumber: 'phoneNumber',
+  email: 'email'
+} as const
+
+export type CustomerOrderByRelevanceFieldEnum = (typeof CustomerOrderByRelevanceFieldEnum)[keyof typeof CustomerOrderByRelevanceFieldEnum]
 
