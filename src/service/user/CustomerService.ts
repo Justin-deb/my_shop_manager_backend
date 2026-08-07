@@ -3,6 +3,7 @@ import { FullNameCustomerDto } from '../../dto/user/common/FullNameCustomerDto';
 import { CreateCustomerDto } from '../../dto/user/create/CreateCustomerDto';
 import { UpdateCustomerDto } from '../../dto/user/update/UpdateCustomerDto';
 import { BadRequestError } from '../../exceptions/BadRequestError';
+import { CustomerUpdateInput } from '../../generated/prisma/models';
 import * as customerRepository from '../../repository/user/CustomerRepository';
 
 export const findAll = () =>{
@@ -45,7 +46,23 @@ export const create = (customer:CreateCustomerDto) =>{
 }
 
 export const update = (customer:UpdateCustomerDto) =>{
-    const 
+    const email = customer.email?.trim();
+    const phoneNumber = customer.phoneNumber?.trim();
+
+    if(email?.length === 0 || phoneNumber?.length === 0){
+        throw new BadRequestError('One or more fields are empty');
+    }
+
+    const newCustomer:CustomerUpdateInput = {
+        email,
+        phoneNumber
+    }
+
+    try {
+        return customerRepository.update(customer.customerId,newCustomer)
+    } catch (error) {
+        mapPrismaError(error,'Customer',customer.customerId.toString());
+    }
 }
 
 export const remove = (customerId:number) =>{
