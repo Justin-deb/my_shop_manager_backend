@@ -3,8 +3,7 @@ export interface CreateUserDto{
     middleName?: string;
     lastName: string;
     secondLastName: string;
-    email?: string;
-    password?: string;
-    phoneNumber?: string;
+    email: string;
+    password: string;
     roleId: number;
 }
