@@ -21,6 +21,17 @@ export const findById = (userId:number) =>{
     });
 }
 
+export const findPasswordById = async (userId:number) =>{
+    const user = await prisma.user.findUniqueOrThrow({
+        where:{
+            userId
+        },
+        include
+    });
+
+    return user.passwordHash;
+}
+
 export const findByEmail = (email:string) =>{
     return prisma.user.findUniqueOrThrow({
         where:{
