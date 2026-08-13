@@ -5,7 +5,7 @@ import { UpdatePieceDto } from '../../dto/piece/UpdatePieceDto';
 import { BadRequestError } from '../../exceptions/BadRequestError';
 import { ConflictError } from '../../exceptions/ConflictError';
 import { NotFoundError } from '../../exceptions/NotFoundError';
-import { PrismaClientKnownRequestError } from '../../generated/prisma/internal/prismaNamespace';
+import { PieceCreateInput, PrismaClientKnownRequestError } from '../../generated/prisma/internal/prismaNamespace';
 import * as pieceRepository from '../../repository/piece/PieceRepository';
 
 export const findAll = () =>{
@@ -20,19 +20,14 @@ export const findByName = (name:string) =>{
     return pieceRepository.findByName(name);
 }
 
-export const create = (newPiece:CreatePieceDto) =>{
-    const name = newPiece.name.trim();
-    const details = newPiece.details.trim();
-
-    if(name.length === 0 || details.length === 0){
-        throw new BadRequestError('One or more fields are empty');
+export const create = (piece:CreatePieceDto) =>{
+    const newPiece:PieceCreateInput = {
+            name:piece.name,
+            details:piece.details,
     }
-
+    
     try {
-        return pieceRepository.create({
-            name:name,
-            details:details,
-        });
+        return pieceRepository.create(newPiece);
     } catch (error) {
         mapPrismaError(error,"Piece");
     }

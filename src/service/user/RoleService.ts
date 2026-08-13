@@ -22,14 +22,8 @@ export const findByName = (name:string) =>{
 }
 
 export const create = (role:CreateRoleDto) =>{
-    const name = role.name.trim();
-
-    if(name.length === 0){
-        throw new BadRequestError('The name field is empty');
-    }
-
     const newRole:RoleCreateInput = {
-        name:name
+        name:role.name
     }
 
     try {
@@ -40,14 +34,8 @@ export const create = (role:CreateRoleDto) =>{
 }
 
 export const update = (role:UpdateRoleDto) =>{
-    const name = role.name.trim();
-    
-    if(name.length === 0){
-        throw new BadRequestError('The name field is empty');
-    }
-
     const newRole:RoleUpdateInput = {
-        name:name
+        name:role.name
     }
 
     try {

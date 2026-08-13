@@ -12,13 +12,7 @@ export const findAllByShopId = (shopId:number) =>{
 }
 
 export const findByName = (name:string, shopId:number) =>{
-    const employeeName = name.trim();
-
-    if(employeeName.length === 0){
-        throw new BadRequestError('The name field is empty');
-    }
-
-    return employeeRepository.findByName(employeeName,shopId);
+    return employeeRepository.findByName(name,shopId);
 }
 
 export const findById = async (userId:number,shopId:number) =>{
@@ -48,7 +42,11 @@ export const create = (employee:CreateEmployeeDto) =>{
         }
     }
 
-    return employeeRepository.create(newEmployee);
+    try {
+        return employeeRepository.create(newEmployee);
+    } catch (error) {
+        mapPrismaError(error,'Employee');
+    }
 }
 
 export const update = async (employee:UpdateEmployeeDto) =>{

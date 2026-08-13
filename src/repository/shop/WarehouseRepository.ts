@@ -14,6 +14,18 @@ export const findAllByShopId = (shopId:number) => {
     });
 }
 
+export const findByPieceId = (shopId:number,pieceId:number) =>{
+    return prisma.warehouse.findUniqueOrThrow({
+        where:{
+            shopId_pieceId:{
+                shopId,
+                pieceId
+            }
+        },
+        include
+    });
+}
+
 export const create = (warehouse:WarehouseCreateInput) =>{
     return prisma.warehouse.create({
         data:warehouse
