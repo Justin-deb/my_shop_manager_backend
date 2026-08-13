@@ -23,30 +23,16 @@ export const findByName = (name:string) =>{
 }
 
 export const create = async (position:CreatePositionDto) =>{
-    const name = position.name.trim();
-
-    if(name.length === 0){
-        throw new BadRequestError('The name field is empty');
-    }else if(await findAll()){
-        throw new ConflictError(`The position with the name '${name}' already exists`);
-    }
-
     const newPosition:PositionCreateInput ={
-        name:name
+        name:position.name
     }
 
     return positionRepository.create(newPosition);
 }
 
 export const update = (position:UpdatePositionDto) =>{
-    const name = position.name.trim();
-
-    if(name.length === 0){
-        throw new BadRequestError('The name field is empty');
-    }
-
     const newPosition:PositionUpdateInput = {
-        name:name
+        name:position.name
     }
 
     try {

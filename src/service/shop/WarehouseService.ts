@@ -18,8 +18,6 @@ export const findByPieceId = (shopId:number,pieceId:number) =>{
 }
 
 export const create = async (warehouse:CreateWarehouseDto) =>{
-    const notes = warehouse.notes?.trim().length === 0 ? undefined : warehouse.notes?.trim();
-
     //DRY (Don't Repeat Yourself)
     const shopId = warehouse.shopId;
     const pieceId = warehouse.pieceId;
@@ -28,7 +26,7 @@ export const create = async (warehouse:CreateWarehouseDto) =>{
     try {
         if(await findByPieceId(shopId,pieceId)){
             const quantity = warehouse.quantity
-            return update({shopId,pieceId,quantity,notes});
+            return update({shopId,pieceId,quantity,notes:warehouse.notes});
         }
     } catch (error) {
         //Means it did not found any error and can procede
@@ -50,7 +48,7 @@ export const create = async (warehouse:CreateWarehouseDto) =>{
             }
         },
         quantity:warehouse.quantity,
-        notes
+        notes:warehouse.notes
     }
 
     try {
@@ -61,16 +59,9 @@ export const create = async (warehouse:CreateWarehouseDto) =>{
 }
 
 export const update = (warehouse:UpdateWarehouseDto) =>{
-    const notes = warehouse.notes?.trim().length === 0 ? undefined : warehouse.notes?.trim();
-    const quantity = warehouse.quantity; 
-
-    if(quantity && quantity! < 0){
-        throw new BadRequestError('Quantity cannot be less than cero');
-    }
-
     const newWarehouse:WarehouseUpdateInput = {
-        quantity,
-        notes
+        quantity:warehouse.quantity,
+        notes:warehouse.notes
     }
 
     try {

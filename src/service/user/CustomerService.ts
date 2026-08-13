@@ -2,8 +2,7 @@ import { mapPrismaError } from '../../common/utils/ErrorWrapper';
 import { FullNameCustomerDto } from '../../dto/user/common/FullNameCustomerDto';
 import { CreateCustomerDto } from '../../dto/user/create/CreateCustomerDto';
 import { UpdateCustomerDto } from '../../dto/user/update/UpdateCustomerDto';
-import { BadRequestError } from '../../exceptions/BadRequestError';
-import { CustomerUpdateInput } from '../../generated/prisma/models';
+import { CustomerCreateInput, CustomerUpdateInput } from '../../generated/prisma/models';
 import * as customerRepository from '../../repository/user/CustomerRepository';
 
 export const findAll = () =>{
@@ -19,43 +18,36 @@ export const findById = (customerId:number) =>{
 }
 
 export const findByFullName = (fullName:FullNameCustomerDto) =>{
-    const firstName = fullName.firstName.trim();
-    const middleName = fullName.middleName?.trim();
-    const lastName = fullName.lastName.trim();
-    const secondLastName = fullName.secondLastName.trim();
-
-    const fields = [firstName,middleName,lastName,secondLastName];
-
-    fields.forEach(field =>{
-        if(field?.length === 0){
-            throw new BadRequestError('One or more fields are empty');
-        }
-    });
-
     try {
-        return customerRepository.findByFullName(firstName,lastName,secondLastName,middleName);
+        return customerRepository.findByFullName(fullName.firstName,fullName.lastName,fullName.secondLastName,fullName.middleName);
     } catch (error) {
         mapPrismaError(error,
             'Customer',
-            `${firstName} ${middleName ? middleName : ''} ${lastName} ${secondLastName}`);
+            `${fullName.firstName} ${fullName.middleName ? fullName.middleName : ''} ${fullName.lastName} ${fullName.secondLastName}`);
     }
 }
 
 export const create = (customer:CreateCustomerDto) =>{
+    const newCustomer:CustomerCreateInput = {
+        firstName:customer.firstName,
+        middleName:customer.middleName,
+        lastName:customer.lastName,
+        secondLastName:customer.secondLastName,
+        phoneNumber:customer.phoneNumber,
+        email:customer.email,
+    };
 
+    try {
+        return customerRepository.create(newCustomer);
+    } catch (error) {
+        mapPrismaError(error,'User');
+    }
 }
 
 export const update = (customer:UpdateCustomerDto) =>{
-    const email = customer.email?.trim();
-    const phoneNumber = customer.phoneNumber?.trim();
-
-    if(email?.length === 0 || phoneNumber?.length === 0){
-        throw new BadRequestError('One or more fields are empty');
-    }
-
     const newCustomer:CustomerUpdateInput = {
-        email,
-        phoneNumber
+        email:customer.email,
+        phoneNumber:customer.phoneNumber
     }
 
     try {
