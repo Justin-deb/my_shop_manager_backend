@@ -14,10 +14,11 @@ export const findAllByInvoiceId = (invoiceId: number) => {
   });
 };
 
-export const findById = (paymentId:number) =>{
+export const findById = (paymentId:number,invoiceId:number) =>{
     return prisma.payment.findUniqueOrThrow({
         where:{
-            paymentId
+            paymentId,
+            invoiceId
         },
         include
     });
