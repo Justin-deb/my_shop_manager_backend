@@ -1,11 +1,8 @@
-import { PRISMA_CODES } from '../../common/constants/PrismaErrorCodes';
 import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { CreatePieceDto } from '../../dto/piece/CreatePieceDto';
-import { UpdatePieceDto } from '../../dto/piece/UpdatePieceDto';
+import { CreatePieceDto } from '../../dto/piece/create/CreatePieceDto';
+import { UpdatePieceDto } from '../../dto/piece/update/UpdatePieceDto';
 import { BadRequestError } from '../../exceptions/BadRequestError';
-import { ConflictError } from '../../exceptions/ConflictError';
-import { NotFoundError } from '../../exceptions/NotFoundError';
-import { PieceCreateInput, PrismaClientKnownRequestError } from '../../generated/prisma/internal/prismaNamespace';
+import { PieceCreateInput } from '../../generated/prisma/internal/prismaNamespace';
 import * as pieceRepository from '../../repository/piece/PieceRepository';
 
 export const findAll = () =>{
