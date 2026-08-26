@@ -1,7 +1,6 @@
 import { mapPrismaError } from '../../common/utils/ErrorWrapper';
 import { CreateRoleDto } from '../../dto/user/create/CreateRoleDto';
 import { UpdateRoleDto } from '../../dto/user/update/UpdateRoleDto';
-import { BadRequestError } from '../../exceptions/BadRequestError';
 import { RoleCreateInput, RoleUpdateInput } from '../../generated/prisma/models';
 import * as roleRepository from '../../repository/user/RoleRepository';
 
@@ -21,9 +20,9 @@ export const findByName = (name:string) =>{
     return roleRepository.findByName(name);
 }
 
-export const create = (role:CreateRoleDto) =>{
+export const create = (dto:CreateRoleDto) =>{
     const newRole:RoleCreateInput = {
-        name:role.name
+        name:dto.name
     }
 
     try {
@@ -33,15 +32,15 @@ export const create = (role:CreateRoleDto) =>{
     }
 }
 
-export const update = (role:UpdateRoleDto) =>{
+export const update = (dto:UpdateRoleDto) =>{
     const newRole:RoleUpdateInput = {
-        name:role.name
+        name:dto.name
     }
 
     try {
-        return roleRepository.update(role.roleId,newRole);
+        return roleRepository.update(dto.roleId,newRole);
     } catch (error) {
-        mapPrismaError(error,'Role',role.roleId.toString());
+        mapPrismaError(error,'Role',dto.roleId.toString());
     }
 }
 

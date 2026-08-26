@@ -17,22 +17,22 @@ export const findByPieceId = (shopId:number,pieceId:number) =>{
     }
 }
 
-export const create = async (warehouse:CreateWarehouseDto) =>{
+export const create = async (dto:CreateWarehouseDto) =>{
     //DRY (Don't Repeat Yourself)
-    const shopId = warehouse.shopId;
-    const pieceId = warehouse.pieceId;
+    const shopId = dto.shopId;
+    const pieceId = dto.pieceId;
 
     //Validate if the record already exists in the database, if so call update instead
     try {
         if(await findByPieceId(shopId,pieceId)){
-            const quantity = warehouse.quantity
-            return update({shopId,pieceId,quantity,notes:warehouse.notes});
+            const quantity = dto.quantity
+            return update({shopId,pieceId,quantity,notes:dto.notes});
         }
     } catch (error) {
         //Means it did not found any error and can procede
     }
 
-    if(warehouse.quantity <= 0){
+    if(dto.quantity <= 0){
         throw new BadRequestError('Quantity cannot be cero or less');
     }
 
@@ -47,8 +47,8 @@ export const create = async (warehouse:CreateWarehouseDto) =>{
                 pieceId
             }
         },
-        quantity:warehouse.quantity,
-        notes:warehouse.notes
+        quantity:dto.quantity,
+        notes:dto.notes
     }
 
     try {
@@ -58,16 +58,16 @@ export const create = async (warehouse:CreateWarehouseDto) =>{
     }
 }
 
-export const update = (warehouse:UpdateWarehouseDto) =>{
+export const update = (dto:UpdateWarehouseDto) =>{
     const newWarehouse:WarehouseUpdateInput = {
-        quantity:warehouse.quantity,
-        notes:warehouse.notes
+        quantity:dto.quantity,
+        notes:dto.notes
     }
 
     try {
-        return warehouseRepository.update(warehouse.shopId,warehouse.pieceId,newWarehouse);
+        return warehouseRepository.update(dto.shopId,dto.pieceId,newWarehouse);
     } catch (error) {
-        mapPrismaError(error,'Warehouse', `ShopId:${warehouse.shopId} PieceId:${warehouse.pieceId}`);
+        mapPrismaError(error,'Warehouse', `ShopId:${dto.shopId} PieceId:${dto.pieceId}`);
     }
 }
 

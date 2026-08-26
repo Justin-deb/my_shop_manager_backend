@@ -1,4 +1,3 @@
-import EnvVars from '../../common/constants/env';
 import { mapPrismaError } from '../../common/utils/ErrorWrapper';
 import { CreateUserDto } from '../../dto/user/create/CreateUserDto';
 import { UpdateUserDto } from '../../dto/user/update/UpdateUserDto';
@@ -30,21 +29,21 @@ export const findByName = (email:string) =>{
     }
 }
 
-export const create = async (user:CreateUserDto) =>{
+export const create = async (dto:CreateUserDto) =>{
     //Encrypt password
-    const passwordHash = await bcrypt.hash(user.password,SALT_ROUNDS);
+    const passwordHash = await bcrypt.hash(dto.password,SALT_ROUNDS);
     
     
     const newUser:UserCreateInput = {
-        firstName:user.firstName,
-        middleName:user.middleName,
-        lastName:user.lastName,
-        secondLastName:user.secondLastName,
-        email:user.email,
+        firstName:dto.firstName,
+        middleName:dto.middleName,
+        lastName:dto.lastName,
+        secondLastName:dto.secondLastName,
+        email:dto.email,
         passwordHash:passwordHash,
         role:{
             connect:{
-                roleId:user.roleId
+                roleId:dto.roleId
             }
         }
     }
@@ -56,28 +55,27 @@ export const create = async (user:CreateUserDto) =>{
     }
 }
 
-export const update = async (user:UpdateUserDto) =>{
-    if(user.roleId && user.roleId <= 0){
+export const update = async (dto:UpdateUserDto) =>{
+    if(dto.roleId && dto.roleId <= 0){
         throw new BadRequestError('Invalid role');
     }
-    user
 
     const newUser:UserUpdateInput = {
-        firstName:user.firstName,
-        middleName:user.middleName,
-        lastName:user.lastName,
-        secondLastName:user.secondLastName,
+        firstName:dto.firstName,
+        middleName:dto.middleName,
+        lastName:dto.lastName,
+        secondLastName:dto.secondLastName,
         role:{
             connect:{
-                roleId:user.roleId
+                roleId:dto.roleId
             }
         }
     }
 
     try {
-        return userRepository.update(user.userId,newUser);
+        return userRepository.update(dto.userId,newUser);
     } catch (error) {
-        mapPrismaError(error,'User',user.userId.toString());
+        mapPrismaError(error,'User',dto.userId.toString());
     }
 }
 

@@ -20,9 +20,9 @@ export const findByName = (name:string) =>{
     return paymentMethodRepository.findByName(name);
 }
 
-export const create = (paymentMethod:CreatePaymentMethodDto) =>{
+export const create = (dto:CreatePaymentMethodDto) =>{
     const newPaymentMethod:PaymentMethodCreateInput = {
-        name:paymentMethod.name
+        name:dto.name
     }
 
     try {
@@ -32,15 +32,15 @@ export const create = (paymentMethod:CreatePaymentMethodDto) =>{
     }
 }
 
-export const update = (paymentMethod:UpdatePaymentMethodDto) =>{
+export const update = (dto:UpdatePaymentMethodDto) =>{
     const newPaymentMethod:PaymentMethodUpdateInput = {
-        name:paymentMethod.name
+        name:dto.name
     }
 
     try {
-        return paymentMethodRepository.update(paymentMethod.id,newPaymentMethod);
+        return paymentMethodRepository.update(dto.id,newPaymentMethod);
     } catch (error) {
-        mapPrismaError(error,'Payment Method',paymentMethod.id.toString());
+        mapPrismaError(error,'Payment Method',dto.id.toString());
     }
 }
 

@@ -23,21 +23,21 @@ export const findById = async (userId:number,shopId:number) =>{
     }
 }
 
-export const create = (employee:CreateEmployeeDto) =>{
+export const create = (dto:CreateEmployeeDto) =>{
     const newEmployee:EmployeeCreateInput = {
         user:{
             connect:{
-                userId:employee.userId
+                userId:dto.userId
             }
         },
         shop:{
             connect:{
-                shopId:employee.shopId
+                shopId:dto.shopId
             }
         },
         position:{
             connect:{
-                positionId:employee.positionId
+                positionId:dto.positionId
             }
         }
     }
@@ -49,19 +49,19 @@ export const create = (employee:CreateEmployeeDto) =>{
     }
 }
 
-export const update = async (employee:UpdateEmployeeDto) =>{
+export const update = async (dto:UpdateEmployeeDto) =>{
     const newEmployee:EmployeeUpdateInput = {
         position:{
             connect:{
-                positionId:employee.positionId
+                positionId:dto.positionId
             }
         }
     }
 
     try {
-        return await employeeRepository.update(employee.shopId,employee.userId,newEmployee);
+        return await employeeRepository.update(dto.shopId,dto.userId,newEmployee);
     } catch (error) {
-        mapPrismaError(error,"Employee",employee.userId.toString());
+        mapPrismaError(error,"Employee",dto.userId.toString());
     }
 }
 

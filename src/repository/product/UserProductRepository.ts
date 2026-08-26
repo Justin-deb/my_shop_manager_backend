@@ -5,7 +5,8 @@ import prisma from "../../models/common/prisma";
 export const findByUserId = (userId:number) =>{
     return prisma.userProduct.findMany({
         where:{
-            ownerId:userId
+            customerId:userId,
+            
         },
         include:{
             product:true
@@ -19,7 +20,7 @@ export const findByProductId = (productId:number) =>{
             productId:productId
         },
         include:{
-            user:true
+            customer:true
         }
     });
 }
@@ -33,8 +34,8 @@ export const create = (userProduct:UserProduct) =>{
 export const update = (userId:number,productId:number,userProduct:UserProductUpdateInput) =>{
     return prisma.userProduct.update({
         where:{
-            productId_ownerId:{
-                ownerId:userId,
+            productId_customerId:{
+                customerId:userId,
                 productId
             }
         },
@@ -45,8 +46,8 @@ export const update = (userId:number,productId:number,userProduct:UserProductUpd
 export const remove = (userId:number,productId:number) =>{
     return prisma.userProduct.delete({
         where:{
-            productId_ownerId:{
-                ownerId:userId,
+            productId_customerId:{
+                customerId:userId,
                 productId
             }
         }
