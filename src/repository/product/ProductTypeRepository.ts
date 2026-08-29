@@ -14,7 +14,7 @@ export const findById = (typeId:number) => {
 }
 
 export const findByName = (name:string) => {
-    return prisma.productType.findFirstOrThrow({
+    return prisma.productType.findMany({
         where:{
             name:{
                 contains:name
