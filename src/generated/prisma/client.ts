@@ -115,11 +115,6 @@ export type User = Prisma.UserModel
  */
 export type Warehouse = Prisma.WarehouseModel
 /**
- * Model UserProduct
- * 
- */
-export type UserProduct = Prisma.UserProductModel
-/**
  * Model Assignment
  * 
  */
@@ -134,3 +129,8 @@ export type Employee = Prisma.EmployeeModel
  * 
  */
 export type Customer = Prisma.CustomerModel
+/**
+ * Model CustomerProduct
+ * 
+ */
+export type CustomerProduct = Prisma.CustomerProductModel
