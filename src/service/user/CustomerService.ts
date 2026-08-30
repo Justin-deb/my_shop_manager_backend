@@ -9,21 +9,21 @@ export const findAll = () =>{
     return customerRepository.findAll();
 }
 
-export const findById = (customerId:number) =>{
+export const findById = (customerId:number,shopId:number) =>{
     try {
-        return customerRepository.findById(customerId);
+        return customerRepository.findById(customerId,shopId);
     } catch (error) {
-        mapPrismaError(error,'Customer',customerId.toString());
+        mapPrismaError(error,'Customer',`Customer:${customerId} Shop:${shopId}`);
     }
 }
 
 export const findByFullName = (dto:FullNameCustomerDto) =>{
     try {
-        return customerRepository.findByFullName(dto.firstName,dto.lastName,dto.secondLastName,dto.middleName);
+        return customerRepository.findByFullName(dto.firstName,dto.lastName,dto.secondLastName,dto.shopId,dto.middleName);
     } catch (error) {
         mapPrismaError(error,
             'Customer',
-            `${dto.firstName} ${dto.middleName ? dto.middleName : ''} ${dto.lastName} ${dto.secondLastName}`);
+            `${dto.firstName} ${dto.middleName ? dto.middleName : ''} ${dto.lastName} ${dto.secondLastName} for shop ${dto.shopId}`);
     }
 }
 
