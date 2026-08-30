@@ -257,6 +257,7 @@ export type WarehouseScalarFieldEnum = (typeof WarehouseScalarFieldEnum)[keyof t
 export const UserProductScalarFieldEnum = {
   productId: 'productId',
   customerId: 'customerId',
+  shopId: 'shopId',
   serialNumber: 'serialNumber',
   name: 'name'
 } as const
@@ -287,6 +288,7 @@ export type EmployeeScalarFieldEnum = (typeof EmployeeScalarFieldEnum)[keyof typ
 
 export const CustomerScalarFieldEnum = {
   customerId: 'customerId',
+  shopId: 'shopId',
   firstName: 'firstName',
   middleName: 'middleName',
   lastName: 'lastName',

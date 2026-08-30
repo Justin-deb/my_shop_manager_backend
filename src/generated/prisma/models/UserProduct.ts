@@ -29,16 +29,19 @@ export type AggregateUserProduct = {
 export type UserProductAvgAggregateOutputType = {
   productId: number | null
   customerId: number | null
+  shopId: number | null
 }
 
 export type UserProductSumAggregateOutputType = {
   productId: number | null
   customerId: number | null
+  shopId: number | null
 }
 
 export type UserProductMinAggregateOutputType = {
   productId: number | null
   customerId: number | null
+  shopId: number | null
   serialNumber: string | null
   name: string | null
 }
@@ -46,6 +49,7 @@ export type UserProductMinAggregateOutputType = {
 export type UserProductMaxAggregateOutputType = {
   productId: number | null
   customerId: number | null
+  shopId: number | null
   serialNumber: string | null
   name: string | null
 }
@@ -53,6 +57,7 @@ export type UserProductMaxAggregateOutputType = {
 export type UserProductCountAggregateOutputType = {
   productId: number
   customerId: number
+  shopId: number
   serialNumber: number
   name: number
   _all: number
@@ -62,16 +67,19 @@ export type UserProductCountAggregateOutputType = {
 export type UserProductAvgAggregateInputType = {
   productId?: true
   customerId?: true
+  shopId?: true
 }
 
 export type UserProductSumAggregateInputType = {
   productId?: true
   customerId?: true
+  shopId?: true
 }
 
 export type UserProductMinAggregateInputType = {
   productId?: true
   customerId?: true
+  shopId?: true
   serialNumber?: true
   name?: true
 }
@@ -79,6 +87,7 @@ export type UserProductMinAggregateInputType = {
 export type UserProductMaxAggregateInputType = {
   productId?: true
   customerId?: true
+  shopId?: true
   serialNumber?: true
   name?: true
 }
@@ -86,6 +95,7 @@ export type UserProductMaxAggregateInputType = {
 export type UserProductCountAggregateInputType = {
   productId?: true
   customerId?: true
+  shopId?: true
   serialNumber?: true
   name?: true
   _all?: true
@@ -180,6 +190,7 @@ export type UserProductGroupByArgs<ExtArgs extends runtime.Types.Extensions.Inte
 export type UserProductGroupByOutputType = {
   productId: number
   customerId: number
+  shopId: number
   serialNumber: string | null
   name: string | null
   _count: UserProductCountAggregateOutputType | null
@@ -210,21 +221,25 @@ export type UserProductWhereInput = {
   NOT?: Prisma.UserProductWhereInput | Prisma.UserProductWhereInput[]
   productId?: Prisma.IntFilter<"UserProduct"> | number
   customerId?: Prisma.IntFilter<"UserProduct"> | number
+  shopId?: Prisma.IntFilter<"UserProduct"> | number
   serialNumber?: Prisma.StringNullableFilter<"UserProduct"> | string | null
   name?: Prisma.StringNullableFilter<"UserProduct"> | string | null
   repairs?: Prisma.RepairListRelationFilter
   customer?: Prisma.XOR<Prisma.CustomerScalarRelationFilter, Prisma.CustomerWhereInput>
   product?: Prisma.XOR<Prisma.ProductScalarRelationFilter, Prisma.ProductWhereInput>
+  shop?: Prisma.XOR<Prisma.ShopScalarRelationFilter, Prisma.ShopWhereInput>
 }
 
 export type UserProductOrderByWithRelationInput = {
   productId?: Prisma.SortOrder
   customerId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
   serialNumber?: Prisma.SortOrderInput | Prisma.SortOrder
   name?: Prisma.SortOrderInput | Prisma.SortOrder
   repairs?: Prisma.RepairOrderByRelationAggregateInput
   customer?: Prisma.CustomerOrderByWithRelationInput
   product?: Prisma.ProductOrderByWithRelationInput
+  shop?: Prisma.ShopOrderByWithRelationInput
   _relevance?: Prisma.UserProductOrderByRelevanceInput
 }
 
@@ -235,16 +250,19 @@ export type UserProductWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.UserProductWhereInput | Prisma.UserProductWhereInput[]
   productId?: Prisma.IntFilter<"UserProduct"> | number
   customerId?: Prisma.IntFilter<"UserProduct"> | number
+  shopId?: Prisma.IntFilter<"UserProduct"> | number
   serialNumber?: Prisma.StringNullableFilter<"UserProduct"> | string | null
   name?: Prisma.StringNullableFilter<"UserProduct"> | string | null
   repairs?: Prisma.RepairListRelationFilter
   customer?: Prisma.XOR<Prisma.CustomerScalarRelationFilter, Prisma.CustomerWhereInput>
   product?: Prisma.XOR<Prisma.ProductScalarRelationFilter, Prisma.ProductWhereInput>
+  shop?: Prisma.XOR<Prisma.ShopScalarRelationFilter, Prisma.ShopWhereInput>
 }, "productId_customerId">
 
 export type UserProductOrderByWithAggregationInput = {
   productId?: Prisma.SortOrder
   customerId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
   serialNumber?: Prisma.SortOrderInput | Prisma.SortOrder
   name?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.UserProductCountOrderByAggregateInput
@@ -260,6 +278,7 @@ export type UserProductScalarWhereWithAggregatesInput = {
   NOT?: Prisma.UserProductScalarWhereWithAggregatesInput | Prisma.UserProductScalarWhereWithAggregatesInput[]
   productId?: Prisma.IntWithAggregatesFilter<"UserProduct"> | number
   customerId?: Prisma.IntWithAggregatesFilter<"UserProduct"> | number
+  shopId?: Prisma.IntWithAggregatesFilter<"UserProduct"> | number
   serialNumber?: Prisma.StringNullableWithAggregatesFilter<"UserProduct"> | string | null
   name?: Prisma.StringNullableWithAggregatesFilter<"UserProduct"> | string | null
 }
@@ -270,11 +289,13 @@ export type UserProductCreateInput = {
   repairs?: Prisma.RepairCreateNestedManyWithoutUserProductInput
   customer: Prisma.CustomerCreateNestedOneWithoutUserProductInput
   product: Prisma.ProductCreateNestedOneWithoutUserProductsInput
+  shop: Prisma.ShopCreateNestedOneWithoutUSER_PRODUCTInput
 }
 
 export type UserProductUncheckedCreateInput = {
   productId: number
   customerId: number
+  shopId: number
   serialNumber?: string | null
   name?: string | null
   repairs?: Prisma.RepairUncheckedCreateNestedManyWithoutUserProductInput
@@ -286,11 +307,13 @@ export type UserProductUpdateInput = {
   repairs?: Prisma.RepairUpdateManyWithoutUserProductNestedInput
   customer?: Prisma.CustomerUpdateOneRequiredWithoutUserProductNestedInput
   product?: Prisma.ProductUpdateOneRequiredWithoutUserProductsNestedInput
+  shop?: Prisma.ShopUpdateOneRequiredWithoutUSER_PRODUCTNestedInput
 }
 
 export type UserProductUncheckedUpdateInput = {
   productId?: Prisma.IntFieldUpdateOperationsInput | number
   customerId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   serialNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   repairs?: Prisma.RepairUncheckedUpdateManyWithoutUserProductNestedInput
@@ -299,6 +322,7 @@ export type UserProductUncheckedUpdateInput = {
 export type UserProductCreateManyInput = {
   productId: number
   customerId: number
+  shopId: number
   serialNumber?: string | null
   name?: string | null
 }
@@ -311,6 +335,7 @@ export type UserProductUpdateManyMutationInput = {
 export type UserProductUncheckedUpdateManyInput = {
   productId?: Prisma.IntFieldUpdateOperationsInput | number
   customerId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   serialNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
@@ -344,6 +369,7 @@ export type UserProductProductIdCustomerIdCompoundUniqueInput = {
 export type UserProductCountOrderByAggregateInput = {
   productId?: Prisma.SortOrder
   customerId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
   serialNumber?: Prisma.SortOrder
   name?: Prisma.SortOrder
 }
@@ -351,11 +377,13 @@ export type UserProductCountOrderByAggregateInput = {
 export type UserProductAvgOrderByAggregateInput = {
   productId?: Prisma.SortOrder
   customerId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
 }
 
 export type UserProductMaxOrderByAggregateInput = {
   productId?: Prisma.SortOrder
   customerId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
   serialNumber?: Prisma.SortOrder
   name?: Prisma.SortOrder
 }
@@ -363,6 +391,7 @@ export type UserProductMaxOrderByAggregateInput = {
 export type UserProductMinOrderByAggregateInput = {
   productId?: Prisma.SortOrder
   customerId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
   serialNumber?: Prisma.SortOrder
   name?: Prisma.SortOrder
 }
@@ -370,6 +399,7 @@ export type UserProductMinOrderByAggregateInput = {
 export type UserProductSumOrderByAggregateInput = {
   productId?: Prisma.SortOrder
   customerId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
 }
 
 export type UserProductCreateNestedManyWithoutProductInput = {
@@ -428,6 +458,48 @@ export type UserProductUpdateOneRequiredWithoutRepairsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserProductUpdateToOneWithWhereWithoutRepairsInput, Prisma.UserProductUpdateWithoutRepairsInput>, Prisma.UserProductUncheckedUpdateWithoutRepairsInput>
 }
 
+export type UserProductCreateNestedManyWithoutShopInput = {
+  create?: Prisma.XOR<Prisma.UserProductCreateWithoutShopInput, Prisma.UserProductUncheckedCreateWithoutShopInput> | Prisma.UserProductCreateWithoutShopInput[] | Prisma.UserProductUncheckedCreateWithoutShopInput[]
+  connectOrCreate?: Prisma.UserProductCreateOrConnectWithoutShopInput | Prisma.UserProductCreateOrConnectWithoutShopInput[]
+  createMany?: Prisma.UserProductCreateManyShopInputEnvelope
+  connect?: Prisma.UserProductWhereUniqueInput | Prisma.UserProductWhereUniqueInput[]
+}
+
+export type UserProductUncheckedCreateNestedManyWithoutShopInput = {
+  create?: Prisma.XOR<Prisma.UserProductCreateWithoutShopInput, Prisma.UserProductUncheckedCreateWithoutShopInput> | Prisma.UserProductCreateWithoutShopInput[] | Prisma.UserProductUncheckedCreateWithoutShopInput[]
+  connectOrCreate?: Prisma.UserProductCreateOrConnectWithoutShopInput | Prisma.UserProductCreateOrConnectWithoutShopInput[]
+  createMany?: Prisma.UserProductCreateManyShopInputEnvelope
+  connect?: Prisma.UserProductWhereUniqueInput | Prisma.UserProductWhereUniqueInput[]
+}
+
+export type UserProductUpdateManyWithoutShopNestedInput = {
+  create?: Prisma.XOR<Prisma.UserProductCreateWithoutShopInput, Prisma.UserProductUncheckedCreateWithoutShopInput> | Prisma.UserProductCreateWithoutShopInput[] | Prisma.UserProductUncheckedCreateWithoutShopInput[]
+  connectOrCreate?: Prisma.UserProductCreateOrConnectWithoutShopInput | Prisma.UserProductCreateOrConnectWithoutShopInput[]
+  upsert?: Prisma.UserProductUpsertWithWhereUniqueWithoutShopInput | Prisma.UserProductUpsertWithWhereUniqueWithoutShopInput[]
+  createMany?: Prisma.UserProductCreateManyShopInputEnvelope
+  set?: Prisma.UserProductWhereUniqueInput | Prisma.UserProductWhereUniqueInput[]
+  disconnect?: Prisma.UserProductWhereUniqueInput | Prisma.UserProductWhereUniqueInput[]
+  delete?: Prisma.UserProductWhereUniqueInput | Prisma.UserProductWhereUniqueInput[]
+  connect?: Prisma.UserProductWhereUniqueInput | Prisma.UserProductWhereUniqueInput[]
+  update?: Prisma.UserProductUpdateWithWhereUniqueWithoutShopInput | Prisma.UserProductUpdateWithWhereUniqueWithoutShopInput[]
+  updateMany?: Prisma.UserProductUpdateManyWithWhereWithoutShopInput | Prisma.UserProductUpdateManyWithWhereWithoutShopInput[]
+  deleteMany?: Prisma.UserProductScalarWhereInput | Prisma.UserProductScalarWhereInput[]
+}
+
+export type UserProductUncheckedUpdateManyWithoutShopNestedInput = {
+  create?: Prisma.XOR<Prisma.UserProductCreateWithoutShopInput, Prisma.UserProductUncheckedCreateWithoutShopInput> | Prisma.UserProductCreateWithoutShopInput[] | Prisma.UserProductUncheckedCreateWithoutShopInput[]
+  connectOrCreate?: Prisma.UserProductCreateOrConnectWithoutShopInput | Prisma.UserProductCreateOrConnectWithoutShopInput[]
+  upsert?: Prisma.UserProductUpsertWithWhereUniqueWithoutShopInput | Prisma.UserProductUpsertWithWhereUniqueWithoutShopInput[]
+  createMany?: Prisma.UserProductCreateManyShopInputEnvelope
+  set?: Prisma.UserProductWhereUniqueInput | Prisma.UserProductWhereUniqueInput[]
+  disconnect?: Prisma.UserProductWhereUniqueInput | Prisma.UserProductWhereUniqueInput[]
+  delete?: Prisma.UserProductWhereUniqueInput | Prisma.UserProductWhereUniqueInput[]
+  connect?: Prisma.UserProductWhereUniqueInput | Prisma.UserProductWhereUniqueInput[]
+  update?: Prisma.UserProductUpdateWithWhereUniqueWithoutShopInput | Prisma.UserProductUpdateWithWhereUniqueWithoutShopInput[]
+  updateMany?: Prisma.UserProductUpdateManyWithWhereWithoutShopInput | Prisma.UserProductUpdateManyWithWhereWithoutShopInput[]
+  deleteMany?: Prisma.UserProductScalarWhereInput | Prisma.UserProductScalarWhereInput[]
+}
+
 export type UserProductCreateNestedManyWithoutCustomerInput = {
   create?: Prisma.XOR<Prisma.UserProductCreateWithoutCustomerInput, Prisma.UserProductUncheckedCreateWithoutCustomerInput> | Prisma.UserProductCreateWithoutCustomerInput[] | Prisma.UserProductUncheckedCreateWithoutCustomerInput[]
   connectOrCreate?: Prisma.UserProductCreateOrConnectWithoutCustomerInput | Prisma.UserProductCreateOrConnectWithoutCustomerInput[]
@@ -475,10 +547,12 @@ export type UserProductCreateWithoutProductInput = {
   name?: string | null
   repairs?: Prisma.RepairCreateNestedManyWithoutUserProductInput
   customer: Prisma.CustomerCreateNestedOneWithoutUserProductInput
+  shop: Prisma.ShopCreateNestedOneWithoutUSER_PRODUCTInput
 }
 
 export type UserProductUncheckedCreateWithoutProductInput = {
   customerId: number
+  shopId: number
   serialNumber?: string | null
   name?: string | null
   repairs?: Prisma.RepairUncheckedCreateNestedManyWithoutUserProductInput
@@ -516,6 +590,7 @@ export type UserProductScalarWhereInput = {
   NOT?: Prisma.UserProductScalarWhereInput | Prisma.UserProductScalarWhereInput[]
   productId?: Prisma.IntFilter<"UserProduct"> | number
   customerId?: Prisma.IntFilter<"UserProduct"> | number
+  shopId?: Prisma.IntFilter<"UserProduct"> | number
   serialNumber?: Prisma.StringNullableFilter<"UserProduct"> | string | null
   name?: Prisma.StringNullableFilter<"UserProduct"> | string | null
 }
@@ -525,11 +600,13 @@ export type UserProductCreateWithoutRepairsInput = {
   name?: string | null
   customer: Prisma.CustomerCreateNestedOneWithoutUserProductInput
   product: Prisma.ProductCreateNestedOneWithoutUserProductsInput
+  shop: Prisma.ShopCreateNestedOneWithoutUSER_PRODUCTInput
 }
 
 export type UserProductUncheckedCreateWithoutRepairsInput = {
   productId: number
   customerId: number
+  shopId: number
   serialNumber?: string | null
   name?: string | null
 }
@@ -555,13 +632,57 @@ export type UserProductUpdateWithoutRepairsInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   customer?: Prisma.CustomerUpdateOneRequiredWithoutUserProductNestedInput
   product?: Prisma.ProductUpdateOneRequiredWithoutUserProductsNestedInput
+  shop?: Prisma.ShopUpdateOneRequiredWithoutUSER_PRODUCTNestedInput
 }
 
 export type UserProductUncheckedUpdateWithoutRepairsInput = {
   productId?: Prisma.IntFieldUpdateOperationsInput | number
   customerId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   serialNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+export type UserProductCreateWithoutShopInput = {
+  serialNumber?: string | null
+  name?: string | null
+  repairs?: Prisma.RepairCreateNestedManyWithoutUserProductInput
+  customer: Prisma.CustomerCreateNestedOneWithoutUserProductInput
+  product: Prisma.ProductCreateNestedOneWithoutUserProductsInput
+}
+
+export type UserProductUncheckedCreateWithoutShopInput = {
+  productId: number
+  customerId: number
+  serialNumber?: string | null
+  name?: string | null
+  repairs?: Prisma.RepairUncheckedCreateNestedManyWithoutUserProductInput
+}
+
+export type UserProductCreateOrConnectWithoutShopInput = {
+  where: Prisma.UserProductWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserProductCreateWithoutShopInput, Prisma.UserProductUncheckedCreateWithoutShopInput>
+}
+
+export type UserProductCreateManyShopInputEnvelope = {
+  data: Prisma.UserProductCreateManyShopInput | Prisma.UserProductCreateManyShopInput[]
+  skipDuplicates?: boolean
+}
+
+export type UserProductUpsertWithWhereUniqueWithoutShopInput = {
+  where: Prisma.UserProductWhereUniqueInput
+  update: Prisma.XOR<Prisma.UserProductUpdateWithoutShopInput, Prisma.UserProductUncheckedUpdateWithoutShopInput>
+  create: Prisma.XOR<Prisma.UserProductCreateWithoutShopInput, Prisma.UserProductUncheckedCreateWithoutShopInput>
+}
+
+export type UserProductUpdateWithWhereUniqueWithoutShopInput = {
+  where: Prisma.UserProductWhereUniqueInput
+  data: Prisma.XOR<Prisma.UserProductUpdateWithoutShopInput, Prisma.UserProductUncheckedUpdateWithoutShopInput>
+}
+
+export type UserProductUpdateManyWithWhereWithoutShopInput = {
+  where: Prisma.UserProductScalarWhereInput
+  data: Prisma.XOR<Prisma.UserProductUpdateManyMutationInput, Prisma.UserProductUncheckedUpdateManyWithoutShopInput>
 }
 
 export type UserProductCreateWithoutCustomerInput = {
@@ -569,10 +690,12 @@ export type UserProductCreateWithoutCustomerInput = {
   name?: string | null
   repairs?: Prisma.RepairCreateNestedManyWithoutUserProductInput
   product: Prisma.ProductCreateNestedOneWithoutUserProductsInput
+  shop: Prisma.ShopCreateNestedOneWithoutUSER_PRODUCTInput
 }
 
 export type UserProductUncheckedCreateWithoutCustomerInput = {
   productId: number
+  shopId: number
   serialNumber?: string | null
   name?: string | null
   repairs?: Prisma.RepairUncheckedCreateNestedManyWithoutUserProductInput
@@ -606,6 +729,7 @@ export type UserProductUpdateManyWithWhereWithoutCustomerInput = {
 
 export type UserProductCreateManyProductInput = {
   customerId: number
+  shopId: number
   serialNumber?: string | null
   name?: string | null
 }
@@ -615,10 +739,12 @@ export type UserProductUpdateWithoutProductInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   repairs?: Prisma.RepairUpdateManyWithoutUserProductNestedInput
   customer?: Prisma.CustomerUpdateOneRequiredWithoutUserProductNestedInput
+  shop?: Prisma.ShopUpdateOneRequiredWithoutUSER_PRODUCTNestedInput
 }
 
 export type UserProductUncheckedUpdateWithoutProductInput = {
   customerId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   serialNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   repairs?: Prisma.RepairUncheckedUpdateManyWithoutUserProductNestedInput
@@ -626,12 +752,44 @@ export type UserProductUncheckedUpdateWithoutProductInput = {
 
 export type UserProductUncheckedUpdateManyWithoutProductInput = {
   customerId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
+  serialNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+export type UserProductCreateManyShopInput = {
+  productId: number
+  customerId: number
+  serialNumber?: string | null
+  name?: string | null
+}
+
+export type UserProductUpdateWithoutShopInput = {
+  serialNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  repairs?: Prisma.RepairUpdateManyWithoutUserProductNestedInput
+  customer?: Prisma.CustomerUpdateOneRequiredWithoutUserProductNestedInput
+  product?: Prisma.ProductUpdateOneRequiredWithoutUserProductsNestedInput
+}
+
+export type UserProductUncheckedUpdateWithoutShopInput = {
+  productId?: Prisma.IntFieldUpdateOperationsInput | number
+  customerId?: Prisma.IntFieldUpdateOperationsInput | number
+  serialNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  repairs?: Prisma.RepairUncheckedUpdateManyWithoutUserProductNestedInput
+}
+
+export type UserProductUncheckedUpdateManyWithoutShopInput = {
+  productId?: Prisma.IntFieldUpdateOperationsInput | number
+  customerId?: Prisma.IntFieldUpdateOperationsInput | number
   serialNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type UserProductCreateManyCustomerInput = {
   productId: number
+  shopId: number
   serialNumber?: string | null
   name?: string | null
 }
@@ -641,10 +799,12 @@ export type UserProductUpdateWithoutCustomerInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   repairs?: Prisma.RepairUpdateManyWithoutUserProductNestedInput
   product?: Prisma.ProductUpdateOneRequiredWithoutUserProductsNestedInput
+  shop?: Prisma.ShopUpdateOneRequiredWithoutUSER_PRODUCTNestedInput
 }
 
 export type UserProductUncheckedUpdateWithoutCustomerInput = {
   productId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   serialNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   repairs?: Prisma.RepairUncheckedUpdateManyWithoutUserProductNestedInput
@@ -652,6 +812,7 @@ export type UserProductUncheckedUpdateWithoutCustomerInput = {
 
 export type UserProductUncheckedUpdateManyWithoutCustomerInput = {
   productId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   serialNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
@@ -690,11 +851,13 @@ export type UserProductCountOutputTypeCountRepairsArgs<ExtArgs extends runtime.T
 export type UserProductSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   productId?: boolean
   customerId?: boolean
+  shopId?: boolean
   serialNumber?: boolean
   name?: boolean
   repairs?: boolean | Prisma.UserProduct$repairsArgs<ExtArgs>
   customer?: boolean | Prisma.CustomerDefaultArgs<ExtArgs>
   product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+  shop?: boolean | Prisma.ShopDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.UserProductCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["userProduct"]>
 
@@ -703,15 +866,17 @@ export type UserProductSelect<ExtArgs extends runtime.Types.Extensions.InternalA
 export type UserProductSelectScalar = {
   productId?: boolean
   customerId?: boolean
+  shopId?: boolean
   serialNumber?: boolean
   name?: boolean
 }
 
-export type UserProductOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"productId" | "customerId" | "serialNumber" | "name", ExtArgs["result"]["userProduct"]>
+export type UserProductOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"productId" | "customerId" | "shopId" | "serialNumber" | "name", ExtArgs["result"]["userProduct"]>
 export type UserProductInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   repairs?: boolean | Prisma.UserProduct$repairsArgs<ExtArgs>
   customer?: boolean | Prisma.CustomerDefaultArgs<ExtArgs>
   product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+  shop?: boolean | Prisma.ShopDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.UserProductCountOutputTypeDefaultArgs<ExtArgs>
 }
 
@@ -721,10 +886,12 @@ export type $UserProductPayload<ExtArgs extends runtime.Types.Extensions.Interna
     repairs: Prisma.$RepairPayload<ExtArgs>[]
     customer: Prisma.$CustomerPayload<ExtArgs>
     product: Prisma.$ProductPayload<ExtArgs>
+    shop: Prisma.$ShopPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     productId: number
     customerId: number
+    shopId: number
     serialNumber: string | null
     name: string | null
   }, ExtArgs["result"]["userProduct"]>
@@ -1070,6 +1237,7 @@ export interface Prisma__UserProductClient<T, Null = never, ExtArgs extends runt
   repairs<T extends Prisma.UserProduct$repairsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserProduct$repairsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RepairPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   customer<T extends Prisma.CustomerDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.CustomerDefaultArgs<ExtArgs>>): Prisma.Prisma__CustomerClient<runtime.Types.Result.GetResult<Prisma.$CustomerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   product<T extends Prisma.ProductDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ProductDefaultArgs<ExtArgs>>): Prisma.Prisma__ProductClient<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  shop<T extends Prisma.ShopDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ShopDefaultArgs<ExtArgs>>): Prisma.Prisma__ShopClient<runtime.Types.Result.GetResult<Prisma.$ShopPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1101,6 +1269,7 @@ export interface Prisma__UserProductClient<T, Null = never, ExtArgs extends runt
 export interface UserProductFieldRefs {
   readonly productId: Prisma.FieldRef<"UserProduct", 'Int'>
   readonly customerId: Prisma.FieldRef<"UserProduct", 'Int'>
+  readonly shopId: Prisma.FieldRef<"UserProduct", 'Int'>
   readonly serialNumber: Prisma.FieldRef<"UserProduct", 'String'>
   readonly name: Prisma.FieldRef<"UserProduct", 'String'>
 }

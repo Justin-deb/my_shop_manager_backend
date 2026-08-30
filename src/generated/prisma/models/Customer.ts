@@ -28,14 +28,17 @@ export type AggregateCustomer = {
 
 export type CustomerAvgAggregateOutputType = {
   customerId: number | null
+  shopId: number | null
 }
 
 export type CustomerSumAggregateOutputType = {
   customerId: number | null
+  shopId: number | null
 }
 
 export type CustomerMinAggregateOutputType = {
   customerId: number | null
+  shopId: number | null
   firstName: string | null
   middleName: string | null
   lastName: string | null
@@ -46,6 +49,7 @@ export type CustomerMinAggregateOutputType = {
 
 export type CustomerMaxAggregateOutputType = {
   customerId: number | null
+  shopId: number | null
   firstName: string | null
   middleName: string | null
   lastName: string | null
@@ -56,6 +60,7 @@ export type CustomerMaxAggregateOutputType = {
 
 export type CustomerCountAggregateOutputType = {
   customerId: number
+  shopId: number
   firstName: number
   middleName: number
   lastName: number
@@ -68,14 +73,17 @@ export type CustomerCountAggregateOutputType = {
 
 export type CustomerAvgAggregateInputType = {
   customerId?: true
+  shopId?: true
 }
 
 export type CustomerSumAggregateInputType = {
   customerId?: true
+  shopId?: true
 }
 
 export type CustomerMinAggregateInputType = {
   customerId?: true
+  shopId?: true
   firstName?: true
   middleName?: true
   lastName?: true
@@ -86,6 +94,7 @@ export type CustomerMinAggregateInputType = {
 
 export type CustomerMaxAggregateInputType = {
   customerId?: true
+  shopId?: true
   firstName?: true
   middleName?: true
   lastName?: true
@@ -96,6 +105,7 @@ export type CustomerMaxAggregateInputType = {
 
 export type CustomerCountAggregateInputType = {
   customerId?: true
+  shopId?: true
   firstName?: true
   middleName?: true
   lastName?: true
@@ -193,6 +203,7 @@ export type CustomerGroupByArgs<ExtArgs extends runtime.Types.Extensions.Interna
 
 export type CustomerGroupByOutputType = {
   customerId: number
+  shopId: number
   firstName: string
   middleName: string | null
   lastName: string
@@ -226,24 +237,28 @@ export type CustomerWhereInput = {
   OR?: Prisma.CustomerWhereInput[]
   NOT?: Prisma.CustomerWhereInput | Prisma.CustomerWhereInput[]
   customerId?: Prisma.IntFilter<"Customer"> | number
+  shopId?: Prisma.IntFilter<"Customer"> | number
   firstName?: Prisma.StringFilter<"Customer"> | string
   middleName?: Prisma.StringNullableFilter<"Customer"> | string | null
   lastName?: Prisma.StringFilter<"Customer"> | string
   secondLastName?: Prisma.StringFilter<"Customer"> | string
   phoneNumber?: Prisma.StringFilter<"Customer"> | string
   email?: Prisma.StringNullableFilter<"Customer"> | string | null
+  shop?: Prisma.XOR<Prisma.ShopScalarRelationFilter, Prisma.ShopWhereInput>
   user?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   userProduct?: Prisma.UserProductListRelationFilter
 }
 
 export type CustomerOrderByWithRelationInput = {
   customerId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
   firstName?: Prisma.SortOrder
   middleName?: Prisma.SortOrderInput | Prisma.SortOrder
   lastName?: Prisma.SortOrder
   secondLastName?: Prisma.SortOrder
   phoneNumber?: Prisma.SortOrder
   email?: Prisma.SortOrderInput | Prisma.SortOrder
+  shop?: Prisma.ShopOrderByWithRelationInput
   user?: Prisma.UserOrderByWithRelationInput
   userProduct?: Prisma.UserProductOrderByRelationAggregateInput
   _relevance?: Prisma.CustomerOrderByRelevanceInput
@@ -254,18 +269,21 @@ export type CustomerWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.CustomerWhereInput | Prisma.CustomerWhereInput[]
   OR?: Prisma.CustomerWhereInput[]
   NOT?: Prisma.CustomerWhereInput | Prisma.CustomerWhereInput[]
+  shopId?: Prisma.IntFilter<"Customer"> | number
   firstName?: Prisma.StringFilter<"Customer"> | string
   middleName?: Prisma.StringNullableFilter<"Customer"> | string | null
   lastName?: Prisma.StringFilter<"Customer"> | string
   secondLastName?: Prisma.StringFilter<"Customer"> | string
   phoneNumber?: Prisma.StringFilter<"Customer"> | string
   email?: Prisma.StringNullableFilter<"Customer"> | string | null
+  shop?: Prisma.XOR<Prisma.ShopScalarRelationFilter, Prisma.ShopWhereInput>
   user?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   userProduct?: Prisma.UserProductListRelationFilter
 }, "customerId">
 
 export type CustomerOrderByWithAggregationInput = {
   customerId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
   firstName?: Prisma.SortOrder
   middleName?: Prisma.SortOrderInput | Prisma.SortOrder
   lastName?: Prisma.SortOrder
@@ -284,6 +302,7 @@ export type CustomerScalarWhereWithAggregatesInput = {
   OR?: Prisma.CustomerScalarWhereWithAggregatesInput[]
   NOT?: Prisma.CustomerScalarWhereWithAggregatesInput | Prisma.CustomerScalarWhereWithAggregatesInput[]
   customerId?: Prisma.IntWithAggregatesFilter<"Customer"> | number
+  shopId?: Prisma.IntWithAggregatesFilter<"Customer"> | number
   firstName?: Prisma.StringWithAggregatesFilter<"Customer"> | string
   middleName?: Prisma.StringNullableWithAggregatesFilter<"Customer"> | string | null
   lastName?: Prisma.StringWithAggregatesFilter<"Customer"> | string
@@ -299,12 +318,14 @@ export type CustomerCreateInput = {
   secondLastName: string
   phoneNumber: string
   email?: string | null
+  shop: Prisma.ShopCreateNestedOneWithoutCustomersInput
   user?: Prisma.UserCreateNestedOneWithoutCustomerInput
   userProduct?: Prisma.UserProductCreateNestedManyWithoutCustomerInput
 }
 
 export type CustomerUncheckedCreateInput = {
   customerId?: number
+  shopId: number
   firstName: string
   middleName?: string | null
   lastName: string
@@ -322,12 +343,14 @@ export type CustomerUpdateInput = {
   secondLastName?: Prisma.StringFieldUpdateOperationsInput | string
   phoneNumber?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shop?: Prisma.ShopUpdateOneRequiredWithoutCustomersNestedInput
   user?: Prisma.UserUpdateOneWithoutCustomerNestedInput
   userProduct?: Prisma.UserProductUpdateManyWithoutCustomerNestedInput
 }
 
 export type CustomerUncheckedUpdateInput = {
   customerId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   firstName?: Prisma.StringFieldUpdateOperationsInput | string
   middleName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
@@ -340,6 +363,7 @@ export type CustomerUncheckedUpdateInput = {
 
 export type CustomerCreateManyInput = {
   customerId?: number
+  shopId: number
   firstName: string
   middleName?: string | null
   lastName: string
@@ -359,12 +383,23 @@ export type CustomerUpdateManyMutationInput = {
 
 export type CustomerUncheckedUpdateManyInput = {
   customerId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   firstName?: Prisma.StringFieldUpdateOperationsInput | string
   middleName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   secondLastName?: Prisma.StringFieldUpdateOperationsInput | string
   phoneNumber?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+export type CustomerListRelationFilter = {
+  every?: Prisma.CustomerWhereInput
+  some?: Prisma.CustomerWhereInput
+  none?: Prisma.CustomerWhereInput
+}
+
+export type CustomerOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
 }
 
 export type CustomerNullableScalarRelationFilter = {
@@ -385,6 +420,7 @@ export type CustomerOrderByRelevanceInput = {
 
 export type CustomerCountOrderByAggregateInput = {
   customerId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
   firstName?: Prisma.SortOrder
   middleName?: Prisma.SortOrder
   lastName?: Prisma.SortOrder
@@ -395,10 +431,12 @@ export type CustomerCountOrderByAggregateInput = {
 
 export type CustomerAvgOrderByAggregateInput = {
   customerId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
 }
 
 export type CustomerMaxOrderByAggregateInput = {
   customerId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
   firstName?: Prisma.SortOrder
   middleName?: Prisma.SortOrder
   lastName?: Prisma.SortOrder
@@ -409,6 +447,7 @@ export type CustomerMaxOrderByAggregateInput = {
 
 export type CustomerMinOrderByAggregateInput = {
   customerId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
   firstName?: Prisma.SortOrder
   middleName?: Prisma.SortOrder
   lastName?: Prisma.SortOrder
@@ -419,6 +458,49 @@ export type CustomerMinOrderByAggregateInput = {
 
 export type CustomerSumOrderByAggregateInput = {
   customerId?: Prisma.SortOrder
+  shopId?: Prisma.SortOrder
+}
+
+export type CustomerCreateNestedManyWithoutShopInput = {
+  create?: Prisma.XOR<Prisma.CustomerCreateWithoutShopInput, Prisma.CustomerUncheckedCreateWithoutShopInput> | Prisma.CustomerCreateWithoutShopInput[] | Prisma.CustomerUncheckedCreateWithoutShopInput[]
+  connectOrCreate?: Prisma.CustomerCreateOrConnectWithoutShopInput | Prisma.CustomerCreateOrConnectWithoutShopInput[]
+  createMany?: Prisma.CustomerCreateManyShopInputEnvelope
+  connect?: Prisma.CustomerWhereUniqueInput | Prisma.CustomerWhereUniqueInput[]
+}
+
+export type CustomerUncheckedCreateNestedManyWithoutShopInput = {
+  create?: Prisma.XOR<Prisma.CustomerCreateWithoutShopInput, Prisma.CustomerUncheckedCreateWithoutShopInput> | Prisma.CustomerCreateWithoutShopInput[] | Prisma.CustomerUncheckedCreateWithoutShopInput[]
+  connectOrCreate?: Prisma.CustomerCreateOrConnectWithoutShopInput | Prisma.CustomerCreateOrConnectWithoutShopInput[]
+  createMany?: Prisma.CustomerCreateManyShopInputEnvelope
+  connect?: Prisma.CustomerWhereUniqueInput | Prisma.CustomerWhereUniqueInput[]
+}
+
+export type CustomerUpdateManyWithoutShopNestedInput = {
+  create?: Prisma.XOR<Prisma.CustomerCreateWithoutShopInput, Prisma.CustomerUncheckedCreateWithoutShopInput> | Prisma.CustomerCreateWithoutShopInput[] | Prisma.CustomerUncheckedCreateWithoutShopInput[]
+  connectOrCreate?: Prisma.CustomerCreateOrConnectWithoutShopInput | Prisma.CustomerCreateOrConnectWithoutShopInput[]
+  upsert?: Prisma.CustomerUpsertWithWhereUniqueWithoutShopInput | Prisma.CustomerUpsertWithWhereUniqueWithoutShopInput[]
+  createMany?: Prisma.CustomerCreateManyShopInputEnvelope
+  set?: Prisma.CustomerWhereUniqueInput | Prisma.CustomerWhereUniqueInput[]
+  disconnect?: Prisma.CustomerWhereUniqueInput | Prisma.CustomerWhereUniqueInput[]
+  delete?: Prisma.CustomerWhereUniqueInput | Prisma.CustomerWhereUniqueInput[]
+  connect?: Prisma.CustomerWhereUniqueInput | Prisma.CustomerWhereUniqueInput[]
+  update?: Prisma.CustomerUpdateWithWhereUniqueWithoutShopInput | Prisma.CustomerUpdateWithWhereUniqueWithoutShopInput[]
+  updateMany?: Prisma.CustomerUpdateManyWithWhereWithoutShopInput | Prisma.CustomerUpdateManyWithWhereWithoutShopInput[]
+  deleteMany?: Prisma.CustomerScalarWhereInput | Prisma.CustomerScalarWhereInput[]
+}
+
+export type CustomerUncheckedUpdateManyWithoutShopNestedInput = {
+  create?: Prisma.XOR<Prisma.CustomerCreateWithoutShopInput, Prisma.CustomerUncheckedCreateWithoutShopInput> | Prisma.CustomerCreateWithoutShopInput[] | Prisma.CustomerUncheckedCreateWithoutShopInput[]
+  connectOrCreate?: Prisma.CustomerCreateOrConnectWithoutShopInput | Prisma.CustomerCreateOrConnectWithoutShopInput[]
+  upsert?: Prisma.CustomerUpsertWithWhereUniqueWithoutShopInput | Prisma.CustomerUpsertWithWhereUniqueWithoutShopInput[]
+  createMany?: Prisma.CustomerCreateManyShopInputEnvelope
+  set?: Prisma.CustomerWhereUniqueInput | Prisma.CustomerWhereUniqueInput[]
+  disconnect?: Prisma.CustomerWhereUniqueInput | Prisma.CustomerWhereUniqueInput[]
+  delete?: Prisma.CustomerWhereUniqueInput | Prisma.CustomerWhereUniqueInput[]
+  connect?: Prisma.CustomerWhereUniqueInput | Prisma.CustomerWhereUniqueInput[]
+  update?: Prisma.CustomerUpdateWithWhereUniqueWithoutShopInput | Prisma.CustomerUpdateWithWhereUniqueWithoutShopInput[]
+  updateMany?: Prisma.CustomerUpdateManyWithWhereWithoutShopInput | Prisma.CustomerUpdateManyWithWhereWithoutShopInput[]
+  deleteMany?: Prisma.CustomerScalarWhereInput | Prisma.CustomerScalarWhereInput[]
 }
 
 export type CustomerCreateNestedOneWithoutUserInput = {
@@ -451,6 +533,69 @@ export type CustomerUpdateOneRequiredWithoutUserProductNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.CustomerUpdateToOneWithWhereWithoutUserProductInput, Prisma.CustomerUpdateWithoutUserProductInput>, Prisma.CustomerUncheckedUpdateWithoutUserProductInput>
 }
 
+export type CustomerCreateWithoutShopInput = {
+  firstName: string
+  middleName?: string | null
+  lastName: string
+  secondLastName: string
+  phoneNumber: string
+  email?: string | null
+  user?: Prisma.UserCreateNestedOneWithoutCustomerInput
+  userProduct?: Prisma.UserProductCreateNestedManyWithoutCustomerInput
+}
+
+export type CustomerUncheckedCreateWithoutShopInput = {
+  customerId?: number
+  firstName: string
+  middleName?: string | null
+  lastName: string
+  secondLastName: string
+  phoneNumber: string
+  email?: string | null
+  user?: Prisma.UserUncheckedCreateNestedOneWithoutCustomerInput
+  userProduct?: Prisma.UserProductUncheckedCreateNestedManyWithoutCustomerInput
+}
+
+export type CustomerCreateOrConnectWithoutShopInput = {
+  where: Prisma.CustomerWhereUniqueInput
+  create: Prisma.XOR<Prisma.CustomerCreateWithoutShopInput, Prisma.CustomerUncheckedCreateWithoutShopInput>
+}
+
+export type CustomerCreateManyShopInputEnvelope = {
+  data: Prisma.CustomerCreateManyShopInput | Prisma.CustomerCreateManyShopInput[]
+  skipDuplicates?: boolean
+}
+
+export type CustomerUpsertWithWhereUniqueWithoutShopInput = {
+  where: Prisma.CustomerWhereUniqueInput
+  update: Prisma.XOR<Prisma.CustomerUpdateWithoutShopInput, Prisma.CustomerUncheckedUpdateWithoutShopInput>
+  create: Prisma.XOR<Prisma.CustomerCreateWithoutShopInput, Prisma.CustomerUncheckedCreateWithoutShopInput>
+}
+
+export type CustomerUpdateWithWhereUniqueWithoutShopInput = {
+  where: Prisma.CustomerWhereUniqueInput
+  data: Prisma.XOR<Prisma.CustomerUpdateWithoutShopInput, Prisma.CustomerUncheckedUpdateWithoutShopInput>
+}
+
+export type CustomerUpdateManyWithWhereWithoutShopInput = {
+  where: Prisma.CustomerScalarWhereInput
+  data: Prisma.XOR<Prisma.CustomerUpdateManyMutationInput, Prisma.CustomerUncheckedUpdateManyWithoutShopInput>
+}
+
+export type CustomerScalarWhereInput = {
+  AND?: Prisma.CustomerScalarWhereInput | Prisma.CustomerScalarWhereInput[]
+  OR?: Prisma.CustomerScalarWhereInput[]
+  NOT?: Prisma.CustomerScalarWhereInput | Prisma.CustomerScalarWhereInput[]
+  customerId?: Prisma.IntFilter<"Customer"> | number
+  shopId?: Prisma.IntFilter<"Customer"> | number
+  firstName?: Prisma.StringFilter<"Customer"> | string
+  middleName?: Prisma.StringNullableFilter<"Customer"> | string | null
+  lastName?: Prisma.StringFilter<"Customer"> | string
+  secondLastName?: Prisma.StringFilter<"Customer"> | string
+  phoneNumber?: Prisma.StringFilter<"Customer"> | string
+  email?: Prisma.StringNullableFilter<"Customer"> | string | null
+}
+
 export type CustomerCreateWithoutUserInput = {
   firstName: string
   middleName?: string | null
@@ -458,11 +603,13 @@ export type CustomerCreateWithoutUserInput = {
   secondLastName: string
   phoneNumber: string
   email?: string | null
+  shop: Prisma.ShopCreateNestedOneWithoutCustomersInput
   userProduct?: Prisma.UserProductCreateNestedManyWithoutCustomerInput
 }
 
 export type CustomerUncheckedCreateWithoutUserInput = {
   customerId?: number
+  shopId: number
   firstName: string
   middleName?: string | null
   lastName: string
@@ -495,11 +642,13 @@ export type CustomerUpdateWithoutUserInput = {
   secondLastName?: Prisma.StringFieldUpdateOperationsInput | string
   phoneNumber?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shop?: Prisma.ShopUpdateOneRequiredWithoutCustomersNestedInput
   userProduct?: Prisma.UserProductUpdateManyWithoutCustomerNestedInput
 }
 
 export type CustomerUncheckedUpdateWithoutUserInput = {
   customerId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
   firstName?: Prisma.StringFieldUpdateOperationsInput | string
   middleName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
@@ -516,11 +665,13 @@ export type CustomerCreateWithoutUserProductInput = {
   secondLastName: string
   phoneNumber: string
   email?: string | null
+  shop: Prisma.ShopCreateNestedOneWithoutCustomersInput
   user?: Prisma.UserCreateNestedOneWithoutCustomerInput
 }
 
 export type CustomerUncheckedCreateWithoutUserProductInput = {
   customerId?: number
+  shopId: number
   firstName: string
   middleName?: string | null
   lastName: string
@@ -553,10 +704,44 @@ export type CustomerUpdateWithoutUserProductInput = {
   secondLastName?: Prisma.StringFieldUpdateOperationsInput | string
   phoneNumber?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shop?: Prisma.ShopUpdateOneRequiredWithoutCustomersNestedInput
   user?: Prisma.UserUpdateOneWithoutCustomerNestedInput
 }
 
 export type CustomerUncheckedUpdateWithoutUserProductInput = {
+  customerId?: Prisma.IntFieldUpdateOperationsInput | number
+  shopId?: Prisma.IntFieldUpdateOperationsInput | number
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  middleName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  secondLastName?: Prisma.StringFieldUpdateOperationsInput | string
+  phoneNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user?: Prisma.UserUncheckedUpdateOneWithoutCustomerNestedInput
+}
+
+export type CustomerCreateManyShopInput = {
+  customerId?: number
+  firstName: string
+  middleName?: string | null
+  lastName: string
+  secondLastName: string
+  phoneNumber: string
+  email?: string | null
+}
+
+export type CustomerUpdateWithoutShopInput = {
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  middleName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  secondLastName?: Prisma.StringFieldUpdateOperationsInput | string
+  phoneNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user?: Prisma.UserUpdateOneWithoutCustomerNestedInput
+  userProduct?: Prisma.UserProductUpdateManyWithoutCustomerNestedInput
+}
+
+export type CustomerUncheckedUpdateWithoutShopInput = {
   customerId?: Prisma.IntFieldUpdateOperationsInput | number
   firstName?: Prisma.StringFieldUpdateOperationsInput | string
   middleName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -565,6 +750,17 @@ export type CustomerUncheckedUpdateWithoutUserProductInput = {
   phoneNumber?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user?: Prisma.UserUncheckedUpdateOneWithoutCustomerNestedInput
+  userProduct?: Prisma.UserProductUncheckedUpdateManyWithoutCustomerNestedInput
+}
+
+export type CustomerUncheckedUpdateManyWithoutShopInput = {
+  customerId?: Prisma.IntFieldUpdateOperationsInput | number
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  middleName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  secondLastName?: Prisma.StringFieldUpdateOperationsInput | string
+  phoneNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
@@ -600,12 +796,14 @@ export type CustomerCountOutputTypeCountUserProductArgs<ExtArgs extends runtime.
 
 export type CustomerSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   customerId?: boolean
+  shopId?: boolean
   firstName?: boolean
   middleName?: boolean
   lastName?: boolean
   secondLastName?: boolean
   phoneNumber?: boolean
   email?: boolean
+  shop?: boolean | Prisma.ShopDefaultArgs<ExtArgs>
   user?: boolean | Prisma.Customer$userArgs<ExtArgs>
   userProduct?: boolean | Prisma.Customer$userProductArgs<ExtArgs>
   _count?: boolean | Prisma.CustomerCountOutputTypeDefaultArgs<ExtArgs>
@@ -615,6 +813,7 @@ export type CustomerSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
 
 export type CustomerSelectScalar = {
   customerId?: boolean
+  shopId?: boolean
   firstName?: boolean
   middleName?: boolean
   lastName?: boolean
@@ -623,8 +822,9 @@ export type CustomerSelectScalar = {
   email?: boolean
 }
 
-export type CustomerOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"customerId" | "firstName" | "middleName" | "lastName" | "secondLastName" | "phoneNumber" | "email", ExtArgs["result"]["customer"]>
+export type CustomerOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"customerId" | "shopId" | "firstName" | "middleName" | "lastName" | "secondLastName" | "phoneNumber" | "email", ExtArgs["result"]["customer"]>
 export type CustomerInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  shop?: boolean | Prisma.ShopDefaultArgs<ExtArgs>
   user?: boolean | Prisma.Customer$userArgs<ExtArgs>
   userProduct?: boolean | Prisma.Customer$userProductArgs<ExtArgs>
   _count?: boolean | Prisma.CustomerCountOutputTypeDefaultArgs<ExtArgs>
@@ -633,11 +833,13 @@ export type CustomerInclude<ExtArgs extends runtime.Types.Extensions.InternalArg
 export type $CustomerPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Customer"
   objects: {
+    shop: Prisma.$ShopPayload<ExtArgs>
     user: Prisma.$UserPayload<ExtArgs> | null
     userProduct: Prisma.$UserProductPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     customerId: number
+    shopId: number
     firstName: string
     middleName: string | null
     lastName: string
@@ -984,6 +1186,7 @@ readonly fields: CustomerFieldRefs;
  */
 export interface Prisma__CustomerClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  shop<T extends Prisma.ShopDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ShopDefaultArgs<ExtArgs>>): Prisma.Prisma__ShopClient<runtime.Types.Result.GetResult<Prisma.$ShopPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   user<T extends Prisma.Customer$userArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Customer$userArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   userProduct<T extends Prisma.Customer$userProductArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Customer$userProductArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserProductPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
@@ -1016,6 +1219,7 @@ export interface Prisma__CustomerClient<T, Null = never, ExtArgs extends runtime
  */
 export interface CustomerFieldRefs {
   readonly customerId: Prisma.FieldRef<"Customer", 'Int'>
+  readonly shopId: Prisma.FieldRef<"Customer", 'Int'>
   readonly firstName: Prisma.FieldRef<"Customer", 'String'>
   readonly middleName: Prisma.FieldRef<"Customer", 'String'>
   readonly lastName: Prisma.FieldRef<"Customer", 'String'>

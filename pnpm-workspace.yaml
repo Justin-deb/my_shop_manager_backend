@@ -2,7 +2,10 @@ allowBuilds:
   '@prisma/engines': true
   '@swc/core': true
   bcrypt: true
+  esbuild: true
+  msgpackr-extract: true
   prisma: true
+  workerd: true
 minimumReleaseAgeExclude:
   - '@prisma/client-runtime-utils@7.9.0'
   - '@prisma/client@7.9.0'

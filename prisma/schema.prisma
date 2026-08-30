@@ -150,17 +150,19 @@ model Role {
 }
 
 model Shop {
-  shopId      Int         @id @default(autoincrement()) @map("shop_id")
-  name        String      @db.VarChar(255)
-  address     String?     @db.VarChar(255)
-  phoneNumber String?     @map("phone_number") @db.VarChar(255)
-  email       String?     @unique(map: "email") @db.VarChar(255)
-  photoUrl    String?     @map("photo_url") @db.VarChar(255)
-  ownerId     Int         @map("owner_id")
-  employees   Employee[]
-  repairs     Repair[]
-  user        User        @relation(fields: [ownerId], references: [userId], onDelete: NoAction, onUpdate: NoAction, map: "owner_id_key")
-  warehouses  Warehouse[]
+  shopId       Int           @id @default(autoincrement()) @map("shop_id")
+  name         String        @db.VarChar(255)
+  address      String?       @db.VarChar(255)
+  phoneNumber  String?       @map("phone_number") @db.VarChar(255)
+  email        String?       @unique(map: "email") @db.VarChar(255)
+  photoUrl     String?       @map("photo_url") @db.VarChar(255)
+  ownerId      Int           @map("owner_id")
+  customers    Customer[]
+  employees    Employee[]
+  repairs      Repair[]
+  user         User          @relation(fields: [ownerId], references: [userId], onDelete: NoAction, onUpdate: NoAction, map: "owner_id_key")
+  USER_PRODUCT UserProduct[]
+  warehouses   Warehouse[]
 
   @@index([ownerId], map: "owner_id_key_idx")
   @@map("SHOP")
@@ -209,14 +211,17 @@ model Warehouse {
 model UserProduct {
   productId    Int      @map("product_id")
   customerId   Int      @map("customer_id")
+  shopId       Int      @map("shop_id")
   serialNumber String?  @map("serial_number") @db.VarChar(255)
   name         String?  @db.VarChar(255)
   repairs      Repair[]
   customer     Customer @relation(fields: [customerId], references: [customerId], onUpdate: Restrict, map: "fk_user_product_customer")
   product      Product  @relation(fields: [productId], references: [productId], onDelete: NoAction, onUpdate: NoAction, map: "fk_user_product_product")
+  shop         Shop     @relation(fields: [shopId], references: [shopId], onDelete: NoAction, onUpdate: NoAction, map: "fk_user_product_shop_id")
 
   @@id([productId, customerId])
   @@index([customerId], map: "fk_user_product_owner_idx")
+  @@index([shopId], map: "fk_user_product_shop_id_idx")
   @@map("USER_PRODUCT")
 }
 
@@ -252,14 +257,17 @@ model Employee {
 
 model Customer {
   customerId     Int           @id @default(autoincrement()) @map("customer_id")
+  shopId         Int           @map("shop_id")
   firstName      String        @map("first_name") @db.VarChar(255)
   middleName     String?       @map("middle_name") @db.VarChar(255)
   lastName       String        @map("last_name") @db.VarChar(255)
   secondLastName String        @map("second_last_name") @db.VarChar(255)
   phoneNumber    String        @map("phone_number") @db.VarChar(20)
   email          String?       @db.VarChar(255)
+  shop           Shop          @relation(fields: [shopId], references: [shopId], onDelete: NoAction, onUpdate: NoAction, map: "fk_customer_shop")
   user           User?
   userProduct    UserProduct[]
 
+  @@index([shopId], map: "fk_customer_shop_idx")
   @@map("CUSTOMER")
 }
