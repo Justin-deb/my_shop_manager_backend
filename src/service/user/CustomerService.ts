@@ -29,6 +29,11 @@ export const findByFullName = (dto:FullNameCustomerDto) =>{
 
 export const create = (dto:CreateCustomerDto) =>{
     const newCustomer:CustomerCreateInput = {
+        shop:{
+            connect:{
+                shopId:dto.shopId
+            }
+        },
         firstName:dto.firstName,
         middleName:dto.middleName,
         lastName:dto.lastName,

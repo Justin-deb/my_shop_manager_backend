@@ -289,7 +289,7 @@ export type UserProductCreateInput = {
   repairs?: Prisma.RepairCreateNestedManyWithoutUserProductInput
   customer: Prisma.CustomerCreateNestedOneWithoutUserProductInput
   product: Prisma.ProductCreateNestedOneWithoutUserProductsInput
-  shop: Prisma.ShopCreateNestedOneWithoutUSER_PRODUCTInput
+  shop: Prisma.ShopCreateNestedOneWithoutUserProductInput
 }
 
 export type UserProductUncheckedCreateInput = {
@@ -307,7 +307,7 @@ export type UserProductUpdateInput = {
   repairs?: Prisma.RepairUpdateManyWithoutUserProductNestedInput
   customer?: Prisma.CustomerUpdateOneRequiredWithoutUserProductNestedInput
   product?: Prisma.ProductUpdateOneRequiredWithoutUserProductsNestedInput
-  shop?: Prisma.ShopUpdateOneRequiredWithoutUSER_PRODUCTNestedInput
+  shop?: Prisma.ShopUpdateOneRequiredWithoutUserProductNestedInput
 }
 
 export type UserProductUncheckedUpdateInput = {
@@ -547,7 +547,7 @@ export type UserProductCreateWithoutProductInput = {
   name?: string | null
   repairs?: Prisma.RepairCreateNestedManyWithoutUserProductInput
   customer: Prisma.CustomerCreateNestedOneWithoutUserProductInput
-  shop: Prisma.ShopCreateNestedOneWithoutUSER_PRODUCTInput
+  shop: Prisma.ShopCreateNestedOneWithoutUserProductInput
 }
 
 export type UserProductUncheckedCreateWithoutProductInput = {
@@ -600,7 +600,7 @@ export type UserProductCreateWithoutRepairsInput = {
   name?: string | null
   customer: Prisma.CustomerCreateNestedOneWithoutUserProductInput
   product: Prisma.ProductCreateNestedOneWithoutUserProductsInput
-  shop: Prisma.ShopCreateNestedOneWithoutUSER_PRODUCTInput
+  shop: Prisma.ShopCreateNestedOneWithoutUserProductInput
 }
 
 export type UserProductUncheckedCreateWithoutRepairsInput = {
@@ -632,7 +632,7 @@ export type UserProductUpdateWithoutRepairsInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   customer?: Prisma.CustomerUpdateOneRequiredWithoutUserProductNestedInput
   product?: Prisma.ProductUpdateOneRequiredWithoutUserProductsNestedInput
-  shop?: Prisma.ShopUpdateOneRequiredWithoutUSER_PRODUCTNestedInput
+  shop?: Prisma.ShopUpdateOneRequiredWithoutUserProductNestedInput
 }
 
 export type UserProductUncheckedUpdateWithoutRepairsInput = {
@@ -690,7 +690,7 @@ export type UserProductCreateWithoutCustomerInput = {
   name?: string | null
   repairs?: Prisma.RepairCreateNestedManyWithoutUserProductInput
   product: Prisma.ProductCreateNestedOneWithoutUserProductsInput
-  shop: Prisma.ShopCreateNestedOneWithoutUSER_PRODUCTInput
+  shop: Prisma.ShopCreateNestedOneWithoutUserProductInput
 }
 
 export type UserProductUncheckedCreateWithoutCustomerInput = {
@@ -739,7 +739,7 @@ export type UserProductUpdateWithoutProductInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   repairs?: Prisma.RepairUpdateManyWithoutUserProductNestedInput
   customer?: Prisma.CustomerUpdateOneRequiredWithoutUserProductNestedInput
-  shop?: Prisma.ShopUpdateOneRequiredWithoutUSER_PRODUCTNestedInput
+  shop?: Prisma.ShopUpdateOneRequiredWithoutUserProductNestedInput
 }
 
 export type UserProductUncheckedUpdateWithoutProductInput = {
@@ -799,7 +799,7 @@ export type UserProductUpdateWithoutCustomerInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   repairs?: Prisma.RepairUpdateManyWithoutUserProductNestedInput
   product?: Prisma.ProductUpdateOneRequiredWithoutUserProductsNestedInput
-  shop?: Prisma.ShopUpdateOneRequiredWithoutUSER_PRODUCTNestedInput
+  shop?: Prisma.ShopUpdateOneRequiredWithoutUserProductNestedInput
 }
 
 export type UserProductUncheckedUpdateWithoutCustomerInput = {

@@ -161,7 +161,7 @@ model Shop {
   employees    Employee[]
   repairs      Repair[]
   user         User          @relation(fields: [ownerId], references: [userId], onDelete: NoAction, onUpdate: NoAction, map: "owner_id_key")
-  USER_PRODUCT UserProduct[]
+  userProduct  UserProduct[]
   warehouses   Warehouse[]
 
   @@index([ownerId], map: "owner_id_key_idx")
