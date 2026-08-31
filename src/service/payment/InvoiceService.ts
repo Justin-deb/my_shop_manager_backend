@@ -16,18 +16,18 @@ export const findById = (invoiceId:number) =>{
     }
 }
 
-export const create = (invoice:CreateInvoiceDto) =>{
+export const create = (dto:CreateInvoiceDto) =>{
     const newInvoce:InvoiceCreateInput = {
         repair:{
             connect:{
-                repairId:invoice.repairId
+                repairId:dto.repairId
             }
         },
-        issueDate:invoice.issueDate,
-        subtotal:invoice.subtotal,
-        tax:invoice.tax,
-        discount:invoice.discount,
-        total:invoice.total
+        issueDate:dto.issueDate,
+        subtotal:dto.subtotal,
+        tax:dto.tax,
+        discount:dto.discount,
+        total:dto.total
     }
 
     try {
@@ -37,18 +37,18 @@ export const create = (invoice:CreateInvoiceDto) =>{
     }
 }
 
-export const update = (invoice:UpdateInvoiceDto) =>{
+export const update = (dto:UpdateInvoiceDto) =>{
     const newInvoice:InvoiceUpdateInput = {
-        subtotal:invoice.subtotal,
-        tax:invoice.tax,
-        discount:invoice.discount,
-        total:invoice.total,
+        subtotal:dto.subtotal,
+        tax:dto.tax,
+        discount:dto.discount,
+        total:dto.total,
     };
 
     try {
-        return invoiceRepository.update(invoice.invoiceId,newInvoice);
+        return invoiceRepository.update(dto.invoiceId,newInvoice);
     } catch (error) {
-        mapPrismaError(error,'Invoice',invoice.invoiceId.toString());
+        mapPrismaError(error,'Invoice',dto.invoiceId.toString());
     }
 }
 

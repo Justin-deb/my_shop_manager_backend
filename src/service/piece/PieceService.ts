@@ -17,10 +17,10 @@ export const findByName = (name:string) =>{
     return pieceRepository.findByName(name);
 }
 
-export const create = (piece:CreatePieceDto) =>{
+export const create = (dto:CreatePieceDto) =>{
     const newPiece:PieceCreateInput = {
-            name:piece.name,
-            details:piece.details,
+            name:dto.name,
+            details:dto.details,
     }
     
     try {
@@ -30,17 +30,17 @@ export const create = (piece:CreatePieceDto) =>{
     }
 }
 
-export const update = (piece:UpdatePieceDto) =>{
-    const details = piece.details.trim();
+export const update = (dto:UpdatePieceDto) =>{
+    const details = dto.details.trim();
 
     if(details.length === 0){
         throw new BadRequestError('The details field is empty');
     }
 
     try {
-        return pieceRepository.update(piece.id,{details})
+        return pieceRepository.update(dto.id,{details})
     } catch (error) {
-        mapPrismaError(error,"Piece",piece.id.toString());
+        mapPrismaError(error,"Piece",dto.id.toString());
     }
 }
 

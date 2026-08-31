@@ -9,32 +9,43 @@ export const findAll = () =>{
     return customerRepository.findAll();
 }
 
-export const findById = (customerId:number) =>{
+export const ValidateShopId = async (customerId:number,shopId:number) =>{
+    const customerShopId = await customerRepository.getShopIdByCustomerId(customerId);
+
+    return shopId === customerShopId;
+}
+
+export const findById = (customerId:number,shopId:number) =>{
     try {
-        return customerRepository.findById(customerId);
+        return customerRepository.findById(customerId,shopId);
     } catch (error) {
-        mapPrismaError(error,'Customer',customerId.toString());
+        mapPrismaError(error,'Customer',`Customer:${customerId} Shop:${shopId}`);
     }
 }
 
-export const findByFullName = (fullName:FullNameCustomerDto) =>{
+export const findByFullName = (dto:FullNameCustomerDto) =>{
     try {
-        return customerRepository.findByFullName(fullName.firstName,fullName.lastName,fullName.secondLastName,fullName.middleName);
+        return customerRepository.findByFullName(dto.firstName,dto.lastName,dto.secondLastName,dto.shopId,dto.middleName);
     } catch (error) {
         mapPrismaError(error,
             'Customer',
-            `${fullName.firstName} ${fullName.middleName ? fullName.middleName : ''} ${fullName.lastName} ${fullName.secondLastName}`);
+            `${dto.firstName} ${dto.middleName ? dto.middleName : ''} ${dto.lastName} ${dto.secondLastName} for shop ${dto.shopId}`);
     }
 }
 
-export const create = (customer:CreateCustomerDto) =>{
+export const create = (dto:CreateCustomerDto) =>{
     const newCustomer:CustomerCreateInput = {
-        firstName:customer.firstName,
-        middleName:customer.middleName,
-        lastName:customer.lastName,
-        secondLastName:customer.secondLastName,
-        phoneNumber:customer.phoneNumber,
-        email:customer.email,
+        shop:{
+            connect:{
+                shopId:dto.shopId
+            }
+        },
+        firstName:dto.firstName,
+        middleName:dto.middleName,
+        lastName:dto.lastName,
+        secondLastName:dto.secondLastName,
+        phoneNumber:dto.phoneNumber,
+        email:dto.email,
     };
 
     try {
@@ -44,16 +55,16 @@ export const create = (customer:CreateCustomerDto) =>{
     }
 }
 
-export const update = (customer:UpdateCustomerDto) =>{
+export const update = (dto:UpdateCustomerDto) =>{
     const newCustomer:CustomerUpdateInput = {
-        email:customer.email,
-        phoneNumber:customer.phoneNumber
+        email:dto.email,
+        phoneNumber:dto.phoneNumber
     }
 
     try {
-        return customerRepository.update(customer.customerId,newCustomer)
+        return customerRepository.update(dto.customerId,newCustomer)
     } catch (error) {
-        mapPrismaError(error,'Customer',customer.customerId.toString());
+        mapPrismaError(error,'Customer',dto.customerId.toString());
     }
 }
 

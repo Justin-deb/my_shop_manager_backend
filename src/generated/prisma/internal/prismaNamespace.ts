@@ -80,12 +80,12 @@ export type PrismaVersion = {
 }
 
 /**
- * Prisma Client JS version: 7.9.0
- * Query Engine version: e922089b7d7502aff4249d5da3420f6fa55fc6ad
+ * Prisma Client JS version: 7.10.0
+ * Query Engine version: 0edf323efd1d98336f3f0a68684b56f689b900d3
  */
 export const prismaVersion: PrismaVersion = {
-  client: "7.9.0",
-  engine: "e922089b7d7502aff4249d5da3420f6fa55fc6ad"
+  client: "7.10.0",
+  engine: "0edf323efd1d98336f3f0a68684b56f689b900d3"
 }
 
 /**
@@ -412,10 +412,10 @@ export const ModelName = {
   Status: 'Status',
   User: 'User',
   Warehouse: 'Warehouse',
-  UserProduct: 'UserProduct',
   Assignment: 'Assignment',
   Employee: 'Employee',
-  Customer: 'Customer'
+  Customer: 'Customer',
+  CustomerProduct: 'CustomerProduct'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -431,7 +431,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "invoice" | "labor" | "payment" | "paymentMethod" | "piece" | "position" | "product" | "productType" | "repair" | "repairPart" | "role" | "shop" | "status" | "user" | "warehouse" | "userProduct" | "assignment" | "employee" | "customer"
+    modelProps: "invoice" | "labor" | "payment" | "paymentMethod" | "piece" | "position" | "product" | "productType" | "repair" | "repairPart" | "role" | "shop" | "status" | "user" | "warehouse" | "assignment" | "employee" | "customer" | "customerProduct"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1425,72 +1425,6 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    UserProduct: {
-      payload: Prisma.$UserProductPayload<ExtArgs>
-      fields: Prisma.UserProductFieldRefs
-      operations: {
-        findUnique: {
-          args: Prisma.UserProductFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserProductPayload> | null
-        }
-        findUniqueOrThrow: {
-          args: Prisma.UserProductFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserProductPayload>
-        }
-        findFirst: {
-          args: Prisma.UserProductFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserProductPayload> | null
-        }
-        findFirstOrThrow: {
-          args: Prisma.UserProductFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserProductPayload>
-        }
-        findMany: {
-          args: Prisma.UserProductFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserProductPayload>[]
-        }
-        create: {
-          args: Prisma.UserProductCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserProductPayload>
-        }
-        createMany: {
-          args: Prisma.UserProductCreateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        delete: {
-          args: Prisma.UserProductDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserProductPayload>
-        }
-        update: {
-          args: Prisma.UserProductUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserProductPayload>
-        }
-        deleteMany: {
-          args: Prisma.UserProductDeleteManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        updateMany: {
-          args: Prisma.UserProductUpdateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        upsert: {
-          args: Prisma.UserProductUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserProductPayload>
-        }
-        aggregate: {
-          args: Prisma.UserProductAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateUserProduct>
-        }
-        groupBy: {
-          args: Prisma.UserProductGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.UserProductGroupByOutputType>[]
-        }
-        count: {
-          args: Prisma.UserProductCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.UserProductCountAggregateOutputType> | number
-        }
-      }
-    }
     Assignment: {
       payload: Prisma.$AssignmentPayload<ExtArgs>
       fields: Prisma.AssignmentFieldRefs
@@ -1686,6 +1620,72 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.CustomerCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.CustomerCountAggregateOutputType> | number
+        }
+      }
+    }
+    CustomerProduct: {
+      payload: Prisma.$CustomerProductPayload<ExtArgs>
+      fields: Prisma.CustomerProductFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.CustomerProductFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerProductPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.CustomerProductFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerProductPayload>
+        }
+        findFirst: {
+          args: Prisma.CustomerProductFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerProductPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.CustomerProductFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerProductPayload>
+        }
+        findMany: {
+          args: Prisma.CustomerProductFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerProductPayload>[]
+        }
+        create: {
+          args: Prisma.CustomerProductCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerProductPayload>
+        }
+        createMany: {
+          args: Prisma.CustomerProductCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.CustomerProductDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerProductPayload>
+        }
+        update: {
+          args: Prisma.CustomerProductUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerProductPayload>
+        }
+        deleteMany: {
+          args: Prisma.CustomerProductDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.CustomerProductUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.CustomerProductUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerProductPayload>
+        }
+        aggregate: {
+          args: Prisma.CustomerProductAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCustomerProduct>
+        }
+        groupBy: {
+          args: Prisma.CustomerProductGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CustomerProductGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.CustomerProductCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CustomerProductCountAggregateOutputType> | number
         }
       }
     }
@@ -1894,16 +1894,6 @@ export const WarehouseScalarFieldEnum = {
 export type WarehouseScalarFieldEnum = (typeof WarehouseScalarFieldEnum)[keyof typeof WarehouseScalarFieldEnum]
 
 
-export const UserProductScalarFieldEnum = {
-  productId: 'productId',
-  customerId: 'customerId',
-  serialNumber: 'serialNumber',
-  name: 'name'
-} as const
-
-export type UserProductScalarFieldEnum = (typeof UserProductScalarFieldEnum)[keyof typeof UserProductScalarFieldEnum]
-
-
 export const AssignmentScalarFieldEnum = {
   assignmentId: 'assignmentId',
   repairId: 'repairId',
@@ -1927,6 +1917,7 @@ export type EmployeeScalarFieldEnum = (typeof EmployeeScalarFieldEnum)[keyof typ
 
 export const CustomerScalarFieldEnum = {
   customerId: 'customerId',
+  shopId: 'shopId',
   firstName: 'firstName',
   middleName: 'middleName',
   lastName: 'lastName',
@@ -1936,6 +1927,17 @@ export const CustomerScalarFieldEnum = {
 } as const
 
 export type CustomerScalarFieldEnum = (typeof CustomerScalarFieldEnum)[keyof typeof CustomerScalarFieldEnum]
+
+
+export const CustomerProductScalarFieldEnum = {
+  productId: 'productId',
+  customerId: 'customerId',
+  shopId: 'shopId',
+  serialNumber: 'serialNumber',
+  name: 'name'
+} as const
+
+export type CustomerProductScalarFieldEnum = (typeof CustomerProductScalarFieldEnum)[keyof typeof CustomerProductScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -2059,14 +2061,6 @@ export const WarehouseOrderByRelevanceFieldEnum = {
 export type WarehouseOrderByRelevanceFieldEnum = (typeof WarehouseOrderByRelevanceFieldEnum)[keyof typeof WarehouseOrderByRelevanceFieldEnum]
 
 
-export const UserProductOrderByRelevanceFieldEnum = {
-  serialNumber: 'serialNumber',
-  name: 'name'
-} as const
-
-export type UserProductOrderByRelevanceFieldEnum = (typeof UserProductOrderByRelevanceFieldEnum)[keyof typeof UserProductOrderByRelevanceFieldEnum]
-
-
 export const CustomerOrderByRelevanceFieldEnum = {
   firstName: 'firstName',
   middleName: 'middleName',
@@ -2077,6 +2071,14 @@ export const CustomerOrderByRelevanceFieldEnum = {
 } as const
 
 export type CustomerOrderByRelevanceFieldEnum = (typeof CustomerOrderByRelevanceFieldEnum)[keyof typeof CustomerOrderByRelevanceFieldEnum]
+
+
+export const CustomerProductOrderByRelevanceFieldEnum = {
+  serialNumber: 'serialNumber',
+  name: 'name'
+} as const
+
+export type CustomerProductOrderByRelevanceFieldEnum = (typeof CustomerProductOrderByRelevanceFieldEnum)[keyof typeof CustomerProductOrderByRelevanceFieldEnum]
 
 
 
@@ -2285,10 +2287,10 @@ export type GlobalOmitConfig = {
   status?: Prisma.StatusOmit
   user?: Prisma.UserOmit
   warehouse?: Prisma.WarehouseOmit
-  userProduct?: Prisma.UserProductOmit
   assignment?: Prisma.AssignmentOmit
   employee?: Prisma.EmployeeOmit
   customer?: Prisma.CustomerOmit
+  customerProduct?: Prisma.CustomerProductOmit
 }
 
 /* Types for Logging */

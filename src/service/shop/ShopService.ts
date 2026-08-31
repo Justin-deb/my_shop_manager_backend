@@ -20,18 +20,18 @@ export const findByOwnerId = (ownerId:number) =>{
     return shopRepository.findByOwnerId(ownerId);
 }
 
-export const create = (shop:CreateShopDto) =>{
+export const create = (dto:CreateShopDto) =>{
     const newShop:ShopCreateInput = {
         user:{
             connect:{
-                userId:shop.userId
+                userId:dto.userId
             }
         },
-        name:shop.name,
-        address:shop.address,
-        phoneNumber:shop.phoneNumber,
-        email:shop.email,
-        photoUrl:shop.photoUrl
+        name:dto.name,
+        address:dto.address,
+        phoneNumber:dto.phoneNumber,
+        email:dto.email,
+        photoUrl:dto.photoUrl
     }
 
     try {
@@ -41,19 +41,19 @@ export const create = (shop:CreateShopDto) =>{
     }
 }
 
-export const update = (shop:UpdateShopDto) =>{
+export const update = (dto:UpdateShopDto) =>{
     const newShop:ShopUpdateInput = {
-        name:shop.name,
-        address:shop.address,
-        phoneNumber:shop.phoneNumber,
-        email:shop.email,
-        photoUrl:shop.photoUrl
+        name:dto.name,
+        address:dto.address,
+        phoneNumber:dto.phoneNumber,
+        email:dto.email,
+        photoUrl:dto.photoUrl
     }
 
     try {
-        return shopRepository.update(shop.shopId,newShop);
+        return shopRepository.update(dto.shopId,newShop);
     } catch (error) {
-        mapPrismaError(error,'Shop',shop.shopId.toString());
+        mapPrismaError(error,'Shop',dto.shopId.toString());
     }
 }
 

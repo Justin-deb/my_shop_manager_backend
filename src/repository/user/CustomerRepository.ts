@@ -11,22 +11,34 @@ export const findAll = () =>{
     });
 }
 
-export const findById = (customerId:number) =>{
+export const getShopIdByCustomerId = async (customerId:number) =>{
+    const customer = await prisma.customer.findUniqueOrThrow({
+        where:{
+            customerId:customerId
+        }
+    });
+
+    return customer.shopId;
+}
+
+export const findById = (customerId:number,shopId:number) =>{
     return prisma.customer.findUniqueOrThrow({
         where:{
-            customerId
+            customerId,
+            shopId
         },
         include
     });
 }
 
-export const findByFullName = (firstName:string,lastName:string,secondLastName:string,middleName?:string) =>{
+export const findByFullName = (firstName:string,lastName:string,secondLastName:string,shopId:number,middleName?:string) =>{
     return prisma.customer.findFirstOrThrow({
         where:{
             firstName,
             middleName,
             lastName,
-            secondLastName
+            secondLastName,
+            shopId
         },
         include
     });

@@ -39,10 +39,10 @@ export const findAllByStatusId = (shopId:number,statusId:number) =>{
     });
 }
 
-export const findAllByUserId = (ownerId:number) =>{
+export const findAllByUserId = (customerId:number) =>{
     return prisma.repair.findMany({
         where:{
-            ownerId
+            customerId
         },
         include
     });

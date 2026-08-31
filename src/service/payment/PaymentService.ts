@@ -20,19 +20,19 @@ export const findByReference = (reference:string,invoiceId:number) =>{
     return paymentRepository.findByReference(reference,invoiceId);
 }
 
-export const create = (payment:CreatePaymentDto) =>{
+export const create = (dto:CreatePaymentDto) =>{
     const newPayment:PaymentCreateInput ={
-        paymentDate:payment.paymentDate,
-        amount:payment.amount,
-        reference:payment.reference,
+        paymentDate:dto.paymentDate,
+        amount:dto.amount,
+        reference:dto.reference,
         invoice:{
             connect:{
-                invoiceId:payment.invoiceId
+                invoiceId:dto.invoiceId
             }
         },
         paymentMethod:{
             connect:{
-                paymentMethodId:payment.paymentMethodId
+                paymentMethodId:dto.paymentMethodId
             }
         }
     }

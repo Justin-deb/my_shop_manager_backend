@@ -14,7 +14,7 @@ export const findById = (roleId:number) =>{
 }
 
 export const findByName = (name:string) =>{
-    return prisma.role.findFirstOrThrow({
+    return prisma.role.findMany({
         where:{
             name:{
                 contains:name

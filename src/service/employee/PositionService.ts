@@ -1,8 +1,6 @@
 import { mapPrismaError } from '../../common/utils/ErrorWrapper';
 import { CreatePositionDto } from '../../dto/employee/create/CreatePositionDto';
 import { UpdatePositionDto } from '../../dto/employee/update/UpdatePositionDto';
-import { BadRequestError } from '../../exceptions/BadRequestError';
-import { ConflictError } from '../../exceptions/ConflictError';
 import { PositionCreateInput, PositionUpdateInput } from '../../generated/prisma/models';
 import * as positionRepository from '../../repository/employee/PositionRepository';
 
@@ -22,23 +20,23 @@ export const findByName = (name:string) =>{
     return positionRepository.findByName(name);
 }
 
-export const create = async (position:CreatePositionDto) =>{
+export const create = async (dto:CreatePositionDto) =>{
     const newPosition:PositionCreateInput ={
-        name:position.name
+        name:dto.name
     }
 
     return positionRepository.create(newPosition);
 }
 
-export const update = (position:UpdatePositionDto) =>{
+export const update = (dto:UpdatePositionDto) =>{
     const newPosition:PositionUpdateInput = {
-        name:position.name
+        name:dto.name
     }
 
     try {
-        return positionRepository.update(position.positionId,newPosition);
+        return positionRepository.update(dto.positionId,newPosition);
     } catch (error) {
-        mapPrismaError(error,"Position",position.positionId.toString());
+        mapPrismaError(error,"Position",dto.positionId.toString());
     }
 }
 
