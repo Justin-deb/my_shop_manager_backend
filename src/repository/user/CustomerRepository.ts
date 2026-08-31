@@ -11,6 +11,16 @@ export const findAll = () =>{
     });
 }
 
+export const getShopIdByCustomerId = async (customerId:number) =>{
+    const customer = await prisma.customer.findUniqueOrThrow({
+        where:{
+            customerId:customerId
+        }
+    });
+
+    return customer.shopId;
+}
+
 export const findById = (customerId:number,shopId:number) =>{
     return prisma.customer.findUniqueOrThrow({
         where:{

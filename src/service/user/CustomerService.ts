@@ -9,6 +9,12 @@ export const findAll = () =>{
     return customerRepository.findAll();
 }
 
+export const ValidateShopId = async (customerId:number,shopId:number) =>{
+    const customerShopId = await customerRepository.getShopIdByCustomerId(customerId);
+
+    return shopId === customerShopId;
+}
+
 export const findById = (customerId:number,shopId:number) =>{
     try {
         return customerRepository.findById(customerId,shopId);
