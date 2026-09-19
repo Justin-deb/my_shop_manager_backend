@@ -1,11 +1,25 @@
 import { LaborCreateInput, LaborUpdateInput } from "../../generated/prisma/models";
 import prisma from "../../models/common/prisma";
 
-export const findById = (repairId:number,laborId:number) =>{
+export const findById = (shopId:number,repairId:number,laborId:number) =>{
+    return prisma.labor.findUniqueOrThrow({
+        where:{
+            repair:{
+                shopId,
+                repairId
+            },
+            laborId
+        }
+    });
+}
+
+export const findAllByRepairId = (shopId:number,repairId:number) =>{
     return prisma.labor.findMany({
         where:{
-            repairId,
-            laborId
+            repair:{
+                shopId,
+                repairId
+            }
         }
     });
 }
@@ -16,20 +30,26 @@ export const create = (labor:LaborCreateInput) =>{
     });
 }
 
-export const update = (repairId:number,laborId:number,labor:LaborUpdateInput) =>{
+export const update = (shopId:number,repairId:number,laborId:number,labor:LaborUpdateInput) =>{
     return prisma.labor.update({
         where:{
-            repairId,
+            repair:{
+                shopId,
+                repairId
+            },
             laborId
         },
         data:labor
     });
 }
 
-export const remove = (repairId:number,laborId:number) =>{
+export const remove = (shopId:number,repairId:number,laborId:number) =>{
     return prisma.labor.delete({
         where:{
-            repairId,
+            repair:{
+                shopId,
+                repairId
+            },
             laborId
         }
     });

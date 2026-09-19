@@ -5,21 +5,26 @@ const include = {
   piece: true,
 };
 
-export const findAllByRepairId = (repairId: number) => {
+export const findAllByRepairId = (shopId:number,repairId:number) => {
   return prisma.repairPart.findMany({
     where: {
-      repairId,
+      repair:{
+        shopId,
+        repairId
+      }
     },
     include
   });
 };
 
-export const findById = (repairId:number,pieceId:number) =>{
+export const findById = (shopId:number,repairId:number,pieceId:number) =>{
     return prisma.repairPart.findUniqueOrThrow({
         where:{
             repairId_pieceId:{
                 pieceId,
                 repairId
+            },repair:{
+                shopId
             }
         },
         include
@@ -32,24 +37,28 @@ export const create = (repairPart:RepairPartCreateInput) =>{
     });
 }
 
-export const update = (repairId:number,pieceId:number,repairPart:RepairPartUpdateInput) =>{
+export const update = (shopId:number,repairId:number,pieceId:number,repairPart:RepairPartUpdateInput) =>{
     return prisma.repairPart.update({
         where:{
             repairId_pieceId:{
-                repairId,
-                pieceId
+                pieceId,
+                repairId
+            },repair:{
+                shopId
             }
         },
         data:repairPart
     });
 }
 
-export const remove = (repairId:number,pieceId:number) =>{
+export const remove = (shopId:number,repairId:number,pieceId:number) =>{
     return prisma.repairPart.delete({
         where:{
             repairId_pieceId:{
-                repairId,
-                pieceId
+                pieceId,
+                repairId
+            },repair:{
+                shopId
             }
         }
     });

@@ -10,6 +10,16 @@ const include = {
   status: true,
 };
 
+export const getShopIdByRepairId = async (repairId:number) =>{
+    const repair = await prisma.repair.findUniqueOrThrow({
+        where:{
+            repairId
+        }
+    });
+
+    return repair.shopId;
+}
+
 export const findAllByShopId = (shopId: number) => {
   return prisma.repair.findMany({
     where: {
@@ -39,7 +49,7 @@ export const findAllByStatusId = (shopId:number,statusId:number) =>{
     });
 }
 
-export const findAllByUserId = (customerId:number) =>{
+export const findAllByCustomerId = (customerId:number) =>{
     return prisma.repair.findMany({
         where:{
             customerId
@@ -54,18 +64,20 @@ export const create = (repair:RepairCreateInput) =>{
     });
 }
 
-export const update = (repairId:number,repair:RepairUpdateInput) =>{
+export const update = (shopId:number,repairId:number,repair:RepairUpdateInput) =>{
     return prisma.repair.update({
         where:{
+            shopId,
             repairId
         },
         data:repair
     });
 }
 
-export const remove = (repairId:number) =>{
+export const remove = (shopId:number,repairId:number) =>{
     return prisma.repair.delete({
         where:{
+            shopId,
             repairId
         }
     });
