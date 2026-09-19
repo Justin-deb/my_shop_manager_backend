@@ -10,9 +10,12 @@ export const findAll = () =>{
 }
 
 export const ValidateShopId = async (customerId:number,shopId:number) =>{
-    const customerShopId = await customerRepository.getShopIdByCustomerId(customerId);
-
-    return shopId === customerShopId;
+    try {
+        const customerShopId = await customerRepository.getShopIdByCustomerId(customerId);
+        return shopId === customerShopId;
+    } catch (error) {
+        mapPrismaError(error,'Customer',customerId.toString())
+    }
 }
 
 export const findById = (customerId:number,shopId:number) =>{
