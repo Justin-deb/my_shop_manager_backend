@@ -65,7 +65,7 @@ export const update = async (req:Request,res:Response,next:NextFunction) =>{
     try {
         await assignmentService.update(dto);
 
-        return controllerResponse(res,HttpStatusCodes.OK);
+        return controllerResponse(res,HttpStatusCodes.OK,'Updated successfully');
     } catch (error) {
         next(error);
     }
@@ -76,7 +76,7 @@ export const remove = async (req:Request,res:Response,next:NextFunction) =>{
     try {
         await assignmentService.remove(shopId,assignmentId);
 
-        return controllerResponse(res,HttpStatusCodes.OK);
+        return controllerResponse(res,HttpStatusCodes.NO_CONTENT,'Deleted successfully');
     } catch (error) {
         next(error);
     }}

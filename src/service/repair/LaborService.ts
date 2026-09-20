@@ -6,7 +6,7 @@ import * as laborRepository from '../../repository/repair/LaborRepository';
 
 export const findById = (shopId:number,repairId:number,laborId:number) =>{
     try {
-        laborRepository.findById(shopId,repairId,laborId);
+        return laborRepository.findById(shopId,repairId,laborId);
     } catch (error) {
         mapPrismaError(error,'Labor',laborId.toString());
     }
