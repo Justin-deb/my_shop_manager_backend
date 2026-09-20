@@ -30,8 +30,8 @@ export const findAllByStatusId = (shopId:number,statusId:number) =>{
     return repairRepository.findAllByStatusId(shopId,statusId);
 }
 
-export const findAllByCustomerId = (customerId:number) =>{
-    return repairRepository.findAllByCustomerId(customerId);
+export const findAllByCustomerId = (shopId:number,customerId:number) =>{
+    return repairRepository.findAllByCustomerId(shopId,customerId);
 }
 
 export const create = (dto:CreateRepairDto) =>{

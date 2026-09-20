@@ -10,10 +10,15 @@ export const controllerResponse = (res:Response,statusCode:number,body?:any) =>{
             break;
         case 201:
             status = 'Created';
+            break;
+        case 204:
+            status = 'Deleted';
+            break;
         default:
             status = 'Status code not found'
             break;
     }
+    
     if(body){
         jsonContent = {
             status:status,
