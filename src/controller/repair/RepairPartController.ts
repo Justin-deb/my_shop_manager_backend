@@ -1,23 +1,23 @@
 import { Request,Response,NextFunction } from 'express';
-import * as laborService from '../../service/repair/LaborService';
+import * as repairPartService from '../../service/repair/RepairPartService';
 import { controllerResponse } from '../../common/utils/ControllerResponse';
 import HttpStatusCodes from '../../common/constants/HttpStatusCodes';
 
-export const findById = async (req:Request,res:Response,next:NextFunction) =>{
-    const{shopId, repairId, laborId} = req.body;
+export const findAllByRepairId = async (req:Request,res:Response,next:NextFunction) =>{
+    const {shopId,repairId} = req.body;
     try {
-        const repair = await laborService.findById(shopId,repairId,laborId);
-        return controllerResponse(res,HttpStatusCodes.OK,repair);
+        const repairParts = await repairPartService.findAllByRepairId(shopId,repairId);
+        return controllerResponse(res,HttpStatusCodes.OK,repairParts);
     } catch (error) {
         next(error);
     }
 }
 
-export const findAllByRepairId = async (req:Request,res:Response,next:NextFunction) =>{
-    const {shopId, repairId} = req.body;
+export const findById = async (req:Request,res:Response,next:NextFunction) =>{
+    const {shopId,repairId,pieceId} = req.body;
     try {
-        const repairs = await laborService.findAllByRepairId(shopId, repairId);    
-        return controllerResponse(res,HttpStatusCodes.OK,repairs);
+        const repairPart = await repairPartService.findById(shopId,repairId,pieceId);
+        return controllerResponse(res,HttpStatusCodes.OK,repairPart);
     } catch (error) {
         next(error);
     }
@@ -26,9 +26,10 @@ export const findAllByRepairId = async (req:Request,res:Response,next:NextFuncti
 export const create = async (req:Request,res:Response,next:NextFunction) =>{
     const {dto} = req.body;
     try {
-        const labor = await laborService.create(dto);
+        const repairPart = await repairPartService.create(dto);
         return controllerResponse(res,HttpStatusCodes.CREATED,{
-            laborId:labor?.laborId
+            repairId:repairPart?.repairId,
+            pieceId:repairPart?.pieceId
         });
     } catch (error) {
         next(error);
@@ -38,7 +39,7 @@ export const create = async (req:Request,res:Response,next:NextFunction) =>{
 export const update = async (req:Request,res:Response,next:NextFunction) =>{
     const {dto} = req.body;
     try {
-        await laborService.update(dto);
+        await repairPartService.update(dto);
         return controllerResponse(res,HttpStatusCodes.OK,'Updated successfully');
     } catch (error) {
         next(error);
@@ -46,9 +47,9 @@ export const update = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const remove = async (req:Request,res:Response,next:NextFunction) =>{
-    const {shopId,repairId,laborId} = req.body;
+    const {shopId,repairId,pieceId} = req.body;
     try {
-        await laborService.remove(shopId,repairId,laborId);
+        await repairPartService.remove(shopId,repairId,pieceId);
         return controllerResponse(res,HttpStatusCodes.NO_CONTENT,'Deleted successfully');
     } catch (error) {
         next(error);

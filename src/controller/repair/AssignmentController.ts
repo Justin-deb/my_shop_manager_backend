@@ -52,9 +52,11 @@ export const findById = async (req:Request,res:Response,next:NextFunction) =>{
 export const create = async (req:Request,res:Response,next:NextFunction) =>{
     const {dto} = req.body;
     try {
-        await assignmentService.create(dto);
+        const assignment = await assignmentService.create(dto);
 
-        return controllerResponse(res,HttpStatusCodes.CREATED);
+        return controllerResponse(res,HttpStatusCodes.CREATED,{
+            assignmentId:assignment?.assignmentId
+        });
     } catch (error) {
         next(error);
     }
