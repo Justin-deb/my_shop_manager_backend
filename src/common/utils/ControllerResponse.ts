@@ -1,17 +1,27 @@
 import { Response } from 'express';
 //Function that builds the response of a controller, helps to reduce repetitive code
-export const controllerResponse = (res:Response,statusCode:number,status:string,message:string,body?:any) =>{
+export const controllerResponse = (res:Response,statusCode:number,body?:any) =>{
     let jsonContent;
+    let status;
+
+    switch(statusCode){
+        case 200:
+            status = 'Success';
+            break;
+        case 201:
+            status = 'Created';
+        default:
+            status = 'Status code not found'
+            break;
+    }
     if(body){
         jsonContent = {
             status:status,
-            message:message,
             body:body
         };
     }else{
         jsonContent = {
-            status:status,
-            message:message
+            status:status
         }
     }
 
