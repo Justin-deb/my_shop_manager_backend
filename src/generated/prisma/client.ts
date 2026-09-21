@@ -134,3 +134,8 @@ export type Customer = Prisma.CustomerModel
  * 
  */
 export type CustomerProduct = Prisma.CustomerProductModel
+/**
+ * Model PaymentStatus
+ * 
+ */
+export type PaymentStatus = Prisma.PaymentStatusModel

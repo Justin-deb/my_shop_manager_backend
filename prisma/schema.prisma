@@ -37,15 +37,18 @@ model Labor {
 model Payment {
   paymentId       Int            @id @default(autoincrement()) @map("payment_id")
   invoiceId       Int            @map("invoice_id")
+  paymentStatusId Int            @map("payment_status_id") @db.UnsignedTinyInt
   paymentDate     DateTime       @map("payment_date") @db.DateTime(0)
   amount          Decimal        @db.Decimal(10, 2)
   paymentMethodId Int?           @map("payment_method_id")
   reference       String?        @db.VarChar(255)
   invoice         Invoice        @relation(fields: [invoiceId], references: [invoiceId], onDelete: NoAction, onUpdate: NoAction, map: "PAYMENT_ibfk_1")
   paymentMethod   PaymentMethod? @relation(fields: [paymentMethodId], references: [paymentMethodId], onDelete: NoAction, onUpdate: NoAction, map: "PAYMENT_ibfk_2")
+  paymentStatus   PaymentStatus  @relation(fields: [paymentStatusId], references: [paymentStatusId], onDelete: NoAction, onUpdate: NoAction, map: "PAYMENT_ibfk_3")
 
   @@index([invoiceId], map: "invoice_id")
   @@index([paymentMethodId], map: "payment_method_id")
+  @@index([paymentStatusId], map: "PAYMENT_ibfk_3_idx")
   @@map("PAYMENT")
 }
 
@@ -76,16 +79,16 @@ model Position {
 }
 
 model Product {
-  productId        Int                @id @default(autoincrement()) @map("product_id")
-  typeId           Int                @map("type_id")
-  manufacturer     String?            @db.VarChar(255)
-  model            String?            @db.VarChar(255)
-  productionYear   Int?               @map("production_year")
-  name             String?            @db.VarChar(255)
-  photoUrl         String?            @map("photo_url") @db.VarChar(255)
-  customerProduct  CustomerProduct[]
-  productType      ProductType        @relation(fields: [typeId], references: [typeId], onDelete: NoAction, onUpdate: NoAction, map: "PRODUCT_ibfk_2")
-  repairs          Repair[]
+  productId       Int               @id @default(autoincrement()) @map("product_id")
+  typeId          Int               @map("type_id")
+  manufacturer    String?           @db.VarChar(255)
+  model           String?           @db.VarChar(255)
+  productionYear  Int?              @map("production_year")
+  name            String?           @db.VarChar(255)
+  photoUrl        String?           @map("photo_url") @db.VarChar(255)
+  customerProduct CustomerProduct[]
+  productType     ProductType       @relation(fields: [typeId], references: [typeId], onDelete: NoAction, onUpdate: NoAction, map: "PRODUCT_ibfk_2")
+  repairs         Repair[]
 
   @@index([typeId], map: "type_id")
   @@map("PRODUCT")
@@ -100,24 +103,24 @@ model ProductType {
 }
 
 model Repair {
-  repairId           Int              @id @default(autoincrement()) @map("repair_id")
-  productId          Int              @map("product_id")
-  customerId         Int              @map("customer_id")
-  shopId             Int              @map("shop_id")
-  statusId           Int              @map("status_id")
-  estimatedHours     Decimal?         @map("estimated_hours") @db.Decimal(5, 2)
-  workedHours        Decimal?         @map("worked_hours") @db.Decimal(5, 2)
-  receivedDate       DateTime?        @map("received_date") @db.DateTime(0)
-  finishDate         DateTime?        @map("finish_date") @db.DateTime(0)
-  returnDate         DateTime?        @map("return_date") @db.DateTime(0)
-  notes              String?          @db.Text
-  problemDescription String?          @map("problem_description") @db.Text
+  repairId           Int             @id @default(autoincrement()) @map("repair_id")
+  productId          Int             @map("product_id")
+  customerId         Int             @map("customer_id")
+  shopId             Int             @map("shop_id")
+  statusId           Int             @map("status_id")
+  estimatedHours     Decimal?        @map("estimated_hours") @db.Decimal(5, 2)
+  workedHours        Decimal?        @map("worked_hours") @db.Decimal(5, 2)
+  receivedDate       DateTime?       @map("received_date") @db.DateTime(0)
+  finishDate         DateTime?       @map("finish_date") @db.DateTime(0)
+  returnDate         DateTime?       @map("return_date") @db.DateTime(0)
+  notes              String?         @db.Text
+  problemDescription String?         @map("problem_description") @db.Text
   assignments        Assignment[]
   invoice            Invoice?
   labourEntries      Labor[]
-  product            Product          @relation(fields: [productId], references: [productId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_ibfk_1")
-  shop               Shop             @relation(fields: [shopId], references: [shopId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_ibfk_2")
-  status             Status           @relation(fields: [statusId], references: [statusId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_ibfk_3")
+  product            Product         @relation(fields: [productId], references: [productId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_ibfk_1")
+  shop               Shop            @relation(fields: [shopId], references: [shopId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_ibfk_2")
+  status             Status          @relation(fields: [statusId], references: [statusId], onDelete: NoAction, onUpdate: NoAction, map: "REPAIR_ibfk_3")
   customerProduct    CustomerProduct @relation(fields: [productId, customerId], references: [productId, customerId], onDelete: NoAction, onUpdate: NoAction, map: "fk_repair_user_product")
   repairParts        RepairPart[]
 
@@ -150,18 +153,18 @@ model Role {
 }
 
 model Shop {
-  shopId           Int                @id @default(autoincrement()) @map("shop_id")
-  name             String             @db.VarChar(255)
-  address          String?            @db.VarChar(255)
-  phoneNumber      String?            @map("phone_number") @db.VarChar(255)
-  email            String?            @unique(map: "email") @db.VarChar(255)
-  photoUrl         String?            @map("photo_url") @db.VarChar(255)
-  ownerId          Int                @map("owner_id")
+  shopId           Int               @id @default(autoincrement()) @map("shop_id")
+  name             String            @db.VarChar(255)
+  address          String?           @db.VarChar(255)
+  phoneNumber      String?           @map("phone_number") @db.VarChar(255)
+  email            String?           @unique(map: "email") @db.VarChar(255)
+  photoUrl         String?           @map("photo_url") @db.VarChar(255)
+  ownerId          Int               @map("owner_id")
   customers        Customer[]
   customerProducts CustomerProduct[]
   employees        Employee[]
   repairs          Repair[]
-  user             User               @relation(fields: [ownerId], references: [userId], onDelete: NoAction, onUpdate: NoAction, map: "owner_id_key")
+  user             User              @relation(fields: [ownerId], references: [userId], onDelete: NoAction, onUpdate: NoAction, map: "owner_id_key")
   warehouses       Warehouse[]
 
   @@index([ownerId], map: "owner_id_key_idx")
@@ -239,15 +242,15 @@ model Employee {
 }
 
 model Customer {
-  customerId       Int                @id @default(autoincrement()) @map("customer_id")
-  shopId           Int                @map("shop_id")
-  firstName        String             @map("first_name") @db.VarChar(255)
-  middleName       String?            @map("middle_name") @db.VarChar(255)
-  lastName         String             @map("last_name") @db.VarChar(255)
-  secondLastName   String             @map("second_last_name") @db.VarChar(255)
-  phoneNumber      String             @map("phone_number") @db.VarChar(20)
-  email            String?            @db.VarChar(255)
-  shop             Shop               @relation(fields: [shopId], references: [shopId], onDelete: NoAction, onUpdate: NoAction, map: "fk_customer_shop")
+  customerId       Int               @id @default(autoincrement()) @map("customer_id")
+  shopId           Int               @map("shop_id")
+  firstName        String            @map("first_name") @db.VarChar(255)
+  middleName       String?           @map("middle_name") @db.VarChar(255)
+  lastName         String            @map("last_name") @db.VarChar(255)
+  secondLastName   String            @map("second_last_name") @db.VarChar(255)
+  phoneNumber      String            @map("phone_number") @db.VarChar(20)
+  email            String?           @db.VarChar(255)
+  shop             Shop              @relation(fields: [shopId], references: [shopId], onDelete: NoAction, onUpdate: NoAction, map: "fk_customer_shop")
   customerProducts CustomerProduct[]
   user             User?
 
@@ -256,18 +259,26 @@ model Customer {
 }
 
 model CustomerProduct {
-  productId     Int      @map("product_id")
-  customerId    Int      @map("customer_id")
-  shopId        Int      @map("shop_id")
-  serialNumber  String?  @map("serial_number") @db.VarChar(255)
-  name          String?  @db.VarChar(255)
-  customer      Customer @relation(fields: [customerId], references: [customerId], onUpdate: Restrict, map: "fk_user_product_customer")
-  product       Product  @relation(fields: [productId], references: [productId], onDelete: NoAction, onUpdate: NoAction, map: "fk_user_product_product")
-  shop          Shop     @relation(fields: [shopId], references: [shopId], onDelete: NoAction, onUpdate: NoAction, map: "fk_user_product_shop_id")
-  repairs       Repair[]
+  productId    Int      @map("product_id")
+  customerId   Int      @map("customer_id")
+  shopId       Int      @map("shop_id")
+  serialNumber String?  @map("serial_number") @db.VarChar(255)
+  name         String?  @db.VarChar(255)
+  customer     Customer @relation(fields: [customerId], references: [customerId], onUpdate: Restrict, map: "fk_user_product_customer")
+  product      Product  @relation(fields: [productId], references: [productId], onDelete: NoAction, onUpdate: NoAction, map: "fk_user_product_product")
+  shop         Shop     @relation(fields: [shopId], references: [shopId], onDelete: NoAction, onUpdate: NoAction, map: "fk_user_product_shop_id")
+  repairs      Repair[]
 
   @@id([productId, customerId])
   @@index([customerId], map: "fk_user_product_owner_idx")
   @@index([shopId], map: "fk_user_product_shop_id_idx")
   @@map("CUSTOMER_PRODUCT")
+}
+
+model PaymentStatus {
+  paymentStatusId Int       @id @default(autoincrement()) @map("payment_status_id") @db.UnsignedTinyInt
+  name            String    @unique(map: "name") @db.VarChar(50)
+  payment         Payment[]
+
+  @@map("PAYMENT_STATUS")
 }

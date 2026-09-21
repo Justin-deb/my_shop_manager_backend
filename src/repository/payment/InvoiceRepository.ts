@@ -6,18 +6,24 @@ const include = {
     repair:true
 }
 
-export const findAllByRepairId = (repairId:number) =>{
+export const findAllByRepairId = (shopId:number,repairId:number) =>{
     return prisma.invoice.findMany({
         where:{
-            repairId
+            repair:{
+                shopId,
+                repairId
+            }
         },
         include
     });
 }
 
-export const findById = (invoiceId:number) =>{
+export const findById = (shopId:number,invoiceId:number) =>{
     return prisma.invoice.findUniqueOrThrow({
         where:{
+            repair:{
+                shopId
+            },
             invoiceId
         },
         include
@@ -30,18 +36,24 @@ export const create = (invoice:InvoiceCreateInput) =>{
     });
 }
 
-export const update = (invoiceId:number,invoice:InvoiceUpdateInput) =>{
+export const update = (shopId:number,invoiceId:number,invoice:InvoiceUpdateInput) =>{
     return prisma.invoice.update({
         where:{
+            repair:{
+                shopId
+            },
             invoiceId
         },
         data:invoice
     });
 }
 
-export const remove = (invoiceId:number) =>{
+export const remove = (shopId:number,invoiceId:number) =>{
     return prisma.invoice.delete({
         where:{
+            repair:{
+                shopId
+            },
             invoiceId
         }
     });

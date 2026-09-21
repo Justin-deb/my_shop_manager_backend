@@ -69,7 +69,8 @@ export const ModelName = {
   Assignment: 'Assignment',
   Employee: 'Employee',
   Customer: 'Customer',
-  CustomerProduct: 'CustomerProduct'
+  CustomerProduct: 'CustomerProduct',
+  PaymentStatus: 'PaymentStatus'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -116,6 +117,7 @@ export type LaborScalarFieldEnum = (typeof LaborScalarFieldEnum)[keyof typeof La
 export const PaymentScalarFieldEnum = {
   paymentId: 'paymentId',
   invoiceId: 'invoiceId',
+  paymentStatusId: 'paymentStatusId',
   paymentDate: 'paymentDate',
   amount: 'amount',
   paymentMethodId: 'paymentMethodId',
@@ -300,6 +302,14 @@ export const CustomerProductScalarFieldEnum = {
 export type CustomerProductScalarFieldEnum = (typeof CustomerProductScalarFieldEnum)[keyof typeof CustomerProductScalarFieldEnum]
 
 
+export const PaymentStatusScalarFieldEnum = {
+  paymentStatusId: 'paymentStatusId',
+  name: 'name'
+} as const
+
+export type PaymentStatusScalarFieldEnum = (typeof PaymentStatusScalarFieldEnum)[keyof typeof PaymentStatusScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -439,4 +449,11 @@ export const CustomerProductOrderByRelevanceFieldEnum = {
 } as const
 
 export type CustomerProductOrderByRelevanceFieldEnum = (typeof CustomerProductOrderByRelevanceFieldEnum)[keyof typeof CustomerProductOrderByRelevanceFieldEnum]
+
+
+export const PaymentStatusOrderByRelevanceFieldEnum = {
+  name: 'name'
+} as const
+
+export type PaymentStatusOrderByRelevanceFieldEnum = (typeof PaymentStatusOrderByRelevanceFieldEnum)[keyof typeof PaymentStatusOrderByRelevanceFieldEnum]
 

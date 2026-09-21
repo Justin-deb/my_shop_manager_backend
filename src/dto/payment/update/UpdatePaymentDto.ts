@@ -1,4 +1,6 @@
 export interface UpdatePaymentDto{
-    id:number;
+    shopId:number;
+    invoiceId:number;
+    paymentId:number;
     statusId:number;
 }
