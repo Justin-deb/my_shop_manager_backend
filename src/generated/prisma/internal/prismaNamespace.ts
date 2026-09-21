@@ -415,7 +415,8 @@ export const ModelName = {
   Assignment: 'Assignment',
   Employee: 'Employee',
   Customer: 'Customer',
-  CustomerProduct: 'CustomerProduct'
+  CustomerProduct: 'CustomerProduct',
+  PaymentStatus: 'PaymentStatus'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -431,7 +432,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "invoice" | "labor" | "payment" | "paymentMethod" | "piece" | "position" | "product" | "productType" | "repair" | "repairPart" | "role" | "shop" | "status" | "user" | "warehouse" | "assignment" | "employee" | "customer" | "customerProduct"
+    modelProps: "invoice" | "labor" | "payment" | "paymentMethod" | "piece" | "position" | "product" | "productType" | "repair" | "repairPart" | "role" | "shop" | "status" | "user" | "warehouse" | "assignment" | "employee" | "customer" | "customerProduct" | "paymentStatus"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1689,6 +1690,72 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    PaymentStatus: {
+      payload: Prisma.$PaymentStatusPayload<ExtArgs>
+      fields: Prisma.PaymentStatusFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.PaymentStatusFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentStatusPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.PaymentStatusFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentStatusPayload>
+        }
+        findFirst: {
+          args: Prisma.PaymentStatusFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentStatusPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.PaymentStatusFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentStatusPayload>
+        }
+        findMany: {
+          args: Prisma.PaymentStatusFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentStatusPayload>[]
+        }
+        create: {
+          args: Prisma.PaymentStatusCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentStatusPayload>
+        }
+        createMany: {
+          args: Prisma.PaymentStatusCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.PaymentStatusDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentStatusPayload>
+        }
+        update: {
+          args: Prisma.PaymentStatusUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentStatusPayload>
+        }
+        deleteMany: {
+          args: Prisma.PaymentStatusDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.PaymentStatusUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.PaymentStatusUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentStatusPayload>
+        }
+        aggregate: {
+          args: Prisma.PaymentStatusAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePaymentStatus>
+        }
+        groupBy: {
+          args: Prisma.PaymentStatusGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PaymentStatusGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.PaymentStatusCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PaymentStatusCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1756,6 +1823,7 @@ export type LaborScalarFieldEnum = (typeof LaborScalarFieldEnum)[keyof typeof La
 export const PaymentScalarFieldEnum = {
   paymentId: 'paymentId',
   invoiceId: 'invoiceId',
+  paymentStatusId: 'paymentStatusId',
   paymentDate: 'paymentDate',
   amount: 'amount',
   paymentMethodId: 'paymentMethodId',
@@ -1940,6 +2008,14 @@ export const CustomerProductScalarFieldEnum = {
 export type CustomerProductScalarFieldEnum = (typeof CustomerProductScalarFieldEnum)[keyof typeof CustomerProductScalarFieldEnum]
 
 
+export const PaymentStatusScalarFieldEnum = {
+  paymentStatusId: 'paymentStatusId',
+  name: 'name'
+} as const
+
+export type PaymentStatusScalarFieldEnum = (typeof PaymentStatusScalarFieldEnum)[keyof typeof PaymentStatusScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -2079,6 +2155,13 @@ export const CustomerProductOrderByRelevanceFieldEnum = {
 } as const
 
 export type CustomerProductOrderByRelevanceFieldEnum = (typeof CustomerProductOrderByRelevanceFieldEnum)[keyof typeof CustomerProductOrderByRelevanceFieldEnum]
+
+
+export const PaymentStatusOrderByRelevanceFieldEnum = {
+  name: 'name'
+} as const
+
+export type PaymentStatusOrderByRelevanceFieldEnum = (typeof PaymentStatusOrderByRelevanceFieldEnum)[keyof typeof PaymentStatusOrderByRelevanceFieldEnum]
 
 
 
@@ -2291,6 +2374,7 @@ export type GlobalOmitConfig = {
   employee?: Prisma.EmployeeOmit
   customer?: Prisma.CustomerOmit
   customerProduct?: Prisma.CustomerProductOmit
+  paymentStatus?: Prisma.PaymentStatusOmit
 }
 
 /* Types for Logging */
