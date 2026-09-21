@@ -1,23 +1,23 @@
-import { errorMonitor } from 'node:events';
 import { mapPrismaError } from '../../common/utils/ErrorWrapper';
 import { CreatePaymentDto } from '../../dto/payment/create/CreatePaymentDto';
 import { PaymentCreateInput, PaymentUpdateInput } from '../../generated/prisma/models';
 import * as paymentRepository from '../../repository/payment/PaymentRepository';
+import { UpdatePaymentDto } from '../../dto/payment/update/UpdatePaymentDto';
 
-export const findAllByInvoiceId = (invoiceId:number) =>{
-    return paymentRepository.findAllByInvoiceId(invoiceId);
+export const findAllByInvoiceId = (shopId:number,invoiceId:number) =>{
+    return paymentRepository.findAllByInvoiceId(shopId,invoiceId);
 }
 
-export const findById = (id:number,invoiceId:number) =>{
+export const findById = (shopId:number,invoiceId:number,paymentId:number) =>{
     try {
-        return paymentRepository.findById(id,invoiceId);
+        return paymentRepository.findById(shopId,invoiceId,paymentId);
     } catch (error) {
-        mapPrismaError(error,'Payment',id.toString());
+        mapPrismaError(error,'Payment',paymentId.toString());
     }
 }
 
-export const findByReference = (reference:string,invoiceId:number) =>{
-    return paymentRepository.findByReference(reference,invoiceId);
+export const findByReference = (shopId:number,invoiceId:number,reference:string) =>{
+    return paymentRepository.findByReference(shopId,invoiceId,reference);
 }
 
 export const create = (dto:CreatePaymentDto) =>{
@@ -34,6 +34,11 @@ export const create = (dto:CreatePaymentDto) =>{
             connect:{
                 paymentMethodId:dto.paymentMethodId
             }
+        },
+        paymentStatus:{
+            connect:{
+                paymentStatusId:dto.paymentStatusId
+            }
         }
     }
 
@@ -44,15 +49,26 @@ export const create = (dto:CreatePaymentDto) =>{
     }
 }
 
-export const update = () =>{
-    //TODO Add the status field to payment and add this function to only modify the status
-    throw new Error('Unimplemented method');
+export const update = (dto:UpdatePaymentDto) =>{
+    const newPayment:PaymentUpdateInput = {
+        paymentStatus:{
+            connect:{
+                paymentStatusId:dto.statusId
+            }
+        }
+    }
+
+    try {
+        return paymentRepository.update(dto.shopId,dto.invoiceId,dto.paymentId,newPayment);
+    } catch (error) {
+        mapPrismaError(error,'Payment',dto.paymentId.toString());
+    }
 }
 
-export const remove = (id:number) =>{
+export const remove = (shopId:number,invoiceId:number,paymentId:number) =>{
     try {
-        return paymentRepository.remove(id);
+        return paymentRepository.remove(shopId,invoiceId,paymentId);
     } catch (error) {
-        mapPrismaError(error,'Payment',id.toString());
+        mapPrismaError(error,'Payment',paymentId.toString());
     }
 }

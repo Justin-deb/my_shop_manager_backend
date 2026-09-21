@@ -4,4 +4,5 @@ export interface CreatePaymentDto{
     reference?:string;
     invoiceId:number;
     paymentMethodId:number;
+    paymentStatusId:number;
 }

@@ -35,16 +35,16 @@ model Labor {
 }
 
 model Payment {
-  paymentId         Int            @id @default(autoincrement()) @map("payment_id")
-  invoiceId         Int            @map("invoice_id")
-  paymentStatusId   Int            @map("payment_status_id") @db.UnsignedTinyInt
-  paymentDate       DateTime       @map("payment_date") @db.DateTime(0)
-  amount            Decimal        @db.Decimal(10, 2)
-  paymentMethodId   Int?           @map("payment_method_id")
-  reference         String?        @db.VarChar(255)
-  invoice           Invoice        @relation(fields: [invoiceId], references: [invoiceId], onDelete: NoAction, onUpdate: NoAction, map: "PAYMENT_ibfk_1")
-  paymentMethod     PaymentMethod? @relation(fields: [paymentMethodId], references: [paymentMethodId], onDelete: NoAction, onUpdate: NoAction, map: "PAYMENT_ibfk_2")
-  paymentStatus     PaymentStatus  @relation(fields: [paymentStatusId], references: [paymentStatusId], onDelete: NoAction, onUpdate: NoAction, map: "PAYMENT_ibfk_3")
+  paymentId       Int            @id @default(autoincrement()) @map("payment_id")
+  invoiceId       Int            @map("invoice_id")
+  paymentStatusId Int            @map("payment_status_id") @db.UnsignedTinyInt
+  paymentDate     DateTime       @map("payment_date") @db.DateTime(0)
+  amount          Decimal        @db.Decimal(10, 2)
+  paymentMethodId Int?           @map("payment_method_id")
+  reference       String?        @db.VarChar(255)
+  invoice         Invoice        @relation(fields: [invoiceId], references: [invoiceId], onDelete: NoAction, onUpdate: NoAction, map: "PAYMENT_ibfk_1")
+  paymentMethod   PaymentMethod? @relation(fields: [paymentMethodId], references: [paymentMethodId], onDelete: NoAction, onUpdate: NoAction, map: "PAYMENT_ibfk_2")
+  paymentStatus   PaymentStatus  @relation(fields: [paymentStatusId], references: [paymentStatusId], onDelete: NoAction, onUpdate: NoAction, map: "PAYMENT_ibfk_3")
 
   @@index([invoiceId], map: "invoice_id")
   @@index([paymentMethodId], map: "payment_method_id")
@@ -276,9 +276,9 @@ model CustomerProduct {
 }
 
 model PaymentStatus {
-  paymentStatusId Int       @id @map("payment_status_id") @default(autoincrement()) @db.UnsignedTinyInt
-  name              String    @unique(map: "name") @db.VarChar(50)
-  payment           Payment[]
+  paymentStatusId Int       @id @default(autoincrement()) @map("payment_status_id") @db.UnsignedTinyInt
+  name            String    @unique(map: "name") @db.VarChar(50)
+  payment         Payment[]
 
   @@map("PAYMENT_STATUS")
 }
