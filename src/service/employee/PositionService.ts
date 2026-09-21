@@ -20,12 +20,15 @@ export const findByName = (name:string) =>{
     return positionRepository.findByName(name);
 }
 
-export const create = async (dto:CreatePositionDto) =>{
+export const create = (dto:CreatePositionDto) =>{
     const newPosition:PositionCreateInput ={
         name:dto.name
     }
-
-    return positionRepository.create(newPosition);
+    try {
+        return positionRepository.create(newPosition);
+    } catch (error) {
+        mapPrismaError(error,'Position');
+    }
 }
 
 export const update = (dto:UpdatePositionDto) =>{

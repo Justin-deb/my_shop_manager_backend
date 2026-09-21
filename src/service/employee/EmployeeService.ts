@@ -1,25 +1,22 @@
-import { PRISMA_CODES } from '../../common/constants/PrismaErrorCodes';
 import { mapPrismaError } from '../../common/utils/ErrorWrapper';
 import { CreateEmployeeDto } from '../../dto/employee/create/CreateEmployeeDto';
 import { UpdateEmployeeDto } from '../../dto/employee/update/UpdateEmployeeDto';
-import { BadRequestError } from '../../exceptions/BadRequestError';
-import { NotFoundError } from '../../exceptions/NotFoundError';
-import { EmployeeCreateInput, EmployeeUpdateInput, PrismaClientKnownRequestError } from '../../generated/prisma/internal/prismaNamespace';
+import { EmployeeCreateInput, EmployeeUpdateInput } from '../../generated/prisma/internal/prismaNamespace';
 import * as employeeRepository from '../../repository/employee/EmployeeRepository';
 
 export const findAllByShopId = (shopId:number) =>{
     return employeeRepository.findAllByShopId(shopId);
 }
 
-export const findByName = (name:string, shopId:number) =>{
-    return employeeRepository.findByName(name,shopId);
+export const findByName = (shopId:number,name:string) =>{
+    return employeeRepository.findByName(shopId,name);
 }
 
-export const findById = async (userId:number,shopId:number) =>{
+export const findById = (shopId:number,employeeId:number) =>{
     try {
-        return await employeeRepository.findById(userId,shopId);
+        return employeeRepository.findById(shopId,employeeId);
     } catch (error) {
-        mapPrismaError(error,"Employee",userId.toString());
+        mapPrismaError(error,"Employee",employeeId.toString());
     }
 }
 
@@ -49,7 +46,7 @@ export const create = (dto:CreateEmployeeDto) =>{
     }
 }
 
-export const update = async (dto:UpdateEmployeeDto) =>{
+export const update = (dto:UpdateEmployeeDto) =>{
     const newEmployee:EmployeeUpdateInput = {
         position:{
             connect:{
@@ -59,16 +56,16 @@ export const update = async (dto:UpdateEmployeeDto) =>{
     }
 
     try {
-        return await employeeRepository.update(dto.shopId,dto.userId,newEmployee);
+        return employeeRepository.update(dto.shopId,dto.userId,newEmployee);
     } catch (error) {
         mapPrismaError(error,"Employee",dto.userId.toString());
     }
 }
 
-export const remove = async (userId:number,shopId:number) => {
+export const remove = (shopId:number,employeeId:number) => {
     try {
-        return await employeeRepository.remove(shopId,userId);
+        return employeeRepository.remove(shopId,employeeId);
     } catch (error) {
-        mapPrismaError(error,"Employee",userId.toString());
+        mapPrismaError(error,"Employee",employeeId.toString());
     }
 }
