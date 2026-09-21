@@ -4,13 +4,13 @@ import { UpdateInvoiceDto } from '../../dto/payment/update/UpdateInvoiceDto';
 import { InvoiceCreateInput, InvoiceUpdateInput } from '../../generated/prisma/models';
 import * as invoiceRepository from '../../repository/payment/InvoiceRepository';
 
-export const findAllByRepairId = (repairId:number) =>{
-    return invoiceRepository.findAllByRepairId(repairId);
+export const findAllByRepairId = (shopId:number,repairId:number) =>{
+    return invoiceRepository.findAllByRepairId(shopId,repairId);
 }
 
-export const findById = (invoiceId:number) =>{
+export const findById = (shopId:number,invoiceId:number) =>{
     try {
-        return invoiceRepository.findById(invoiceId);
+        return invoiceRepository.findById(shopId,invoiceId);
     } catch (error) {
         mapPrismaError(error,'Invoice',invoiceId.toString());
     }
@@ -46,15 +46,15 @@ export const update = (dto:UpdateInvoiceDto) =>{
     };
 
     try {
-        return invoiceRepository.update(dto.invoiceId,newInvoice);
+        return invoiceRepository.update(dto.shopId,dto.invoiceId,newInvoice);
     } catch (error) {
         mapPrismaError(error,'Invoice',dto.invoiceId.toString());
     }
 }
 
-export const remove = (invoiceId:number) =>{
+export const remove = (shopId:number,invoiceId:number) =>{
     try {
-        return invoiceRepository.remove(invoiceId);
+        return invoiceRepository.remove(shopId,invoiceId);
     } catch (error) {
         mapPrismaError(error,'Invoice',invoiceId.toString());
     }
