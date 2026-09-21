@@ -1,14 +1,22 @@
 import { NextFunction, Request, Response } from 'express';
 import EnvVars, { NodeEnvs } from '../constants/env';
-export const errorhandler = (err:Error,req:Request,res:Response,next:NextFunction)=>{
-    const statusCode = res.statusCode !== 200 ? res.statusCode : 500;
-    res.status(statusCode);
+import { AppError } from '../../exceptions/AppError';
+
+export const errorHandler = (err:unknown,_req:Request,res:Response,_next:NextFunction)=>{
+    const statusCode = err instanceof AppError ? err.statusCode : 500;
+    
+    const message = err instanceof Error 
+                ? err.message 
+                : "Internal server error";
+
+    console.error(err);
 
     const bodyResponse = {
-        message: err.message,
-        stack: EnvVars.NodeEnv === NodeEnvs.PRODUCTION ? "" : err.stack 
+        message: message,
+        ...(EnvVars.NodeEnv !== NodeEnvs.PRODUCTION && {
+            stack: err instanceof Error ? err.stack : undefined,
+        }),
     }
-
-    console.error("Error: ", bodyResponse);
-    res.json(bodyResponse);
+    
+    res.status(statusCode).json(bodyResponse);
 }

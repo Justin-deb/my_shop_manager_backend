@@ -4,7 +4,7 @@ import { UpdateAssignmentDto } from '../../dto/repair/update/UpdateAssignmentDto
 import { AssignmentCreateInput, AssignmentUpdateInput } from '../../generated/prisma/models';
 import * as assignmentRepository from '../../repository/repair/AssignmentRepository';
 
-export const findAllByRepairId = (repairId:number,shopId:number) =>{
+export const findAllByRepairId = (shopId:number,repairId:number) =>{
     return assignmentRepository.findAllByRepairId(shopId,repairId);
 }
 
@@ -12,13 +12,13 @@ export const findAllActiveByShopId = (shopId:number) =>{
     return assignmentRepository.findAllActiveByShopId(shopId);
 }
 
-export const findAllByEmployeeId = (employeeId:number,shopId:number) =>{
-    return assignmentRepository.findAllByEmployeeId(employeeId,shopId);
+export const findAllByEmployeeId = (shopId:number,employeeId:number) =>{
+    return assignmentRepository.findAllByEmployeeId(shopId,employeeId);
 }
 
-export const findById = (id:number,shopId:number) =>{
+export const findById = (shopId:number,id:number) =>{
     try {
-        return assignmentRepository.findById(id,shopId);
+        return assignmentRepository.findById(shopId,id);
     } catch (error) {
         mapPrismaError(error,'Assignment',`Assignment:${id} Shop:${shopId}`);
     }

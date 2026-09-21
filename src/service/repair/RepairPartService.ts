@@ -18,7 +18,6 @@ export const findById = (shopId:number,repairId:number,pieceId:number) =>{
 }
 
 export const create = (dto:CreateRepairPartDto) =>{
-    //TODO add a ownership validator in repair service
     const newRepairPart:RepairPartCreateInput = {
         quantity:dto.quantity,
         unitPrice:dto.unitPrice,

@@ -3,8 +3,6 @@
                                 Constants
 ******************************************************************************/
 
-import { ValueOf } from "../types/structure-utils";
-
 /**
  * Hypertext Transfer Protocol (HTTP) response status codes.
  *
@@ -390,5 +388,5 @@ const HttpStatusCodes = {
                             Export default
 ******************************************************************************/
 
-type HttpStatusCodes = ValueOf<typeof HttpStatusCodes>;
+type HttpStatusCodes = (typeof HttpStatusCodes)[keyof typeof HttpStatusCodes];
 export default HttpStatusCodes;

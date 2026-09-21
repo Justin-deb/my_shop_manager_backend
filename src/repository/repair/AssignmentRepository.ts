@@ -9,7 +9,7 @@ const include = {
   repair: true,
 };
 
-export const findAllByRepairId = (repairId:number,shopId:number) => {
+export const findAllByRepairId = (shopId:number,repairId:number) => {
   return prisma.assignment.findMany({
     where: {
         shopId,
@@ -29,7 +29,7 @@ export const findAllActiveByShopId = (shopId: number) => {
     });
 };
 
-export const findAllByEmployeeId = (employeeId: number, shopId: number) => {
+export const findAllByEmployeeId = (shopId: number,employeeId: number) => {
     return prisma.assignment.findMany({
         where:{
             shopId,
@@ -39,7 +39,7 @@ export const findAllByEmployeeId = (employeeId: number, shopId: number) => {
     });
 };
 
-export const findById = (assignmentId:number,shopId:number) => {
+export const findById = (shopId:number,assignmentId:number) => {
     return prisma.assignment.findUniqueOrThrow({
         where:{
             shopId,
