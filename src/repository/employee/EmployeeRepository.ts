@@ -15,7 +15,7 @@ export const findAllByShopId = (shopId: number) => {
   });
 };
 
-export const findByName = (name:string,shopId:number) =>{
+export const findByName = (shopId:number,name:string) =>{
     return prisma.employee.findMany({
         where:{
             shopId,
@@ -30,12 +30,12 @@ export const findByName = (name:string,shopId:number) =>{
     });
 }
 
-export const findById = (userId:number,shopId:number) =>{
+export const findById = (shopId:number,employeeId:number) =>{
     return prisma.employee.findUniqueOrThrow({
         where:{
             shopId_userId:{
-                userId,
-                shopId
+                shopId,
+                userId:employeeId
             }
         },
         include
