@@ -1,11 +1,23 @@
 import { CustomerProductCreateInput, CustomerProductUpdateInput } from "../../generated/prisma/models";
 import prisma from "../../models/common/prisma";
 
-export const findByCustomerId = (customerId:number,shopId:number) =>{
+export const findById = (shopId:number,customerId:number,productId:number) =>{
+    return prisma.customerProduct.findUniqueOrThrow({
+        where:{
+            shopId,
+            productId_customerId:{
+                customerId,
+                productId
+            }
+        }
+    });
+}
+
+export const findByCustomerId = (shopId:number,customerId:number) =>{
     return prisma.customerProduct.findMany({
         where:{
-            customerId:customerId,
-            shopId:shopId
+            shopId:shopId,
+            customerId:customerId
             
         },
         include:{
@@ -14,11 +26,11 @@ export const findByCustomerId = (customerId:number,shopId:number) =>{
     });
 }
 
-export const findByProductId = (productId:number,shopId:number) =>{
+export const findByProductId = (shopId:number,productId:number) =>{
     return prisma.customerProduct.findMany({
         where:{
-            productId:productId,
-            shopId:shopId
+            shopId:shopId,
+            productId:productId
         },
         include:{
             customer:true
@@ -32,9 +44,10 @@ export const create = (userProduct:CustomerProductCreateInput) =>{
     })
 }
 
-export const update = (customerId:number,productId:number,customerProduct:CustomerProductUpdateInput) =>{
+export const update = (shopId:number,customerId:number,productId:number,customerProduct:CustomerProductUpdateInput) =>{
     return prisma.customerProduct.update({
         where:{
+            shopId,
             productId_customerId:{
                 customerId:customerId,
                 productId
@@ -44,9 +57,10 @@ export const update = (customerId:number,productId:number,customerProduct:Custom
     });
 }
 
-export const remove = (customerId:number,productId:number) =>{
+export const remove = (shopId:number,customerId:number,productId:number) =>{
     return prisma.customerProduct.delete({
         where:{
+            shopId,
             productId_customerId:{
                 customerId:customerId,
                 productId

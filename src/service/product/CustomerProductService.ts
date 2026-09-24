@@ -4,12 +4,20 @@ import { UpdateCustomerProductDto } from '../../dto/product/update/UpdateCustome
 import { CustomerProductCreateInput, CustomerProductUpdateInput } from '../../generated/prisma/models';
 import * as customerProductRepository from '../../repository/product/CustomerProductRepository';
 
-export const findByCustomerId = (customerId:number,shopId:number) =>{
-    return customerProductRepository.findByCustomerId(customerId,shopId);
+export const findById = (shopId:number,customerId:number,productId:number) =>{
+    try {
+        return customerProductRepository.findById(shopId,customerId,productId);
+    } catch (error) {
+        mapPrismaError(error,'Customer-Product',`Customer:${customerId} ProductId:${productId}`);
+    }
 }
 
-export const findByProductId = (productId:number,shopId:number) =>{
-    return customerProductRepository.findByProductId(productId,shopId);
+export const findByCustomerId = (shopId:number,customerId:number) =>{
+    return customerProductRepository.findByCustomerId(shopId,customerId);
+}
+
+export const findByProductId = (shopId:number,productId:number) =>{
+    return customerProductRepository.findByProductId(shopId,productId);
 }
 
 export const create = (dto:CreateCustomerProductDto) =>{
@@ -48,15 +56,15 @@ export const update = (dto:UpdateCustomerProductDto) =>{
     }
 
     try {
-        return customerProductRepository.update(dto.customerId,dto.productId,newCustomerProduct);
+        return customerProductRepository.update(dto.shopId,dto.customerId,dto.productId,newCustomerProduct);
     } catch (error) {
         mapPrismaError(error,'Customer-Product',`Customer:${dto.customerId} ProductId:${dto.productId}`);
     }
 }
 
-export const remove = (customerId:number,productId:number) =>{
+export const remove = (shopId:number,customerId:number,productId:number) =>{
     try {
-        return customerProductRepository.remove(customerId,productId);
+        return customerProductRepository.remove(shopId,customerId,productId);
     } catch (error) {
         mapPrismaError(error,'Customer-Product',`Customer:${customerId} ProductId:${productId}`);
     }
