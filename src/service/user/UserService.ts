@@ -21,7 +21,7 @@ export const findById = (userId:number) =>{
     }
 }
 
-export const findByName = (email:string) =>{
+export const findByEmail = (email:string) =>{
     try {
         return userRepository.findByEmail(email);
     } catch (error) {
