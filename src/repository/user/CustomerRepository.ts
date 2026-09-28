@@ -21,11 +21,11 @@ export const getShopIdByCustomerId = async (customerId:number) =>{
     return customer.shopId;
 }
 
-export const findById = (customerId:number,shopId:number) =>{
+export const findById = (shopId:number,customerId:number) =>{
     return prisma.customer.findUniqueOrThrow({
         where:{
-            customerId,
-            shopId
+            shopId,
+            customerId
         },
         include
     });
@@ -50,9 +50,10 @@ export const create = (customer:CustomerCreateInput) =>{
     });
 }
 
-export const update = (customerId:number,customer:CustomerUpdateInput) =>{
+export const update = (shopId:number,customerId:number,customer:CustomerUpdateInput) =>{
     return prisma.customer.update({
         where:{
+            shopId,
             customerId
         },
         data:{
@@ -61,9 +62,10 @@ export const update = (customerId:number,customer:CustomerUpdateInput) =>{
     });
 }
 
-export const remove = (customerId:number) =>{
+export const remove = (shopId:number,customerId:number) =>{
     return prisma.customer.delete({
         where:{
+            shopId,
             customerId
         }
     });

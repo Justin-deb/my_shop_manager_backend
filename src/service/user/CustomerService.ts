@@ -9,7 +9,7 @@ export const findAll = () =>{
     return customerRepository.findAll();
 }
 
-export const validateShopId = async (customerId:number,shopId:number) =>{
+export const validateShopId = async (shopId:number,customerId:number) =>{
     try {
         const customerShopId = await customerRepository.getShopIdByCustomerId(customerId);
         return shopId === customerShopId;
@@ -18,9 +18,9 @@ export const validateShopId = async (customerId:number,shopId:number) =>{
     }
 }
 
-export const findById = (customerId:number,shopId:number) =>{
+export const findById = (shopId:number,customerId:number) =>{
     try {
-        return customerRepository.findById(customerId,shopId);
+        return customerRepository.findById(shopId,customerId);
     } catch (error) {
         mapPrismaError(error,'Customer',`Customer:${customerId} Shop:${shopId}`);
     }
@@ -65,15 +65,15 @@ export const update = (dto:UpdateCustomerDto) =>{
     }
 
     try {
-        return customerRepository.update(dto.customerId,newCustomer)
+        return customerRepository.update(dto.shopId,dto.customerId,newCustomer)
     } catch (error) {
         mapPrismaError(error,'Customer',dto.customerId.toString());
     }
 }
 
-export const remove = (customerId:number) =>{
+export const remove = (shopId:number,customerId:number) =>{
     try {
-        return customerRepository.remove(customerId);
+        return customerRepository.remove(shopId,customerId);
     } catch (error) {
         mapPrismaError(error,'Customer',customerId.toString());
     }
