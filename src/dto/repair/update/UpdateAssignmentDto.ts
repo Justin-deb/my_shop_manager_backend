@@ -1,5 +1,5 @@
 export interface UpdateAssignmentDto{
-    id:number;
+    assignmentId:number;
     shopId:number;
     finishedAt?:string | Date;
     employeeId:number;
