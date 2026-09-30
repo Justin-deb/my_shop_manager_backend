@@ -4,7 +4,7 @@ export const createRepairPart = z.object({
     body: z.object({
         quantity: z.number().positive().int(),
         unitPrice: z.number().positive().optional(),
-        addedAt: z.date().or(z.string()),
+        addedAt: z.coerce.date(),
         repairId: z.number().positive(),
         pieceId: z.number().positive()
     }),
@@ -19,7 +19,7 @@ export const updateRepairPart = z.object({
         pieceId: z.number().positive(),
         quantity: z.number().positive().int().optional(),
         unitPrice: z.number().positive().optional(),
-        addedAt: z.date().or(z.string()).optional()
+        addedAt: z.coerce.date().optional()
     }),
     query: z.object({}),
     params: z.object({})

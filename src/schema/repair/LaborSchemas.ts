@@ -5,7 +5,7 @@ export const createLabor = z.object({
         description: z.string().optional(),
         hours: z.number().positive().or(z.string()).optional(),
         hourlyRate: z.number().positive().optional(),
-        performedAt: z.date().or(z.string()),
+        performedAt: z.coerce.date(),
         repairId: z.number().positive()
     }),
     query:z.object({}),
@@ -20,7 +20,7 @@ export const updateLabor = z.object({
         description: z.string().optional(),
         hours: z.number().optional(),
         hourlyRate: z.number().positive().optional(),
-        performedAt: z.date().or(z.string()).optional()
+        performedAt: z.coerce.date().optional()
     }),
     query:z.object({}),
     params:z.object({})
