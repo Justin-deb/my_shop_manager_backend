@@ -1,5 +1,5 @@
 export interface UpdateEmployeeDto{
-    shopId:number,
-    userId:number,
-    positionId:number
+    shopId:number;
+    userId:number;
+    positionId:number;
 }
