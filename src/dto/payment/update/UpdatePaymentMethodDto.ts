@@ -1,4 +1,4 @@
 export interface UpdatePaymentMethodDto{
-    id:number;
+    paymentMethodId:number;
     name:string;
 }
