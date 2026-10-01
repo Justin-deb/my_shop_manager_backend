@@ -38,9 +38,9 @@ export const update = (dto:UpdatePaymentMethodDto) =>{
     }
 
     try {
-        return paymentMethodRepository.update(dto.id,newPaymentMethod);
+        return paymentMethodRepository.update(dto.paymentMethodId,newPaymentMethod);
     } catch (error) {
-        mapPrismaError(error,'Payment Method',dto.id.toString());
+        mapPrismaError(error,'Payment Method',dto.paymentMethodId.toString());
     }
 }
 
