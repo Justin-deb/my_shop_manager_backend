@@ -1,4 +1,4 @@
 export interface UpdatePieceDto{
-    id:number,
+    pieceId:number,
     details:string
 }
