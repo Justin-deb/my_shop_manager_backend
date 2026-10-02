@@ -38,9 +38,9 @@ export const update = (dto:UpdatePieceDto) =>{
     }
 
     try {
-        return pieceRepository.update(dto.id,{details})
+        return pieceRepository.update(dto.pieceId,{details})
     } catch (error) {
-        mapPrismaError(error,"Piece",dto.id.toString());
+        mapPrismaError(error,"Piece",dto.pieceId.toString());
     }
 }
 
