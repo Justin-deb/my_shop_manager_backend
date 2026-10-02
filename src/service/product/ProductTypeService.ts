@@ -38,9 +38,9 @@ export const update = (dto:UpdateProductTypeDto) =>{
     }
 
     try {
-        return productTypeRepository.update(dto.id,newProductType);
+        return productTypeRepository.update(dto.productTypeId,newProductType);
     } catch (error) {
-        mapPrismaError(error,'Product Type',dto.id.toString());
+        mapPrismaError(error,'Product Type',dto.productTypeId.toString());
     }
 }
 
