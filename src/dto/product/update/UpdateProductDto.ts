@@ -1,5 +1,5 @@
 export interface UpdateProductDto{
-    id:number;
+    productId:number;
     manufacturer?: string;
     model?: string;
     productionYear?: number;
