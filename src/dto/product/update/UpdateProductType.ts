@@ -1,4 +1,4 @@
 export interface UpdateProductTypeDto{
-    id:number;
+    productTypeId:number;
     name:string;
 }

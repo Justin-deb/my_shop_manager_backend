@@ -68,9 +68,9 @@ export const update = (dto:UpdateProductDto) =>{
     }
 
     try {
-        return productRepository.update(dto.id,newProduct);
+        return productRepository.update(dto.productId,newProduct);
     } catch (error) {
-        mapPrismaError(error,'Product',dto.id.toString());
+        mapPrismaError(error,'Product',dto.productId.toString());
     }
 }
 
