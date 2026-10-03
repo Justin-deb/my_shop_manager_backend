@@ -33,3 +33,5 @@ assignmentRouter.put('/assignment/update',
 assignmentRouter.delete('/assignment/delete',
                             validateRecord(idParameter),
                             assignmentController.remove);
+
+export default assignmentRouter;
