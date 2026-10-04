@@ -38,7 +38,7 @@ export const validateSchema = (schema:RequestSchema) =>{
     }
 }
 
-export const validateRecord = (record:ZodRecord<z.ZodString,z.ZodNumber>) =>{
+export const validateRecord = (record:ZodRecord) =>{
     return async (req:Request,res:Response,next:NextFunction) =>{
         try {
             const parsed = await record.parseAsync(req.body);
