@@ -26,4 +26,4 @@ laborRouter.delete('/labor/delete',
                         validateRecord(idParameter),
                         laborController.remove);
 
-export default laborRouter
+export default laborRouter;

@@ -25,3 +25,5 @@ repairPartRouter.put('/repairPart/update',
 repairPartRouter.delete('/repairPart/delete',
                         validateRecord(idParameter),
                         repairPartController.remove);
+
+export default repairPartRouter;
