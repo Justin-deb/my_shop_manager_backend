@@ -1,5 +1,5 @@
 import { Request,Response,NextFunction } from 'express';
-import { treeifyError, ZodError, ZodType } from 'zod';
+import z, { treeifyError, ZodError, ZodRecord, ZodType } from 'zod';
 import HttpStatusCodes from '../constants/HttpStatusCodes';
 
 type RequestSchema = ZodType<{
@@ -25,6 +25,26 @@ export const validateSchema = (schema:RequestSchema) =>{
 
             //If there are no error then procede
             next(); 
+        } catch (error) {
+            if(error instanceof ZodError){
+                return res.status(HttpStatusCodes.BAD_REQUEST).json({
+                    status:'Request validation failed',
+                    errors:treeifyError(error)
+                });
+            }
+
+            next(error);
+        }
+    }
+}
+
+export const validateRecord = (record:ZodRecord) =>{
+    return async (req:Request,res:Response,next:NextFunction) =>{
+        try {
+            const parsed = await record.parseAsync(req.body);
+            req.body = parsed;
+            
+            next();
         } catch (error) {
             if(error instanceof ZodError){
                 return res.status(HttpStatusCodes.BAD_REQUEST).json({
