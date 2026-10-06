@@ -1,7 +1,7 @@
 import { Router } from "express";
 import * as assignmentController from '../../controller/repair/AssignmentController';
 import { validateRecord, validateSchema } from "../../common/utils/ValidationMiddleware";
-import { idParameter } from "../../schema/common/IdParameterSchemas";
+import { idParameter } from "../../schema/common/SearchParameters";
 import { createAssignment, updateAssignment } from "../../schema/repair/AssignmentSchemas";
 
 const assignmentRouter = Router();

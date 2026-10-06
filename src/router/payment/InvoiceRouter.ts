@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import * as invoiceController from '../../controller/payment/InvoiceController';
 import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { idParameter } from '../../schema/common/IdParameterSchemas';
+import { idParameter } from '../../schema/common/SearchParameters';
 import { createInvoice, updateInvoice } from '../../schema/payment/InvoiceSchemas';
 
 const invoiceRouter = Router();
@@ -25,3 +25,5 @@ invoiceRouter.put('/invoice/update',
 invoiceRouter.delete('/invoice/delete',
                     validateRecord(idParameter),
                     invoiceController.remove);
+
+export default invoiceRouter;

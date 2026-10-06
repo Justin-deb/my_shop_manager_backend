@@ -1,7 +1,7 @@
 import { Router } from "express";
 import * as laborController from '../../controller/repair/LaborController';
 import { validateRecord, validateSchema } from "../../common/utils/ValidationMiddleware";
-import { idParameter } from "../../schema/common/IdParameterSchemas";
+import { idParameter } from "../../schema/common/SearchParameters";
 import { createLabor, updateLabor } from "../../schema/repair/LaborSchemas";
 
 const laborRouter = Router();
