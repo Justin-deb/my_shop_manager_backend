@@ -1,9 +1,8 @@
 import { Router } from "express";
 import * as statusController from '../../controller/repair/StatusController';
 import { validateRecord, validateSchema } from "../../common/utils/ValidationMiddleware";
-import { idParameter } from "../../schema/common/IdParameterSchemas";
-import { nameParameter } from "../../schema/common/NameParameterSchemas";
 import { createStatus, updateStatus } from "../../schema/repair/StatusSchemas";
+import { idParameter, nameParameter } from "../../schema/common/SearchParameters";
 
 const statusRouter = Router();
 

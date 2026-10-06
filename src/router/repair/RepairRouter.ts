@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import * as repairController from '../../controller/repair/RepairController';
 import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { idParameter } from '../../schema/common/IdParameterSchemas';
+import { idParameter } from '../../schema/common/SearchParameters';
 import { createRepair, updateRepair } from '../../schema/repair/RepairSchemas';
 
 const repairRouter = Router();
