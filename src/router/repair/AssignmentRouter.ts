@@ -1,25 +1,25 @@
 import { Router } from "express";
 import * as assignmentController from '../../controller/repair/AssignmentController';
 import { validateRecord, validateSchema } from "../../common/utils/ValidationMiddleware";
-import { idParameter } from "../../schema/common/SearchParameters";
+import { numberParameter } from "../../schema/common/SearchParameters";
 import { createAssignment, updateAssignment } from "../../schema/repair/AssignmentSchemas";
 
 const assignmentRouter = Router();
 
 assignmentRouter.get('/assignment/allRepairId',
-                        validateRecord(idParameter),
+                        validateRecord(numberParameter),
                         assignmentController.findAllByRepairId);
 
 assignmentRouter.get('/assignment/activeShopId',
-                        validateRecord(idParameter),
+                        validateRecord(numberParameter),
                         assignmentController.findAllActiveByShopId);
 
 assignmentRouter.get('/assignment/allEmployeeId',
-                        validateRecord(idParameter),
+                        validateRecord(numberParameter),
                         assignmentController.findAllByEmployeeId);
 
 assignmentRouter.get('/assignment/id',
-                        validateRecord(idParameter),
+                        validateRecord(numberParameter),
                         assignmentController.findById);
 
 assignmentRouter.post('/assignment/create',
@@ -31,7 +31,7 @@ assignmentRouter.put('/assignment/update',
                         assignmentController.update);
 
 assignmentRouter.delete('/assignment/delete',
-                            validateRecord(idParameter),
+                            validateRecord(numberParameter),
                             assignmentController.remove);
 
 export default assignmentRouter;

@@ -1,17 +1,17 @@
 import { Router } from "express";
 import * as repairPartController from '../../controller/repair/RepairPartController';
 import { validateRecord, validateSchema } from "../../common/utils/ValidationMiddleware";
-import { idParameter } from "../../schema/common/SearchParameters";
+import { numberParameter } from "../../schema/common/SearchParameters";
 import { createRepairPart, updateRepairPart } from "../../schema/repair/RepairPartSchemas";
 
 const repairPartRouter = Router();
 
 repairPartRouter.get('/repairPart/allRepairId',
-                        validateRecord(idParameter),
+                        validateRecord(numberParameter),
                         repairPartController.findAllByRepairId);
 
 repairPartRouter.get('/repairPart/id',
-                        validateRecord(idParameter),
+                        validateRecord(numberParameter),
                         repairPartController.findById);
 
 repairPartRouter.post('/repairPart/create',
@@ -23,7 +23,7 @@ repairPartRouter.put('/repairPart/update',
                         repairPartController.update);
 
 repairPartRouter.delete('/repairPart/delete',
-                        validateRecord(idParameter),
+                        validateRecord(numberParameter),
                         repairPartController.remove);
 
 export default repairPartRouter;

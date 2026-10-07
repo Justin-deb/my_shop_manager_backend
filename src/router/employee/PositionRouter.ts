@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import * as positionController from '../../controller/employee/PositionController';
 import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { idParameter, nameParameter } from '../../schema/common/SearchParameters';
+import { numberParameter, stringParameter } from '../../schema/common/SearchParameters';
 import { createPosition, updatePosition } from '../../schema/employee/PositionSchemas';
 
 const positionRouter = Router();
@@ -10,11 +10,11 @@ positionRouter.get('/position/all',
                     positionController.findAll);
 
 positionRouter.get('/position/id',
-                    validateRecord(idParameter),
+                    validateRecord(numberParameter),
                     positionController.findById);
 
 positionRouter.get('/position/name',
-                    validateRecord(nameParameter),
+                    validateRecord(stringParameter),
                     positionController.findByName);
 
 positionRouter.post('/position/create',
@@ -26,7 +26,7 @@ positionRouter.put('/position/update',
                     positionController.update);
 
 positionRouter.delete('/position/delete',
-                    validateRecord(idParameter),
+                    validateRecord(numberParameter),
                     positionController.remove);
 
 export default positionRouter;

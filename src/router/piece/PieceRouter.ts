@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import * as pieceController from '../../controller/piece/PieceController';
 import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { idParameter, nameParameter } from '../../schema/common/SearchParameters';
+import { numberParameter, stringParameter } from '../../schema/common/SearchParameters';
 import { createPiece, updatePiece } from '../../schema/piece/PieceSchemas';
 
 const pieceRouter = Router();
@@ -10,11 +10,11 @@ pieceRouter.get('/piece/all',
                     pieceController.findAll);
 
 pieceRouter.get('/piece/id',
-                    validateRecord(idParameter),
+                    validateRecord(numberParameter),
                     pieceController.findById);
 
 pieceRouter.get('/piece/name',
-                    validateRecord(nameParameter),
+                    validateRecord(stringParameter),
                     pieceController.findByName);
 
 pieceRouter.post('/piece/create',
@@ -26,7 +26,7 @@ pieceRouter.put('/piece/update',
                     pieceController.update);
 
 pieceRouter.delete('/piece/delete',
-                    validateRecord(idParameter),
+                    validateRecord(numberParameter),
                     pieceController.remove);
 
 export default pieceRouter;
