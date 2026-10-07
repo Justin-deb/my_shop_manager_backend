@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import * as paymentStatusController from '../../controller/payment/PaymentStatusController';
 import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { idParameter, nameParameter } from '../../schema/common/SearchParameters';
+import { numberParameter, stringParameter } from '../../schema/common/SearchParameters';
 import { createPaymentStatus, updatePaymentStatus } from '../../schema/payment/PaymentStatusSchemas';
 
 const paymentStatusRouter = Router();
@@ -10,11 +10,11 @@ paymentStatusRouter.get('/paymentStatus/all',
                             paymentStatusController.findAll);
 
 paymentStatusRouter.get('/paymentStatus/id',
-                            validateRecord(idParameter),
+                            validateRecord(numberParameter),
                             paymentStatusController.findById);
 
 paymentStatusRouter.get('/paymentStatus/name',
-                            validateRecord(nameParameter),
+                            validateRecord(stringParameter),
                             paymentStatusController.findByName);
 
 paymentStatusRouter.post('/paymentStatus/create',
@@ -26,7 +26,7 @@ paymentStatusRouter.put('/paymentStatus/update',
                             paymentStatusController.update);
 
 paymentStatusRouter.delete('/paymentStatus/delete',
-                            validateRecord(idParameter),
+                            validateRecord(numberParameter),
                             paymentStatusController.remove);
 
 export default paymentStatusRouter;

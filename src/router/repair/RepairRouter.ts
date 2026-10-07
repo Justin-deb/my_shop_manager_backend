@@ -1,25 +1,25 @@
 import { Router } from 'express';
 import * as repairController from '../../controller/repair/RepairController';
 import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { idParameter } from '../../schema/common/SearchParameters';
+import { numberParameter } from '../../schema/common/SearchParameters';
 import { createRepair, updateRepair } from '../../schema/repair/RepairSchemas';
 
 const repairRouter = Router();
 
 repairRouter.get('/repair/allShopId',
-                    validateRecord(idParameter),
+                    validateRecord(numberParameter),
                     repairController.findAllByShopId);
 
 repairRouter.get('/repair/repairId',
-                    validateRecord(idParameter),
+                    validateRecord(numberParameter),
                     repairController.findByRepairId);
 
 repairRouter.get('/repair/allStatusId',
-                    validateRecord(idParameter),
+                    validateRecord(numberParameter),
                     repairController.findAllByStatusId);
 
 repairRouter.get('/repair/allCustomerId',
-                    validateRecord(idParameter),
+                    validateRecord(numberParameter),
                     repairController.findAllByCustomerId);
 
 repairRouter.post('/repair/create',
@@ -31,7 +31,7 @@ repairRouter.put('/repair/update',
                     repairController.update);
 
 repairRouter.delete('/repair/delete',
-                    validateRecord(idParameter),
+                    validateRecord(numberParameter),
                     repairController.remove);
 
 export default repairRouter;

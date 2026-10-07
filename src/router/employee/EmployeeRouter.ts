@@ -1,21 +1,21 @@
 import { Router } from 'express';
 import * as employeeController from '../../controller/employee/EmployeeController';
 import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { idParameter, nameParameter } from '../../schema/common/SearchParameters';
+import { numberParameter, stringParameter } from '../../schema/common/SearchParameters';
 import { createEmployee, updateEmployee } from '../../schema/employee/EmployeeSchemas';
 
 const employeeRouter = Router();
 
 employeeRouter.get('/employee/allShopId',
-                    validateRecord(idParameter),
+                    validateRecord(numberParameter),
                     employeeController.findAllByShopId);
 
 employeeRouter.get('/employee/name',
-                    validateRecord(nameParameter),
+                    validateRecord(stringParameter),
                     employeeController.findByName);
 
 employeeRouter.get('/employee/id',
-                    validateRecord(idParameter),
+                    validateRecord(numberParameter),
                     employeeController.findById);
 
 employeeRouter.post('/employee/create',
@@ -27,7 +27,7 @@ employeeRouter.put('/employee/update',
                     employeeController.update);
 
 employeeRouter.delete('/employee/delete',
-                    validateRecord(idParameter),
+                    validateRecord(numberParameter),
                     employeeController.remove);
 
 export default employeeRouter;
