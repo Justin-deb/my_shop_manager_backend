@@ -16,7 +16,7 @@ export const findById = async (req:Request,res:Response,next:NextFunction) =>{
     const {shopId,customerId} = req.body;
     try {
         const customer = await customerService.findById(shopId,customerId);
-        return controllerResponse(res,HttpStatusCodes.OK);
+        return controllerResponse(res,HttpStatusCodes.OK,customer);
     } catch (error) {
         next(error);
     }
