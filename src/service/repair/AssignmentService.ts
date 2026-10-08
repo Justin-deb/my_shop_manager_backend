@@ -65,9 +65,9 @@ export const update = (dto:UpdateAssignmentDto) =>{
     }
 
     try {
-        return assignmentRepository.update(dto.shopId,dto.id,newAssignment);
+        return assignmentRepository.update(dto.shopId,dto.assignmentId,newAssignment);
     } catch (error) {
-        mapPrismaError(error,'Assignment',dto.id.toString());
+        mapPrismaError(error,'Assignment',dto.assignmentId.toString());
     }
 }
 
