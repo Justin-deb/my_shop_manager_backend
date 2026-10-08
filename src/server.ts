@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import { errorHandler } from './common/utils/middlewares';
 
 import EnvVars, { NodeEnvs } from './common/constants/env';
+import router from './router/Index';
 
 /******************************************************************************
                                 Setup
@@ -30,6 +31,7 @@ if (EnvVars.NodeEnv === NodeEnvs.PRODUCTION) {
 
 // Add APIs, must be after middleware
 // app.use(Paths._, BaseRouter);
+app.use('/api',router);
 
 // Add error handler
 app.use(errorHandler);
