@@ -13,7 +13,7 @@ export const findAll = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const findById = async (req:Request,res:Response,next:NextFunction) =>{
-    const {positionId} = req.body;
+    const positionId = Number(req.params.positionId);
     try {
         const position = await positionService.findById(positionId);
         return controllerResponse(res,HttpStatusCodes.OK,position);
@@ -23,7 +23,7 @@ export const findById = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const findByName = async (req:Request,res:Response,next:NextFunction) =>{
-    const {name} = req.body;
+    const name = String(res.locals.validatedQuery.name);
     try {
         const position = await positionService.findByName(name);
         return controllerResponse(res,HttpStatusCodes.OK,position);

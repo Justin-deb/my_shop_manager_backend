@@ -13,10 +13,10 @@ export const findAllByShopId = async (req:Request,res:Response,next:NextFunction
     }
 }
 
-export const findByRepairId = async (req:Request,res:Response,next:NextFunction) =>{
+export const findById = async (req:Request,res:Response,next:NextFunction) =>{
     const {shopId,repairId} = req.body;
     try {
-        const repair = await repairService.findByRepairId(shopId,repairId);
+        const repair = await repairService.findById(shopId,repairId);
         return controllerResponse(res,HttpStatusCodes.OK,repair);
     } catch (error) {
         next(error);

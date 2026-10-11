@@ -1,12 +1,13 @@
 import z from "zod";
+import { idParam } from "../common/SearchParameters";
 
 export const createCustomerProduct = z.object({
     body:z.object({
         serialNumber:z.string().optional(),
         name:z.string().optional(),
-        customerId:z.number().positive(),
-        productId:z.number().positive(),
-        shopId:z.number().positive()
+        customerId:idParam,
+        productId:idParam,
+        shopId:idParam
     }),
     query:z.object({}),
     params:z.object({})
@@ -14,12 +15,41 @@ export const createCustomerProduct = z.object({
 
 export const updateCustomerProduct = z.object({
     body:z.object({
-        shopId:z.number().positive(),
-        customerId:z.number().positive(),
-        productId:z.number().positive(),
         serialNumber:z.string().optional(),
         name:z.string().optional()
     }),
     query:z.object({}),
-    params:z.object({})
+    params:z.object({
+        shopId:idParam,
+        customerId:idParam,
+        productId:idParam,
+    })
+});
+
+export const findById = z.object({
+    body:z.object({}).optional(),
+    query:z.object({}),
+    params:z.object({
+        shopId:idParam,
+        customerId:idParam,
+        productId:idParam
+    })
+});
+
+export const findByCustomerId = z.object({
+    body:z.object({}).optional(),
+    query:z.object({}),
+    params:z.object({
+        shopId:idParam,
+        customerId:idParam
+    })
+});
+
+export const findByProductId = z.object({
+    body:z.object({}).optional(),
+    query:z.object({}),
+    params:z.object({
+        shopId:idParam,
+        productId:idParam
+    })
 });

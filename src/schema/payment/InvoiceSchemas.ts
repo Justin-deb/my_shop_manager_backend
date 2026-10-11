@@ -1,8 +1,9 @@
 import z from "zod";
+import { idParam } from "../common/SearchParameters";
 
 export const createInvoice = z.object({
     body:z.object({
-        repairId:z.number().positive(),
+        repairId:idParam,
         issueDate: z.date(),
         subtotal: z.number().positive(),
         tax:z.number().positive().optional(),
@@ -15,13 +16,32 @@ export const createInvoice = z.object({
 
 export const updateInvoice = z.object({
     body:z.object({
-        shopId:z.number().positive(),
-        invoiceId:z.number().positive(),
         subtotal:z.number().positive().optional(),
         tax:z.number().positive().optional(),
         discount:z.number().positive().optional(),
         total:z.number().positive().optional()
     }),
     query:z.object({}),
-    params:z.object({})
+    params:z.object({
+        shopId:idParam,
+        invoiceId:idParam
+    })
+});
+
+export const findAllByRepairId = z.object({
+    body:z.object({}).optional(),
+    query:z.object({}),
+    params:z.object({
+        shopId:idParam,
+        reapirId:idParam
+    })
+});
+
+export const findById = z.object({
+    body:z.object({}).optional(),
+    query:z.object({}),
+    params:z.object({
+        shopId:idParam,
+        invoiceId:idParam
+    })
 });

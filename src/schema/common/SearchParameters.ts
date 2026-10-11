@@ -1,6 +1,6 @@
 import z from "zod";
 
-export const id = z.string().regex(/^\d+$/,{message:'Not a valid number'});
+export const idParam = z.string().regex(/^\d+$/,{message:'Not a valid number'}).transform(id => Number(id));
 
 export const searchText = z.string().trim().min(1);
 export const searchTextOptional = searchText.optional();

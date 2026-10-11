@@ -1,4 +1,5 @@
 import z from "zod";
+import { idParam } from "../common/SearchParameters";
 
 export const createRepair = z.object({
     body: z.object({
@@ -9,10 +10,10 @@ export const createRepair = z.object({
         returnDate: z.coerce.date().optional(),
         notes: z.string().optional(),
         problemDescription: z.string(),
-        productId:z.number().positive(),
-        shopId:z.number().positive(),
-        statusId:z.number().positive(),
-        customerId:z.number().positive()
+        productId:idParam,
+        shopId:idParam,
+        statusId:idParam,
+        customerId:idParam
     }),
     query: z.object({}),
     params: z.object({})
@@ -20,8 +21,6 @@ export const createRepair = z.object({
 
 export const updateRepair = z.object({
     body: z.object({
-        shopId:z.number().positive(),
-        repairId:z.number().positive(),
         estimatedHours:z.number().positive().optional(),
         workedHours:z.number().positive().optional(),
         receivedDate:z.coerce.date().optional(),
@@ -29,8 +28,46 @@ export const updateRepair = z.object({
         returnDate: z.coerce.date().optional(),
         notes: z.string().optional(),
         problemDescription: z.string().optional(),
-        statusId:z.number().positive()
+        statusId:idParam
     }),
     query: z.object({}),
-    params: z.object({})
+    params: z.object({
+        shopId:idParam,
+        repairId:idParam,
+    })
+});
+
+export const findAllByShopId = z.object({
+    body:z.object({}).optional(),
+    query:z.object({}),
+    params:z.object({
+        shopId:idParam
+    })
+});
+
+export const findById = z.object({
+    body:z.object({}).optional(),
+    query:z.object({}),
+    params:z.object({
+        shopId:idParam,
+        repairId:idParam
+    })
+});
+
+export const findAllByStatusId = z.object({
+    body:z.object({}).optional(),
+    query:z.object({}),
+    params:z.object({
+        shopId:idParam,
+        statusId:idParam
+    })
+});
+
+export const findAllByCustomerId = z.object({
+    body:z.object({}).optional(),
+    query:z.object({}),
+    params:z.object({
+        shopId:idParam,
+        customerId:idParam
+    })
 });

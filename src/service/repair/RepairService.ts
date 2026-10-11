@@ -18,9 +18,9 @@ export const findAllByShopId = (shopId:number) =>{
     return repairRepository.findAllByShopId(shopId);
 }
 
-export const findByRepairId = (shopId:number,repairId:number) =>{
+export const findById = (shopId:number,repairId:number) =>{
     try {
-        return repairRepository.findByRepairId(shopId,repairId);
+        return repairRepository.findById(shopId,repairId);
     } catch (error) {
         mapPrismaError(error,'Repair',repairId.toString());
     }
