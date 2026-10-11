@@ -15,7 +15,7 @@ paymentRouter.get('/payment/id',
                     paymentController.findById);
 
 paymentRouter.get('/payment/reference',
-                    validateRecord(numberOrStringParameter),
+                    // validateRecord(numberOrStringParameter),
                     paymentController.findByReference);
 
 paymentRouter.post('/payment/create',

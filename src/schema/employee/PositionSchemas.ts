@@ -16,3 +16,7 @@ export const updatePosition = z.object({
     query:z.object({}),
     params:z.object({})
 });
+
+export const findById = z.object({
+    
+});

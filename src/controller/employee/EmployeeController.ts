@@ -4,7 +4,8 @@ import { controllerResponse } from '../../common/utils/ControllerResponse';
 import HttpStatusCodes from '../../common/constants/HttpStatusCodes';
 
 export const findAllByShopId = async (req:Request,res:Response,next:NextFunction) =>{
-    const {shopId} = req.body;
+    const shopId = Number(req.params.shopId);
+    console.log(shopId);
     try {
         const employees = await employeeService.findAllByShopId(shopId);
         return controllerResponse(res,HttpStatusCodes.OK,employees);
@@ -14,7 +15,8 @@ export const findAllByShopId = async (req:Request,res:Response,next:NextFunction
 }
 
 export const findByName = async (req:Request,res:Response,next:NextFunction) =>{
-    const {shopId,name} = req.body;
+    const shopId = Number(req.params.shopId);
+    const name = String(res.locals.validatedQuery.name);
     try {
         const employee = await employeeService.findByName(shopId,name);
         return controllerResponse(res,HttpStatusCodes.OK,employee);
@@ -24,7 +26,8 @@ export const findByName = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const findById = async (req:Request,res:Response,next:NextFunction) =>{
-    const {shopId,employeeId} = req.body;
+    const shopId = Number(req.params.shopId);
+    const employeeId = Number(req.params.employeeId);
     try {
         const employee = await employeeService.findById(shopId,employeeId);
         return controllerResponse(res,HttpStatusCodes.OK,employee);
@@ -56,7 +59,8 @@ export const update = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const remove = async (req:Request,res:Response,next:NextFunction) =>{
-    const {shopId,employeeId} = req.body;
+    const shopId = Number(req.params.shopId);
+    const employeeId = Number(req.params.employeeId);
     try {
         await employeeService.remove(shopId,employeeId);
         return controllerResponse(res,HttpStatusCodes.NO_CONTENT,'Deleted successfully');

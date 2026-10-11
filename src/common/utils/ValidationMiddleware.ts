@@ -20,8 +20,8 @@ export const validateSchema = (schema:RequestSchema) =>{
 
             //Change the unvalidated data for the validated one
             req.body = parsed.body;
-            req.query = parsed.query;
             req.params = parsed.params;
+            res.locals.validatedQuery = parsed.query;
 
             //If there are no error then procede
             next(); 
