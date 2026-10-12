@@ -13,7 +13,7 @@ export const findById = (shopId:number,repairId:number,pieceId:number) =>{
     try {
         return repairPartRepository.findById(shopId,repairId,pieceId);
     } catch (error) {
-        mapPrismaError(error,'Repair Piece', `Shop Id:${shopId} Repair Id"${repairId} Piece Id"${pieceId}`);
+        mapPrismaError(error,'Repair Piece',pieceId.toString());
     }
 }
 
@@ -41,7 +41,7 @@ export const create = (dto:CreateRepairPartDto) =>{
     }
 }
 
-export const update = (dto:UpdateRepairPartDto) =>{
+export const update = (shopId:number,repairId:number,pieceId:number,dto:UpdateRepairPartDto) =>{
     const newRepairPart:RepairPartUpdateInput = {
         quantity:dto.quantity,
         unitPrice:dto.unitPrice,
@@ -49,9 +49,9 @@ export const update = (dto:UpdateRepairPartDto) =>{
     }
 
     try {
-        return repairPartRepository.update(dto.shopId,dto.repairId,dto.pieceId,newRepairPart);
+        return repairPartRepository.update(shopId,repairId,pieceId,newRepairPart);
     } catch (error) {
-        mapPrismaError(error,'Repair Part',`Shop Id:${dto.shopId} Repair Id:${dto.repairId} Piece Id:${dto.pieceId}`);
+        mapPrismaError(error,'Repair Part',pieceId.toString());
     }
 }
 
@@ -59,6 +59,6 @@ export const remove = (shopId:number,repairId:number,pieceId:number) =>{
     try {
         return repairPartRepository.remove(shopId,repairId,pieceId);
     } catch (error) {
-        mapPrismaError(error,'Repair Part',`Shop Id:${shopId} Repair Id:${repairId} Piece Id:${pieceId}`);
+        mapPrismaError(error,'Repair Part',pieceId.toString());
     }
 }

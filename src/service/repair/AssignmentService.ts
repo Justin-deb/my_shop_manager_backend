@@ -51,13 +51,16 @@ export const create = (dto:CreateAssignmentDto) =>{
     }
 }
 
-export const update = (dto:UpdateAssignmentDto) =>{
-    const newAssignment:AssignmentUpdateInput ={
-        finishedAt:dto.finishedAt,
-        employee:{
+export const update = (shopId:number,assignmentId:number,dto:UpdateAssignmentDto) =>{
+    let newAssignment:AssignmentUpdateInput ={
+        finishedAt:dto.finishedAt
+    }
+
+    if(dto.employeeId){
+        newAssignment.employee = {
             connect:{
                 shopId_userId:{
-                    shopId:dto.shopId,
+                    shopId:shopId,
                     userId:dto.employeeId
                 }
             }
@@ -65,9 +68,9 @@ export const update = (dto:UpdateAssignmentDto) =>{
     }
 
     try {
-        return assignmentRepository.update(dto.shopId,dto.assignmentId,newAssignment);
+        return assignmentRepository.update(shopId,assignmentId,newAssignment);
     } catch (error) {
-        mapPrismaError(error,'Assignment',dto.assignmentId.toString());
+        mapPrismaError(error,'Assignment',assignmentId.toString());
     }
 }
 

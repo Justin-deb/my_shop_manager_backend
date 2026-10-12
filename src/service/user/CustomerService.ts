@@ -58,16 +58,16 @@ export const create = (dto:CreateCustomerDto) =>{
     }
 }
 
-export const update = (dto:UpdateCustomerDto) =>{
+export const update = (shopId:number,customerId:number,dto:UpdateCustomerDto) =>{
     const newCustomer:CustomerUpdateInput = {
         email:dto.email,
         phoneNumber:dto.phoneNumber
     }
 
     try {
-        return customerRepository.update(dto.shopId,dto.customerId,newCustomer)
+        return customerRepository.update(shopId,customerId,newCustomer)
     } catch (error) {
-        mapPrismaError(error,'Customer',dto.customerId.toString());
+        mapPrismaError(error,'Customer',customerId.toString());
     }
 }
 

@@ -36,7 +36,7 @@ export const create = (dto:CreateLaborDto) =>{
     }
 }
 
-export const update = (dto:UpdateLaborDto) =>{
+export const update = (shopId:number,repairId:number,laborId:number,dto:UpdateLaborDto) =>{
     const newLabor: LaborUpdateInput = {
         description:dto.description,
         hours:dto.hours,
@@ -45,9 +45,9 @@ export const update = (dto:UpdateLaborDto) =>{
     }
 
     try {
-        return laborRepository.update(dto.shopId,dto.repairId,dto.laborId,newLabor);
+        return laborRepository.update(shopId,repairId,laborId,newLabor);
     } catch (error) {
-        mapPrismaError(error,'Labor',`Shop Id:${dto.shopId} Repair Id:${dto.repairId} Labor Id:${dto.laborId}`);
+        mapPrismaError(error,'Labor',laborId.toString());
     }
 }
 
@@ -55,6 +55,6 @@ export const remove = (shopId:number,repairId:number,laborId:number) =>{
     try {
         return laborRepository.remove(shopId,repairId,laborId);
     } catch (error) {
-        mapPrismaError(error,'Labor',`Shop Id:${shopId} Repair Id:${repairId} Labor Id:${laborId}`);
+        mapPrismaError(error,'Labor',laborId.toString());
     }
 }

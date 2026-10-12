@@ -53,7 +53,7 @@ export const create = (dto:CreateProductDto) =>{
     }
 }
 
-export const update = (dto:UpdateProductDto) =>{
+export const update = (productId:number,dto:UpdateProductDto) =>{
     const newProduct: ProductUpdateInput = {
         manufacturer:dto.manufacturer,
         model:dto.model,
@@ -68,9 +68,9 @@ export const update = (dto:UpdateProductDto) =>{
     }
 
     try {
-        return productRepository.update(dto.productId,newProduct);
+        return productRepository.update(productId,newProduct);
     } catch (error) {
-        mapPrismaError(error,'Product',dto.productId.toString());
+        mapPrismaError(error,'Product',productId.toString());
     }
 }
 

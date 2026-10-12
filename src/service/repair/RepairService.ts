@@ -75,7 +75,7 @@ export const create = (dto:CreateRepairDto) =>{
     }
 }
 
-export const update = (dto:UpdateRepairDto) =>{
+export const update = (shopId:number,repairId:number,dto:UpdateRepairDto) =>{
     const newRepair:RepairUpdateInput = {
         estimatedHours:dto.estimatedHours,
         workedHours:dto.workedHours,
@@ -92,9 +92,9 @@ export const update = (dto:UpdateRepairDto) =>{
     }
 
     try {
-        return repairRepository.update(dto.shopId,dto.repairId,newRepair);
+        return repairRepository.update(shopId,repairId,newRepair);
     } catch (error) {
-        mapPrismaError(error,'Repair',dto.repairId.toString());
+        mapPrismaError(error,'Repair',repairId.toString());
     }
 }
 

@@ -49,7 +49,7 @@ export const create = (dto:CreatePaymentDto) =>{
     }
 }
 
-export const update = (dto:UpdatePaymentDto) =>{
+export const update = (shopId:number,invoiceId:number,paymentId:number,dto:UpdatePaymentDto) =>{
     const newPayment:PaymentUpdateInput = {
         paymentStatus:{
             connect:{
@@ -59,9 +59,9 @@ export const update = (dto:UpdatePaymentDto) =>{
     }
 
     try {
-        return paymentRepository.update(dto.shopId,dto.invoiceId,dto.paymentId,newPayment);
+        return paymentRepository.update(shopId,invoiceId,paymentId,newPayment);
     } catch (error) {
-        mapPrismaError(error,'Payment',dto.paymentId.toString());
+        mapPrismaError(error,'Payment',paymentId.toString());
     }
 }
 

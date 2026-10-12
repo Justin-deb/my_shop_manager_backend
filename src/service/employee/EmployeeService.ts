@@ -46,7 +46,7 @@ export const create = (dto:CreateEmployeeDto) =>{
     }
 }
 
-export const update = (dto:UpdateEmployeeDto) =>{
+export const update = (shopId:number,userId:number,dto:UpdateEmployeeDto) =>{
     const newEmployee:EmployeeUpdateInput = {
         position:{
             connect:{
@@ -56,9 +56,9 @@ export const update = (dto:UpdateEmployeeDto) =>{
     }
 
     try {
-        return employeeRepository.update(dto.shopId,dto.userId,newEmployee);
+        return employeeRepository.update(shopId,userId,newEmployee);
     } catch (error) {
-        mapPrismaError(error,"Employee",dto.userId.toString());
+        mapPrismaError(error,"Employee",userId.toString());
     }
 }
 

@@ -41,7 +41,7 @@ export const create = (dto:CreateShopDto) =>{
     }
 }
 
-export const update = (dto:UpdateShopDto) =>{
+export const update = (shopId:number,dto:UpdateShopDto) =>{
     const newShop:ShopUpdateInput = {
         name:dto.name,
         address:dto.address,
@@ -51,9 +51,9 @@ export const update = (dto:UpdateShopDto) =>{
     }
 
     try {
-        return shopRepository.update(dto.shopId,newShop);
+        return shopRepository.update(shopId,newShop);
     } catch (error) {
-        mapPrismaError(error,'Shop',dto.shopId.toString());
+        mapPrismaError(error,'Shop',shopId.toString());
     }
 }
 
