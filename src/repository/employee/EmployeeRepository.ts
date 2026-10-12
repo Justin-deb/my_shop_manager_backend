@@ -48,23 +48,23 @@ export const create = (employee:EmployeeCreateInput) =>{
     });
 }
 
-export const update = (shopId:number,userId:number,employee:EmployeeUpdateInput) =>{
+export const update = (shopId:number,employeeId:number,employee:EmployeeUpdateInput) =>{
     return prisma.employee.update({
         where:{
             shopId_userId:{
                 shopId,
-                userId
+                userId:employeeId
             }
         },data:employee
     });
 }
 
-export const remove = (shopId:number,userId:number) =>{
+export const remove = (shopId:number,employeeId:number) =>{
     return prisma.employee.delete({
         where:{
             shopId_userId:{
                 shopId,
-                userId
+                userId:employeeId
             }
         }
     });

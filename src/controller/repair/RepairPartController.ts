@@ -2,9 +2,11 @@ import { Request,Response,NextFunction } from 'express';
 import * as repairPartService from '../../service/repair/RepairPartService';
 import { controllerResponse } from '../../common/utils/ControllerResponse';
 import HttpStatusCodes from '../../common/constants/HttpStatusCodes';
+import { getParamNumber } from '../../common/utils/ParameterExtraction';
 
 export const findAllByRepairId = async (req:Request,res:Response,next:NextFunction) =>{
-    const {shopId,repairId} = req.body;
+    const shopId = getParamNumber(req,'shopId');
+    const repairId = getParamNumber(req,'repairId');
     try {
         const repairParts = await repairPartService.findAllByRepairId(shopId,repairId);
         return controllerResponse(res,HttpStatusCodes.OK,repairParts);
@@ -14,7 +16,9 @@ export const findAllByRepairId = async (req:Request,res:Response,next:NextFuncti
 }
 
 export const findById = async (req:Request,res:Response,next:NextFunction) =>{
-    const {shopId,repairId,pieceId} = req.body;
+    const shopId = getParamNumber(req,'shopId');
+    const repairId = getParamNumber(req,'repairId');
+    const pieceId = getParamNumber(req,'pieceId');
     try {
         const repairPart = await repairPartService.findById(shopId,repairId,pieceId);
         return controllerResponse(res,HttpStatusCodes.OK,repairPart);
@@ -37,9 +41,12 @@ export const create = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const update = async (req:Request,res:Response,next:NextFunction) =>{
+    const shopId = getParamNumber(req,'shopId');
+    const repairId = getParamNumber(req,'repairId');
+    const pieceId = getParamNumber(req,'pieceId');
     const {dto} = req.body;
     try {
-        await repairPartService.update(dto);
+        await repairPartService.update(shopId,repairId,pieceId,dto);
         return controllerResponse(res,HttpStatusCodes.OK,'Updated successfully');
     } catch (error) {
         next(error);
@@ -47,7 +54,9 @@ export const update = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const remove = async (req:Request,res:Response,next:NextFunction) =>{
-    const {shopId,repairId,pieceId} = req.body;
+    const shopId = getParamNumber(req,'shopId');
+    const repairId = getParamNumber(req,'repairId');
+    const pieceId = getParamNumber(req,'pieceId');
     try {
         await repairPartService.remove(shopId,repairId,pieceId);
         return controllerResponse(res,HttpStatusCodes.NO_CONTENT,'Deleted successfully');

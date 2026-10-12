@@ -2,9 +2,12 @@ import { Request,Response,NextFunction } from 'express';
 import * as laborService from '../../service/repair/LaborService';
 import { controllerResponse } from '../../common/utils/ControllerResponse';
 import HttpStatusCodes from '../../common/constants/HttpStatusCodes';
+import { getParamNumber } from '../../common/utils/ParameterExtraction';
 
 export const findById = async (req:Request,res:Response,next:NextFunction) =>{
-    const{shopId, repairId, laborId} = req.body;
+    const shopId = getParamNumber(req,'shopId');
+    const repairId = getParamNumber(req,'repairId');
+    const laborId = getParamNumber(req,'laborId');
     try {
         const repair = await laborService.findById(shopId,repairId,laborId);
         return controllerResponse(res,HttpStatusCodes.OK,repair);
@@ -14,7 +17,8 @@ export const findById = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const findAllByRepairId = async (req:Request,res:Response,next:NextFunction) =>{
-    const {shopId, repairId} = req.body;
+    const shopId = getParamNumber(req,'shopId');
+    const repairId = getParamNumber(req,'repairId');
     try {
         const repairs = await laborService.findAllByRepairId(shopId, repairId);    
         return controllerResponse(res,HttpStatusCodes.OK,repairs);
@@ -36,9 +40,12 @@ export const create = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const update = async (req:Request,res:Response,next:NextFunction) =>{
+    const shopId = getParamNumber(req,'shopId');
+    const repairId = getParamNumber(req,'repairId');
+    const laborId = getParamNumber(req,'laborId');
     const {dto} = req.body;
     try {
-        await laborService.update(dto);
+        await laborService.update(shopId,repairId,laborId,dto);
         return controllerResponse(res,HttpStatusCodes.OK,'Updated successfully');
     } catch (error) {
         next(error);
@@ -46,7 +53,9 @@ export const update = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const remove = async (req:Request,res:Response,next:NextFunction) =>{
-    const {shopId,repairId,laborId} = req.body;
+    const shopId = getParamNumber(req,'shopId');
+    const repairId = getParamNumber(req,'repairId');
+    const laborId = getParamNumber(req,'laborId');
     try {
         await laborService.remove(shopId,repairId,laborId);
         return controllerResponse(res,HttpStatusCodes.NO_CONTENT,'Deleted successfully');

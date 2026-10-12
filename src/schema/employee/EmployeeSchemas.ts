@@ -13,12 +13,13 @@ export const createEmployee = z.object({
 
 export const updateEmployee = z.object({
     body:z.object({
-        shopId:idParam,
-        userId:idParam,
         positionId:idParam
     }),
     query:z.object({}),
-    params:z.object({})
+    params:z.object({
+        shopId:idParam,
+        employeeId:idParam
+    })
 });
 
 export const findAllByShopId = z.object({

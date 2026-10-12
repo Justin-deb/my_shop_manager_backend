@@ -2,9 +2,11 @@ import { Request,Response,NextFunction } from 'express';
 import * as invoiceService from '../../service/payment/InvoiceService';
 import { controllerResponse } from '../../common/utils/ControllerResponse';
 import HttpStatusCodes from '../../common/constants/HttpStatusCodes';
+import { getParamNumber } from '../../common/utils/ParameterExtraction';
 
 export const findAllByRepairId = async (req:Request,res:Response,next:NextFunction) =>{
-    const {shopId,repairId} = req.body;
+    const shopId = getParamNumber(req,'shopId');
+    const repairId = getParamNumber(req,'repairId');
     try {
         const invoices = await invoiceService.findAllByRepairId(shopId,repairId);
         return controllerResponse(res,HttpStatusCodes.OK,invoices);
@@ -14,7 +16,8 @@ export const findAllByRepairId = async (req:Request,res:Response,next:NextFuncti
 }
 
 export const findById = async (req:Request,res:Response,next:NextFunction) =>{
-    const {shopId,invoiceId} = req.body;
+    const shopId = getParamNumber(req,'shopId');
+    const invoiceId = getParamNumber(req,'invoiceId');
     try {
         const invoice = await invoiceService.findById(shopId,invoiceId);
         return controllerResponse(res,HttpStatusCodes.OK,invoice);
@@ -36,9 +39,11 @@ export const create = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const update = async (req:Request,res:Response,next:NextFunction) =>{
+    const shopId = getParamNumber(req,'shopId');
+    const invoiceId = getParamNumber(req,'invoiceId');
     const {dto} = req.body;
     try {
-        await invoiceService.update(dto);
+        await invoiceService.update(shopId,invoiceId,dto);
         return controllerResponse(res,HttpStatusCodes.OK,'Updated successfully');
     } catch (error) {
         next(error);
@@ -46,7 +51,8 @@ export const update = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const remove = async (req:Request,res:Response,next:NextFunction) =>{
-    const {shopId,invoiceId} = req.body;
+    const shopId = getParamNumber(req,'shopId');
+    const invoiceId = getParamNumber(req,'invoiceId');
     try {
         await invoiceService.remove(shopId,invoiceId);
         return controllerResponse(res,HttpStatusCodes.NO_CONTENT,'Deleted successfully');

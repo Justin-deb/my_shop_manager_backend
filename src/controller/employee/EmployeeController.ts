@@ -2,10 +2,10 @@ import { Request,Response,NextFunction } from 'express';
 import * as employeeService from '../../service/employee/EmployeeService';
 import { controllerResponse } from '../../common/utils/ControllerResponse';
 import HttpStatusCodes from '../../common/constants/HttpStatusCodes';
+import { getParamNumber, getQueryString } from '../../common/utils/ParameterExtraction';
 
 export const findAllByShopId = async (req:Request,res:Response,next:NextFunction) =>{
-    const shopId = Number(req.params.shopId);
-    console.log(shopId);
+    const shopId = getParamNumber(req,'shopId');
     try {
         const employees = await employeeService.findAllByShopId(shopId);
         return controllerResponse(res,HttpStatusCodes.OK,employees);
@@ -15,8 +15,8 @@ export const findAllByShopId = async (req:Request,res:Response,next:NextFunction
 }
 
 export const findByName = async (req:Request,res:Response,next:NextFunction) =>{
-    const shopId = Number(req.params.shopId);
-    const name = String(res.locals.validatedQuery.name);
+    const shopId = getParamNumber(req,'shopId');
+    const name = getQueryString(res,'name');
     try {
         const employee = await employeeService.findByName(shopId,name);
         return controllerResponse(res,HttpStatusCodes.OK,employee);
@@ -26,8 +26,8 @@ export const findByName = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const findById = async (req:Request,res:Response,next:NextFunction) =>{
-    const shopId = Number(req.params.shopId);
-    const employeeId = Number(req.params.employeeId);
+    const shopId = getParamNumber(req,'shopId');
+    const employeeId = getParamNumber(req,'employeeId');
     try {
         const employee = await employeeService.findById(shopId,employeeId);
         return controllerResponse(res,HttpStatusCodes.OK,employee);
@@ -49,9 +49,11 @@ export const create = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const update = async (req:Request,res:Response,next:NextFunction) =>{
+    const shopId = getParamNumber(req,'shopId');
+    const employeeId = getParamNumber(req,'employeeId');
     const {dto} = req.body;
     try {
-        await employeeService.update(dto);
+        await employeeService.update(shopId,employeeId,dto);
         return controllerResponse(res,HttpStatusCodes.OK,'Updated successfully');
     } catch (error) {
         next(error);
@@ -59,8 +61,8 @@ export const update = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const remove = async (req:Request,res:Response,next:NextFunction) =>{
-    const shopId = Number(req.params.shopId);
-    const employeeId = Number(req.params.employeeId);
+    const shopId = getParamNumber(req,'shopId');
+    const employeeId = getParamNumber(req,'employeeId');
     try {
         await employeeService.remove(shopId,employeeId);
         return controllerResponse(res,HttpStatusCodes.NO_CONTENT,'Deleted successfully');

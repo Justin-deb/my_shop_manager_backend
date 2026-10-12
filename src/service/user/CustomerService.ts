@@ -26,13 +26,13 @@ export const findById = (shopId:number,customerId:number) =>{
     }
 }
 
-export const findByFullName = (dto:FullNameCustomerDto) =>{
+export const findByFullName = (shopId:number,dto:FullNameCustomerDto) =>{
     try {
-        return customerRepository.findByFullName(dto.firstName,dto.lastName,dto.secondLastName,dto.shopId,dto.middleName);
+        return customerRepository.findByFullName(shopId,dto.firstName,dto.lastName,dto.secondLastName,dto.middleName);
     } catch (error) {
         mapPrismaError(error,
             'Customer',
-            `${dto.firstName} ${dto.middleName ? dto.middleName : ''} ${dto.lastName} ${dto.secondLastName} for shop ${dto.shopId}`);
+            `${dto.firstName} ${dto.middleName ? dto.middleName : ''} ${dto.lastName} ${dto.secondLastName}`);
     }
 }
 
