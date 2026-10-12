@@ -16,7 +16,7 @@ export const createAssignment = z.object({
 export const updateAssignment = z.object({
     body:z.object({
         finishedAt:z.coerce.date().optional(),
-        employeeId:idParam
+        employeeId:idParam.optional()
     }),
     query:z.object({}),
     params:z.object({

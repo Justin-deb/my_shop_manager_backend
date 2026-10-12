@@ -1,6 +1,4 @@
 export interface UpdateRepairDto{
-    shopId:number;
-    repairId:number;
     estimatedHours?:number;
     workedHours?:number;
     receivedDate?: Date | string;
