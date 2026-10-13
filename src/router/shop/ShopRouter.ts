@@ -1,32 +1,31 @@
 import { Router } from 'express';
 import * as shopController from '../../controller/shop/ShopController';
-import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { numberParameter } from '../../schema/common/SearchParameters';
-import { createShop, updateShop } from '../../schema/shop/ShopSchemas';
+import * as schemas from '../../schema/shop/ShopSchemas';
+import { validateSchema } from '../../common/utils/ValidationMiddleware';
 
 const shopRouter = Router();
 
 shopRouter.get('/shop/all',
                 shopController.findAll);
 
-shopRouter.get('/shop/id',
-                validateRecord(numberParameter),
+shopRouter.get('/shop/id/:shopId',
+                validateSchema(schemas.findById),
                 shopController.findById);
 
-shopRouter.get('/shop/ownerId',
-                validateRecord(numberParameter),
+shopRouter.get('/shop/ownerId/:ownerId',
+                validateSchema(schemas.findByOwnerId),
                 shopController.findByOwnerId);
 
 shopRouter.post('/shop/create',
-                validateSchema(createShop),
+                validateSchema(schemas.createShop),
                 shopController.create);
 
-shopRouter.put('/shop/update',
-                validateSchema(updateShop),
+shopRouter.put('/shop/update/:shopId',
+                validateSchema(schemas.updateShop),
                 shopController.update);
 
-shopRouter.delete('/shop/delete',
-                validateRecord(numberParameter),
+shopRouter.delete('/shop/delete/:shopId',
+                validateSchema(schemas.findById),
                 shopController.remove);
 
 export default shopRouter;

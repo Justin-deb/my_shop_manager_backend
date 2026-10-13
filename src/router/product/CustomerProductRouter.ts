@@ -1,33 +1,32 @@
 import { Router } from 'express';
 import * as customerProductController from '../../controller/product/CustomerProductController';
-import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { numberParameter } from '../../schema/common/SearchParameters';
-import { createCustomerProduct, updateCustomerProduct } from '../../schema/product/CustomerProductSchemas';
+import * as schemas from '../../schema/product/CustomerProductSchemas';
+import { validateSchema } from '../../common/utils/ValidationMiddleware';
 
 const customerProductRouter = Router();
 
-customerProductRouter.get('/customerProduct/id',
-                            validateRecord(numberParameter),
+customerProductRouter.get('/customerProduct/id/:shopId/:customerId/:productId',
+                            validateSchema(schemas.findById),
                             customerProductController.findById);
 
-customerProductRouter.get('/customerProduct/customerId',
-                            validateRecord(numberParameter),
+customerProductRouter.get('/customerProduct/customerId/:shopId/:customerId',
+                            validateSchema(schemas.findByCustomerId),
                             customerProductController.findByCustomerId);
 
-customerProductRouter.get('/customerProduct/productId',
-                            validateRecord(numberParameter),
+customerProductRouter.get('/customerProduct/productId/:shopId/:productId',
+                            validateSchema(schemas.findByProductId),
                             customerProductController.findByProductId);
 
 customerProductRouter.post('/customerProduct/create',
-                            validateSchema(createCustomerProduct),
+                            validateSchema(schemas.createCustomerProduct),
                             customerProductController.create);
 
-customerProductRouter.put('/customerProduct/update',
-                            validateSchema(updateCustomerProduct),
+customerProductRouter.put('/customerProduct/update/:shopId/:customerId/:productId',
+                            validateSchema(schemas.updateCustomerProduct),
                             customerProductController.update);
 
-customerProductRouter.delete('/customerProduct/delete',
-                            validateRecord(numberParameter),
+customerProductRouter.delete('/customerProduct/delete/:shopId/:customerId/:productId',
+                            validateSchema(schemas.findById),
                             customerProductController.remove);
 
 export default customerProductRouter;

@@ -1,29 +1,28 @@
 import { Router } from 'express';
 import * as invoiceController from '../../controller/payment/InvoiceController';
-import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { numberParameter } from '../../schema/common/SearchParameters';
-import { createInvoice, updateInvoice } from '../../schema/payment/InvoiceSchemas';
+import * as schemas from '../../schema/payment/InvoiceSchemas';
+import { validateSchema } from '../../common/utils/ValidationMiddleware';
 
 const invoiceRouter = Router();
 
-invoiceRouter.get('/invoice/allRepairId',
-                    validateRecord(numberParameter),
+invoiceRouter.get('/invoice/allRepairId/:shopId/:repairId',
+                    validateSchema(schemas.findAllByRepairId),
                     invoiceController.findAllByRepairId);
 
-invoiceRouter.get('/invoice/id',
-                    validateRecord(numberParameter),
+invoiceRouter.get('/invoice/id/:shopId/:invoiceId',
+                    validateSchema(schemas.findById),
                     invoiceController.findById);
 
 invoiceRouter.post('/invoice/create',
-                    validateSchema(createInvoice),
+                    validateSchema(schemas.createInvoice),
                     invoiceController.create);
 
-invoiceRouter.put('/invoice/update',
-                    validateSchema(updateInvoice),
+invoiceRouter.put('/invoice/update/:shopId/:invoiceId',
+                    validateSchema(schemas.updateInvoice),
                     invoiceController.update);
 
-invoiceRouter.delete('/invoice/delete',
-                    validateRecord(numberParameter),
+invoiceRouter.delete('/invoice/delete/:shopId/:invoiceId',
+                    validateSchema(schemas.findById),
                     invoiceController.remove);
 
 export default invoiceRouter;

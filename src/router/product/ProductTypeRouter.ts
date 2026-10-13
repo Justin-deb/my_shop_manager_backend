@@ -1,32 +1,31 @@
 import { Router } from 'express';
 import * as productTypeController from '../../controller/product/ProductTypeController';
-import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { numberParameter, stringParameter } from '../../schema/common/SearchParameters';
-import { createProductType, updateProductType } from '../../schema/product/ProductTypeSchemas';
+import * as schemas from '../../schema/product/ProductTypeSchemas';
+import { validateSchema } from '../../common/utils/ValidationMiddleware';
 
 const productTypeRouter = Router();
 
 productTypeRouter.get('/productType/all',
                         productTypeController.findAll);
 
-productTypeRouter.get('/productType/id',
-                        validateRecord(numberParameter),
+productTypeRouter.get('/productType/id/:productTypeId',
+                        validateSchema(schemas.findById),
                         productTypeController.findById);
 
 productTypeRouter.get('/productType/name',
-                        validateRecord(stringParameter),
+                        validateSchema(schemas.findByName),
                         productTypeController.findByName);
 
 productTypeRouter.post('/productType/create',
-                        validateSchema(createProductType),
+                        validateSchema(schemas.createProductType),
                         productTypeController.create);
 
-productTypeRouter.put('/productType/update',
-                        validateSchema(updateProductType),
+productTypeRouter.put('/productType/update/:productTypeId',
+                        validateSchema(schemas.updateProductType),
                         productTypeController.update);
 
-productTypeRouter.delete('/productType/delete',
-                        validateRecord(numberParameter),
+productTypeRouter.delete('/productType/delete/:productTypeId',
+                        validateSchema(schemas.findById),
                         productTypeController.remove);
 
 export default productTypeRouter

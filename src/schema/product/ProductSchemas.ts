@@ -49,7 +49,7 @@ export const findByProductionYear = z.object({
     body:z.object({}).optional(),
     query:z.object({}),
     params:z.object({
-        productionYear:z.coerce.number().int().positive()
+        productionYear:z.string().regex(/^\d+$/,{message:'Not a valid number'})
     })
 });
 

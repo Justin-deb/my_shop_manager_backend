@@ -1,11 +1,11 @@
 import { Router } from "express";
-import employeeIndexRouter from "./employee/Index";
-import paymentIndexRouter from "./payment/Index";
-import pieceIndexRouter from "./piece/Index";
-import productIndexRouter from "./product/Index";
-import repairIndexRouter from "./repair/Index";
-import shopIndexRouter from "./shop/Index";
-import userIndexRouter from "./user/Index";
+import employeeIndexRouter from "./employee/index/Index";
+import paymentIndexRouter from "./payment/index/Index";
+import pieceIndexRouter from "./piece/index/Index";
+import productIndexRouter from "./product/index/Index";
+import repairIndexRouter from "./repair/index/Index";
+import shopIndexRouter from "./shop/index/Index";
+import userIndexRouter from "./user/index/Index";
 
 const router = Router();
 

@@ -1,32 +1,31 @@
 import { Router } from 'express';
 import * as pieceController from '../../controller/piece/PieceController';
-import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { numberParameter, stringParameter } from '../../schema/common/SearchParameters';
-import { createPiece, updatePiece } from '../../schema/piece/PieceSchemas';
+import * as schemas from '../../schema/piece/PieceSchemas';
+import { validateSchema } from '../../common/utils/ValidationMiddleware';
 
 const pieceRouter = Router();
 
 pieceRouter.get('/piece/all',
                     pieceController.findAll);
 
-pieceRouter.get('/piece/id',
-                    validateRecord(numberParameter),
+pieceRouter.get('/piece/id/:pieceId',
+                    validateSchema(schemas.findById),
                     pieceController.findById);
 
 pieceRouter.get('/piece/name',
-                    validateRecord(stringParameter),
+                    validateSchema(schemas.findByName),
                     pieceController.findByName);
 
 pieceRouter.post('/piece/create',
-                    validateSchema(createPiece),
+                    validateSchema(schemas.createPiece),
                     pieceController.create);
 
-pieceRouter.put('/piece/update',
-                    validateSchema(updatePiece),
+pieceRouter.put('/piece/update/:pieceId',
+                    validateSchema(schemas.updatePiece),
                     pieceController.update);
 
-pieceRouter.delete('/piece/delete',
-                    validateRecord(numberParameter),
+pieceRouter.delete('/piece/delete/:pieceId',
+                    validateSchema(schemas.findById),
                     pieceController.remove);
 
 export default pieceRouter;

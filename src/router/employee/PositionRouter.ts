@@ -1,32 +1,31 @@
 import { Router } from 'express';
 import * as positionController from '../../controller/employee/PositionController';
-import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { numberParameter, stringParameter } from '../../schema/common/SearchParameters';
-import { createPosition, updatePosition } from '../../schema/employee/PositionSchemas';
+import * as schemas from '../../schema/employee/PositionSchemas';
+import { validateSchema } from '../../common/utils/ValidationMiddleware';
 
 const positionRouter = Router();
 
 positionRouter.get('/position/all',
                     positionController.findAll);
 
-positionRouter.get('/position/id',
-                    validateRecord(numberParameter),
+positionRouter.get('/position/id/:positionId',
+                    validateSchema(schemas.findById),
                     positionController.findById);
 
 positionRouter.get('/position/name',
-                    validateRecord(stringParameter),
+                    validateSchema(schemas.findByName),
                     positionController.findByName);
 
 positionRouter.post('/position/create',
-                    validateSchema(createPosition),
+                    validateSchema(schemas.createPosition),
                     positionController.create);
 
-positionRouter.put('/position/update',
-                    validateSchema(updatePosition),
+positionRouter.put('/position/update/:positionId',
+                    validateSchema(schemas.updatePosition),
                     positionController.update);
 
-positionRouter.delete('/position/delete',
-                    validateRecord(numberParameter),
+positionRouter.delete('/position/delete/:positionId',
+                    validateSchema(schemas.findById),
                     positionController.remove);
 
 export default positionRouter;

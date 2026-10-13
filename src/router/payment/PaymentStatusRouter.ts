@@ -1,32 +1,31 @@
 import { Router } from 'express';
 import * as paymentStatusController from '../../controller/payment/PaymentStatusController';
-import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { numberParameter, stringParameter } from '../../schema/common/SearchParameters';
-import { createPaymentStatus, updatePaymentStatus } from '../../schema/payment/PaymentStatusSchemas';
+import * as schemas from '../../schema/payment/PaymentStatusSchemas';
+import { validateSchema } from '../../common/utils/ValidationMiddleware';
 
 const paymentStatusRouter = Router();
 
 paymentStatusRouter.get('/paymentStatus/all',
                             paymentStatusController.findAll);
 
-paymentStatusRouter.get('/paymentStatus/id',
-                            validateRecord(numberParameter),
+paymentStatusRouter.get('/paymentStatus/id/:paymentStatusId',
+                            validateSchema(schemas.findById),
                             paymentStatusController.findById);
 
 paymentStatusRouter.get('/paymentStatus/name',
-                            validateRecord(stringParameter),
+                            validateSchema(schemas.findByName),
                             paymentStatusController.findByName);
 
 paymentStatusRouter.post('/paymentStatus/create',
-                            validateSchema(createPaymentStatus),
+                            validateSchema(schemas.createPaymentStatus),
                             paymentStatusController.create);
 
-paymentStatusRouter.put('/paymentStatus/update',
-                            validateSchema(updatePaymentStatus),
+paymentStatusRouter.put('/paymentStatus/update/:paymentStatusId',
+                            validateSchema(schemas.updatePaymentStatus),
                             paymentStatusController.update);
 
-paymentStatusRouter.delete('/paymentStatus/delete',
-                            validateRecord(numberParameter),
+paymentStatusRouter.delete('/paymentStatus/delete/:paymentStatusId',
+                            validateSchema(schemas.findById),
                             paymentStatusController.remove);
 
 export default paymentStatusRouter;
