@@ -37,7 +37,7 @@ export const create = (dto:CreateInvoiceDto) =>{
     }
 }
 
-export const update = (dto:UpdateInvoiceDto) =>{
+export const update = (shopId:number,invoiceId:number,dto:UpdateInvoiceDto) =>{
     const newInvoice:InvoiceUpdateInput = {
         subtotal:dto.subtotal,
         tax:dto.tax,
@@ -46,9 +46,9 @@ export const update = (dto:UpdateInvoiceDto) =>{
     };
 
     try {
-        return invoiceRepository.update(dto.shopId,dto.invoiceId,newInvoice);
+        return invoiceRepository.update(shopId,invoiceId,newInvoice);
     } catch (error) {
-        mapPrismaError(error,'Invoice',dto.invoiceId.toString());
+        mapPrismaError(error,'Invoice',invoiceId.toString());
     }
 }
 

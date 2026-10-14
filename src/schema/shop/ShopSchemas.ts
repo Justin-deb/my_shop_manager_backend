@@ -1,12 +1,13 @@
 import z from "zod";
+import { idParam } from "../common/SearchParameters";
 
 export const createShop = z.object({
     body:z.object({
-        userId:z.number().positive(),
+        userId:idParam,
         name:z.string(),
         address:z.string().optional(),
         phoneNumber:z.string().optional(),
-        email:z.string(),
+        email:z.email,
         photoUrl:z.string().optional()
     }),
     query:z.object({}),
@@ -15,13 +16,30 @@ export const createShop = z.object({
 
 export const updateShop = z.object({
     body:z.object({
-        shopId:z.number().positive(),
         name:z.string().optional(),
         address:z.string().optional(),
         phoneNumber:z.string().optional(),
-        email:z.string().optional(),
+        email:z.email().optional(),
         photoUrl:z.string().optional()
     }),
     query:z.object({}),
-    params:z.object({})
+    params:z.object({
+        shopId:idParam
+    })
+});
+
+export const findById = z.object({
+    body:z.object({}).optional(),
+    query:z.object({}),
+    params:z.object({
+        shopId:idParam
+    })
+});
+
+export const findByOwnerId = z.object({
+    body:z.object({}).optional(),
+    query:z.object({}),
+    params:z.object({
+        ownerId:idParam
+    })
 });

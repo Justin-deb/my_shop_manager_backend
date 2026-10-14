@@ -32,15 +32,15 @@ export const create = (dto:CreatePaymentStatusDto) =>{
     }
 }
 
-export const update = (dto:UpdatePaymentStatusDto) =>{
+export const update = (paymentStatusId:number,dto:UpdatePaymentStatusDto) =>{
     const newPaymentStatus:PaymentStatusCreateInput = {
         name:dto.name
     }
 
     try {
-        return paymentStatusRepository.update(dto.paymentStatusId,newPaymentStatus);
+        return paymentStatusRepository.update(paymentStatusId,newPaymentStatus);
     } catch (error) {
-        mapPrismaError(error,'Payment Status',dto.paymentStatusId.toString());
+        mapPrismaError(error,'Payment Status',paymentStatusId.toString());
     }
 }
 

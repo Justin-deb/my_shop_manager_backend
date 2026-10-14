@@ -2,6 +2,7 @@ import { Request,Response,NextFunction } from 'express';
 import * as pieceService from '../../service/piece/PieceService';
 import { controllerResponse } from '../../common/utils/ControllerResponse';
 import HttpStatusCodes from '../../common/constants/HttpStatusCodes';
+import { getParamNumber, getQueryString } from '../../common/utils/ParameterExtraction';
 
 export const findAll = async (req:Request,res:Response,next:NextFunction) =>{
     try {
@@ -13,7 +14,7 @@ export const findAll = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const findById = async (req:Request,res:Response,next:NextFunction) =>{
-    const {pieceId} = req.body;
+    const pieceId = getParamNumber(req,'PieceId')
     try {
         const piece = await pieceService.findById(pieceId);
         return controllerResponse(res,HttpStatusCodes.OK,piece);
@@ -23,7 +24,7 @@ export const findById = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const findByName = async (req:Request,res:Response,next:NextFunction) =>{
-    const {name} = req.body;
+    const name = getQueryString(res,'name');
     try {
         const pieces = await pieceService.findByName(name);
         return controllerResponse(res,HttpStatusCodes.OK,pieces);
@@ -45,9 +46,10 @@ export const create = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const update = async (req:Request,res:Response,next:NextFunction) =>{
+    const pieceId = getParamNumber(req,'pieceId');
     const {dto} = req.body;
     try {
-        await pieceService.update(dto);
+        await pieceService.update(pieceId,dto);
         return controllerResponse(res,HttpStatusCodes.OK,'Updated successfully');
     } catch (error) {
         next(error);
@@ -55,7 +57,7 @@ export const update = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const remove = async (req:Request,res:Response,next:NextFunction) =>{
-    const {pieceId} = req.body;
+    const pieceId = getParamNumber(req,'pieceId');
     try {
         await pieceService.remove(pieceId);
         return controllerResponse(res,HttpStatusCodes.NO_CONTENT,'Deleted successfully');

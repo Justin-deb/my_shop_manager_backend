@@ -26,7 +26,7 @@ export const create = async (dto:CreateWarehouseDto) =>{
     try {
         if(await findByPieceId(shopId,pieceId)){
             const quantity = dto.quantity
-            return update({shopId,pieceId,quantity,notes:dto.notes});
+            return update(shopId,pieceId,{quantity,notes:dto.notes});
         }
     } catch (error) {
         //Means it did not found any error and can procede
@@ -58,16 +58,16 @@ export const create = async (dto:CreateWarehouseDto) =>{
     }
 }
 
-export const update = (dto:UpdateWarehouseDto) =>{
+export const update = (shopId:number,pieceId:number,dto:UpdateWarehouseDto) =>{
     const newWarehouse:WarehouseUpdateInput = {
         quantity:dto.quantity,
         notes:dto.notes
     }
 
     try {
-        return warehouseRepository.update(dto.shopId,dto.pieceId,newWarehouse);
+        return warehouseRepository.update(shopId,pieceId,newWarehouse);
     } catch (error) {
-        mapPrismaError(error,'Warehouse', `ShopId:${dto.shopId} PieceId:${dto.pieceId}`);
+        mapPrismaError(error,'Warehouse', `ShopId:${shopId} PieceId:${pieceId}`);
     }
 }
 

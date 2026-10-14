@@ -1,4 +1,5 @@
 import z from "zod";
+import { idParam } from "../common/SearchParameters";
 
 export const createLabor = z.object({
     body:z.object({
@@ -6,7 +7,7 @@ export const createLabor = z.object({
         hours: z.number().positive().or(z.string()).optional(),
         hourlyRate: z.number().positive().optional(),
         performedAt: z.coerce.date(),
-        repairId: z.number().positive()
+        repairId: idParam
     }),
     query:z.object({}),
     params:z.object({})
@@ -14,14 +15,34 @@ export const createLabor = z.object({
 
 export const updateLabor = z.object({
     body:z.object({
-        shopId: z.number().positive(),
-        repairId: z.number().positive(),
-        laborId: z.number().positive(),
         description: z.string().optional(),
         hours: z.number().optional(),
         hourlyRate: z.number().positive().optional(),
         performedAt: z.coerce.date().optional()
     }),
     query:z.object({}),
-    params:z.object({})
+    params:z.object({
+        shopId: idParam,
+        repairId: idParam,
+        laborId: idParam,
+    })
+});
+
+export const findById = z.object({
+    body:z.object({}).optional(),
+    query:z.object({}),
+    params:z.object({
+        shopId:idParam,
+        repairId:idParam,
+        laborId:idParam
+    })
+});
+
+export const findAllByRepairId = z.object({
+    body:z.object({}).optional(),
+    query:z.object({}),
+    params:z.object({
+        shopId:idParam,
+        repairId:idParam
+    })
 });

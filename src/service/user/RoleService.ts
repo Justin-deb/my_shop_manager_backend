@@ -32,15 +32,15 @@ export const create = (dto:CreateRoleDto) =>{
     }
 }
 
-export const update = (dto:UpdateRoleDto) =>{
+export const update = (roleId:number,dto:UpdateRoleDto) =>{
     const newRole:RoleUpdateInput = {
         name:dto.name
     }
 
     try {
-        return roleRepository.update(dto.roleId,newRole);
+        return roleRepository.update(roleId,newRole);
     } catch (error) {
-        mapPrismaError(error,'Role',dto.roleId.toString());
+        mapPrismaError(error,'Role',roleId.toString());
     }
 }
 

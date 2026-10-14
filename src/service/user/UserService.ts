@@ -55,11 +55,7 @@ export const create = async (dto:CreateUserDto) =>{
     }
 }
 
-export const update = async (dto:UpdateUserDto) =>{
-    if(dto.roleId && dto.roleId <= 0){
-        throw new BadRequestError('Invalid role');
-    }
-
+export const update = async (userId:number,dto:UpdateUserDto) =>{
     const newUser:UserUpdateInput = {
         firstName:dto.firstName,
         middleName:dto.middleName,
@@ -73,9 +69,9 @@ export const update = async (dto:UpdateUserDto) =>{
     }
 
     try {
-        return userRepository.update(dto.userId,newUser);
+        return userRepository.update(userId,newUser);
     } catch (error) {
-        mapPrismaError(error,'User',dto.userId.toString());
+        mapPrismaError(error,'User',userId.toString());
     }
 }
 

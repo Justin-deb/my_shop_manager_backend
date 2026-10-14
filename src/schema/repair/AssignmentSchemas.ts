@@ -1,12 +1,13 @@
 import z from "zod";
+import { idParam } from "../common/SearchParameters";
 
 export const createAssignment = z.object({
     body:z.object({
-        shopId:z.number().positive(),
+        shopId:idParam,
         assignedAt:z.coerce.date().optional(),
         finishedAt:z.coerce.date().optional(),
-        repairId:z.number().positive(),
-        employeeId:z.number().positive()
+        repairId:idParam,
+        employeeId:idParam
     }),
     query:z.object({}),
     params:z.object({})
@@ -14,11 +15,47 @@ export const createAssignment = z.object({
 
 export const updateAssignment = z.object({
     body:z.object({
-        assignmentId:z.number().positive(),
-        shopId:z.number().positive(),
         finishedAt:z.coerce.date().optional(),
-        employeeId:z.number()
+        employeeId:idParam.optional()
     }),
     query:z.object({}),
-    params:z.object({})
+    params:z.object({
+        shopId:idParam,
+        assignmentId:idParam
+    })
+});
+
+export const findAllByRepairId = z.object({
+    body:z.object({}).optional(),
+    query:z.object({}),
+    params:z.object({
+        shopId:idParam,
+        repairId:idParam
+    })
+});
+
+export const findAllActiveByShopId = z.object({
+    body:z.object({}).optional(),
+    query:z.object({}),
+    params:z.object({
+        shopId:idParam
+    })
+});
+
+export const findAllByEmployeeId = z.object({
+    body:z.object({}).optional(),
+    query:z.object({}),
+    params:z.object({
+        shopId:idParam,
+        employeeId:idParam
+    })
+});
+
+export const findById = z.object({
+    body:z.object({}).optional(),
+    query:z.object({}),
+    params:z.object({
+        shopId:idParam,
+        assingmentId:idParam
+    })
 });

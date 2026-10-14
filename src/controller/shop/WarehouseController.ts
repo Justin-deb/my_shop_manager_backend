@@ -2,9 +2,10 @@ import { Request,Response,NextFunction } from 'express';
 import * as warehouseService from '../../service/shop/WarehouseService';
 import { controllerResponse } from '../../common/utils/ControllerResponse';
 import HttpStatusCodes from '../../common/constants/HttpStatusCodes';
+import { getParamNumber } from '../../common/utils/ParameterExtraction';
 
 export const findAllByShopId = async (req:Request,res:Response,next:NextFunction) =>{
-    const {shopId} = req.body;
+    const shopId = getParamNumber(req,'shopId');
     try {
         const warehouse = await warehouseService.findAllByShopId(shopId);
         return controllerResponse(res,HttpStatusCodes.OK,warehouse);
@@ -14,7 +15,8 @@ export const findAllByShopId = async (req:Request,res:Response,next:NextFunction
 }
 
 export const findByPieceId = async (req:Request,res:Response,next:NextFunction) =>{
-    const {shopId,pieceId} = req.body;
+    const shopId = getParamNumber(req,'shopId');
+    const pieceId = getParamNumber(req,'pieceId');
     try {
         const pieces = await warehouseService.findByPieceId(shopId,pieceId);
         return controllerResponse(res,HttpStatusCodes.OK,pieces);
@@ -36,9 +38,11 @@ export const create = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const update = async (req:Request,res:Response,next:NextFunction) =>{
+    const shopId = getParamNumber(req,'shopId');
+    const pieceId = getParamNumber(req,'pieceId');
     const {dto} = req.body;
     try {
-        await warehouseService.update(dto);
+        await warehouseService.update(shopId,pieceId,dto);
         return controllerResponse(res,HttpStatusCodes.OK,'Updated successfully');
     } catch (error) {
         next(error);
@@ -46,7 +50,8 @@ export const update = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const remove = async (req:Request,res:Response,next:NextFunction) =>{
-    const {shopId,pieceId} = req.body;
+    const shopId = getParamNumber(req,'shopId');
+    const pieceId = getParamNumber(req,'pieceId');
     try {
         await warehouseService.remove(shopId,pieceId);
         return controllerResponse(res,HttpStatusCodes.NO_CONTENT,'Deleted successfully');

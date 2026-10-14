@@ -1,29 +1,28 @@
 import { Router } from 'express';
 import * as warehouseController from '../../controller/shop/WarehouseController';
-import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { numberParameter } from '../../schema/common/SearchParameters';
-import { createWarehouse, updateWarehouse } from '../../schema/shop/WarehouseSchemas';
+import * as schemas from '../../schema/shop/WarehouseSchemas';
+import { validateSchema } from '../../common/utils/ValidationMiddleware';
 
 const warehouseRouter = Router();
 
-warehouseRouter.get('/warehouse/allShopId',
-                        validateRecord(numberParameter),
+warehouseRouter.get('/warehouse/allShopId/:shopId',
+                        validateSchema(schemas.findAllByShopId),
                         warehouseController.findAllByShopId);
 
-warehouseRouter.get('/warehouse/pieceId',
-                        validateRecord(numberParameter),
+warehouseRouter.get('/warehouse/pieceId/:shopId/:pieceId',
+                        validateSchema(schemas.findByPieceId),
                         warehouseController.findByPieceId);
 
 warehouseRouter.post('/warehouse/create',
-                        validateSchema(createWarehouse),
+                        validateSchema(schemas.createWarehouse),
                         warehouseController.create);
 
-warehouseRouter.put('/warehouse/update',
-                        validateSchema(updateWarehouse),
+warehouseRouter.put('/warehouse/update/:shopId/:pieceId',
+                        validateSchema(schemas.updateWarehouse),
                         warehouseController.update);
 
-warehouseRouter.delete('/warehouse/delete',
-                        validateRecord(numberParameter),
+warehouseRouter.delete('/warehouse/delete/:shopId/:pieceId',
+                        validateSchema(schemas.findByPieceId),
                         warehouseController.remove);
 
 export default warehouseRouter;

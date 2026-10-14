@@ -29,7 +29,7 @@ export const findAllByShopId = (shopId: number) => {
   });
 };
 
-export const findByRepairId = (shopId:number,repairId:number) =>{
+export const findById = (shopId:number,repairId:number) =>{
     return prisma.repair.findUniqueOrThrow({
         where:{
             shopId,

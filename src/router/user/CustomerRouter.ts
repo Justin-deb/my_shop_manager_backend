@@ -1,32 +1,31 @@
 import { Router } from 'express';
 import * as customerController from '../../controller/user/CustomerController';
-import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { numberParameter } from '../../schema/common/SearchParameters';
-import { createCustomer, fullName, updateCustomer } from '../../schema/user/CustomerSchemas';
+import * as schemas from '../../schema/user/CustomerSchemas';
+import { validateSchema } from '../../common/utils/ValidationMiddleware';
 
 const customerRouter = Router();
 
 customerRouter.get('/customer/all',
                     customerController.findAll);
 
-customerRouter.get('/customer/id',
-                    validateRecord(numberParameter),
+customerRouter.get('/customer/id/:shopId/:customerId',
+                    validateSchema(schemas.findById),
                     customerController.findById);
 
-customerRouter.get('/customer/fullName',
-                    validateSchema(fullName),
+customerRouter.get('/customer/fullName/:shopId',
+                    validateSchema(schemas.fullName),
                     customerController.findByFullName);
 
 customerRouter.post('/customer/create',
-                    validateSchema(createCustomer),
+                    validateSchema(schemas.createCustomer),
                     customerController.create);
 
-customerRouter.put('/customer/update',
-                    validateSchema(updateCustomer),
+customerRouter.put('/customer/update/:shopId/:customerId',
+                    validateSchema(schemas.updateCustomer),
                     customerController.update);
 
-customerRouter.delete('/customer/delete',
-                    validateRecord(numberParameter),
+customerRouter.delete('/customer/delete/:shopId/:customerId',
+                    validateSchema(schemas.findById),
                     customerController.remove);
 
 export default customerRouter;

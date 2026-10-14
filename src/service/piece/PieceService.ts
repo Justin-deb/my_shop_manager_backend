@@ -2,7 +2,7 @@ import { mapPrismaError } from '../../common/utils/ErrorWrapper';
 import { CreatePieceDto } from '../../dto/piece/create/CreatePieceDto';
 import { UpdatePieceDto } from '../../dto/piece/update/UpdatePieceDto';
 import { BadRequestError } from '../../exceptions/BadRequestError';
-import { PieceCreateInput } from '../../generated/prisma/internal/prismaNamespace';
+import { PieceCreateInput, PieceUpdateInput } from '../../generated/prisma/internal/prismaNamespace';
 import * as pieceRepository from '../../repository/piece/PieceRepository';
 
 export const findAll = () =>{
@@ -30,17 +30,15 @@ export const create = (dto:CreatePieceDto) =>{
     }
 }
 
-export const update = (dto:UpdatePieceDto) =>{
-    const details = dto.details.trim();
-
-    if(details.length === 0){
-        throw new BadRequestError('The details field is empty');
+export const update = (pieceId:number,dto:UpdatePieceDto) =>{
+    const newPiece:PieceUpdateInput = {
+        details:dto.details
     }
-
+    
     try {
-        return pieceRepository.update(dto.pieceId,{details})
+        return pieceRepository.update(pieceId,newPiece);
     } catch (error) {
-        mapPrismaError(error,"Piece",dto.pieceId.toString());
+        mapPrismaError(error,"Piece",pieceId.toString());
     }
 }
 

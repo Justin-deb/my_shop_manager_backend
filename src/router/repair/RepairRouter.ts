@@ -1,37 +1,36 @@
 import { Router } from 'express';
 import * as repairController from '../../controller/repair/RepairController';
-import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { numberParameter } from '../../schema/common/SearchParameters';
-import { createRepair, updateRepair } from '../../schema/repair/RepairSchemas';
+import * as schemas from '../../schema/repair/RepairSchemas';
+import { validateSchema } from '../../common/utils/ValidationMiddleware';
 
 const repairRouter = Router();
 
-repairRouter.get('/repair/allShopId',
-                    validateRecord(numberParameter),
+repairRouter.get('/repair/allShopId/:shopId',
+                    validateSchema(schemas.findAllByShopId),
                     repairController.findAllByShopId);
 
-repairRouter.get('/repair/repairId',
-                    validateRecord(numberParameter),
-                    repairController.findByRepairId);
+repairRouter.get('/repair/id/:shopId/:repairId',
+                    validateSchema(schemas.findById),
+                    repairController.findById);
 
-repairRouter.get('/repair/allStatusId',
-                    validateRecord(numberParameter),
+repairRouter.get('/repair/allStatusId/:shopId/:statusId',
+                    validateSchema(schemas.findAllByStatusId),
                     repairController.findAllByStatusId);
 
-repairRouter.get('/repair/allCustomerId',
-                    validateRecord(numberParameter),
+repairRouter.get('/repair/allCustomerId/:shopId/:customerId',
+                    validateSchema(schemas.findAllByCustomerId),
                     repairController.findAllByCustomerId);
 
 repairRouter.post('/repair/create',
-                    validateSchema(createRepair),
+                    validateSchema(schemas.createRepair),
                     repairController.create);
 
-repairRouter.put('/repair/update',
-                    validateSchema(updateRepair),
+repairRouter.put('/repair/update/:shopId/:repairId',
+                    validateSchema(schemas.updateRepair),
                     repairController.update);
 
-repairRouter.delete('/repair/delete',
-                    validateRecord(numberParameter),
+repairRouter.delete('/repair/delete/:shopId/:repairId',
+                    validateSchema(schemas.findById),
                     repairController.remove);
 
 export default repairRouter;

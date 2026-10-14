@@ -2,6 +2,7 @@ import { Request,Response,NextFunction } from 'express';
 import * as userService from '../../service/user/UserService';
 import { controllerResponse } from '../../common/utils/ControllerResponse';
 import HttpStatusCodes from '../../common/constants/HttpStatusCodes';
+import { getParamNumber, getQueryString } from '../../common/utils/ParameterExtraction';
 
 export const findAll = async (req:Request,res:Response,next:NextFunction) =>{
     try {
@@ -13,7 +14,7 @@ export const findAll = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const findById = async (req:Request,res:Response,next:NextFunction) =>{
-    const {userId} = req.body;
+    const userId = getParamNumber(req,'userId');
     try {
         const user = await userService.findById(userId);
         return controllerResponse(res,HttpStatusCodes.OK,user);
@@ -23,7 +24,7 @@ export const findById = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const findByEmail = async (req:Request,res:Response,next:NextFunction) =>{
-    const {email} = req.body;
+    const email = getQueryString(res,'email');
     try {
         const user = await userService.findByEmail(email);
         return controllerResponse(res,HttpStatusCodes.OK,user);
@@ -45,9 +46,10 @@ export const create = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const update = async (req:Request,res:Response,next:NextFunction) =>{
+    const userId = getParamNumber(req,'userId');
     const {dto} = req.body;
     try {
-        await userService.update(dto);
+        await userService.update(userId,dto);
         return controllerResponse(res,HttpStatusCodes.OK,'Updated successfully');
     } catch (error) {
         next(error);
@@ -55,7 +57,7 @@ export const update = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const remove = async (req:Request,res:Response,next:NextFunction) =>{
-    const {userId} = req.body;
+    const userId = getParamNumber(req,'userId');
     try {
         await userService.remove(userId);
         return controllerResponse(res,HttpStatusCodes.NO_CONTENT,'Deleted successfully');

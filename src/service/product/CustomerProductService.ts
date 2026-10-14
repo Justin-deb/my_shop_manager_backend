@@ -49,16 +49,16 @@ export const create = (dto:CreateCustomerProductDto) =>{
     }
 }
 
-export const update = (dto:UpdateCustomerProductDto) =>{
+export const update = (shopId:number,customerId:number,productId:number,dto:UpdateCustomerProductDto) =>{
     const newCustomerProduct:CustomerProductUpdateInput = {
         serialNumber:dto.serialNumber,
         name:dto.name
     }
 
     try {
-        return customerProductRepository.update(dto.shopId,dto.customerId,dto.productId,newCustomerProduct);
+        return customerProductRepository.update(shopId,customerId,productId,newCustomerProduct);
     } catch (error) {
-        mapPrismaError(error,'Customer-Product',`Customer:${dto.customerId} ProductId:${dto.productId}`);
+        mapPrismaError(error,'Customer-Product',`Customer:${customerId} ProductId:${productId}`);
     }
 }
 

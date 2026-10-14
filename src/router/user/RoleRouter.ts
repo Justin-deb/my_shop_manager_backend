@@ -1,32 +1,31 @@
 import { Router } from 'express';
 import * as roleController from '../../controller/user/RoleController';
-import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { numberParameter, stringParameter } from '../../schema/common/SearchParameters';
-import { createRole, updateRole } from '../../schema/user/RoleSchemas';
+import * as schemas from '../../schema/user/RoleSchemas';
+import { validateSchema } from '../../common/utils/ValidationMiddleware';
 
 const roleRouter = Router();
 
 roleRouter.get('/role/all',
                 roleController.findAll);
 
-roleRouter.get('/role/id',
-                validateRecord(numberParameter),
+roleRouter.get('/role/id/:roleId',
+                validateSchema(schemas.findById),
                 roleController.findById);
 
 roleRouter.get('/role/name',
-                validateRecord(stringParameter),
+                validateSchema(schemas.findByName),
                 roleController.findByName);
 
 roleRouter.post('/role/create',
-                validateSchema(createRole),
+                validateSchema(schemas.createRole),
                 roleController.create);
 
-roleRouter.put('/role/update',
-                validateSchema(updateRole),
+roleRouter.put('/role/update/:roleId',
+                validateSchema(schemas.updateRole),
                 roleController.update);
 
-roleRouter.delete('/role/delete',
-                validateRecord(numberParameter),
+roleRouter.delete('/role/delete/:roleId',
+                validateSchema(schemas.findById),
                 roleController.remove);
 
 export default roleRouter;

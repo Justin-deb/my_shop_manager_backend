@@ -31,15 +31,15 @@ export const create = (dto:CreatePositionDto) =>{
     }
 }
 
-export const update = (dto:UpdatePositionDto) =>{
+export const update = (positionId:number,dto:UpdatePositionDto) =>{
     const newPosition:PositionUpdateInput = {
         name:dto.name
     }
 
     try {
-        return positionRepository.update(dto.positionId,newPosition);
+        return positionRepository.update(positionId,newPosition);
     } catch (error) {
-        mapPrismaError(error,"Position",dto.positionId.toString());
+        mapPrismaError(error,"Position",positionId.toString());
     }
 }
 

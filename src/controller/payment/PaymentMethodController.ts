@@ -2,6 +2,7 @@ import { Request,Response,NextFunction } from 'express';
 import * as paymentMethodService from '../../service/payment/PaymentMethodService';
 import { controllerResponse } from '../../common/utils/ControllerResponse';
 import HttpStatusCodes from '../../common/constants/HttpStatusCodes';
+import { getParamNumber, getQueryString } from '../../common/utils/ParameterExtraction';
 
 export const findAll = async (req:Request,res:Response,next:NextFunction) =>{
     try {
@@ -13,7 +14,7 @@ export const findAll = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const findById = async (req:Request,res:Response,next:NextFunction) =>{
-    const {paymentMethodId} = req.body;
+    const paymentMethodId = getParamNumber(req,'paymentMethodId');
     try {
         const paymentMethod = await paymentMethodService.findById(paymentMethodId);
         return controllerResponse(res,HttpStatusCodes.OK,paymentMethod);
@@ -23,7 +24,7 @@ export const findById = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const findByName = async (req:Request,res:Response,next:NextFunction) =>{
-    const {name} = req.body;
+    const name = getQueryString(res,'name');
     try {
         const paymentMethod = await paymentMethodService.findByName(name);
         return controllerResponse(res,HttpStatusCodes.OK,paymentMethod);
@@ -45,9 +46,10 @@ export const create = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const update = async (req:Request,res:Response,next:NextFunction) =>{
+    const paymentMethodId = getParamNumber(req,'paymentMethodId');
     const {dto} = req.body;
     try {
-        await paymentMethodService.update(dto);
+        await paymentMethodService.update(paymentMethodId,dto);
         return controllerResponse(res,HttpStatusCodes.OK,'Updated successfully');
     } catch (error) {
         next(error);
@@ -55,7 +57,7 @@ export const update = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const remove = async (req:Request,res:Response,next:NextFunction) =>{
-    const {paymentMethodId} = req.body;
+    const paymentMethodId = getParamNumber(req,'paymentMethodId');
     try {
         await paymentMethodService.remove(paymentMethodId);
         return controllerResponse(res,HttpStatusCodes.NO_CONTENT,'Deleted successfully');

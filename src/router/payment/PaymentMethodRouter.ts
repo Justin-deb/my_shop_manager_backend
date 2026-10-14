@@ -1,32 +1,31 @@
 import { Router } from 'express';
 import * as paymentMethodController from '../../controller/payment/PaymentMethodController';
-import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { numberParameter, stringParameter } from '../../schema/common/SearchParameters';
-import { createPaymentMethod, updatePaymentMethod } from '../../schema/payment/PaymentMethodSchemas';
+import * as schemas from '../../schema/payment/PaymentMethodSchemas';
+import { validateSchema } from '../../common/utils/ValidationMiddleware';
 
 const paymentMethodRouter = Router();
 
 paymentMethodRouter.get('/paymentMethod/all',
                             paymentMethodController.findAll);
 
-paymentMethodRouter.get('/paymentMethod/id',
-                            validateRecord(numberParameter),
+paymentMethodRouter.get('/paymentMethod/id/:paymentMethodId',
+                            validateSchema(schemas.findById),
                             paymentMethodController.findById);
 
 paymentMethodRouter.get('/paymentMethod/name',
-                            validateRecord(stringParameter),
+                            validateSchema(schemas.findByName),
                             paymentMethodController.findByName);
 
 paymentMethodRouter.post('/paymentMethod/create',
-                            validateSchema(createPaymentMethod),
+                            validateSchema(schemas.createPaymentMethod),
                             paymentMethodController.create);
 
-paymentMethodRouter.put('/paymentMethod/update',
-                            validateSchema(updatePaymentMethod),
+paymentMethodRouter.put('/paymentMethod/update/:paymentMethodId',
+                            validateSchema(schemas.updatePaymentMethod),
                             paymentMethodController.update);
 
-paymentMethodRouter.delete('/paymentMethod/delete',
-                            validateRecord(numberParameter),
+paymentMethodRouter.delete('/paymentMethod/delete/:paymentMethodId',
+                            validateSchema(schemas.findById),
                             paymentMethodController.remove);
 
 export default paymentMethodRouter;

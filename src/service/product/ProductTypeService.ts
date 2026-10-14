@@ -32,15 +32,15 @@ export const create = (dto:CreateProductTypeDto) =>{
     }
 }
 
-export const update = (dto:UpdateProductTypeDto) =>{
+export const update = (productTypeId:number,dto:UpdateProductTypeDto) =>{
     const newProductType:ProductTypeUpdateInput = {
         name:dto.name
     }
 
     try {
-        return productTypeRepository.update(dto.productTypeId,newProductType);
+        return productTypeRepository.update(productTypeId,newProductType);
     } catch (error) {
-        mapPrismaError(error,'Product Type',dto.productTypeId.toString());
+        mapPrismaError(error,'Product Type',productTypeId.toString());
     }
 }
 

@@ -1,33 +1,32 @@
 import { Router } from 'express';
 import * as employeeController from '../../controller/employee/EmployeeController';
-import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { numberParameter, stringParameter } from '../../schema/common/SearchParameters';
-import { createEmployee, updateEmployee } from '../../schema/employee/EmployeeSchemas';
+import { validateSchema } from '../../common/utils/ValidationMiddleware';
+import * as schemas from '../../schema/employee/EmployeeSchemas';
 
 const employeeRouter = Router();
 
-employeeRouter.get('/employee/allShopId',
-                    validateRecord(numberParameter),
+employeeRouter.get('/employee/allShopId/:shopId',
+                    validateSchema(schemas.findAllByShopId),
                     employeeController.findAllByShopId);
 
-employeeRouter.get('/employee/name',
-                    validateRecord(stringParameter),
+employeeRouter.get('/employee/name/:shopId',
+                    validateSchema(schemas.findByName),
                     employeeController.findByName);
 
-employeeRouter.get('/employee/id',
-                    validateRecord(numberParameter),
+employeeRouter.get('/employee/id/:shopId/:employeeId',
+                    validateSchema(schemas.findById),
                     employeeController.findById);
 
 employeeRouter.post('/employee/create',
-                    validateSchema(createEmployee),
+                    validateSchema(schemas.createEmployee),
                     employeeController.create);
 
-employeeRouter.put('/employee/update',
-                    validateSchema(updateEmployee),
+employeeRouter.put('/employee/update/:shopId',
+                    validateSchema(schemas.updateEmployee),
                     employeeController.update);
 
-employeeRouter.delete('/employee/delete',
-                    validateRecord(numberParameter),
+employeeRouter.delete('/employee/delete/:shopId/:employeeId',
+                    validateSchema(schemas.findById),
                     employeeController.remove);
 
 export default employeeRouter;

@@ -31,14 +31,14 @@ export const findById = (shopId:number,customerId:number) =>{
     });
 }
 
-export const findByFullName = (firstName:string,lastName:string,secondLastName:string,shopId:number,middleName?:string) =>{
+export const findByFullName = (shopId:number,firstName:string,lastName:string,secondLastName:string,middleName?:string) =>{
     return prisma.customer.findFirstOrThrow({
         where:{
+            shopId,
             firstName,
             middleName,
             lastName,
-            secondLastName,
-            shopId
+            secondLastName
         },
         include
     });

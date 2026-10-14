@@ -2,6 +2,7 @@ import { Request,Response,NextFunction } from 'express';
 import * as roleService from '../../service/user/RoleService';
 import { controllerResponse } from '../../common/utils/ControllerResponse';
 import HttpStatusCodes from '../../common/constants/HttpStatusCodes';
+import { getParamNumber, getQueryString } from '../../common/utils/ParameterExtraction';
 
 export const findAll = async (req:Request,res:Response,next:NextFunction) =>{
     try {
@@ -13,7 +14,7 @@ export const findAll = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const findById = async (req:Request,res:Response,next:NextFunction) =>{
-    const {roleId} = req.body;
+    const roleId = getParamNumber(req,'roleId');
     try {
         const role = await roleService.findById(roleId);
         return controllerResponse(res,HttpStatusCodes.OK,role);
@@ -23,7 +24,7 @@ export const findById = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const findByName = async (req:Request,res:Response,next:NextFunction) =>{
-    const {name} = req.body;
+    const name = getQueryString(res,'name');
     try {
         const roles = await roleService.findByName(name);
         return controllerResponse(res,HttpStatusCodes.OK,roles);
@@ -45,9 +46,10 @@ export const create = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const update = async (req:Request,res:Response,next:NextFunction) =>{
+    const roleId = getParamNumber(req,'roleId');
     const {dto} = req.body;
     try {
-        await roleService.update(dto);
+        await roleService.update(roleId,dto);
         return controllerResponse(res,HttpStatusCodes.OK,'Updated successfully');
     } catch (error) {
         next(error);
@@ -55,7 +57,7 @@ export const update = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 export const remove = async (req:Request,res:Response,next:NextFunction) =>{
-    const {roleId} = req.body;
+    const roleId = getParamNumber(req,'roleId');
     try {
         await roleService.remove(roleId);
         return controllerResponse(res,HttpStatusCodes.NO_CONTENT,'Deleted successfully');

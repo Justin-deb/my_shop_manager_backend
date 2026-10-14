@@ -1,32 +1,31 @@
 import { Router } from 'express';
 import * as userController from '../../controller/user/UserController';
-import { validateRecord, validateSchema } from '../../common/utils/ValidationMiddleware';
-import { numberParameter, stringParameter } from '../../schema/common/SearchParameters';
-import { createUser, updateUser } from '../../schema/user/UserSchemas';
+import * as schemas from '../../schema/user/UserSchemas';
+import { validateSchema } from '../../common/utils/ValidationMiddleware';
 
 const userRouter = Router();
 
 userRouter.get('/user/all',
                 userController.findAll);
 
-userRouter.get('/user/id',
-                validateRecord(numberParameter),
+userRouter.get('/user/id/:userId',
+                validateSchema(schemas.findById),
                 userController.findById);
 
 userRouter.get('/user/email',
-                validateRecord(stringParameter),
+                validateSchema(schemas.findByEmail),
                 userController.findByEmail);
 
 userRouter.post('/user/create',
-                validateSchema(createUser),
+                validateSchema(schemas.createUser),
                 userController.create);
 
-userRouter.put('/user/update',
-                validateSchema(updateUser),
+userRouter.put('/user/update/:userId',
+                validateSchema(schemas.updateUser),
                 userController.update);
 
-userRouter.delete('/user/delete',
-                validateRecord(numberParameter),
+userRouter.delete('/user/delete/:userId',
+                validateSchema(schemas.findById),
                 userController.remove);
 
 export default userRouter;
