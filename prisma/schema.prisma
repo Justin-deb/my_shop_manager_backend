@@ -145,9 +145,9 @@ model RepairPart {
 }
 
 model Role {
-  roleId     Int          @id @default(autoincrement()) @map("role_id")
-  name       String       @unique(map: "name") @db.VarChar(255)
-  USER_ROLES USER_ROLES[]
+  roleId    Int         @id @default(autoincrement()) @map("role_id")
+  name      String      @unique(map: "name") @db.VarChar(255)
+  userRoles UserRoles[]
 
   @@map("ROLE")
 }
@@ -180,18 +180,18 @@ model Status {
 }
 
 model User {
-  userId         Int          @id @default(autoincrement()) @map("user_id")
-  firstName      String       @map("first_name") @db.VarChar(255)
-  middleName     String?      @map("middle_name") @db.VarChar(255)
-  lastName       String       @map("last_name") @db.VarChar(255)
-  secondLastName String       @map("second_last_name") @db.VarChar(255)
-  email          String       @unique(map: "email") @db.VarChar(255)
-  passwordHash   String       @map("password_hash") @db.VarChar(255)
-  customerId     Int?         @unique(map: "customer_id_UNIQUE") @map("customer_id")
+  userId         Int         @id @default(autoincrement()) @map("user_id")
+  firstName      String      @map("first_name") @db.VarChar(255)
+  middleName     String?     @map("middle_name") @db.VarChar(255)
+  lastName       String      @map("last_name") @db.VarChar(255)
+  secondLastName String      @map("second_last_name") @db.VarChar(255)
+  email          String      @unique(map: "email") @db.VarChar(255)
+  passwordHash   String      @map("password_hash") @db.VarChar(255)
+  customerId     Int?        @unique(map: "customer_id_UNIQUE") @map("customer_id")
   employees      Employee[]
   shops          Shop[]
-  customer       Customer?    @relation(fields: [customerId], references: [customerId], onUpdate: NoAction, map: "USER_ibfk_2")
-  USER_ROLES     USER_ROLES[]
+  customer       Customer?   @relation(fields: [customerId], references: [customerId], onUpdate: NoAction, map: "USER_ibfk_2")
+  userRoles      UserRoles[]
 
   @@map("USER")
 }
@@ -281,12 +281,13 @@ model PaymentStatus {
   @@map("PAYMENT_STATUS")
 }
 
-model USER_ROLES {
-  user_id Int
-  role_id Int
-  ROLE    Role @relation(fields: [role_id], references: [roleId], onDelete: NoAction, onUpdate: NoAction, map: "fk_role")
-  USER    User @relation(fields: [user_id], references: [userId], onDelete: NoAction, onUpdate: NoAction, map: "fk_user")
+model UserRoles {
+  userId Int  @map("user_id")
+  roleId Int  @map("role_id")
+  role   Role @relation(fields: [roleId], references: [roleId], onDelete: NoAction, onUpdate: NoAction, map: "fk_role")
+  user   User @relation(fields: [userId], references: [userId], onDelete: NoAction, onUpdate: NoAction, map: "fk_user")
 
-  @@id([user_id, role_id])
-  @@index([role_id], map: "fk_role")
+  @@id([userId, roleId])
+  @@index([roleId], map: "fk_role")
+  @@map("USER_ROLES")
 }

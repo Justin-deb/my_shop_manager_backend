@@ -3,5 +3,4 @@ export interface UpdateUserDto{
     middleName?: string;
     lastName?: string;
     secondLastName?: string;
-    roleId?: number;
 }
