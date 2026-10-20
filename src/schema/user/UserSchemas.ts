@@ -8,7 +8,8 @@ export const createUser = z.object({
         lastName:z.string(),
         secondLastName:z.string(),
         email:z.email(),
-        password:z.string()
+        password:z.string(),
+        roleId:idParam
     }),
     query:z.object({}),
     params:z.object({})

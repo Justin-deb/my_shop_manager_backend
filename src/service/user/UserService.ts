@@ -5,6 +5,7 @@ import { BadRequestError } from '../../exceptions/BadRequestError';
 import { NotFoundError } from '../../exceptions/NotFoundError';
 import { UserCreateInput, UserUpdateInput } from '../../generated/prisma/models';
 import * as userRepository from '../../repository/user/UserRepository';
+import * as userRolesService from './UserRolesService';
 import bcrypt from 'bcrypt';
 
 const SALT_ROUNDS = parseInt(process.env["BCRYPT_SALT_ROUNDS"]!);
@@ -40,16 +41,13 @@ export const create = async (dto:CreateUserDto) =>{
         lastName:dto.lastName,
         secondLastName:dto.secondLastName,
         email:dto.email,
-        passwordHash:passwordHash,
-        role:{
-            connect:{
-                roleId:dto.roleId
-            }
-        }
+        passwordHash:passwordHash
     }
 
     try {
-        return userRepository.create(newUser);
+        const user = await userRepository.create(newUser);
+        userRolesService.create(user.userId,dto.roleId);
+        return user;
     } catch (error) {
         mapPrismaError(error,'User');
     }
@@ -60,12 +58,7 @@ export const update = async (userId:number,dto:UpdateUserDto) =>{
         firstName:dto.firstName,
         middleName:dto.middleName,
         lastName:dto.lastName,
-        secondLastName:dto.secondLastName,
-        role:{
-            connect:{
-                roleId:dto.roleId
-            }
-        }
+        secondLastName:dto.secondLastName
     }
 
     try {

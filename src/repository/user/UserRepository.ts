@@ -2,8 +2,7 @@ import { UserCreateInput, UserUncheckedCreateInput, UserUpdateInput } from "../.
 import prisma from "../../models/common/prisma";
 
 const include = {
-    role:true,
-    userProducts:true
+    userRoles:true
 }
 
 export const findAll = () =>{
