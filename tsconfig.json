@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "commonjs",
-    "lib": ["ES2020"],
+    "target": "ES2022",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "outDir": "./dist",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "useUnknownInCatchVariables": false,
-    "types": ["vitest/globals","node"]
+    "types": ["vitest/globals", "node"]
   },
   "ts-node": {
     "swc": true,
-    "require": ["tsconfig-paths/register", "dotenv/config"],
+    "esm": true
   },
   "include": [
     "src/**/*.ts",
