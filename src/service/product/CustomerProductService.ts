@@ -1,8 +1,8 @@
-import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { CreateCustomerProductDto } from '../../dto/product/create/CreateCustomerProductDto';
-import { UpdateCustomerProductDto } from '../../dto/product/update/UpdateCustomerProductDto';
-import { CustomerProductCreateInput, CustomerProductUpdateInput } from '../../generated/prisma/models';
-import * as customerProductRepository from '../../repository/product/CustomerProductRepository';
+import { mapPrismaError } from "../../common/utils/ErrorWrapper.js";
+import { CreateCustomerProductDto } from "../../dto/product/create/CreateCustomerProductDto.js";
+import { UpdateCustomerProductDto } from "../../dto/product/update/UpdateCustomerProductDto.js";
+import { CustomerProductCreateInput, CustomerProductUpdateInput } from "../../generated/prisma/models.js";
+import * as customerProductRepository from "../../repository/product/CustomerProductRepository.js";
 
 export const findById = (shopId:number,customerId:number,productId:number) =>{
     try {

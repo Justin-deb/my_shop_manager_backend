@@ -1,6 +1,6 @@
 import { Request,Response,NextFunction } from 'express';
 import z, { treeifyError, ZodError, ZodRecord, ZodType } from 'zod';
-import HttpStatusCodes from '../constants/HttpStatusCodes';
+import HttpStatusCodes from "../constants/HttpStatusCodes.js";
 
 type RequestSchema = ZodType<{
     body?:unknown;

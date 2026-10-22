@@ -8,25 +8,25 @@
  *
  * 🟢 You can import this file directly.
  */
-export type * from './models/Invoice'
-export type * from './models/Labor'
-export type * from './models/Payment'
-export type * from './models/PaymentMethod'
-export type * from './models/Piece'
-export type * from './models/Position'
-export type * from './models/Product'
-export type * from './models/ProductType'
-export type * from './models/Repair'
-export type * from './models/RepairPart'
-export type * from './models/Role'
-export type * from './models/Shop'
-export type * from './models/Status'
-export type * from './models/User'
-export type * from './models/Warehouse'
-export type * from './models/Assignment'
-export type * from './models/Employee'
-export type * from './models/Customer'
-export type * from './models/CustomerProduct'
-export type * from './models/PaymentStatus'
-export type * from './models/UserRoles'
-export type * from './commonInputTypes'
+export type * from "./models/Invoice.js"
+export type * from "./models/Labor.js"
+export type * from "./models/Payment.js"
+export type * from "./models/PaymentMethod.js"
+export type * from "./models/Piece.js"
+export type * from "./models/Position.js"
+export type * from "./models/Product.js"
+export type * from "./models/ProductType.js"
+export type * from "./models/Repair.js"
+export type * from "./models/RepairPart.js"
+export type * from "./models/Role.js"
+export type * from "./models/Shop.js"
+export type * from "./models/Status.js"
+export type * from "./models/User.js"
+export type * from "./models/Warehouse.js"
+export type * from "./models/Assignment.js"
+export type * from "./models/Employee.js"
+export type * from "./models/Customer.js"
+export type * from "./models/CustomerProduct.js"
+export type * from "./models/PaymentStatus.js"
+export type * from "./models/UserRoles.js"
+export type * from "./commonInputTypes.js"

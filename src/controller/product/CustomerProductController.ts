@@ -1,8 +1,8 @@
 import { Request,Response,NextFunction } from 'express';
-import * as customerProductService from '../../service/product/CustomerProductService';
-import { controllerResponse } from '../../common/utils/ControllerResponse';
-import HttpStatusCodes from '../../common/constants/HttpStatusCodes';
-import { getParamNumber } from '../../common/utils/ParameterExtraction';
+import * as customerProductService from "../../service/product/CustomerProductService.js";
+import { controllerResponse } from "../../common/utils/ControllerResponse.js";
+import HttpStatusCodes from "../../common/constants/HttpStatusCodes.js";
+import { getParamNumber } from "../../common/utils/ParameterExtraction.js";
 
 export const findById = async (req:Request,res:Response,next:NextFunction) =>{
     const {shopId,customerId,productId} = req.body;

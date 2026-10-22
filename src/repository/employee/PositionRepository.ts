@@ -1,5 +1,5 @@
-import { PositionCreateInput, PositionUpdateInput } from "../../generated/prisma/models";
-import prisma from "../../models/common/prisma";
+import { PositionCreateInput, PositionUpdateInput } from "../../generated/prisma/models/Position.js";
+import prisma from "../../models/common/prisma.js";
 
 export const findAll = () =>{
     return prisma.position.findMany();

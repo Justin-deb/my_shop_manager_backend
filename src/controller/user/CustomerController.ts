@@ -1,9 +1,9 @@
 import { Request,Response,NextFunction } from 'express';
-import * as customerService from '../../service/user/CustomerService';
-import { controllerResponse } from '../../common/utils/ControllerResponse';
-import HttpStatusCodes from '../../common/constants/HttpStatusCodes';
-import { getParamNumber, getQueryString } from '../../common/utils/ParameterExtraction';
-import { FullNameCustomerDto } from '../../dto/user/common/FullNameCustomerDto';
+import * as customerService from "../../service/user/CustomerService.js";
+import { controllerResponse } from "../../common/utils/ControllerResponse.js";
+import HttpStatusCodes from "../../common/constants/HttpStatusCodes.js";
+import { getParamNumber, getQueryString } from "../../common/utils/ParameterExtraction.js";
+import { FullNameCustomerDto } from "../../dto/user/common/FullNameCustomerDto.js";
 
 export const findAll = async (req:Request,res:Response,next:NextFunction) =>{
     try {

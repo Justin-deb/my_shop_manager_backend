@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import * as invoiceController from '../../controller/payment/InvoiceController';
-import * as schemas from '../../schema/payment/InvoiceSchemas';
-import { validateSchema } from '../../common/utils/ValidationMiddleware';
+import * as invoiceController from "../../controller/payment/InvoiceController.js";
+import * as schemas from "../../schema/payment/InvoiceSchemas.js";
+import { validateSchema } from "../../common/utils/ValidationMiddleware.js";
 
 const invoiceRouter = Router();
 

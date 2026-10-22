@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import * as positionController from '../../controller/employee/PositionController';
-import * as schemas from '../../schema/employee/PositionSchemas';
-import { validateSchema } from '../../common/utils/ValidationMiddleware';
+import * as positionController from "../../controller/employee/PositionController.js";
+import * as schemas from "../../schema/employee/PositionSchemas.js";
+import { validateSchema } from "../../common/utils/ValidationMiddleware.js";
 
 const positionRouter = Router();
 

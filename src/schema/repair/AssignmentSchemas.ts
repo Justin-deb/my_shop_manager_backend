@@ -1,5 +1,5 @@
 import z from "zod";
-import { idParam } from "../common/SearchParameters";
+import { idParam } from "../common/SearchParameters.js";
 
 export const createAssignment = z.object({
     body:z.object({

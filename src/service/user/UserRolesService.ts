@@ -1,6 +1,6 @@
-import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { UserRolesCreateInput } from '../../generated/prisma/models';
-import * as userRolesRepository from '../../repository/user/UserRolesRepository';
+import { mapPrismaError } from "../../common/utils/ErrorWrapper.js";
+import { UserRolesCreateInput } from "../../generated/prisma/models.js";
+import * as userRolesRepository from "../../repository/user/UserRolesRepository.js";
 
 export const findAll = () =>{
     return userRolesRepository.findAll();

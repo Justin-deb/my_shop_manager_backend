@@ -1,7 +1,7 @@
-import HttpStatusCodes from '../../common/constants/HttpStatusCodes';
-import { controllerResponse } from '../../common/utils/ControllerResponse';
-import { getParamNumber } from '../../common/utils/ParameterExtraction';
-import * as assignmentService from '../../service/repair/AssignmentService';
+import HttpStatusCodes from "../../common/constants/HttpStatusCodes.js";
+import { controllerResponse } from "../../common/utils/ControllerResponse.js";
+import { getParamNumber } from "../../common/utils/ParameterExtraction.js";
+import * as assignmentService from "../../service/repair/AssignmentService.js";
 import { NextFunction, Request,Response } from 'express';
 
 export const findAllByRepairId = async (req:Request,res:Response,next:NextFunction) =>{

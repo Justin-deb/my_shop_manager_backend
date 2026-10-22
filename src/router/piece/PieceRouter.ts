@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import * as pieceController from '../../controller/piece/PieceController';
-import * as schemas from '../../schema/piece/PieceSchemas';
-import { validateSchema } from '../../common/utils/ValidationMiddleware';
+import * as pieceController from "../../controller/piece/PieceController.js";
+import * as schemas from "../../schema/piece/PieceSchemas.js";
+import { validateSchema } from "../../common/utils/ValidationMiddleware.js";
 
 const pieceRouter = Router();
 

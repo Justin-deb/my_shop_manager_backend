@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import * as paymentMethodController from '../../controller/payment/PaymentMethodController';
-import * as schemas from '../../schema/payment/PaymentMethodSchemas';
-import { validateSchema } from '../../common/utils/ValidationMiddleware';
+import * as paymentMethodController from "../../controller/payment/PaymentMethodController.js";
+import * as schemas from "../../schema/payment/PaymentMethodSchemas.js";
+import { validateSchema } from "../../common/utils/ValidationMiddleware.js";
 
 const paymentMethodRouter = Router();
 

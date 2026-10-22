@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import * as warehouseController from '../../controller/shop/WarehouseController';
-import * as schemas from '../../schema/shop/WarehouseSchemas';
-import { validateSchema } from '../../common/utils/ValidationMiddleware';
+import * as warehouseController from "../../controller/shop/WarehouseController.js";
+import * as schemas from "../../schema/shop/WarehouseSchemas.js";
+import { validateSchema } from "../../common/utils/ValidationMiddleware.js";
 
 const warehouseRouter = Router();
 

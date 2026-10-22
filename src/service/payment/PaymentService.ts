@@ -1,8 +1,8 @@
-import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { CreatePaymentDto } from '../../dto/payment/create/CreatePaymentDto';
-import { PaymentCreateInput, PaymentUpdateInput } from '../../generated/prisma/models';
-import * as paymentRepository from '../../repository/payment/PaymentRepository';
-import { UpdatePaymentDto } from '../../dto/payment/update/UpdatePaymentDto';
+import { mapPrismaError } from "../../common/utils/ErrorWrapper.js";
+import { CreatePaymentDto } from "../../dto/payment/create/CreatePaymentDto.js";
+import { PaymentCreateInput, PaymentUpdateInput } from "../../generated/prisma/models.js";
+import * as paymentRepository from "../../repository/payment/PaymentRepository.js";
+import { UpdatePaymentDto } from "../../dto/payment/update/UpdatePaymentDto.js";
 
 export const findAllByInvoiceId = (shopId:number,invoiceId:number) =>{
     return paymentRepository.findAllByInvoiceId(shopId,invoiceId);

@@ -1,8 +1,8 @@
 import { Router } from "express";
-import customerRouter from "../CustomerRouter";
-import roleRouter from "../RoleRouter";
-import userRouter from "../UserRouter";
-import userRolesRouter from "../UserRoleRouter";
+import customerRouter from "../CustomerRouter.js";
+import roleRouter from "../RoleRouter.js";
+import userRouter from "../UserRouter.js";
+import userRolesRouter from "../UserRoleRouter.js";
 
 const userIndexRouter = Router();
 

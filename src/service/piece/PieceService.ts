@@ -1,9 +1,9 @@
-import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { CreatePieceDto } from '../../dto/piece/create/CreatePieceDto';
-import { UpdatePieceDto } from '../../dto/piece/update/UpdatePieceDto';
-import { BadRequestError } from '../../exceptions/BadRequestError';
-import { PieceCreateInput, PieceUpdateInput } from '../../generated/prisma/internal/prismaNamespace';
-import * as pieceRepository from '../../repository/piece/PieceRepository';
+import { mapPrismaError } from "../../common/utils/ErrorWrapper.js";
+import { CreatePieceDto } from "../../dto/piece/create/CreatePieceDto.js";
+import { UpdatePieceDto } from "../../dto/piece/update/UpdatePieceDto.js";
+import { BadRequestError } from "../../exceptions/BadRequestError.js";
+import { PieceCreateInput, PieceUpdateInput } from "../../generated/prisma/internal/prismaNamespace.js";
+import * as pieceRepository from "../../repository/piece/PieceRepository.js";
 
 export const findAll = () =>{
     return pieceRepository.findAll();

@@ -1,7 +1,7 @@
 import { Router } from "express";
-import * as assignmentController from '../../controller/repair/AssignmentController';
-import * as schemas from '../../schema/repair/AssignmentSchemas';
-import { validateSchema } from "../../common/utils/ValidationMiddleware";
+import * as assignmentController from "../../controller/repair/AssignmentController.js";
+import * as schemas from "../../schema/repair/AssignmentSchemas.js";
+import { validateSchema } from "../../common/utils/ValidationMiddleware.js";
 
 const assignmentRouter = Router();
 

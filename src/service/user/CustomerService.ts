@@ -1,9 +1,9 @@
-import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { FullNameCustomerDto } from '../../dto/user/common/FullNameCustomerDto';
-import { CreateCustomerDto } from '../../dto/user/create/CreateCustomerDto';
-import { UpdateCustomerDto } from '../../dto/user/update/UpdateCustomerDto';
-import { CustomerCreateInput, CustomerUpdateInput } from '../../generated/prisma/models';
-import * as customerRepository from '../../repository/user/CustomerRepository';
+import { mapPrismaError } from "../../common/utils/ErrorWrapper.js";
+import { FullNameCustomerDto } from "../../dto/user/common/FullNameCustomerDto.js";
+import { CreateCustomerDto } from "../../dto/user/create/CreateCustomerDto.js";
+import { UpdateCustomerDto } from "../../dto/user/update/UpdateCustomerDto.js";
+import { CustomerCreateInput, CustomerUpdateInput } from "../../generated/prisma/models.js";
+import * as customerRepository from "../../repository/user/CustomerRepository.js";
 
 export const findAll = () =>{
     return customerRepository.findAll();

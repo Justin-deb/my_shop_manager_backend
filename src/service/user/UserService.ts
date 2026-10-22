@@ -1,11 +1,11 @@
-import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { CreateUserDto } from '../../dto/user/create/CreateUserDto';
-import { UpdateUserDto } from '../../dto/user/update/UpdateUserDto';
-import { BadRequestError } from '../../exceptions/BadRequestError';
-import { NotFoundError } from '../../exceptions/NotFoundError';
-import { UserCreateInput, UserUpdateInput } from '../../generated/prisma/models';
-import * as userRepository from '../../repository/user/UserRepository';
-import * as userRolesService from './UserRolesService';
+import { mapPrismaError } from "../../common/utils/ErrorWrapper.js";
+import { CreateUserDto } from "../../dto/user/create/CreateUserDto.js";
+import { UpdateUserDto } from "../../dto/user/update/UpdateUserDto.js";
+import { BadRequestError } from "../../exceptions/BadRequestError.js";
+import { NotFoundError } from "../../exceptions/NotFoundError.js";
+import { UserCreateInput, UserUpdateInput } from "../../generated/prisma/models.js";
+import * as userRepository from "../../repository/user/UserRepository.js";
+import * as userRolesService from "./UserRolesService.js";
 import bcrypt from 'bcrypt';
 
 const SALT_ROUNDS = parseInt(process.env["BCRYPT_SALT_ROUNDS"]!);

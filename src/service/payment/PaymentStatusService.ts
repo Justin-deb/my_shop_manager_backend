@@ -1,8 +1,8 @@
-import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { CreatePaymentStatusDto } from '../../dto/payment/create/CreatePaymentStatusDto';
-import { UpdatePaymentStatusDto } from '../../dto/payment/update/UpdatePaymentStatusDto';
-import { PaymentStatusCreateInput } from '../../generated/prisma/models';
-import * as paymentStatusRepository from '../../repository/payment/PaymentStatusRepository';
+import { mapPrismaError } from "../../common/utils/ErrorWrapper.js";
+import { CreatePaymentStatusDto } from "../../dto/payment/create/CreatePaymentStatusDto.js";
+import { UpdatePaymentStatusDto } from "../../dto/payment/update/UpdatePaymentStatusDto.js";
+import { PaymentStatusCreateInput } from "../../generated/prisma/models.js";
+import * as paymentStatusRepository from "../../repository/payment/PaymentStatusRepository.js";
 
 export const findAll = () =>{
     return paymentStatusRepository.findAll();

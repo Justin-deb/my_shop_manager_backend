@@ -1,8 +1,8 @@
-import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { CreateShopDto } from '../../dto/shop/create/CreateShopDto';
-import { UpdateShopDto } from '../../dto/shop/update/UpdateShopDto';
-import { ShopCreateInput, ShopUpdateInput } from '../../generated/prisma/models';
-import * as shopRepository from '../../repository/shop/ShopRepository';
+import { mapPrismaError } from "../../common/utils/ErrorWrapper.js";
+import { CreateShopDto } from "../../dto/shop/create/CreateShopDto.js";
+import { UpdateShopDto } from "../../dto/shop/update/UpdateShopDto.js";
+import { ShopCreateInput, ShopUpdateInput } from "../../generated/prisma/models.js";
+import * as shopRepository from "../../repository/shop/ShopRepository.js";
 
 export const findAll = () =>{
     return shopRepository.findAll();

@@ -1,7 +1,7 @@
 import { Router } from "express";
-import * as laborController from '../../controller/repair/LaborController';
-import * as schemas from '../../schema/repair/LaborSchemas';
-import { validateSchema } from "../../common/utils/ValidationMiddleware";
+import * as laborController from "../../controller/repair/LaborController.js";
+import * as schemas from "../../schema/repair/LaborSchemas.js";
+import { validateSchema } from "../../common/utils/ValidationMiddleware.js";
 
 const laborRouter = Router();
 

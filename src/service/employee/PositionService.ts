@@ -1,8 +1,8 @@
-import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { CreatePositionDto } from '../../dto/employee/create/CreatePositionDto';
-import { UpdatePositionDto } from '../../dto/employee/update/UpdatePositionDto';
-import { PositionCreateInput, PositionUpdateInput } from '../../generated/prisma/models';
-import * as positionRepository from '../../repository/employee/PositionRepository';
+import { mapPrismaError } from "../../common/utils/ErrorWrapper.js";
+import { CreatePositionDto } from "../../dto/employee/create/CreatePositionDto.js";
+import { UpdatePositionDto } from "../../dto/employee/update/UpdatePositionDto.js";
+import { PositionCreateInput, PositionUpdateInput } from "../../generated/prisma/models.js";
+import * as positionRepository from "../../repository/employee/PositionRepository.js";
 
 export const findAll = () =>{
     return positionRepository.findAll();

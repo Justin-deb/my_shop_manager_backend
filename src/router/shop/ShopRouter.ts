@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import * as shopController from '../../controller/shop/ShopController';
-import * as schemas from '../../schema/shop/ShopSchemas';
-import { validateSchema } from '../../common/utils/ValidationMiddleware';
+import * as shopController from "../../controller/shop/ShopController.js";
+import * as schemas from "../../schema/shop/ShopSchemas.js";
+import { validateSchema } from "../../common/utils/ValidationMiddleware.js";
 
 const shopRouter = Router();
 

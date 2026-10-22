@@ -1,5 +1,5 @@
-import { CustomerCreateInput, CustomerUpdateInput } from "../../generated/prisma/models";
-import prisma from "../../models/common/prisma";
+import { CustomerCreateInput, CustomerUpdateInput } from "../../generated/prisma/models.js";
+import prisma from "../../models/common/prisma.js";
 
 const include = {
     user:true

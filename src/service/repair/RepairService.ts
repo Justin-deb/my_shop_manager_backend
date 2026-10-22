@@ -1,8 +1,8 @@
-import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { CreateRepairDto } from '../../dto/repair/create/CreateRepairDto';
-import { UpdateRepairDto } from '../../dto/repair/update/UpdateRepairDto';
-import { RepairCreateInput, RepairUpdateInput } from '../../generated/prisma/models';
-import * as repairRepository from '../../repository/repair/RepairRepository';
+import { mapPrismaError } from "../../common/utils/ErrorWrapper.js";
+import { CreateRepairDto } from "../../dto/repair/create/CreateRepairDto.js";
+import { UpdateRepairDto } from "../../dto/repair/update/UpdateRepairDto.js";
+import { RepairCreateInput, RepairUpdateInput } from "../../generated/prisma/models.js";
+import * as repairRepository from "../../repository/repair/RepairRepository.js";
 
 export const validateShopId = async (repairId:number,shopId:number) =>{
     try {

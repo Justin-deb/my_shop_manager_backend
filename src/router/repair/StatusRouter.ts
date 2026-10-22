@@ -1,7 +1,7 @@
 import { Router } from "express";
-import * as statusController from '../../controller/repair/StatusController';
-import * as schemas from '../../schema/repair/StatusSchemas';
-import { validateSchema } from "../../common/utils/ValidationMiddleware";
+import * as statusController from "../../controller/repair/StatusController.js";
+import * as schemas from "../../schema/repair/StatusSchemas.js";
+import { validateSchema } from "../../common/utils/ValidationMiddleware.js";
 
 const statusRouter = Router();
 

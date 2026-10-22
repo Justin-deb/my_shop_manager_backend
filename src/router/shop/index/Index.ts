@@ -1,6 +1,6 @@
 import { Router } from "express";
-import shopRouter from "./ShopRouter";
-import warehouseRouter from "./WarehouseRouter";
+import shopRouter from "../ShopRouter.js";
+import warehouseRouter from "../WarehouseRouter.js";
 
 const shopIndexRouter = Router();
 

@@ -1,7 +1,7 @@
 import { Router } from "express";
-import * as userRolesController from '../../controller/user/UserRolesController';
-import * as schemas from '../../schema/user/UserRolesSchemas';
-import { validateSchema } from "../../common/utils/ValidationMiddleware";
+import * as userRolesController from "../../controller/user/UserRolesController.js";
+import * as schemas from "../../schema/user/UserRolesSchemas.js";
+import { validateSchema } from "../../common/utils/ValidationMiddleware.js";
 
 const userRolesRouter = Router();
 

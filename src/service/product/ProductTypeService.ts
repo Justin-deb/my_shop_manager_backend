@@ -1,8 +1,8 @@
-import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { CreateProductTypeDto } from '../../dto/product/create/CreateProductTypeDto';
-import { UpdateProductTypeDto } from '../../dto/product/update/UpdateProductType';
-import { ProductTypeCreateInput, ProductTypeUpdateInput } from '../../generated/prisma/models';
-import * as productTypeRepository from '../../repository/product/ProductTypeRepository';
+import { mapPrismaError } from "../../common/utils/ErrorWrapper.js";
+import { CreateProductTypeDto } from "../../dto/product/create/CreateProductTypeDto.js";
+import { UpdateProductTypeDto } from "../../dto/product/update/UpdateProductType.js";
+import { ProductTypeCreateInput, ProductTypeUpdateInput } from "../../generated/prisma/models.js";
+import * as productTypeRepository from "../../repository/product/ProductTypeRepository.js";
 
 export const findAll = () =>{
     return productTypeRepository.findAll();

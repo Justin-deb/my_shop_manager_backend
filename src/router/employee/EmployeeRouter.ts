@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import * as employeeController from '../../controller/employee/EmployeeController';
-import { validateSchema } from '../../common/utils/ValidationMiddleware';
-import * as schemas from '../../schema/employee/EmployeeSchemas';
+import * as employeeController from "../../controller/employee/EmployeeController.js";
+import { validateSchema } from "../../common/utils/ValidationMiddleware.js";
+import * as schemas from "../../schema/employee/EmployeeSchemas.js";
 
 const employeeRouter = Router();
 

@@ -1,5 +1,5 @@
 import z from "zod";
-import { idParam } from "../common/SearchParameters";
+import { idParam } from "../common/SearchParameters.js";
 
 export const createCustomerProduct = z.object({
     body:z.object({

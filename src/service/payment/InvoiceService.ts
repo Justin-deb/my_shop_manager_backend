@@ -1,8 +1,8 @@
-import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { CreateInvoiceDto } from '../../dto/payment/create/CreateInvoiceDto';
-import { UpdateInvoiceDto } from '../../dto/payment/update/UpdateInvoiceDto';
-import { InvoiceCreateInput, InvoiceUpdateInput } from '../../generated/prisma/models';
-import * as invoiceRepository from '../../repository/payment/InvoiceRepository';
+import { mapPrismaError } from "../../common/utils/ErrorWrapper.js";
+import { CreateInvoiceDto } from "../../dto/payment/create/CreateInvoiceDto.js";
+import { UpdateInvoiceDto } from "../../dto/payment/update/UpdateInvoiceDto.js";
+import { InvoiceCreateInput, InvoiceUpdateInput } from "../../generated/prisma/models.js";
+import * as invoiceRepository from "../../repository/payment/InvoiceRepository.js";
 
 export const findAllByRepairId = (shopId:number,repairId:number) =>{
     return invoiceRepository.findAllByRepairId(shopId,repairId);

@@ -1,6 +1,6 @@
 import { Router } from "express";
-import employeeRouter from "./EmployeeRouter";
-import positionRouter from "./PositionRouter";
+import employeeRouter from "../EmployeeRouter.js";
+import positionRouter from "../PositionRouter.js";
 
 const employeeIndexRouter = Router()
 

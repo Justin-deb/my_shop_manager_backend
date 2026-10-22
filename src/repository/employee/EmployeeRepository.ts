@@ -1,5 +1,5 @@
-import { EmployeeCreateInput, EmployeeUpdateInput } from '../../generated/prisma/models';
-import prisma from '../../models/common/prisma';
+import { EmployeeCreateInput, EmployeeUpdateInput } from '../../generated/prisma/models/Employee.js';
+import prisma from '../../models/common/prisma.js';
 
 const include = {
   position: true,
