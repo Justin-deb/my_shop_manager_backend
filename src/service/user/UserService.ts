@@ -3,6 +3,7 @@ import { CreateUserDto } from "../../dto/user/create/CreateUserDto.js";
 import { UpdateUserDto } from "../../dto/user/update/UpdateUserDto.js";
 import { BadRequestError } from "../../exceptions/BadRequestError.js";
 import { NotFoundError } from "../../exceptions/NotFoundError.js";
+import { UnauthroizeError } from "../../exceptions/UnauthroizeError.js";
 import { UserCreateInput, UserUpdateInput } from "../../generated/prisma/models.js";
 import * as userRepository from "../../repository/user/UserRepository.js";
 import * as userRolesService from "./UserRolesService.js";
@@ -27,6 +28,16 @@ export const findByEmail = (email:string) =>{
         return userRepository.findByEmail(email);
     } catch (error) {
         mapPrismaError(error,'User',email);
+    }
+}
+
+export const comparePassword = async (userId:number,password:string) =>{
+    try {
+        const passwordHash = await userRepository.findPasswordById(userId);
+
+        return await bcrypt.compare(password,passwordHash);
+    } catch (error) {
+        throw new UnauthroizeError('Invalid credentials');
     }
 }
 
