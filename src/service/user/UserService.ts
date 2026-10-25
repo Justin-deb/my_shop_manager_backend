@@ -10,6 +10,7 @@ import * as userRolesService from "./UserRolesService.js";
 import bcrypt from 'bcrypt';
 
 const SALT_ROUNDS = parseInt(process.env["BCRYPT_SALT_ROUNDS"]!);
+const USER_ROLE = 2;
 
 export const findAll = () =>{
     return userRepository.findAll();
@@ -57,7 +58,9 @@ export const create = async (dto:CreateUserDto) =>{
 
     try {
         const user = await userRepository.create(newUser);
-        userRolesService.create(user.userId,dto.roleId);
+        
+        await userRolesService.create(user.userId,USER_ROLE);
+
         return user;
     } catch (error) {
         mapPrismaError(error,'User');

@@ -5,5 +5,4 @@ export interface CreateUserDto{
     secondLastName: string;
     email: string;
     password: string;
-    roleId: number;
 }

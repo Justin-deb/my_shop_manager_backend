@@ -1,11 +1,11 @@
 import { UnauthroizeError } from "../../../../exceptions/UnauthroizeError.js"
 import { sessionStorage } from "../../../../redis/RedisClients.js";
-import { findByName } from "../../RoleService.js";
 import { userHasRole } from "../../UserRolesService.js";
 import { comparePassword } from "../../UserService.js"
 import jwt from 'jsonwebtoken';
 
 const SECRET_KEY = process.env.SECRET_KEY;
+const SHOP_OWNER_ROLE = 3;
 
 export const userLogin = async (userId:number,password:string) =>{
     if(!(await comparePassword(userId,password))){
@@ -53,10 +53,8 @@ const createUserSession = async (userId:number) =>{
 
     const redisKey = `sessionToken:${sessionToken}`;
     const ttl = 3600;
-
-    const shopRoleId = await findByName('SHOP_OWNER');
     
-    const isShopOwner = await userHasRole(userId,shopRoleId[0].roleId);
+    const isShopOwner = await userHasRole(userId,SHOP_OWNER_ROLE);
 
     await sessionStorage.sendCommand([
         'HSETEX',

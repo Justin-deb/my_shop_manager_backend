@@ -3,6 +3,9 @@ import { CreateShopDto } from "../../dto/shop/create/CreateShopDto.js";
 import { UpdateShopDto } from "../../dto/shop/update/UpdateShopDto.js";
 import { ShopCreateInput, ShopUpdateInput } from "../../generated/prisma/models.js";
 import * as shopRepository from "../../repository/shop/ShopRepository.js";
+import * as userRolesService from '../../service/user/UserRolesService.js';
+
+const SHOP_OWNER_ROLE = 3;
 
 export const findAll = () =>{
     return shopRepository.findAll();
@@ -20,7 +23,7 @@ export const findByOwnerId = (ownerId:number) =>{
     return shopRepository.findByOwnerId(ownerId);
 }
 
-export const create = (dto:CreateShopDto) =>{
+export const create = async (dto:CreateShopDto) =>{
     const newShop:ShopCreateInput = {
         user:{
             connect:{
@@ -35,7 +38,11 @@ export const create = (dto:CreateShopDto) =>{
     }
 
     try {
-        return shopRepository.create(newShop);
+        const shop = await shopRepository.create(newShop); 
+
+        userRolesService.create(dto.userId,SHOP_OWNER_ROLE);
+
+        return shop; 
     } catch (error) {
         mapPrismaError(error,'Shop');
     }
