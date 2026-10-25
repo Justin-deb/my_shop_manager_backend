@@ -1,3 +1,4 @@
 export interface PayloadJWT{
-    id:string
+    id:string,
+    isAdmin:string | boolean
 }

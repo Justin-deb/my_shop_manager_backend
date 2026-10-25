@@ -30,8 +30,8 @@ export const authMiddleware = async (req:Request,res:Response,next:NextFunction)
             next(new UnauthroizeError('The token provided does not belong to the user'));
         }
 
-        res.locals.userId = storedUser.id;
-        res.locals.roleId = storedUser.roleId;
+        res.locals.userId = storedUser.userId;
+        res.locals.isAdmin = Boolean(storedUser.isAdmin);
         
         next();
     } catch (error) {

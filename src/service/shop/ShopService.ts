@@ -5,7 +5,7 @@ import { ShopCreateInput, ShopUpdateInput } from "../../generated/prisma/models.
 import * as shopRepository from "../../repository/shop/ShopRepository.js";
 import * as userRolesService from '../../service/user/UserRolesService.js';
 
-const SHOP_OWNER_ROLE = 3;
+const SHOP_OWNER_ROLE_ID = 3;
 
 export const findAll = () =>{
     return shopRepository.findAll();
@@ -40,7 +40,7 @@ export const create = async (dto:CreateShopDto) =>{
     try {
         const shop = await shopRepository.create(newShop); 
 
-        userRolesService.create(dto.userId,SHOP_OWNER_ROLE);
+        userRolesService.create(dto.userId,SHOP_OWNER_ROLE_ID);
 
         return shop; 
     } catch (error) {

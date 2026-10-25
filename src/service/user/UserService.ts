@@ -6,11 +6,12 @@ import { NotFoundError } from "../../exceptions/NotFoundError.js";
 import { UnauthroizeError } from "../../exceptions/UnauthroizeError.js";
 import { UserCreateInput, UserUpdateInput } from "../../generated/prisma/models.js";
 import * as userRepository from "../../repository/user/UserRepository.js";
+import { createTokens } from "./security/user/Authenticate.js";
 import * as userRolesService from "./UserRolesService.js";
 import bcrypt from 'bcrypt';
 
 const SALT_ROUNDS = parseInt(process.env["BCRYPT_SALT_ROUNDS"]!);
-const USER_ROLE = 2;
+const USER_ROLE_ID = 2;
 
 export const findAll = () =>{
     return userRepository.findAll();
@@ -59,9 +60,10 @@ export const create = async (dto:CreateUserDto) =>{
     try {
         const user = await userRepository.create(newUser);
         
-        await userRolesService.create(user.userId,USER_ROLE);
+        await userRolesService.create(user.userId,USER_ROLE_ID);
+        const tokens = await createTokens(user.userId);
 
-        return user;
+        return {user,...tokens};
     } catch (error) {
         mapPrismaError(error,'User');
     }
