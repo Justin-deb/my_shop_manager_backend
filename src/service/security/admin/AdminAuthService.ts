@@ -1,15 +1,15 @@
-import { NotFoundError } from '../../../../exceptions/NotFoundError.js';
-import { UnauthroizeError } from '../../../../exceptions/UnauthroizeError.js';
-import { sessionStorage } from '../../../../redis/RedisClients.js';
-import * as userRolesService from '../../UserRolesService.js';
+import { NotFoundError } from '../../../exceptions/NotFoundError.js';
+import { UnauthroizeError } from '../../../exceptions/UnauthroizeError.js';
+import { sessionStorage } from '../../../redis/RedisClients.js';
+import * as userRolesService from '../../user/UserRolesService.js';
 import jwt from 'jsonwebtoken';
-import { comparePassword } from '../../UserService.js';
+import { comparePassword } from '../../user/UserService.js';
 
 const SECRET_KEY = process.env.SECRET_KEY;
 const USER_ROLE_ID = 2;
 const ADMIN_ROLE_ID = 4;
 
-export const adminRegister = async (userId:number) =>{
+export const registerAdmin = async (userId:number) =>{
     if(!userRolesService.userHasRole(userId,USER_ROLE_ID)){
         throw new NotFoundError(`User not found with the id ${userId}`);
     }
@@ -17,7 +17,7 @@ export const adminRegister = async (userId:number) =>{
     await userRolesService.create(userId,ADMIN_ROLE_ID);
 }
 
-export const adminLogin = async (userId:number,password:string) =>{
+export const loginAdmin = async (userId:number,password:string) =>{
     if(!(await comparePassword(userId,password))){
         throw new UnauthroizeError('Invalid credentials');
     }
@@ -28,7 +28,7 @@ export const adminLogin = async (userId:number,password:string) =>{
         throw new UnauthroizeError('Not system administrator');
     }
 
-    return createTokens;
+    return createTokens(userId);
 }
 
 export const refreshSessionToken = async (userId:number,refreshToken:string) =>{
@@ -65,8 +65,10 @@ const createAdminSession = async (userId:number) =>{
         'HSETEX',
         redisKey,
         'EX',String(ttl),
-        'FIELDS','1',
+        'FIELDS','2',
         'userId',String(userId),
+        'isShopOwner',String(false),
+        'isAdmin',String(true)
     ]);
     
     return sessionToken;

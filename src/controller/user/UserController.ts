@@ -33,18 +33,6 @@ export const findByEmail = async (req:Request,res:Response,next:NextFunction) =>
     }
 }
 
-export const create = async (req:Request,res:Response,next:NextFunction) =>{
-    const {dto} = req.body;
-    try {
-        const user = await userService.create(dto);
-        return controllerResponse(res,HttpStatusCodes.CREATED,{
-            userId:user?.userId
-        });
-    } catch (error) {
-        next(error);
-    }
-}
-
 export const update = async (req:Request,res:Response,next:NextFunction) =>{
     const userId = getParamNumber(req,'userId');
     const {dto} = req.body;

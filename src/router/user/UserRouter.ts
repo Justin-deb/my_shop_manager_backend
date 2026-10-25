@@ -16,10 +16,6 @@ userRouter.get('/user/email',
                 validateSchema(schemas.findByEmail),
                 userController.findByEmail);
 
-userRouter.post('/user/create',
-                validateSchema(schemas.createUser),
-                userController.create);
-
 userRouter.put('/user/update/:userId',
                 validateSchema(schemas.updateUser),
                 userController.update);

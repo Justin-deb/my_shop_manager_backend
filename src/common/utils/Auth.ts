@@ -6,7 +6,7 @@ import { sessionStorage } from "../../redis/RedisClients.js";
 
 const SECRET_KEY = process.env.SECRET_KEY;
 
-export const authMiddleware = async (req:Request,res:Response,next:NextFunction) =>{
+export const authenticate = async (req:Request,res:Response,next:NextFunction) =>{
     //Get the header from the request
     const authHeader = req.headers['authorization'];
 
@@ -32,9 +32,26 @@ export const authMiddleware = async (req:Request,res:Response,next:NextFunction)
 
         res.locals.userId = storedUser.userId;
         res.locals.isAdmin = Boolean(storedUser.isAdmin);
+        res.locals.isShopOwner = Boolean(storedUser.isShopOwner);
         
         next();
     } catch (error) {
         next(error);
     }
+}
+
+export const authorizeAdmin = (req:Request,res:Response,next:NextFunction) =>{
+    if(!res.locals.isAdmin){
+        next(new UnauthroizeError('Access denied'))
+    }
+
+    next();
+}
+
+export const authorizeShopOwner = (req:Request,res:Response,next:NextFunction) =>{
+    if(!res.locals.isShopOwner){
+        next(new UnauthroizeError('Access denied'))
+    }
+
+    next();
 }

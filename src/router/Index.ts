@@ -6,6 +6,7 @@ import productIndexRouter from "./product/index/Index.js";
 import repairIndexRouter from "./repair/index/Index.js";
 import shopIndexRouter from "./shop/index/Index.js";
 import userIndexRouter from "./user/index/Index.js";
+import authIndexRouter from "./security/index.js";
 
 const router = Router();
 
@@ -22,5 +23,7 @@ router.use(repairIndexRouter);
 router.use(shopIndexRouter);
 
 router.use(userIndexRouter);
+
+router.use(authIndexRouter)
 
 export default router;
