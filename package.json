@@ -7,7 +7,7 @@
     "build:copy-static": "shx mkdir -p dist/public dist/views && shx cp -r src/public/* dist/public && shx cp -r src/views/* dist/views",
     "build:make-db": "shx mkdir -p dist/repos/common && shx touch dist/repos/common/database.json && echo \"{}\" > dist/repos/common/database.json",
     "clean-install": "rm -rf ./node_modules && rm -r package-lock.json && npm i",
-    "dev:basic": "cross-env DOTENV_CONFIG_PATH=./config/.env.development ts-node ./src/main",
+    "dev:basic": "cross-env DOTENV_CONFIG_PATH=./config/.env.development NODE_ENV=development node -r dotenv/config --import tsx ./src/main.ts",
     "dev:watch": "nodemon --exec \"npm run dev:basic\" --watch ./src --ext .ts",
     "dev": "npm run dev:watch",
     "lint": "eslint .",
@@ -75,6 +75,7 @@
     "supertest": "^7.2.2",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.23.15",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.65.0",
     "vitest": "^4.1.10"

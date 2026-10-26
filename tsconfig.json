@@ -13,7 +13,8 @@
   },
   "ts-node": {
     "swc": true,
-    "esm": true
+    "esm": true,
+    "experimentalResolver":true
   },
   "include": [
     "src/**/*.ts",
