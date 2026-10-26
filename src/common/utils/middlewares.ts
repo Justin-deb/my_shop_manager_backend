@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
-import EnvVars, { NodeEnvs } from '../constants/env';
-import { AppError } from '../../exceptions/AppError';
+import EnvVars, { NodeEnvs } from "../constants/env.js";
+import { AppError } from "../../exceptions/AppError.js";
 
 export const errorHandler = (err:unknown,_req:Request,res:Response,_next:NextFunction)=>{
     const statusCode = err instanceof AppError ? err.statusCode : 500;

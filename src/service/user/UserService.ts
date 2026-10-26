@@ -1,13 +1,15 @@
-import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { CreateUserDto } from '../../dto/user/create/CreateUserDto';
-import { UpdateUserDto } from '../../dto/user/update/UpdateUserDto';
-import { BadRequestError } from '../../exceptions/BadRequestError';
-import { NotFoundError } from '../../exceptions/NotFoundError';
-import { UserCreateInput, UserUpdateInput } from '../../generated/prisma/models';
-import * as userRepository from '../../repository/user/UserRepository';
+import { mapPrismaError } from "../../common/utils/ErrorWrapper.js";
+import { CreateUserDto } from "../../dto/user/create/CreateUserDto.js";
+import { UpdateUserDto } from "../../dto/user/update/UpdateUserDto.js";
+import { BadRequestError } from "../../exceptions/BadRequestError.js";
+import { NotFoundError } from "../../exceptions/NotFoundError.js";
+import { UnauthroizeError } from "../../exceptions/UnauthroizeError.js";
+import { UserCreateInput, UserUpdateInput } from "../../generated/prisma/models.js";
+import * as userRepository from "../../repository/user/UserRepository.js";
 import bcrypt from 'bcrypt';
 
 const SALT_ROUNDS = parseInt(process.env["BCRYPT_SALT_ROUNDS"]!);
+const USER_ROLE_ID = 2;
 
 export const findAll = () =>{
     return userRepository.findAll();
@@ -29,6 +31,16 @@ export const findByEmail = (email:string) =>{
     }
 }
 
+export const comparePassword = async (userId:number,password:string) =>{
+    try {
+        const passwordHash = await userRepository.findPasswordById(userId);
+
+        return await bcrypt.compare(password,passwordHash);
+    } catch (error) {
+        throw new UnauthroizeError('Invalid credentials');
+    }
+}
+
 export const create = async (dto:CreateUserDto) =>{
     //Encrypt password
     const passwordHash = await bcrypt.hash(dto.password,SALT_ROUNDS);
@@ -40,12 +52,7 @@ export const create = async (dto:CreateUserDto) =>{
         lastName:dto.lastName,
         secondLastName:dto.secondLastName,
         email:dto.email,
-        passwordHash:passwordHash,
-        role:{
-            connect:{
-                roleId:dto.roleId
-            }
-        }
+        passwordHash:passwordHash
     }
 
     try {
@@ -60,12 +67,7 @@ export const update = async (userId:number,dto:UpdateUserDto) =>{
         firstName:dto.firstName,
         middleName:dto.middleName,
         lastName:dto.lastName,
-        secondLastName:dto.secondLastName,
-        role:{
-            connect:{
-                roleId:dto.roleId
-            }
-        }
+        secondLastName:dto.secondLastName
     }
 
     try {

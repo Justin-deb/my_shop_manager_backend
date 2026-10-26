@@ -1,8 +1,8 @@
-import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { CreateRoleDto } from '../../dto/user/create/CreateRoleDto';
-import { UpdateRoleDto } from '../../dto/user/update/UpdateRoleDto';
-import { RoleCreateInput, RoleUpdateInput } from '../../generated/prisma/models';
-import * as roleRepository from '../../repository/user/RoleRepository';
+import { mapPrismaError } from "../../common/utils/ErrorWrapper.js";
+import { CreateRoleDto } from "../../dto/user/create/CreateRoleDto.js";
+import { UpdateRoleDto } from "../../dto/user/update/UpdateRoleDto.js";
+import { RoleCreateInput, RoleUpdateInput } from "../../generated/prisma/models.js";
+import * as roleRepository from "../../repository/user/RoleRepository.js";
 
 export const findAll = () =>{
     return roleRepository.findAll();

@@ -1,8 +1,8 @@
 import { Router } from "express";
-import invoiceRouter from "./InvoiceRouter";
-import paymentRouter from "./PaymentRouter";
-import paymentMethodRouter from "./PaymentMethodRouter";
-import paymentStatusRouter from "./PaymentStatusRouter";
+import invoiceRouter from "../InvoiceRouter.js";
+import paymentRouter from "../PaymentRouter.js";
+import paymentMethodRouter from "../PaymentMethodRouter.js";
+import paymentStatusRouter from "../PaymentStatusRouter.js";
 
 const paymentIndexRouter = Router();
 

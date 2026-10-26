@@ -1,8 +1,8 @@
-import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { CreateLaborDto } from '../../dto/repair/create/CreateLaborDto';
-import { UpdateLaborDto } from '../../dto/repair/update/UpdateLaborDto';
-import { LaborCreateInput, LaborUpdateInput } from '../../generated/prisma/models';
-import * as laborRepository from '../../repository/repair/LaborRepository';
+import { mapPrismaError } from "../../common/utils/ErrorWrapper.js";
+import { CreateLaborDto } from "../../dto/repair/create/CreateLaborDto.js";
+import { UpdateLaborDto } from "../../dto/repair/update/UpdateLaborDto.js";
+import { LaborCreateInput, LaborUpdateInput } from "../../generated/prisma/models.js";
+import * as laborRepository from "../../repository/repair/LaborRepository.js";
 
 export const findById = (shopId:number,repairId:number,laborId:number) =>{
     try {

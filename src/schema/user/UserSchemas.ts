@@ -1,5 +1,5 @@
 import z from "zod";
-import { idParam } from "../common/SearchParameters";
+import { idParam } from "../common/SearchParameters.js";
 
 export const createUser = z.object({
     body:z.object({
@@ -8,8 +8,7 @@ export const createUser = z.object({
         lastName:z.string(),
         secondLastName:z.string(),
         email:z.email(),
-        password:z.string(),
-        roleId:idParam
+        password:z.string()
     }),
     query:z.object({}),
     params:z.object({})
@@ -20,8 +19,7 @@ export const updateUser = z.object({
         firstName:z.string().optional(),
         middleName:z.string().optional(),
         lastName:z.string().optional(),
-        secondLastName:z.string().optional(),
-        roleId:idParam.optional()
+        secondLastName:z.string().optional()
     }),
     query:z.object({}),
     params:z.object({

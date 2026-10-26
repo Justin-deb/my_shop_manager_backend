@@ -1,7 +1,8 @@
 import { Router } from 'express';
-import * as positionController from '../../controller/employee/PositionController';
-import * as schemas from '../../schema/employee/PositionSchemas';
-import { validateSchema } from '../../common/utils/ValidationMiddleware';
+import * as positionController from "../../controller/employee/PositionController.js";
+import * as schemas from "../../schema/employee/PositionSchemas.js";
+import { validateSchema } from "../../common/utils/ValidationMiddleware.js";
+import { authenticate, authorizeAdmin } from '../../common/utils/Auth.js';
 
 const positionRouter = Router();
 
@@ -17,14 +18,20 @@ positionRouter.get('/position/name',
                     positionController.findByName);
 
 positionRouter.post('/position/create',
+                    authenticate,
+                    authorizeAdmin,
                     validateSchema(schemas.createPosition),
                     positionController.create);
 
 positionRouter.put('/position/update/:positionId',
+                    authenticate,
+                    authorizeAdmin,
                     validateSchema(schemas.updatePosition),
                     positionController.update);
 
 positionRouter.delete('/position/delete/:positionId',
+                    authenticate,
+                    authorizeAdmin,
                     validateSchema(schemas.findById),
                     positionController.remove);
 

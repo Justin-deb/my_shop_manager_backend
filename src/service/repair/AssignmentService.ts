@@ -1,8 +1,8 @@
-import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { CreateAssignmentDto } from '../../dto/repair/create/CreateAssignmentDto';
-import { UpdateAssignmentDto } from '../../dto/repair/update/UpdateAssignmentDto';
-import { AssignmentCreateInput, AssignmentUpdateInput } from '../../generated/prisma/models';
-import * as assignmentRepository from '../../repository/repair/AssignmentRepository';
+import { mapPrismaError } from "../../common/utils/ErrorWrapper.js";
+import { CreateAssignmentDto } from "../../dto/repair/create/CreateAssignmentDto.js";
+import { UpdateAssignmentDto } from "../../dto/repair/update/UpdateAssignmentDto.js";
+import { AssignmentCreateInput, AssignmentUpdateInput } from "../../generated/prisma/models.js";
+import * as assignmentRepository from "../../repository/repair/AssignmentRepository.js";
 
 export const findAllByRepairId = (shopId:number,repairId:number) =>{
     return assignmentRepository.findAllByRepairId(shopId,repairId);

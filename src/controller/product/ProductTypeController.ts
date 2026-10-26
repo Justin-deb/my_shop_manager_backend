@@ -1,8 +1,8 @@
 import { Request,Response,NextFunction } from 'express';
-import * as productTypeService from '../../service/product/ProductTypeService';
-import { controllerResponse } from '../../common/utils/ControllerResponse';
-import HttpStatusCodes from '../../common/constants/HttpStatusCodes';
-import { getParamNumber, getQueryString } from '../../common/utils/ParameterExtraction';
+import * as productTypeService from "../../service/product/ProductTypeService.js";
+import { controllerResponse } from "../../common/utils/ControllerResponse.js";
+import HttpStatusCodes from "../../common/constants/HttpStatusCodes.js";
+import { getParamNumber, getQueryString } from "../../common/utils/ParameterExtraction.js";
 
 export const findAll =  async (req:Request,res:Response,next:NextFunction) =>{
     try {

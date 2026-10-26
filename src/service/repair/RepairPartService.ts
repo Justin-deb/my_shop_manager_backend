@@ -1,9 +1,9 @@
 import { errorMonitor } from 'node:events';
-import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { CreateRepairPartDto } from '../../dto/repair/create/CreateRepairPartDto';
-import { RepairPartCreateInput, RepairPartUpdateInput } from '../../generated/prisma/models';
-import * as repairPartRepository from '../../repository/repair/RepairPartRepository';
-import { UpdateRepairPartDto } from '../../dto/repair/update/UpdateRepairPartDto';
+import { mapPrismaError } from "../../common/utils/ErrorWrapper.js";
+import { CreateRepairPartDto } from "../../dto/repair/create/CreateRepairPartDto.js";
+import { RepairPartCreateInput, RepairPartUpdateInput } from "../../generated/prisma/models.js";
+import * as repairPartRepository from "../../repository/repair/RepairPartRepository.js";
+import { UpdateRepairPartDto } from "../../dto/repair/update/UpdateRepairPartDto.js";
 
 export const findAllByRepairId = (shopId:number,repairId:number) =>{
     return repairPartRepository.findAllByRepairId(shopId,repairId);

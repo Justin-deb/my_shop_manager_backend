@@ -16,10 +16,10 @@
  */
 
 import * as runtime from "@prisma/client/runtime/client"
-import type * as Prisma from "../models"
-import { type PrismaClient } from "./class"
+import type * as Prisma from "../models.js"
+import { type PrismaClient } from "./class.js"
 
-export type * from '../models'
+export type * from "../models.js"
 
 export type DMMF = typeof runtime.DMMF
 
@@ -416,7 +416,8 @@ export const ModelName = {
   Employee: 'Employee',
   Customer: 'Customer',
   CustomerProduct: 'CustomerProduct',
-  PaymentStatus: 'PaymentStatus'
+  PaymentStatus: 'PaymentStatus',
+  UserRoles: 'UserRoles'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -432,7 +433,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "invoice" | "labor" | "payment" | "paymentMethod" | "piece" | "position" | "product" | "productType" | "repair" | "repairPart" | "role" | "shop" | "status" | "user" | "warehouse" | "assignment" | "employee" | "customer" | "customerProduct" | "paymentStatus"
+    modelProps: "invoice" | "labor" | "payment" | "paymentMethod" | "piece" | "position" | "product" | "productType" | "repair" | "repairPart" | "role" | "shop" | "status" | "user" | "warehouse" | "assignment" | "employee" | "customer" | "customerProduct" | "paymentStatus" | "userRoles"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1756,6 +1757,72 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    UserRoles: {
+      payload: Prisma.$UserRolesPayload<ExtArgs>
+      fields: Prisma.UserRolesFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.UserRolesFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserRolesPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.UserRolesFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserRolesPayload>
+        }
+        findFirst: {
+          args: Prisma.UserRolesFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserRolesPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.UserRolesFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserRolesPayload>
+        }
+        findMany: {
+          args: Prisma.UserRolesFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserRolesPayload>[]
+        }
+        create: {
+          args: Prisma.UserRolesCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserRolesPayload>
+        }
+        createMany: {
+          args: Prisma.UserRolesCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.UserRolesDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserRolesPayload>
+        }
+        update: {
+          args: Prisma.UserRolesUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserRolesPayload>
+        }
+        deleteMany: {
+          args: Prisma.UserRolesDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.UserRolesUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.UserRolesUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserRolesPayload>
+        }
+        aggregate: {
+          args: Prisma.UserRolesAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateUserRoles>
+        }
+        groupBy: {
+          args: Prisma.UserRolesGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.UserRolesGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.UserRolesCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.UserRolesCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1939,7 +2006,6 @@ export type StatusScalarFieldEnum = (typeof StatusScalarFieldEnum)[keyof typeof 
 
 export const UserScalarFieldEnum = {
   userId: 'userId',
-  roleId: 'roleId',
   firstName: 'firstName',
   middleName: 'middleName',
   lastName: 'lastName',
@@ -2014,6 +2080,14 @@ export const PaymentStatusScalarFieldEnum = {
 } as const
 
 export type PaymentStatusScalarFieldEnum = (typeof PaymentStatusScalarFieldEnum)[keyof typeof PaymentStatusScalarFieldEnum]
+
+
+export const UserRolesScalarFieldEnum = {
+  userId: 'userId',
+  roleId: 'roleId'
+} as const
+
+export type UserRolesScalarFieldEnum = (typeof UserRolesScalarFieldEnum)[keyof typeof UserRolesScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -2375,6 +2449,7 @@ export type GlobalOmitConfig = {
   customer?: Prisma.CustomerOmit
   customerProduct?: Prisma.CustomerProductOmit
   paymentStatus?: Prisma.PaymentStatusOmit
+  userRoles?: Prisma.UserRolesOmit
 }
 
 /* Types for Logging */

@@ -1,5 +1,5 @@
 import z from "zod";
-import { idParam, searchText } from "../common/SearchParameters";
+import { idParam, searchText } from "../common/SearchParameters.js";
 
 export const createPayment = z.object({
     body:z.object({

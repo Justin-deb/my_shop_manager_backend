@@ -1,5 +1,5 @@
-import { RepairPartCreateInput, RepairPartUpdateInput } from '../../generated/prisma/models';
-import prisma from '../../models/common/prisma';
+import { RepairPartCreateInput, RepairPartUpdateInput } from "../../generated/prisma/models.js";
+import prisma from "../../models/common/prisma.js";
 
 const include = {
   piece: true,

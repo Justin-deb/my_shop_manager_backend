@@ -1,9 +1,9 @@
 import { Router } from "express";
-import assignmentRouter from "./AssignmentRouter";
-import laborRouter from "./LaborRouter";
-import repairPartRouter from "./RepairPartRouter";
-import repairRouter from "./RepairRouter";
-import statusRouter from "./StatusRouter";
+import assignmentRouter from "../AssignmentRouter.js";
+import laborRouter from "../LaborRouter.js";
+import repairPartRouter from "../RepairPartRouter.js";
+import repairRouter from "../RepairRouter.js";
+import statusRouter from "../StatusRouter.js";
 
 const repairIndexRouter = Router();
 

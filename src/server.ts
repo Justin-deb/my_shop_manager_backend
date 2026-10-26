@@ -2,10 +2,10 @@ import express, { NextFunction, Request, Response } from 'express';
 import helmet from 'helmet';
 import logger from 'jet-logger';
 import morgan from 'morgan';
-import { errorHandler } from './common/utils/middlewares';
+import { errorHandler } from "./common/utils/middlewares.js";
 
-import EnvVars, { NodeEnvs } from './common/constants/env';
-import router from './router/Index';
+import EnvVars, { NodeEnvs } from "./common/constants/env.js";
+import router from "./router/Index.js";
 
 /******************************************************************************
                                 Setup

@@ -1,7 +1,8 @@
 import { Router } from 'express';
-import * as productController from '../../controller/product/ProductController';
-import * as schemas  from '../../schema/product/ProductSchemas';
-import { validateSchema } from '../../common/utils/ValidationMiddleware';
+import * as productController from "../../controller/product/ProductController.js";
+import * as schemas  from "../../schema/product/ProductSchemas.js";
+import { validateSchema } from "../../common/utils/ValidationMiddleware.js";
+import { authenticate, authorizeAdmin } from '../../common/utils/Auth.js';
 
 const productRouter = Router();
 
@@ -29,14 +30,20 @@ productRouter.get('/product/manufacturer',
                     productController.findByManufacturer);
 
 productRouter.post('/product/create',
+                    authenticate,
+                    authorizeAdmin,
                     validateSchema(schemas.createProduct),
                     productController.create);
 
 productRouter.put('/product/update/:productId',
+                    authenticate,
+                    authorizeAdmin,
                     validateSchema(schemas.updateProduct),
                     productController.update);
 
 productRouter.delete('/product/delete/:productId',
+                    authenticate,
+                    authorizeAdmin,
                     validateSchema(schemas.findById),
                     productController.remove);
 

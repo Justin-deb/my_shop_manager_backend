@@ -1,5 +1,5 @@
-import { CustomerProductCreateInput, CustomerProductUpdateInput } from "../../generated/prisma/models";
-import prisma from "../../models/common/prisma";
+import { CustomerProductCreateInput, CustomerProductUpdateInput } from "../../generated/prisma/models.js";
+import prisma from "../../models/common/prisma.js";
 
 export const findById = (shopId:number,customerId:number,productId:number) =>{
     return prisma.customerProduct.findUniqueOrThrow({

@@ -1,5 +1,5 @@
-import { PieceCreateInput, PieceUpdateInput } from "../../generated/prisma/models";
-import prisma from "../../models/common/prisma";
+import { PieceCreateInput, PieceUpdateInput } from "../../generated/prisma/models.js";
+import prisma from "../../models/common/prisma.js";
 
 export const findAll = () =>{
     return prisma.piece.findMany();

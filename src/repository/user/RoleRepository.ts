@@ -1,5 +1,5 @@
-import { RoleCreateInput, RoleUpdateInput } from "../../generated/prisma/models";
-import prisma from "../../models/common/prisma";
+import { RoleCreateInput, RoleUpdateInput } from "../../generated/prisma/models.js";
+import prisma from "../../models/common/prisma.js";
 
 export const findAll = () =>{
     return prisma.role.findMany();

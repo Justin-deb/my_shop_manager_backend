@@ -1,7 +1,7 @@
 import logger from 'jet-logger';
 
-import EnvVars from './common/constants/env';
-import server from './server';
+import EnvVars from "./common/constants/env.js";
+import server from "./server.js";
 
 /******************************************************************************
                                 Constants

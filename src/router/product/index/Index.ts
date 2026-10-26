@@ -1,7 +1,7 @@
 import { Router } from "express";
-import customerProductRouter from "./CustomerProductRouter";
-import productRouter from "./ProductRouter";
-import productTypeRouter from "./ProductTypeRouter";
+import customerProductRouter from "../CustomerProductRouter.js";
+import productRouter from "../ProductRouter.js";
+import productTypeRouter from "../ProductTypeRouter.js";
 
 const productIndexRouter = Router();
 

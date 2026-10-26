@@ -1,5 +1,5 @@
-import { PaymentMethodCreateInput, PaymentMethodUpdateInput } from "../../generated/prisma/models";
-import prisma from "../../models/common/prisma";
+import { PaymentMethodCreateInput, PaymentMethodUpdateInput } from "../../generated/prisma/models.js";
+import prisma from "../../models/common/prisma.js";
 
 export const findAll = () =>{
     return prisma.paymentMethod.findMany();

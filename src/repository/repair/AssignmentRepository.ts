@@ -1,8 +1,8 @@
 import {
   AssignmentCreateInput,
   AssignmentUpdateInput,
-} from '../../generated/prisma/models';
-import prisma from '../../models/common/prisma';
+} from "../../generated/prisma/models.js";
+import prisma from "../../models/common/prisma.js";
 
 const include = {
   employee: true,

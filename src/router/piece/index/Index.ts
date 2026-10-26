@@ -1,5 +1,5 @@
 import { Router } from "express";
-import pieceRouter from "./PieceRouter";
+import pieceRouter from "../PieceRouter.js";
 
 const pieceIndexRouter = Router();
 

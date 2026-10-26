@@ -1,8 +1,8 @@
 import { Request,Response,NextFunction } from 'express';
-import * as repairService from '../../service/repair/RepairService';
-import { controllerResponse } from '../../common/utils/ControllerResponse';
-import HttpStatusCodes from '../../common/constants/HttpStatusCodes';
-import { getParamNumber } from '../../common/utils/ParameterExtraction';
+import * as repairService from "../../service/repair/RepairService.js";
+import { controllerResponse } from "../../common/utils/ControllerResponse.js";
+import HttpStatusCodes from "../../common/constants/HttpStatusCodes.js";
+import { getParamNumber } from "../../common/utils/ParameterExtraction.js";
 
 export const findAllByShopId = async (req:Request,res:Response,next:NextFunction) =>{
     const shopId = getParamNumber(req,'shopId');

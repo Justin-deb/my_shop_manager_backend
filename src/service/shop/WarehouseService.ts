@@ -1,9 +1,9 @@
-import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { CreateWarehouseDto } from '../../dto/shop/create/CreateWarehouseDto';
-import { UpdateWarehouseDto } from '../../dto/shop/update/UpdateWarehouseDto';
-import { BadRequestError } from '../../exceptions/BadRequestError';
-import { WarehouseCreateInput, WarehouseUpdateInput } from '../../generated/prisma/models';
-import * as warehouseRepository from '../../repository/shop/WarehouseRepository';
+import { mapPrismaError } from "../../common/utils/ErrorWrapper.js";
+import { CreateWarehouseDto } from "../../dto/shop/create/CreateWarehouseDto.js";
+import { UpdateWarehouseDto } from "../../dto/shop/update/UpdateWarehouseDto.js";
+import { BadRequestError } from "../../exceptions/BadRequestError.js";
+import { WarehouseCreateInput, WarehouseUpdateInput } from "../../generated/prisma/models.js";
+import * as warehouseRepository from "../../repository/shop/WarehouseRepository.js";
 
 export const findAllByShopId = (shopId:number) =>{
     return warehouseRepository.findAllByShopId(shopId);

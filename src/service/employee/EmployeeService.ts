@@ -1,8 +1,8 @@
-import { mapPrismaError } from '../../common/utils/ErrorWrapper';
-import { CreateEmployeeDto } from '../../dto/employee/create/CreateEmployeeDto';
-import { UpdateEmployeeDto } from '../../dto/employee/update/UpdateEmployeeDto';
-import { EmployeeCreateInput, EmployeeUpdateInput } from '../../generated/prisma/internal/prismaNamespace';
-import * as employeeRepository from '../../repository/employee/EmployeeRepository';
+import { mapPrismaError } from "../../common/utils/ErrorWrapper.js";
+import { CreateEmployeeDto } from "../../dto/employee/create/CreateEmployeeDto.js";
+import { UpdateEmployeeDto } from "../../dto/employee/update/UpdateEmployeeDto.js";
+import { EmployeeCreateInput, EmployeeUpdateInput } from "../../generated/prisma/internal/prismaNamespace.js";
+import * as employeeRepository from "../../repository/employee/EmployeeRepository.js";
 
 export const findAllByShopId = (shopId:number) =>{
     return employeeRepository.findAllByShopId(shopId);
