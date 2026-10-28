@@ -203,6 +203,4 @@ Contributions are welcome. If you want to contribute:
 
 Keep changes small and easy to review, and prefer clear commit messages and focused updates.
 
-## License
-
-This project does not currently include a license file in the repository root. Check the repository settings or the project owner for the active licensing terms before redistribution or commercial use.
+Thanks.
