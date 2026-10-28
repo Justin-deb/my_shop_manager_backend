@@ -2,7 +2,11 @@ import { Request,Response,NextFunction } from "express";
 import { cacheStorage } from "../../redis/RedisClients.js";
 
 export const cacheMiddleware = (namespace:string,duration:number = 900) =>{
+    
     return async (req:Request,res:Response,next:NextFunction) =>{
+        if(!cacheStorage.isReady){
+            return next();
+        };
         const method = req.method;
         const redisKey = `${namespace}:${req.originalUrl}`
 
