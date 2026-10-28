@@ -13,7 +13,7 @@ export const findAllByInvoiceId = (shopId:number,invoiceId: number) => {
             invoiceId
         }
     },
-    include
+    // include
   });
 };
 
@@ -26,7 +26,7 @@ export const findById = (shopId:number,invoiceId:number,paymentId:number) =>{
             },
             paymentId
         },
-        include
+        // include
     });
 }
 
@@ -39,7 +39,7 @@ export const findByReference = (shopId:number,invoiceId:number,reference:string)
             },
             reference,
         },
-        include
+        // include
     });
 }
 

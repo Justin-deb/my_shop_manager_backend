@@ -14,7 +14,7 @@ export const findAllByRepairId = (shopId:number,repairId:number) =>{
                 repairId
             }
         },
-        include
+        // include
     });
 }
 
@@ -26,7 +26,7 @@ export const findById = (shopId:number,invoiceId:number) =>{
             },
             invoiceId
         },
-        include
+        // include
     });
 }
 

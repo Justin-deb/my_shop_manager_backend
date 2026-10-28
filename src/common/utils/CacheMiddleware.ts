@@ -8,7 +8,7 @@ export const cacheMiddleware = (namespace:string,duration:number = 900) =>{
 
         if(method !== 'GET'){
             //Invalidate cache
-            void invalidateCache(namespace);
+            void invalidateCache(redisKey);
             return next();
         }
 
@@ -42,19 +42,8 @@ export const cacheMiddleware = (namespace:string,duration:number = 900) =>{
     }
 }
 
-const invalidateCache = async (namespace: string) => {
-    let cursor = "0";
-
-    do {
-        const result = await cacheStorage.scan(cursor, {
-            MATCH: `${namespace}:*`,
-            COUNT: 100
-        });
-
-        cursor = result.cursor;
-
-        if (result.keys.length > 0) {
-            await cacheStorage.del(result.keys);
-        }
-    } while (cursor !== "0");
+const invalidateCache = async (redisKey: string) => {
+    //space for a future implementation of a pub/sub pattern
+    //or a better cache invalidation by namespace
+    return cacheStorage.del(redisKey);
 };

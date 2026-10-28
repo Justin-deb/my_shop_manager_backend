@@ -9,7 +9,7 @@ const include = {
 
 export const findAll = () =>{
     return prisma.product.findMany({
-        include
+        // include
     });
 }
 
@@ -18,7 +18,7 @@ export const findById = (productId:number) =>{
         where:{
             productId
         },
-        include
+        // include
     });
 }
 
@@ -29,7 +29,7 @@ export const findByName = (name:string) =>{
                 contains:name
             }
         },
-        include
+        // include
     });
 }
 
@@ -38,7 +38,7 @@ export const findByProductionYear = (year:number) =>{
         where:{
             productionYear:year
         },
-        include
+        // include
     });
 }
 
@@ -49,7 +49,7 @@ export const findByModel = (model:string) =>{
                 contains:model
             }
         },
-        include
+        // include
     });
 }
 
@@ -60,7 +60,7 @@ export const findByManufacturer = (manufacturer:string) =>{
                 contains:manufacturer
             }
         },
-        include
+        // include
     })
 }
 

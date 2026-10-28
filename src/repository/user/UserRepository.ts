@@ -7,7 +7,7 @@ const include = {
 
 export const findAll = () =>{
     return prisma.user.findMany({
-        include
+        omit:{passwordHash:true}
     });
 }
 
@@ -16,7 +16,7 @@ export const findById = (userId:number) =>{
         where:{
             userId
         },
-        include
+        // include
     });
 }
 
@@ -25,7 +25,7 @@ export const findPasswordById = async (userId:number) =>{
         where:{
             userId
         },
-        include
+        // include
     });
 
     return user.passwordHash;
@@ -35,8 +35,8 @@ export const findByEmail = (email:string) =>{
     return prisma.user.findUniqueOrThrow({
         where:{
             email
-        },
-        include
+        },omit:{passwordHash:true}
+        // include
     });
 }
 

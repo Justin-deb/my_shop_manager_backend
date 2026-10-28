@@ -11,7 +11,7 @@ export const findAllByShopId = (shopId: number) => {
     where: {
       shopId,
     },
-    include
+    // include
   });
 };
 
@@ -26,7 +26,7 @@ export const findByName = (shopId:number,name:string) =>{
             }
 
         },
-        include
+        // include
     });
 }
 
@@ -38,7 +38,7 @@ export const findById = (shopId:number,employeeId:number) =>{
                 userId:employeeId
             }
         },
-        include
+        // include
     });
 }
 

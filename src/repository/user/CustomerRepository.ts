@@ -7,7 +7,7 @@ const include = {
 
 export const findAll = () =>{
     return prisma.customer.findMany({
-        include
+        // include
     });
 }
 
@@ -27,7 +27,7 @@ export const findById = (shopId:number,customerId:number) =>{
             shopId,
             customerId
         },
-        include
+        // include
     });
 }
 
@@ -40,7 +40,7 @@ export const findByFullName = (shopId:number,firstName:string,lastName:string,se
             lastName,
             secondLastName
         },
-        include
+        // include
     });
 }
 

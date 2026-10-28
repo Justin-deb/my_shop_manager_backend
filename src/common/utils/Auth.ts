@@ -11,9 +11,9 @@ export const authenticate = async (req:Request,res:Response,next:NextFunction) =
     const authHeader = req.headers['authorization'];
 
     if(!authHeader){
-        next(new UnauthroizeError("No Token Provided"));
+        return next(new UnauthroizeError("No Token Provided"));
     }else if(!authHeader!.startsWith('Bearer ')){
-        next(new UnauthroizeError("Bad Token Provided"));
+        return next(new UnauthroizeError("Bad Token Provided"));
     }
     try {
         //Get the token from the header
@@ -23,35 +23,35 @@ export const authenticate = async (req:Request,res:Response,next:NextFunction) =
         const decoded = jwt.verify(token!,SECRET_KEY!) as PayloadJWT;
 
         if(Object.keys(storedUser).length === 0){
-            next(new UnauthroizeError('The Token Provided does not exists'));
+            return next(new UnauthroizeError('The Token Provided does not exists'));
         }
 
         if(storedUser.userId !== decoded.id){
-            next(new UnauthroizeError('The token provided does not belong to the user'));
+            return next(new UnauthroizeError('The token provided does not belong to the user'));
         }
 
         res.locals.userId = storedUser.userId;
         res.locals.isAdmin = Boolean(storedUser.isAdmin);
         res.locals.isShopOwner = Boolean(storedUser.isShopOwner);
         
-        next();
+        return next();
     } catch (error) {
-        next(error);
+        return next(error);
     }
 }
 
 export const authorizeAdmin = (req:Request,res:Response,next:NextFunction) =>{
     if(!res.locals.isAdmin){
-        next(new UnauthroizeError('Access denied'))
+        return next(new UnauthroizeError('Access denied'))
     }
 
-    next();
+    return next();
 }
 
 export const authorizeShopOwner = (req:Request,res:Response,next:NextFunction) =>{
     if(!res.locals.isShopOwner){
-        next(new UnauthroizeError('Access denied'))
+        return next(new UnauthroizeError('Access denied'))
     }
 
-    next();
+    return next();
 }

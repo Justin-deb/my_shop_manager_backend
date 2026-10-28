@@ -10,7 +10,7 @@ export const findAllByShopId = (shopId:number) => {
         where:{
             shopId
         },
-        include
+        // include
     });
 }
 
@@ -22,7 +22,7 @@ export const findByPieceId = (shopId:number,pieceId:number) =>{
                 pieceId
             }
         },
-        include
+        // include
     });
 }
 
