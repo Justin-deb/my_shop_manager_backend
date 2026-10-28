@@ -13,7 +13,7 @@ export const findAllByRepairId = (shopId:number,repairId:number) => {
         repairId
       }
     },
-    include
+    // include
   });
 };
 
@@ -27,7 +27,7 @@ export const findById = (shopId:number,repairId:number,pieceId:number) =>{
                 shopId
             }
         },
-        include
+        // include
     });
 }
 

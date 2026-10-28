@@ -25,7 +25,7 @@ export const findAllByShopId = (shopId: number) => {
     where: {
       shopId,
     },
-    include
+    // include
   });
 };
 
@@ -35,7 +35,7 @@ export const findById = (shopId:number,repairId:number) =>{
             shopId,
             repairId
         },
-        include
+        // include
     });
 }
 
@@ -45,7 +45,7 @@ export const findAllByStatusId = (shopId:number,statusId:number) =>{
             shopId,
             statusId
         },
-        include
+        // include
     });
 }
 
@@ -55,7 +55,7 @@ export const findAllByCustomerId = (shopId:number,customerId:number) =>{
             shopId,
             customerId
         },
-        include
+        // include
     });
 }
 

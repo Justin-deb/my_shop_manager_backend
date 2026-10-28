@@ -20,9 +20,9 @@ export const findByCustomerId = (shopId:number,customerId:number) =>{
             customerId:customerId
             
         },
-        include:{
-            product:true
-        }
+        // include:{
+        //     product:true
+        // }
     });
 }
 
@@ -32,9 +32,9 @@ export const findByProductId = (shopId:number,productId:number) =>{
             shopId:shopId,
             productId:productId
         },
-        include:{
-            customer:true
-        }
+        // include:{
+        //     customer:true
+        // }
     });
 }
 

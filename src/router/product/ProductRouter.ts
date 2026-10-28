@@ -3,10 +3,15 @@ import * as productController from "../../controller/product/ProductController.j
 import * as schemas  from "../../schema/product/ProductSchemas.js";
 import { validateSchema } from "../../common/utils/ValidationMiddleware.js";
 import { authenticate, authorizeAdmin } from '../../common/utils/Auth.js';
+import { Times } from '../../common/constants/TimeInSeconds.js';
+import { cacheMiddleware } from '../../common/utils/CacheMiddleware.js';
+
+const NAMESPACE = 'product';
 
 const productRouter = Router();
 
 productRouter.get('/product/all',
+                    cacheMiddleware(NAMESPACE,Times.hour),
                     productController.findAll);
 
 productRouter.get('/product/id/:productId',
@@ -33,18 +38,21 @@ productRouter.post('/product/create',
                     authenticate,
                     authorizeAdmin,
                     validateSchema(schemas.createProduct),
+                    cacheMiddleware(NAMESPACE),
                     productController.create);
 
 productRouter.put('/product/update/:productId',
                     authenticate,
                     authorizeAdmin,
                     validateSchema(schemas.updateProduct),
+                    cacheMiddleware(NAMESPACE),
                     productController.update);
 
 productRouter.delete('/product/delete/:productId',
                     authenticate,
                     authorizeAdmin,
                     validateSchema(schemas.findById),
+                    cacheMiddleware(NAMESPACE),
                     productController.remove);
 
 export default productRouter;

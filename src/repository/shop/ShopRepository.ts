@@ -8,7 +8,9 @@ const include = {
 };
 
 export const findAll = () => {
-  return prisma.shop.findMany({include});
+  return prisma.shop.findMany({
+        // include
+    });
 };
 
 export const findById = (shopId: number) => {
@@ -16,7 +18,7 @@ export const findById = (shopId: number) => {
     where: {
       shopId,
     },
-    include
+    // include
   });
 };
 
@@ -25,7 +27,7 @@ export const findByOwnerId = (ownerId:number) =>{
         where:{
             ownerId
         },
-        include
+        // include
     });
 }
 

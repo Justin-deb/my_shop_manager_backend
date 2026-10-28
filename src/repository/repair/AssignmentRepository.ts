@@ -15,7 +15,7 @@ export const findAllByRepairId = (shopId:number,repairId:number) => {
         shopId,
         repairId
     },
-    include
+    // include
   });
 };
 
@@ -25,7 +25,7 @@ export const findAllActiveByShopId = (shopId: number) => {
             shopId,
             finishedAt:null
         },
-        include
+        // include
     });
 };
 
@@ -35,7 +35,7 @@ export const findAllByEmployeeId = (shopId: number,employeeId: number) => {
             shopId,
             userId:employeeId
         },
-        include
+        // include
     });
 };
 
@@ -45,7 +45,7 @@ export const findById = (shopId:number,assignmentId:number) => {
             shopId,
             assignmentId
         },
-        include
+        // include
     });
 };
 
